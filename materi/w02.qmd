@@ -1,0 +1,58 @@
+---
+title: "Minggu 2 · Variabel, Tipe Data, Operator & Ekspresi"
+description: "Mahasiswa mampu melacak keadaan (state) variabel selama program berjalan, dan menulis program yang membaca masukan, mengonversi tipenya, lalu menghitung dan menampilkan hasil."
+categories: [Dasar]
+minggu: 2
+---
+::: week-meta
+<span>Minggu 2</span><span>Lesson A: Variabel dan keadaan (state)</span><span>Lesson B: Tipe data, operator, dan masukan</span>
+:::
+
+## Skill yang Dinilai
+
+| Kode | Jenis | Skill |
+|---|---|---|
+| `U2.1` | Trace (T) | Membuat trace table untuk urutan penugasan dan menyatakan nilai akhir tiap variabel |
+| `U2.2` | Trace (T) | Memprediksi keluaran print() dan membedakan ekspresi dengan pernyataan (statement) |
+| `U2.3` | Trace (T) | Menentukan tipe hasil operasi campuran dan hasil konversi tipe int(), float(), str() |
+| `U2.4` | Write (W) | Menulis program yang membaca input(), mengonversi tipe, menghitung, dan menampilkan hasil |
+| `U2.5` | Transfer (X) | Menemukan dan memperbaiki bug akibat urutan penugasan atau pemakaian ulang nama variabel |
+
+: {tbl-colwidths="[12,16,72]"}
+
+## Lesson
+
+| Lesson | Judul | Fokus skill | Moodle |
+|---|---|---|---|
+| A | Variabel dan keadaan (state) | U2.1, U2.2 | `W02-A` |
+| B | Tipe data, operator, dan masukan | U2.3, U2.4, U2.5 | `W02-B` |
+
+## Konsep Kunci
+
+Variabel adalah **nama yang menunjuk ke sebuah nilai**, bukan kotak yang berisi nilai. Penugasan `x = x + 1` bukan persamaan: Python menghitung ruas kanan dulu, lalu memindahkan panah `x` ke nilai yang baru. Perhatikan juga bahwa `input()` **selalu** menghasilkan string.
+
+```python
+harga = int(input("Harga: "))
+jumlah = int(input("Jumlah: "))
+total = harga * jumlah
+print(f"Total bayar: {total}")
+```
+
+## Tebak Dulu
+
+Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
+
+```python
+a = 3
+b = a
+a = 10
+print(b)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+Hasilnya `3`. `b = a` membuat `b` menunjuk ke nilai yang sama dengan `a` saat itu, yaitu `3`. Ketika `a` dipindahkan ke `10`, panah `b` tidak ikut berpindah.
+:::
+
+## Bacaan
+
+- Think Python Ch. 2  -  Variables and Statements

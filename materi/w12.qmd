@@ -1,0 +1,59 @@
+---
+title: "Minggu 12 · Koleksi Data II: Dictionary & Set"
+description: "Mahasiswa mampu memakai dictionary dan set untuk data berpasangan dan data unik, serta memilih struktur data yang sesuai dengan alasan."
+categories: [Teks & Koleksi Data]
+minggu: 12
+---
+::: week-meta
+<span>Minggu 12</span><span>Lesson A: Dictionary: lookup dan pola penghitung</span><span>Lesson B: Pengelompokan, set, dan pemilihan struktur data</span>
+:::
+
+## Skill yang Dinilai
+
+| Kode | Jenis | Skill |
+|---|---|---|
+| `U12.1` | Trace (T) | Memprediksi hasil lookup, key yang tidak ada, dan iterasi dictionary |
+| `U12.2` | Write (W) | Menulis pola penghitung/histogram dengan dictionary |
+| `U12.3` | Write (W) | Mengelompokkan atau membalik pasangan data dengan dictionary; memakai set untuk keunikan |
+| `U12.4` | Transfer (X) | Memilih struktur data (list, dict, atau set) untuk sebuah masalah dan memberi alasan biaya pencarian |
+
+: {tbl-colwidths="[12,16,72]"}
+
+## Lesson
+
+| Lesson | Judul | Fokus skill | Moodle |
+|---|---|---|---|
+| A | Dictionary: lookup dan pola penghitung | U12.1, U12.2 | `W12-A` |
+| B | Pengelompokan, set, dan pemilihan struktur data | U12.3, U12.4 | `W12-B` |
+
+## Konsep Kunci
+
+Dictionary memetakan **key** ke **value**, sehingga data bisa diambil lewat namanya, bukan lewat posisinya. Key harus unik. Set menyimpan nilai unik, cocok untuk membuang duplikat.
+
+```python
+kata = "data sains data bisnis data".split()
+frek = {}
+for k in kata:
+    frek[k] = frek.get(k, 0) + 1
+print(frek)        # {'data': 3, 'sains': 1, 'bisnis': 1}
+print(set(kata))   # tiga kata unik
+```
+
+## Tebak Dulu
+
+Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
+
+```python
+stok = {"apel": 5}
+stok["jeruk"] = 3
+stok["apel"] = 7
+print(len(stok), stok["apel"])
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+Hasilnya `2 7`. Menetapkan key baru menambah entri, sedangkan menetapkan key yang sudah ada menimpa nilainya.
+:::
+
+## Bacaan
+
+- Think Python Ch. 10 - Dicitionaries

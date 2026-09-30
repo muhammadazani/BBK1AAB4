@@ -1,0 +1,59 @@
+---
+title: "Minggu 6 · Perulangan II: for"
+description: "Mahasiswa mampu memilih dan menulis perulangan for untuk pola akumulator, pencacah bersyarat, dan nilai ekstrem, serta menggabungkan validasi data di dalam perulangan."
+categories: [Kontrol Alur]
+minggu: 6
+---
+::: week-meta
+<span>Minggu 6</span><span>Lesson A: for, range, dan pola dasar</span><span>Lesson B: Menggabungkan pola: guard + akumulasi + bersarang</span>
+:::
+
+## Skill yang Dinilai
+
+| Kode | Jenis | Skill |
+|---|---|---|
+| `U6.1` | Trace (T) | Menelusuri for dengan range() dan menyatakan jumlah iterasinya |
+| `U6.2` | Write (W) | Menulis pola akumulator, pencacah bersyarat, dan nilai ekstrem (best-so-far) dengan for |
+| `U6.3` | Write (W) | Menggabungkan guard (validasi data) di dalam perulangan akumulasi |
+| `U6.4` | Transfer (X) | Mengubah while menjadi for dan sebaliknya, serta memilih yang sesuai beserta alasannya |
+| `U6.5` | Transfer (X) | Menyusun dan menelusuri perulangan bersarang sederhana |
+
+: {tbl-colwidths="[12,16,72]"}
+
+## Lesson
+
+| Lesson | Judul | Fokus skill | Moodle |
+|---|---|---|---|
+| A | for, range, dan pola dasar | U6.1, U6.2 | `W06-A` |
+| B | Menggabungkan pola: guard + akumulasi + bersarang | U6.3, U6.4, U6.5 | `W06-B` |
+
+## Konsep Kunci
+
+`range(a, b)` menghasilkan bilangan dari `a` sampai **sebelum** `b`. Titik paling rawan minggu ini adalah menggabungkan **guard** dengan **akumulator** di dalam satu perulangan: data yang tidak sah harus dilewati sebelum ikut dihitung.
+
+```python
+total = 0
+banyak = 0
+for n in [80, -1, 95, 70]:
+    if 0 <= n <= 100:        # guard
+        total += n           # akumulator
+        banyak += 1          # pencacah
+print(total / banyak)
+```
+
+## Tebak Dulu
+
+Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
+
+```python
+for i in range(2, 10, 3):
+    print(i)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+Tercetak `2`, `5`, `8`. Dimulai dari 2, bertambah 3, dan berhenti sebelum mencapai 10.
+:::
+
+## Bacaan
+
+- Think Python Ch. 7 - Iteration and Search

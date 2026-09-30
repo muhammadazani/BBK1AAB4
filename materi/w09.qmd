@@ -1,0 +1,65 @@
+---
+title: "Minggu 9 · Fungsi II: Fungsi Ber-return"
+description: "Mahasiswa mampu membedakan return dari print dan membangun program dari fungsi-fungsi yang mengembalikan nilai."
+categories: [Fungsi]
+minggu: 9
+---
+::: week-meta
+<span>Minggu 9</span><span>Lesson A: return dan print</span><span>Lesson B: Pengembangan bertahap dan komposisi fungsi</span>
+:::
+
+## Skill yang Dinilai
+
+| Kode | Jenis | Skill |
+|---|---|---|
+| `U9.1` | Trace (T) | Membedakan return dan print; memprediksi nilai pemanggilan fungsi yang dipakai di dalam ekspresi |
+| `U9.2` | Write (W) | Menulis fungsi ber-return dengan lebih dari satu jalur return |
+| `U9.3` | Write (W) | Membangun fungsi secara bertahap (incremental development) dan mengujinya di tiap tahap |
+| `U9.4` | Transfer (X) | Menyusun komposisi fungsi: memakai hasil satu fungsi di dalam fungsi lain |
+| `U9.5` | Transfer (X) | Mengubah program panjang menjadi kumpulan fungsi ber-return |
+
+: {tbl-colwidths="[12,16,72]"}
+
+## Lesson
+
+| Lesson | Judul | Fokus skill | Moodle |
+|---|---|---|---|
+| A | return dan print | U9.1, U9.2 | `W09-A` |
+| B | Pengembangan bertahap dan komposisi fungsi | U9.3, U9.4, U9.5 | `W09-B` |
+
+## Konsep Kunci
+
+`print` menampilkan nilai ke layar, sedangkan `return` **mengirim nilai kembali ke pemanggil** agar bisa dipakai di dalam ekspresi. Fungsi tanpa `return` mengembalikan `None`. Bangun fungsi secara bertahap: tulis sedikit, uji, lalu lanjutkan.
+
+```python
+def luas(p, l):
+    return p * l
+
+def keterangan(p, l):
+    if luas(p, l) > 100:
+        return "besar"
+    return "kecil"
+
+print(luas(4, 5) * 2)      # 40
+print(keterangan(20, 6))   # besar
+```
+
+## Tebak Dulu
+
+Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
+
+```python
+def dobel(x):
+    print(x * 2)
+
+hasil = dobel(4)
+print(hasil)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+Tercetak `8` lalu `None`. `dobel` hanya mencetak dan tidak mengembalikan apa pun, sehingga `hasil` bernilai `None`.
+:::
+
+## Bacaan
+
+- Think Python Ch. 6 - Return values

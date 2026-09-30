@@ -1,0 +1,81 @@
+---
+title: "Silabus"
+subtitle: "Algoritma & Pemrograman · BBK1AAB4 · 4 SKS"
+---
+
+## Deskripsi Mata Kuliah
+
+Algoritma & Pemrograman adalah mata kuliah dasar di Program Studi S1 Sistem Informasi. Mahasiswa belajar merumuskan penyelesaian masalah sebagai algoritma dan mengimplementasikannya dalam bahasa Python: variabel dan ekspresi, pernyataan kondisional, fungsi, perulangan, string, koleksi data (list, tuple, dictionary, set), serta pengolahan file teks dan CSV. Tiga pertemuan digunakan untuk studio mini proyek terbimbing yang menggabungkan seluruh materi.
+
+Mata kuliah ini menjadi fondasi untuk mata kuliah pemrograman dan analitik data di semester berikutnya.
+
+## Capaian Pembelajaran (Sub-CPMK)
+
+Setiap minggu memiliki satu tujuan pembelajaran yang setara dengan satu Sub-CPMK pada RPS. Setelah menyelesaikan mata kuliah ini, mahasiswa mampu:
+
+| Minggu | Sub-CPMK |
+|:---:|---|
+| 1 | Menjelaskan program sebagai bahasa formal, merepresentasikan algoritma sederhana (pseudocode/flowchart), dan menelusurinya langkah demi langkah. |
+| 2 | Melacak keadaan (state) variabel selama program berjalan, dan menulis program yang membaca masukan, mengonversi tipenya, lalu menghitung dan menampilkan hasil. |
+| 3 | Mengevaluasi ekspresi logika dan menulis program yang memilih jalur eksekusi berdasarkan kondisi, termasuk penjagaan (guard) untuk memvalidasi masukan. |
+| 4 | Memecah sebuah tugas menjadi fungsi-fungsi void berparameter, menelusuri pemanggilannya, dan menjelaskan lingkup (scope) variabel. |
+| 5 | Menelusuri dan menulis perulangan while, termasuk pola pencacah, akumulator, dan sentinel, serta menuliskan rencananya dalam pseudocode. |
+| 6 | Memilih dan menulis perulangan for untuk pola akumulator, pencacah bersyarat, dan nilai ekstrem, serta menggabungkan validasi data di dalam perulangan. |
+| 7 | Menggabungkan variabel, kondisional, fungsi, dan perulangan menjadi solusi utuh untuk masalah kecil. |
+| 9 | Membedakan return dari print dan membangun program dari fungsi-fungsi yang mengembalikan nilai. |
+| 10 | Memproses teks: mengakses bagian string, menelusurinya dengan perulangan, dan memakai metode string. |
+| 11 | Menyimpan dan memproses kumpulan data terurut dengan list dan tuple, serta menjelaskan akibat dari sifat mutable. |
+| 12 | Memakai dictionary dan set untuk data berpasangan dan data unik, serta memilih struktur data yang sesuai dengan alasan. |
+| 13 | Membaca dan menulis file teks dan CSV, menangani galat file, serta merangkai pipeline sederhana dari file ke hasil olahan. |
+| 14 | Menyelesaikan masalah menengah yang menggabungkan fungsi, string, dan file, serta menjelaskan programnya sendiri. |
+| 15 | Menyelesaikan masalah terintegrasi yang mencakup seluruh materi. |
+
+: {tbl-colwidths="[10,90]"}
+
+::: {.callout-note}
+Setiap Sub-CPMK diturunkan menjadi 3–5 **skill** berkode (misalnya `U2.1`) yang dinilai secara mastery. Minggu 8 (UTS) dan 16 (UAS) tidak memuat skill baru. Lihat [Penilaian](penilaian.qmd).
+:::
+
+## Cakupan Materi
+
+- **Tidak termasuk:** rekursi, serta kelas dan pewarisan (*Think Python* Bab 14–19). Kelas dan pewarisan dibahas di mata kuliah Pemrograman Berorientasi Objek.
+- **Pengayaan, tidak dinilai sebagai skill inti:** ekspresi reguler (`U10.5`).
+
+## Pendekatan Pembelajaran
+
+Kelas menggunakan model **5E** (*Engage, Explore, Explain, Elaborate, Evaluate*) yang dipadukan dengan pola **PRIMM** (*Predict, Run, Investigate, Modify, Make*).
+
+| Fase | Durasi | Apa yang kamu lakukan | Mode | AI |
+|---|---|---|---|---|
+| [Engage]{.phase .engage} | 10 menit | Menebak jawaban sebuah pertanyaan pemantik | Individu | Tanpa AI |
+| [Explore]{.phase .explore} | 25 menit | Memprediksi, menjalankan, dan menyelidiki kode | Berpasangan | Tanpa AI |
+| [Explain]{.phase .explain} | 20 menit | Mendengarkan konsep, mengikuti live coding | Kelas | Tanpa AI |
+| [Elaborate]{.phase .elaborate} | 25 menit | Memodifikasi kode, lalu membuat program sendiri | Berpasangan | AI sebagai tutor |
+| [Evaluate]{.phase .evaluate} | 10 menit | Mengerjakan cek mastery di Moodle | Individu | Tanpa AI |
+
+Urutan Explore sebelum Explain disengaja. Kamu bertemu fenomenanya lebih dulu, lalu penjelasan membantu merapikan apa yang sudah kamu amati.
+
+## Kebijakan AI {#kebijakan-ai}
+
+- **Engage, Explore, Explain:** AI tidak boleh digunakan. Prediksimu harus milikmu sendiri, karena di fase inilah pemahamanmu tentang cara kerja program terbentuk.
+- **Evaluate:** tanpa AI, individu, di kelas. Ini adalah bukti mastery-mu.
+- **Elaborate:** AI boleh dipakai *sebagai tutor, bukan penulis*, yaitu untuk bertanya, meminta petunjuk, atau meminta penjelasan error. Kumpulkan *prompt* yang kamu pakai dan apa yang kamu ubah sesudahnya bersama hasil kerjamu di Moodle.
+- **UTS dan UAS:** tanpa AI, tanpa catatan, dijalankan melalui Safe Exam Browser (SEB).
+
+Pelanggaran kebijakan AI diperlakukan sama seperti pelanggaran integritas akademik lainnya.
+
+## Integritas Akademik
+
+Diskusi dengan teman sangat dianjurkan, tetapi kode yang kamu kumpulkan harus kamu tulis dan pahami sendiri. Aturan praktisnya: kalau kamu tidak bisa menjelaskan setiap baris kodemu, kode itu bukan milikmu.
+
+## Kehadiran & Komunikasi
+
+- Kehadiran mengikuti ketentuan akademik Telkom University.
+- Semua aktivitas, pengumpulan, dan pengumuman resmi ada di **Moodle**. Nama aktivitas di slide sama persis dengan di Moodle, misalnya `W02-A · Explore`.
+- Pertanyaan materi sebaiknya diajukan di forum Moodle agar jawabannya bermanfaat untuk semua.
+
+## Referensi Utama
+
+1. Downey, A. B. (2024). *Think Python* (3rd ed.). O'Reilly. Tersedia gratis di <https://allendowney.github.io/ThinkPython/>.
+2. Sweigart, A. (2019). *Automate the Boring Stuff with Python* (2nd ed.). No Starch Press. <https://automatetheboringstuff.com/>.
+3. Dokumentasi resmi Python: <https://docs.python.org/3/tutorial/>.

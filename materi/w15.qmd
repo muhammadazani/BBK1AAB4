@@ -1,0 +1,40 @@
+---
+title: "Minggu 15 · Tutorial & Praktikum 3 · Gladi UAS"
+description: "Mahasiswa mampu menyelesaikan masalah terintegrasi yang mencakup seluruh materi, dalam kondisi yang sama dengan UAS."
+categories: [Praktikum, Remedial]
+minggu: 15
+---
+::: week-meta
+<span>Minggu 15</span><span>Lesson A: Studio mini proyek terbimbing 3</span><span>Lesson B: Gladi UAS dan remedial terakhir</span>
+:::
+
+::: {.callout-note title="Jendela remedial"}
+Jendela remedial 3 (terakhir): seluruh skill U1.1-U13.5 masih dapat ditutup. Daftar skill yang dibuka dan jadwalnya ada di Moodle.
+:::
+
+## Skill yang Dinilai
+
+| Kode | Jenis | Skill |
+|---|---|---|
+| `U15.1` | Transfer (X) | Menyelesaikan masalah terintegrasi yang mencakup kondisional, fungsi, string, koleksi data, dan file |
+| `U15.2` | Transfer (X) | Mengerjakan simulasi UAS di SEB, terbatas waktu, tanpa bantuan dan tanpa AI |
+| `U15.3` | Transfer (X) | Mengidentifikasi skill yang belum tuntas dari ledger dan menutupnya di jendela remedial terakhir |
+
+: {tbl-colwidths="[12,16,72]"}
+
+## Lesson
+
+| Lesson | Judul | Fokus skill | Moodle |
+|---|---|---|---|
+| A | Studio mini proyek terbimbing 3 | U15.1 | `W15-A` |
+| B | Gladi UAS dan remedial terakhir | U15.2, U15.3 | `W15-B` |
+
+## Yang Kamu Kerjakan
+
+**Lesson A.** Mini proyek terintegrasi dengan data nyata (CSV) yang mencakup seluruh materi. Petakan masalahnya ke pola yang sudah kamu kenal: guard, akumulator, pencacah, dan best-so-far. Program harus memenuhi seluruh spesifikasi.
+
+**Lesson B.** Tinjau skill ledger-mu, lalu ikuti gladi UAS penuh di SEB dengan batas waktu sebenarnya. Setelah pembahasan, jendela remedial terakhir dibuka. Setelah minggu ini ledger ditutup, kecuali untuk skill yang masih bisa dituntaskan lewat UAS.
+
+## Bacaan
+
+- Modul Praktikum

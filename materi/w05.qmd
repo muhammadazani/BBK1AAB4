@@ -1,0 +1,61 @@
+---
+title: "Minggu 5 · Perulangan I: while"
+description: "Mahasiswa mampu menelusuri dan menulis perulangan while, termasuk pola pencacah, akumulator, dan sentinel, serta menuliskan rencananya dalam pseudocode sebelum menulis kode."
+categories: [Kontrol Alur]
+minggu: 5
+---
+::: week-meta
+<span>Minggu 5</span><span>Lesson A: Menelusuri while loop</span><span>Lesson B: Pola pencacah, akumulator, dan sentinel</span>
+:::
+
+## Skill yang Dinilai
+
+| Kode | Jenis | Skill |
+|---|---|---|
+| `U5.1` | Trace (T) | Membuat trace table while loop: nilai tiap iterasi dan alasan perulangan berhenti |
+| `U5.2` | Trace (T) | Mendiagnosis infinite loop dan kesalahan off-by-one |
+| `U5.3` | Write (W) | Menulis pola pencacah (counter) dan pola akumulator dengan while |
+| `U5.4` | Write (W) | Menulis perulangan bersentinel yang berhenti pada nilai penanda |
+| `U5.5` | Transfer (X) | Menuliskan rencana perulangan dalam pseudocode sebelum menulis kode |
+
+: {tbl-colwidths="[12,16,72]"}
+
+## Lesson
+
+| Lesson | Judul | Fokus skill | Moodle |
+|---|---|---|---|
+| A | Menelusuri while loop | U5.1, U5.2 | `W05-A` |
+| B | Pola pencacah, akumulator, dan sentinel | U5.3, U5.4, U5.5 | `W05-B` |
+
+## Konsep Kunci
+
+Setiap perulangan punya tiga bagian: **inisialisasi**, **kondisi**, dan **pemutakhiran**. `while` memeriksa kondisi sebelum setiap putaran. Jika tidak ada yang mengubah variabel di dalam kondisi, loop tidak akan pernah berhenti.
+
+```python
+total = 0                           # akumulator
+angka = int(input("Angka (0 = selesai): "))
+while angka != 0:                   # sentinel
+    total = total + angka
+    angka = int(input("Angka (0 = selesai): "))
+print("Jumlah:", total)
+```
+
+## Tebak Dulu
+
+Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
+
+```python
+i = 10
+while i < 5:
+    print(i)
+    i += 1
+print("selesai")
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+Hanya `selesai` yang tercetak. Kondisi `10 < 5` sudah `False` sejak awal, sehingga badan loop tidak dijalankan sama sekali.
+:::
+
+## Bacaan
+
+- Think Python Ch. 7  - Iteration and Search

@@ -1,0 +1,35 @@
+---
+title: "Minggu 8 · UTS"
+description: "Pemeriksaan mastery kumulatif untuk seluruh skill minggu 1-7."
+categories: [Ujian]
+minggu: 8
+---
+::: week-meta
+<span>Minggu 8</span><span>UTS</span><span>Live coding terawasi</span>
+:::
+
+## Tentang UTS
+
+Pemeriksaan mastery kumulatif untuk seluruh skill minggu 1-7. Tidak ada skill baru. UTS memeriksa ulang U1.1–U6.5 (minggu 1–7) dalam bentuk **soal paralel**, dan skill yang tuntas di UTS **dihitung masuk ke skill ledger**. Jadi UTS juga berfungsi sebagai kesempatan remedial resmi.
+
+## Aturan
+
+- Dikerjakan di **Moodle** melalui **Safe Exam Browser (SEB)**, pada sesi kelas.
+- Ada batas waktu; waktunya diumumkan di Moodle.
+- **Tanpa AI** dan **tanpa catatan**.
+
+## Komposisi Soal
+
+| Jenis soal | Skill | Porsi |
+|---|:---:|---:|
+| Trace / prediksi | T | 40% |
+| Menulis kode | W | 40% |
+| Memilih dan menjelaskan | X | 20% |
+
+Komposisi ini memastikan kamu tidak bisa lulus hanya dengan menulis kode; kemampuan membaca dan menjelaskan kode juga diperiksa.
+
+## Persiapan
+
+- Periksa [skill ledger](../penilaian.qmd#skill-ledger) dan fokus pada skill yang belum tuntas.
+- Ulangi soal **Tebak Dulu** di setiap halaman materi tanpa menjalankan kodenya.
+- Latih diri menulis kode tanpa bantuan *autocomplete* atau AI.

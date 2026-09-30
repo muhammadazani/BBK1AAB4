@@ -1,0 +1,67 @@
+---
+title: "Minggu 11 · Koleksi Data I: List & Tuple"
+description: "Mahasiswa mampu menyimpan dan memproses kumpulan data terurut dengan list dan tuple, serta menjelaskan akibat dari sifat mutable."
+categories: [Teks & Koleksi Data]
+minggu: 11
+---
+::: week-meta
+<span>Minggu 11</span><span>Lesson A: List: membangun, menelusuri, dan aliasing</span><span>Lesson B: Tuple, unpacking, dan list dua dimensi</span>
+:::
+
+## Skill yang Dinilai
+
+| Kode | Jenis | Skill |
+|---|---|---|
+| `U11.1` | Trace (T) | Memprediksi keluaran saat satu list diakses lewat dua nama (aliasing); menggambar diagram referensi |
+| `U11.2` | Write (W) | Menelusuri dan membangun list dengan pola map/filter/reduce yang ditulis manual |
+| `U11.3` | Write (W) | Mengembalikan beberapa nilai dengan tuple dan membongkarnya (unpacking) |
+| `U11.4` | Write (W) | Menyimpan dan memproses data tabular sederhana dengan list dua dimensi |
+| `U11.5` | Transfer (X) | Menjelaskan perbedaan mutable (list) dan immutable (tuple/string) serta memilih yang tepat |
+
+: {tbl-colwidths="[12,16,72]"}
+
+## Lesson
+
+| Lesson | Judul | Fokus skill | Moodle |
+|---|---|---|---|
+| A | List: membangun, menelusuri, dan aliasing | U11.1, U11.2 | `W11-A` |
+| B | Tuple, unpacking, dan list dua dimensi | U11.3, U11.4, U11.5 | `W11-B` |
+
+## Konsep Kunci
+
+`b = a` **tidak menyalin** list. Kedua nama menunjuk ke objek list yang sama, sehingga perubahan lewat `b` juga terlihat lewat `a`. Tuple mirip list, tetapi immutable, dan sering dipakai untuk mengembalikan beberapa nilai sekaligus.
+
+```python
+a = [1, 2, 3]
+b = a          # alias: menunjuk list yang sama
+c = a[:]       # salinan: list baru
+b.append(4)
+print(a, c)    # [1, 2, 3, 4] [1, 2, 3]
+
+def ringkas(data):
+    return sum(data), len(data)
+
+total, n = ringkas([2, 4, 6])   # unpacking
+```
+
+## Tebak Dulu
+
+Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
+
+```python
+def tambah(lst):
+    lst.append(0)
+
+data = [5]
+tambah(data)
+print(data)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+Hasilnya `[5, 0]`. Parameter `lst` menunjuk list yang sama dengan `data`, sehingga `append` di dalam fungsi mengubah list aslinya.
+:::
+
+## Bacaan
+
+- Think Python Ch. 9 - Lists
+- Think Python Ch. 11 - Tuples

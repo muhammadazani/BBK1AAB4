@@ -1,0 +1,20 @@
+---
+title: "Materi"
+subtitle: "Ringkasan konsep, contoh kode, dan latihan *tebak dulu* untuk setiap minggu"
+toc: false
+listing:
+  contents: "w*.qmd"
+  type: table
+  sort: "minggu"
+  fields: [minggu, title, description, categories]
+  field-display-names:
+    minggu: "Minggu"
+    title: "Topik"
+    description: "Ringkasan"
+    categories: "Kategori"
+  sort-ui: false
+  filter-ui: true
+  categories: true
+---
+
+Halaman ini adalah **pendamping** Moodle. Gunakan untuk membaca ulang konsep dan berlatih memprediksi keluaran program. Aktivitas kelas, pengumpulan, dan cek mastery tetap dilakukan di Moodle.

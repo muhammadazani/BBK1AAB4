@@ -1,0 +1,83 @@
+project:
+  type: website
+  output-dir: _site
+
+lang: id
+
+website:
+  title: "BBK1AAB4 (Alpro SI Tel-U)"
+  description: "Situs mata kuliah Algoritma & Pemrograman (BBK1AAB4) — S1 Sistem Informasi, Telkom University"
+  site-url: "https://azanihs.github.io/BBK1AAB4/"
+  search: true
+  page-navigation: true
+  back-to-top-navigation: true
+  navbar:
+    background: primary
+    left:
+      - href: index.qmd
+        text: Beranda
+      - href: silabus.qmd
+        text: Silabus
+      - href: jadwal.qmd
+        text: Jadwal
+      - href: materi/index.qmd
+        text: Materi
+      - href: penilaian.qmd
+        text: Penilaian
+      - text: Sumber Belajar
+        menu:
+          - href: sumber.qmd
+            text: Tools, Buku & Glosarium
+          - href: strategi.qmd
+            text: Strategi Belajar
+      - href: about.qmd
+        text: Tim Pengajar
+    right:
+      - icon: mortarboard-fill
+        href: https://lms.telkomuniversity.ac.id
+        aria-label: LMS Telkom University
+  sidebar:
+    - title: "Materi"
+      style: docked
+      contents:
+        - materi/index.qmd
+        - section: "Paruh Pertama"
+          contents:
+            - materi/w01.qmd
+            - materi/w02.qmd
+            - materi/w03.qmd
+            - materi/w04.qmd
+            - materi/w05.qmd
+            - materi/w06.qmd
+            - materi/w07.qmd
+            - materi/w08.qmd
+        - section: "Paruh Kedua"
+          contents:
+            - materi/w09.qmd
+            - materi/w10.qmd
+            - materi/w11.qmd
+            - materi/w12.qmd
+            - materi/w13.qmd
+            - materi/w14.qmd
+            - materi/w15.qmd
+            - materi/w16.qmd
+  page-footer:
+    left: "Algoritma & Pemrograman · S1 Sistem Informasi · Telkom University"
+    right: "Dibuat dengan [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme/alpro.scss]
+      dark: [darkly, theme/alpro.scss, theme/alpro-dark.scss]
+    css: styles.css
+    include-in-header: theme/fonts.html
+    toc: true
+    toc-title: "Di halaman ini"
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+    anchor-sections: true
+    smooth-scroll: true
+
+editor: visual

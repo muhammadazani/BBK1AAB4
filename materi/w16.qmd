@@ -1,0 +1,35 @@
+---
+title: "Minggu 16 · UAS"
+description: "Pemeriksaan mastery kumulatif untuk seluruh skill inti mata kuliah."
+categories: [Ujian]
+minggu: 16
+---
+::: week-meta
+<span>Minggu 16</span><span>UAS</span><span>Live coding terawasi</span>
+:::
+
+## Tentang UAS
+
+Pemeriksaan mastery kumulatif untuk seluruh skill inti mata kuliah. Tidak ada skill baru. UAS memeriksa ulang seluruh skill inti U1.1–U13.5 dalam bentuk **soal paralel**, dan skill yang tuntas di UAS **dihitung masuk ke skill ledger**. Jadi UAS juga berfungsi sebagai kesempatan remedial resmi.
+
+## Aturan
+
+- Dikerjakan di **Moodle** melalui **Safe Exam Browser (SEB)**, pada sesi kelas.
+- Ada batas waktu; waktunya diumumkan di Moodle.
+- **Tanpa AI** dan **tanpa catatan**.
+
+## Komposisi Soal
+
+| Jenis soal | Skill | Porsi |
+|---|:---:|---:|
+| Trace / prediksi | T | 30% |
+| Menulis kode | W | 45% |
+| Memilih, menjelaskan, dan debugging | X | 25% |
+
+Minimal satu soal wajib menggabungkan guard dengan akumulasi di dalam perulangan.
+
+## Persiapan
+
+- Periksa [skill ledger](../penilaian.qmd#skill-ledger) dan fokus pada skill yang belum tuntas.
+- Ulangi soal **Tebak Dulu** di setiap halaman materi tanpa menjalankan kodenya.
+- Latih diri menulis kode tanpa bantuan *autocomplete* atau AI.

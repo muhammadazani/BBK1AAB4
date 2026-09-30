@@ -1,0 +1,186 @@
+---
+title: "Strategi Belajar"
+subtitle: "Cara belajar pemrograman dan berpikir komputasional, beserta mindset-nya"
+---
+
+Pemrograman adalah **keterampilan**, bukan bakat bawaan. Seperti bermain musik atau olahraga, pemrograman tumbuh dari latihan yang tepat, bukan dari membaca atau menonton saja. Halaman ini berisi mindset dan strategi yang terbukti membantu, beserta tautan video dan artikel untuk mendalaminya.
+
+## Mindset
+
+### Kemampuan tumbuh dengan latihan
+
+Carol Dweck menyebut ini *growth mindset*: keyakinan bahwa kemampuan bisa dikembangkan. Di mata kuliah ini, skill yang belum dikuasai berstatus **belum tuntas**, bukan "gagal". Kata *belum* itu disengaja, karena kamu selalu punya kesempatan remedial untuk menuntaskannya.
+
+| Alih-alih berpikir… | Coba pikirkan… |
+|---|---|
+| "Aku memang tidak berbakat coding." | "Aku **belum** menguasai ini. Latihan apa yang kubutuhkan?" |
+| "Temanku langsung paham, aku tidak." | "Setiap orang mulai dari titik berbeda. Yang penting aku maju dari titikku." |
+| "Program error lagi, aku payah." | "Error ini memberi tahu sesuatu. Apa yang dikatakannya?" |
+| "Aku harus paham semuanya sekarang." | "Bingung itu tanda aku sedang belajar hal baru." |
+| "Aku lihat jawabannya saja." | "Aku coba dulu 15 menit, baru minta petunjuk." |
+
+: {tbl-colwidths="[45,55]"}
+
+### Error adalah informasi, bukan vonis
+
+Programmer profesional juga menghadapi error setiap hari. Bedanya, mereka **membaca** pesan error, bukan panik. Pesan error memberi tahu *jenis* masalahnya dan *baris* tempat masalah itu terjadi. Jika program berperilaku di luar dugaan, artinya ada yang keliru dalam bayanganmu tentang cara kerja program itu, dan itu kesempatan untuk memperbaikinya.
+
+### Proses lebih penting daripada kecepatan
+
+Tidak ada yang menjadi programmer dalam semalam. Menguasai pemrograman butuh waktu bertahun-tahun, dan satu semester ini adalah fondasinya. Fokuslah pada apakah kamu **lebih paham daripada minggu lalu**, bukan pada seberapa cepat teman-temanmu menyelesaikan tugas.
+
+### Bertanya adalah keterampilan
+
+Pertanyaan yang baik mempercepat bantuan. Sebelum bertanya ke teman, asisten, atau forum Moodle, siapkan tiga hal:
+
+1. **Apa yang kamu coba**, beserta kodenya.
+2. **Apa yang kamu harapkan** terjadi.
+3. **Apa yang sebenarnya terjadi**, termasuk pesan error lengkapnya.
+
+Sering kali, menuliskan ketiga hal ini saja sudah membuatmu menemukan jawabannya sendiri.
+
+## Berpikir Komputasional
+
+Berpikir komputasional (*computational thinking*) adalah cara memecahkan masalah sehingga solusinya bisa dijalankan oleh komputer. Ada empat pilar, dan semuanya kamu latih di mata kuliah ini:
+
+| Pilar | Artinya | Di Alpro |
+|---|---|---|
+| **Dekomposisi** | Memecah masalah besar menjadi bagian-bagian kecil | Memecah tugas menjadi beberapa fungsi (minggu 4, 7, 14) |
+| **Pengenalan pola** | Mengenali kemiripan dengan masalah yang pernah diselesaikan | Katalog pola: pencacah, akumulator, sentinel, guard, best-so-far |
+| **Abstraksi** | Menyembunyikan detail yang tidak penting | Fungsi dengan nama dan docstring yang jelas |
+| **Algoritma** | Menyusun langkah-langkah yang tepat dan berurutan | Pseudocode sebelum kode (minggu 1, 5) |
+
+: {tbl-colwidths="[20,40,40]"}
+
+### Langkah menyelesaikan soal pemrograman
+
+1. **Pahami masalahnya.** Tulis ulang soal dengan kalimatmu sendiri. Apa masukannya? Apa keluarannya?
+2. **Kerjakan satu contoh dengan tangan.** Jika kamu tidak bisa menyelesaikannya secara manual, kamu belum bisa memerintahkan komputer untuk melakukannya.
+3. **Rencanakan dengan pseudocode.** Pola apa yang cocok? Fungsi apa saja yang dibutuhkan?
+4. **Tulis sedikit, uji, lanjutkan.** Jangan menulis 30 baris sekaligus. Tulis beberapa baris, jalankan, pastikan benar, baru tambah lagi.
+5. **Sederhanakan jika buntu.** Tidak bisa mencari nilai terbesar ketiga? Selesaikan dulu masalah mencari nilai terbesar, lalu kembangkan.
+6. **Refleksikan.** Setelah selesai, tanyakan: pola apa yang kupakai? Bisakah kodenya lebih jelas?
+
+## Strategi Belajar Pemrograman
+
+### 1. Tebak dulu, baru jalankan
+
+Sebelum menjalankan kode, **tulis prediksimu**. Ketika prediksi meleset, di situlah kamu belajar paling banyak. Ini inti dari pola PRIMM yang kita pakai di kelas. Latih dengan bagian **Tebak Dulu** di setiap halaman [Materi](materi/index.qmd).
+
+### 2. Telusuri kode dengan tangan
+
+Buat *trace table*: satu kolom per variabel, satu baris per langkah. Cara ini melatih kemampuan membaca kode, yang berkembang lebih dulu daripada kemampuan menulis. Cek hasilnya dengan [Python Tutor](https://pythontutor.com/python-compiler.html), yang menggambarkan nama dan panah persis seperti di kelas.
+
+### 3. Ketik ulang, jangan salin-tempel
+
+Mengetik ulang contoh kode memaksamu memperhatikan setiap tanda baca. Lalu **ubah** kodenya: ganti angka, tambah kondisi, dan lihat apa yang terjadi. Mengubah kode yang sudah berjalan adalah jembatan menuju menulis kode sendiri.
+
+### 4. Uji ingatanmu, jangan hanya membaca ulang
+
+Membaca ulang catatan terasa produktif, tetapi hasilnya lemah. Lebih efektif: **tutup catatan, lalu tulis ulang dari ingatan**. Contohnya, tulis pola akumulator tanpa melihat contoh. Ini disebut *retrieval practice*.
+
+### 5. Beri jarak dan campur latihanmu
+
+Belajar 30 menit setiap hari lebih efektif daripada 4 jam semalam sebelum ujian (*spaced practice*). Campur juga jenis soalnya, misalnya soal `while`, `for`, dan `if` secara acak (*interleaving*), sehingga kamu terlatih **memilih** alat yang tepat, bukan hanya memakainya.
+
+### 6. Debug seperti ilmuwan
+
+Jangan mengubah kode secara acak sambil berharap berhasil. Gunakan siklus **hipotesis → uji → perbaiki**:
+
+- Baca pesan error dari **bawah ke atas**.
+- Tulis dugaanmu: "Menurutku `total` bernilai 0 karena…"
+- Uji dengan `print()` atau trace table.
+- Baru ubah kodenya.
+
+Masih buntu? Jelaskan kodemu baris demi baris dengan suara keras, kepada teman atau bahkan kepada bebek karet (*rubber duck debugging*). Sering kali kesalahannya ketemu saat kamu menjelaskan.
+
+### 7. Jelaskan kepada orang lain
+
+Jika kamu bisa menjelaskan cara kerja kode kepada teman, kamu benar-benar memahaminya. Inilah alasan skill **X (Transfer)** dinilai. Belajarlah berpasangan: satu orang menjelaskan, yang lain bertanya "kenapa?".
+
+### 8. Pakai AI sebagai tutor, bukan penulis
+
+Pada fase Elaborate, AI boleh membantumu, tetapi hanya sebagai tutor. Bandingkan dua *prompt* ini:
+
+| ✗ AI sebagai penulis | ✓ AI sebagai tutor |
+|---|---|
+| "Buatkan program menghitung rata-rata nilai." | "Kodeku menghasilkan `ZeroDivisionError` di baris 7. Apa arti error ini? Jangan beri solusinya, beri petunjuk saja." |
+| "Perbaiki kode ini." | "Aku menduga loop-ku tidak berhenti karena kondisinya. Apakah dugaanku masuk akal?" |
+
+Ingat: Evaluate, UTS, dan UAS dikerjakan **tanpa AI**. Kalau AI menulis kodemu selama latihan, kamu tidak sedang melatih dirimu untuk ujian. Lihat [Kebijakan AI](silabus.qmd#kebijakan-ai).
+
+### 9. Istirahat adalah bagian dari belajar
+
+Otak bekerja dalam dua mode: **mode fokus** saat kamu mengerjakan soal, dan **mode santai** (*diffuse*) saat kamu berjalan, mandi, atau tidur. Banyak soal yang buntu justru terpecahkan setelah istirahat. Jika sudah 30 menit terjebak, berhentilah sejenak.
+
+## Waspadai Ilusi Belajar
+
+Beberapa kegiatan *terasa* seperti belajar, tetapi hasilnya sedikit:
+
+::: {.callout-warning title="Terasa produktif, tetapi lemah"}
+- Menonton video tutorial tanpa ikut mengetik kode.
+- Membaca ulang slide dan catatan berkali-kali.
+- Menyalin solusi teman atau AI, lalu merasa "oh, aku paham".
+- Belajar semalaman sebelum ujian.
+:::
+
+::: {.callout-tip title="Terasa berat, tetapi efektif"}
+- Menebak keluaran sebelum menjalankan kode.
+- Menulis kode dari nol tanpa melihat contoh.
+- Mengerjakan ulang cek mastery yang belum tuntas.
+- Menjelaskan kode kepada teman.
+:::
+
+Aturan praktisnya: jika belajar terasa terlalu mudah, kemungkinan kamu tidak sedang belajar banyak.
+
+## Rutinitas Mingguan
+
+| Kapan | Apa yang dilakukan | Waktu |
+|---|---|---|
+| **Sebelum kelas** | Baca sekilas bacaan minggu itu dan halaman [Materi](materi/index.qmd)-nya | 20–30 menit |
+| **Saat kelas** | Tulis prediksi sebelum menjalankan kode; bertanya saat Explore | 200 menit |
+| **Hari yang sama** | Cek skill ledger; pelajari ulang skill yang belum tuntas selagi masih segar | 20 menit |
+| **2–3 hari kemudian** | Tulis ulang contoh kode minggu itu dari ingatan | 30 menit |
+| **Akhir pekan** | Kerjakan soal Tebak Dulu dari minggu-minggu **sebelumnya**, dicampur | 30 menit |
+| **Awal sesi berikutnya** | Ambil remedial untuk skill yang belum tuntas (20 menit pertama) | 20 menit |
+
+## Video & Bacaan
+
+### Mindset dan cara belajar
+
+| Sumber | Jenis | Isi |
+|---|---|---|
+| [The power of believing that you can improve](https://www.ted.com/talks/carol_dweck_the_power_of_believing_that_you_can_improve) · Carol Dweck ([YouTube](https://www.youtube.com/watch?v=_X0mgOOSpLU)) | Video · EN | *Growth mindset* dan kekuatan kata "belum" |
+| [Learning how to learn](https://www.youtube.com/watch?v=O96fE1E-rf8) · Barbara Oakley, TEDx | Video · EN | Mode fokus dan mode santai, serta cara belajar hal yang sulit |
+| [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn) · Oakley & Sejnowski, Coursera | Kursus · EN, gratis | Chunking, ilusi belajar, prokrastinasi, teknik memori |
+| [Six Strategies for Effective Learning](https://www.learningscientists.org/downloadable-materials) · The Learning Scientists | Poster · EN | Spaced practice, retrieval, elaborasi, contoh konkret, dual coding, interleaving |
+| [Retrieval Practice](https://www.retrievalpractice.org/) | Artikel · EN | Mengapa menguji ingatan lebih efektif daripada membaca ulang |
+
+: {tbl-colwidths="[42,22,36]"}
+
+### Berpikir seperti programmer
+
+| Sumber | Jenis | Isi |
+|---|---|---|
+| [How to think like a programmer: lessons in problem solving](https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/) · freeCodeCamp | Artikel · EN | Memahami masalah, merencanakan, memecah, dan menyederhanakan saat buntu |
+| [Computational Thinking](https://openstax.org/books/introduction-computer-science/pages/2-1-computational-thinking) · OpenStax *Introduction to Computer Science* | Buku terbuka · EN | Empat pilar berpikir komputasional |
+| [PRIMM](https://computingeducationresearch.org/projects/primm/) · Raspberry Pi Computing Education Research Centre | Artikel · EN | Latar belakang pendekatan Predict–Run–Investigate–Modify–Make |
+| [A debugging manifesto](https://jvns.ca/blog/2022/12/08/a-debugging-manifesto/) · Julia Evans | Artikel · EN | Prinsip dan sikap saat men-debug |
+| [Rubber duck debugging](https://www.freecodecamp.org/news/rubber-duck-debugging/) · freeCodeCamp | Artikel · EN | Menemukan bug dengan menjelaskan kode baris demi baris |
+| [Teach Yourself Programming in Ten Years](https://norvig.com/21-days.html) · Peter Norvig | Esai · EN | Mengapa menguasai pemrograman butuh waktu dan latihan |
+
+: {tbl-colwidths="[42,22,36]"}
+
+### Belajar Python lewat video
+
+| Sumber | Jenis | Isi |
+|---|---|---|
+| [Belajar Python Bahasa Indonesia (Versi Baru)](https://www.youtube.com/playlist?list=PLZS-MHyEIRo59lUBwU-XHH7Ymmb04ffOY) · Kelas Terbuka | Playlist · ID | Python dasar dalam Bahasa Indonesia, per topik |
+| [CS50's Introduction to Programming with Python](https://www.youtube.com/playlist?list=PLhQjrBD2T3817j24-GogXmWqO5Q5vYy0V) · Harvard CS50 | Playlist · EN | Kuliah Python lengkap dari Harvard, dibagi per minggu |
+| [CS50P: kursus lengkap dalam satu video](https://www.youtube.com/watch?v=nLRL_NcnK-4) · freeCodeCamp | Video · EN | Isi yang sama dengan playlist CS50P, dalam satu video panjang |
+
+: {tbl-colwidths="[42,22,36]"}
+
+::: {.callout-note}
+Video paling bermanfaat jika kamu **ikut mengetik dan menebak** sambil menonton. Jeda video sebelum kode dijalankan, lalu tebak hasilnya. Tools, buku utama, dan glosarium ada di halaman [Sumber Belajar](sumber.qmd).
+:::

@@ -1,0 +1,59 @@
+---
+title: "Sumber Belajar"
+---
+
+::: {.callout-tip title="Baru mulai belajar pemrograman?"}
+Baca dulu [Strategi Belajar](strategi.qmd): mindset dan cara belajar yang membantumu menguasai pemrograman.
+:::
+
+## Tools {#tools}
+
+| Tool | Kegunaan |
+|---|---|
+| [Google Colab](https://colab.research.google.com) | Menulis dan menjalankan Python di browser tanpa instalasi. Dipakai di kelas. |
+| [Python Tutor](https://pythontutor.com/python-compiler.html) | Memvisualisasikan eksekusi kode baris demi baris, lengkap dengan nama dan panah. Sangat membantu untuk *trace*. |
+| [Thonny](https://thonny.org) | Editor Python sederhana untuk pemula, dengan debugger visual. |
+| [Visual Studio Code](https://code.visualstudio.com) + ekstensi Python | Editor untuk proyek yang lebih besar. |
+| [Python 3](https://www.python.org/downloads/) | Instal jika ingin menjalankan Python di laptop sendiri. |
+
+::: {.callout-tip title="Mulai cepat"}
+Kalau baru pertama kali, cukup buka Google Colab dengan akun SSO Telkom University, lalu buat *notebook* baru. Tidak perlu menginstal apa pun.
+:::
+
+## Buku & Bacaan
+
+- **Think Python, 3rd ed.** (Allen B. Downey), buku utama, gratis dibaca online: <https://allendowney.github.io/ThinkPython/>
+- **Automate the Boring Stuff with Python** (Al Sweigart), contoh praktis untuk otomasi pekerjaan: <https://automatetheboringstuff.com/>
+- **Tutorial resmi Python**: <https://docs.python.org/3/tutorial/>
+
+## Latihan Tambahan
+
+- [CodingBat Python](https://codingbat.com/python): soal-soal pendek untuk melatih logika.
+- [Exercism, jalur Python](https://exercism.org/tracks/python): latihan bertahap dengan umpan balik mentor.
+- Soal **Tebak Dulu** di setiap halaman [Materi](materi/index.qmd).
+
+## Glosarium EN–ID
+
+Istilah pemrograman sering muncul dalam bahasa Inggris di pesan error dan dokumentasi. Kenali keduanya.
+
+| English | Bahasa Indonesia | Keterangan |
+|---|---|---|
+| algorithm | algoritma | Urutan langkah yang jelas untuk menyelesaikan masalah |
+| variable | variabel | Nama yang menunjuk ke sebuah nilai |
+| assignment | penugasan | Perintah `=` yang membuat nama menunjuk ke nilai |
+| expression | ekspresi | Kombinasi nilai dan operator yang menghasilkan nilai |
+| data type | tipe data | Jenis nilai: `int`, `float`, `str`, `bool`, … |
+| condition | kondisi | Ekspresi yang bernilai `True` atau `False` |
+| branching | percabangan | `if`, `elif`, `else` |
+| loop / iteration | perulangan / iterasi | `while`, `for` |
+| function | fungsi | Blok kode bernama yang bisa dipanggil ulang |
+| parameter / argument | parameter / argumen | Nama di definisi fungsi / nilai saat fungsi dipanggil |
+| return value | nilai kembalian | Nilai yang dikirim fungsi ke pemanggil |
+| scope | cakupan | Bagian program tempat sebuah nama berlaku |
+| list | list (daftar) | Kumpulan nilai berurutan yang bisa diubah |
+| mutable / immutable | dapat diubah / tidak dapat diubah | Apakah isi objek bisa diubah setelah dibuat |
+| aliasing | aliasing | Dua nama atau lebih menunjuk objek yang sama |
+| dictionary | kamus (dictionary) | Pemetaan kunci ke nilai |
+| exception | eksepsi | Error yang terjadi saat program berjalan |
+| trace | menelusuri | Mengikuti eksekusi program langkah demi langkah |
+| bug / debugging | bug / debugging | Kesalahan program / proses menemukan dan memperbaikinya |

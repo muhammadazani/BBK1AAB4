@@ -1,0 +1,41 @@
+---
+title: "Minggu 14 · Tutorial & Praktikum 2"
+description: "Mahasiswa mampu menyelesaikan masalah menengah yang menggabungkan fungsi void dan ber-return, string, dan file, serta menjelaskan programnya sendiri."
+categories: [Praktikum, Remedial]
+minggu: 14
+---
+::: week-meta
+<span>Minggu 14</span><span>Lesson A: Studio mini proyek terbimbing 2</span><span>Lesson B: Penjelasan lisan dan remedial</span>
+:::
+
+::: {.callout-note title="Jendela remedial"}
+Jendela remedial 2: menutup skill U9.1-U13.5 yang belum tuntas. Daftar skill yang dibuka dan jadwalnya ada di Moodle.
+:::
+
+## Skill yang Dinilai
+
+| Kode | Jenis | Skill |
+|---|---|---|
+| `U14.1` | Transfer (X) | Mendekomposisi masalah menengah menjadi fungsi-fungsi dengan antarmuka yang jelas |
+| `U14.2` | Transfer (X) | Memilih struktur data dan pola yang sesuai serta memberi alasannya |
+| `U14.3` | Transfer (X) | Melakukan debugging sistematis: hipotesis - uji - perbaiki, bukan menebak |
+| `U14.4` | Transfer (X) | Menjelaskan program buatan sendiri secara lisan tanpa catatan |
+
+: {tbl-colwidths="[12,16,72]"}
+
+## Lesson
+
+| Lesson | Judul | Fokus skill | Moodle |
+|---|---|---|---|
+| A | Studio mini proyek terbimbing 2 | U14.1, U14.2 | `W14-A` |
+| B | Penjelasan lisan dan remedial | U14.4 + remedial U9-U13 | `W14-B` |
+
+## Yang Kamu Kerjakan
+
+**Lesson A.** Mini proyek terbimbing kedua: fungsi void dan ber-return, string, dan file. Tulis rencana fungsi dan pilihan struktur datamu sebelum mengetik kode. Setiap bug ditangani dengan hipotesis tertulis sebelum kode diubah. Kumpulkan program yang berjalan beserta catatan debugging-nya.
+
+**Lesson B.** Pemeriksaan lisan singkat: kamu menunjukkan satu fungsi, menjelaskan cara kerjanya tanpa catatan, lalu mengubahnya sesuai permintaan dosen. Setelah itu jendela remedial dibuka.
+
+## Bacaan
+
+- Modul Praktikum

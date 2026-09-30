@@ -1,0 +1,64 @@
+---
+title: "Minggu 3 · Pernyataan Kondisional"
+description: "Mahasiswa mampu mengevaluasi ekspresi logika dan menulis program yang memilih jalur eksekusi berdasarkan kondisi, termasuk penjagaan (guard) untuk memvalidasi masukan."
+categories: [Kontrol Alur]
+minggu: 3
+---
+::: week-meta
+<span>Minggu 3</span><span>Lesson A: Ekspresi logika dan seleksi</span><span>Lesson B: Kondisi berantai, bersarang, dan guard</span>
+:::
+
+## Skill yang Dinilai
+
+| Kode | Jenis | Skill |
+|---|---|---|
+| `U3.1` | Trace (T) | Mengevaluasi ekspresi logika (and/or/not, operator relasional) untuk nilai masukan tertentu |
+| `U3.2` | Trace (T) | Menelusuri if/elif/else dan seleksi bersarang; menunjukkan cabang yang tidak pernah dijalankan |
+| `U3.3` | Write (W) | Menulis program dengan kondisi berantai sesuai spesifikasi |
+| `U3.4` | Write (W) | Menulis guard yang memvalidasi masukan sebelum data diproses |
+| `U3.5` | Transfer (X) | Memilih antara elif berantai dan if bersarang serta memberi alasannya |
+
+: {tbl-colwidths="[12,16,72]"}
+
+## Lesson
+
+| Lesson | Judul | Fokus skill | Moodle |
+|---|---|---|---|
+| A | Ekspresi logika dan seleksi | U3.1, U3.2 | `W03-A` |
+| B | Kondisi berantai, bersarang, dan guard | U3.3, U3.4, U3.5 | `W03-B` |
+
+## Konsep Kunci
+
+Pada rangkaian `if/elif/else`, Python memeriksa kondisi dari atas dan **hanya menjalankan cabang pertama yang bernilai `True`**, sehingga urutan kondisi menentukan hasil. *Guard* memeriksa masukan lebih dulu, baru memprosesnya.
+
+```python
+nilai = int(input("Nilai: "))
+if nilai < 0 or nilai > 100:      # guard
+    print("Nilai tidak sah")
+elif nilai >= 80:
+    print("A")
+elif nilai >= 70:
+    print("B")
+else:
+    print("C")
+```
+
+## Tebak Dulu
+
+Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
+
+```python
+n = 95
+if n >= 60:
+    print("Lulus")
+elif n >= 90:
+    print("Istimewa")
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+Hanya `Lulus` yang tercetak. Kondisi pertama sudah `True`, sehingga cabang `elif` tidak pernah diperiksa. Kondisi yang lebih spesifik harus diletakkan lebih dulu.
+:::
+
+## Bacaan
+
+- Think Python Ch. 5 - Conditionals and Recursion

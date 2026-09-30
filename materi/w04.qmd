@@ -1,0 +1,68 @@
+---
+title: "Minggu 4 · Fungsi I: Fungsi Void"
+description: "Mahasiswa mampu memecah sebuah tugas menjadi fungsi-fungsi void berparameter, menelusuri pemanggilannya, dan menjelaskan lingkup (scope) variabel."
+categories: [Fungsi]
+minggu: 4
+---
+::: week-meta
+<span>Minggu 4</span><span>Lesson A: Memanggil dan mendefinisikan fungsi</span><span>Lesson B: Enkapsulasi, generalisasi, dan dekomposisi</span>
+:::
+
+## Skill yang Dinilai
+
+| Kode | Jenis | Skill |
+|---|---|---|
+| `U4.1` | Trace (T) | Menelusuri pemanggilan fungsi: memasangkan argumen ke parameter, menggambar stack diagram, membaca traceback |
+| `U4.2` | Write (W) | Mendefinisikan fungsi void berparameter dan memanggilnya dengan benar |
+| `U4.3` | Write (W) | Mengubah kode berulang menjadi satu fungsi (enkapsulasi) lalu menambah parameter agar umum (generalisasi) |
+| `U4.4` | Transfer (X) | Menjelaskan lingkup: mengapa variabel lokal tidak terlihat di luar fungsi |
+| `U4.5` | Transfer (X) | Memecah satu tugas menjadi beberapa fungsi dengan antarmuka dan docstring yang jelas |
+
+: {tbl-colwidths="[12,16,72]"}
+
+## Lesson
+
+| Lesson | Judul | Fokus skill | Moodle |
+|---|---|---|---|
+| A | Memanggil dan mendefinisikan fungsi | U4.1, U4.2 | `W04-A` |
+| B | Enkapsulasi, generalisasi, dan dekomposisi | U4.3, U4.4, U4.5 | `W04-B` |
+
+## Konsep Kunci
+
+Fungsi membungkus langkah-langkah di bawah satu nama. **Definisi** (`def`) hanya mencatat fungsinya; kodenya baru berjalan saat fungsi **dipanggil**. Argumen dipasangkan ke parameter sesuai urutan, dan variabel yang dibuat di dalam fungsi bersifat **lokal**.
+
+```python
+def cetak_garis(panjang):
+    print("-" * panjang)
+
+def cetak_judul(teks):
+    """Mencetak teks di antara dua garis sepanjang teks."""
+    cetak_garis(len(teks))
+    print(teks)
+    cetak_garis(len(teks))
+
+cetak_judul("Algoritma")
+```
+
+## Tebak Dulu
+
+Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
+
+```python
+x = 1
+
+def ubah():
+    x = 99
+
+ubah()
+print(x)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+Hasilnya `1`. `x = 99` di dalam fungsi membuat variabel lokal baru bernama `x`, dan tidak mengubah `x` di luar fungsi.
+:::
+
+## Bacaan
+
+- Think Python Ch. 3 - Functions
+- Think Python Ch. 4 - Functions & Interface

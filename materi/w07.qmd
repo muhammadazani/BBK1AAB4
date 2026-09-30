@@ -1,0 +1,41 @@
+---
+title: "Minggu 7 · Tutorial & Praktikum 1 · Gladi UTS"
+description: "Mahasiswa mampu menggabungkan variabel, kondisional, fungsi, dan perulangan menjadi solusi utuh untuk masalah kecil, serta mengerjakannya dalam kondisi seperti UTS."
+categories: [Praktikum, Remedial]
+minggu: 7
+---
+::: week-meta
+<span>Minggu 7</span><span>Lesson A: Studio mini proyek terbimbing</span><span>Lesson B: Gladi UTS dan remedial</span>
+:::
+
+::: {.callout-note title="Jendela remedial"}
+Jendela remedial 1: mahasiswa menutup skill U1.1-U6.5 yang belum tuntas. Daftar skill yang dibuka dan jadwalnya ada di Moodle.
+:::
+
+## Skill yang Dinilai
+
+| Kode | Jenis | Skill |
+|---|---|---|
+| `U7.1` | Transfer (X) | Mendekomposisi masalah kecil menjadi fungsi-fungsi dengan antarmuka yang jelas |
+| `U7.2` | Transfer (X) | Memilih dan menggabungkan pola yang tepat (counter, akumulator, guard, best-so-far) |
+| `U7.3` | Transfer (X) | Menguji dan menelusuri program sendiri untuk menemukan bug secara sistematis |
+| `U7.4` | Transfer (X) | Menyelesaikan soal bergaya UTS dalam batas waktu, tanpa bantuan dan tanpa AI |
+
+: {tbl-colwidths="[12,16,72]"}
+
+## Lesson
+
+| Lesson | Judul | Fokus skill | Moodle |
+|---|---|---|---|
+| A | Studio mini proyek terbimbing | U7.1, U7.2, U7.3 | `W07-A` |
+| B | Gladi UTS dan remedial | U7.4 + remedial U1-U6 | `W07-B` |
+
+## Yang Kamu Kerjakan
+
+**Lesson A.** Kamu mengerjakan mini proyek terbimbing yang menggabungkan variabel, kondisional, fungsi, dan perulangan. Susun dulu rencana fungsinya sebelum mengetik kode. Di akhir lesson, tunjukkan programmu berjalan dan sebutkan pola yang dipakai di tiap fungsi.
+
+**Lesson B.** Gladi UTS: satu soal bergaya UTS dikerjakan di SEB dengan batas waktu penuh, lalu dibahas bersama. Setelah itu jendela remedial dibuka.
+
+## Bacaan
+
+- Modul Praktikum

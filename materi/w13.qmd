@@ -1,0 +1,63 @@
+---
+title: "Minggu 13 · Data Files"
+description: "Mahasiswa mampu membaca dan menulis file teks dan CSV, menangani galat file, serta merangkai pipeline sederhana dari file ke hasil olahan."
+categories: [Teks & Koleksi Data]
+minggu: 13
+---
+::: week-meta
+<span>Minggu 13</span><span>Lesson A: Membaca dan menulis file teks</span><span>Lesson B: CSV dan pipeline analisis teks</span>
+:::
+
+## Skill yang Dinilai
+
+| Kode | Jenis | Skill |
+|---|---|---|
+| `U13.1` | Write (W) | Membaca file teks baris per baris dan memprosesnya |
+| `U13.2` | Write (W) | Menulis hasil ke file teks dan file CSV |
+| `U13.3` | Write (W) | Membaca file CSV menjadi list atau dictionary record |
+| `U13.4` | Transfer (X) | Menangani galat file dengan try/except agar program gagal dengan aman |
+| `U13.5` | Transfer (X) | Merangkai pipeline: baca file - olah dengan list/dict - tulis hasil |
+
+: {tbl-colwidths="[12,16,72]"}
+
+## Lesson
+
+| Lesson | Judul | Fokus skill | Moodle |
+|---|---|---|---|
+| A | Membaca dan menulis file teks | U13.1, U13.2, U13.4 | `W13-A` |
+| B | CSV dan pipeline analisis teks | U13.3, U13.5 | `W13-B` |
+
+## Konsep Kunci
+
+`with open(...)` menutup file secara otomatis setelah bloknya selesai. Mode `"w"` menghapus isi lama, sedangkan `"a"` menambahkan di akhir. Bungkus operasi file dengan `try/except` agar program gagal dengan aman.
+
+```python
+try:
+    with open("nilai.txt") as f:
+        for baris in f:
+            print(baris.strip())
+except FileNotFoundError:
+    print("File nilai.txt tidak ditemukan.")
+```
+
+## Tebak Dulu
+
+Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
+
+```python
+try:
+    x = int("tiga")
+    print("A")
+except ValueError:
+    print("B")
+print("C")
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+Tercetak `B` lalu `C`. `int("tiga")` memicu `ValueError`, sehingga `print("A")` dilewati dan eksekusi pindah ke blok `except`.
+:::
+
+## Bacaan
+
+- Think Python Ch. 12 - Text Analysis & Generation
+- Think Python Ch. 13 - Files & Database

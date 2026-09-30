@@ -1,0 +1,97 @@
+/* ---------- Phase colours (Okabe–Ito, colour-blind safe) ---------- */
+:root {
+  --engage: #E69F00;
+  --explore: #009E73;
+  --explain: #0072B2;
+  --elaborate: #CC79A7;
+  --evaluate: #D55E00;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 2.25rem 2rem;
+  margin: 0 0 2rem;
+  border-radius: .75rem;
+  background: linear-gradient(135deg, #B6252A 0%, #7A1519 100%);
+  color: #fff;
+}
+.hero h1 { color: #fff; margin: .25rem 0 .5rem; font-size: 2.2rem; border: 0; }
+.hero p { margin: 0; opacity: .92; max-width: 46rem; }
+.hero .eyebrow {
+  font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; opacity: .85;
+}
+.hero .btn { margin: 1.25rem .5rem 0 0; }
+.hero .btn-light { color: #7A1519; font-weight: 600; }
+.hero .btn-outline-light:hover { color: #7A1519; }
+
+/* ---------- Fact strip ---------- */
+.facts {
+  display: grid; gap: .75rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  margin: 0 0 2rem;
+}
+.facts > div {
+  border: 1px solid var(--bs-border-color); border-radius: .5rem; padding: .75rem 1rem;
+}
+.facts .k { display: block; font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: var(--bs-secondary-color); }
+.facts .v { font-weight: 600; font-size: 1.05rem; }
+
+/* ---------- Link cards ---------- */
+.cards {
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  margin: 1rem 0 2rem;
+}
+.cards a.card-link {
+  display: block; padding: 1.1rem 1.2rem; border-radius: .6rem;
+  border: 1px solid var(--bs-border-color); text-decoration: none; color: inherit;
+  transition: border-color .15s, transform .15s;
+}
+.cards a.card-link:hover { border-color: var(--bs-primary); transform: translateY(-2px); }
+.cards .card-link strong { display: block; color: var(--bs-primary); margin-bottom: .25rem; }
+.cards .card-link span { font-size: .92rem; color: var(--bs-secondary-color); }
+
+/* Pandoc wraps the links in one <p>; let the anchors become grid items */
+.cards > p { display: contents; }
+
+/* ---------- 5E timeline ---------- */
+.fivee { display: flex; gap: 4px; margin: 1rem 0 .5rem; border-radius: .5rem; overflow: hidden; }
+.fivee > div { padding: .7rem .6rem; color: #000; min-width: 0; }
+.fivee > div b { display: block; font-size: .95rem; }
+.fivee > div small { font-size: .78rem; }
+.fivee .engage    { background: var(--engage);    flex: 10; }
+.fivee .explore   { background: var(--explore);   flex: 25; }
+.fivee .explain   { background: var(--explain);   flex: 20; color: #fff; }
+.fivee .elaborate { background: var(--elaborate); flex: 25; }
+.fivee .evaluate  { background: var(--evaluate);  flex: 10; }
+@media (max-width: 640px) {
+  .fivee { flex-direction: column; }
+}
+
+/* Phase badges used in tables and week pages */
+.phase {
+  display: inline-block; padding: .05rem .5rem; border-radius: 999px;
+  font-size: .8rem; font-weight: 600; color: #000; white-space: nowrap;
+}
+.phase.engage { background: var(--engage); }
+.phase.explore { background: var(--explore); }
+.phase.explain { background: var(--explain); color: #fff; }
+.phase.elaborate { background: var(--elaborate); }
+.phase.evaluate { background: var(--evaluate); }
+
+/* Week-type tags in the schedule */
+.tag {
+  display: inline-block; padding: .05rem .45rem; border-radius: .3rem;
+  font-size: .75rem; font-weight: 600; border: 1px solid currentColor; white-space: nowrap;
+}
+.tag.exam { color: var(--bs-primary); }
+.tag.remedial { color: var(--explain); }
+
+/* Week header on each materi page */
+.week-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin: -.5rem 0 1.5rem; }
+.week-meta span {
+  font-size: .85rem; padding: .15rem .6rem; border-radius: 999px;
+  background: var(--bs-tertiary-bg); border: 1px solid var(--bs-border-color);
+}
+
+table { font-size: .95rem; }

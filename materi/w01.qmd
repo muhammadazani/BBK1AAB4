@@ -1,0 +1,56 @@
+---
+title: "Minggu 1 · Pengenalan Alpro & Berpikir Komputasional"
+description: "Mahasiswa mampu menjelaskan program sebagai bahasa formal, merepresentasikan algoritma sederhana (pseudocode/flowchart), dan menelusurinya langkah demi langkah."
+categories: [Dasar]
+minggu: 1
+---
+::: week-meta
+<span>Minggu 1</span><span>Lesson A: Dari masalah ke algoritma</span><span>Lesson B: Dari algoritma ke program Python</span>
+:::
+
+## Skill yang Dinilai
+
+| Kode | Jenis | Skill |
+|---|---|---|
+| `U1.1` | Trace (T) | Menelusuri algoritma sederhana langkah demi langkah dan menyatakan hasil akhirnya |
+| `U1.2` | Trace (T) | Menghitung nilai ekspresi aritmetika secara manual, termasuk urutan operator dan beda / dengan // |
+| `U1.3` | Trace (T) | Mengklasifikasi galat sebagai syntax, runtime, atau semantic error, dan menunjuk barisnya |
+| `U1.4` | Write (W) | Menulis dan menjalankan program pendek (ekspresi + print) di notebook |
+| `U1.5` | Transfer (X) | Menjelaskan dengan kalimat sendiri apa yang dikerjakan sebuah program pendek |
+
+: {tbl-colwidths="[12,16,72]"}
+
+## Lesson
+
+| Lesson | Judul | Fokus skill | Moodle |
+|---|---|---|---|
+| A | Dari masalah ke algoritma | U1.1, U1.5 | `W01-A` |
+| B | Dari algoritma ke program Python | U1.2, U1.3, U1.4 | `W01-B` |
+
+## Konsep Kunci
+
+Algoritma adalah urutan langkah yang jelas dan tidak ambigu untuk menyelesaikan masalah. Program adalah algoritma yang ditulis dalam bahasa formal, dan Python menjalankannya **baris demi baris, dari atas ke bawah**. Jika ada yang salah, galatnya termasuk salah satu dari tiga jenis: *syntax error*, *runtime error*, atau *semantic error*.
+
+```python
+print("Halo, Sistem Informasi!")
+print(2 + 3 * 4)   # 14: perkalian dikerjakan lebih dulu
+print(10 / 4)      # 2.5
+print(10 // 4)     # 2
+```
+
+## Tebak Dulu
+
+Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
+
+```python
+print("1 + 2")
+print(1 + 2)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+Baris pertama mencetak `1 + 2` apa adanya karena berada di dalam tanda kutip (string). Baris kedua mencetak `3` karena Python menghitung ekspresinya.
+:::
+
+## Bacaan
+
+- Think Python Ch. 1 - Programming as a way of thinking

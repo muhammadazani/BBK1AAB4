@@ -1,0 +1,58 @@
+---
+title: "Minggu 10 · String"
+description: "Mahasiswa mampu memproses teks: mengakses bagian string, menelusurinya dengan perulangan, dan memakai metode string untuk menyelesaikan tugas kecil."
+categories: [Teks & Koleksi Data]
+minggu: 10
+---
+::: week-meta
+<span>Minggu 10</span><span>Lesson A: Indexing, slicing, dan immutability</span><span>Lesson B: Metode string dan pemrosesan teks</span>
+:::
+
+## Skill yang Dinilai
+
+| Kode | Jenis | Skill |
+|---|---|---|
+| `U10.1` | Trace (T) | Memprediksi hasil indexing dan slicing; menjelaskan sifat immutable string |
+| `U10.2` | Write (W) | Menelusuri string dengan for untuk menghitung atau mengumpulkan karakter |
+| `U10.3` | Write (W) | Menggunakan metode string (find, split, strip, lower, replace) untuk tugas kecil |
+| `U10.4` | Transfer (X) | Memilih antara metode bawaan dan perulangan manual, dengan alasan |
+| `U10.5` | Transfer (X) | Pengayaan: memakai ekspresi reguler sederhana |
+
+: {tbl-colwidths="[12,16,72]"}
+
+## Lesson
+
+| Lesson | Judul | Fokus skill | Moodle |
+|---|---|---|---|
+| A | Indexing, slicing, dan immutability | U10.1, U10.2 | `W10-A` |
+| B | Metode string dan pemrosesan teks | U10.3, U10.4, U10.5 | `W10-B` |
+
+## Konsep Kunci
+
+Indeks dimulai dari `0`, batas akhir *slicing* tidak ikut diambil, dan indeks negatif menghitung dari belakang. String bersifat **immutable**: metode seperti `upper()` dan `strip()` menghasilkan string baru, bukan mengubah string lama.
+
+```python
+kata = "Telkom"
+print(kata[0], kata[-1], kata[1:4])   # T m elk
+
+nama = "  budi SANTOSO "
+print(nama.strip().title())            # Budi Santoso
+```
+
+## Tebak Dulu
+
+Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
+
+```python
+s = "halo"
+s.upper()
+print(s)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+Hasilnya tetap `halo`. `upper()` menghasilkan string baru, tetapi hasilnya tidak disimpan ke mana pun. Tulis `s = s.upper()` untuk menyimpannya.
+:::
+
+## Bacaan
+
+- Think Python Ch. 8 - Strings and Regular Expressions

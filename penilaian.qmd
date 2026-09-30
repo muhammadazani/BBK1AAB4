@@ -1,0 +1,70 @@
+---
+title: "Penilaian"
+subtitle: "Mastery per skill, ujian live coding, dan remedial"
+---
+
+## Prinsip
+
+Penilaian di mata kuliah ini berbasis **mastery**. Yang dinilai adalah apakah kamu sudah menguasai sebuah *skill*, bukan berapa kali kamu salah sebelum menguasainya. Karena itu, skill yang belum tuntas bisa dicoba ulang pada jendela remedial.
+
+## Komponen Penilaian
+
+| Komponen | Kapan | Bentuk |
+|---|---|---|
+| Cek mastery (Evaluate) | Setiap lesson | Soal singkat individu di Moodle, per skill, tanpa AI |
+| Tugas Elaborate | Setiap lesson | Program hasil *Modify → Make* beserta *prompt* AI dan apa yang kamu ubah sesudahnya |
+| Studio mini proyek | Minggu 7, 14, 15 | Program berjalan, catatan debugging, dan penjelasan lisan |
+| UTS | Minggu 8 | Ujian live coding terawasi |
+| UAS | Minggu 16 | Ujian live coding terawasi |
+
+::: {.callout-note}
+Bobot tiap komponen mengikuti RPS resmi mata kuliah dan diumumkan di Moodle pada awal semester.
+:::
+
+## Tiga Jenis Skill
+
+Setiap minggu memiliki 3–5 skill berkode `U<minggu>.<nomor>`, misalnya `U2.1`. Setiap skill termasuk salah satu dari tiga jenis:
+
+| Jenis | Artinya | Kapan dianggap tuntas |
+|---|---|---|
+| **T**race | Membaca dan menelusuri kode: memprediksi keluaran, membuat trace table, menggambar diagram keadaan, membaca pesan galat | Jawaban tepat |
+| **W**rite | Menulis kode dari sebuah spesifikasi | Lolos seluruh test case tersembunyi **dan** memenuhi satu kriteria keterbacaan (nama bermakna atau docstring) |
+| **X** (Transfer) | Memilih, menjelaskan, men-debug, atau menggeneralisasi, termasuk memberi alasan atas sebuah pilihan | Sesuai rubrik soal |
+
+Membaca dan menulis kode dinilai terpisah karena kemampuan membaca kode berkembang lebih dulu. Jika hanya menulis yang dinilai, kesulitan memahami cara kerja program baru ketahuan saat ujian.
+
+Daftar skill lengkap ada di setiap halaman [Materi](materi/index.qmd).
+
+## Skill Ledger {#skill-ledger}
+
+Status setiap skill adalah **tuntas** atau **belum tuntas**. Nilai beberapa skill tidak dirata-ratakan. Semua status tercatat di **skill ledger** kamu di Moodle, dengan kode skill sebagai judul kolomnya. Ledger ditampilkan di akhir setiap sesi, jadi kamu selalu tahu skill mana yang masih terbuka.
+
+Setiap skill memiliki tiga bentuk soal paralel (A/B/C). Bentuk-bentuk ini berbeda konteksnya, bukan hanya angkanya, sehingga menghafal jawaban tidak akan membantu.
+
+## Ujian
+
+UTS (minggu 8) dan UAS (minggu 16) adalah **ujian live coding terawasi** di Moodle melalui Safe Exam Browser (SEB), pada sesi kelas, dengan batas waktu, tanpa AI, dan tanpa catatan. Keduanya tidak memuat skill baru. Soal-soalnya adalah bentuk paralel dari skill yang sudah dipelajari, dan **skill yang tuntas di ujian dihitung masuk ke ledger**.
+
+| Jenis soal | UTS | UAS |
+|---|---:|---:|
+| **T** · trace / prediksi | 40% | 30% |
+| **W** · menulis kode | 40% | 45% |
+| **X** · memilih, menjelaskan, dan debugging | 20% | 25% |
+| Cakupan | U1.1–U6.5 | U1.1–U13.5 |
+
+Pada UAS, minimal satu soal menggabungkan *guard* dengan akumulasi di dalam perulangan.
+
+## Remedial {#remedial}
+
+Skill yang belum tuntas dapat diambil ulang dengan bentuk soal paralel pada:
+
+- **20 menit pertama sesi berikutnya**;
+- **jendela remedial minggu 7** untuk skill U1–U6;
+- **jendela remedial minggu 14** untuk skill U9–U13;
+- **jendela remedial minggu 15**, yaitu jendela terakhir, untuk seluruh skill U1.1–U13.5.
+
+Setiap skill dapat dicoba **paling banyak tiga kali secara tertulis**. Setelah itu, pemeriksaan dilakukan secara lisan. UTS dan UAS juga berfungsi sebagai kesempatan remedial. Setelah minggu 15 ledger ditutup, kecuali untuk skill yang masih bisa dituntaskan lewat UAS.
+
+::: {.callout-tip title="Strategi"}
+Jangan menunggu jendela remedial. Kalau cek mastery belum tuntas, pelajari lagi hari itu juga selagi materinya masih segar, lalu ambil ulang di awal sesi berikutnya.
+:::

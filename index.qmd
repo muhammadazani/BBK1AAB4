@@ -1,0 +1,85 @@
+---
+pagetitle: "Beranda"
+toc: false
+page-layout: full
+---
+
+::: hero
+[S1 Sistem Informasi · Telkom University]{.eyebrow}
+
+# Algoritma & Pemrograman
+
+Mata kuliah ini melatih kamu berpikir seperti programmer: memecah masalah menjadi langkah-langkah yang jelas, lalu menuliskannya sebagai program Python yang benar, terbaca, dan teruji.
+
+[Lihat Jadwal](jadwal.qmd){.btn .btn-light} [Mulai dari Minggu 1](materi/w01.qmd){.btn .btn-outline-light}
+:::
+
+::::::::: facts
+::: {}
+[Kode]{.k}[BBK1AAB4]{.v}
+:::
+
+::: {}
+[SKS]{.k}[4]{.v}
+:::
+
+::: {}
+[Bahasa]{.k}[Python 3]{.v}
+:::
+
+::: {}
+[Pertemuan]{.k}[16 minggu]{.v}
+:::
+
+::: {}
+[Durasi sesi]{.k}[200 menit]{.v}
+:::
+
+::: {}
+[LMS]{.k}[Moodle]{.v}
+:::
+:::::::::
+
+## Mulai dari sini
+
+::: cards
+[**Silabus**Deskripsi, capaian pembelajaran, dan kebijakan kelas.](silabus.qmd){.card-link} [**Jadwal**Topik per minggu, ujian, dan jendela remedial.](jadwal.qmd){.card-link} [**Materi**Ringkasan, contoh kode, dan bacaan tiap minggu.](materi/index.qmd){.card-link} [**Penilaian**Mastery per skill, UTS, UAS, dan remedial.](penilaian.qmd){.card-link} [**Sumber Belajar**Tools, buku, dan glosarium EN–ID.](sumber.qmd){.card-link} [**Strategi Belajar**Mindset dan cara belajar pemrograman yang efektif.](strategi.qmd){.card-link}
+:::
+
+## Bagaimana satu pertemuan berjalan
+
+Setiap pertemuan 200 menit berisi dua *lesson* (A dan B). Masing-masing lesson adalah satu siklus **5E** selama 90 menit, dengan istirahat 15 menit di antaranya.
+
+:::::::: fivee
+::: engage
+<b>Engage</b><small>10' · tebak dulu</small>
+:::
+
+::: explore
+<b>Explore</b><small>25' · jalankan & selidiki kode</small>
+:::
+
+::: explain
+<b>Explain</b><small>20' · konsep & live coding</small>
+:::
+
+::: elaborate
+<b>Elaborate</b><small>25' · modifikasi & buat</small>
+:::
+
+::: evaluate
+<b>Evaluate</b><small>10' · cek mastery</small>
+:::
+::::::::
+
+Kamu akan **mencoba kode sebelum diberi penjelasan**. Kedengarannya terbalik, tetapi justru di situ belajarnya: kamu menebak apa yang dilakukan program (*Predict*), menjalankannya (*Run*), menyelidiki kenapa hasilnya begitu (*Investigate*), mengubahnya (*Modify*), lalu membuat versimu sendiri (*Make*). Pola ini disebut **PRIMM**.
+
+::: {.callout-important title="Kebijakan AI"}
+AI (ChatGPT, Copilot, Gemini, dll.) **hanya boleh dipakai pada fase Elaborate**, sebagai tutor, dan *prompt* yang kamu pakai wajib dikumpulkan. Pada fase lain, termasuk ujian, AI tidak boleh digunakan. Status AI selalu tampil di slide. Lihat detailnya di [Silabus](silabus.qmd#kebijakan-ai).
+:::
+
+## Pengumuman
+
+::: {.callout-note title="Selamat datang!" collapse="false"}
+Sebelum pertemuan pertama, pastikan kamu bisa masuk ke Moodle dan membuka Google Colab dengan akun SSO Telkom University. Panduan instalasi ada di [Sumber Belajar](sumber.qmd#tools).
+:::
