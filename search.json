@@ -1,0 +1,1384 @@
+[
+  {
+    "objectID": "sumber.html",
+    "href": "sumber.html",
+    "title": "Sumber Belajar",
+    "section": "",
+    "text": "TipBaru mulai belajar pemrograman?\n\n\n\nBaca dulu Strategi Belajar: mindset dan cara belajar yang membantumu menguasai pemrograman."
+  },
+  {
+    "objectID": "sumber.html#tools",
+    "href": "sumber.html#tools",
+    "title": "Sumber Belajar",
+    "section": "Tools",
+    "text": "Tools\n\n\n\nTool\nKegunaan\n\n\n\n\nGoogle Colab\nMenulis dan menjalankan Python di browser tanpa instalasi. Dipakai di kelas.\n\n\nPython Tutor\nMemvisualisasikan eksekusi kode baris demi baris, lengkap dengan nama dan panah. Sangat membantu untuk trace.\n\n\nThonny\nEditor Python sederhana untuk pemula, dengan debugger visual.\n\n\nVisual Studio Code + ekstensi Python\nEditor untuk proyek yang lebih besar.\n\n\nPython 3\nInstal jika ingin menjalankan Python di laptop sendiri.\n\n\n\n\n\n\n\n\n\nTipMulai cepat\n\n\n\nKalau baru pertama kali, cukup buka Google Colab dengan akun SSO Telkom University, lalu buat notebook baru. Tidak perlu menginstal apa pun."
+  },
+  {
+    "objectID": "sumber.html#buku-bacaan",
+    "href": "sumber.html#buku-bacaan",
+    "title": "Sumber Belajar",
+    "section": "Buku & Bacaan",
+    "text": "Buku & Bacaan\n\nThink Python, 3rd ed. (Allen B. Downey), buku utama, gratis dibaca online: https://allendowney.github.io/ThinkPython/\nAutomate the Boring Stuff with Python (Al Sweigart), contoh praktis untuk otomasi pekerjaan: https://automatetheboringstuff.com/\nTutorial resmi Python: https://docs.python.org/3/tutorial/"
+  },
+  {
+    "objectID": "sumber.html#latihan-tambahan",
+    "href": "sumber.html#latihan-tambahan",
+    "title": "Sumber Belajar",
+    "section": "Latihan Tambahan",
+    "text": "Latihan Tambahan\n\nCodingBat Python: soal-soal pendek untuk melatih logika.\nExercism, jalur Python: latihan bertahap dengan umpan balik mentor.\nSoal Tebak Dulu di setiap halaman Materi."
+  },
+  {
+    "objectID": "sumber.html#glosarium-enid",
+    "href": "sumber.html#glosarium-enid",
+    "title": "Sumber Belajar",
+    "section": "Glosarium EN–ID",
+    "text": "Glosarium EN–ID\nIstilah pemrograman sering muncul dalam bahasa Inggris di pesan error dan dokumentasi. Kenali keduanya.\n\n\n\n\n\n\n\n\nEnglish\nBahasa Indonesia\nKeterangan\n\n\n\n\nalgorithm\nalgoritma\nUrutan langkah yang jelas untuk menyelesaikan masalah\n\n\nvariable\nvariabel\nNama yang menunjuk ke sebuah nilai\n\n\nassignment\npenugasan\nPerintah = yang membuat nama menunjuk ke nilai\n\n\nexpression\nekspresi\nKombinasi nilai dan operator yang menghasilkan nilai\n\n\ndata type\ntipe data\nJenis nilai: int, float, str, bool, …\n\n\ncondition\nkondisi\nEkspresi yang bernilai True atau False\n\n\nbranching\npercabangan\nif, elif, else\n\n\nloop / iteration\nperulangan / iterasi\nwhile, for\n\n\nfunction\nfungsi\nBlok kode bernama yang bisa dipanggil ulang\n\n\nparameter / argument\nparameter / argumen\nNama di definisi fungsi / nilai saat fungsi dipanggil\n\n\nreturn value\nnilai kembalian\nNilai yang dikirim fungsi ke pemanggil\n\n\nscope\ncakupan\nBagian program tempat sebuah nama berlaku\n\n\nlist\nlist (daftar)\nKumpulan nilai berurutan yang bisa diubah\n\n\nmutable / immutable\ndapat diubah / tidak dapat diubah\nApakah isi objek bisa diubah setelah dibuat\n\n\naliasing\naliasing\nDua nama atau lebih menunjuk objek yang sama\n\n\ndictionary\nkamus (dictionary)\nPemetaan kunci ke nilai\n\n\nexception\neksepsi\nError yang terjadi saat program berjalan\n\n\ntrace\nmenelusuri\nMengikuti eksekusi program langkah demi langkah\n\n\nbug / debugging\nbug / debugging\nKesalahan program / proses menemukan dan memperbaikinya"
+  },
+  {
+    "objectID": "silabus.html",
+    "href": "silabus.html",
+    "title": "Silabus",
+    "section": "",
+    "text": "Algoritma & Pemrograman adalah mata kuliah dasar di Program Studi S1 Sistem Informasi. Mahasiswa belajar merumuskan penyelesaian masalah sebagai algoritma dan mengimplementasikannya dalam bahasa Python: variabel dan ekspresi, pernyataan kondisional, fungsi, perulangan, string, koleksi data (list, tuple, dictionary, set), serta pengolahan file teks dan CSV. Tiga pertemuan digunakan untuk studio mini proyek terbimbing yang menggabungkan seluruh materi.\nMata kuliah ini menjadi fondasi untuk mata kuliah pemrograman dan analitik data di semester berikutnya."
+  },
+  {
+    "objectID": "silabus.html#deskripsi-mata-kuliah",
+    "href": "silabus.html#deskripsi-mata-kuliah",
+    "title": "Silabus",
+    "section": "",
+    "text": "Algoritma & Pemrograman adalah mata kuliah dasar di Program Studi S1 Sistem Informasi. Mahasiswa belajar merumuskan penyelesaian masalah sebagai algoritma dan mengimplementasikannya dalam bahasa Python: variabel dan ekspresi, pernyataan kondisional, fungsi, perulangan, string, koleksi data (list, tuple, dictionary, set), serta pengolahan file teks dan CSV. Tiga pertemuan digunakan untuk studio mini proyek terbimbing yang menggabungkan seluruh materi.\nMata kuliah ini menjadi fondasi untuk mata kuliah pemrograman dan analitik data di semester berikutnya."
+  },
+  {
+    "objectID": "silabus.html#capaian-pembelajaran-sub-cpmk",
+    "href": "silabus.html#capaian-pembelajaran-sub-cpmk",
+    "title": "Silabus",
+    "section": "Capaian Pembelajaran (Sub-CPMK)",
+    "text": "Capaian Pembelajaran (Sub-CPMK)\nSetiap minggu memiliki satu tujuan pembelajaran yang setara dengan satu Sub-CPMK pada RPS. Setelah menyelesaikan mata kuliah ini, mahasiswa mampu:\n\n\n\n\n\n\n\nMinggu\nSub-CPMK\n\n\n\n\n1\nMenjelaskan program sebagai bahasa formal, merepresentasikan algoritma sederhana (pseudocode/flowchart), dan menelusurinya langkah demi langkah.\n\n\n2\nMelacak keadaan (state) variabel selama program berjalan, dan menulis program yang membaca masukan, mengonversi tipenya, lalu menghitung dan menampilkan hasil.\n\n\n3\nMengevaluasi ekspresi logika dan menulis program yang memilih jalur eksekusi berdasarkan kondisi, termasuk penjagaan (guard) untuk memvalidasi masukan.\n\n\n4\nMemecah sebuah tugas menjadi fungsi-fungsi void berparameter, menelusuri pemanggilannya, dan menjelaskan lingkup (scope) variabel.\n\n\n5\nMenelusuri dan menulis perulangan while, termasuk pola pencacah, akumulator, dan sentinel, serta menuliskan rencananya dalam pseudocode.\n\n\n6\nMemilih dan menulis perulangan for untuk pola akumulator, pencacah bersyarat, dan nilai ekstrem, serta menggabungkan validasi data di dalam perulangan.\n\n\n7\nMenggabungkan variabel, kondisional, fungsi, dan perulangan menjadi solusi utuh untuk masalah kecil.\n\n\n9\nMembedakan return dari print dan membangun program dari fungsi-fungsi yang mengembalikan nilai.\n\n\n10\nMemproses teks: mengakses bagian string, menelusurinya dengan perulangan, dan memakai metode string.\n\n\n11\nMenyimpan dan memproses kumpulan data terurut dengan list dan tuple, serta menjelaskan akibat dari sifat mutable.\n\n\n12\nMemakai dictionary dan set untuk data berpasangan dan data unik, serta memilih struktur data yang sesuai dengan alasan.\n\n\n13\nMembaca dan menulis file teks dan CSV, menangani galat file, serta merangkai pipeline sederhana dari file ke hasil olahan.\n\n\n14\nMenyelesaikan masalah menengah yang menggabungkan fungsi, string, dan file, serta menjelaskan programnya sendiri.\n\n\n15\nMenyelesaikan masalah terintegrasi yang mencakup seluruh materi.\n\n\n\n\n\n\n\n\n\nCatatan\n\n\n\nSetiap Sub-CPMK diturunkan menjadi 3–5 skill berkode (misalnya U2.1) yang dinilai secara mastery. Minggu 8 (UTS) dan 16 (UAS) tidak memuat skill baru. Lihat Penilaian."
+  },
+  {
+    "objectID": "silabus.html#cakupan-materi",
+    "href": "silabus.html#cakupan-materi",
+    "title": "Silabus",
+    "section": "Cakupan Materi",
+    "text": "Cakupan Materi\n\nTidak termasuk: rekursi, serta kelas dan pewarisan (Think Python Bab 14–19). Kelas dan pewarisan dibahas di mata kuliah Pemrograman Berorientasi Objek.\nPengayaan, tidak dinilai sebagai skill inti: ekspresi reguler (U10.5)."
+  },
+  {
+    "objectID": "silabus.html#pendekatan-pembelajaran",
+    "href": "silabus.html#pendekatan-pembelajaran",
+    "title": "Silabus",
+    "section": "Pendekatan Pembelajaran",
+    "text": "Pendekatan Pembelajaran\nKelas menggunakan model 5E (Engage, Explore, Explain, Elaborate, Evaluate) yang dipadukan dengan pola PRIMM (Predict, Run, Investigate, Modify, Make).\n\n\n\n\n\n\n\n\n\n\nFase\nDurasi\nApa yang kamu lakukan\nMode\nAI\n\n\n\n\nEngage\n10 menit\nMenebak jawaban sebuah pertanyaan pemantik\nIndividu\nTanpa AI\n\n\nExplore\n25 menit\nMemprediksi, menjalankan, dan menyelidiki kode\nBerpasangan\nTanpa AI\n\n\nExplain\n20 menit\nMendengarkan konsep, mengikuti live coding\nKelas\nTanpa AI\n\n\nElaborate\n25 menit\nMemodifikasi kode, lalu membuat program sendiri\nBerpasangan\nAI sebagai tutor\n\n\nEvaluate\n10 menit\nMengerjakan cek mastery di Moodle\nIndividu\nTanpa AI\n\n\n\nUrutan Explore sebelum Explain disengaja. Kamu bertemu fenomenanya lebih dulu, lalu penjelasan membantu merapikan apa yang sudah kamu amati."
+  },
+  {
+    "objectID": "silabus.html#kebijakan-ai",
+    "href": "silabus.html#kebijakan-ai",
+    "title": "Silabus",
+    "section": "Kebijakan AI",
+    "text": "Kebijakan AI\n\nEngage, Explore, Explain: AI tidak boleh digunakan. Prediksimu harus milikmu sendiri, karena di fase inilah pemahamanmu tentang cara kerja program terbentuk.\nEvaluate: tanpa AI, individu, di kelas. Ini adalah bukti mastery-mu.\nElaborate: AI boleh dipakai sebagai tutor, bukan penulis, yaitu untuk bertanya, meminta petunjuk, atau meminta penjelasan error. Kumpulkan prompt yang kamu pakai dan apa yang kamu ubah sesudahnya bersama hasil kerjamu di Moodle.\nUTS dan UAS: tanpa AI, tanpa catatan, dijalankan melalui Safe Exam Browser (SEB).\n\nPelanggaran kebijakan AI diperlakukan sama seperti pelanggaran integritas akademik lainnya."
+  },
+  {
+    "objectID": "silabus.html#integritas-akademik",
+    "href": "silabus.html#integritas-akademik",
+    "title": "Silabus",
+    "section": "Integritas Akademik",
+    "text": "Integritas Akademik\nDiskusi dengan teman sangat dianjurkan, tetapi kode yang kamu kumpulkan harus kamu tulis dan pahami sendiri. Aturan praktisnya: kalau kamu tidak bisa menjelaskan setiap baris kodemu, kode itu bukan milikmu."
+  },
+  {
+    "objectID": "silabus.html#kehadiran-komunikasi",
+    "href": "silabus.html#kehadiran-komunikasi",
+    "title": "Silabus",
+    "section": "Kehadiran & Komunikasi",
+    "text": "Kehadiran & Komunikasi\n\nKehadiran mengikuti ketentuan akademik Telkom University.\nSemua aktivitas, pengumpulan, dan pengumuman resmi ada di Moodle. Nama aktivitas di slide sama persis dengan di Moodle, misalnya W02-A · Explore.\nPertanyaan materi sebaiknya diajukan di forum Moodle agar jawabannya bermanfaat untuk semua."
+  },
+  {
+    "objectID": "silabus.html#referensi-utama",
+    "href": "silabus.html#referensi-utama",
+    "title": "Silabus",
+    "section": "Referensi Utama",
+    "text": "Referensi Utama\n\nDowney, A. B. (2024). Think Python (3rd ed.). O’Reilly. Tersedia gratis di https://allendowney.github.io/ThinkPython/.\nSweigart, A. (2019). Automate the Boring Stuff with Python (2nd ed.). No Starch Press. https://automatetheboringstuff.com/.\nDokumentasi resmi Python: https://docs.python.org/3/tutorial/."
+  },
+  {
+    "objectID": "materi/w08.html",
+    "href": "materi/w08.html",
+    "title": "Minggu 8 · UTS",
+    "section": "",
+    "text": "Minggu 8UTSLive coding terawasi",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 8 · UTS"
+    ]
+  },
+  {
+    "objectID": "materi/w08.html#tentang-uts",
+    "href": "materi/w08.html#tentang-uts",
+    "title": "Minggu 8 · UTS",
+    "section": "Tentang UTS",
+    "text": "Tentang UTS\nPemeriksaan mastery kumulatif untuk seluruh skill minggu 1-7. Tidak ada skill baru. UTS memeriksa ulang U1.1–U6.5 (minggu 1–7) dalam bentuk soal paralel, dan skill yang tuntas di UTS dihitung masuk ke skill ledger. Jadi UTS juga berfungsi sebagai kesempatan remedial resmi.",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 8 · UTS"
+    ]
+  },
+  {
+    "objectID": "materi/w08.html#aturan",
+    "href": "materi/w08.html#aturan",
+    "title": "Minggu 8 · UTS",
+    "section": "Aturan",
+    "text": "Aturan\n\nDikerjakan di Moodle melalui Safe Exam Browser (SEB), pada sesi kelas.\nAda batas waktu; waktunya diumumkan di Moodle.\nTanpa AI dan tanpa catatan.",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 8 · UTS"
+    ]
+  },
+  {
+    "objectID": "materi/w08.html#komposisi-soal",
+    "href": "materi/w08.html#komposisi-soal",
+    "title": "Minggu 8 · UTS",
+    "section": "Komposisi Soal",
+    "text": "Komposisi Soal\n\n\n\nJenis soal\nSkill\nPorsi\n\n\n\n\nTrace / prediksi\nT\n40%\n\n\nMenulis kode\nW\n40%\n\n\nMemilih dan menjelaskan\nX\n20%\n\n\n\nKomposisi ini memastikan kamu tidak bisa lulus hanya dengan menulis kode; kemampuan membaca dan menjelaskan kode juga diperiksa.",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 8 · UTS"
+    ]
+  },
+  {
+    "objectID": "materi/w08.html#persiapan",
+    "href": "materi/w08.html#persiapan",
+    "title": "Minggu 8 · UTS",
+    "section": "Persiapan",
+    "text": "Persiapan\n\nPeriksa skill ledger dan fokus pada skill yang belum tuntas.\nUlangi soal Tebak Dulu di setiap halaman materi tanpa menjalankan kodenya.\nLatih diri menulis kode tanpa bantuan autocomplete atau AI.",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 8 · UTS"
+    ]
+  },
+  {
+    "objectID": "materi/w05.html",
+    "href": "materi/w05.html",
+    "title": "Minggu 5 · Perulangan I: while",
+    "section": "",
+    "text": "Minggu 5Lesson A: Menelusuri while loopLesson B: Pola pencacah, akumulator, dan sentinel",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 5 · Perulangan I: while"
+    ]
+  },
+  {
+    "objectID": "materi/w05.html#skill-yang-dinilai",
+    "href": "materi/w05.html#skill-yang-dinilai",
+    "title": "Minggu 5 · Perulangan I: while",
+    "section": "Skill yang Dinilai",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU5.1\nTrace (T)\nMembuat trace table while loop: nilai tiap iterasi dan alasan perulangan berhenti\n\n\nU5.2\nTrace (T)\nMendiagnosis infinite loop dan kesalahan off-by-one\n\n\nU5.3\nWrite (W)\nMenulis pola pencacah (counter) dan pola akumulator dengan while\n\n\nU5.4\nWrite (W)\nMenulis perulangan bersentinel yang berhenti pada nilai penanda\n\n\nU5.5\nTransfer (X)\nMenuliskan rencana perulangan dalam pseudocode sebelum menulis kode",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 5 · Perulangan I: while"
+    ]
+  },
+  {
+    "objectID": "materi/w05.html#lesson",
+    "href": "materi/w05.html#lesson",
+    "title": "Minggu 5 · Perulangan I: while",
+    "section": "Lesson",
+    "text": "Lesson\n\n\n\n\n\n\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nMenelusuri while loop\nU5.1, U5.2\nW05-A\n\n\nB\nPola pencacah, akumulator, dan sentinel\nU5.3, U5.4, U5.5\nW05-B",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 5 · Perulangan I: while"
+    ]
+  },
+  {
+    "objectID": "materi/w05.html#konsep-kunci",
+    "href": "materi/w05.html#konsep-kunci",
+    "title": "Minggu 5 · Perulangan I: while",
+    "section": "Konsep Kunci",
+    "text": "Konsep Kunci\nSetiap perulangan punya tiga bagian: inisialisasi, kondisi, dan pemutakhiran. while memeriksa kondisi sebelum setiap putaran. Jika tidak ada yang mengubah variabel di dalam kondisi, loop tidak akan pernah berhenti.\ntotal = 0                           # akumulator\nangka = int(input(\"Angka (0 = selesai): \"))\nwhile angka != 0:                   # sentinel\n    total = total + angka\n    angka = int(input(\"Angka (0 = selesai): \"))\nprint(\"Jumlah:\", total)",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 5 · Perulangan I: while"
+    ]
+  },
+  {
+    "objectID": "materi/w05.html#tebak-dulu",
+    "href": "materi/w05.html#tebak-dulu",
+    "title": "Minggu 5 · Perulangan I: while",
+    "section": "Tebak Dulu",
+    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\ni = 10\nwhile i &lt; 5:\n    print(i)\n    i += 1\nprint(\"selesai\")\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nHanya selesai yang tercetak. Kondisi 10 &lt; 5 sudah False sejak awal, sehingga badan loop tidak dijalankan sama sekali.",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 5 · Perulangan I: while"
+    ]
+  },
+  {
+    "objectID": "materi/w05.html#bacaan",
+    "href": "materi/w05.html#bacaan",
+    "title": "Minggu 5 · Perulangan I: while",
+    "section": "Bacaan",
+    "text": "Bacaan\n\nThink Python Ch. 7 - Iteration and Search",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 5 · Perulangan I: while"
+    ]
+  },
+  {
+    "objectID": "materi/w10.html",
+    "href": "materi/w10.html",
+    "title": "Minggu 10 · String",
+    "section": "",
+    "text": "Minggu 10Lesson A: Indexing, slicing, dan immutabilityLesson B: Metode string dan pemrosesan teks",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 10 · String"
+    ]
+  },
+  {
+    "objectID": "materi/w10.html#skill-yang-dinilai",
+    "href": "materi/w10.html#skill-yang-dinilai",
+    "title": "Minggu 10 · String",
+    "section": "Skill yang Dinilai",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU10.1\nTrace (T)\nMemprediksi hasil indexing dan slicing; menjelaskan sifat immutable string\n\n\nU10.2\nWrite (W)\nMenelusuri string dengan for untuk menghitung atau mengumpulkan karakter\n\n\nU10.3\nWrite (W)\nMenggunakan metode string (find, split, strip, lower, replace) untuk tugas kecil\n\n\nU10.4\nTransfer (X)\nMemilih antara metode bawaan dan perulangan manual, dengan alasan\n\n\nU10.5\nTransfer (X)\nPengayaan: memakai ekspresi reguler sederhana",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 10 · String"
+    ]
+  },
+  {
+    "objectID": "materi/w10.html#lesson",
+    "href": "materi/w10.html#lesson",
+    "title": "Minggu 10 · String",
+    "section": "Lesson",
+    "text": "Lesson\n\n\n\n\n\n\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nIndexing, slicing, dan immutability\nU10.1, U10.2\nW10-A\n\n\nB\nMetode string dan pemrosesan teks\nU10.3, U10.4, U10.5\nW10-B",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 10 · String"
+    ]
+  },
+  {
+    "objectID": "materi/w10.html#konsep-kunci",
+    "href": "materi/w10.html#konsep-kunci",
+    "title": "Minggu 10 · String",
+    "section": "Konsep Kunci",
+    "text": "Konsep Kunci\nIndeks dimulai dari 0, batas akhir slicing tidak ikut diambil, dan indeks negatif menghitung dari belakang. String bersifat immutable: metode seperti upper() dan strip() menghasilkan string baru, bukan mengubah string lama.\nkata = \"Telkom\"\nprint(kata[0], kata[-1], kata[1:4])   # T m elk\n\nnama = \"  budi SANTOSO \"\nprint(nama.strip().title())            # Budi Santoso",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 10 · String"
+    ]
+  },
+  {
+    "objectID": "materi/w10.html#tebak-dulu",
+    "href": "materi/w10.html#tebak-dulu",
+    "title": "Minggu 10 · String",
+    "section": "Tebak Dulu",
+    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\ns = \"halo\"\ns.upper()\nprint(s)\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nHasilnya tetap halo. upper() menghasilkan string baru, tetapi hasilnya tidak disimpan ke mana pun. Tulis s = s.upper() untuk menyimpannya.",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 10 · String"
+    ]
+  },
+  {
+    "objectID": "materi/w10.html#bacaan",
+    "href": "materi/w10.html#bacaan",
+    "title": "Minggu 10 · String",
+    "section": "Bacaan",
+    "text": "Bacaan\n\nThink Python Ch. 8 - Strings and Regular Expressions",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 10 · String"
+    ]
+  },
+  {
+    "objectID": "materi/w12.html",
+    "href": "materi/w12.html",
+    "title": "Minggu 12 · Koleksi Data II: Dictionary & Set",
+    "section": "",
+    "text": "Minggu 12Lesson A: Dictionary: lookup dan pola penghitungLesson B: Pengelompokan, set, dan pemilihan struktur data",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 12 · Koleksi Data II: Dictionary & Set"
+    ]
+  },
+  {
+    "objectID": "materi/w12.html#skill-yang-dinilai",
+    "href": "materi/w12.html#skill-yang-dinilai",
+    "title": "Minggu 12 · Koleksi Data II: Dictionary & Set",
+    "section": "Skill yang Dinilai",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU12.1\nTrace (T)\nMemprediksi hasil lookup, key yang tidak ada, dan iterasi dictionary\n\n\nU12.2\nWrite (W)\nMenulis pola penghitung/histogram dengan dictionary\n\n\nU12.3\nWrite (W)\nMengelompokkan atau membalik pasangan data dengan dictionary; memakai set untuk keunikan\n\n\nU12.4\nTransfer (X)\nMemilih struktur data (list, dict, atau set) untuk sebuah masalah dan memberi alasan biaya pencarian",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 12 · Koleksi Data II: Dictionary & Set"
+    ]
+  },
+  {
+    "objectID": "materi/w12.html#lesson",
+    "href": "materi/w12.html#lesson",
+    "title": "Minggu 12 · Koleksi Data II: Dictionary & Set",
+    "section": "Lesson",
+    "text": "Lesson\n\n\n\n\n\n\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nDictionary: lookup dan pola penghitung\nU12.1, U12.2\nW12-A\n\n\nB\nPengelompokan, set, dan pemilihan struktur data\nU12.3, U12.4\nW12-B",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 12 · Koleksi Data II: Dictionary & Set"
+    ]
+  },
+  {
+    "objectID": "materi/w12.html#konsep-kunci",
+    "href": "materi/w12.html#konsep-kunci",
+    "title": "Minggu 12 · Koleksi Data II: Dictionary & Set",
+    "section": "Konsep Kunci",
+    "text": "Konsep Kunci\nDictionary memetakan key ke value, sehingga data bisa diambil lewat namanya, bukan lewat posisinya. Key harus unik. Set menyimpan nilai unik, cocok untuk membuang duplikat.\nkata = \"data sains data bisnis data\".split()\nfrek = {}\nfor k in kata:\n    frek[k] = frek.get(k, 0) + 1\nprint(frek)        # {'data': 3, 'sains': 1, 'bisnis': 1}\nprint(set(kata))   # tiga kata unik",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 12 · Koleksi Data II: Dictionary & Set"
+    ]
+  },
+  {
+    "objectID": "materi/w12.html#tebak-dulu",
+    "href": "materi/w12.html#tebak-dulu",
+    "title": "Minggu 12 · Koleksi Data II: Dictionary & Set",
+    "section": "Tebak Dulu",
+    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\nstok = {\"apel\": 5}\nstok[\"jeruk\"] = 3\nstok[\"apel\"] = 7\nprint(len(stok), stok[\"apel\"])\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nHasilnya 2 7. Menetapkan key baru menambah entri, sedangkan menetapkan key yang sudah ada menimpa nilainya.",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 12 · Koleksi Data II: Dictionary & Set"
+    ]
+  },
+  {
+    "objectID": "materi/w12.html#bacaan",
+    "href": "materi/w12.html#bacaan",
+    "title": "Minggu 12 · Koleksi Data II: Dictionary & Set",
+    "section": "Bacaan",
+    "text": "Bacaan\n\nThink Python Ch. 10 - Dicitionaries",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 12 · Koleksi Data II: Dictionary & Set"
+    ]
+  },
+  {
+    "objectID": "materi/w07.html",
+    "href": "materi/w07.html",
+    "title": "Minggu 7 · Tutorial & Praktikum 1 · Gladi UTS",
+    "section": "",
+    "text": "Minggu 7Lesson A: Studio mini proyek terbimbingLesson B: Gladi UTS dan remedial",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 7 · Tutorial & Praktikum 1 · Gladi UTS"
+    ]
+  },
+  {
+    "objectID": "materi/w07.html#skill-yang-dinilai",
+    "href": "materi/w07.html#skill-yang-dinilai",
+    "title": "Minggu 7 · Tutorial & Praktikum 1 · Gladi UTS",
+    "section": "Skill yang Dinilai",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU7.1\nTransfer (X)\nMendekomposisi masalah kecil menjadi fungsi-fungsi dengan antarmuka yang jelas\n\n\nU7.2\nTransfer (X)\nMemilih dan menggabungkan pola yang tepat (counter, akumulator, guard, best-so-far)\n\n\nU7.3\nTransfer (X)\nMenguji dan menelusuri program sendiri untuk menemukan bug secara sistematis\n\n\nU7.4\nTransfer (X)\nMenyelesaikan soal bergaya UTS dalam batas waktu, tanpa bantuan dan tanpa AI",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 7 · Tutorial & Praktikum 1 · Gladi UTS"
+    ]
+  },
+  {
+    "objectID": "materi/w07.html#lesson",
+    "href": "materi/w07.html#lesson",
+    "title": "Minggu 7 · Tutorial & Praktikum 1 · Gladi UTS",
+    "section": "Lesson",
+    "text": "Lesson\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nStudio mini proyek terbimbing\nU7.1, U7.2, U7.3\nW07-A\n\n\nB\nGladi UTS dan remedial\nU7.4 + remedial U1-U6\nW07-B",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 7 · Tutorial & Praktikum 1 · Gladi UTS"
+    ]
+  },
+  {
+    "objectID": "materi/w07.html#yang-kamu-kerjakan",
+    "href": "materi/w07.html#yang-kamu-kerjakan",
+    "title": "Minggu 7 · Tutorial & Praktikum 1 · Gladi UTS",
+    "section": "Yang Kamu Kerjakan",
+    "text": "Yang Kamu Kerjakan\nLesson A. Kamu mengerjakan mini proyek terbimbing yang menggabungkan variabel, kondisional, fungsi, dan perulangan. Susun dulu rencana fungsinya sebelum mengetik kode. Di akhir lesson, tunjukkan programmu berjalan dan sebutkan pola yang dipakai di tiap fungsi.\nLesson B. Gladi UTS: satu soal bergaya UTS dikerjakan di SEB dengan batas waktu penuh, lalu dibahas bersama. Setelah itu jendela remedial dibuka.",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 7 · Tutorial & Praktikum 1 · Gladi UTS"
+    ]
+  },
+  {
+    "objectID": "materi/w07.html#bacaan",
+    "href": "materi/w07.html#bacaan",
+    "title": "Minggu 7 · Tutorial & Praktikum 1 · Gladi UTS",
+    "section": "Bacaan",
+    "text": "Bacaan\n\nModul Praktikum",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 7 · Tutorial & Praktikum 1 · Gladi UTS"
+    ]
+  },
+  {
+    "objectID": "materi/w03.html",
+    "href": "materi/w03.html",
+    "title": "Minggu 3 · Pernyataan Kondisional",
+    "section": "",
+    "text": "Minggu 3Lesson A: Ekspresi logika dan seleksiLesson B: Kondisi berantai, bersarang, dan guard",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 3 · Pernyataan Kondisional"
+    ]
+  },
+  {
+    "objectID": "materi/w03.html#skill-yang-dinilai",
+    "href": "materi/w03.html#skill-yang-dinilai",
+    "title": "Minggu 3 · Pernyataan Kondisional",
+    "section": "Skill yang Dinilai",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU3.1\nTrace (T)\nMengevaluasi ekspresi logika (and/or/not, operator relasional) untuk nilai masukan tertentu\n\n\nU3.2\nTrace (T)\nMenelusuri if/elif/else dan seleksi bersarang; menunjukkan cabang yang tidak pernah dijalankan\n\n\nU3.3\nWrite (W)\nMenulis program dengan kondisi berantai sesuai spesifikasi\n\n\nU3.4\nWrite (W)\nMenulis guard yang memvalidasi masukan sebelum data diproses\n\n\nU3.5\nTransfer (X)\nMemilih antara elif berantai dan if bersarang serta memberi alasannya",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 3 · Pernyataan Kondisional"
+    ]
+  },
+  {
+    "objectID": "materi/w03.html#lesson",
+    "href": "materi/w03.html#lesson",
+    "title": "Minggu 3 · Pernyataan Kondisional",
+    "section": "Lesson",
+    "text": "Lesson\n\n\n\n\n\n\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nEkspresi logika dan seleksi\nU3.1, U3.2\nW03-A\n\n\nB\nKondisi berantai, bersarang, dan guard\nU3.3, U3.4, U3.5\nW03-B",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 3 · Pernyataan Kondisional"
+    ]
+  },
+  {
+    "objectID": "materi/w03.html#konsep-kunci",
+    "href": "materi/w03.html#konsep-kunci",
+    "title": "Minggu 3 · Pernyataan Kondisional",
+    "section": "Konsep Kunci",
+    "text": "Konsep Kunci\nPada rangkaian if/elif/else, Python memeriksa kondisi dari atas dan hanya menjalankan cabang pertama yang bernilai True, sehingga urutan kondisi menentukan hasil. Guard memeriksa masukan lebih dulu, baru memprosesnya.\nnilai = int(input(\"Nilai: \"))\nif nilai &lt; 0 or nilai &gt; 100:      # guard\n    print(\"Nilai tidak sah\")\nelif nilai &gt;= 80:\n    print(\"A\")\nelif nilai &gt;= 70:\n    print(\"B\")\nelse:\n    print(\"C\")",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 3 · Pernyataan Kondisional"
+    ]
+  },
+  {
+    "objectID": "materi/w03.html#tebak-dulu",
+    "href": "materi/w03.html#tebak-dulu",
+    "title": "Minggu 3 · Pernyataan Kondisional",
+    "section": "Tebak Dulu",
+    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\nn = 95\nif n &gt;= 60:\n    print(\"Lulus\")\nelif n &gt;= 90:\n    print(\"Istimewa\")\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nHanya Lulus yang tercetak. Kondisi pertama sudah True, sehingga cabang elif tidak pernah diperiksa. Kondisi yang lebih spesifik harus diletakkan lebih dulu.",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 3 · Pernyataan Kondisional"
+    ]
+  },
+  {
+    "objectID": "materi/w03.html#bacaan",
+    "href": "materi/w03.html#bacaan",
+    "title": "Minggu 3 · Pernyataan Kondisional",
+    "section": "Bacaan",
+    "text": "Bacaan\n\nThink Python Ch. 5 - Conditionals and Recursion",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 3 · Pernyataan Kondisional"
+    ]
+  },
+  {
+    "objectID": "materi/w16.html",
+    "href": "materi/w16.html",
+    "title": "Minggu 16 · UAS",
+    "section": "",
+    "text": "Minggu 16UASLive coding terawasi",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 16 · UAS"
+    ]
+  },
+  {
+    "objectID": "materi/w16.html#tentang-uas",
+    "href": "materi/w16.html#tentang-uas",
+    "title": "Minggu 16 · UAS",
+    "section": "Tentang UAS",
+    "text": "Tentang UAS\nPemeriksaan mastery kumulatif untuk seluruh skill inti mata kuliah. Tidak ada skill baru. UAS memeriksa ulang seluruh skill inti U1.1–U13.5 dalam bentuk soal paralel, dan skill yang tuntas di UAS dihitung masuk ke skill ledger. Jadi UAS juga berfungsi sebagai kesempatan remedial resmi.",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 16 · UAS"
+    ]
+  },
+  {
+    "objectID": "materi/w16.html#aturan",
+    "href": "materi/w16.html#aturan",
+    "title": "Minggu 16 · UAS",
+    "section": "Aturan",
+    "text": "Aturan\n\nDikerjakan di Moodle melalui Safe Exam Browser (SEB), pada sesi kelas.\nAda batas waktu; waktunya diumumkan di Moodle.\nTanpa AI dan tanpa catatan.",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 16 · UAS"
+    ]
+  },
+  {
+    "objectID": "materi/w16.html#komposisi-soal",
+    "href": "materi/w16.html#komposisi-soal",
+    "title": "Minggu 16 · UAS",
+    "section": "Komposisi Soal",
+    "text": "Komposisi Soal\n\n\n\nJenis soal\nSkill\nPorsi\n\n\n\n\nTrace / prediksi\nT\n30%\n\n\nMenulis kode\nW\n45%\n\n\nMemilih, menjelaskan, dan debugging\nX\n25%\n\n\n\nMinimal satu soal wajib menggabungkan guard dengan akumulasi di dalam perulangan.",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 16 · UAS"
+    ]
+  },
+  {
+    "objectID": "materi/w16.html#persiapan",
+    "href": "materi/w16.html#persiapan",
+    "title": "Minggu 16 · UAS",
+    "section": "Persiapan",
+    "text": "Persiapan\n\nPeriksa skill ledger dan fokus pada skill yang belum tuntas.\nUlangi soal Tebak Dulu di setiap halaman materi tanpa menjalankan kodenya.\nLatih diri menulis kode tanpa bantuan autocomplete atau AI.",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 16 · UAS"
+    ]
+  },
+  {
+    "objectID": "materi/w15.html",
+    "href": "materi/w15.html",
+    "title": "Minggu 15 · Tutorial & Praktikum 3 · Gladi UAS",
+    "section": "",
+    "text": "Minggu 15Lesson A: Studio mini proyek terbimbing 3Lesson B: Gladi UAS dan remedial terakhir",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 15 · Tutorial & Praktikum 3 · Gladi UAS"
+    ]
+  },
+  {
+    "objectID": "materi/w15.html#skill-yang-dinilai",
+    "href": "materi/w15.html#skill-yang-dinilai",
+    "title": "Minggu 15 · Tutorial & Praktikum 3 · Gladi UAS",
+    "section": "Skill yang Dinilai",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU15.1\nTransfer (X)\nMenyelesaikan masalah terintegrasi yang mencakup kondisional, fungsi, string, koleksi data, dan file\n\n\nU15.2\nTransfer (X)\nMengerjakan simulasi UAS di SEB, terbatas waktu, tanpa bantuan dan tanpa AI\n\n\nU15.3\nTransfer (X)\nMengidentifikasi skill yang belum tuntas dari ledger dan menutupnya di jendela remedial terakhir",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 15 · Tutorial & Praktikum 3 · Gladi UAS"
+    ]
+  },
+  {
+    "objectID": "materi/w15.html#lesson",
+    "href": "materi/w15.html#lesson",
+    "title": "Minggu 15 · Tutorial & Praktikum 3 · Gladi UAS",
+    "section": "Lesson",
+    "text": "Lesson\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nStudio mini proyek terbimbing 3\nU15.1\nW15-A\n\n\nB\nGladi UAS dan remedial terakhir\nU15.2, U15.3\nW15-B",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 15 · Tutorial & Praktikum 3 · Gladi UAS"
+    ]
+  },
+  {
+    "objectID": "materi/w15.html#yang-kamu-kerjakan",
+    "href": "materi/w15.html#yang-kamu-kerjakan",
+    "title": "Minggu 15 · Tutorial & Praktikum 3 · Gladi UAS",
+    "section": "Yang Kamu Kerjakan",
+    "text": "Yang Kamu Kerjakan\nLesson A. Mini proyek terintegrasi dengan data nyata (CSV) yang mencakup seluruh materi. Petakan masalahnya ke pola yang sudah kamu kenal: guard, akumulator, pencacah, dan best-so-far. Program harus memenuhi seluruh spesifikasi.\nLesson B. Tinjau skill ledger-mu, lalu ikuti gladi UAS penuh di SEB dengan batas waktu sebenarnya. Setelah pembahasan, jendela remedial terakhir dibuka. Setelah minggu ini ledger ditutup, kecuali untuk skill yang masih bisa dituntaskan lewat UAS.",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 15 · Tutorial & Praktikum 3 · Gladi UAS"
+    ]
+  },
+  {
+    "objectID": "materi/w15.html#bacaan",
+    "href": "materi/w15.html#bacaan",
+    "title": "Minggu 15 · Tutorial & Praktikum 3 · Gladi UAS",
+    "section": "Bacaan",
+    "text": "Bacaan\n\nModul Praktikum",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 15 · Tutorial & Praktikum 3 · Gladi UAS"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Tim Pengajar",
+    "section": "",
+    "text": "Mata kuliah ini diampu secara team teaching oleh:\n\n\n\nNo\nNama\nPeran\n\n\n\n\n1\nMuhammad Azani Hasibuan\nKoordinator\n\n\n2\nEkky Novriza Alam\nDosen\n\n\n3\nTaufik Nur Adi, Ph.D.\nDosen\n\n\n4\nFaqih Hamami\nDosen\n\n\n5\nAhmad Musnansyah\nDosen\n\n\n6\nAlaric Rasendriya Aniko\nDosen\n\n\n7\nElvira Lailatuth Thohiroh\nDosen\n\n\n8\nZalina Azzahra\nDosen\n\n\n9\nArida Ferti Syafiandini, Ph.D.\nDosen\n\n\n\nPembagian dosen per kelas dan kontaknya diumumkan di Moodle."
+  },
+  {
+    "objectID": "about.html#tim-dosen",
+    "href": "about.html#tim-dosen",
+    "title": "Tim Pengajar",
+    "section": "",
+    "text": "Mata kuliah ini diampu secara team teaching oleh:\n\n\n\nNo\nNama\nPeran\n\n\n\n\n1\nMuhammad Azani Hasibuan\nKoordinator\n\n\n2\nEkky Novriza Alam\nDosen\n\n\n3\nTaufik Nur Adi, Ph.D.\nDosen\n\n\n4\nFaqih Hamami\nDosen\n\n\n5\nAhmad Musnansyah\nDosen\n\n\n6\nAlaric Rasendriya Aniko\nDosen\n\n\n7\nElvira Lailatuth Thohiroh\nDosen\n\n\n8\nZalina Azzahra\nDosen\n\n\n9\nArida Ferti Syafiandini, Ph.D.\nDosen\n\n\n\nPembagian dosen per kelas dan kontaknya diumumkan di Moodle."
+  },
+  {
+    "objectID": "about.html#asisten-praktikum",
+    "href": "about.html#asisten-praktikum",
+    "title": "Tim Pengajar",
+    "section": "Asisten Praktikum",
+    "text": "Asisten Praktikum\n\n\n\nNama\nKelas\n\n\n\n\nNama Asisten\nSI-XX-01"
+  },
+  {
+    "objectID": "about.html#konsultasi",
+    "href": "about.html#konsultasi",
+    "title": "Tim Pengajar",
+    "section": "Konsultasi",
+    "text": "Konsultasi\nJam konsultasi dan tautan pendaftarannya diumumkan di Moodle. Untuk pertanyaan materi, gunakan forum Moodle terlebih dahulu."
+  },
+  {
+    "objectID": "about.html#tentang-situs-ini",
+    "href": "about.html#tentang-situs-ini",
+    "title": "Tim Pengajar",
+    "section": "Tentang Situs Ini",
+    "text": "Tentang Situs Ini\nSitus ini dibuat dengan Quarto dan menjadi pendamping Moodle. Moodle tetap menjadi sumber resmi untuk pengumpulan tugas, nilai, dan pengumuman."
+  },
+  {
+    "objectID": "strategi.html",
+    "href": "strategi.html",
+    "title": "Strategi Belajar",
+    "section": "",
+    "text": "Pemrograman adalah keterampilan, bukan bakat bawaan. Seperti bermain musik atau olahraga, pemrograman tumbuh dari latihan yang tepat, bukan dari membaca atau menonton saja. Halaman ini berisi mindset dan strategi yang terbukti membantu, beserta tautan video dan artikel untuk mendalaminya."
+  },
+  {
+    "objectID": "strategi.html#mindset",
+    "href": "strategi.html#mindset",
+    "title": "Strategi Belajar",
+    "section": "Mindset",
+    "text": "Mindset\n\nKemampuan tumbuh dengan latihan\nCarol Dweck menyebut ini growth mindset: keyakinan bahwa kemampuan bisa dikembangkan. Di mata kuliah ini, skill yang belum dikuasai berstatus belum tuntas, bukan “gagal”. Kata belum itu disengaja, karena kamu selalu punya kesempatan remedial untuk menuntaskannya.\n\n\n\n\n\n\n\nAlih-alih berpikir…\nCoba pikirkan…\n\n\n\n\n“Aku memang tidak berbakat coding.”\n“Aku belum menguasai ini. Latihan apa yang kubutuhkan?”\n\n\n“Temanku langsung paham, aku tidak.”\n“Setiap orang mulai dari titik berbeda. Yang penting aku maju dari titikku.”\n\n\n“Program error lagi, aku payah.”\n“Error ini memberi tahu sesuatu. Apa yang dikatakannya?”\n\n\n“Aku harus paham semuanya sekarang.”\n“Bingung itu tanda aku sedang belajar hal baru.”\n\n\n“Aku lihat jawabannya saja.”\n“Aku coba dulu 15 menit, baru minta petunjuk.”\n\n\n\n\n\nError adalah informasi, bukan vonis\nProgrammer profesional juga menghadapi error setiap hari. Bedanya, mereka membaca pesan error, bukan panik. Pesan error memberi tahu jenis masalahnya dan baris tempat masalah itu terjadi. Jika program berperilaku di luar dugaan, artinya ada yang keliru dalam bayanganmu tentang cara kerja program itu, dan itu kesempatan untuk memperbaikinya.\n\n\nProses lebih penting daripada kecepatan\nTidak ada yang menjadi programmer dalam semalam. Menguasai pemrograman butuh waktu bertahun-tahun, dan satu semester ini adalah fondasinya. Fokuslah pada apakah kamu lebih paham daripada minggu lalu, bukan pada seberapa cepat teman-temanmu menyelesaikan tugas.\n\n\nBertanya adalah keterampilan\nPertanyaan yang baik mempercepat bantuan. Sebelum bertanya ke teman, asisten, atau forum Moodle, siapkan tiga hal:\n\nApa yang kamu coba, beserta kodenya.\nApa yang kamu harapkan terjadi.\nApa yang sebenarnya terjadi, termasuk pesan error lengkapnya.\n\nSering kali, menuliskan ketiga hal ini saja sudah membuatmu menemukan jawabannya sendiri."
+  },
+  {
+    "objectID": "strategi.html#berpikir-komputasional",
+    "href": "strategi.html#berpikir-komputasional",
+    "title": "Strategi Belajar",
+    "section": "Berpikir Komputasional",
+    "text": "Berpikir Komputasional\nBerpikir komputasional (computational thinking) adalah cara memecahkan masalah sehingga solusinya bisa dijalankan oleh komputer. Ada empat pilar, dan semuanya kamu latih di mata kuliah ini:\n\n\n\n\n\n\n\n\nPilar\nArtinya\nDi Alpro\n\n\n\n\nDekomposisi\nMemecah masalah besar menjadi bagian-bagian kecil\nMemecah tugas menjadi beberapa fungsi (minggu 4, 7, 14)\n\n\nPengenalan pola\nMengenali kemiripan dengan masalah yang pernah diselesaikan\nKatalog pola: pencacah, akumulator, sentinel, guard, best-so-far\n\n\nAbstraksi\nMenyembunyikan detail yang tidak penting\nFungsi dengan nama dan docstring yang jelas\n\n\nAlgoritma\nMenyusun langkah-langkah yang tepat dan berurutan\nPseudocode sebelum kode (minggu 1, 5)\n\n\n\n\nLangkah menyelesaikan soal pemrograman\n\nPahami masalahnya. Tulis ulang soal dengan kalimatmu sendiri. Apa masukannya? Apa keluarannya?\nKerjakan satu contoh dengan tangan. Jika kamu tidak bisa menyelesaikannya secara manual, kamu belum bisa memerintahkan komputer untuk melakukannya.\nRencanakan dengan pseudocode. Pola apa yang cocok? Fungsi apa saja yang dibutuhkan?\nTulis sedikit, uji, lanjutkan. Jangan menulis 30 baris sekaligus. Tulis beberapa baris, jalankan, pastikan benar, baru tambah lagi.\nSederhanakan jika buntu. Tidak bisa mencari nilai terbesar ketiga? Selesaikan dulu masalah mencari nilai terbesar, lalu kembangkan.\nRefleksikan. Setelah selesai, tanyakan: pola apa yang kupakai? Bisakah kodenya lebih jelas?"
+  },
+  {
+    "objectID": "strategi.html#strategi-belajar-pemrograman",
+    "href": "strategi.html#strategi-belajar-pemrograman",
+    "title": "Strategi Belajar",
+    "section": "Strategi Belajar Pemrograman",
+    "text": "Strategi Belajar Pemrograman\n\n1. Tebak dulu, baru jalankan\nSebelum menjalankan kode, tulis prediksimu. Ketika prediksi meleset, di situlah kamu belajar paling banyak. Ini inti dari pola PRIMM yang kita pakai di kelas. Latih dengan bagian Tebak Dulu di setiap halaman Materi.\n\n\n2. Telusuri kode dengan tangan\nBuat trace table: satu kolom per variabel, satu baris per langkah. Cara ini melatih kemampuan membaca kode, yang berkembang lebih dulu daripada kemampuan menulis. Cek hasilnya dengan Python Tutor, yang menggambarkan nama dan panah persis seperti di kelas.\n\n\n3. Ketik ulang, jangan salin-tempel\nMengetik ulang contoh kode memaksamu memperhatikan setiap tanda baca. Lalu ubah kodenya: ganti angka, tambah kondisi, dan lihat apa yang terjadi. Mengubah kode yang sudah berjalan adalah jembatan menuju menulis kode sendiri.\n\n\n4. Uji ingatanmu, jangan hanya membaca ulang\nMembaca ulang catatan terasa produktif, tetapi hasilnya lemah. Lebih efektif: tutup catatan, lalu tulis ulang dari ingatan. Contohnya, tulis pola akumulator tanpa melihat contoh. Ini disebut retrieval practice.\n\n\n5. Beri jarak dan campur latihanmu\nBelajar 30 menit setiap hari lebih efektif daripada 4 jam semalam sebelum ujian (spaced practice). Campur juga jenis soalnya, misalnya soal while, for, dan if secara acak (interleaving), sehingga kamu terlatih memilih alat yang tepat, bukan hanya memakainya.\n\n\n6. Debug seperti ilmuwan\nJangan mengubah kode secara acak sambil berharap berhasil. Gunakan siklus hipotesis → uji → perbaiki:\n\nBaca pesan error dari bawah ke atas.\nTulis dugaanmu: “Menurutku total bernilai 0 karena…”\nUji dengan print() atau trace table.\nBaru ubah kodenya.\n\nMasih buntu? Jelaskan kodemu baris demi baris dengan suara keras, kepada teman atau bahkan kepada bebek karet (rubber duck debugging). Sering kali kesalahannya ketemu saat kamu menjelaskan.\n\n\n7. Jelaskan kepada orang lain\nJika kamu bisa menjelaskan cara kerja kode kepada teman, kamu benar-benar memahaminya. Inilah alasan skill X (Transfer) dinilai. Belajarlah berpasangan: satu orang menjelaskan, yang lain bertanya “kenapa?”.\n\n\n8. Pakai AI sebagai tutor, bukan penulis\nPada fase Elaborate, AI boleh membantumu, tetapi hanya sebagai tutor. Bandingkan dua prompt ini:\n\n\n\n\n\n\n\n✗ AI sebagai penulis\n✓ AI sebagai tutor\n\n\n\n\n“Buatkan program menghitung rata-rata nilai.”\n“Kodeku menghasilkan ZeroDivisionError di baris 7. Apa arti error ini? Jangan beri solusinya, beri petunjuk saja.”\n\n\n“Perbaiki kode ini.”\n“Aku menduga loop-ku tidak berhenti karena kondisinya. Apakah dugaanku masuk akal?”\n\n\n\nIngat: Evaluate, UTS, dan UAS dikerjakan tanpa AI. Kalau AI menulis kodemu selama latihan, kamu tidak sedang melatih dirimu untuk ujian. Lihat Kebijakan AI.\n\n\n9. Istirahat adalah bagian dari belajar\nOtak bekerja dalam dua mode: mode fokus saat kamu mengerjakan soal, dan mode santai (diffuse) saat kamu berjalan, mandi, atau tidur. Banyak soal yang buntu justru terpecahkan setelah istirahat. Jika sudah 30 menit terjebak, berhentilah sejenak."
+  },
+  {
+    "objectID": "strategi.html#waspadai-ilusi-belajar",
+    "href": "strategi.html#waspadai-ilusi-belajar",
+    "title": "Strategi Belajar",
+    "section": "Waspadai Ilusi Belajar",
+    "text": "Waspadai Ilusi Belajar\nBeberapa kegiatan terasa seperti belajar, tetapi hasilnya sedikit:\n\n\n\n\n\n\nPeringatanTerasa produktif, tetapi lemah\n\n\n\n\nMenonton video tutorial tanpa ikut mengetik kode.\nMembaca ulang slide dan catatan berkali-kali.\nMenyalin solusi teman atau AI, lalu merasa “oh, aku paham”.\nBelajar semalaman sebelum ujian.\n\n\n\n\n\n\n\n\n\nTipTerasa berat, tetapi efektif\n\n\n\n\nMenebak keluaran sebelum menjalankan kode.\nMenulis kode dari nol tanpa melihat contoh.\nMengerjakan ulang cek mastery yang belum tuntas.\nMenjelaskan kode kepada teman.\n\n\n\nAturan praktisnya: jika belajar terasa terlalu mudah, kemungkinan kamu tidak sedang belajar banyak."
+  },
+  {
+    "objectID": "strategi.html#rutinitas-mingguan",
+    "href": "strategi.html#rutinitas-mingguan",
+    "title": "Strategi Belajar",
+    "section": "Rutinitas Mingguan",
+    "text": "Rutinitas Mingguan\n\n\n\nKapan\nApa yang dilakukan\nWaktu\n\n\n\n\nSebelum kelas\nBaca sekilas bacaan minggu itu dan halaman Materi-nya\n20–30 menit\n\n\nSaat kelas\nTulis prediksi sebelum menjalankan kode; bertanya saat Explore\n200 menit\n\n\nHari yang sama\nCek skill ledger; pelajari ulang skill yang belum tuntas selagi masih segar\n20 menit\n\n\n2–3 hari kemudian\nTulis ulang contoh kode minggu itu dari ingatan\n30 menit\n\n\nAkhir pekan\nKerjakan soal Tebak Dulu dari minggu-minggu sebelumnya, dicampur\n30 menit\n\n\nAwal sesi berikutnya\nAmbil remedial untuk skill yang belum tuntas (20 menit pertama)\n20 menit"
+  },
+  {
+    "objectID": "strategi.html#video-bacaan",
+    "href": "strategi.html#video-bacaan",
+    "title": "Strategi Belajar",
+    "section": "Video & Bacaan",
+    "text": "Video & Bacaan\n\nMindset dan cara belajar\n\n\n\n\n\n\n\n\nSumber\nJenis\nIsi\n\n\n\n\nThe power of believing that you can improve · Carol Dweck (YouTube)\nVideo · EN\nGrowth mindset dan kekuatan kata “belum”\n\n\nLearning how to learn · Barbara Oakley, TEDx\nVideo · EN\nMode fokus dan mode santai, serta cara belajar hal yang sulit\n\n\nLearning How to Learn · Oakley & Sejnowski, Coursera\nKursus · EN, gratis\nChunking, ilusi belajar, prokrastinasi, teknik memori\n\n\nSix Strategies for Effective Learning · The Learning Scientists\nPoster · EN\nSpaced practice, retrieval, elaborasi, contoh konkret, dual coding, interleaving\n\n\nRetrieval Practice\nArtikel · EN\nMengapa menguji ingatan lebih efektif daripada membaca ulang\n\n\n\n\n\nBerpikir seperti programmer\n\n\n\n\n\n\n\n\nSumber\nJenis\nIsi\n\n\n\n\nHow to think like a programmer: lessons in problem solving · freeCodeCamp\nArtikel · EN\nMemahami masalah, merencanakan, memecah, dan menyederhanakan saat buntu\n\n\nComputational Thinking · OpenStax Introduction to Computer Science\nBuku terbuka · EN\nEmpat pilar berpikir komputasional\n\n\nPRIMM · Raspberry Pi Computing Education Research Centre\nArtikel · EN\nLatar belakang pendekatan Predict–Run–Investigate–Modify–Make\n\n\nA debugging manifesto · Julia Evans\nArtikel · EN\nPrinsip dan sikap saat men-debug\n\n\nRubber duck debugging · freeCodeCamp\nArtikel · EN\nMenemukan bug dengan menjelaskan kode baris demi baris\n\n\nTeach Yourself Programming in Ten Years · Peter Norvig\nEsai · EN\nMengapa menguasai pemrograman butuh waktu dan latihan\n\n\n\n\n\nBelajar Python lewat video\n\n\n\n\n\n\n\n\nSumber\nJenis\nIsi\n\n\n\n\nBelajar Python Bahasa Indonesia (Versi Baru) · Kelas Terbuka\nPlaylist · ID\nPython dasar dalam Bahasa Indonesia, per topik\n\n\nCS50’s Introduction to Programming with Python · Harvard CS50\nPlaylist · EN\nKuliah Python lengkap dari Harvard, dibagi per minggu\n\n\nCS50P: kursus lengkap dalam satu video · freeCodeCamp\nVideo · EN\nIsi yang sama dengan playlist CS50P, dalam satu video panjang\n\n\n\n\n\n\n\n\n\nCatatan\n\n\n\nVideo paling bermanfaat jika kamu ikut mengetik dan menebak sambil menonton. Jeda video sebelum kode dijalankan, lalu tebak hasilnya. Tools, buku utama, dan glosarium ada di halaman Sumber Belajar."
+  },
+  {
+    "objectID": "penilaian.html",
+    "href": "penilaian.html",
+    "title": "Penilaian",
+    "section": "",
+    "text": "Penilaian di mata kuliah ini berbasis mastery. Yang dinilai adalah apakah kamu sudah menguasai sebuah skill, bukan berapa kali kamu salah sebelum menguasainya. Karena itu, skill yang belum tuntas bisa dicoba ulang pada jendela remedial."
+  },
+  {
+    "objectID": "penilaian.html#prinsip",
+    "href": "penilaian.html#prinsip",
+    "title": "Penilaian",
+    "section": "",
+    "text": "Penilaian di mata kuliah ini berbasis mastery. Yang dinilai adalah apakah kamu sudah menguasai sebuah skill, bukan berapa kali kamu salah sebelum menguasainya. Karena itu, skill yang belum tuntas bisa dicoba ulang pada jendela remedial."
+  },
+  {
+    "objectID": "penilaian.html#komponen-penilaian",
+    "href": "penilaian.html#komponen-penilaian",
+    "title": "Penilaian",
+    "section": "Komponen Penilaian",
+    "text": "Komponen Penilaian\n\n\n\n\n\n\n\n\nKomponen\nKapan\nBentuk\n\n\n\n\nCek mastery (Evaluate)\nSetiap lesson\nSoal singkat individu di Moodle, per skill, tanpa AI\n\n\nTugas Elaborate\nSetiap lesson\nProgram hasil Modify → Make beserta prompt AI dan apa yang kamu ubah sesudahnya\n\n\nStudio mini proyek\nMinggu 7, 14, 15\nProgram berjalan, catatan debugging, dan penjelasan lisan\n\n\nUTS\nMinggu 8\nUjian live coding terawasi\n\n\nUAS\nMinggu 16\nUjian live coding terawasi\n\n\n\n\n\n\n\n\n\nCatatan\n\n\n\nBobot tiap komponen mengikuti RPS resmi mata kuliah dan diumumkan di Moodle pada awal semester."
+  },
+  {
+    "objectID": "penilaian.html#tiga-jenis-skill",
+    "href": "penilaian.html#tiga-jenis-skill",
+    "title": "Penilaian",
+    "section": "Tiga Jenis Skill",
+    "text": "Tiga Jenis Skill\nSetiap minggu memiliki 3–5 skill berkode U&lt;minggu&gt;.&lt;nomor&gt;, misalnya U2.1. Setiap skill termasuk salah satu dari tiga jenis:\n\n\n\n\n\n\n\n\nJenis\nArtinya\nKapan dianggap tuntas\n\n\n\n\nTrace\nMembaca dan menelusuri kode: memprediksi keluaran, membuat trace table, menggambar diagram keadaan, membaca pesan galat\nJawaban tepat\n\n\nWrite\nMenulis kode dari sebuah spesifikasi\nLolos seluruh test case tersembunyi dan memenuhi satu kriteria keterbacaan (nama bermakna atau docstring)\n\n\nX (Transfer)\nMemilih, menjelaskan, men-debug, atau menggeneralisasi, termasuk memberi alasan atas sebuah pilihan\nSesuai rubrik soal\n\n\n\nMembaca dan menulis kode dinilai terpisah karena kemampuan membaca kode berkembang lebih dulu. Jika hanya menulis yang dinilai, kesulitan memahami cara kerja program baru ketahuan saat ujian.\nDaftar skill lengkap ada di setiap halaman Materi."
+  },
+  {
+    "objectID": "penilaian.html#skill-ledger",
+    "href": "penilaian.html#skill-ledger",
+    "title": "Penilaian",
+    "section": "Skill Ledger",
+    "text": "Skill Ledger\nStatus setiap skill adalah tuntas atau belum tuntas. Nilai beberapa skill tidak dirata-ratakan. Semua status tercatat di skill ledger kamu di Moodle, dengan kode skill sebagai judul kolomnya. Ledger ditampilkan di akhir setiap sesi, jadi kamu selalu tahu skill mana yang masih terbuka.\nSetiap skill memiliki tiga bentuk soal paralel (A/B/C). Bentuk-bentuk ini berbeda konteksnya, bukan hanya angkanya, sehingga menghafal jawaban tidak akan membantu."
+  },
+  {
+    "objectID": "penilaian.html#ujian",
+    "href": "penilaian.html#ujian",
+    "title": "Penilaian",
+    "section": "Ujian",
+    "text": "Ujian\nUTS (minggu 8) dan UAS (minggu 16) adalah ujian live coding terawasi di Moodle melalui Safe Exam Browser (SEB), pada sesi kelas, dengan batas waktu, tanpa AI, dan tanpa catatan. Keduanya tidak memuat skill baru. Soal-soalnya adalah bentuk paralel dari skill yang sudah dipelajari, dan skill yang tuntas di ujian dihitung masuk ke ledger.\n\n\n\nJenis soal\nUTS\nUAS\n\n\n\n\nT · trace / prediksi\n40%\n30%\n\n\nW · menulis kode\n40%\n45%\n\n\nX · memilih, menjelaskan, dan debugging\n20%\n25%\n\n\nCakupan\nU1.1–U6.5\nU1.1–U13.5\n\n\n\nPada UAS, minimal satu soal menggabungkan guard dengan akumulasi di dalam perulangan."
+  },
+  {
+    "objectID": "penilaian.html#remedial",
+    "href": "penilaian.html#remedial",
+    "title": "Penilaian",
+    "section": "Remedial",
+    "text": "Remedial\nSkill yang belum tuntas dapat diambil ulang dengan bentuk soal paralel pada:\n\n20 menit pertama sesi berikutnya;\njendela remedial minggu 7 untuk skill U1–U6;\njendela remedial minggu 14 untuk skill U9–U13;\njendela remedial minggu 15, yaitu jendela terakhir, untuk seluruh skill U1.1–U13.5.\n\nSetiap skill dapat dicoba paling banyak tiga kali secara tertulis. Setelah itu, pemeriksaan dilakukan secara lisan. UTS dan UAS juga berfungsi sebagai kesempatan remedial. Setelah minggu 15 ledger ditutup, kecuali untuk skill yang masih bisa dituntaskan lewat UAS.\n\n\n\n\n\n\nTipStrategi\n\n\n\nJangan menunggu jendela remedial. Kalau cek mastery belum tuntas, pelajari lagi hari itu juga selagi materinya masih segar, lalu ambil ulang di awal sesi berikutnya."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Algoritma & Pemrograman",
+    "section": "",
+    "text": "S1 Sistem Informasi · Telkom University\n\n\nMata kuliah ini melatih kamu berpikir seperti programmer: memecah masalah menjadi langkah-langkah yang jelas, lalu menuliskannya sebagai program Python yang benar, terbaca, dan teruji.\nLihat Jadwal Mulai dari Minggu 1"
+  },
+  {
+    "objectID": "index.html#mulai-dari-sini",
+    "href": "index.html#mulai-dari-sini",
+    "title": "Algoritma & Pemrograman",
+    "section": "Mulai dari sini",
+    "text": "Mulai dari sini\n\nSilabusDeskripsi, capaian pembelajaran, dan kebijakan kelas. JadwalTopik per minggu, ujian, dan jendela remedial. MateriRingkasan, contoh kode, dan bacaan tiap minggu. PenilaianMastery per skill, UTS, UAS, dan remedial. Sumber BelajarTools, buku, dan glosarium EN–ID. Strategi BelajarMindset dan cara belajar pemrograman yang efektif."
+  },
+  {
+    "objectID": "index.html#bagaimana-satu-pertemuan-berjalan",
+    "href": "index.html#bagaimana-satu-pertemuan-berjalan",
+    "title": "Algoritma & Pemrograman",
+    "section": "Bagaimana satu pertemuan berjalan",
+    "text": "Bagaimana satu pertemuan berjalan\nSetiap pertemuan 200 menit berisi dua lesson (A dan B). Masing-masing lesson adalah satu siklus 5E selama 90 menit, dengan istirahat 15 menit di antaranya.\n\n\nEngage10’ · tebak dulu\n\n\nExplore25’ · jalankan & selidiki kode\n\n\nExplain20’ · konsep & live coding\n\n\nElaborate25’ · modifikasi & buat\n\n\nEvaluate10’ · cek mastery\n\n\nKamu akan mencoba kode sebelum diberi penjelasan. Kedengarannya terbalik, tetapi justru di situ belajarnya: kamu menebak apa yang dilakukan program (Predict), menjalankannya (Run), menyelidiki kenapa hasilnya begitu (Investigate), mengubahnya (Modify), lalu membuat versimu sendiri (Make). Pola ini disebut PRIMM.\n\n\n\n\n\n\nPentingKebijakan AI\n\n\n\nAI (ChatGPT, Copilot, Gemini, dll.) hanya boleh dipakai pada fase Elaborate, sebagai tutor, dan prompt yang kamu pakai wajib dikumpulkan. Pada fase lain, termasuk ujian, AI tidak boleh digunakan. Status AI selalu tampil di slide. Lihat detailnya di Silabus."
+  },
+  {
+    "objectID": "index.html#pengumuman",
+    "href": "index.html#pengumuman",
+    "title": "Algoritma & Pemrograman",
+    "section": "Pengumuman",
+    "text": "Pengumuman\n\n\n\n\n\n\nCatatanSelamat datang!\n\n\n\n\n\nSebelum pertemuan pertama, pastikan kamu bisa masuk ke Moodle dan membuka Google Colab dengan akun SSO Telkom University. Panduan instalasi ada di Sumber Belajar."
+  },
+  {
+    "objectID": "materi/w01.html",
+    "href": "materi/w01.html",
+    "title": "Minggu 1 · Pengenalan Alpro & Berpikir Komputasional",
+    "section": "",
+    "text": "Minggu 1Lesson A: Dari masalah ke algoritmaLesson B: Dari algoritma ke program Python",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 1 · Pengenalan Alpro & Berpikir Komputasional"
+    ]
+  },
+  {
+    "objectID": "materi/w01.html#skill-yang-dinilai",
+    "href": "materi/w01.html#skill-yang-dinilai",
+    "title": "Minggu 1 · Pengenalan Alpro & Berpikir Komputasional",
+    "section": "Skill yang Dinilai",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU1.1\nTrace (T)\nMenelusuri algoritma sederhana langkah demi langkah dan menyatakan hasil akhirnya\n\n\nU1.2\nTrace (T)\nMenghitung nilai ekspresi aritmetika secara manual, termasuk urutan operator dan beda / dengan //\n\n\nU1.3\nTrace (T)\nMengklasifikasi galat sebagai syntax, runtime, atau semantic error, dan menunjuk barisnya\n\n\nU1.4\nWrite (W)\nMenulis dan menjalankan program pendek (ekspresi + print) di notebook\n\n\nU1.5\nTransfer (X)\nMenjelaskan dengan kalimat sendiri apa yang dikerjakan sebuah program pendek",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 1 · Pengenalan Alpro & Berpikir Komputasional"
+    ]
+  },
+  {
+    "objectID": "materi/w01.html#lesson",
+    "href": "materi/w01.html#lesson",
+    "title": "Minggu 1 · Pengenalan Alpro & Berpikir Komputasional",
+    "section": "Lesson",
+    "text": "Lesson\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nDari masalah ke algoritma\nU1.1, U1.5\nW01-A\n\n\nB\nDari algoritma ke program Python\nU1.2, U1.3, U1.4\nW01-B",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 1 · Pengenalan Alpro & Berpikir Komputasional"
+    ]
+  },
+  {
+    "objectID": "materi/w01.html#konsep-kunci",
+    "href": "materi/w01.html#konsep-kunci",
+    "title": "Minggu 1 · Pengenalan Alpro & Berpikir Komputasional",
+    "section": "Konsep Kunci",
+    "text": "Konsep Kunci\nAlgoritma adalah urutan langkah yang jelas dan tidak ambigu untuk menyelesaikan masalah. Program adalah algoritma yang ditulis dalam bahasa formal, dan Python menjalankannya baris demi baris, dari atas ke bawah. Jika ada yang salah, galatnya termasuk salah satu dari tiga jenis: syntax error, runtime error, atau semantic error.\nprint(\"Halo, Sistem Informasi!\")\nprint(2 + 3 * 4)   # 14: perkalian dikerjakan lebih dulu\nprint(10 / 4)      # 2.5\nprint(10 // 4)     # 2",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 1 · Pengenalan Alpro & Berpikir Komputasional"
+    ]
+  },
+  {
+    "objectID": "materi/w01.html#tebak-dulu",
+    "href": "materi/w01.html#tebak-dulu",
+    "title": "Minggu 1 · Pengenalan Alpro & Berpikir Komputasional",
+    "section": "Tebak Dulu",
+    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\nprint(\"1 + 2\")\nprint(1 + 2)\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nBaris pertama mencetak 1 + 2 apa adanya karena berada di dalam tanda kutip (string). Baris kedua mencetak 3 karena Python menghitung ekspresinya.",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 1 · Pengenalan Alpro & Berpikir Komputasional"
+    ]
+  },
+  {
+    "objectID": "materi/w01.html#bacaan",
+    "href": "materi/w01.html#bacaan",
+    "title": "Minggu 1 · Pengenalan Alpro & Berpikir Komputasional",
+    "section": "Bacaan",
+    "text": "Bacaan\n\nThink Python Ch. 1 - Programming as a way of thinking",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 1 · Pengenalan Alpro & Berpikir Komputasional"
+    ]
+  },
+  {
+    "objectID": "materi/w14.html",
+    "href": "materi/w14.html",
+    "title": "Minggu 14 · Tutorial & Praktikum 2",
+    "section": "",
+    "text": "Minggu 14Lesson A: Studio mini proyek terbimbing 2Lesson B: Penjelasan lisan dan remedial",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 14 · Tutorial & Praktikum 2"
+    ]
+  },
+  {
+    "objectID": "materi/w14.html#skill-yang-dinilai",
+    "href": "materi/w14.html#skill-yang-dinilai",
+    "title": "Minggu 14 · Tutorial & Praktikum 2",
+    "section": "Skill yang Dinilai",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU14.1\nTransfer (X)\nMendekomposisi masalah menengah menjadi fungsi-fungsi dengan antarmuka yang jelas\n\n\nU14.2\nTransfer (X)\nMemilih struktur data dan pola yang sesuai serta memberi alasannya\n\n\nU14.3\nTransfer (X)\nMelakukan debugging sistematis: hipotesis - uji - perbaiki, bukan menebak\n\n\nU14.4\nTransfer (X)\nMenjelaskan program buatan sendiri secara lisan tanpa catatan",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 14 · Tutorial & Praktikum 2"
+    ]
+  },
+  {
+    "objectID": "materi/w14.html#lesson",
+    "href": "materi/w14.html#lesson",
+    "title": "Minggu 14 · Tutorial & Praktikum 2",
+    "section": "Lesson",
+    "text": "Lesson\n\n\n\n\n\n\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nStudio mini proyek terbimbing 2\nU14.1, U14.2\nW14-A\n\n\nB\nPenjelasan lisan dan remedial\nU14.4 + remedial U9-U13\nW14-B",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 14 · Tutorial & Praktikum 2"
+    ]
+  },
+  {
+    "objectID": "materi/w14.html#yang-kamu-kerjakan",
+    "href": "materi/w14.html#yang-kamu-kerjakan",
+    "title": "Minggu 14 · Tutorial & Praktikum 2",
+    "section": "Yang Kamu Kerjakan",
+    "text": "Yang Kamu Kerjakan\nLesson A. Mini proyek terbimbing kedua: fungsi void dan ber-return, string, dan file. Tulis rencana fungsi dan pilihan struktur datamu sebelum mengetik kode. Setiap bug ditangani dengan hipotesis tertulis sebelum kode diubah. Kumpulkan program yang berjalan beserta catatan debugging-nya.\nLesson B. Pemeriksaan lisan singkat: kamu menunjukkan satu fungsi, menjelaskan cara kerjanya tanpa catatan, lalu mengubahnya sesuai permintaan dosen. Setelah itu jendela remedial dibuka.",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 14 · Tutorial & Praktikum 2"
+    ]
+  },
+  {
+    "objectID": "materi/w14.html#bacaan",
+    "href": "materi/w14.html#bacaan",
+    "title": "Minggu 14 · Tutorial & Praktikum 2",
+    "section": "Bacaan",
+    "text": "Bacaan\n\nModul Praktikum",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 14 · Tutorial & Praktikum 2"
+    ]
+  },
+  {
+    "objectID": "materi/w02.html",
+    "href": "materi/w02.html",
+    "title": "Minggu 2 · Variabel, Tipe Data, Operator & Ekspresi",
+    "section": "",
+    "text": "Minggu 2Lesson A: Variabel dan keadaan (state)Lesson B: Tipe data, operator, dan masukan",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 2 · Variabel, Tipe Data, Operator & Ekspresi"
+    ]
+  },
+  {
+    "objectID": "materi/w02.html#skill-yang-dinilai",
+    "href": "materi/w02.html#skill-yang-dinilai",
+    "title": "Minggu 2 · Variabel, Tipe Data, Operator & Ekspresi",
+    "section": "Skill yang Dinilai",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU2.1\nTrace (T)\nMembuat trace table untuk urutan penugasan dan menyatakan nilai akhir tiap variabel\n\n\nU2.2\nTrace (T)\nMemprediksi keluaran print() dan membedakan ekspresi dengan pernyataan (statement)\n\n\nU2.3\nTrace (T)\nMenentukan tipe hasil operasi campuran dan hasil konversi tipe int(), float(), str()\n\n\nU2.4\nWrite (W)\nMenulis program yang membaca input(), mengonversi tipe, menghitung, dan menampilkan hasil\n\n\nU2.5\nTransfer (X)\nMenemukan dan memperbaiki bug akibat urutan penugasan atau pemakaian ulang nama variabel",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 2 · Variabel, Tipe Data, Operator & Ekspresi"
+    ]
+  },
+  {
+    "objectID": "materi/w02.html#lesson",
+    "href": "materi/w02.html#lesson",
+    "title": "Minggu 2 · Variabel, Tipe Data, Operator & Ekspresi",
+    "section": "Lesson",
+    "text": "Lesson\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nVariabel dan keadaan (state)\nU2.1, U2.2\nW02-A\n\n\nB\nTipe data, operator, dan masukan\nU2.3, U2.4, U2.5\nW02-B",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 2 · Variabel, Tipe Data, Operator & Ekspresi"
+    ]
+  },
+  {
+    "objectID": "materi/w02.html#konsep-kunci",
+    "href": "materi/w02.html#konsep-kunci",
+    "title": "Minggu 2 · Variabel, Tipe Data, Operator & Ekspresi",
+    "section": "Konsep Kunci",
+    "text": "Konsep Kunci\nVariabel adalah nama yang menunjuk ke sebuah nilai, bukan kotak yang berisi nilai. Penugasan x = x + 1 bukan persamaan: Python menghitung ruas kanan dulu, lalu memindahkan panah x ke nilai yang baru. Perhatikan juga bahwa input() selalu menghasilkan string.\nharga = int(input(\"Harga: \"))\njumlah = int(input(\"Jumlah: \"))\ntotal = harga * jumlah\nprint(f\"Total bayar: {total}\")",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 2 · Variabel, Tipe Data, Operator & Ekspresi"
+    ]
+  },
+  {
+    "objectID": "materi/w02.html#tebak-dulu",
+    "href": "materi/w02.html#tebak-dulu",
+    "title": "Minggu 2 · Variabel, Tipe Data, Operator & Ekspresi",
+    "section": "Tebak Dulu",
+    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\na = 3\nb = a\na = 10\nprint(b)\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nHasilnya 3. b = a membuat b menunjuk ke nilai yang sama dengan a saat itu, yaitu 3. Ketika a dipindahkan ke 10, panah b tidak ikut berpindah.",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 2 · Variabel, Tipe Data, Operator & Ekspresi"
+    ]
+  },
+  {
+    "objectID": "materi/w02.html#bacaan",
+    "href": "materi/w02.html#bacaan",
+    "title": "Minggu 2 · Variabel, Tipe Data, Operator & Ekspresi",
+    "section": "Bacaan",
+    "text": "Bacaan\n\nThink Python Ch. 2 - Variables and Statements",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 2 · Variabel, Tipe Data, Operator & Ekspresi"
+    ]
+  },
+  {
+    "objectID": "materi/w13.html",
+    "href": "materi/w13.html",
+    "title": "Minggu 13 · Data Files",
+    "section": "",
+    "text": "Minggu 13Lesson A: Membaca dan menulis file teksLesson B: CSV dan pipeline analisis teks",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 13 · Data Files"
+    ]
+  },
+  {
+    "objectID": "materi/w13.html#skill-yang-dinilai",
+    "href": "materi/w13.html#skill-yang-dinilai",
+    "title": "Minggu 13 · Data Files",
+    "section": "Skill yang Dinilai",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU13.1\nWrite (W)\nMembaca file teks baris per baris dan memprosesnya\n\n\nU13.2\nWrite (W)\nMenulis hasil ke file teks dan file CSV\n\n\nU13.3\nWrite (W)\nMembaca file CSV menjadi list atau dictionary record\n\n\nU13.4\nTransfer (X)\nMenangani galat file dengan try/except agar program gagal dengan aman\n\n\nU13.5\nTransfer (X)\nMerangkai pipeline: baca file - olah dengan list/dict - tulis hasil",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 13 · Data Files"
+    ]
+  },
+  {
+    "objectID": "materi/w13.html#lesson",
+    "href": "materi/w13.html#lesson",
+    "title": "Minggu 13 · Data Files",
+    "section": "Lesson",
+    "text": "Lesson\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nMembaca dan menulis file teks\nU13.1, U13.2, U13.4\nW13-A\n\n\nB\nCSV dan pipeline analisis teks\nU13.3, U13.5\nW13-B",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 13 · Data Files"
+    ]
+  },
+  {
+    "objectID": "materi/w13.html#konsep-kunci",
+    "href": "materi/w13.html#konsep-kunci",
+    "title": "Minggu 13 · Data Files",
+    "section": "Konsep Kunci",
+    "text": "Konsep Kunci\nwith open(...) menutup file secara otomatis setelah bloknya selesai. Mode \"w\" menghapus isi lama, sedangkan \"a\" menambahkan di akhir. Bungkus operasi file dengan try/except agar program gagal dengan aman.\ntry:\n    with open(\"nilai.txt\") as f:\n        for baris in f:\n            print(baris.strip())\nexcept FileNotFoundError:\n    print(\"File nilai.txt tidak ditemukan.\")",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 13 · Data Files"
+    ]
+  },
+  {
+    "objectID": "materi/w13.html#tebak-dulu",
+    "href": "materi/w13.html#tebak-dulu",
+    "title": "Minggu 13 · Data Files",
+    "section": "Tebak Dulu",
+    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\ntry:\n    x = int(\"tiga\")\n    print(\"A\")\nexcept ValueError:\n    print(\"B\")\nprint(\"C\")\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nTercetak B lalu C. int(\"tiga\") memicu ValueError, sehingga print(\"A\") dilewati dan eksekusi pindah ke blok except.",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 13 · Data Files"
+    ]
+  },
+  {
+    "objectID": "materi/w13.html#bacaan",
+    "href": "materi/w13.html#bacaan",
+    "title": "Minggu 13 · Data Files",
+    "section": "Bacaan",
+    "text": "Bacaan\n\nThink Python Ch. 12 - Text Analysis & Generation\nThink Python Ch. 13 - Files & Database",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 13 · Data Files"
+    ]
+  },
+  {
+    "objectID": "materi/w06.html",
+    "href": "materi/w06.html",
+    "title": "Minggu 6 · Perulangan II: for",
+    "section": "",
+    "text": "Minggu 6Lesson A: for, range, dan pola dasarLesson B: Menggabungkan pola: guard + akumulasi + bersarang",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 6 · Perulangan II: for"
+    ]
+  },
+  {
+    "objectID": "materi/w06.html#skill-yang-dinilai",
+    "href": "materi/w06.html#skill-yang-dinilai",
+    "title": "Minggu 6 · Perulangan II: for",
+    "section": "Skill yang Dinilai",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU6.1\nTrace (T)\nMenelusuri for dengan range() dan menyatakan jumlah iterasinya\n\n\nU6.2\nWrite (W)\nMenulis pola akumulator, pencacah bersyarat, dan nilai ekstrem (best-so-far) dengan for\n\n\nU6.3\nWrite (W)\nMenggabungkan guard (validasi data) di dalam perulangan akumulasi\n\n\nU6.4\nTransfer (X)\nMengubah while menjadi for dan sebaliknya, serta memilih yang sesuai beserta alasannya\n\n\nU6.5\nTransfer (X)\nMenyusun dan menelusuri perulangan bersarang sederhana",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 6 · Perulangan II: for"
+    ]
+  },
+  {
+    "objectID": "materi/w06.html#lesson",
+    "href": "materi/w06.html#lesson",
+    "title": "Minggu 6 · Perulangan II: for",
+    "section": "Lesson",
+    "text": "Lesson\n\n\n\n\n\n\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nfor, range, dan pola dasar\nU6.1, U6.2\nW06-A\n\n\nB\nMenggabungkan pola: guard + akumulasi + bersarang\nU6.3, U6.4, U6.5\nW06-B",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 6 · Perulangan II: for"
+    ]
+  },
+  {
+    "objectID": "materi/w06.html#konsep-kunci",
+    "href": "materi/w06.html#konsep-kunci",
+    "title": "Minggu 6 · Perulangan II: for",
+    "section": "Konsep Kunci",
+    "text": "Konsep Kunci\nrange(a, b) menghasilkan bilangan dari a sampai sebelum b. Titik paling rawan minggu ini adalah menggabungkan guard dengan akumulator di dalam satu perulangan: data yang tidak sah harus dilewati sebelum ikut dihitung.\ntotal = 0\nbanyak = 0\nfor n in [80, -1, 95, 70]:\n    if 0 &lt;= n &lt;= 100:        # guard\n        total += n           # akumulator\n        banyak += 1          # pencacah\nprint(total / banyak)",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 6 · Perulangan II: for"
+    ]
+  },
+  {
+    "objectID": "materi/w06.html#tebak-dulu",
+    "href": "materi/w06.html#tebak-dulu",
+    "title": "Minggu 6 · Perulangan II: for",
+    "section": "Tebak Dulu",
+    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\nfor i in range(2, 10, 3):\n    print(i)\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nTercetak 2, 5, 8. Dimulai dari 2, bertambah 3, dan berhenti sebelum mencapai 10.",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 6 · Perulangan II: for"
+    ]
+  },
+  {
+    "objectID": "materi/w06.html#bacaan",
+    "href": "materi/w06.html#bacaan",
+    "title": "Minggu 6 · Perulangan II: for",
+    "section": "Bacaan",
+    "text": "Bacaan\n\nThink Python Ch. 7 - Iteration and Search",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 6 · Perulangan II: for"
+    ]
+  },
+  {
+    "objectID": "materi/w04.html",
+    "href": "materi/w04.html",
+    "title": "Minggu 4 · Fungsi I: Fungsi Void",
+    "section": "",
+    "text": "Minggu 4Lesson A: Memanggil dan mendefinisikan fungsiLesson B: Enkapsulasi, generalisasi, dan dekomposisi",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 4 · Fungsi I: Fungsi Void"
+    ]
+  },
+  {
+    "objectID": "materi/w04.html#skill-yang-dinilai",
+    "href": "materi/w04.html#skill-yang-dinilai",
+    "title": "Minggu 4 · Fungsi I: Fungsi Void",
+    "section": "Skill yang Dinilai",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU4.1\nTrace (T)\nMenelusuri pemanggilan fungsi: memasangkan argumen ke parameter, menggambar stack diagram, membaca traceback\n\n\nU4.2\nWrite (W)\nMendefinisikan fungsi void berparameter dan memanggilnya dengan benar\n\n\nU4.3\nWrite (W)\nMengubah kode berulang menjadi satu fungsi (enkapsulasi) lalu menambah parameter agar umum (generalisasi)\n\n\nU4.4\nTransfer (X)\nMenjelaskan lingkup: mengapa variabel lokal tidak terlihat di luar fungsi\n\n\nU4.5\nTransfer (X)\nMemecah satu tugas menjadi beberapa fungsi dengan antarmuka dan docstring yang jelas",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 4 · Fungsi I: Fungsi Void"
+    ]
+  },
+  {
+    "objectID": "materi/w04.html#lesson",
+    "href": "materi/w04.html#lesson",
+    "title": "Minggu 4 · Fungsi I: Fungsi Void",
+    "section": "Lesson",
+    "text": "Lesson\n\n\n\n\n\n\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nMemanggil dan mendefinisikan fungsi\nU4.1, U4.2\nW04-A\n\n\nB\nEnkapsulasi, generalisasi, dan dekomposisi\nU4.3, U4.4, U4.5\nW04-B",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 4 · Fungsi I: Fungsi Void"
+    ]
+  },
+  {
+    "objectID": "materi/w04.html#konsep-kunci",
+    "href": "materi/w04.html#konsep-kunci",
+    "title": "Minggu 4 · Fungsi I: Fungsi Void",
+    "section": "Konsep Kunci",
+    "text": "Konsep Kunci\nFungsi membungkus langkah-langkah di bawah satu nama. Definisi (def) hanya mencatat fungsinya; kodenya baru berjalan saat fungsi dipanggil. Argumen dipasangkan ke parameter sesuai urutan, dan variabel yang dibuat di dalam fungsi bersifat lokal.\ndef cetak_garis(panjang):\n    print(\"-\" * panjang)\n\ndef cetak_judul(teks):\n    \"\"\"Mencetak teks di antara dua garis sepanjang teks.\"\"\"\n    cetak_garis(len(teks))\n    print(teks)\n    cetak_garis(len(teks))\n\ncetak_judul(\"Algoritma\")",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 4 · Fungsi I: Fungsi Void"
+    ]
+  },
+  {
+    "objectID": "materi/w04.html#tebak-dulu",
+    "href": "materi/w04.html#tebak-dulu",
+    "title": "Minggu 4 · Fungsi I: Fungsi Void",
+    "section": "Tebak Dulu",
+    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\nx = 1\n\ndef ubah():\n    x = 99\n\nubah()\nprint(x)\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nHasilnya 1. x = 99 di dalam fungsi membuat variabel lokal baru bernama x, dan tidak mengubah x di luar fungsi.",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 4 · Fungsi I: Fungsi Void"
+    ]
+  },
+  {
+    "objectID": "materi/w04.html#bacaan",
+    "href": "materi/w04.html#bacaan",
+    "title": "Minggu 4 · Fungsi I: Fungsi Void",
+    "section": "Bacaan",
+    "text": "Bacaan\n\nThink Python Ch. 3 - Functions\nThink Python Ch. 4 - Functions & Interface",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 4 · Fungsi I: Fungsi Void"
+    ]
+  },
+  {
+    "objectID": "materi/w11.html",
+    "href": "materi/w11.html",
+    "title": "Minggu 11 · Koleksi Data I: List & Tuple",
+    "section": "",
+    "text": "Minggu 11Lesson A: List: membangun, menelusuri, dan aliasingLesson B: Tuple, unpacking, dan list dua dimensi",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 11 · Koleksi Data I: List & Tuple"
+    ]
+  },
+  {
+    "objectID": "materi/w11.html#skill-yang-dinilai",
+    "href": "materi/w11.html#skill-yang-dinilai",
+    "title": "Minggu 11 · Koleksi Data I: List & Tuple",
+    "section": "Skill yang Dinilai",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU11.1\nTrace (T)\nMemprediksi keluaran saat satu list diakses lewat dua nama (aliasing); menggambar diagram referensi\n\n\nU11.2\nWrite (W)\nMenelusuri dan membangun list dengan pola map/filter/reduce yang ditulis manual\n\n\nU11.3\nWrite (W)\nMengembalikan beberapa nilai dengan tuple dan membongkarnya (unpacking)\n\n\nU11.4\nWrite (W)\nMenyimpan dan memproses data tabular sederhana dengan list dua dimensi\n\n\nU11.5\nTransfer (X)\nMenjelaskan perbedaan mutable (list) dan immutable (tuple/string) serta memilih yang tepat",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 11 · Koleksi Data I: List & Tuple"
+    ]
+  },
+  {
+    "objectID": "materi/w11.html#lesson",
+    "href": "materi/w11.html#lesson",
+    "title": "Minggu 11 · Koleksi Data I: List & Tuple",
+    "section": "Lesson",
+    "text": "Lesson\n\n\n\n\n\n\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nList: membangun, menelusuri, dan aliasing\nU11.1, U11.2\nW11-A\n\n\nB\nTuple, unpacking, dan list dua dimensi\nU11.3, U11.4, U11.5\nW11-B",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 11 · Koleksi Data I: List & Tuple"
+    ]
+  },
+  {
+    "objectID": "materi/w11.html#konsep-kunci",
+    "href": "materi/w11.html#konsep-kunci",
+    "title": "Minggu 11 · Koleksi Data I: List & Tuple",
+    "section": "Konsep Kunci",
+    "text": "Konsep Kunci\nb = a tidak menyalin list. Kedua nama menunjuk ke objek list yang sama, sehingga perubahan lewat b juga terlihat lewat a. Tuple mirip list, tetapi immutable, dan sering dipakai untuk mengembalikan beberapa nilai sekaligus.\na = [1, 2, 3]\nb = a          # alias: menunjuk list yang sama\nc = a[:]       # salinan: list baru\nb.append(4)\nprint(a, c)    # [1, 2, 3, 4] [1, 2, 3]\n\ndef ringkas(data):\n    return sum(data), len(data)\n\ntotal, n = ringkas([2, 4, 6])   # unpacking",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 11 · Koleksi Data I: List & Tuple"
+    ]
+  },
+  {
+    "objectID": "materi/w11.html#tebak-dulu",
+    "href": "materi/w11.html#tebak-dulu",
+    "title": "Minggu 11 · Koleksi Data I: List & Tuple",
+    "section": "Tebak Dulu",
+    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\ndef tambah(lst):\n    lst.append(0)\n\ndata = [5]\ntambah(data)\nprint(data)\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nHasilnya [5, 0]. Parameter lst menunjuk list yang sama dengan data, sehingga append di dalam fungsi mengubah list aslinya.",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 11 · Koleksi Data I: List & Tuple"
+    ]
+  },
+  {
+    "objectID": "materi/w11.html#bacaan",
+    "href": "materi/w11.html#bacaan",
+    "title": "Minggu 11 · Koleksi Data I: List & Tuple",
+    "section": "Bacaan",
+    "text": "Bacaan\n\nThink Python Ch. 9 - Lists\nThink Python Ch. 11 - Tuples",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 11 · Koleksi Data I: List & Tuple"
+    ]
+  },
+  {
+    "objectID": "materi/index.html",
+    "href": "materi/index.html",
+    "title": "Materi",
+    "section": "",
+    "text": "Halaman ini adalah pendamping Moodle. Gunakan untuk membaca ulang konsep dan berlatih memprediksi keluaran program. Aktivitas kelas, pengumpulan, dan cek mastery tetap dilakukan di Moodle.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\nMinggu\n\n\n\nTopik\n\n\n\nRingkasan\n\n\n\nKategori\n\n\n\n\n\n\n\n\n1\n\n\nMinggu 1 · Pengenalan Alpro & Berpikir Komputasional\n\n\nMahasiswa mampu menjelaskan program sebagai bahasa formal, merepresentasikan algoritma sederhana (pseudocode/flowchart), dan menelusurinya langkah demi langkah.\n\n\nDasar\n\n\n\n\n\n\n2\n\n\nMinggu 2 · Variabel, Tipe Data, Operator & Ekspresi\n\n\nMahasiswa mampu melacak keadaan (state) variabel selama program berjalan, dan menulis program yang membaca masukan, mengonversi tipenya, lalu menghitung dan menampilkan hasil.\n\n\nDasar\n\n\n\n\n\n\n3\n\n\nMinggu 3 · Pernyataan Kondisional\n\n\nMahasiswa mampu mengevaluasi ekspresi logika dan menulis program yang memilih jalur eksekusi berdasarkan kondisi, termasuk penjagaan (guard) untuk memvalidasi masukan.\n\n\nKontrol Alur\n\n\n\n\n\n\n4\n\n\nMinggu 4 · Fungsi I: Fungsi Void\n\n\nMahasiswa mampu memecah sebuah tugas menjadi fungsi-fungsi void berparameter, menelusuri pemanggilannya, dan menjelaskan lingkup (scope) variabel.\n\n\nFungsi\n\n\n\n\n\n\n5\n\n\nMinggu 5 · Perulangan I: while\n\n\nMahasiswa mampu menelusuri dan menulis perulangan while, termasuk pola pencacah, akumulator, dan sentinel, serta menuliskan rencananya dalam pseudocode sebelum menulis kode.\n\n\nKontrol Alur\n\n\n\n\n\n\n6\n\n\nMinggu 6 · Perulangan II: for\n\n\nMahasiswa mampu memilih dan menulis perulangan for untuk pola akumulator, pencacah bersyarat, dan nilai ekstrem, serta menggabungkan validasi data di dalam perulangan.\n\n\nKontrol Alur\n\n\n\n\n\n\n7\n\n\nMinggu 7 · Tutorial & Praktikum 1 · Gladi UTS\n\n\nMahasiswa mampu menggabungkan variabel, kondisional, fungsi, dan perulangan menjadi solusi utuh untuk masalah kecil, serta mengerjakannya dalam kondisi seperti UTS.\n\n\nPraktikum, Remedial\n\n\n\n\n\n\n8\n\n\nMinggu 8 · UTS\n\n\nPemeriksaan mastery kumulatif untuk seluruh skill minggu 1-7.\n\n\nUjian\n\n\n\n\n\n\n9\n\n\nMinggu 9 · Fungsi II: Fungsi Ber-return\n\n\nMahasiswa mampu membedakan return dari print dan membangun program dari fungsi-fungsi yang mengembalikan nilai.\n\n\nFungsi\n\n\n\n\n\n\n10\n\n\nMinggu 10 · String\n\n\nMahasiswa mampu memproses teks: mengakses bagian string, menelusurinya dengan perulangan, dan memakai metode string untuk menyelesaikan tugas kecil.\n\n\nTeks & Koleksi Data\n\n\n\n\n\n\n11\n\n\nMinggu 11 · Koleksi Data I: List & Tuple\n\n\nMahasiswa mampu menyimpan dan memproses kumpulan data terurut dengan list dan tuple, serta menjelaskan akibat dari sifat mutable.\n\n\nTeks & Koleksi Data\n\n\n\n\n\n\n12\n\n\nMinggu 12 · Koleksi Data II: Dictionary & Set\n\n\nMahasiswa mampu memakai dictionary dan set untuk data berpasangan dan data unik, serta memilih struktur data yang sesuai dengan alasan.\n\n\nTeks & Koleksi Data\n\n\n\n\n\n\n13\n\n\nMinggu 13 · Data Files\n\n\nMahasiswa mampu membaca dan menulis file teks dan CSV, menangani galat file, serta merangkai pipeline sederhana dari file ke hasil olahan.\n\n\nTeks & Koleksi Data\n\n\n\n\n\n\n14\n\n\nMinggu 14 · Tutorial & Praktikum 2\n\n\nMahasiswa mampu menyelesaikan masalah menengah yang menggabungkan fungsi void dan ber-return, string, dan file, serta menjelaskan programnya sendiri.\n\n\nPraktikum, Remedial\n\n\n\n\n\n\n15\n\n\nMinggu 15 · Tutorial & Praktikum 3 · Gladi UAS\n\n\nMahasiswa mampu menyelesaikan masalah terintegrasi yang mencakup seluruh materi, dalam kondisi yang sama dengan UAS.\n\n\nPraktikum, Remedial\n\n\n\n\n\n\n16\n\n\nMinggu 16 · UAS\n\n\nPemeriksaan mastery kumulatif untuk seluruh skill inti mata kuliah.\n\n\nUjian\n\n\n\n\n\n\nTidak ada yang cocok\n Kembali ke atas",
+    "crumbs": [
+      "Materi"
+    ]
+  },
+  {
+    "objectID": "materi/w09.html",
+    "href": "materi/w09.html",
+    "title": "Minggu 9 · Fungsi II: Fungsi Ber-return",
+    "section": "",
+    "text": "Minggu 9Lesson A: return dan printLesson B: Pengembangan bertahap dan komposisi fungsi",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 9 · Fungsi II: Fungsi Ber-return"
+    ]
+  },
+  {
+    "objectID": "materi/w09.html#skill-yang-dinilai",
+    "href": "materi/w09.html#skill-yang-dinilai",
+    "title": "Minggu 9 · Fungsi II: Fungsi Ber-return",
+    "section": "Skill yang Dinilai",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU9.1\nTrace (T)\nMembedakan return dan print; memprediksi nilai pemanggilan fungsi yang dipakai di dalam ekspresi\n\n\nU9.2\nWrite (W)\nMenulis fungsi ber-return dengan lebih dari satu jalur return\n\n\nU9.3\nWrite (W)\nMembangun fungsi secara bertahap (incremental development) dan mengujinya di tiap tahap\n\n\nU9.4\nTransfer (X)\nMenyusun komposisi fungsi: memakai hasil satu fungsi di dalam fungsi lain\n\n\nU9.5\nTransfer (X)\nMengubah program panjang menjadi kumpulan fungsi ber-return",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 9 · Fungsi II: Fungsi Ber-return"
+    ]
+  },
+  {
+    "objectID": "materi/w09.html#lesson",
+    "href": "materi/w09.html#lesson",
+    "title": "Minggu 9 · Fungsi II: Fungsi Ber-return",
+    "section": "Lesson",
+    "text": "Lesson\n\n\n\n\n\n\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nreturn dan print\nU9.1, U9.2\nW09-A\n\n\nB\nPengembangan bertahap dan komposisi fungsi\nU9.3, U9.4, U9.5\nW09-B",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 9 · Fungsi II: Fungsi Ber-return"
+    ]
+  },
+  {
+    "objectID": "materi/w09.html#konsep-kunci",
+    "href": "materi/w09.html#konsep-kunci",
+    "title": "Minggu 9 · Fungsi II: Fungsi Ber-return",
+    "section": "Konsep Kunci",
+    "text": "Konsep Kunci\nprint menampilkan nilai ke layar, sedangkan return mengirim nilai kembali ke pemanggil agar bisa dipakai di dalam ekspresi. Fungsi tanpa return mengembalikan None. Bangun fungsi secara bertahap: tulis sedikit, uji, lalu lanjutkan.\ndef luas(p, l):\n    return p * l\n\ndef keterangan(p, l):\n    if luas(p, l) &gt; 100:\n        return \"besar\"\n    return \"kecil\"\n\nprint(luas(4, 5) * 2)      # 40\nprint(keterangan(20, 6))   # besar",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 9 · Fungsi II: Fungsi Ber-return"
+    ]
+  },
+  {
+    "objectID": "materi/w09.html#tebak-dulu",
+    "href": "materi/w09.html#tebak-dulu",
+    "title": "Minggu 9 · Fungsi II: Fungsi Ber-return",
+    "section": "Tebak Dulu",
+    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\ndef dobel(x):\n    print(x * 2)\n\nhasil = dobel(4)\nprint(hasil)\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nTercetak 8 lalu None. dobel hanya mencetak dan tidak mengembalikan apa pun, sehingga hasil bernilai None.",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 9 · Fungsi II: Fungsi Ber-return"
+    ]
+  },
+  {
+    "objectID": "materi/w09.html#bacaan",
+    "href": "materi/w09.html#bacaan",
+    "title": "Minggu 9 · Fungsi II: Fungsi Ber-return",
+    "section": "Bacaan",
+    "text": "Bacaan\n\nThink Python Ch. 6 - Return values",
+    "crumbs": [
+      "Materi",
+      "Paruh Kedua",
+      "Minggu 9 · Fungsi II: Fungsi Ber-return"
+    ]
+  },
+  {
+    "objectID": "jadwal.html",
+    "href": "jadwal.html",
+    "title": "Jadwal",
+    "section": "",
+    "text": "Setiap pertemuan terdiri atas Lesson A (90 menit), istirahat 15 menit, lalu Lesson B (90 menit). Kode di bawah judul lesson adalah skill yang menjadi fokusnya. Klik judul minggu untuk membuka materinya."
+  },
+  {
+    "objectID": "jadwal.html#susunan-satu-sesi",
+    "href": "jadwal.html#susunan-satu-sesi",
+    "title": "Jadwal",
+    "section": "Susunan Satu Sesi",
+    "text": "Susunan Satu Sesi\n\n\n\n\n\n\n\nWaktu\nKegiatan\n\n\n\n\n0–90’\nLesson A: satu siklus 5E penuh (Engage → Explore → Explain → Elaborate → Evaluate)\n\n\n90–105’\nIstirahat\n\n\n105–195’\nLesson B: satu siklus 5E penuh untuk kelompok skill berikutnya\n\n\n195–200’\nPenutup: skill ledger, yaitu skill mana yang sudah tuntas dan mana yang terbuka untuk remedial minggu depan"
+  },
+  {
+    "objectID": "jadwal.html#remedial",
+    "href": "jadwal.html#remedial",
+    "title": "Jadwal",
+    "section": "Remedial",
+    "text": "Remedial\nRemedial berlangsung pada 20 menit pertama sesi berikutnya, ditambah jendela remedial pada minggu 7 (skill U1–U6), minggu 14 (skill U9–U13), dan minggu 15 (jendela terakhir, seluruh skill U1.1–U13.5). Lihat aturannya di Penilaian."
+  }
+]
