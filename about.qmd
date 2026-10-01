@@ -6,17 +6,17 @@ title: "Tim Pengajar"
 
 Mata kuliah ini diampu secara *team teaching* oleh:
 
-| No  | Nama                           | Peran       |
-|:---:|--------------------------------|-------------|
-|  1  | Muhammad Azani Hasibuan        | Koordinator |
-|  2  | Ekky Novriza Alam              | Dosen       |
-|  3  | Taufik Nur Adi, Ph.D.          | Dosen       |
-|  4  | Faqih Hamami                   | Dosen       |
-|  5  | Ahmad Musnansyah               | Dosen       |
-|  6  | Alaric Rasendriya Aniko        | Dosen       |
-|  7  | Elvira Lailatuth Thohiroh      | Dosen       |
-|  8  | Zalina Azzahra                 | Dosen       |
-|  9  | Arida Ferti Syafiandini, Ph.D. | Dosen       |
+| No | Nama | Peran |
+|:--:|----|----|
+| 1 | [Muhammad Azani Hasibuan](https://muhammadazani.github.io "muhammadazani.github.io") | Koordinator |
+| 2 | Ekky Novriza Alam | Dosen |
+| 3 | Taufik Nur Adi, Ph.D. | Dosen |
+| 4 | Faqih Hamami | Dosen |
+| 5 | Ahmad Musnansyah | Dosen |
+| 6 | Alaric Rasendriya Aniko | Dosen |
+| 7 | Elvira Lailatuth Thohiroh | Dosen |
+| 8 | Zalina Azzahra | Dosen |
+| 9 | Arida Ferti Syafiandini, Ph.D. | Dosen |
 
 Pembagian dosen per kelas dan kontaknya diumumkan di Moodle.
 
