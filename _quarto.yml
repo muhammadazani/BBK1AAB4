@@ -80,4 +80,4 @@ format:
     anchor-sections: true
     smooth-scroll: true
 
-editor: visual
+editor: source
