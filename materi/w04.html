@@ -568,15 +568,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="week-meta">
-<p><span>Minggu 4</span><span>Lesson A: Memanggil dan mendefinisikan fungsi</span><span>Lesson B: Enkapsulasi, generalisasi, dan dekomposisi</span></p>
+<p>Minggu 4Lesson A: Memanggil dan mendefinisikan fungsiLesson B: Enkapsulasi, generalisasi, dan dekomposisi</p>
 </div>
 <section id="skill-yang-dinilai" class="level2">
 <h2 class="anchored" data-anchor-id="skill-yang-dinilai">Skill yang Dinilai</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 72%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -618,10 +618,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="lesson">Lesson</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 10%">
+<col style="width: 55%">
+<col style="width: 22%">
+<col style="width: 11%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -760,7 +760,11 @@ selesai</code></pre>
 ┌─ cetak_dua_kali ─────────────────┐
 │  pesan    → 'Algo ritma'         │
 └──────────────────────────────────┘</code></pre>
-<p>Perhatikan bahwa nilai <code>'Algo ritma'</code> muncul dengan nama berbeda di dua frame. Gunakan <a href="https://pythontutor.com/python-compiler.html">Python Tutor</a> untuk melihat frame dibuat dan dibuang langkah demi langkah.</p>
+<p>Perhatikan bahwa nilai <code>'Algo ritma'</code> muncul dengan nama berbeda di dua frame.</p>
+<p>Telusuri program lengkapnya langkah demi langkah di bawah ini. Tekan <strong>Lanjut</strong> atau gunakan tombol panah ← → di keyboard, lalu amati kapan frame <strong>dibuat</strong> dan kapan <strong>dibuang</strong>.</p>
+<div class="stackviz" data-trace="trace-w04-stack" data-title="Telusuri: gabung_dua_kali → cetak_dua_kali"></div>
+<script type="application/json" id="trace-w04-stack">{"code":["def cetak_dua_kali(pesan):","    print(pesan)","    print(pesan)","","def gabung_dua_kali(bagian1, bagian2):","    gabungan = bagian1 + bagian2","    cetak_dua_kali(gabungan)","","baris1 = \"Algo \"","baris2 = \"ritma\"","gabung_dua_kali(baris1, baris2)"],"steps":[{"line":null,"frames":[{"name":"__main__","vars":[]}],"out":"","note":"Program belum berjalan. Tekan **Lanjut** (atau tombol panah → di keyboard) untuk menjalankan baris pertama."},{"line":1,"frames":[{"name":"__main__","vars":[["cetak_dua_kali","<fungsi>"]]}],"out":"","note":"Baris 1: `def` hanya **membuat objek fungsi** dan mengikatnya ke nama `cetak_dua_kali` di `__main__`. Badannya (baris 2–3) belum dijalankan."},{"line":5,"frames":[{"name":"__main__","vars":[["cetak_dua_kali","<fungsi>"],["gabung_dua_kali","<fungsi>"]]}],"out":"","note":"Baris 5: hal yang sama untuk `gabung_dua_kali`. Python melewati badannya (baris 6–7) dan lanjut ke baris 9."},{"line":9,"frames":[{"name":"__main__","vars":[["cetak_dua_kali","<fungsi>"],["gabung_dua_kali","<fungsi>"],["baris1","'Algo '"]]}],"out":"","note":"Baris 9: variabel global `baris1` diberi nilai `'Algo '`."},{"line":10,"frames":[{"name":"__main__","vars":[["cetak_dua_kali","<fungsi>"],["gabung_dua_kali","<fungsi>"],["baris1","'Algo '"],["baris2","'ritma'"]]}],"out":"","note":"Baris 10: variabel global `baris2` diberi nilai `'ritma'`."},{"line":11,"frames":[{"name":"__main__","vars":[["cetak_dua_kali","<fungsi>"],["gabung_dua_kali","<fungsi>"],["baris1","'Algo '"],["baris2","'ritma'"]]},{"name":"gabung_dua_kali","vars":[["bagian1","'Algo '"],["bagian2","'ritma'"]]}],"out":"","note":"Baris 11 memanggil `gabung_dua_kali(baris1, baris2)`. Python membuat **frame baru**, lalu mengikat argumen ke parameter sesuai urutan: `bagian1 ← 'Algo '`, `bagian2 ← 'ritma'`."},{"line":6,"frames":[{"name":"__main__","vars":[["cetak_dua_kali","<fungsi>"],["gabung_dua_kali","<fungsi>"],["baris1","'Algo '"],["baris2","'ritma'"]]},{"name":"gabung_dua_kali","vars":[["bagian1","'Algo '"],["bagian2","'ritma'"],["gabungan","'Algo ritma'"]]}],"out":"","note":"Baris 6: `gabungan` dibuat di frame `gabung_dua_kali`. Ia **variabel lokal**, sehingga tidak muncul di `__main__`."},{"line":7,"frames":[{"name":"__main__","vars":[["cetak_dua_kali","<fungsi>"],["gabung_dua_kali","<fungsi>"],["baris1","'Algo '"],["baris2","'ritma'"]]},{"name":"gabung_dua_kali","vars":[["bagian1","'Algo '"],["bagian2","'ritma'"],["gabungan","'Algo ritma'"]]},{"name":"cetak_dua_kali","vars":[["pesan","'Algo ritma'"]]}],"out":"","note":"Baris 7 memanggil `cetak_dua_kali(gabungan)`. Frame ketiga dibuat dengan `pesan ← 'Algo ritma'`. Nilai yang sama kini punya dua nama di dua frame. `gabung_dua_kali` **menunggu** sampai panggilan ini selesai."},{"line":2,"frames":[{"name":"__main__","vars":[["cetak_dua_kali","<fungsi>"],["gabung_dua_kali","<fungsi>"],["baris1","'Algo '"],["baris2","'ritma'"]]},{"name":"gabung_dua_kali","vars":[["bagian1","'Algo '"],["bagian2","'ritma'"],["gabungan","'Algo ritma'"]]},{"name":"cetak_dua_kali","vars":[["pesan","'Algo ritma'"]]}],"out":"Algo ritma\n","note":"Baris 2: `print(pesan)` mencetak `Algo ritma`. Python mencari `pesan` di frame yang sedang aktif (paling bawah)."},{"line":3,"frames":[{"name":"__main__","vars":[["cetak_dua_kali","<fungsi>"],["gabung_dua_kali","<fungsi>"],["baris1","'Algo '"],["baris2","'ritma'"]]},{"name":"gabung_dua_kali","vars":[["bagian1","'Algo '"],["bagian2","'ritma'"],["gabungan","'Algo ritma'"]]},{"name":"cetak_dua_kali","vars":[["pesan","'Algo ritma'"]],"ret":"None"}],"out":"Algo ritma\nAlgo ritma\n","note":"Baris 3 mencetak sekali lagi. `cetak_dua_kali` tidak punya `return`, jadi ia selesai dan mengembalikan `None`. Frame-nya akan dibuang."},{"line":7,"frames":[{"name":"__main__","vars":[["cetak_dua_kali","<fungsi>"],["gabung_dua_kali","<fungsi>"],["baris1","'Algo '"],["baris2","'ritma'"]]},{"name":"gabung_dua_kali","vars":[["bagian1","'Algo '"],["bagian2","'ritma'"],["gabungan","'Algo ritma'"]],"ret":"None"}],"out":"Algo ritma\nAlgo ritma\n","note":"Alur kembali ke baris 7 di `gabung_dua_kali`. Itu baris terakhirnya, jadi fungsi ini juga selesai dan mengembalikan `None`."},{"line":11,"frames":[{"name":"__main__","vars":[["cetak_dua_kali","<fungsi>"],["gabung_dua_kali","<fungsi>"],["baris1","'Algo '"],["baris2","'ritma'"]]}],"out":"Algo ritma\nAlgo ritma\n","note":"Kembali ke `__main__` di baris 11, dan program selesai. Perhatikan: `bagian1`, `bagian2`, `gabungan`, dan `pesan` sudah **hilang** bersama frame-nya. Hanya variabel global yang tersisa."}]}</script>
+<script src="../assets/stackviz.js"></script>
 </section>
 <section id="membaca-traceback" class="level3">
 <h3 class="anchored" data-anchor-id="membaca-traceback">Membaca traceback</h3>
@@ -828,6 +832,9 @@ None</code></pre>
 <li>Saat membaca sebuah nama, Python mencari dulu di <strong>lingkup lokal</strong> fungsi, lalu di <strong>lingkup global</strong> (modul), lalu di nama <strong>bawaan</strong> (<code>print</code>, <code>len</code>, …). Jadi fungsi boleh <em>membaca</em> variabel global.</li>
 <li>Jika sebuah nama <strong>diberi nilai</strong> di mana pun di dalam fungsi, nama itu dianggap <strong>lokal</strong> untuk seluruh badan fungsi. Inilah sebabnya <code>x = 99</code> di dalam fungsi tidak mengubah <code>x</code> di luar.</li>
 </ul>
+<p>Telusuri contoh berikut dan perhatikan <strong>dua</strong> variabel bernama <code>nilai</code> di dua frame yang berbeda:</p>
+<div class="stackviz" data-trace="trace-w04-scope" data-title="Telusuri: variabel lokal vs global"></div>
+<script type="application/json" id="trace-w04-scope">{"code":["nilai = 70","","def tambah_bonus():","    nilai = 85","    print(\"di dalam:\", nilai)","","tambah_bonus()","print(\"di luar:\", nilai)"],"steps":[{"line":null,"frames":[{"name":"__main__","vars":[]}],"out":"","note":"Program belum berjalan. Tebak dulu: apa yang dicetak baris 8? Lalu tekan **Lanjut**."},{"line":1,"frames":[{"name":"__main__","vars":[["nilai","70"]]}],"out":"","note":"Baris 1: variabel global `nilai` diberi nilai `70`."},{"line":3,"frames":[{"name":"__main__","vars":[["nilai","70"],["tambah_bonus","<fungsi>"]]}],"out":"","note":"Baris 3: `def` membuat fungsi `tambah_bonus`; badannya belum dijalankan."},{"line":7,"frames":[{"name":"__main__","vars":[["nilai","70"],["tambah_bonus","<fungsi>"]]},{"name":"tambah_bonus","vars":[]}],"out":"","note":"Baris 7 memanggil `tambah_bonus()`. Frame baru dibuat. Frame ini masih kosong karena fungsinya tidak punya parameter."},{"line":4,"frames":[{"name":"__main__","vars":[["nilai","70"],["tambah_bonus","<fungsi>"]]},{"name":"tambah_bonus","vars":[["nilai","85"]]}],"out":"","note":"Baris 4: `nilai = 85` di dalam fungsi membuat variabel **lokal baru** bernama `nilai` di frame `tambah_bonus`. `nilai` di `__main__` **tidak berubah**: tetap `70`."},{"line":5,"frames":[{"name":"__main__","vars":[["nilai","70"],["tambah_bonus","<fungsi>"]]},{"name":"tambah_bonus","vars":[["nilai","85"]],"ret":"None"}],"out":"di dalam: 85\n","note":"Baris 5: Python mencari `nilai` di lingkup lokal lebih dulu dan menemukan `85`. Fungsi selesai dan mengembalikan `None`."},{"line":7,"frames":[{"name":"__main__","vars":[["nilai","70"],["tambah_bonus","<fungsi>"]]}],"out":"di dalam: 85\n","note":"Alur kembali ke baris 7. Frame `tambah_bonus` dibuang, dan `nilai` lokal (`85`) ikut hilang."},{"line":8,"frames":[{"name":"__main__","vars":[["nilai","70"],["tambah_bonus","<fungsi>"]]}],"out":"di dalam: 85\ndi luar: 70\n","note":"Baris 8: di `__main__`, `nilai` masih `70`. Dua variabel bernama sama bisa hidup di dua frame berbeda tanpa saling mengganggu."}]}</script>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>pajak <span class="op">=</span> <span class="fl">0.11</span>                  <span class="co"># variabel global</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cetak_harga(harga):</span>
@@ -928,9 +935,9 @@ None</code></pre>
 <h2 class="anchored" data-anchor-id="kesalahan-umum">Kesalahan Umum</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 32%">
-<col style="width: 36%">
-<col style="width: 32%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
