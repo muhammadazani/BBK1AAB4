@@ -510,8 +510,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#skill-yang-dinilai" id="toc-skill-yang-dinilai" class="nav-link active" data-scroll-target="#skill-yang-dinilai">Skill yang Dinilai</a></li>
   <li><a href="#lesson" id="toc-lesson" class="nav-link" data-scroll-target="#lesson">Lesson</a></li>
   <li><a href="#konsep-kunci" id="toc-konsep-kunci" class="nav-link" data-scroll-target="#konsep-kunci">Konsep Kunci</a></li>
+  <li><a href="#lesson-a-memanggil-dan-mendefinisikan-fungsi" id="toc-lesson-a-memanggil-dan-mendefinisikan-fungsi" class="nav-link" data-scroll-target="#lesson-a-memanggil-dan-mendefinisikan-fungsi">Lesson A · Memanggil dan Mendefinisikan Fungsi</a>
+  <ul class="collapse">
+  <li><a href="#memanggil-fungsi-yang-sudah-ada" id="toc-memanggil-fungsi-yang-sudah-ada" class="nav-link" data-scroll-target="#memanggil-fungsi-yang-sudah-ada">Memanggil fungsi yang sudah ada</a></li>
+  <li><a href="#mendefinisikan-fungsi-baru" id="toc-mendefinisikan-fungsi-baru" class="nav-link" data-scroll-target="#mendefinisikan-fungsi-baru">Mendefinisikan fungsi baru</a></li>
+  <li><a href="#parameter-dan-argumen" id="toc-parameter-dan-argumen" class="nav-link" data-scroll-target="#parameter-dan-argumen">Parameter dan argumen</a></li>
+  <li><a href="#alur-eksekusi" id="toc-alur-eksekusi" class="nav-link" data-scroll-target="#alur-eksekusi">Alur eksekusi</a></li>
+  <li><a href="#stack-diagram" id="toc-stack-diagram" class="nav-link" data-scroll-target="#stack-diagram">Stack diagram</a></li>
+  <li><a href="#membaca-traceback" id="toc-membaca-traceback" class="nav-link" data-scroll-target="#membaca-traceback">Membaca traceback</a></li>
+  <li><a href="#fungsi-void" id="toc-fungsi-void" class="nav-link" data-scroll-target="#fungsi-void">Fungsi void</a></li>
+  </ul></li>
+  <li><a href="#lesson-b-enkapsulasi-generalisasi-dan-dekomposisi" id="toc-lesson-b-enkapsulasi-generalisasi-dan-dekomposisi" class="nav-link" data-scroll-target="#lesson-b-enkapsulasi-generalisasi-dan-dekomposisi">Lesson B · Enkapsulasi, Generalisasi, dan Dekomposisi</a>
+  <ul class="collapse">
+  <li><a href="#variabel-lokal-dan-lingkup" id="toc-variabel-lokal-dan-lingkup" class="nav-link" data-scroll-target="#variabel-lokal-dan-lingkup">Variabel lokal dan lingkup</a></li>
+  <li><a href="#enkapsulasi" id="toc-enkapsulasi" class="nav-link" data-scroll-target="#enkapsulasi">Enkapsulasi</a></li>
+  <li><a href="#generalisasi" id="toc-generalisasi" class="nav-link" data-scroll-target="#generalisasi">Generalisasi</a></li>
+  <li><a href="#dekomposisi-dan-rencana-pengembangan" id="toc-dekomposisi-dan-rencana-pengembangan" class="nav-link" data-scroll-target="#dekomposisi-dan-rencana-pengembangan">Dekomposisi dan rencana pengembangan</a></li>
+  <li><a href="#antarmuka-dan-docstring" id="toc-antarmuka-dan-docstring" class="nav-link" data-scroll-target="#antarmuka-dan-docstring">Antarmuka dan docstring</a></li>
+  </ul></li>
+  <li><a href="#kesalahan-umum" id="toc-kesalahan-umum" class="nav-link" data-scroll-target="#kesalahan-umum">Kesalahan Umum</a></li>
   <li><a href="#tebak-dulu" id="toc-tebak-dulu" class="nav-link" data-scroll-target="#tebak-dulu">Tebak Dulu</a></li>
+  <li><a href="#latihan-mandiri" id="toc-latihan-mandiri" class="nav-link" data-scroll-target="#latihan-mandiri">Latihan Mandiri</a></li>
   <li><a href="#bacaan" id="toc-bacaan" class="nav-link" data-scroll-target="#bacaan">Bacaan</a></li>
+  <li><a href="#referensi" id="toc-referensi" class="nav-link" data-scroll-target="#referensi">Referensi</a></li>
   </ul>
 </nav>
     </div>
@@ -639,17 +660,334 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    cetak_garis(<span class="bu">len</span>(teks))</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>cetak_judul(<span class="st">"Algoritma"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>---------
+Algoritma
+---------</code></pre>
+</section>
+<section id="lesson-a-memanggil-dan-mendefinisikan-fungsi" class="level2">
+<h2 class="anchored" data-anchor-id="lesson-a-memanggil-dan-mendefinisikan-fungsi">Lesson A · Memanggil dan Mendefinisikan Fungsi</h2>
+<section id="memanggil-fungsi-yang-sudah-ada" class="level3">
+<h3 class="anchored" data-anchor-id="memanggil-fungsi-yang-sudah-ada">Memanggil fungsi yang sudah ada</h3>
+<p>Sejak minggu pertama kamu sudah memakai fungsi: <code>print</code>, <code>input</code>, <code>len</code>, <code>int</code>, <code>round</code>. Menulis nama fungsi diikuti tanda kurung disebut <strong>pemanggilan fungsi</strong> (<em>function call</em>). Nilai di dalam kurung adalah <strong>argumen</strong> (Downey, 2024, Bab 3).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(<span class="st">"Telkom"</span>)          <span class="co"># argumen: "Telkom", menghasilkan 6</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span>(<span class="fl">3.14159</span>, <span class="dv">2</span>)      <span class="co"># dua argumen, menghasilkan 3.14</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Halo"</span>, <span class="st">"SI"</span>)    <span class="co"># dua argumen, mencetak: Halo SI</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Argumen boleh berupa ekspresi apa pun. Python <strong>mengevaluasi argumen lebih dulu</strong>, baru memanggil fungsinya. Pada <code>print(len("abc") * 2)</code>, Python menghitung <code>len("abc")</code> → <code>3</code>, lalu <code>3 * 2</code> → <code>6</code>, baru kemudian <code>print(6)</code> dijalankan.</p>
+</section>
+<section id="mendefinisikan-fungsi-baru" class="level3">
+<h3 class="anchored" data-anchor-id="mendefinisikan-fungsi-baru">Mendefinisikan fungsi baru</h3>
+<p><strong>Definisi fungsi</strong> membuat fungsi baru dengan nama yang kita pilih (Downey, 2024, Bab 3; Python Software Foundation [PSF], t.t.-c, §4.8):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sapa():</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Selamat pagi!"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Selamat belajar Alpro."</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Bagian-bagiannya:</p>
+<ul>
+<li><strong>Header</strong>: baris pertama. Dimulai kata kunci <code>def</code>, lalu nama fungsi, tanda kurung, dan diakhiri titik dua <code>:</code>.</li>
+<li><strong>Badan</strong> (<em>body</em>): baris-baris di bawah header yang <strong>menjorok</strong> (biasanya 4 spasi). Badan berakhir di baris pertama yang tidak lagi menjorok.</li>
+<li><strong>Nama fungsi</strong> mengikuti aturan nama variabel: huruf, angka, garis bawah, tidak diawali angka, dan bukan kata kunci. Gunakan kata kerja yang menjelaskan apa yang dilakukan fungsi, misalnya <code>cetak_struk</code>, bukan <code>f1</code>.</li>
+</ul>
+<p>Menjalankan definisi <strong>tidak menjalankan badannya</strong>. Definisi hanya membuat <strong>objek fungsi</strong> dan mengikatnya ke nama <code>sapa</code>. Badan baru dijalankan saat fungsi dipanggil:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sapa()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sapa()</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>Selamat pagi!
+Selamat belajar Alpro.
+Selamat pagi!
+Selamat belajar Alpro.</code></pre>
+<p>Karena definisi harus dijalankan lebih dulu, <strong>fungsi harus didefinisikan sebelum dipanggil</strong>. Jika urutannya terbalik, Python melaporkan <code>NameError: name 'sapa' is not defined</code>.</p>
+</section>
+<section id="parameter-dan-argumen" class="level3">
+<h3 class="anchored" data-anchor-id="parameter-dan-argumen">Parameter dan argumen</h3>
+<p>Fungsi menjadi jauh lebih berguna jika bisa menerima data. Nama di dalam kurung pada header disebut <strong>parameter</strong>; nilai yang diberikan saat pemanggilan disebut <strong>argumen</strong> (PSF, t.t.-a, entri <em>parameter</em> dan <em>argument</em>).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cetak_dua_kali(pesan):     <span class="co"># pesan adalah parameter</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(pesan)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(pesan)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>cetak_dua_kali(<span class="st">"Halo"</span>)         <span class="co"># "Halo" adalah argumen</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>cetak_dua_kali(<span class="dv">17</span> <span class="op">*</span> <span class="dv">3</span>)         <span class="co"># argumen boleh ekspresi: 51</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>kata <span class="op">=</span> <span class="st">"Python"</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>cetak_dua_kali(kata)           <span class="co"># argumen boleh variabel</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Saat dipanggil, nilai argumen <strong>diikatkan</strong> ke parameter, seakan-akan Python menjalankan <code>pesan = "Halo"</code> di awal badan fungsi. Nama variabel argumen (<code>kata</code>) tidak perlu sama dengan nama parameter (<code>pesan</code>); yang dipindahkan adalah <strong>nilainya</strong>.</p>
+<p>Jika ada beberapa parameter, argumen dipasangkan <strong>berdasarkan urutan</strong> (<em>positional</em>):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cetak_nilai(nama, nilai):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(nama, <span class="st">"mendapat nilai"</span>, nilai)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>cetak_nilai(<span class="st">"Rina"</span>, <span class="dv">85</span>)    <span class="co"># nama = "Rina", nilai = 85</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>cetak_nilai(<span class="dv">85</span>, <span class="st">"Rina"</span>)    <span class="co"># tertukar: 85 mendapat nilai Rina</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Python juga mendukung <strong>argumen kata kunci</strong> (<em>keyword argument</em>), yang memasangkan nilai berdasarkan nama parameter sehingga urutannya bebas (PSF, t.t.-c, §4.9.2):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cetak_nilai(nilai<span class="op">=</span><span class="dv">85</span>, nama<span class="op">=</span><span class="st">"Rina"</span>)   <span class="co"># Rina mendapat nilai 85</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Jumlah argumen harus sesuai dengan jumlah parameter. <code>cetak_nilai("Rina")</code> menghasilkan <code>TypeError: cetak_nilai() missing 1 required positional argument: 'nilai'</code>.</p>
+</section>
+<section id="alur-eksekusi" class="level3">
+<h3 class="anchored" data-anchor-id="alur-eksekusi">Alur eksekusi</h3>
+<p>Program dijalankan dari baris pertama ke bawah, satu pernyataan setiap kali. Pemanggilan fungsi adalah <strong>jalan memutar</strong>: alur melompat ke badan fungsi, menjalankan seluruh isinya, lalu <strong>kembali</strong> ke tepat setelah titik pemanggilan. Fungsi boleh memanggil fungsi lain, sehingga saat membaca program, ikuti <strong>alur eksekusi</strong>, bukan urutan baris di file.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> langkah_b():</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"B1"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> langkah_a():</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"A1"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    langkah_b()</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"A2"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"mulai"</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>langkah_a()</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"selesai"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>mulai
+A1
+B1
+A2
+selesai</code></pre>
+</section>
+<section id="stack-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="stack-diagram">Stack diagram</h3>
+<p>Untuk menelusuri pemanggilan, gambarlah <strong>stack diagram</strong>. Setiap pemanggilan fungsi mendapat satu <strong>frame</strong>: kotak berisi parameter dan variabel lokal fungsi itu. Variabel di luar semua fungsi berada di frame <code>__main__</code>. Frame ditumpuk sesuai urutan pemanggilan, dan dibuang saat fungsi selesai (Downey, 2024, Bab 3).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gabung_dua_kali(bagian1, bagian2):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    gabungan <span class="op">=</span> bagian1 <span class="op">+</span> bagian2</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    cetak_dua_kali(gabungan)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>baris1 <span class="op">=</span> <span class="st">"Algo "</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>baris2 <span class="op">=</span> <span class="st">"ritma"</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>gabung_dua_kali(baris1, baris2)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Saat <code>print</code> di dalam <code>cetak_dua_kali</code> sedang berjalan, stack-nya:</p>
+<pre><code>┌─ __main__ ───────────────────────┐
+│  baris1   → 'Algo '              │
+│  baris2   → 'ritma'              │
+└──────────────────────────────────┘
+┌─ gabung_dua_kali ────────────────┐
+│  bagian1  → 'Algo '              │
+│  bagian2  → 'ritma'              │
+│  gabungan → 'Algo ritma'         │
+└──────────────────────────────────┘
+┌─ cetak_dua_kali ─────────────────┐
+│  pesan    → 'Algo ritma'         │
+└──────────────────────────────────┘</code></pre>
+<p>Perhatikan bahwa nilai <code>'Algo ritma'</code> muncul dengan nama berbeda di dua frame. Gunakan <a href="https://pythontutor.com/python-compiler.html">Python Tutor</a> untuk melihat frame dibuat dan dibuang langkah demi langkah.</p>
+</section>
+<section id="membaca-traceback" class="level3">
+<h3 class="anchored" data-anchor-id="membaca-traceback">Membaca traceback</h3>
+<p>Jika terjadi galat di dalam fungsi, Python mencetak <strong>traceback</strong>: daftar fungsi yang sedang berjalan saat galat terjadi, <strong>urutannya sama dengan stack diagram</strong> (Downey, 2024, Bab 3). Misalkan <code>cetak_dua_kali</code> keliru memakai variabel <code>gabungan</code> milik fungsi lain:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>main.py</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14" data-filename="main.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-label="1"></a><span class="kw">def</span> cetak_dua_kali(pesan):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-label="2"></a>    <span class="bu">print</span>(gabungan)        <span class="co"># salah: gabungan bukan milik fungsi ini</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-label="3"></a>    <span class="bu">print</span>(pesan)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-label="4"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-label="5"></a><span class="kw">def</span> gabung_dua_kali(bagian1, bagian2):</span>
+<span id="cb14-6"><a href="#cb14-6" aria-label="6"></a>    gabungan <span class="op">=</span> bagian1 <span class="op">+</span> bagian2</span>
+<span id="cb14-7"><a href="#cb14-7" aria-label="7"></a>    cetak_dua_kali(gabungan)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-label="8"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-label="9"></a>baris1 <span class="op">=</span> <span class="st">"Algo "</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-label="10"></a>baris2 <span class="op">=</span> <span class="st">"ritma"</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-label="11"></a>gabung_dua_kali(baris1, baris2)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<pre><code>Traceback (most recent call last):
+  File "main.py", line 11, in &lt;module&gt;
+    gabung_dua_kali(baris1, baris2)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "main.py", line 7, in gabung_dua_kali
+    cetak_dua_kali(gabungan)
+    ~~~~~~~~~~~~~~^^^^^^^^^^
+  File "main.py", line 2, in cetak_dua_kali
+    print(gabungan)
+          ^^^^^^^^
+NameError: name 'gabungan' is not defined</code></pre>
+<p>Cara membacanya:</p>
+<ol type="1">
+<li>Mulai dari <strong>baris terakhir</strong>: jenis galat (<code>NameError</code>) dan pesannya.</li>
+<li>Naik satu tingkat: baris kode tempat galat terjadi (<code>print(gabungan)</code> di dalam <code>cetak_dua_kali</code>).</li>
+<li>Terus naik untuk melihat <strong>siapa memanggil siapa</strong>: <code>&lt;module&gt;</code> (yaitu <code>__main__</code>) → <code>gabung_dua_kali</code> → <code>cetak_dua_kali</code>.</li>
+</ol>
+<p>Galat ini terjadi karena <code>gabungan</code> adalah variabel lokal <code>gabung_dua_kali</code>; ia tidak terlihat dari frame <code>cetak_dua_kali</code>. Topik ini dibahas lebih dalam di Lesson B.</p>
+</section>
+<section id="fungsi-void" class="level3">
+<h3 class="anchored" data-anchor-id="fungsi-void">Fungsi void</h3>
+<p>Fungsi seperti <code>cetak_dua_kali</code> melakukan sesuatu (mencetak), tetapi tidak menghasilkan nilai untuk dipakai kembali. Fungsi seperti ini disebut <strong>fungsi void</strong>. Sebenarnya Python tetap mengembalikan sebuah nilai, yaitu nilai khusus <code>None</code> (Downey, 2024, Bab 6; PSF, t.t.-c, §4.8):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>hasil <span class="op">=</span> cetak_dua_kali(<span class="st">"Bing"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hasil)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>Bing
+Bing
+None</code></pre>
+<p>Jadi jangan menyimpan hasil fungsi void ke variabel dan berharap mendapat teks yang dicetaknya. Fungsi yang <strong>mengembalikan</strong> nilai dengan <code>return</code> adalah topik Minggu 6.</p>
+</section>
+</section>
+<section id="lesson-b-enkapsulasi-generalisasi-dan-dekomposisi" class="level2">
+<h2 class="anchored" data-anchor-id="lesson-b-enkapsulasi-generalisasi-dan-dekomposisi">Lesson B · Enkapsulasi, Generalisasi, dan Dekomposisi</h2>
+<section id="variabel-lokal-dan-lingkup" class="level3">
+<h3 class="anchored" data-anchor-id="variabel-lokal-dan-lingkup">Variabel lokal dan lingkup</h3>
+<p>Variabel yang dibuat di dalam fungsi, termasuk parameter, adalah <strong>variabel lokal</strong>: hanya ada selama fungsi berjalan dan hanya terlihat dari dalam fungsi itu (Downey, 2024, Bab 3). Bagian program tempat sebuah nama dapat dipakai disebut <strong>lingkup</strong> (<em>scope</em>) (PSF, t.t.-b, §4.2).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hitung_luas(panjang, lebar):</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    luas <span class="op">=</span> panjang <span class="op">*</span> lebar</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Luas:"</span>, luas)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>hitung_luas(<span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(luas)    <span class="co"># NameError: name 'luas' is not defined</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Setelah <code>hitung_luas</code> selesai, frame-nya dibuang beserta <code>panjang</code>, <code>lebar</code>, dan <code>luas</code>.</p>
+<p>Aturan yang perlu diingat (PSF, t.t.-b, §4.2.2; PSF, t.t.-d, §9.2):</p>
+<ul>
+<li>Saat membaca sebuah nama, Python mencari dulu di <strong>lingkup lokal</strong> fungsi, lalu di <strong>lingkup global</strong> (modul), lalu di nama <strong>bawaan</strong> (<code>print</code>, <code>len</code>, …). Jadi fungsi boleh <em>membaca</em> variabel global.</li>
+<li>Jika sebuah nama <strong>diberi nilai</strong> di mana pun di dalam fungsi, nama itu dianggap <strong>lokal</strong> untuk seluruh badan fungsi. Inilah sebabnya <code>x = 99</code> di dalam fungsi tidak mengubah <code>x</code> di luar.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>pajak <span class="op">=</span> <span class="fl">0.11</span>                  <span class="co"># variabel global</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cetak_harga(harga):</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(harga <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> pajak))   <span class="co"># membaca global: boleh</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> naikkan_pajak():</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    pajak <span class="op">=</span> pajak <span class="op">+</span> <span class="fl">0.01</span>         <span class="co"># UnboundLocalError</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Pada <code>naikkan_pajak</code>, <code>pajak</code> dianggap lokal karena diberi nilai di dalam fungsi, padahal belum punya nilai saat ruas kanan dibaca. Python melaporkan <code>UnboundLocalError: cannot access local variable 'pajak' where it is not associated with a value</code>.</p>
+<p>Python punya pernyataan <code>global</code> untuk mengubah variabel global dari dalam fungsi (PSF, t.t.-e, §7.12), tetapi <strong>hindari</strong> di mata kuliah ini. Fungsi yang bergantung pada dan mengubah variabel global sulit ditelusuri dan diuji. Kirimkan data lewat <strong>parameter</strong>.</p>
+</section>
+<section id="enkapsulasi" class="level3">
+<h3 class="anchored" data-anchor-id="enkapsulasi">Enkapsulasi</h3>
+<p><strong>Enkapsulasi</strong> adalah membungkus potongan kode ke dalam fungsi (Downey, 2024, Bab 4). Tanda paling jelas bahwa kamu perlu enkapsulasi: kode yang <strong>sama atau mirip ditulis berulang</strong>.</p>
+<p>Misalkan kita mencetak dua kartu nama seperti ini:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"+"</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> <span class="dv">20</span> <span class="op">+</span> <span class="st">"+"</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"| Rina Amelia"</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"| S1 Sistem Informasi"</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"+"</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> <span class="dv">20</span> <span class="op">+</span> <span class="st">"+"</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"+"</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> <span class="dv">20</span> <span class="op">+</span> <span class="st">"+"</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"| Budi Santoso"</span>)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"| S1 Sistem Informasi"</span>)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"+"</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> <span class="dv">20</span> <span class="op">+</span> <span class="st">"+"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Baris tepi kartu muncul empat kali. Bungkus menjadi fungsi:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cetak_tepi():</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"+"</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> <span class="dv">20</span> <span class="op">+</span> <span class="st">"+"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Kini kalau bentuk tepi perlu diubah, cukup ubah satu tempat.</p>
+</section>
+<section id="generalisasi" class="level3">
+<h3 class="anchored" data-anchor-id="generalisasi">Generalisasi</h3>
+<p><strong>Generalisasi</strong> adalah membuat fungsi lebih umum dengan <strong>mengganti nilai tetap menjadi parameter</strong> (Downey, 2024, Bab 4). Lebar <code>20</code> dan isi kartu masih tertanam di kode. Jadikan parameter:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cetak_tepi(lebar):</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"+"</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> lebar <span class="op">+</span> <span class="st">"+"</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cetak_kartu(nama, prodi, lebar):</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    cetak_tepi(lebar)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"| "</span> <span class="op">+</span> nama)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"| "</span> <span class="op">+</span> prodi)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    cetak_tepi(lebar)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>cetak_kartu(<span class="st">"Rina Amelia"</span>, <span class="st">"S1 Sistem Informasi"</span>, <span class="dv">20</span>)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>cetak_kartu(<span class="st">"Budi Santoso"</span>, <span class="st">"S1 Sistem Informasi"</span>, <span class="dv">20</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>+--------------------+
+| Rina Amelia
+| S1 Sistem Informasi
++--------------------+
+
++--------------------+
+| Budi Santoso
+| S1 Sistem Informasi
++--------------------+</code></pre>
+<p>Sembilan baris berulang kini menjadi dua pemanggilan yang mudah dibaca, dan fungsi yang sama bisa dipakai untuk kartu apa pun dengan lebar berapa pun.</p>
+</section>
+<section id="dekomposisi-dan-rencana-pengembangan" class="level3">
+<h3 class="anchored" data-anchor-id="dekomposisi-dan-rencana-pengembangan">Dekomposisi dan rencana pengembangan</h3>
+<p><strong>Dekomposisi</strong> adalah memecah tugas besar menjadi fungsi-fungsi kecil yang masing-masing mengerjakan <strong>satu hal</strong>. <code>cetak_kartu</code> memakai <code>cetak_tepi</code>; fungsi yang lebih besar dibangun dari fungsi yang lebih kecil. Manfaatnya (Downey, 2024, Bab 3):</p>
+<ul>
+<li><strong>Lebih mudah dibaca</strong>: nama fungsi menjelaskan maksud sekelompok baris.</li>
+<li><strong>Lebih pendek</strong>: kode berulang hilang.</li>
+<li><strong>Lebih mudah di-<em>debug</em></strong>: tiap fungsi bisa diuji sendiri-sendiri, lalu dirangkai.</li>
+<li><strong>Dapat dipakai ulang</strong>: fungsi yang sudah benar bisa dipakai di program lain.</li>
+</ul>
+<p>Downey (2024, Bab 4) menyarankan <strong>rencana pengembangan</strong> (<em>development plan</em>) berikut saat kamu belum tahu cara membagi program:</p>
+<ol type="1">
+<li>Tulis program kecil yang langsung berjalan, tanpa fungsi.</li>
+<li>Setelah benar, kenali potongan yang utuh dan <strong>bungkus</strong> ke dalam fungsi (enkapsulasi).</li>
+<li><strong>Generalisasi</strong> fungsi itu dengan menambah parameter yang sesuai.</li>
+<li>Ulangi langkah 1–3 sampai kamu punya sekumpulan fungsi yang bekerja.</li>
+<li>Cari peluang <strong>merapikan</strong> (<em>refactoring</em>), misalnya kode mirip di dua fungsi yang bisa disatukan.</li>
+</ol>
+</section>
+<section id="antarmuka-dan-docstring" class="level3">
+<h3 class="anchored" data-anchor-id="antarmuka-dan-docstring">Antarmuka dan docstring</h3>
+<p><strong>Antarmuka</strong> (<em>interface</em>) sebuah fungsi adalah ringkasan cara memakainya: apa parameternya, apa yang dilakukannya, dan apa hasilnya. Antarmuka yang baik membuat pemanggil tidak perlu membaca isi fungsi (Downey, 2024, Bab 4).</p>
+<p>Tuliskan antarmuka dalam <strong>docstring</strong>: string di baris pertama badan fungsi, biasanya diapit tiga tanda kutip. Konvensinya (PSF, t.t.-c, §4.9.7):</p>
+<ul>
+<li>Baris pertama: ringkasan singkat tujuan fungsi, diawali huruf kapital dan diakhiri titik.</li>
+<li>Jika perlu lebih panjang, beri satu baris kosong, lalu jelaskan parameter dan perilakunya.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cetak_kartu(nama, prodi, lebar):</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Mencetak kartu nama berbingkai.</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co">    nama: nama mahasiswa (str)</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co">    prodi: nama program studi (str)</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co">    lebar: panjang garis tepi (int, sebaiknya &gt;= panjang teks terpanjang)</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    cetak_tepi(lebar)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"| "</span> <span class="op">+</span> nama)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"| "</span> <span class="op">+</span> prodi)</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    cetak_tepi(lebar)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Docstring bisa dibaca dengan <code>help(cetak_kartu)</code>, persis seperti <code>help(print)</code>.</p>
+<p>Docstring juga mencatat <strong>prasyarat</strong> (<em>precondition</em>): hal yang harus benar sebelum fungsi dipanggil, misalnya <code>lebar</code> harus bilangan bulat. Jika prasyarat dilanggar dan fungsi gagal, kesalahannya ada pada <strong>pemanggil</strong>. Jika prasyarat dipenuhi tetapi hasilnya salah, kesalahannya ada pada <strong>fungsi</strong> (Downey, 2024, Bab 4). Pembagian tanggung jawab ini memudahkan mencari <em>bug</em>.</p>
+</section>
+</section>
+<section id="kesalahan-umum" class="level2">
+<h2 class="anchored" data-anchor-id="kesalahan-umum">Kesalahan Umum</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 36%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Gejala</th>
+<th>Penyebab</th>
+<th>Perbaikan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Program berjalan tetapi tidak ada keluaran dari fungsi</td>
+<td>Fungsi hanya didefinisikan, tidak pernah dipanggil</td>
+<td>Tambahkan pemanggilan <code>nama_fungsi(...)</code></td>
+</tr>
+<tr class="even">
+<td><code>NameError</code> saat memanggil fungsi</td>
+<td>Pemanggilan ditulis sebelum <code>def</code></td>
+<td>Letakkan semua definisi di atas, pemanggilan di bawah</td>
+</tr>
+<tr class="odd">
+<td><code>IndentationError</code> atau badan fungsi “terpotong”</td>
+<td>Indentasi tidak konsisten</td>
+<td>Gunakan 4 spasi untuk seluruh badan</td>
+</tr>
+<tr class="even">
+<td><code>TypeError: ... missing 1 required positional argument</code></td>
+<td>Jumlah argumen kurang dari jumlah parameter</td>
+<td>Cocokkan jumlah dan urutan argumen dengan header</td>
+</tr>
+<tr class="odd">
+<td>Fungsi selalu memakai nilai yang sama</td>
+<td>Memanggil <code>input()</code> atau menulis nilai tetap di dalam fungsi, padahal seharusnya parameter</td>
+<td>Jadikan nilai itu parameter; minta <code>input()</code> di luar fungsi</td>
+</tr>
+<tr class="even">
+<td><code>NameError</code> saat memakai variabel dari fungsi lain</td>
+<td>Variabel lokal tidak terlihat di luar fungsinya</td>
+<td>Kirim nilainya sebagai argumen</td>
+</tr>
+<tr class="odd">
+<td>Variabel hasil pemanggilan berisi <code>None</code></td>
+<td>Menyimpan hasil fungsi void</td>
+<td>Fungsi void hanya untuk aksi; nilai kembali dibahas di Minggu 6</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="tebak-dulu" class="level2">
 <h2 class="anchored" data-anchor-id="tebak-dulu">Tebak Dulu</h2>
 <p>Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, <strong>baru</strong> buka jawabannya.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ubah():</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="dv">99</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>ubah()</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ubah():</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="dv">99</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>ubah()</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -666,13 +1004,75 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>Satu lagi. Perhatikan urutan pemanggilannya:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> b(n):</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"b"</span>, n)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> a(n):</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    b(n <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"a"</span>, n)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>a(<span class="dv">1</span>)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>b(<span class="dv">10</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lihat jawaban
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<pre><code>b 2
+a 1
+b 10</code></pre>
+<p><code>a(1)</code> lebih dulu memanggil <code>b(2)</code>, baru mencetak <code>a 1</code>. Parameter <code>n</code> di <code>a</code> dan <code>n</code> di <code>b</code> adalah dua variabel lokal yang berbeda di frame masing-masing.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="latihan-mandiri" class="level2">
+<h2 class="anchored" data-anchor-id="latihan-mandiri">Latihan Mandiri</h2>
+<ol type="1">
+<li><p><strong>(U4.1)</strong> Gambar stack diagram saat <code>print("b", n)</code> dijalankan pada pemanggilan <code>a(1)</code> di atas. Berapa frame yang ada, dan apa isi masing-masing?</p></li>
+<li><p><strong>(U4.2)</strong> Tulis fungsi <code>cetak_persegi(simbol, sisi)</code> yang mencetak satu baris berisi <code>simbol</code> sebanyak <code>sisi</code> kali, misalnya <code>cetak_persegi("*", 5)</code> mencetak <code>*****</code>. Panggil dengan tiga argumen berbeda.</p></li>
+<li><p><strong>(U4.3)</strong> Program berikut mencetak struk dua pembelian. Enkapsulasi lalu generalisasi menjadi fungsi <code>cetak_struk(barang, harga)</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">24</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Barang :"</span>, <span class="st">"Buku Tulis"</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Harga  : Rp"</span>, <span class="dv">5000</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">24</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">24</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Barang :"</span>, <span class="st">"Pulpen"</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Harga  : Rp"</span>, <span class="dv">3000</span>)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">24</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>(U4.4)</strong> Jelaskan dengan kalimatmu sendiri mengapa <code>naikkan_pajak()</code> pada bagian <em>Variabel lokal dan lingkup</em> menghasilkan <code>UnboundLocalError</code>, padahal <code>cetak_harga()</code> bisa membaca <code>pajak</code> tanpa masalah.</p></li>
+<li><p><strong>(U4.5)</strong> Rancang program yang mencetak jadwal kuliah satu hari: judul hari, garis pemisah, dan tiga baris mata kuliah. Tentukan fungsi-fungsinya, tulis header dan docstring tiap fungsi <strong>sebelum</strong> menulis badannya, lalu lengkapi.</p></li>
+</ol>
 </section>
 <section id="bacaan" class="level2">
 <h2 class="anchored" data-anchor-id="bacaan">Bacaan</h2>
 <ul>
 <li>Think Python Ch. 3 - Functions</li>
 <li>Think Python Ch. 4 - Functions &amp; Interface</li>
+<li>Tutorial resmi Python §4.8 - Defining Functions dan §4.9.7 - Documentation Strings</li>
 </ul>
+</section>
+<section id="referensi" class="level2">
+<h2 class="anchored" data-anchor-id="referensi">Referensi</h2>
+<p>Downey, A. B. (2024). <em>Think Python: How to think like a computer scientist</em> (3rd ed.). O’Reilly Media. <a href="https://allendowney.github.io/ThinkPython/" class="uri">https://allendowney.github.io/ThinkPython/</a></p>
+<ul>
+<li>Bab 3, <em>Functions</em>: <a href="https://allendowney.github.io/ThinkPython/chap03.html" class="uri">https://allendowney.github.io/ThinkPython/chap03.html</a></li>
+<li>Bab 4, <em>Functions and Interfaces</em>: <a href="https://allendowney.github.io/ThinkPython/chap04.html" class="uri">https://allendowney.github.io/ThinkPython/chap04.html</a></li>
+<li>Bab 6, <em>Return Values</em> (subbab <em>And some have None</em>): <a href="https://allendowney.github.io/ThinkPython/chap06.html" class="uri">https://allendowney.github.io/ThinkPython/chap06.html</a></li>
+</ul>
+<p>Python Software Foundation. (t.t.-a). Glossary. Dalam <em>Python 3 documentation</em>. Diakses 2 Oktober 2026, dari <a href="https://docs.python.org/3/glossary.html" class="uri">https://docs.python.org/3/glossary.html</a></p>
+<p>Python Software Foundation. (t.t.-b). Execution model: Naming and binding. Dalam <em>The Python language reference</em>. Diakses 2 Oktober 2026, dari <a href="https://docs.python.org/3/reference/executionmodel.html#naming-and-binding" class="uri">https://docs.python.org/3/reference/executionmodel.html#naming-and-binding</a></p>
+<p>Python Software Foundation. (t.t.-c). More control flow tools: Defining functions. Dalam <em>The Python tutorial</em>. Diakses 2 Oktober 2026, dari <a href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions" class="uri">https://docs.python.org/3/tutorial/controlflow.html#defining-functions</a></p>
+<p>Python Software Foundation. (t.t.-d). Classes: Python scopes and namespaces. Dalam <em>The Python tutorial</em>. Diakses 2 Oktober 2026, dari <a href="https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces" class="uri">https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces</a></p>
+<p>Python Software Foundation. (t.t.-e). Simple statements: The global statement. Dalam <em>The Python language reference</em>. Diakses 2 Oktober 2026, dari <a href="https://docs.python.org/3/reference/simple_stmts.html#the-global-statement" class="uri">https://docs.python.org/3/reference/simple_stmts.html#the-global-statement</a></p>
 
 
 </section>
