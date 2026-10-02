@@ -95,3 +95,69 @@
 }
 
 table { font-size: .95rem; }
+
+/* Long URLs and inline code in tables wrap instead of widening the page on phones */
+a.uri { overflow-wrap: anywhere; }
+td code, th code { overflow-wrap: anywhere; }
+
+/* ---------- Stack diagram interaktif (assets/stackviz.js) ---------- */
+.stackviz {
+  /* Quarto's dark theme keeps Bootstrap's light surface/border variables,
+     so derive them from the page's own text and background colours. */
+  --sv-surface: color-mix(in srgb, var(--bs-body-color) 6%, var(--bs-body-bg));
+  --sv-border: color-mix(in srgb, var(--bs-body-color) 20%, var(--bs-body-bg));
+  border: 1px solid var(--sv-border); border-radius: .5rem;
+  padding: .9rem 1rem; margin: 1.25rem 0; background: var(--bs-body-bg);
+}
+.stackviz:focus-visible { outline: 2px solid var(--bs-primary); outline-offset: 2px; }
+.sv-head { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; margin-bottom: .6rem; }
+.sv-title { font-weight: 600; }
+.sv-counter { font-size: .85rem; color: var(--bs-secondary-color); white-space: nowrap; }
+.sv-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 1rem; }
+@media (max-width: 720px) { .sv-grid { grid-template-columns: minmax(0, 1fr); } }
+.sv-label {
+  font-size: .72rem; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--bs-secondary-color); margin: 0 0 .3rem;
+}
+.sv-left .sv-label + .sv-code + .sv-label { margin-top: .7rem; }
+.stackviz pre.sv-code, .stackviz pre.sv-out {
+  margin: 0; padding: .4rem 0; font-size: .85rem; line-height: 1.5;
+  background: var(--sv-surface); border: 1px solid var(--sv-border); border-radius: .35rem;
+  white-space: pre; overflow-x: auto;
+}
+.stackviz pre.sv-out { padding: .4rem .7rem; min-height: 2.2rem; }
+.stackviz pre.sv-out.sv-empty::before { content: "(belum ada keluaran)"; color: var(--bs-secondary-color); font-style: italic; }
+.sv-line { display: block; padding: 0 .6rem 0 0; border-left: 3px solid transparent; }
+.sv-ln { display: inline-block; width: 2.2rem; text-align: right; padding-right: .7rem; color: var(--bs-secondary-color); user-select: none; }
+.sv-line.sv-current { background: rgba(var(--bs-primary-rgb), .14); border-left-color: var(--bs-primary); }
+.sv-line.sv-current .sv-ln { color: var(--bs-primary); font-weight: 700; }
+.sv-stack { display: flex; flex-direction: column; gap: .5rem; }
+.sv-frame {
+  border: 1px solid var(--sv-border); border-radius: .35rem; padding: .35rem .6rem .45rem;
+  font-family: var(--bs-font-monospace); font-size: .82rem; background: var(--sv-surface);
+}
+.sv-frame.sv-active { border: 2px solid var(--bs-primary); }
+.sv-frame.sv-done { border-style: dashed; opacity: .75; }
+.sv-frame.sv-enter { animation: sv-enter .35s ease-out; }
+.sv-fname { font-weight: 700; margin-bottom: .2rem; color: var(--bs-body-color); }
+.sv-novar { color: var(--bs-secondary-color); font-style: italic; }
+.sv-var { display: flex; gap: .45rem; padding: .05rem .25rem; border-radius: .25rem; overflow-wrap: anywhere; }
+.sv-vname { min-width: 4.5rem; }
+.sv-arrow { color: var(--bs-secondary-color); }
+.sv-val.sv-fn { color: var(--bs-secondary-color); font-style: italic; }
+.sv-var.sv-changed { animation: sv-flash 1.4s ease-out; }
+.sv-var.sv-ret .sv-vname { font-style: italic; }
+.sv-note {
+  margin: .8rem 0 .6rem; padding: .55rem .8rem; min-height: 3rem; font-size: .95rem;
+  border-left: 3px solid var(--explain); background: var(--sv-surface); border-radius: 0 .35rem .35rem 0;
+}
+.sv-note code { font-size: .88em; }
+.sv-ctrl { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
+.sv-ctrl .sv-slider { flex: 1 1 8rem; min-width: 6rem; margin-left: .3rem; }
+.sv-foot { margin-top: .5rem; font-size: .85rem; color: var(--bs-secondary-color); }
+@keyframes sv-enter { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+@keyframes sv-flash { from { background: rgba(var(--bs-warning-rgb), .55); } to { background: transparent; } }
+@media (prefers-reduced-motion: reduce) {
+  .sv-frame.sv-enter, .sv-var.sv-changed { animation: none; }
+  .sv-var.sv-changed { background: rgba(var(--bs-warning-rgb), .3); }
+}
