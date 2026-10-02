@@ -44,6 +44,364 @@ def cetak_judul(teks):
 cetak_judul("Algoritma")
 ```
 
+```
+---------
+Algoritma
+---------
+```
+
+## Lesson A · Memanggil dan Mendefinisikan Fungsi
+
+### Memanggil fungsi yang sudah ada
+
+Sejak minggu pertama kamu sudah memakai fungsi: `print`, `input`, `len`, `int`, `round`. Menulis nama fungsi diikuti tanda kurung disebut **pemanggilan fungsi** (*function call*). Nilai di dalam kurung adalah **argumen** (Downey, 2024, Bab 3).
+
+```python
+len("Telkom")          # argumen: "Telkom", menghasilkan 6
+round(3.14159, 2)      # dua argumen, menghasilkan 3.14
+print("Halo", "SI")    # dua argumen, mencetak: Halo SI
+```
+
+Argumen boleh berupa ekspresi apa pun. Python **mengevaluasi argumen lebih dulu**, baru memanggil fungsinya. Pada `print(len("abc") * 2)`, Python menghitung `len("abc")` → `3`, lalu `3 * 2` → `6`, baru kemudian `print(6)` dijalankan.
+
+### Mendefinisikan fungsi baru
+
+**Definisi fungsi** membuat fungsi baru dengan nama yang kita pilih (Downey, 2024, Bab 3; Python Software Foundation [PSF], t.t.-c, §4.8):
+
+```python
+def sapa():
+    print("Selamat pagi!")
+    print("Selamat belajar Alpro.")
+```
+
+Bagian-bagiannya:
+
+- **Header**: baris pertama. Dimulai kata kunci `def`, lalu nama fungsi, tanda kurung, dan diakhiri titik dua `:`.
+- **Badan** (*body*): baris-baris di bawah header yang **menjorok** (biasanya 4 spasi). Badan berakhir di baris pertama yang tidak lagi menjorok.
+- **Nama fungsi** mengikuti aturan nama variabel: huruf, angka, garis bawah, tidak diawali angka, dan bukan kata kunci. Gunakan kata kerja yang menjelaskan apa yang dilakukan fungsi, misalnya `cetak_struk`, bukan `f1`.
+
+Menjalankan definisi **tidak menjalankan badannya**. Definisi hanya membuat **objek fungsi** dan mengikatnya ke nama `sapa`. Badan baru dijalankan saat fungsi dipanggil:
+
+```python
+sapa()
+sapa()
+```
+
+```
+Selamat pagi!
+Selamat belajar Alpro.
+Selamat pagi!
+Selamat belajar Alpro.
+```
+
+Karena definisi harus dijalankan lebih dulu, **fungsi harus didefinisikan sebelum dipanggil**. Jika urutannya terbalik, Python melaporkan `NameError: name 'sapa' is not defined`.
+
+### Parameter dan argumen
+
+Fungsi menjadi jauh lebih berguna jika bisa menerima data. Nama di dalam kurung pada header disebut **parameter**; nilai yang diberikan saat pemanggilan disebut **argumen** (PSF, t.t.-a, entri *parameter* dan *argument*).
+
+```python
+def cetak_dua_kali(pesan):     # pesan adalah parameter
+    print(pesan)
+    print(pesan)
+
+cetak_dua_kali("Halo")         # "Halo" adalah argumen
+cetak_dua_kali(17 * 3)         # argumen boleh ekspresi: 51
+kata = "Python"
+cetak_dua_kali(kata)           # argumen boleh variabel
+```
+
+Saat dipanggil, nilai argumen **diikatkan** ke parameter, seakan-akan Python menjalankan `pesan = "Halo"` di awal badan fungsi. Nama variabel argumen (`kata`) tidak perlu sama dengan nama parameter (`pesan`); yang dipindahkan adalah **nilainya**.
+
+Jika ada beberapa parameter, argumen dipasangkan **berdasarkan urutan** (*positional*):
+
+```python
+def cetak_nilai(nama, nilai):
+    print(nama, "mendapat nilai", nilai)
+
+cetak_nilai("Rina", 85)    # nama = "Rina", nilai = 85
+cetak_nilai(85, "Rina")    # tertukar: 85 mendapat nilai Rina
+```
+
+Python juga mendukung **argumen kata kunci** (*keyword argument*), yang memasangkan nilai berdasarkan nama parameter sehingga urutannya bebas (PSF, t.t.-c, §4.9.2):
+
+```python
+cetak_nilai(nilai=85, nama="Rina")   # Rina mendapat nilai 85
+```
+
+Jumlah argumen harus sesuai dengan jumlah parameter. `cetak_nilai("Rina")` menghasilkan `TypeError: cetak_nilai() missing 1 required positional argument: 'nilai'`.
+
+### Alur eksekusi
+
+Program dijalankan dari baris pertama ke bawah, satu pernyataan setiap kali. Pemanggilan fungsi adalah **jalan memutar**: alur melompat ke badan fungsi, menjalankan seluruh isinya, lalu **kembali** ke tepat setelah titik pemanggilan. Fungsi boleh memanggil fungsi lain, sehingga saat membaca program, ikuti **alur eksekusi**, bukan urutan baris di file.
+
+```python
+def langkah_b():
+    print("B1")
+
+def langkah_a():
+    print("A1")
+    langkah_b()
+    print("A2")
+
+print("mulai")
+langkah_a()
+print("selesai")
+```
+
+```
+mulai
+A1
+B1
+A2
+selesai
+```
+
+### Stack diagram
+
+Untuk menelusuri pemanggilan, gambarlah **stack diagram**. Setiap pemanggilan fungsi mendapat satu **frame**: kotak berisi parameter dan variabel lokal fungsi itu. Variabel di luar semua fungsi berada di frame `__main__`. Frame ditumpuk sesuai urutan pemanggilan, dan dibuang saat fungsi selesai (Downey, 2024, Bab 3).
+
+```python
+def gabung_dua_kali(bagian1, bagian2):
+    gabungan = bagian1 + bagian2
+    cetak_dua_kali(gabungan)
+
+baris1 = "Algo "
+baris2 = "ritma"
+gabung_dua_kali(baris1, baris2)
+```
+
+Saat `print` di dalam `cetak_dua_kali` sedang berjalan, stack-nya:
+
+```
+┌─ __main__ ───────────────────────┐
+│  baris1   → 'Algo '              │
+│  baris2   → 'ritma'              │
+└──────────────────────────────────┘
+┌─ gabung_dua_kali ────────────────┐
+│  bagian1  → 'Algo '              │
+│  bagian2  → 'ritma'              │
+│  gabungan → 'Algo ritma'         │
+└──────────────────────────────────┘
+┌─ cetak_dua_kali ─────────────────┐
+│  pesan    → 'Algo ritma'         │
+└──────────────────────────────────┘
+```
+
+Perhatikan bahwa nilai `'Algo ritma'` muncul dengan nama berbeda di dua frame. Gunakan [Python Tutor](https://pythontutor.com/python-compiler.html) untuk melihat frame dibuat dan dibuang langkah demi langkah.
+
+### Membaca traceback
+
+Jika terjadi galat di dalam fungsi, Python mencetak **traceback**: daftar fungsi yang sedang berjalan saat galat terjadi, **urutannya sama dengan stack diagram** (Downey, 2024, Bab 3). Misalkan `cetak_dua_kali` keliru memakai variabel `gabungan` milik fungsi lain:
+
+```{.python filename="main.py" code-line-numbers="true"}
+def cetak_dua_kali(pesan):
+    print(gabungan)        # salah: gabungan bukan milik fungsi ini
+    print(pesan)
+
+def gabung_dua_kali(bagian1, bagian2):
+    gabungan = bagian1 + bagian2
+    cetak_dua_kali(gabungan)
+
+baris1 = "Algo "
+baris2 = "ritma"
+gabung_dua_kali(baris1, baris2)
+```
+
+```
+Traceback (most recent call last):
+  File "main.py", line 11, in <module>
+    gabung_dua_kali(baris1, baris2)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "main.py", line 7, in gabung_dua_kali
+    cetak_dua_kali(gabungan)
+    ~~~~~~~~~~~~~~^^^^^^^^^^
+  File "main.py", line 2, in cetak_dua_kali
+    print(gabungan)
+          ^^^^^^^^
+NameError: name 'gabungan' is not defined
+```
+
+Cara membacanya:
+
+1. Mulai dari **baris terakhir**: jenis galat (`NameError`) dan pesannya.
+2. Naik satu tingkat: baris kode tempat galat terjadi (`print(gabungan)` di dalam `cetak_dua_kali`).
+3. Terus naik untuk melihat **siapa memanggil siapa**: `<module>` (yaitu `__main__`) → `gabung_dua_kali` → `cetak_dua_kali`.
+
+Galat ini terjadi karena `gabungan` adalah variabel lokal `gabung_dua_kali`; ia tidak terlihat dari frame `cetak_dua_kali`. Topik ini dibahas lebih dalam di Lesson B.
+
+### Fungsi void
+
+Fungsi seperti `cetak_dua_kali` melakukan sesuatu (mencetak), tetapi tidak menghasilkan nilai untuk dipakai kembali. Fungsi seperti ini disebut **fungsi void**. Sebenarnya Python tetap mengembalikan sebuah nilai, yaitu nilai khusus `None` (Downey, 2024, Bab 6; PSF, t.t.-c, §4.8):
+
+```python
+hasil = cetak_dua_kali("Bing")
+print(hasil)
+```
+
+```
+Bing
+Bing
+None
+```
+
+Jadi jangan menyimpan hasil fungsi void ke variabel dan berharap mendapat teks yang dicetaknya. Fungsi yang **mengembalikan** nilai dengan `return` adalah topik Minggu 6.
+
+## Lesson B · Enkapsulasi, Generalisasi, dan Dekomposisi
+
+### Variabel lokal dan lingkup
+
+Variabel yang dibuat di dalam fungsi, termasuk parameter, adalah **variabel lokal**: hanya ada selama fungsi berjalan dan hanya terlihat dari dalam fungsi itu (Downey, 2024, Bab 3). Bagian program tempat sebuah nama dapat dipakai disebut **lingkup** (*scope*) (PSF, t.t.-b, §4.2).
+
+```python
+def hitung_luas(panjang, lebar):
+    luas = panjang * lebar
+    print("Luas:", luas)
+
+hitung_luas(4, 5)
+print(luas)    # NameError: name 'luas' is not defined
+```
+
+Setelah `hitung_luas` selesai, frame-nya dibuang beserta `panjang`, `lebar`, dan `luas`.
+
+Aturan yang perlu diingat (PSF, t.t.-b, §4.2.2; PSF, t.t.-d, §9.2):
+
+- Saat membaca sebuah nama, Python mencari dulu di **lingkup lokal** fungsi, lalu di **lingkup global** (modul), lalu di nama **bawaan** (`print`, `len`, ...). Jadi fungsi boleh *membaca* variabel global.
+- Jika sebuah nama **diberi nilai** di mana pun di dalam fungsi, nama itu dianggap **lokal** untuk seluruh badan fungsi. Inilah sebabnya `x = 99` di dalam fungsi tidak mengubah `x` di luar.
+
+```python
+pajak = 0.11                  # variabel global
+
+def cetak_harga(harga):
+    print(harga * (1 + pajak))   # membaca global: boleh
+
+def naikkan_pajak():
+    pajak = pajak + 0.01         # UnboundLocalError
+```
+
+Pada `naikkan_pajak`, `pajak` dianggap lokal karena diberi nilai di dalam fungsi, padahal belum punya nilai saat ruas kanan dibaca. Python melaporkan `UnboundLocalError: cannot access local variable 'pajak' where it is not associated with a value`.
+
+Python punya pernyataan `global` untuk mengubah variabel global dari dalam fungsi (PSF, t.t.-e, §7.12), tetapi **hindari** di mata kuliah ini. Fungsi yang bergantung pada dan mengubah variabel global sulit ditelusuri dan diuji. Kirimkan data lewat **parameter**.
+
+### Enkapsulasi
+
+**Enkapsulasi** adalah membungkus potongan kode ke dalam fungsi (Downey, 2024, Bab 4). Tanda paling jelas bahwa kamu perlu enkapsulasi: kode yang **sama atau mirip ditulis berulang**.
+
+Misalkan kita mencetak dua kartu nama seperti ini:
+
+```python
+print("+" + "-" * 20 + "+")
+print("| Rina Amelia")
+print("| S1 Sistem Informasi")
+print("+" + "-" * 20 + "+")
+print()
+print("+" + "-" * 20 + "+")
+print("| Budi Santoso")
+print("| S1 Sistem Informasi")
+print("+" + "-" * 20 + "+")
+```
+
+Baris tepi kartu muncul empat kali. Bungkus menjadi fungsi:
+
+```python
+def cetak_tepi():
+    print("+" + "-" * 20 + "+")
+```
+
+Kini kalau bentuk tepi perlu diubah, cukup ubah satu tempat.
+
+### Generalisasi
+
+**Generalisasi** adalah membuat fungsi lebih umum dengan **mengganti nilai tetap menjadi parameter** (Downey, 2024, Bab 4). Lebar `20` dan isi kartu masih tertanam di kode. Jadikan parameter:
+
+```python
+def cetak_tepi(lebar):
+    print("+" + "-" * lebar + "+")
+
+def cetak_kartu(nama, prodi, lebar):
+    cetak_tepi(lebar)
+    print("| " + nama)
+    print("| " + prodi)
+    cetak_tepi(lebar)
+    print()
+
+cetak_kartu("Rina Amelia", "S1 Sistem Informasi", 20)
+cetak_kartu("Budi Santoso", "S1 Sistem Informasi", 20)
+```
+
+```
++--------------------+
+| Rina Amelia
+| S1 Sistem Informasi
++--------------------+
+
++--------------------+
+| Budi Santoso
+| S1 Sistem Informasi
++--------------------+
+```
+
+Sembilan baris berulang kini menjadi dua pemanggilan yang mudah dibaca, dan fungsi yang sama bisa dipakai untuk kartu apa pun dengan lebar berapa pun.
+
+### Dekomposisi dan rencana pengembangan
+
+**Dekomposisi** adalah memecah tugas besar menjadi fungsi-fungsi kecil yang masing-masing mengerjakan **satu hal**. `cetak_kartu` memakai `cetak_tepi`; fungsi yang lebih besar dibangun dari fungsi yang lebih kecil. Manfaatnya (Downey, 2024, Bab 3):
+
+- **Lebih mudah dibaca**: nama fungsi menjelaskan maksud sekelompok baris.
+- **Lebih pendek**: kode berulang hilang.
+- **Lebih mudah di-*debug***: tiap fungsi bisa diuji sendiri-sendiri, lalu dirangkai.
+- **Dapat dipakai ulang**: fungsi yang sudah benar bisa dipakai di program lain.
+
+Downey (2024, Bab 4) menyarankan **rencana pengembangan** (*development plan*) berikut saat kamu belum tahu cara membagi program:
+
+1. Tulis program kecil yang langsung berjalan, tanpa fungsi.
+2. Setelah benar, kenali potongan yang utuh dan **bungkus** ke dalam fungsi (enkapsulasi).
+3. **Generalisasi** fungsi itu dengan menambah parameter yang sesuai.
+4. Ulangi langkah 1–3 sampai kamu punya sekumpulan fungsi yang bekerja.
+5. Cari peluang **merapikan** (*refactoring*), misalnya kode mirip di dua fungsi yang bisa disatukan.
+
+### Antarmuka dan docstring
+
+**Antarmuka** (*interface*) sebuah fungsi adalah ringkasan cara memakainya: apa parameternya, apa yang dilakukannya, dan apa hasilnya. Antarmuka yang baik membuat pemanggil tidak perlu membaca isi fungsi (Downey, 2024, Bab 4).
+
+Tuliskan antarmuka dalam **docstring**: string di baris pertama badan fungsi, biasanya diapit tiga tanda kutip. Konvensinya (PSF, t.t.-c, §4.9.7):
+
+- Baris pertama: ringkasan singkat tujuan fungsi, diawali huruf kapital dan diakhiri titik.
+- Jika perlu lebih panjang, beri satu baris kosong, lalu jelaskan parameter dan perilakunya.
+
+```python
+def cetak_kartu(nama, prodi, lebar):
+    """Mencetak kartu nama berbingkai.
+
+    nama: nama mahasiswa (str)
+    prodi: nama program studi (str)
+    lebar: panjang garis tepi (int, sebaiknya >= panjang teks terpanjang)
+    """
+    cetak_tepi(lebar)
+    print("| " + nama)
+    print("| " + prodi)
+    cetak_tepi(lebar)
+    print()
+```
+
+Docstring bisa dibaca dengan `help(cetak_kartu)`, persis seperti `help(print)`.
+
+Docstring juga mencatat **prasyarat** (*precondition*): hal yang harus benar sebelum fungsi dipanggil, misalnya `lebar` harus bilangan bulat. Jika prasyarat dilanggar dan fungsi gagal, kesalahannya ada pada **pemanggil**. Jika prasyarat dipenuhi tetapi hasilnya salah, kesalahannya ada pada **fungsi** (Downey, 2024, Bab 4). Pembagian tanggung jawab ini memudahkan mencari *bug*.
+
+## Kesalahan Umum
+
+| Gejala | Penyebab | Perbaikan |
+|---|---|---|
+| Program berjalan tetapi tidak ada keluaran dari fungsi | Fungsi hanya didefinisikan, tidak pernah dipanggil | Tambahkan pemanggilan `nama_fungsi(...)` |
+| `NameError` saat memanggil fungsi | Pemanggilan ditulis sebelum `def` | Letakkan semua definisi di atas, pemanggilan di bawah |
+| `IndentationError` atau badan fungsi "terpotong" | Indentasi tidak konsisten | Gunakan 4 spasi untuk seluruh badan |
+| `TypeError: ... missing 1 required positional argument` | Jumlah argumen kurang dari jumlah parameter | Cocokkan jumlah dan urutan argumen dengan header |
+| Fungsi selalu memakai nilai yang sama | Memanggil `input()` atau menulis nilai tetap di dalam fungsi, padahal seharusnya parameter | Jadikan nilai itu parameter; minta `input()` di luar fungsi |
+| `NameError` saat memakai variabel dari fungsi lain | Variabel lokal tidak terlihat di luar fungsinya | Kirim nilainya sebagai argumen |
+| Variabel hasil pemanggilan berisi `None` | Menyimpan hasil fungsi void | Fungsi void hanya untuk aksi; nilai kembali dibahas di Minggu 6 |
+
+: {tbl-colwidths="[32,36,32]"}
+
 ## Tebak Dulu
 
 Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
@@ -62,7 +420,69 @@ print(x)
 Hasilnya `1`. `x = 99` di dalam fungsi membuat variabel lokal baru bernama `x`, dan tidak mengubah `x` di luar fungsi.
 :::
 
+Satu lagi. Perhatikan urutan pemanggilannya:
+
+```python
+def b(n):
+    print("b", n)
+
+def a(n):
+    b(n + 1)
+    print("a", n)
+
+a(1)
+b(10)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+```
+b 2
+a 1
+b 10
+```
+`a(1)` lebih dulu memanggil `b(2)`, baru mencetak `a 1`. Parameter `n` di `a` dan `n` di `b` adalah dua variabel lokal yang berbeda di frame masing-masing.
+:::
+
+## Latihan Mandiri
+
+1. **(U4.1)** Gambar stack diagram saat `print("b", n)` dijalankan pada pemanggilan `a(1)` di atas. Berapa frame yang ada, dan apa isi masing-masing?
+2. **(U4.2)** Tulis fungsi `cetak_persegi(simbol, sisi)` yang mencetak satu baris berisi `simbol` sebanyak `sisi` kali, misalnya `cetak_persegi("*", 5)` mencetak `*****`. Panggil dengan tiga argumen berbeda.
+3. **(U4.3)** Program berikut mencetak struk dua pembelian. Enkapsulasi lalu generalisasi menjadi fungsi `cetak_struk(barang, harga)`:
+
+    ```python
+    print("=" * 24)
+    print("Barang :", "Buku Tulis")
+    print("Harga  : Rp", 5000)
+    print("=" * 24)
+    print("=" * 24)
+    print("Barang :", "Pulpen")
+    print("Harga  : Rp", 3000)
+    print("=" * 24)
+    ```
+
+4. **(U4.4)** Jelaskan dengan kalimatmu sendiri mengapa `naikkan_pajak()` pada bagian *Variabel lokal dan lingkup* menghasilkan `UnboundLocalError`, padahal `cetak_harga()` bisa membaca `pajak` tanpa masalah.
+5. **(U4.5)** Rancang program yang mencetak jadwal kuliah satu hari: judul hari, garis pemisah, dan tiga baris mata kuliah. Tentukan fungsi-fungsinya, tulis header dan docstring tiap fungsi **sebelum** menulis badannya, lalu lengkapi.
+
 ## Bacaan
 
 - Think Python Ch. 3 - Functions
 - Think Python Ch. 4 - Functions & Interface
+- Tutorial resmi Python §4.8 - Defining Functions dan §4.9.7 - Documentation Strings
+
+## Referensi
+
+Downey, A. B. (2024). *Think Python: How to think like a computer scientist* (3rd ed.). O'Reilly Media. <https://allendowney.github.io/ThinkPython/>
+
+- Bab 3, *Functions*: <https://allendowney.github.io/ThinkPython/chap03.html>
+- Bab 4, *Functions and Interfaces*: <https://allendowney.github.io/ThinkPython/chap04.html>
+- Bab 6, *Return Values* (subbab *And some have None*): <https://allendowney.github.io/ThinkPython/chap06.html>
+
+Python Software Foundation. (t.t.-a). Glossary. Dalam *Python 3 documentation*. Diakses 2 Oktober 2026, dari <https://docs.python.org/3/glossary.html>
+
+Python Software Foundation. (t.t.-b). Execution model: Naming and binding. Dalam *The Python language reference*. Diakses 2 Oktober 2026, dari <https://docs.python.org/3/reference/executionmodel.html#naming-and-binding>
+
+Python Software Foundation. (t.t.-c). More control flow tools: Defining functions. Dalam *The Python tutorial*. Diakses 2 Oktober 2026, dari <https://docs.python.org/3/tutorial/controlflow.html#defining-functions>
+
+Python Software Foundation. (t.t.-d). Classes: Python scopes and namespaces. Dalam *The Python tutorial*. Diakses 2 Oktober 2026, dari <https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces>
+
+Python Software Foundation. (t.t.-e). Simple statements: The global statement. Dalam *The Python language reference*. Diakses 2 Oktober 2026, dari <https://docs.python.org/3/reference/simple_stmts.html#the-global-statement>
