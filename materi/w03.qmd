@@ -43,6 +43,498 @@ else:
     print("C")
 ```
 
+## Lesson A · Ekspresi Logika dan Seleksi
+
+### Indentasi menentukan isi cabang
+
+Suhu terukur 38 °C. Baris mana saja yang dicetak?
+
+```python
+suhu = 38
+if suhu >= 37.5:
+    print("Demam")
+    print("Istirahat di rumah")
+else:
+    print("Sehat")
+print("Cek selesai")
+```
+
+```
+Demam
+Istirahat di rumah
+Cek selesai
+```
+
+Baris 3–4 **menjorok** di bawah `if`, jadi keduanya dijalankan ketika kondisinya `True`. Baris 7 tidak menjorok, jadi berada di luar pernyataan `if` dan **selalu** dijalankan. Di Python, indentasi bukan sekadar kerapian: indentasi menentukan baris mana yang ikut dalam sebuah cabang (Downey, 2024, Bab 5).
+
+### Anatomi pernyataan if
+
+| Bagian | Fungsinya |
+|---|---|
+| `if` | Kata kunci yang memulai keputusan |
+| Kondisi | Ekspresi Boolean: hasilnya `True` atau `False` |
+| `:` | Titik dua wajib menutup baris header |
+| Blok | Baris yang menjorok 4 spasi; dijalankan hanya jika kondisinya `True` |
+
+: {tbl-colwidths="[20,80]"}
+
+### Tiga bentuk seleksi
+
+| `if`: satu pilihan | `if-else`: dua cabang | `if-elif-else`: banyak cabang |
+|---|---|---|
+| Blok dijalankan atau dilewati. | Tepat satu dari dua cabang dijalankan. | Diperiksa dari atas; berhenti di kondisi `True` pertama. |
+
+: {tbl-colwidths="[33,33,34]"}
+
+```python
+if suhu >= 37.5:          # if
+    print("Demam")
+
+if nilai >= 60:           # if-else
+    print("Lulus")
+else:
+    print("Ulang")
+
+if nilai >= 80:           # if-elif-else
+    huruf = "A"
+elif nilai >= 70:
+    huruf = "B"
+else:
+    huruf = "C"
+```
+
+Pernyataan `if-elif-else` tersusun dari **klausa**; setiap klausa punya *header* (kata kunci, kondisi, titik dua) dan *blok* (PSF, t.t.-a, §8.1):
+
+- **`if`**: wajib dan selalu pertama.
+- **`elif`**: opsional, boleh lebih dari satu. Diperiksa hanya jika **semua** kondisi di atasnya `False`.
+- **`else`**: opsional, paling banyak satu, selalu terakhir, dan **tanpa kondisi**. Ia menangkap semua kasus yang tidak lolos kondisi sebelumnya.
+
+Dalam flowchart, setiap kondisi digambar sebagai belah ketupat dengan dua jalan keluar, `True` dan `False`. Semua cabang bertemu lagi di satu titik sebelum baris berikutnya.
+
+### Ekspresi Boolean
+
+Di Minggu 2 kamu menulis ekspresi aritmetika yang menghasilkan angka: `nilai + 5` → `80`. **Ekspresi Boolean** menghasilkan salah satu dari dua nilai: `True` atau `False`, bertipe `bool` (Downey, 2024, Bab 5). Ekspresi Boolean dibentuk dengan **operator perbandingan**, lalu bisa digabung dengan **operator logika**.
+
+::: {.table-responsive}
+| Operator | Arti | Contoh (`nilai = 75`) | Hasil |
+|---|---|---|---|
+| `==` | sama dengan | `nilai == 75` | `True` |
+| `!=` | tidak sama dengan | `nilai != 75` | `False` |
+| `<` | kurang dari | `nilai < 60` | `False` |
+| `>` | lebih dari | `nilai > 60` | `True` |
+| `<=` | kurang dari atau sama dengan | `nilai <= 75` | `True` |
+| `>=` | lebih dari atau sama dengan | `nilai >= 80` | `False` |
+
+: {tbl-colwidths="[14,36,30,20]"}
+:::
+
+Operator dua karakter ditulis tanpa spasi: `>=` benar, `> =` langsung `SyntaxError`.
+
+::: {.callout-warning title="= dan == berbeda"}
+`=` **menempelkan nama** ke sebuah nilai; itu pernyataan. `==` **bertanya** apakah dua nilai sama; itu ekspresi yang menghasilkan `True` atau `False`. Menulis `if nilai = 75:` langsung ditolak Python dengan `SyntaxError` sebelum program jalan.
+:::
+
+### and, or, not
+
+::: {.table-responsive}
+| Operator | `True` jika… | Contoh (`umur = 17`, `punya_izin = True`) | Hasil |
+|---|---|---|---|
+| `and` | **kedua** sisi `True` | `umur >= 18 and punya_izin` → `False and True` | `False` |
+| `or` | **salah satu** sisi `True` | `umur >= 18 or punya_izin` → `False or True` | `True` |
+| `not` | sisinya `False` | `not punya_izin` → `not True` | `False` |
+
+: {tbl-colwidths="[12,22,48,18]"}
+:::
+
+**Tabel kebenaran** merangkum semua kemungkinannya:
+
+| `A` | `B` | `A and B` | `A or B` | `not A` |
+|---|---|---|---|---|
+| `True` | `True` | `True` | `True` | `False` |
+| `True` | `False` | `False` | `True` | `False` |
+| `False` | `True` | `False` | `True` | `True` |
+| `False` | `False` | `False` | `False` | `True` |
+
+: {tbl-colwidths="[20,20,20,20,20]"}
+
+Urutan evaluasinya: perbandingan dulu, lalu `not`, lalu `and`, terakhir `or` (PSF, t.t.-b, §6.17). Dengan `x = 5`:
+
+```
+x > 9 or x > 0 and x < 3
+False or (True and False)
+False or False
+False
+```
+
+`and` berhenti di `False` pertama dan `or` berhenti di `True` pertama; sisi kanannya tidak dihitung lagi. Ini disebut **evaluasi pintas** (*short-circuit*).
+
+Rentang bisa ditulis dua cara yang setara: `nilai >= 60 and nilai < 80` sama dengan `60 <= nilai < 80`. Setiap sisi `and`/`or` harus kondisi **lengkap**: `x > 0 and x < 10`, bukan `x > 0 and < 10`.
+
+### Jebakan or
+
+```python
+hari = "Senin"
+if hari == "Sabtu" or "Minggu":
+    print("Libur")
+```
+
+Program ini mencetak `Libur` pada hari Senin. Python membacanya sebagai `(hari == "Sabtu") or "Minggu"`, yaitu `False or "Minggu"`. Teks yang tidak kosong dianggap benar di dalam `if` (*truthy*), sehingga kondisinya selalu lolos. Tulis perbandingan di **kedua** sisi:
+
+```python
+if hari == "Sabtu" or hari == "Minggu":
+    print("Libur")
+```
+
+### Rantai if/elif/else: urutan menentukan hasil
+
+Program nilai huruf berikut terlihat wajar:
+
+```python
+nilai = int(input("Nilai: "))
+if nilai >= 60:
+    huruf = "C"
+elif nilai >= 70:
+    huruf = "B"
+elif nilai >= 80:
+    huruf = "A"
+else:
+    huruf = "E"
+print(nilai, huruf)
+```
+
+| `nilai` | Baris 2: `nilai >= 60` | `huruf` |
+|---|---|---|
+| 95 | `True` | `C` |
+| 75 | `True` | `C` |
+| 60 | `True` | `C` |
+| 40 | `False` → `else` | `E` |
+
+: {tbl-colwidths="[20,50,30]"}
+
+Setiap nilai yang ≥ 70 pasti juga ≥ 60, sehingga baris 2 selalu menang lebih dulu. Baris 4–7 tidak pernah bisa dijalankan; inilah **kode mati**. Perbaikannya: tulis kondisi yang **paling ketat di atas**.
+
+```python
+nilai = 75
+if nilai >= 80:
+    huruf = "A"
+elif nilai >= 70:
+    huruf = "B"
+elif nilai >= 60:
+    huruf = "C"
+else:
+    huruf = "E"
+print(nilai, huruf)
+```
+
+Telusuri versi yang sudah diperbaiki. Perhatikan baris mana yang **tidak pernah disorot**.
+
+```{=html}
+<div class="stackviz" data-trace="trace-w03-chain" data-title="Telusuri: rantai if/elif/else"></div>
+<script type="application/json" id="trace-w03-chain">{"code":["nilai = 75","if nilai >= 80:","    huruf = \"A\"","elif nilai >= 70:","    huruf = \"B\"","elif nilai >= 60:","    huruf = \"C\"","else:","    huruf = \"E\"","print(nilai, huruf)"],"steps":[{"line":null,"frames":[{"name":"__main__","vars":[]}],"out":"","note":"Program belum berjalan. Tebak dulu: baris mana saja yang akan dijalankan? Lalu tekan **Lanjut**."},{"line":1,"frames":[{"name":"__main__","vars":[["nilai","75"]]}],"out":"","note":"Baris 1: `nilai` diikat ke `75`."},{"line":2,"frames":[{"name":"__main__","vars":[["nilai","75"]]}],"out":"","note":"Baris 2: `75 >= 80` bernilai `False`, jadi blok baris 3 dilewati dan Python memeriksa `elif` berikutnya."},{"line":4,"frames":[{"name":"__main__","vars":[["nilai","75"]]}],"out":"","note":"Baris 4: `75 >= 70` bernilai `True`. Inilah kondisi `True` **pertama**, jadi cabang ini yang dijalankan."},{"line":5,"frames":[{"name":"__main__","vars":[["nilai","75"],["huruf","'B'"]]}],"out":"","note":"Baris 5: `huruf` diikat ke `'B'`. Sisa rantai (baris 6–9) **dilompati** tanpa diperiksa sama sekali."},{"line":10,"frames":[{"name":"__main__","vars":[["nilai","75"],["huruf","'B'"]]}],"out":"75 B\n","note":"Baris 10 berada di luar rantai, jadi selalu dijalankan: tercetak `75 B`. Perhatikan bahwa baris 3, 6–7, dan 9 tidak pernah disorot."}]}</script>
+<script src="../assets/stackviz.js"></script>
+```
+
+### Dua if terpisah, dua keputusan
+
+`elif` adalah bagian dari keputusan yang sama. `if` baru memulai keputusan **baru** yang selalu diperiksa:
+
+```python
+x = 15
+if x > 10 and x < 20:
+    print("P")
+elif x > 5:
+    print("Q")
+if x % 2 == 0 or x > 12:
+    print("R")
+else:
+    print("S")
+```
+
+Keputusan pertama (baris 2–5): `True and True` → cetak `P`, `elif` dilewati. Keputusan kedua (baris 6–9) tetap diperiksa: `False or True` → cetak `R`. Keluarannya `P` lalu `R`.
+
+### Membaca pesan galat if
+
+| Kesalahan | Kode | Pesan |
+|---|---|---|
+| Salah operator | `if nilai = 75:` | `SyntaxError: invalid syntax. Maybe you meant '==' ...?` |
+| Lupa titik dua | `if nilai >= 60` | `SyntaxError: expected ':'` |
+| Indentasi tidak rata | baris kedua blok menjorok 6 spasi, bukan 4 | `IndentationError: unexpected indent` |
+
+: {tbl-colwidths="[22,34,44]"}
+
+Di setiap pesan, perhatikan dua hal: **nomor baris** yang ditunjuk dan **jenis** galatnya.
+
+## Lesson B · Kondisi Bersarang dan Guard
+
+### Seleksi bersarang
+
+Sebuah `if` boleh berada di dalam blok `if` lain. `if` bagian dalam hanya diperiksa ketika kondisi luarnya `True` (Downey, 2024, Bab 5).
+
+```python
+saldo = 30000
+harga = 45000
+if saldo >= harga:
+    print("Bayar")
+    if saldo - harga < 10000:
+        print("Saldo menipis")
+else:
+    print("Saldo kurang")
+```
+
+Baris 3 bernilai `False`, jadi baris 4–6 dilompati **seluruhnya**, termasuk `if` di baris 5. Keluarannya hanya `Saldo kurang`. Dengan `saldo = 50000`, kedua kondisi `True` dan keluarannya `Bayar` lalu `Saldo menipis`.
+
+Setiap `else` berpasangan dengan `if` yang **sejajar lurus** di atasnya. Indentasi, bukan jarak baris, yang menentukan pasangannya.
+
+### Masalah: masukan yang tidak diperiksa
+
+```python
+umur = int(input("Umur: "))
+if umur >= 17:
+    print("Boleh membuat KTP")
+else:
+    print("Belum cukup umur")
+```
+
+| Masukan | Keluaran | Masalahnya |
+|---|---|---|
+| `20` | `Boleh membuat KTP` | Benar |
+| `-3` | `Belum cukup umur` | Umur negatif mustahil, tetapi tetap diproses |
+| `150` | `Boleh membuat KTP` | Umur tidak masuk akal, tetapi diterima |
+| `dua` | `ValueError`, program berhenti | `int()` gagal sebelum `if` sempat memeriksa apa pun |
+
+: {tbl-colwidths="[16,36,48]"}
+
+Ada dua jenis masalah: teks yang **bukan angka** (`dua`) dan angka **di luar batas wajar** (`-3`, `150`). Keduanya harus ditolak sebelum data dipakai.
+
+### Memeriksa teks dengan .isdigit()
+
+`teks.isdigit()` menghasilkan `True` jika **semua** karakter teks adalah angka 0–9 dan teksnya tidak kosong (PSF, t.t.-c). Karena hasilnya Boolean, ia bisa langsung menjadi kondisi `if`.
+
+| Teks | `.isdigit()` | Alasan |
+|---|---|---|
+| `"20"` | `True` | Semua angka |
+| `"007"` | `True` | Nol di depan boleh |
+| `"-3"` | `False` | Ada tanda minus |
+| `"2.5"` | `False` | Ada titik |
+| `"dua"` | `False` | Huruf |
+| `"1 2"` | `False` | Ada spasi |
+| `""` | `False` | Teks kosong |
+
+: {tbl-colwidths="[20,20,60]"}
+
+`if not umur_teks.isdigit():` dibaca "jika teksnya bukan angka bulat".
+
+### Guard
+
+**Guard** adalah pemeriksaan di awal yang menolak data tidak sah, sehingga perhitungan utama hanya menerima data yang sah:
+
+```python
+umur_teks = input("Umur: ")
+if not umur_teks.isdigit():
+    print("Masukan harus angka bulat")
+else:
+    umur = int(umur_teks)
+    if umur > 120:
+        print("Umur tidak masuk akal")
+    elif umur >= 17:
+        print("Boleh membuat KTP")
+    else:
+        print("Belum cukup umur")
+```
+
+| Masukan | Keluaran |
+|---|---|
+| `20` | `Boleh membuat KTP` |
+| `15` | `Belum cukup umur` |
+| `-3` | `Masukan harus angka bulat` |
+| `dua` | `Masukan harus angka bulat` |
+| `150` | `Umur tidak masuk akal` |
+
+: {tbl-colwidths="[30,70]"}
+
+`int()` di baris 5 hanya dijalankan untuk teks yang sudah pasti berisi angka, sehingga `ValueError` tidak mungkin muncul. Tanda minus pun ditolak oleh `.isdigit()`, jadi umur negatif tertangkap di guard pertama. Telusuri masukan `"150"` dan perhatikan di pemeriksaan mana ia berhenti.
+
+```{=html}
+<div class="stackviz" data-trace="trace-w03-guard" data-title="Telusuri: guard sebelum int()"></div>
+<script type="application/json" id="trace-w03-guard">{"code":["umur_teks = \"150\"","if not umur_teks.isdigit():","    print(\"Masukan harus angka bulat\")","else:","    umur = int(umur_teks)","    if umur > 120:","        print(\"Umur tidak masuk akal\")","    elif umur >= 17:","        print(\"Boleh membuat KTP\")","    else:","        print(\"Belum cukup umur\")"],"steps":[{"line":null,"frames":[{"name":"__main__","vars":[]}],"out":"","note":"Program belum berjalan. Masukan `\"150\"` berupa teks, seperti hasil `input()`. Tebak dulu: di pemeriksaan mana masukan ini berhenti? Lalu tekan **Lanjut**."},{"line":1,"frames":[{"name":"__main__","vars":[["umur_teks","'150'"]]}],"out":"","note":"Baris 1: `umur_teks` menunjuk teks `'150'`, bukan angka."},{"line":2,"frames":[{"name":"__main__","vars":[["umur_teks","'150'"]]}],"out":"","note":"Baris 2: **guard** pertama. `'150'.isdigit()` bernilai `True`, jadi `not True` bernilai `False`: teks ini aman diubah. Python lompat ke `else`."},{"line":5,"frames":[{"name":"__main__","vars":[["umur_teks","'150'"],["umur","150"]]}],"out":"","note":"Baris 5: baru sekarang `int()` dipanggil. Ia tidak mungkin gagal, karena guard sudah memastikan semua karakternya angka."},{"line":6,"frames":[{"name":"__main__","vars":[["umur_teks","'150'"],["umur","150"]]}],"out":"","note":"Baris 6: guard kedua. `150 > 120` bernilai `True`: angkanya sah, tetapi tidak masuk akal sebagai umur."},{"line":7,"frames":[{"name":"__main__","vars":[["umur_teks","'150'"],["umur","150"]]}],"out":"Umur tidak masuk akal\n","note":"Baris 7 mencetak `Umur tidak masuk akal`. Pemeriksaan umur di baris 8–11 tidak pernah dijalankan: data ditolak **sebelum** diproses."}]}</script>
+```
+
+### elif berantai atau if bersarang?
+
+| `elif` berantai | `if` bersarang |
+|---|---|
+| Satu keputusan, diperiksa berurutan; kondisi `True` pertama menang. Paling sering dipakai untuk satu variabel yang dibagi menjadi rentang. | Pertanyaan kedua hanya masuk akal jika pertanyaan pertama sudah terjawab. |
+
+: {tbl-colwidths="[50,50]"}
+
+```python
+# elif berantai: satu variabel, rentang tidak tumpang tindih
+if nilai >= 80:
+    huruf = "A"
+elif nilai >= 70:
+    huruf = "B"
+else:
+    huruf = "C"
+
+# if bersarang: PIN baru perlu diperiksa jika username dikenal
+if username == "admin":
+    if pin == "1234":
+        print("Masuk")
+    else:
+        print("PIN salah")
+else:
+    print("User tidak dikenal")
+```
+
+Rantai `elif` boleh juga memeriksa **variabel yang berbeda** jika urutannya disengaja, misalnya "tolak umur mustahil dulu, baru pilih kategori":
+
+```python
+if umur > 100:
+    print("Umur tidak masuk akal")
+elif kelas == "VIP":
+    ...
+else:
+    print("Kelas tidak dikenal")
+```
+
+`if` bersarang yang bagian dalamnya **tidak punya `else`** bisa diratakan dengan `and`, dan hasilnya tetap sama:
+
+```python
+if punya_tiket:                       # bersarang
+    if umur >= 13:
+        print("Boleh masuk")
+
+if punya_tiket and umur >= 13:        # rata
+    print("Boleh masuk")
+```
+
+Jangan meratakan jika `if` bagian dalam punya `else` sendiri, seperti `"PIN salah"` di contoh login: kalau digabung dengan `and`, pesan itu hilang. Lebih dari tiga tingkat indentasi biasanya tanda bahwa kode perlu disederhanakan dengan `and` atau guard.
+
+### Enam langkah program bersyarat
+
+Program bersyarat yang panjang hampir selalu tersusun dari enam langkah yang sama, dalam urutan yang sama. Tulis keenam label ini sebagai **komentar** sebelum menulis kodenya:
+
+| Langkah | Tugasnya | Pola kodenya |
+|---|---|---|
+| 1 · BACA | Baca semua masukan sebagai teks | `umur_teks = input()` |
+| 2 · GUARD | Tolak teks yang bukan angka bulat | `if not umur_teks.isdigit():` |
+| 3 · UBAH | Ubah ke `int`, hanya di dalam `else` | `umur = int(umur_teks)` |
+| 4 · TOLAK | Saring angka yang mustahil | `if umur > 100:` |
+| 5 · PILIH KATEGORI | Satu cabang per kategori, plus kategori tak dikenal | `elif kelas == "VIP":` |
+| 6 · CEK SYARAT | Di dalam kategori, dengan pesan penolakan sendiri | `if umur >= 18: ... else: ...` |
+
+: {tbl-colwidths="[22,40,38]"}
+
+Setiap langkah ditulis di dalam `else` langkah sebelumnya, sehingga setiap masukan berhenti tepat di satu langkah:
+
+```python
+# BACA
+umur_teks = input()
+kelas = input()
+# GUARD
+if not umur_teks.isdigit():
+    print("Umur harus angka bulat")
+else:
+    # UBAH
+    umur = int(umur_teks)
+    # TOLAK
+    if umur > 100:
+        print("Umur tidak masuk akal")
+    # PILIH KATEGORI
+    elif kelas == "VIP":
+        # CEK SYARAT
+        if umur >= 18:
+            print("Tiket VIP dibeli")
+        else:
+            print("VIP minimal 18 tahun")
+    else:
+        print("Kelas tidak dikenal")
+```
+
+| Masukan (umur, kelas) | Berhenti di | Keluaran |
+|---|---|---|
+| `dua`, `VIP` | GUARD | `Umur harus angka bulat` |
+| `150`, `VIP` | TOLAK | `Umur tidak masuk akal` |
+| `25`, `Festival` | PILIH KATEGORI | `Kelas tidak dikenal` |
+| `16`, `VIP` | CEK SYARAT | `VIP minimal 18 tahun` |
+| `20`, `VIP` | CEK SYARAT | `Tiket VIP dibeli` |
+
+: {tbl-colwidths="[30,26,44]"}
+
+Jika `elif kelas == "VIP":` ditulis sebagai `if` baru, masukan `150`, `VIP` akan mencetak **dua** pesan. Langkah-langkah ini sama dengan skema [Penjaga](../skema.qmd#B1) dan [Klasifikasi bertingkat](../skema.qmd#B3) di Katalog Skema.
+
+### Contoh terpandu: syarat donor darah
+
+**Soal.** Pengguna memasukkan umur dan berat badan (kg). Masukan harus angka bulat; jika bukan, tolak dengan pesan. Umur harus 17–65 tahun dan berat minimal 45 kg. Jika tidak boleh donor, sebutkan alasannya. Jika umur dan berat sama-sama tidak memenuhi, sebutkan alasan umur.
+
+**Tahap 1 · Memahami masalah.** Yang diminta: keputusan boleh atau tidak, beserta alasannya. Masukan dari `input()` berupa teks, jadi harus diperiksa sebelum `int()`.
+
+**Tahap 2 · Input, proses, output.**
+
+```
+BACA umur_teks, berat_teks
+JIKA salah satu bukan angka
+    TAMPILKAN "Masukan harus angka bulat"
+SELAIN ITU
+    umur, berat ← int(...)
+    JIKA umur < 17 ATAU umur > 65
+        TAMPILKAN "Tidak boleh: umur"
+    SELAIN ITU JIKA berat < 45
+        TAMPILKAN "Tidak boleh: berat badan"
+    SELAIN ITU
+        TAMPILKAN "Boleh donor"
+```
+
+**Tahap 3 · Kode.**
+
+```python
+umur_teks = input("Umur: ")
+berat_teks = input("Berat: ")
+if not (umur_teks.isdigit() and berat_teks.isdigit()):
+    print("Masukan harus angka bulat")
+else:
+    umur = int(umur_teks)
+    berat = int(berat_teks)
+    if umur < 17 or umur > 65:
+        print("Tidak boleh: umur")
+    elif berat < 45:
+        print("Tidak boleh: berat badan")
+    else:
+        print("Boleh donor")
+```
+
+**Tahap 4–5 · Telusuri dan uji setiap cabang.** Satu kasus uji untuk setiap cabang, **termasuk** masukan yang tidak sah:
+
+| Umur, berat | Keluaran | Cabang |
+|---|---|---|
+| `30`, `50` | `Boleh donor` | Semua syarat lolos |
+| `16`, `50` | `Tidak boleh: umur` | Umur terlalu muda |
+| `30`, `40` | `Tidak boleh: berat badan` | Berat kurang |
+| `tiga`, `50` | `Masukan harus angka bulat` | Guard: huruf |
+| `-5`, `50` | `Masukan harus angka bulat` | Guard: tanda minus |
+
+: {tbl-colwidths="[22,42,36]"}
+
+Kasus uji yang baik tidak hanya mencoba jalur yang lancar. Tanpa guard, masukan `tiga` membuat `int()` gagal.
+
+## Kesalahan Umum
+
+::: {.table-responsive}
+| Gejala | Penyebab | Perbaikan |
+|---|---|---|
+| `SyntaxError` di baris `if` | `=` dipakai untuk membandingkan, atau titik dua lupa | `if nilai == 75:` |
+| `IndentationError` | Indentasi blok tidak rata | Pakai 4 spasi untuk setiap tingkat |
+| Baris di bawah `if` selalu jalan | Baris itu tidak menjorok | Menjorokkan baris yang termasuk cabang |
+| Cabang tertentu tidak pernah dijalankan | Kondisi yang lebih longgar diletakkan di atas | Urutkan dari kondisi paling ketat |
+| `or` selalu `True` | `hari == "Sabtu" or "Minggu"` | Bandingkan di kedua sisi |
+| Dua pesan tercetak padahal hanya satu yang diharapkan | `if` baru dipakai, padahal seharusnya `elif` | Pakai `elif` untuk bagian dari keputusan yang sama |
+| `ValueError` saat masukan berupa huruf | `int()` dipanggil sebelum masukan diperiksa | Guard dengan `.isdigit()` dulu, `int()` di dalam `else` |
+| Umur negatif atau 150 diterima | Tidak ada pemeriksaan batas wajar | Tambahkan langkah TOLAK |
+| Hasil salah tepat di batas, misalnya nilai 60 | `>` tertukar dengan `>=` | Uji nilai batas secara eksplisit |
+
+: {tbl-colwidths="[34,36,30]"}
+:::
+
 ## Tebak Dulu
 
 Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
@@ -59,6 +551,77 @@ elif n >= 90:
 Hanya `Lulus` yang tercetak. Kondisi pertama sudah `True`, sehingga cabang `elif` tidak pernah diperiksa. Kondisi yang lebih spesifik harus diletakkan lebih dulu.
 :::
 
+Mana yang sesuai dengan flowchart "jika nilai ≥ 60 cetak Lulus; jika tidak, jika nilai ≥ 40 cetak Remedial; jika tidak, cetak Gagal; lalu selalu cetak Selesai"?
+
+```python
+# Versi A
+if nilai >= 60:
+    print("Lulus")
+if nilai >= 40:
+    print("Remedial")
+else:
+    print("Gagal")
+print("Selesai")
+```
+
+```python
+# Versi B
+if nilai >= 60:
+    print("Lulus")
+elif nilai >= 40:
+    print("Remedial")
+else:
+    print("Gagal")
+    print("Selesai")
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+**Tidak keduanya.** A memakai dua `if` terpisah, sehingga nilai 70 mencetak `Lulus` **dan** `Remedial`. B benar memakai `elif`, tetapi `print("Selesai")` menjorok sehingga hanya jalan di cabang `else`. Versi yang benar adalah B dengan `print("Selesai")` rata kiri.
+:::
+
+```python
+stok = 5
+dipesan = 8
+if stok > 0:
+    if dipesan <= stok:
+        print("Kirim")
+    else:
+        print("Kirim sebagian")
+else:
+    print("Stok habis")
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+`Kirim sebagian`. Baris 3: `5 > 0` → `True`, masuk cabang luar. Baris 4: `8 <= 5` → `False`, ke `else` di baris 6. `else` di baris 8 berpasangan dengan `if` di baris 3, jadi dilewati.
+:::
+
+Dengan `x = 7`, apa hasil `x > 9 or x > 5 and x % 2 == 0`?
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+`False`. `and` dihitung sebelum `or`: `x > 5 and x % 2 == 0` → `True and False` → `False`. Lalu `x > 9 or False` → `False or False` → `False`.
+:::
+
+## Latihan Mandiri
+
+1. **(U3.1)** Dengan `a = 4`, `b = 10`, dan `aktif = False`, tentukan nilai: `a < b and not aktif`, `a > b or aktif`, `not (a == 4 or b == 4)`, `0 < a <= 4`, dan `b % a == 2 and a % 2 == 0`.
+2. **(U3.2)** Untuk program nilai huruf yang urutannya salah di Lesson A, sebutkan baris mana saja yang tidak pernah dijalankan untuk masukan apa pun, lalu jelaskan dengan satu kalimat.
+3. **(U3.3)** Tulis program ongkos kirim: berat ≤ 1 kg → Rp10.000; 1 < berat ≤ 5 kg → Rp25.000; berat > 5 kg → Rp25.000 + Rp4.000 per kg kelebihan. Uji dengan berat 0.5, 1, 5, dan 7.5. Berapa ongkos untuk 7.5 kg?
+4. **(U3.4)** Program membaca nilai ujian dan persentase kehadiran. Tolak masukan yang bukan angka bulat atau di luar 0–100. Jika nilai ≥ 60 dan kehadiran ≥ 75, cetak `Lulus`; jika tidak, sebutkan alasannya. Siapkan lima kasus uji: satu lulus, dua tidak lulus dengan alasan berbeda, dan dua masukan tidak sah.
+5. **(U3.5)** Kelas memasak menerima umur dan kelas (`dasar` atau `lanjut`). Kelas dasar minimal 8 tahun, kelas lanjut minimal 15 tahun, dan kelas lain ditolak. Tulis enam label langkah sebagai komentar dulu, lalu kodenya. Jelaskan mengapa kamu memakai `elif` di satu tempat dan `if` bersarang di tempat lain.
+
 ## Bacaan
 
-- Think Python Ch. 5 - Conditionals and Recursion
+- Think Python Ch. 5 - Conditionals and Recursion (bagian rekursi dibahas di minggu lain)
+- Tutorial resmi Python §4.1 - if Statements
+
+## Referensi
+
+Downey, A. B. (2024). *Think Python: How to think like a computer scientist* (3rd ed.). O'Reilly Media. <https://allendowney.github.io/ThinkPython/>
+
+- Bab 5, *Conditionals and Recursion*: <https://allendowney.github.io/ThinkPython/chap05.html>
+
+Python Software Foundation. (t.t.-a). Compound statements: The if statement. Dalam *The Python language reference*. Diakses 11 Oktober 2026, dari <https://docs.python.org/3/reference/compound_stmts.html#the-if-statement>
+
+Python Software Foundation. (t.t.-b). Expressions: Operator precedence. Dalam *The Python language reference*. Diakses 11 Oktober 2026, dari <https://docs.python.org/3/reference/expressions.html#operator-precedence>
+
+Python Software Foundation. (t.t.-c). Built-in types: str.isdigit. Dalam *The Python standard library*. Diakses 11 Oktober 2026, dari <https://docs.python.org/3/library/stdtypes.html#str.isdigit>

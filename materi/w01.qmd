@@ -38,6 +38,315 @@ print(10 / 4)      # 2.5
 print(10 // 4)     # 2
 ```
 
+## Lesson A · Dari Masalah ke Algoritma
+
+### Manusia mengisi celah, komputer tidak
+
+Coba tulis instruksi membuat secangkir teh untuk anak berusia 5 tahun. Kebanyakan orang menulis sesuatu seperti "didihkan air, masukkan teh, tambahkan gula secukupnya". Manusia yang membacanya langsung paham, karena manusia **mengisi celah makna** dengan pengalamannya. Robot tidak bisa: berapa banyak air? Gula "secukupnya" itu berapa sendok? "Sebentar" itu berapa menit?
+
+| Instruksi samar | Instruksi yang bisa dijalankan persis |
+|---|---|
+| Didihkan air. | Tuang 250 ml air ke ketel, nyalakan, tunggu sampai mendidih. |
+| Masukkan teh. | Masukkan 1 kantong teh ke dalam cangkir. |
+| Tambahkan gula secukupnya. | Tambahkan 1 sendok teh gula, lalu aduk 10 kali. |
+| Tunggu sebentar, lalu sajikan. | Tunggu 3 menit, angkat kantong teh, sajikan. |
+
+: {tbl-colwidths="[40,60]"}
+
+Komputer lebih mirip robot daripada anak kecil: ia menjalankan **persis** apa yang tertulis, tidak lebih dan tidak kurang. Seluruh mata kuliah ini berangkat dari kenyataan itu.
+
+### Computational thinking
+
+**Computational thinking** (berpikir komputasional) adalah cara menyusun masalah agar dapat diselesaikan langkah demi langkah. Ini **bukan** berpikir seperti komputer; ini cara manusia menyiapkan masalah supaya bisa diserahkan ke komputer (Wing, 2006). Ada empat tekniknya, dan kamu sudah memakai semuanya saat menyelesaikan labirin di [Code.org Classic Maze](https://studio.code.org/hoc/1):
+
+::: {.table-responsive}
+| Teknik | Artinya | Di labirin |
+|---|---|---|
+| **Dekomposisi** | Memecah masalah besar menjadi bagian yang bisa diselesaikan dan diuji terpisah | Ruas 1: sampai pojok. Ruas 2: naik ke bunga. |
+| **Pengenalan pola** | Menemukan bagian yang berulang, sehingga cukup diselesaikan sekali | Empat balok `maju` berturut-turut diganti satu balok `ulangi 4 kali` |
+| **Abstraksi** | Menyembunyikan detail yang tidak relevan untuk masalah ini | Balok `maju` menyembunyikan motor, roda, dan sensor; warna petak diabaikan |
+| **Berpikir algoritmik** | Menyusun langkah yang tidak ambigu dan berurutan | Tumpukan balok yang dijalankan dari atas ke bawah |
+
+: {tbl-colwidths="[22,42,36]"}
+:::
+
+### Apa itu algoritma
+
+**Algoritma** adalah urutan langkah yang memenuhi tiga syarat (Downey, 2024, Bab 1):
+
+- **Tidak ambigu.** Setiap langkah hanya punya satu arti. "Maju sedikit" bukan langkah algoritma; "maju 1 langkah" adalah langkah algoritma.
+- **Terbatas.** Algoritma berhenti setelah sejumlah langkah. "Ulangi sampai bosan" tidak pernah berhenti; "ulangi 4 kali" berhenti.
+- **Konsisten.** Untuk masukan yang sama, hasilnya selalu sama. Dua komputer yang menjalankan tumpukan balok yang sama membuat robot menempuh jalur yang sama.
+
+### Algoritma dan program
+
+Algoritma adalah **rencananya**. Program adalah algoritma yang ditulis dalam bahasa yang dapat dijalankan komputer, entah berupa balok atau teks. Satu algoritma bisa ditulis dalam banyak bentuk:
+
+| Deskripsi tertulis | Balok | Python |
+|---|---|---|
+| Ulangi tiga kali: tampilkan "Halo". Selesai. | `ulangi 3 kali` → `tampilkan Halo` | `for i in range(3):`<br>`    print("Halo")` |
+
+: {tbl-colwidths="[36,30,34]"}
+
+Ketiganya program yang sama. Balok **bukan** pemrograman pura-pura: tombol *Tampilkan kode* di Code.org menunjukkan teks di balik balok yang kamu susun. Kamu belum perlu bisa membaca baris Python di atas; perulangan `for` baru dipelajari di Minggu 6.
+
+### Pseudocode dan flowchart
+
+Sebelum menjadi balok atau teks, algoritma ditulis dalam salah satu dari dua bentuk baku.
+
+**Pseudocode** adalah kalimat pendek dengan kata kunci tetap, seperti `BACA`, `TULIS`, `JIKA`, dan `ULANGI`. Pseudocode cepat ditulis dan diubah, cocok untuk urutan langkah yang panjang.
+
+```
+BACA n
+JIKA n habis dibagi 2 MAKA
+    TULIS "Genap"
+JIKA TIDAK
+    TULIS "Ganjil"
+SELESAI
+```
+
+**Flowchart** (diagram alir) menggambar algoritma dengan lima simbol standar. Percabangan dan perulangan terlihat sebagai alur, sehingga flowchart cocok untuk algoritma yang banyak keputusannya.
+
+::: {.table-responsive}
+| Simbol | Bentuk | Arti | Padanan balok |
+|---|---|---|---|
+| Terminator | Oval | Mulai atau selesai | `ketika dijalankan` |
+| Proses | Persegi panjang | Satu langkah perhitungan atau aksi | `maju`, `belok kiri` |
+| Masukan/keluaran | Jajaran genjang | Membaca data atau menampilkan hasil | `tampilkan` |
+| Keputusan | Belah ketupat | Pertanyaan ya/tidak dengan tepat **dua** jalan keluar | `jika ada jalan ke depan` |
+| Panah | Garis berpanah | Arah alur dari satu langkah ke langkah berikutnya | sambungan antarbalok |
+
+: {tbl-colwidths="[20,20,34,26]"}
+:::
+
+Balok `ulangi` digambar sebagai **keputusan** ("sudah 4 kali?") ditambah panah yang kembali ke atas.
+
+Satu pseudocode bisa diterjemahkan ke bahasa pemrograman apa pun. Karena itu **rancang dulu, baru tulis kode**: kesalahan yang ketahuan di kertas cukup dihapus, sedangkan kesalahan yang ketahuan setelah program jadi harus dicari di setiap baris.
+
+| Pseudocode | Python | C |
+|---|---|---|
+| `BACA panjang, lebar`<br>`luas ← panjang × lebar`<br>`TULIS luas` | `p = int(input())`<br>`l = int(input())`<br>`print(p * l)` | `scanf("%d %d", &p, &l);`<br>`luas = p * l;`<br>`printf("%d", luas);` |
+
+: {tbl-colwidths="[34,30,36]"}
+
+### Enam langkah memecahkan masalah
+
+Keempat teknik computational thinking menjadi langkah-langkah memecahkan masalah. Perhatikan bahwa menulis kode baru terjadi di langkah **kelima**.
+
+::: {.table-responsive}
+| Langkah | Yang dilakukan | Teknik | Hasilnya |
+|---|---|---|---|
+| 1 · Pahami | Tentukan masukan, keluaran, dan apa yang boleh diabaikan | Abstraksi | Kalimat masalah + masukan/keluaran |
+| 2 · Pecah | Bagi menjadi bagian yang diselesaikan terpisah | Dekomposisi | Daftar sub-masalah |
+| 3 · Cari pola | Temukan bagian yang berulang atau pernah diselesaikan | Pengenalan pola | Bagian yang cukup dibuat sekali |
+| 4 · Rancang | Susun langkah yang tidak ambigu, di kertas | Berpikir algoritmik | Pseudocode atau flowchart |
+| 5 · Tulis kode | Terjemahkan rancangan ke satu bahasa pemrograman | — | Program |
+| 6 · Uji | Jalankan dengan beberapa masukan, bandingkan hasilnya | — | Bukti benar, atau kembali ke langkah 1–4 |
+
+: {tbl-colwidths="[16,36,20,28]"}
+:::
+
+### Contoh: labirin, langkah demi langkah
+
+Robot di pojok kiri bawah menghadap ke kanan. Bunga ada di pojok kanan atas.
+
+1. **Pahami.** Masukan: posisi dan arah robot. Keluaran: robot berdiri di bunga. Diabaikan: warna petak, animasi, dan suara.
+2. **Pecah.** Ruas 1: menyusuri baris bawah sampai pojok. Ruas 2: naik ke bunga. Tiap ruas bisa diuji sendiri.
+3. **Cari pola.** Ruas 1 adalah `maju` empat kali berturut-turut, jadi cukup satu `ulangi 4 kali`.
+4. **Rancang.**
+
+    ```
+    MULAI
+    ULANGI 4 KALI
+        maju
+    BELOK KIRI
+    maju
+    maju
+    SELESAI
+    ```
+
+5. **Susun.** Satu baris pseudocode menjadi satu balok.
+6. **Uji di atas kertas.** Telusuri posisi robot dengan jari, satu baris per langkah:
+
+    | Langkah | Posisi | Hadap |
+    |---|---|---|
+    | awal | kiri bawah | → |
+    | maju ×4 | kanan bawah | → |
+    | belok kiri | kanan bawah | ↑ |
+    | maju ×2 | kanan atas ✿ | ↑ |
+
+Jika uji gagal di baris ketiga tabel, rancangannya mungkin tetap benar; yang salah adalah balok yang disusun. Tabel penelusuran seperti ini akan kamu pakai sepanjang semester.
+
+## Lesson B · Dari Algoritma ke Program Python
+
+### Komputer membaca persis
+
+Balok `tampilkan "Halo, Dunia"` diketik menjadi teks Python. Perhatikan dua versi berikut:
+
+```python
+print("Halo, Dunia")    # Halo, Dunia
+print(Halo, Dunia)      # NameError: name 'Halo' is not defined
+```
+
+Versi kedua kehilangan tanda kutip. Python tidak menebak maksudmu; ia membaca `Halo` sebagai **nama** yang belum pernah dibuat, lalu berhenti dan menunjuk barisnya. Manusia mengisi celah makna, komputer berhenti di celah itu. Pesan galat bukan tanda komputer rusak: pesan itu **informasi** tentang apa yang salah dan di mana.
+
+Saat pindah dari balok ke teks, tiga hal berubah:
+
+| | Balok (Code.org) | Teks (Python) |
+|---|---|---|
+| Cara menyusun | Menyeret balok yang disediakan | Mengetik baris; kosakata tidak dibatasi |
+| Bentuk dijaga oleh | Editor: balok hanya menempel jika cocok | Kamu: kutip, kurung, huruf besar-kecil, spasi awal |
+| Kalau salah bentuk | Tidak mungkin, balok tidak menempel | Interpreter berhenti dan menunjuk barisnya |
+
+: {tbl-colwidths="[24,38,38]"}
+
+### Bahasa tingkat tinggi dan penerjemah
+
+Prosesor hanya mengerti **bahasa mesin**: deretan angka. Kita menulis dalam **bahasa tingkat tinggi** seperti Python karena manusia bisa membacanya. Di antara keduanya harus ada penerjemah, dan ada dua jenisnya:
+
+::: {.table-responsive}
+| | Kompiler | Interpreter (Python) |
+|---|---|---|
+| Kapan menerjemahkan | Sekali, seluruh program, sebelum dijalankan | Saat dijalankan, baris demi baris |
+| Kelebihan | Program berjalan cepat; kesalahan sintaks ketahuan sebelum jalan | Langsung bisa dicoba; mudah bereksperimen |
+| Kekurangan | Harus menunggu kompilasi; salah sedikit, kompilasi ulang | Lebih lambat; kesalahan di baris 9 baru muncul setelah baris 1–8 jalan |
+| Contoh bahasa | C, C++, Go | Python, JavaScript |
+
+: {tbl-colwidths="[22,39,39]"}
+:::
+
+Python memakai interpreter, sehingga satu sel di Google Colab bisa langsung dijalankan (Python Software Foundation [PSF], t.t.-a).
+
+### Google Colab
+
+Di mata kuliah ini kita menulis Python di [Google Colab](https://colab.research.google.com), sebuah **IDE** (*integrated development environment*) di browser. Satu halaman Colab berisi semua yang dibutuhkan:
+
+- **Editor**: sel kode tempat menulis program.
+- **Tombol ▶** yang memanggil interpreter Python.
+- **Lingkungan eksekusi**: keluaran muncul di bawah sel.
+- **Diagnostik**: pesan galat berwarna merah yang menunjuk baris bermasalah.
+
+::: {.callout-important title="Simpan salinan notebook"}
+Notebook dari LMS bersifat *read-only*. Selama label *Changes will not be saved* masih muncul, semua perubahanmu hilang saat tab ditutup. Pilih **File → Save a copy in Drive**, lalu kerjakan dari salinan di *My Drive › Colab Notebooks*.
+:::
+
+### Urutan: baris demi baris
+
+Python membaca program dari atas ke bawah, persis seperti tumpukan balok. Baris 1 selesai sepenuhnya sebelum baris 2 dimulai. Inilah yang disebut **urutan** (*sequence*).
+
+```python
+print("Halo")
+print(6 * 7)
+print("Selesai")
+```
+
+```
+Halo
+42
+Selesai
+```
+
+Jika baris 2 dan 3 ditukar, keluarannya ikut berubah urutan. `print()` sendiri adalah **subrutin**: serangkaian instruksi yang sudah ditulis orang lain, yang kita panggil dengan namanya alih-alih menulis ulang isinya. Di Minggu 4 kamu akan membuat subrutinmu sendiri.
+
+### Operator aritmetika
+
+| Operator | Arti | Contoh | Hasil |
+|---|---|---|---|
+| `+` `-` `*` | Tambah, kurang, kali | `7 + 2 * 3` | `13` |
+| `/` | Bagi; hasilnya **selalu** desimal (`float`) | `7 / 2` | `3.5` |
+| `//` | Bagi bulat; sisanya dibuang | `7 // 2` | `3` |
+| `%` | Sisa bagi (modulo) | `7 % 2` | `1` |
+| `**` | Pangkat | `2 ** 3` | `8` |
+
+: {tbl-colwidths="[16,40,24,20]"}
+
+Dua hal sering mengejutkan: `/` selalu menghasilkan desimal, bahkan `6 / 2` menghasilkan `3.0`; dan `//` bukan pembulatan, melainkan pembagian yang membuang sisa (PSF, t.t.-b).
+
+### Urutan operator
+
+Python tidak menghitung dari kiri ke kanan begitu saja. Ia mengikuti **prioritas operator**, sama seperti matematika di sekolah (PSF, t.t.-c):
+
+| Urutan | Operator | Arti |
+|---|---|---|
+| 1 | `( )` | Kurung: paksa urutan sendiri |
+| 2 | `**` | Pangkat (dihitung dari kanan) |
+| 3 | `-x` `+x` | Tanda negatif dan positif |
+| 4 | `*` `/` `//` `%` | Kali, bagi, bagi bulat, sisa |
+| 5 | `+` `-` | Tambah, kurang |
+
+: {tbl-colwidths="[14,30,56]"}
+
+Contoh, langkah demi langkah:
+
+```
+2 + 3 * 4 ** 2 % 5
+= 2 + 3 * 16 % 5      pangkat dulu
+= 2 + 48 % 5          kali (dari kiri)
+= 2 + 3               sisa bagi
+= 5
+```
+
+Kalau ragu, tulis kurung. Kurung selalu menang, dan kodenya jadi lebih mudah dibaca: `(1 + 2) * 3` menghasilkan `9`, sedangkan `1 + 2 * 3` menghasilkan `7`.
+
+### Tiga jenis kesalahan
+
+::: {.table-responsive}
+| Jenis | Kapan terjadi | Contoh | Yang terlihat |
+|---|---|---|---|
+| **Sintaks** | Sebelum program jalan: Python tidak bisa membacanya | `print("Halo"` | `SyntaxError: '(' was never closed` |
+| **Runtime** | Di tengah jalan: ada operasi yang mustahil | `print(7 / 0)` | `ZeroDivisionError: division by zero` |
+| **Logika** (semantik) | Program selesai, tetapi hasilnya salah | `print(80 + 90 + 70 / 3)` | `193.33333333333334`, padahal rata-ratanya `80.0` |
+
+: {tbl-colwidths="[16,30,26,28]"}
+:::
+
+Kesalahan logika paling berbahaya karena **tidak ada pesan** (Downey, 2024, Bab 1). Komputer tidak tahu maksudmu; hanya kamu yang tahu bahwa rata-rata tiga nilai seharusnya `(80 + 90 + 70) / 3`. Program yang berjalan belum tentu program yang benar, dan pengujinya adalah kamu.
+
+### Contoh: mencetak pola segitiga
+
+Masalah: cetak pola berikut.
+
+```
+*
+* *
+* * *
+* * * *
+```
+
+Pakai keempat teknik secara sadar:
+
+- **Dekomposisi**: empat baris berarti empat perintah `print`, satu per baris.
+- **Pengenalan pola**: baris ke-*i* berisi *i* bintang.
+- **Abstraksi**: jangan tulis bintangnya, tulis **aturannya**: `"* "` diulang *i* kali.
+- **Berpikir algoritmik**: urutkan baris 1, 2, 3, 4; Python menjalankannya dari atas ke bawah.
+
+Operator `*` pada teks berarti **ulangi**, persis seperti balok `ulangi`:
+
+```python
+print("* " * 1)
+print("* " * 2)
+print("* " * 3)
+print("* " * 4)
+```
+
+Keluarannya sama dengan mengetik setiap baris penuh, tetapi untuk mengubah ukurannya kamu cukup mengganti angka. Di Minggu 6, empat baris ini akan diganti satu perulangan.
+
+## Kesalahan Umum
+
+::: {.table-responsive}
+| Gejala | Penyebab | Perbaikan |
+|---|---|---|
+| `NameError: name 'Halo' is not defined` | Tanda kutip di sekitar teks hilang | Teks selalu diapit kutip: `"Halo"` |
+| `NameError: name 'Print' is not defined` | Huruf besar di nama fungsi | Python membedakan huruf besar-kecil: `print` |
+| `SyntaxError: '(' was never closed` | Kurung tutup lupa ditulis | Pastikan setiap `(` punya pasangan `)` |
+| `7 / 2` menghasilkan `3.5`, padahal ingin `3` | `/` selalu menghasilkan desimal | Pakai `//` untuk pembagian bulat |
+| `1 + 2 * 3` menghasilkan `7`, padahal ingin `9` | Perkalian dikerjakan sebelum penjumlahan | Tambahkan kurung: `(1 + 2) * 3` |
+| Program jalan, hasil salah, tidak ada pesan | Kesalahan logika | Hitung satu contoh dengan tangan, lalu bandingkan |
+| Pekerjaan di Colab hilang | Mengerjakan notebook *read-only* | **File → Save a copy in Drive** sebelum mulai |
+
+: {tbl-colwidths="[34,36,30]"}
+:::
+
 ## Tebak Dulu
 
 Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
@@ -51,6 +360,74 @@ print(1 + 2)
 Baris pertama mencetak `1 + 2` apa adanya karena berada di dalam tanda kutip (string). Baris kedua mencetak `3` karena Python menghitung ekspresinya.
 :::
 
+Berapa baris keluarannya, dan apa isi baris kedua?
+
+```python
+print("Total:")
+print(10 + 5 * 2)
+print("Selesai")
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+```
+Total:
+20
+Selesai
+```
+Tiga `print`, tiga baris; teks pun dicetak. Perkalian dikerjakan lebih dulu: `5 * 2 = 10`, lalu `10 + 10 = 20`. Untuk mendapat `30`, tulis `(10 + 5) * 2`.
+:::
+
+Program berikut dimaksudkan menghitung luas persegi panjang 4 × 6. Jenis kesalahan apa yang terjadi?
+
+```python
+print("Luas:")
+print(4 + 6)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+**Kesalahan logika.** Python menjalankannya tanpa keluhan dan mencetak `10`, tetapi luas 4 × 6 adalah `24`. Seharusnya `print(4 * 6)`. Hanya manusia yang tahu bahwa `10` bukan jawabannya.
+:::
+
+Manakah yang merupakan algoritma? (A) resep "masak sampai matang, bumbui secukupnya", (B) tumpukan balok `ulangi 4 kali (maju)` lalu `belok kiri`, (C) dua baris Python `for i in range(3): print("Halo")`, (D) B dan C.
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+**D.** B dan C tidak ambigu, terbatas, dan konsisten; bentuknya balok atau teks tidak menjadi soal. A gagal di "sampai matang" dan "secukupnya", yang bisa diartikan berbeda oleh setiap orang.
+:::
+
+## Latihan Mandiri
+
+1. **(U1.1)** Tulis pseudocode untuk membuat secangkir teh yang bisa dijalankan persis oleh robot, memakai instruksi seperti `AMBIL(cangkir)`, `ISI(ketel, 250 ml)`, `TUNGGU(3 menit)`. Minta temanmu menjalankannya tanpa menambah apa pun. Lingkari langkah pertama yang tidak bisa dijalankan.
+2. **(U1.2)** Hitung dengan tangan, lalu periksa di Colab: `17 // 5`, `17 % 5`, `2 ** 3 ** 2`, `-7 // 2`, dan `(4 + 6) / 2`.
+3. **(U1.3)** Klasifikasikan kesalahan pada tiap program sebagai sintaks, runtime, atau logika, lalu perbaiki:
+
+    ```python
+    print("Rata-rata:" 85)                    # (a)
+    print(100 / (5 - 5))                      # (b)
+    print("Keliling persegi sisi 5:", 5 * 5)  # (c)
+    ```
+
+4. **(U1.4)** Cetak pola segitiga terbalik (empat bintang di baris pertama, satu di baris terakhir) hanya dengan `print` dan operator `*` pada teks. Lalu ubah menjadi enam baris dengan mengganti angka saja.
+5. **(U1.5)** Jelaskan dengan satu kalimat apa yang dikerjakan program berikut, tanpa menyebut nama operatornya:
+
+    ```python
+    print(125 // 60, "jam", 125 % 60, "menit")
+    ```
+
 ## Bacaan
 
 - Think Python Ch. 1 - Programming as a way of thinking
+- Tutorial resmi Python §3.1.1 - Numbers
+
+## Referensi
+
+Downey, A. B. (2024). *Think Python: How to think like a computer scientist* (3rd ed.). O'Reilly Media. <https://allendowney.github.io/ThinkPython/>
+
+- Bab 1, *Programming as a Way of Thinking*: <https://allendowney.github.io/ThinkPython/chap01.html>
+
+Python Software Foundation. (t.t.-a). Using the Python interpreter. Dalam *The Python tutorial*. Diakses 11 Oktober 2026, dari <https://docs.python.org/3/tutorial/interpreter.html>
+
+Python Software Foundation. (t.t.-b). An informal introduction to Python: Numbers. Dalam *The Python tutorial*. Diakses 11 Oktober 2026, dari <https://docs.python.org/3/tutorial/introduction.html#numbers>
+
+Python Software Foundation. (t.t.-c). Expressions: Operator precedence. Dalam *The Python language reference*. Diakses 11 Oktober 2026, dari <https://docs.python.org/3/reference/expressions.html#operator-precedence>
+
+Wing, J. M. (2006). Computational thinking. *Communications of the ACM, 49*(3), 33–35. <https://doi.org/10.1145/1118178.1118215>

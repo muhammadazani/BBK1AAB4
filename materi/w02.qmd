@@ -38,6 +38,368 @@ total = harga * jumlah
 print(f"Total bayar: {total}")
 ```
 
+## Lesson A · Variabel dan Keadaan
+
+### Mengapa butuh variabel
+
+Hitung nota belanja kantin: nasi goreng 3 porsi × Rp12.000, es teh 2 gelas × Rp5.000, kerupuk 4 bungkus × Rp2.000, diskon member 10% dari subtotal, dan ongkos antar Rp8.000 setelah diskon. Tanpa variabel, programnya seperti ini:
+
+```python
+print("Subtotal:", 3*12000 + 2*5000 + 4*2000)
+print("Diskon:", (3*12000 + 2*5000 + 4*2000) * 0.1)
+print("Bayar:", (3*12000 + 2*5000 + 4*2000) * 0.9 + 8000)
+```
+
+Sekarang harga nasi goreng naik menjadi Rp13.000 dan diskon menjadi 15%. Angka `12000` harus diganti di tiga tempat; satu saja terlewat, totalnya salah. Diskon 15% juga tersembunyi di `0.1` **dan** `0.9`, dan `0.9` sama sekali tidak terlihat seperti diskon.
+
+Dengan nama, setiap data ditulis **sekali** dan dipakai berulang kali:
+
+```python
+harga_nasi = 13000
+diskon = 0.15
+subtotal = 3*harga_nasi + 2*5000 + 4*2000
+print("Subtotal:", subtotal)
+print("Diskon:", subtotal * diskon)
+print("Bayar:", subtotal * (1 - diskon) + 8000)
+```
+
+Kini perubahan harga cukup dilakukan di baris 1 dan 2.
+
+### Variabel adalah nama, bukan kotak
+
+Bayangkan nilai sebagai kartu yang angkanya tidak bisa dihapus, dan variabel sebagai **stiker nama** yang ditempel di kartu itu. Penugasan `harga = 12000` dibaca "tempelkan stiker `harga` pada nilai `12000`", bukan "`harga` sama dengan `12000`".
+
+Secara resmi, Python menyebut ini **pengikatan nama** (*name binding*): variabel adalah nama yang diikat ke sebuah objek di memori (Python Software Foundation [PSF], t.t.-a, §4.2). Penugasan `harga = 12000` terjadi dalam tiga langkah:
+
+1. **Nilai**: Python membuat objek `12000` di memori.
+2. **Nama**: nama `harga` dicatat di daftar nama.
+3. **Ikatan**: `=` mengikat nama `harga` ke objek itu. Yang disimpan adalah **panahnya**, bukan salinan angkanya.
+
+```
+DAFTAR NAMA          OBJEK DI MEMORI
+harga  ──────────▶   12000  (int)
+```
+
+Satu objek boleh punya lebih dari satu nama. Setelah `harga_pokok = harga`, kedua nama menunjuk objek `12000` yang sama.
+
+Di bahasa seperti C atau Java, variabel harus **dideklarasikan** dulu (`int harga;`) baru diberi nilai. Python tidak punya baris deklarasi: nama baru lahir pada baris **penugasan pertamanya**, dan tipenya melekat pada nilai, bukan pada nama.
+
+### Nama yang belum diikat tidak bisa dipakai
+
+```python
+print(total)    # NameError: name 'total' is not defined
+total = 0
+print(total)    # 0
+```
+
+Pada baris 1, Python mencari nama `total` di daftar nama, tidak menemukannya, lalu berhenti. Beri nilai awal sebelum sebuah nama dipakai.
+
+### Ekspresi dan pernyataan
+
+**Ekspresi** adalah kode yang **menyusut menjadi satu nilai** (Downey, 2024, Bab 2). Python menghitungnya bertahap, mengganti bagian yang sudah dihitung sampai tersisa satu nilai:
+
+```
+harga * 3 + 500
+12000 * 3 + 500
+36000 + 500
+36500
+```
+
+Bentuk ekspresi yang sering dipakai: nilai tunggal (`42`), nama variabel (`harga`), hitungan (`harga * 3`), gabungan teks (`"Rp" + kode`), dan hasil pemanggilan fungsi (`len(nama)`).
+
+**Pernyataan** (*statement*) adalah satu perintah yang dijalankan Python. Pernyataan tidak menghasilkan nilai; ia **mengubah keadaan** program: membuat atau memindahkan nama, menampilkan sesuatu, memilih jalur, atau memuat modul.
+
+| Ekspresi menjawab "nilainya berapa?" | Pernyataan menjawab "lakukan apa?" |
+|---|---|
+| `8 * 2` | `total = 0` |
+| `len("python")` | `print("halo")` |
+| `nilai` | `import math` |
+
+: {tbl-colwidths="[50,50]"}
+
+**Tes cepat:** bisakah kode itu ditaruh di **kanan** tanda `=`? Bisa berarti ekspresi; tidak bisa berarti pernyataan. Satu baris bisa memuat keduanya: pada `sisa = 10 - 3`, barisnya adalah pernyataan dan `10 - 3` di kanannya adalah ekspresi.
+
+### Penugasan: kanan dulu, baru kiri
+
+Urutannya selalu sama: ruas kanan dihitung sampai menjadi satu nilai, **baru** nama di kiri diikat ke nilai itu.
+
+```python
+x = 78
+x = x + 1
+```
+
+Pada baris 2, `x` di ruas kanan masih menunjuk `78`. Python menghitung `78 + 1`, membuat objek baru `79`, lalu memindahkan panah `x` ke `79`. Objek `78` kehilangan namanya. Ini **bukan** persamaan matematika; dalam matematika, `x = x + 1` tidak punya penyelesaian.
+
+### Trace table
+
+**Trace table** (tabel jejak) mencatat nilai setiap variabel setelah setiap baris dijalankan, satu baris tabel per pernyataan. Inilah alat utama untuk menemukan kesalahan urutan.
+
+```python
+harga_satuan = 12000              # nama baru untuk nilai awal
+jumlah = 3                        # nama baru untuk nilai awal
+subtotal = harga_satuan * jumlah  # ekspresi dihitung dulu, lalu dinamai
+subtotal = subtotal + 5000        # nama subtotal pindah ke nilai baru
+print("Subtotal:", subtotal)      # membaca nama, menampilkan nilainya
+```
+
+::: {.table-responsive}
+| Setelah baris | `harga_satuan` | `jumlah` | `subtotal` | Keluaran |
+|---|---|---|---|---|
+| 1 | 12000 | – | – | |
+| 2 | 12000 | 3 | – | |
+| 3 | 12000 | 3 | 36000 | |
+| 4 | 12000 | 3 | 41000 | |
+| 5 | 12000 | 3 | 41000 | `Subtotal: 41000` |
+
+: {tbl-colwidths="[18,20,14,18,30]"}
+:::
+
+### Urutan penugasan adalah bagian dari logika
+
+Program berikut dimaksudkan menukar nilai Andi dan Budi:
+
+```python
+nilai_andi = 78
+nilai_budi = 91
+nilai_andi = nilai_budi
+nilai_budi = nilai_andi
+print("Andi =", nilai_andi)
+print("Budi =", nilai_budi)
+```
+
+| Setelah baris | `nilai_andi` | `nilai_budi` |
+|---|---|---|
+| 1 | 78 | – |
+| 2 | 78 | 91 |
+| 3 | 91 | 91 |
+| 4 | 91 | 91 |
+
+: {tbl-colwidths="[30,35,35]"}
+
+Keluarannya `Andi = 91` dan `Budi = 91`. Operatornya benar; yang salah **urutannya**. Di baris 3, angka `78` kehilangan satu-satunya nama yang menunjuknya, sehingga baris 4 tidak punya apa-apa untuk dipindahkan. Program tidak memberi pesan galat apa pun.
+
+Perbaikannya: beri `78` nama kedua **sebelum** `nilai_andi` dipindahkan. Telusuri versi yang benar dan perhatikan kapan angka `78` punya dua nama.
+
+```{=html}
+<div class="stackviz" data-trace="trace-w02-swap" data-title="Telusuri: menukar dua nilai"></div>
+<script type="application/json" id="trace-w02-swap">{"code":["nilai_andi = 78","nilai_budi = 91","sementara = nilai_andi","nilai_andi = nilai_budi","nilai_budi = sementara","print(\"Andi =\", nilai_andi)","print(\"Budi =\", nilai_budi)"],"steps":[{"line":null,"frames":[{"name":"__main__","vars":[]}],"out":"","note":"Program belum berjalan. Tebak dulu: setelah baris 5, nama mana menunjuk angka mana? Lalu tekan **Lanjut**."},{"line":1,"frames":[{"name":"__main__","vars":[["nilai_andi","78"]]}],"out":"","note":"Baris 1: nama `nilai_andi` diikat ke nilai `78`."},{"line":2,"frames":[{"name":"__main__","vars":[["nilai_andi","78"],["nilai_budi","91"]]}],"out":"","note":"Baris 2: nama `nilai_budi` diikat ke nilai `91`."},{"line":3,"frames":[{"name":"__main__","vars":[["nilai_andi","78"],["nilai_budi","91"],["sementara","78"]]}],"out":"","note":"Baris 3: `sementara` menunjuk nilai yang sedang ditunjuk `nilai_andi`, yaitu `78`. Kini `78` punya **dua** nama, jadi aman ditinggalkan oleh `nilai_andi`."},{"line":4,"frames":[{"name":"__main__","vars":[["nilai_andi","91"],["nilai_budi","91"],["sementara","78"]]}],"out":"","note":"Baris 4: `nilai_andi` pindah ke `91`. Tanpa baris 3, angka `78` akan kehilangan semua namanya di sini."},{"line":5,"frames":[{"name":"__main__","vars":[["nilai_andi","91"],["nilai_budi","78"],["sementara","78"]]}],"out":"","note":"Baris 5: `nilai_budi` pindah ke nilai yang ditunjuk `sementara`, yaitu `78`. Penukaran berhasil."},{"line":6,"frames":[{"name":"__main__","vars":[["nilai_andi","91"],["nilai_budi","78"],["sementara","78"]]}],"out":"Andi = 91\n","note":"Baris 6 mencetak `Andi = 91`."},{"line":7,"frames":[{"name":"__main__","vars":[["nilai_andi","91"],["nilai_budi","78"],["sementara","78"]]}],"out":"Andi = 91\nBudi = 78\n","note":"Baris 7 mencetak `Budi = 78`. Kuncinya ada di **urutan**: simpan dulu, baru timpa."}]}</script>
+<script src="../assets/stackviz.js"></script>
+```
+
+Python punya cara singkat `a, b = b, a`, tetapi pahami dulu versi tiga baris ini: polanya muncul lagi saat mengurutkan data di Minggu 11.
+
+### Aturan penamaan
+
+| Wajib (jika dilanggar, program galat) | Kebiasaan baik (supaya mudah dibaca) |
+|---|---|
+| Diawali huruf atau garis bawah | `snake_case`, semua huruf kecil |
+| Hanya huruf, angka, dan garis bawah | Nama menjelaskan isinya |
+| Tanpa spasi dan tanda baca | Konstanta ditulis `HURUF_BESAR` |
+| Bukan kata kunci Python | Hindari nama satu huruf |
+
+: {tbl-colwidths="[50,50]"}
+
+Contoh sah: `nilai_akhir`, `_total`, `harga2`. Contoh tidak sah: `2nilai`, `nilai akhir`, `class`. Huruf besar-kecil dibedakan: `nilai`, `Nilai`, dan `NILAI` adalah tiga nama berbeda (PSF, t.t.-b, §2.3).
+
+**Kata kunci** (*keyword*) tidak boleh dipakai sebagai nama. Daftarnya bisa dilihat dengan `import keyword` lalu `print(keyword.kwlist)`:
+
+```
+False  None  True  and  as  assert  async  await  break  class  continue
+def  del  elif  else  except  finally  for  from  global  if  import  in
+is  lambda  nonlocal  not  or  pass  raise  return  try  while  with  yield
+```
+
+Menulis `class = 5` atau `for = 10` membuat Python berhenti dengan `SyntaxError` sebelum program jalan. Editor mewarnai kata kunci secara otomatis: jika nama yang kamu ketik ikut berwarna, ganti namanya.
+
+Nama yang sah belum tentu nama yang baik. Untuk jumlah mahasiswa lulus, `jumlah_lulus` lebih baik daripada `x` atau `jml`, dan `JumlahLulus` bukan konvensi Python.
+
+## Lesson B · Tipe Data, Operator, dan Masukan
+
+### Empat tipe data dasar
+
+| Tipe | Isi | Contoh | Dipakai untuk |
+|---|---|---|---|
+| `int` | Bilangan bulat | `3`, `-7`, `0` | Jumlah, urutan, banyaknya |
+| `float` | Bilangan desimal | `3.5`, `0.0`, `-7.25` | Harga, suhu, rata-rata |
+| `str` | Teks | `"3"`, `"Bandung"`, `""` | Nama, kalimat, apa pun dari `input()` |
+| `bool` | Benar atau salah | `True`, `False` | Hasil perbandingan (Minggu 3) |
+
+: {tbl-colwidths="[12,22,28,38]"}
+
+Tipe **melekat pada nilainya, bukan pada nama variabel**. Setelah `x = 7`, `type(x)` menghasilkan `<class 'int'>`; setelah `x = "7"`, `type(x)` menghasilkan `<class 'str'>`. Python tidak pernah mencatat "x adalah int", sehingga tipe sebuah nama bisa berubah tanpa deklarasi ulang. Saat ragu, cetak `type(nama)` tepat sebelum baris yang gagal.
+
+### Tipe hasil ditentukan oleh operand dan operatornya
+
+| Operasi | Hasil | Contoh |
+|---|---|---|
+| `int` `+` `-` `*` `int` | `int` | `3 + 4` → `7` |
+| `int` `/` `int` | `float`, **selalu** | `7 / 2` → `3.5`; `6 / 2` → `3.0` |
+| `int` `//` `int` | `int` | `7 // 2` → `3` |
+| `int` dengan `float` | `float` | `3 + 4.0` → `7.0` |
+| `str` `+` `str` | `str`, disambung | `"3" + "4"` → `"34"` |
+| `str` `*` `int` | `str`, diulang | `"3" * 2` → `"33"` |
+| `str` `+` angka | `TypeError` | `"3" + 4` |
+
+: {tbl-colwidths="[30,28,42]"}
+
+Operator tidak mengubah tipe; ia hanya memilih **arti** sesuai tipe yang diberikan kepadanya (PSF, t.t.-c).
+
+### Pembagian bulat dan sisa pada bilangan negatif
+
+`//` membulatkan **ke bawah** (ke arah minus tak hingga), bukan memotong:
+
+| Ekspresi | Hasil | Alasan |
+|---|---|---|
+| `9 // 2` | `4` | 4,5 dibulatkan ke bawah |
+| `9 % 2` | `1` | 9 = 2 × 4 + 1 |
+| `-7 / 2` | `-3.5` | |
+| `-7 // 2` | `-4` | −3,5 dibulatkan ke bawah menjadi −4, bukan −3 |
+| `-9 % 2` | `1` | −9 = 2 × (−5) + 1 |
+
+: {tbl-colwidths="[24,16,60]"}
+
+### Membaca masukan dengan input()
+
+`input()` menghentikan program sampai pengguna menekan Enter, lalu mengembalikan apa yang diketik. Jika diberi teks di dalam kurung, teks itu ditampilkan dulu sebagai pertanyaan, di baris yang sama (PSF, t.t.-d):
+
+```python
+kota = input("Nama kota: ")
+```
+
+```
+Nama kota: Bandung
+```
+
+Tiga hal yang perlu diingat:
+
+- Yang dikembalikan **selalu teks** (`str`), walaupun yang diketik berupa angka.
+- Nilainya harus ditampung ke sebuah nama. `input()` yang berdiri sendiri membuang hasil bacaannya.
+- `input()` tanpa pesan membuat layar diam dengan kursor berkedip; pengguna tidak tahu apa yang diminta.
+
+### Menyisipkan nilai dengan f-string
+
+Huruf `f` di depan tanda kutip menandai **teks berformat**. Isi `{ }` dihitung dulu, lalu hasilnya disisipkan ke dalam kalimat (PSF, t.t.-e, §7.1.1):
+
+```python
+kota = "Bandung"
+print("Salam dari {kota}!")     # Salam dari {kota}!
+print(f"Salam dari {kota}!")    # Salam dari Bandung!
+
+harga = 12000
+jumlah = 3
+print(f"Total: {harga * jumlah}")   # Total: 36000
+```
+
+### Bug teks yang dikali
+
+Perhatikan program berikut dengan masukan `3`:
+
+```python
+jumlah = input("Berapa tiket? ")
+print(f"Total: {jumlah * 2}")
+```
+
+```
+Berapa tiket? 3
+Total: 33
+```
+
+`input()` memberi teks `"3"`, dan `"3" * 2` berarti "ulangi teks dua kali": hasilnya `"33"`. Program tidak berhenti karena `str * int` sah bagi Python. Jika `* 2` diganti `+ 2`, barulah muncul `TypeError`, karena `str + int` tidak punya arti.
+
+Pelajarannya: **baris yang disebut pesan galat belum tentu baris yang salah.** Kesalahannya ada di pembacaan masukan, yang belum dikonversi.
+
+### Konversi tipe
+
+Fungsi `int()`, `float()`, dan `str()` **menerima** sebuah nilai, **mengolahnya**, lalu **mengembalikan nilai baru**. Nilai lamanya tidak diubah, jadi hasilnya harus ditampung (PSF, t.t.-f):
+
+```python
+jumlah_teks = input("Berapa tiket? ")
+jumlah = int(jumlah_teks)
+print(f"Total: {jumlah * 2}")
+```
+
+| Setelah baris | `jumlah_teks` | `jumlah` | Layar |
+|---|---|---|---|
+| 1 | `"3"` (str) | – | `Berapa tiket? 3` |
+| 2 | `"3"` (str) | `3` (int) | |
+| 3 | `"3"` (str) | `3` (int) | `Total: 6` |
+
+: {tbl-colwidths="[18,26,22,34]"}
+
+Menulis `int(jumlah_teks)` sendirian tanpa `jumlah = ...` tidak mengubah apa pun. Setelah baris 2, `jumlah_teks` tetap menunjuk teks `"3"`.
+
+| Ekspresi | Hasil | Catatan |
+|---|---|---|
+| `int("12")` | `12` | Teks dibaca sebagai bilangan bulat |
+| `int(3.9)` | `3` | Memotong ke arah nol, **tidak** membulatkan |
+| `int(-3.9)` | `-3` | Memotong ke arah nol |
+| `int("12.5")` | `ValueError` | Titik desimal bukan bagian dari bilangan bulat |
+| `int(float("12.5"))` | `12` | Konversi dua langkah |
+| `float("12.5")` | `12.5` | Pakai `float()` untuk masukan yang mungkin desimal |
+| `str(42)` | `"42"` | Bilangan menjadi teks |
+
+: {tbl-colwidths="[30,18,52]"}
+
+Jika teks tidak bisa dibaca sebagai bilangan, misalnya `int("dua")`, program berhenti dengan `ValueError`. Cara memeriksa masukan sebelum mengonversinya dibahas di Minggu 3.
+
+### Contoh lengkap: baca, ubah, hitung, tampilkan
+
+**Soal.** Baca harga satuan barang dan jumlah barang yang dibeli, lalu hitung dan tampilkan subtotalnya.
+
+| Input / kondisi awal | Proses | Output / kondisi akhir |
+|---|---|---|
+| `harga_teks`: harga satuan yang diketik, masih teks. `jumlah_teks`: jumlah barang, masih teks. Harga harus bisa diubah menjadi `float`, jumlah menjadi `int`. | 1. Baca harga satuan sebagai teks. 2. Baca jumlah beli sebagai teks. 3. Ubah harga menjadi bilangan desimal. 4. Ubah jumlah menjadi bilangan bulat. 5. Hitung subtotal = harga × jumlah. 6. Tampilkan subtotal. | Subtotal tampil di layar. `harga` bertipe `float`, `jumlah` bertipe `int`. |
+
+: {tbl-colwidths="[33,40,27]"}
+
+```python
+harga_teks = input("Harga satuan: ")    # (1) baca: teks
+jumlah_teks = input("Jumlah beli: ")    # (1) baca: teks
+harga = float(harga_teks)               # (2) ubah tipe
+jumlah = int(jumlah_teks)               # (2) ubah tipe
+subtotal = harga * jumlah               # (3) hitung
+print("Subtotal:", subtotal)            # (4) tampilkan
+```
+
+```
+Harga satuan: 12500
+Jumlah beli: 3
+Subtotal: 37500.0
+```
+
+Pola **baca → ubah → hitung → tampilkan** ini dipakai di hampir setiap program minggu-minggu berikutnya. Di [Katalog Skema](../skema.qmd#A1), pola ini disebut *Baca–Proses–Hasilkan*.
+
+### Satu nama, satu makna
+
+```python
+harga = float(input("Harga: "))
+jumlah = int(input("Jumlah: "))
+harga = harga * jumlah
+pajak = harga * 0.11
+print("Harga satuan:", harga)
+print("Pajak:", pajak)
+```
+
+Baris 3 memakai ulang nama `harga` untuk total. Akibatnya baris 5 mencetak total, padahal labelnya "Harga satuan". Program tidak galat, tetapi keluarannya berbohong. Perbaikannya: beri nama baru, `total = harga * jumlah`, dan pakai `total` di baris 4. Aturannya: **satu nama, satu makna, untuk seluruh program.**
+
+## Kesalahan Umum
+
+::: {.table-responsive}
+| Gejala | Penyebab | Perbaikan |
+|---|---|---|
+| Dua variabel berakhir dengan nilai yang sama setelah "ditukar" | Nilai pertama ditimpa sebelum disimpan | Simpan dulu ke nama sementara, baru timpa |
+| `NameError: name 'total' is not defined` | Nama dipakai sebelum penugasan pertamanya | Beri nilai awal di atas baris yang memakainya |
+| `SyntaxError` pada baris penugasan | Nama diawali angka, berisi spasi, atau berupa kata kunci | Ikuti aturan penamaan: `nilai_2`, `nilai_akhir`, `kelas` |
+| Hasil `"33"` padahal ingin `6` | Teks dari `input()` dikali, bukan angka | `jumlah = int(input(...))` |
+| `TypeError: can only concatenate str (not "int") to str` | Teks dijumlahkan dengan angka | Konversi teksnya, atau ubah angkanya dengan `str()` |
+| `ValueError: invalid literal for int()` | Teks berisi titik desimal atau huruf | Pakai `float()` untuk desimal; periksa masukan (Minggu 3) |
+| Konversi "tidak berpengaruh" | `int(teks)` dipanggil tanpa menampung hasilnya | `angka = int(teks)` |
+| Kurung kurawal ikut tercetak | Lupa huruf `f` di depan kutip | `print(f"... {nama} ...")` |
+| Keluaran berlabel salah, tanpa galat | Satu nama dipakai untuk dua makna | Beri nama baru untuk makna yang baru |
+
+: {tbl-colwidths="[34,36,30]"}
+:::
+
 ## Tebak Dulu
 
 Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
@@ -53,6 +415,62 @@ print(b)
 Hasilnya `3`. `b = a` membuat `b` menunjuk ke nilai yang sama dengan `a` saat itu, yaitu `3`. Ketika `a` dipindahkan ke `10`, panah `b` tidak ikut berpindah.
 :::
 
+Tandai setiap baris sebagai ekspresi (E), pernyataan (S), atau pernyataan yang memuat ekspresi (S(E)): `8 * 2`, `sisa = 10 - 3`, `print("halo")`, `len("python")`, `nilai`, `import math`.
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+`8 * 2` → E · `sisa = 10 - 3` → S(E) · `print("halo")` → S · `len("python")` → E · `nilai` → E · `import math` → S.
+
+Ujinya: hanya E yang bisa ditaruh di kanan `=`. `print("halo")` sebenarnya juga ekspresi yang menghasilkan `None` (Minggu 4), tetapi ditulis untuk efeknya, yaitu menampilkan teks, sehingga di sini kita perlakukan sebagai pernyataan.
+:::
+
+Program berikut tidak galat. Berapa yang dicetak, dan berapa yang seharusnya?
+
+```python
+harga = 100000
+diskon = 0.10
+potongan = harga * diskon
+harga = harga - potongan
+potongan = harga * diskon
+print("Potongan:", potongan)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+Tercetak `Potongan: 9000.0`, padahal seharusnya `10000.0`. Baris 5 menghitung ulang potongan dari harga yang **sudah** didiskon. Hapus baris 5; potongan sudah benar sejak baris 3.
+:::
+
+Apa tipe setiap nilai ini: `7`, `7.0`, `"7"`, `True`, `3 / 1`, `input()`, `int("7")`, `7 > 3`?
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+`int`, `float`, `str`, `bool`, `float`, `str`, `int`, `bool`. Dua yang sering tertukar: `3 / 1` menghasilkan `float` (`3.0`) meskipun hasilnya bulat, dan `7 > 3` menghasilkan `bool`, bukan angka. Tipe ditentukan oleh nilai yang dihasilkan, bukan oleh bentuk tulisannya.
+:::
+
+## Latihan Mandiri
+
+1. **(U2.1)** Buat trace table untuk program berikut dan tentukan nilai akhir `a`, `b`, dan `c`: `a = 5`, `b = a + 2`, `a = b * 2`, `c = a - b`, `b = c`.
+2. **(U2.2)** Prediksi keluaran `print(f"{2 + 3} + {4}")` dan `print("2 + 3", 2 + 3)`. Mana bagian yang dihitung dan mana yang dicetak apa adanya?
+3. **(U2.3)** Tentukan tipe dan nilai: `10 / 4`, `10 // 4`, `10 // 4.0`, `"10" + "4"`, `"10" * 2`, `int(9.99)`, `float("4")`, `str(10) + "4"`.
+4. **(U2.4)** Tulis program yang membaca suhu dalam Celsius (boleh desimal) lalu mencetak suhunya dalam Fahrenheit, F = C × 9/5 + 32, dengan f-string: `30.0 C = 86.0 F`.
+5. **(U2.5)** Tiga variabel `pagi`, `siang`, `malam` berisi nama petugas jaga. Tulis kode yang memutar jadwalnya: petugas pagi pindah ke siang, siang ke malam, dan malam ke pagi. Buktikan dengan trace table bahwa tidak ada nama yang hilang.
+
 ## Bacaan
 
-- Think Python Ch. 2  -  Variables and Statements
+- Think Python Ch. 2 - Variables and Statements
+- Tutorial resmi Python §3.1 - Using Python as a Calculator, dan §7.1.1 - Formatted String Literals
+
+## Referensi
+
+Downey, A. B. (2024). *Think Python: How to think like a computer scientist* (3rd ed.). O'Reilly Media. <https://allendowney.github.io/ThinkPython/>
+
+- Bab 2, *Variables and Statements*: <https://allendowney.github.io/ThinkPython/chap02.html>
+
+Python Software Foundation. (t.t.-a). Execution model: Naming and binding. Dalam *The Python language reference*. Diakses 11 Oktober 2026, dari <https://docs.python.org/3/reference/executionmodel.html#naming-and-binding>
+
+Python Software Foundation. (t.t.-b). Lexical analysis: Identifiers and keywords. Dalam *The Python language reference*. Diakses 11 Oktober 2026, dari <https://docs.python.org/3/reference/lexical_analysis.html#identifiers>
+
+Python Software Foundation. (t.t.-c). An informal introduction to Python: Numbers. Dalam *The Python tutorial*. Diakses 11 Oktober 2026, dari <https://docs.python.org/3/tutorial/introduction.html#numbers>
+
+Python Software Foundation. (t.t.-d). Built-in functions: input. Dalam *The Python standard library*. Diakses 11 Oktober 2026, dari <https://docs.python.org/3/library/functions.html#input>
+
+Python Software Foundation. (t.t.-e). Input and output: Formatted string literals. Dalam *The Python tutorial*. Diakses 11 Oktober 2026, dari <https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals>
+
+Python Software Foundation. (t.t.-f). Built-in functions: int. Dalam *The Python standard library*. Diakses 11 Oktober 2026, dari <https://docs.python.org/3/library/functions.html#int>
