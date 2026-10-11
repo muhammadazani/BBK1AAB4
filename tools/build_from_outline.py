@@ -1,7 +1,10 @@
 """Regenerate jadwal.qmd and materi/wNN.qmd from the Alpro course outline workbook.
 
 Usage:
-    python3 tools/build_from_outline.py path/to/Alpro_Outline.xlsx
+    python3 tools/build_from_outline.py path/to/Alpro_Outline.xlsx [--weeks 5,6,9]
+
+--weeks limits which week pages are rewritten (jadwal.qmd is always rewritten).
+Use it to protect week pages that have been expanded by hand, such as w04.qmd.
 
 Topic, Sub-CPMK, skills, lesson titles and references come from Sheet1 of the
 workbook. Short page titles and the student-facing example (concept, code,
@@ -36,22 +39,22 @@ PAGES = {
             concept="Fungsi membungkus langkah-langkah di bawah satu nama. **Definisi** (`def`) hanya mencatat fungsinya; kodenya baru berjalan saat fungsi **dipanggil**. Argumen dipasangkan ke parameter sesuai urutan, dan variabel yang dibuat di dalam fungsi bersifat **lokal**.",
             code='def cetak_garis(panjang):\n    print("-" * panjang)\n\ndef cetak_judul(teks):\n    """Mencetak teks di antara dua garis sepanjang teks."""\n    cetak_garis(len(teks))\n    print(teks)\n    cetak_garis(len(teks))\n\ncetak_judul("Algoritma")',
             predict=("x = 1\n\ndef ubah():\n    x = 99\n\nubah()\nprint(x)", "Hasilnya `1`. `x = 99` di dalam fungsi membuat variabel lokal baru bernama `x`, dan tidak mengubah `x` di luar fungsi.")),
-    5: dict(title="Perulangan I: while", cat="Kontrol Alur",
-            concept="Setiap perulangan punya tiga bagian: **inisialisasi**, **kondisi**, dan **pemutakhiran**. `while` memeriksa kondisi sebelum setiap putaran. Jika tidak ada yang mengubah variabel di dalam kondisi, loop tidak akan pernah berhenti.",
-            code='total = 0                           # akumulator\nangka = int(input("Angka (0 = selesai): "))\nwhile angka != 0:                   # sentinel\n    total = total + angka\n    angka = int(input("Angka (0 = selesai): "))\nprint("Jumlah:", total)',
-            predict=('i = 10\nwhile i < 5:\n    print(i)\n    i += 1\nprint("selesai")', "Hanya `selesai` yang tercetak. Kondisi `10 < 5` sudah `False` sejak awal, sehingga badan loop tidak dijalankan sama sekali.")),
-    6: dict(title="Perulangan II: for", cat="Kontrol Alur",
-            concept="`range(a, b)` menghasilkan bilangan dari `a` sampai **sebelum** `b`. Titik paling rawan minggu ini adalah menggabungkan **guard** dengan **akumulator** di dalam satu perulangan: data yang tidak sah harus dilewati sebelum ikut dihitung.",
-            code="total = 0\nbanyak = 0\nfor n in [80, -1, 95, 70]:\n    if 0 <= n <= 100:        # guard\n        total += n           # akumulator\n        banyak += 1          # pencacah\nprint(total / banyak)",
-            predict=("for i in range(2, 10, 3):\n    print(i)", "Tercetak `2`, `5`, `8`. Dimulai dari 2, bertambah 3, dan berhenti sebelum mencapai 10.")),
+    5: dict(title="Fungsi II: Fungsi Ber-return", cat="Fungsi",
+            concept="`print` hanya menampilkan nilai ke layar, sedangkan `return` **mengirim nilai kembali ke pemanggil** sehingga bisa dipakai di dalam ekspresi. Fungsi tanpa `return` mengembalikan `None`. Satu fungsi boleh punya beberapa jalur `return`; baris sesudah `return` tidak pernah dijalankan. Bangun fungsi secara bertahap: lengkapi satu fungsi, uji, baru lanjut.",
+            code='def ongkir(berat):\n    if berat <= 1:\n        return 10000\n    return 10000 + (berat - 1) * 5000\n\ndef gratis_ongkir(belanja):\n    return belanja >= 100000      # fungsi boolean\n\nbelanja = 80000\nif gratis_ongkir(belanja):\n    total = belanja\nelse:\n    total = belanja + ongkir(3)  # komposisi: hasil fungsi dipakai di ekspresi\nprint(total)                     # 100000',
+            predict=("def dobel(x):\n    print(x * 2)\n\nhasil = dobel(4)\nprint(hasil)", "Tercetak `8` lalu `None`. `dobel` hanya mencetak dan tidak mengembalikan apa pun, sehingga `hasil` bernilai `None`.")),
+    6: dict(title="Perulangan: for dan while", cat="Kontrol Alur",
+            concept="Setiap perulangan punya tiga bagian: **inisialisasi**, **kondisi**, dan **pemutakhiran**. Pakai `for` jika banyaknya putaran sudah diketahui (`range(a, b)` berhenti **sebelum** `b`), dan `while` jika perulangan berhenti karena suatu kondisi, misalnya nilai sentinel. Data yang tidak sah dilewati dengan **guard** sebelum ikut dihitung, dan perulangannya dibungkus dalam fungsi ber-return.",
+            code='def rata_rata(daftar):\n    total = 0                    # akumulator\n    banyak = 0                   # pencacah\n    for n in daftar:\n        if 0 <= n <= 100:        # guard\n            total += n\n            banyak += 1\n    return total / banyak\n\nprint(rata_rata([80, -1, 95, 70]))   # 81.66...\n\ntotal = 0\nangka = int(input("Angka (0 = selesai): "))\nwhile angka != 0:                    # sentinel\n    total += angka\n    angka = int(input("Angka (0 = selesai): "))\nprint("Jumlah:", total)',
+            predict=('i = 10\nwhile i < 5:\n    print(i)\n    i += 1\nfor j in range(2, 10, 3):\n    print(j)', "Tercetak `2`, `5`, `8`. Kondisi `10 < 5` sudah `False` sejak awal, sehingga badan `while` tidak dijalankan sama sekali. `range(2, 10, 3)` dimulai dari 2, bertambah 3, dan berhenti sebelum mencapai 10.")),
     7: dict(title="Tutorial & Praktikum 1 · Gladi UTS", cat="Praktikum",
             studio=("Kamu mengerjakan mini proyek terbimbing yang menggabungkan variabel, kondisional, fungsi, dan perulangan. Susun dulu rencana fungsinya sebelum mengetik kode. Di akhir lesson, tunjukkan programmu berjalan dan sebutkan pola yang dipakai di tiap fungsi.",
                     "Gladi UTS: satu soal bergaya UTS dikerjakan di SEB dengan batas waktu penuh, lalu dibahas bersama. Setelah itu jendela remedial dibuka.")),
     8: dict(title="UTS", cat="Ujian"),
-    9: dict(title="Fungsi II: Fungsi Ber-return", cat="Fungsi",
-            concept="`print` menampilkan nilai ke layar, sedangkan `return` **mengirim nilai kembali ke pemanggil** agar bisa dipakai di dalam ekspresi. Fungsi tanpa `return` mengembalikan `None`. Bangun fungsi secara bertahap: tulis sedikit, uji, lalu lanjutkan.",
-            code="def luas(p, l):\n    return p * l\n\ndef keterangan(p, l):\n    if luas(p, l) > 100:\n        return \"besar\"\n    return \"kecil\"\n\nprint(luas(4, 5) * 2)      # 40\nprint(keterangan(20, 6))   # besar",
-            predict=("def dobel(x):\n    print(x * 2)\n\nhasil = dobel(4)\nprint(hasil)", "Tercetak `8` lalu `None`. `dobel` hanya mencetak dan tidak mengembalikan apa pun, sehingga `hasil` bernilai `None`.")),
+    9: dict(title="Perulangan Lanjutan: Nilai Ekstrem, Pencarian & Bersarang", cat="Kontrol Alur",
+            concept="Pola **nilai ekstrem** (*best-so-far*) menyimpan kandidat terbaik sejauh ini dan menggantinya setiap kali menemukan yang lebih baik. Pola **pencarian** memakai `return` di dalam perulangan: fungsi langsung berhenti begitu yang dicari ketemu, dan `return` sesudah perulangan menangani kasus *tidak ketemu*. Pada perulangan **bersarang**, perulangan dalam berjalan penuh untuk setiap putaran perulangan luar.",
+            code='def terbesar(daftar):\n    juara = daftar[0]            # best-so-far\n    for n in daftar:\n        if n > juara:\n            juara = n\n    return juara\n\ndef ada_gagal(nilai):\n    for n in nilai:\n        if n < 50:\n            return True          # ketemu: fungsi langsung berhenti\n    return False                 # sudah diperiksa semua\n\nprint(terbesar([70, 92, 85]))    # 92\nprint(ada_gagal([70, 45, 85]))   # True',
+            predict=("for i in range(3):\n    for j in range(2):\n        print(i, j)", "Tercetak 6 baris: `0 0`, `0 1`, `1 0`, `1 1`, `2 0`, `2 1`. Perulangan dalam berjalan 2 kali untuk setiap putaran perulangan luar, sehingga totalnya 3 × 2 = 6 iterasi.")),
     10: dict(title="String", cat="Teks & Koleksi Data",
              concept="Indeks dimulai dari `0`, batas akhir *slicing* tidak ikut diambil, dan indeks negatif menghitung dari belakang. String bersifat **immutable**: metode seperti `upper()` dan `strip()` menghasilkan string baru, bukan mengubah string lama.",
              code='kata = "Telkom"\nprint(kata[0], kata[-1], kata[1:4])   # T m elk\n\nnama = "  budi SANTOSO "\nprint(nama.strip().title())            # Budi Santoso',
@@ -96,6 +99,8 @@ def clean(s):
 
 
 def read_outline(path):
+    # Sheet1 columns: Week | Topic | Reference | NCCE KS4 Unit | Objective |
+    # Objective Skills | Lesson Breakdown | Week Description
     ws = openpyxl.load_workbook(path, data_only=True)["Sheet1"]
     weeks = {}
     for row in ws.iter_rows(min_row=2, values_only=True):
@@ -103,7 +108,7 @@ def read_outline(path):
             continue
         n = int(str(row[0]))
         skills, notes = [], []
-        for line in str(row[3] or "").splitlines():
+        for line in str(row[5] or "").splitlines():
             line = line.strip()
             if not line:
                 continue
@@ -112,9 +117,9 @@ def read_outline(path):
                 skills.append(m.groups())
             else:
                 notes.append(line)
-        lessons = [(a, clean(t), clean(f)) for a, t, f in LESSON_RE.findall(str(row[4] or ""))]
-        refs = [l.strip() for l in str(row[5] or "").splitlines() if l.strip() and l.strip() != "None"]
-        weeks[n] = dict(objective=clean(row[2]), skills=skills, notes=notes, lessons=lessons, refs=refs)
+        lessons = [(a, clean(t), clean(f)) for a, t, f in LESSON_RE.findall(str(row[6] or ""))]
+        refs = [l.strip() for l in str(row[2] or "").splitlines() if l.strip() and l.strip() != "None"]
+        weeks[n] = dict(objective=clean(row[4]), skills=skills, notes=notes, lessons=lessons, refs=refs)
     return weeks
 
 
@@ -287,16 +292,21 @@ Remedial berlangsung pada **20 menit pertama sesi berikutnya**, ditambah jendela
 
 
 def main():
-    if len(sys.argv) != 2:
+    args = sys.argv[1:]
+    only = None
+    if len(args) == 3 and args[1] == "--weeks":
+        only = {int(x) for x in args[2].split(",")}
+    elif len(args) != 1:
         sys.exit(__doc__)
-    weeks = read_outline(sys.argv[1])
+    weeks = read_outline(args[0])
     missing = set(PAGES) - set(weeks)
     if missing:
         sys.exit(f"Outline is missing weeks: {sorted(missing)}")
-    for n in sorted(weeks):
+    targets = [n for n in sorted(weeks) if only is None or n in only]
+    for n in targets:
         (ROOT / "materi" / f"w{n:02d}.qmd").write_text(week_page(n, PAGES[n], weeks[n]))
     (ROOT / "jadwal.qmd").write_text(schedule(weeks))
-    print(f"Wrote jadwal.qmd and {len(weeks)} week pages")
+    print(f"Wrote jadwal.qmd and {len(targets)} week pages")
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@ subtitle: "Algoritma & Pemrograman · BBK1AAB4 · 4 SKS"
 
 ## Deskripsi Mata Kuliah
 
-Algoritma & Pemrograman adalah mata kuliah dasar di Program Studi S1 Sistem Informasi. Mahasiswa belajar merumuskan penyelesaian masalah sebagai algoritma dan mengimplementasikannya dalam bahasa Python: variabel dan ekspresi, pernyataan kondisional, fungsi, perulangan, string, koleksi data (list, tuple, dictionary, set), serta pengolahan file teks dan CSV. Tiga pertemuan digunakan untuk studio mini proyek terbimbing yang menggabungkan seluruh materi.
+Algoritma & Pemrograman adalah mata kuliah dasar di Program Studi S1 Sistem Informasi. Mahasiswa belajar merumuskan penyelesaian masalah sebagai algoritma dan mengimplementasikannya dalam bahasa Python: variabel dan ekspresi, pernyataan kondisional, fungsi (void dan ber-return), perulangan, string, koleksi data (list, tuple, dictionary, set), serta pengolahan file teks dan CSV. Tiga pertemuan digunakan untuk studio mini proyek terbimbing yang menggabungkan seluruh materi.
 
 Mata kuliah ini menjadi fondasi untuk mata kuliah pemrograman dan analitik data di semester berikutnya.
 
@@ -19,10 +19,10 @@ Setiap minggu memiliki satu tujuan pembelajaran yang setara dengan satu Sub-CPMK
 | 2 | Melacak keadaan (state) variabel selama program berjalan, dan menulis program yang membaca masukan, mengonversi tipenya, lalu menghitung dan menampilkan hasil. |
 | 3 | Mengevaluasi ekspresi logika dan menulis program yang memilih jalur eksekusi berdasarkan kondisi, termasuk penjagaan (guard) untuk memvalidasi masukan. |
 | 4 | Memecah sebuah tugas menjadi fungsi-fungsi void berparameter, menelusuri pemanggilannya, dan menjelaskan lingkup (scope) variabel. |
-| 5 | Menelusuri dan menulis perulangan while, termasuk pola pencacah, akumulator, dan sentinel, serta menuliskan rencananya dalam pseudocode. |
-| 6 | Memilih dan menulis perulangan for untuk pola akumulator, pencacah bersyarat, dan nilai ekstrem, serta menggabungkan validasi data di dalam perulangan. |
+| 5 | Membedakan return dari print dan membangun program dari fungsi-fungsi yang mengembalikan nilai. |
+| 6 | Menelusuri dan menulis perulangan for dan while, termasuk pola pencacah, akumulator, dan sentinel, menggabungkan guard di dalam perulangan, serta memilih bentuk perulangan yang sesuai beserta alasannya. |
 | 7 | Menggabungkan variabel, kondisional, fungsi, dan perulangan menjadi solusi utuh untuk masalah kecil. |
-| 9 | Membedakan return dari print dan membangun program dari fungsi-fungsi yang mengembalikan nilai. |
+| 9 | Menulis fungsi ber-return yang memuat pola nilai ekstrem dan pencarian, menelusuri dan menulis perulangan bersarang sederhana, serta mengubah perulangan while menjadi for dan sebaliknya. |
 | 10 | Memproses teks: mengakses bagian string, menelusurinya dengan perulangan, dan memakai metode string. |
 | 11 | Menyimpan dan memproses kumpulan data terurut dengan list dan tuple, serta menjelaskan akibat dari sifat mutable. |
 | 12 | Memakai dictionary dan set untuk data berpasangan dan data unik, serta memilih struktur data yang sesuai dengan alasan. |

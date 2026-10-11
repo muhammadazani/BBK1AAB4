@@ -1,22 +1,22 @@
 ---
-title: "Minggu 6 · Perulangan II: for"
-description: "Mahasiswa mampu memilih dan menulis perulangan for untuk pola akumulator, pencacah bersyarat, dan nilai ekstrem, serta menggabungkan validasi data di dalam perulangan."
+title: "Minggu 6 · Perulangan: for dan while"
+description: "Mahasiswa mampu menelusuri dan menulis perulangan for dan while, termasuk pola pencacah, akumulator, dan sentinel, menggabungkan guard di dalam perulangan, serta memilih bentuk perulangan yang sesuai beserta alasannya."
 categories: [Kontrol Alur]
 minggu: 6
 ---
 ::: week-meta
-<span>Minggu 6</span><span>Lesson A: for, range, dan pola dasar</span><span>Lesson B: Menggabungkan pola: guard + akumulasi + bersarang</span>
+<span>Minggu 6</span><span>Lesson A: for, range, pencacah, dan akumulator</span><span>Lesson B: while, sentinel, dan guard di dalam perulangan</span>
 :::
 
 ## Skill yang Dinilai
 
 | Kode | Jenis | Skill |
 |---|---|---|
-| `U6.1` | Trace (T) | Menelusuri for dengan range() dan menyatakan jumlah iterasinya |
-| `U6.2` | Write (W) | Menulis pola akumulator, pencacah bersyarat, dan nilai ekstrem (best-so-far) dengan for |
-| `U6.3` | Write (W) | Menggabungkan guard (validasi data) di dalam perulangan akumulasi |
-| `U6.4` | Transfer (X) | Mengubah while menjadi for dan sebaliknya, serta memilih yang sesuai beserta alasannya |
-| `U6.5` | Transfer (X) | Menyusun dan menelusuri perulangan bersarang sederhana |
+| `U6.1` | Trace (T) | Membuat trace table untuk for dengan range() dan untuk while: nilai tiap iterasi, jumlah iterasi, dan alasan perulangan berhenti |
+| `U6.2` | Trace (T) | Mendiagnosis infinite loop dan kesalahan off-by-one |
+| `U6.3` | Write (W) | Menulis pola pencacah dan akumulator dengan for, dibungkus dalam fungsi ber-return |
+| `U6.4` | Write (W) | Menulis perulangan while bersentinel yang menggabungkan guard dengan akumulasi |
+| `U6.5` | Transfer (X) | Memilih for atau while untuk sebuah masalah beserta alasannya, dan menuliskan rencananya dalam pseudocode |
 
 : {tbl-colwidths="[12,16,72]"}
 
@@ -24,21 +24,31 @@ minggu: 6
 
 | Lesson | Judul | Fokus skill | Moodle |
 |---|---|---|---|
-| A | for, range, dan pola dasar | U6.1, U6.2 | `W06-A` |
-| B | Menggabungkan pola: guard + akumulasi + bersarang | U6.3, U6.4, U6.5 | `W06-B` |
+| A | for, range, pencacah, dan akumulator | U6.1, U6.3 | `W06-A` |
+| B | while, sentinel, dan guard di dalam perulangan | U6.2, U6.4, U6.5 | `W06-B` |
 
 ## Konsep Kunci
 
-`range(a, b)` menghasilkan bilangan dari `a` sampai **sebelum** `b`. Titik paling rawan minggu ini adalah menggabungkan **guard** dengan **akumulator** di dalam satu perulangan: data yang tidak sah harus dilewati sebelum ikut dihitung.
+Setiap perulangan punya tiga bagian: **inisialisasi**, **kondisi**, dan **pemutakhiran**. Pakai `for` jika banyaknya putaran sudah diketahui (`range(a, b)` berhenti **sebelum** `b`), dan `while` jika perulangan berhenti karena suatu kondisi, misalnya nilai sentinel. Data yang tidak sah dilewati dengan **guard** sebelum ikut dihitung, dan perulangannya dibungkus dalam fungsi ber-return.
 
 ```python
+def rata_rata(daftar):
+    total = 0                    # akumulator
+    banyak = 0                   # pencacah
+    for n in daftar:
+        if 0 <= n <= 100:        # guard
+            total += n
+            banyak += 1
+    return total / banyak
+
+print(rata_rata([80, -1, 95, 70]))   # 81.66...
+
 total = 0
-banyak = 0
-for n in [80, -1, 95, 70]:
-    if 0 <= n <= 100:        # guard
-        total += n           # akumulator
-        banyak += 1          # pencacah
-print(total / banyak)
+angka = int(input("Angka (0 = selesai): "))
+while angka != 0:                    # sentinel
+    total += angka
+    angka = int(input("Angka (0 = selesai): "))
+print("Jumlah:", total)
 ```
 
 ## Tebak Dulu
@@ -46,12 +56,16 @@ print(total / banyak)
 Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
 
 ```python
-for i in range(2, 10, 3):
+i = 10
+while i < 5:
     print(i)
+    i += 1
+for j in range(2, 10, 3):
+    print(j)
 ```
 
 ::: {.callout-tip collapse="true" title="Lihat jawaban"}
-Tercetak `2`, `5`, `8`. Dimulai dari 2, bertambah 3, dan berhenti sebelum mencapai 10.
+Tercetak `2`, `5`, `8`. Kondisi `10 < 5` sudah `False` sejak awal, sehingga badan `while` tidak dijalankan sama sekali. `range(2, 10, 3)` dimulai dari 2, bertambah 3, dan berhenti sebelum mencapai 10.
 :::
 
 ## Bacaan

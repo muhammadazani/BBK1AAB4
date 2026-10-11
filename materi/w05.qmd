@@ -1,22 +1,22 @@
 ---
-title: "Minggu 5 · Perulangan I: while"
-description: "Mahasiswa mampu menelusuri dan menulis perulangan while, termasuk pola pencacah, akumulator, dan sentinel, serta menuliskan rencananya dalam pseudocode sebelum menulis kode."
-categories: [Kontrol Alur]
+title: "Minggu 5 · Fungsi II: Fungsi Ber-return"
+description: "Mahasiswa mampu membedakan return dari print dan membangun program dari fungsi-fungsi yang mengembalikan nilai."
+categories: [Fungsi]
 minggu: 5
 ---
 ::: week-meta
-<span>Minggu 5</span><span>Lesson A: Menelusuri while loop</span><span>Lesson B: Pola pencacah, akumulator, dan sentinel</span>
+<span>Minggu 5</span><span>Lesson A: return dan print</span><span>Lesson B: Memecahkan masalah dengan fungsi, langkah demi langkah</span>
 :::
 
 ## Skill yang Dinilai
 
 | Kode | Jenis | Skill |
 |---|---|---|
-| `U5.1` | Trace (T) | Membuat trace table while loop: nilai tiap iterasi dan alasan perulangan berhenti |
-| `U5.2` | Trace (T) | Mendiagnosis infinite loop dan kesalahan off-by-one |
-| `U5.3` | Write (W) | Menulis pola pencacah (counter) dan pola akumulator dengan while |
-| `U5.4` | Write (W) | Menulis perulangan bersentinel yang berhenti pada nilai penanda |
-| `U5.5` | Transfer (X) | Menuliskan rencana perulangan dalam pseudocode sebelum menulis kode |
+| `U5.1` | Trace (T) | Membedakan return dan print; memprediksi nilai pemanggilan fungsi yang dipakai di dalam ekspresi, termasuk None |
+| `U5.2` | Write (W) | Menulis fungsi ber-return dengan lebih dari satu jalur return, termasuk fungsi boolean |
+| `U5.3` | Write (W) | Membangun fungsi secara bertahap (incremental development) dan mengujinya di tiap tahap |
+| `U5.4` | Transfer (X) | Menyusun komposisi fungsi: memakai hasil satu fungsi di dalam fungsi lain |
+| `U5.5` | Transfer (X) | Memecah masalah menjadi beberapa fungsi ber-return dan merakitnya menjadi satu program |
 
 : {tbl-colwidths="[12,16,72]"}
 
@@ -24,20 +24,28 @@ minggu: 5
 
 | Lesson | Judul | Fokus skill | Moodle |
 |---|---|---|---|
-| A | Menelusuri while loop | U5.1, U5.2 | `W05-A` |
-| B | Pola pencacah, akumulator, dan sentinel | U5.3, U5.4, U5.5 | `W05-B` |
+| A | return dan print | U5.1, U5.2 | `W05-A` |
+| B | Memecahkan masalah dengan fungsi, langkah demi langkah | U5.3, U5.4, U5.5 | `W05-B` |
 
 ## Konsep Kunci
 
-Setiap perulangan punya tiga bagian: **inisialisasi**, **kondisi**, dan **pemutakhiran**. `while` memeriksa kondisi sebelum setiap putaran. Jika tidak ada yang mengubah variabel di dalam kondisi, loop tidak akan pernah berhenti.
+`print` hanya menampilkan nilai ke layar, sedangkan `return` **mengirim nilai kembali ke pemanggil** sehingga bisa dipakai di dalam ekspresi. Fungsi tanpa `return` mengembalikan `None`. Satu fungsi boleh punya beberapa jalur `return`; baris sesudah `return` tidak pernah dijalankan. Bangun fungsi secara bertahap: lengkapi satu fungsi, uji, baru lanjut.
 
 ```python
-total = 0                           # akumulator
-angka = int(input("Angka (0 = selesai): "))
-while angka != 0:                   # sentinel
-    total = total + angka
-    angka = int(input("Angka (0 = selesai): "))
-print("Jumlah:", total)
+def ongkir(berat):
+    if berat <= 1:
+        return 10000
+    return 10000 + (berat - 1) * 5000
+
+def gratis_ongkir(belanja):
+    return belanja >= 100000      # fungsi boolean
+
+belanja = 80000
+if gratis_ongkir(belanja):
+    total = belanja
+else:
+    total = belanja + ongkir(3)  # komposisi: hasil fungsi dipakai di ekspresi
+print(total)                     # 100000
 ```
 
 ## Tebak Dulu
@@ -45,17 +53,18 @@ print("Jumlah:", total)
 Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
 
 ```python
-i = 10
-while i < 5:
-    print(i)
-    i += 1
-print("selesai")
+def dobel(x):
+    print(x * 2)
+
+hasil = dobel(4)
+print(hasil)
 ```
 
 ::: {.callout-tip collapse="true" title="Lihat jawaban"}
-Hanya `selesai` yang tercetak. Kondisi `10 < 5` sudah `False` sejak awal, sehingga badan loop tidak dijalankan sama sekali.
+Tercetak `8` lalu `None`. `dobel` hanya mencetak dan tidak mengembalikan apa pun, sehingga `hasil` bernilai `None`.
 :::
 
 ## Bacaan
 
-- Think Python Ch. 7  - Iteration and Search
+- Think Python Ch. 6 - Return values
+- Pendukung: Zelle Ch. 6.5 - Functions That Return Values; Gaddis Ch. 5.8 - Writing Your Own Value-Returning Functions
