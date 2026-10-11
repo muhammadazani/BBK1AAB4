@@ -17,7 +17,7 @@ Jendela remedial 1: mahasiswa menutup skill U1.1-U6.5 yang belum tuntas. Daftar 
 | Kode | Jenis | Skill |
 |---|---|---|
 | `U7.1` | Transfer (X) | Mendekomposisi masalah kecil menjadi fungsi-fungsi dengan antarmuka yang jelas |
-| `U7.2` | Transfer (X) | Memilih dan menggabungkan pola yang tepat (counter, akumulator, guard, best-so-far) |
+| `U7.2` | Transfer (X) | Memilih dan menggabungkan pola yang tepat (pencacah, akumulator, sentinel, guard) |
 | `U7.3` | Transfer (X) | Menguji dan menelusuri program sendiri untuk menemukan bug secara sistematis |
 | `U7.4` | Transfer (X) | Menyelesaikan soal bergaya UTS dalam batas waktu, tanpa bantuan dan tanpa AI |
 

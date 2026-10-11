@@ -253,7 +253,7 @@ Bing
 None
 ```
 
-Jadi jangan menyimpan hasil fungsi void ke variabel dan berharap mendapat teks yang dicetaknya. Fungsi yang **mengembalikan** nilai dengan `return` adalah topik Minggu 9.
+Jadi jangan menyimpan hasil fungsi void ke variabel dan berharap mendapat teks yang dicetaknya. Fungsi yang **mengembalikan** nilai dengan `return` adalah topik Minggu 5.
 
 ## Lesson B · Enkapsulasi, Generalisasi, dan Dekomposisi
 
@@ -413,7 +413,7 @@ Docstring juga mencatat **prasyarat** (*precondition*): hal yang harus benar seb
 | `TypeError: ... missing 1 required positional argument` | Jumlah argumen kurang dari jumlah parameter | Cocokkan jumlah dan urutan argumen dengan header |
 | Fungsi selalu memakai nilai yang sama | Memanggil `input()` atau menulis nilai tetap di dalam fungsi, padahal seharusnya parameter | Jadikan nilai itu parameter; minta `input()` di luar fungsi |
 | `NameError` saat memakai variabel dari fungsi lain | Variabel lokal tidak terlihat di luar fungsinya | Kirim nilainya sebagai argumen |
-| Variabel hasil pemanggilan berisi `None` | Menyimpan hasil fungsi void | Fungsi void hanya untuk aksi; nilai kembali dibahas di Minggu 9 |
+| Variabel hasil pemanggilan berisi `None` | Menyimpan hasil fungsi void | Fungsi void hanya untuk aksi; nilai kembali dibahas di Minggu 5 |
 
 : {tbl-colwidths="[32,36,32]"}
 
