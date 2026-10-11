@@ -514,8 +514,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#skill-yang-dinilai" id="toc-skill-yang-dinilai" class="nav-link active" data-scroll-target="#skill-yang-dinilai">Skill yang Dinilai</a></li>
   <li><a href="#lesson" id="toc-lesson" class="nav-link" data-scroll-target="#lesson">Lesson</a></li>
   <li><a href="#konsep-kunci" id="toc-konsep-kunci" class="nav-link" data-scroll-target="#konsep-kunci">Konsep Kunci</a></li>
+  <li><a href="#lesson-a-ekspresi-logika-dan-seleksi" id="toc-lesson-a-ekspresi-logika-dan-seleksi" class="nav-link" data-scroll-target="#lesson-a-ekspresi-logika-dan-seleksi">Lesson A · Ekspresi Logika dan Seleksi</a>
+  <ul class="collapse">
+  <li><a href="#indentasi-menentukan-isi-cabang" id="toc-indentasi-menentukan-isi-cabang" class="nav-link" data-scroll-target="#indentasi-menentukan-isi-cabang">Indentasi menentukan isi cabang</a></li>
+  <li><a href="#anatomi-pernyataan-if" id="toc-anatomi-pernyataan-if" class="nav-link" data-scroll-target="#anatomi-pernyataan-if">Anatomi pernyataan if</a></li>
+  <li><a href="#tiga-bentuk-seleksi" id="toc-tiga-bentuk-seleksi" class="nav-link" data-scroll-target="#tiga-bentuk-seleksi">Tiga bentuk seleksi</a></li>
+  <li><a href="#ekspresi-boolean" id="toc-ekspresi-boolean" class="nav-link" data-scroll-target="#ekspresi-boolean">Ekspresi Boolean</a></li>
+  <li><a href="#and-or-not" id="toc-and-or-not" class="nav-link" data-scroll-target="#and-or-not">and, or, not</a></li>
+  <li><a href="#jebakan-or" id="toc-jebakan-or" class="nav-link" data-scroll-target="#jebakan-or">Jebakan or</a></li>
+  <li><a href="#rantai-ifelifelse-urutan-menentukan-hasil" id="toc-rantai-ifelifelse-urutan-menentukan-hasil" class="nav-link" data-scroll-target="#rantai-ifelifelse-urutan-menentukan-hasil">Rantai if/elif/else: urutan menentukan hasil</a></li>
+  <li><a href="#dua-if-terpisah-dua-keputusan" id="toc-dua-if-terpisah-dua-keputusan" class="nav-link" data-scroll-target="#dua-if-terpisah-dua-keputusan">Dua if terpisah, dua keputusan</a></li>
+  <li><a href="#membaca-pesan-galat-if" id="toc-membaca-pesan-galat-if" class="nav-link" data-scroll-target="#membaca-pesan-galat-if">Membaca pesan galat if</a></li>
+  </ul></li>
+  <li><a href="#lesson-b-kondisi-bersarang-dan-guard" id="toc-lesson-b-kondisi-bersarang-dan-guard" class="nav-link" data-scroll-target="#lesson-b-kondisi-bersarang-dan-guard">Lesson B · Kondisi Bersarang dan Guard</a>
+  <ul class="collapse">
+  <li><a href="#seleksi-bersarang" id="toc-seleksi-bersarang" class="nav-link" data-scroll-target="#seleksi-bersarang">Seleksi bersarang</a></li>
+  <li><a href="#masalah-masukan-yang-tidak-diperiksa" id="toc-masalah-masukan-yang-tidak-diperiksa" class="nav-link" data-scroll-target="#masalah-masukan-yang-tidak-diperiksa">Masalah: masukan yang tidak diperiksa</a></li>
+  <li><a href="#memeriksa-teks-dengan-.isdigit" id="toc-memeriksa-teks-dengan-.isdigit" class="nav-link" data-scroll-target="#memeriksa-teks-dengan-.isdigit">Memeriksa teks dengan .isdigit()</a></li>
+  <li><a href="#guard" id="toc-guard" class="nav-link" data-scroll-target="#guard">Guard</a></li>
+  <li><a href="#elif-berantai-atau-if-bersarang" id="toc-elif-berantai-atau-if-bersarang" class="nav-link" data-scroll-target="#elif-berantai-atau-if-bersarang">elif berantai atau if bersarang?</a></li>
+  <li><a href="#enam-langkah-program-bersyarat" id="toc-enam-langkah-program-bersyarat" class="nav-link" data-scroll-target="#enam-langkah-program-bersyarat">Enam langkah program bersyarat</a></li>
+  <li><a href="#contoh-terpandu-syarat-donor-darah" id="toc-contoh-terpandu-syarat-donor-darah" class="nav-link" data-scroll-target="#contoh-terpandu-syarat-donor-darah">Contoh terpandu: syarat donor darah</a></li>
+  </ul></li>
+  <li><a href="#kesalahan-umum" id="toc-kesalahan-umum" class="nav-link" data-scroll-target="#kesalahan-umum">Kesalahan Umum</a></li>
   <li><a href="#tebak-dulu" id="toc-tebak-dulu" class="nav-link" data-scroll-target="#tebak-dulu">Tebak Dulu</a></li>
+  <li><a href="#latihan-mandiri" id="toc-latihan-mandiri" class="nav-link" data-scroll-target="#latihan-mandiri">Latihan Mandiri</a></li>
   <li><a href="#bacaan" id="toc-bacaan" class="nav-link" data-scroll-target="#bacaan">Bacaan</a></li>
+  <li><a href="#referensi" id="toc-referensi" class="nav-link" data-scroll-target="#referensi">Referensi</a></li>
   </ul>
 </nav>
     </div>
@@ -643,16 +668,882 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"C"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
+<section id="lesson-a-ekspresi-logika-dan-seleksi" class="level2">
+<h2 class="anchored" data-anchor-id="lesson-a-ekspresi-logika-dan-seleksi">Lesson A · Ekspresi Logika dan Seleksi</h2>
+<section id="indentasi-menentukan-isi-cabang" class="level3">
+<h3 class="anchored" data-anchor-id="indentasi-menentukan-isi-cabang">Indentasi menentukan isi cabang</h3>
+<p>Suhu terukur 38 °C. Baris mana saja yang dicetak?</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>suhu <span class="op">=</span> <span class="dv">38</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> suhu <span class="op">&gt;=</span> <span class="fl">37.5</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Demam"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Istirahat di rumah"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Sehat"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Cek selesai"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>Demam
+Istirahat di rumah
+Cek selesai</code></pre>
+<p>Baris 3–4 <strong>menjorok</strong> di bawah <code>if</code>, jadi keduanya dijalankan ketika kondisinya <code>True</code>. Baris 7 tidak menjorok, jadi berada di luar pernyataan <code>if</code> dan <strong>selalu</strong> dijalankan. Di Python, indentasi bukan sekadar kerapian: indentasi menentukan baris mana yang ikut dalam sebuah cabang (Downey, 2024, Bab 5).</p>
+</section>
+<section id="anatomi-pernyataan-if" class="level3">
+<h3 class="anchored" data-anchor-id="anatomi-pernyataan-if">Anatomi pernyataan if</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 80%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bagian</th>
+<th>Fungsinya</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>if</code></td>
+<td>Kata kunci yang memulai keputusan</td>
+</tr>
+<tr class="even">
+<td>Kondisi</td>
+<td>Ekspresi Boolean: hasilnya <code>True</code> atau <code>False</code></td>
+</tr>
+<tr class="odd">
+<td><code>:</code></td>
+<td>Titik dua wajib menutup baris header</td>
+</tr>
+<tr class="even">
+<td>Blok</td>
+<td>Baris yang menjorok 4 spasi; dijalankan hanya jika kondisinya <code>True</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tiga-bentuk-seleksi" class="level3">
+<h3 class="anchored" data-anchor-id="tiga-bentuk-seleksi">Tiga bentuk seleksi</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><code>if</code>: satu pilihan</th>
+<th><code>if-else</code>: dua cabang</th>
+<th><code>if-elif-else</code>: banyak cabang</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Blok dijalankan atau dilewati.</td>
+<td>Tepat satu dari dua cabang dijalankan.</td>
+<td>Diperiksa dari atas; berhenti di kondisi <code>True</code> pertama.</td>
+</tr>
+</tbody>
+</table>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> suhu <span class="op">&gt;=</span> <span class="fl">37.5</span>:          <span class="co"># if</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Demam"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> nilai <span class="op">&gt;=</span> <span class="dv">60</span>:           <span class="co"># if-else</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Lulus"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Ulang"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> nilai <span class="op">&gt;=</span> <span class="dv">80</span>:           <span class="co"># if-elif-else</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    huruf <span class="op">=</span> <span class="st">"A"</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> nilai <span class="op">&gt;=</span> <span class="dv">70</span>:</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    huruf <span class="op">=</span> <span class="st">"B"</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    huruf <span class="op">=</span> <span class="st">"C"</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Pernyataan <code>if-elif-else</code> tersusun dari <strong>klausa</strong>; setiap klausa punya <em>header</em> (kata kunci, kondisi, titik dua) dan <em>blok</em> (PSF, t.t.-a, §8.1):</p>
+<ul>
+<li><strong><code>if</code></strong>: wajib dan selalu pertama.</li>
+<li><strong><code>elif</code></strong>: opsional, boleh lebih dari satu. Diperiksa hanya jika <strong>semua</strong> kondisi di atasnya <code>False</code>.</li>
+<li><strong><code>else</code></strong>: opsional, paling banyak satu, selalu terakhir, dan <strong>tanpa kondisi</strong>. Ia menangkap semua kasus yang tidak lolos kondisi sebelumnya.</li>
+</ul>
+<p>Dalam flowchart, setiap kondisi digambar sebagai belah ketupat dengan dua jalan keluar, <code>True</code> dan <code>False</code>. Semua cabang bertemu lagi di satu titik sebelum baris berikutnya.</p>
+</section>
+<section id="ekspresi-boolean" class="level3">
+<h3 class="anchored" data-anchor-id="ekspresi-boolean">Ekspresi Boolean</h3>
+<p>Di Minggu 2 kamu menulis ekspresi aritmetika yang menghasilkan angka: <code>nilai + 5</code> → <code>80</code>. <strong>Ekspresi Boolean</strong> menghasilkan salah satu dari dua nilai: <code>True</code> atau <code>False</code>, bertipe <code>bool</code> (Downey, 2024, Bab 5). Ekspresi Boolean dibentuk dengan <strong>operator perbandingan</strong>, lalu bisa digabung dengan <strong>operator logika</strong>.</p>
+<div class="table-responsive">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 36%">
+<col style="width: 30%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Arti</th>
+<th>Contoh (<code>nilai = 75</code>)</th>
+<th>Hasil</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>==</code></td>
+<td>sama dengan</td>
+<td><code>nilai == 75</code></td>
+<td><code>True</code></td>
+</tr>
+<tr class="even">
+<td><code>!=</code></td>
+<td>tidak sama dengan</td>
+<td><code>nilai != 75</code></td>
+<td><code>False</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;</code></td>
+<td>kurang dari</td>
+<td><code>nilai &lt; 60</code></td>
+<td><code>False</code></td>
+</tr>
+<tr class="even">
+<td><code>&gt;</code></td>
+<td>lebih dari</td>
+<td><code>nilai &gt; 60</code></td>
+<td><code>True</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;=</code></td>
+<td>kurang dari atau sama dengan</td>
+<td><code>nilai &lt;= 75</code></td>
+<td><code>True</code></td>
+</tr>
+<tr class="even">
+<td><code>&gt;=</code></td>
+<td>lebih dari atau sama dengan</td>
+<td><code>nilai &gt;= 80</code></td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Operator dua karakter ditulis tanpa spasi: <code>&gt;=</code> benar, <code>&gt; =</code> langsung <code>SyntaxError</code>.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="= dan == berbeda">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Peringatan</span>= dan == berbeda
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>=</code> <strong>menempelkan nama</strong> ke sebuah nilai; itu pernyataan. <code>==</code> <strong>bertanya</strong> apakah dua nilai sama; itu ekspresi yang menghasilkan <code>True</code> atau <code>False</code>. Menulis <code>if nilai = 75:</code> langsung ditolak Python dengan <code>SyntaxError</code> sebelum program jalan.</p>
+</div>
+</div>
+</section>
+<section id="and-or-not" class="level3">
+<h3 class="anchored" data-anchor-id="and-or-not">and, or, not</h3>
+<div class="table-responsive">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 22%">
+<col style="width: 48%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th><code>True</code> jika…</th>
+<th>Contoh (<code>umur = 17</code>, <code>punya_izin = True</code>)</th>
+<th>Hasil</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>and</code></td>
+<td><strong>kedua</strong> sisi <code>True</code></td>
+<td><code>umur &gt;= 18 and punya_izin</code> → <code>False and True</code></td>
+<td><code>False</code></td>
+</tr>
+<tr class="even">
+<td><code>or</code></td>
+<td><strong>salah satu</strong> sisi <code>True</code></td>
+<td><code>umur &gt;= 18 or punya_izin</code> → <code>False or True</code></td>
+<td><code>True</code></td>
+</tr>
+<tr class="odd">
+<td><code>not</code></td>
+<td>sisinya <code>False</code></td>
+<td><code>not punya_izin</code> → <code>not True</code></td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Tabel kebenaran</strong> merangkum semua kemungkinannya:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><code>A</code></th>
+<th><code>B</code></th>
+<th><code>A and B</code></th>
+<th><code>A or B</code></th>
+<th><code>not A</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>True</code></td>
+<td><code>True</code></td>
+<td><code>True</code></td>
+<td><code>True</code></td>
+<td><code>False</code></td>
+</tr>
+<tr class="even">
+<td><code>True</code></td>
+<td><code>False</code></td>
+<td><code>False</code></td>
+<td><code>True</code></td>
+<td><code>False</code></td>
+</tr>
+<tr class="odd">
+<td><code>False</code></td>
+<td><code>True</code></td>
+<td><code>False</code></td>
+<td><code>True</code></td>
+<td><code>True</code></td>
+</tr>
+<tr class="even">
+<td><code>False</code></td>
+<td><code>False</code></td>
+<td><code>False</code></td>
+<td><code>False</code></td>
+<td><code>True</code></td>
+</tr>
+</tbody>
+</table>
+<p>Urutan evaluasinya: perbandingan dulu, lalu <code>not</code>, lalu <code>and</code>, terakhir <code>or</code> (PSF, t.t.-b, §6.17). Dengan <code>x = 5</code>:</p>
+<pre><code>x &gt; 9 or x &gt; 0 and x &lt; 3
+False or (True and False)
+False or False
+False</code></pre>
+<p><code>and</code> berhenti di <code>False</code> pertama dan <code>or</code> berhenti di <code>True</code> pertama; sisi kanannya tidak dihitung lagi. Ini disebut <strong>evaluasi pintas</strong> (<em>short-circuit</em>).</p>
+<p>Rentang bisa ditulis dua cara yang setara: <code>nilai &gt;= 60 and nilai &lt; 80</code> sama dengan <code>60 &lt;= nilai &lt; 80</code>. Setiap sisi <code>and</code>/<code>or</code> harus kondisi <strong>lengkap</strong>: <code>x &gt; 0 and x &lt; 10</code>, bukan <code>x &gt; 0 and &lt; 10</code>.</p>
+</section>
+<section id="jebakan-or" class="level3">
+<h3 class="anchored" data-anchor-id="jebakan-or">Jebakan or</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>hari <span class="op">=</span> <span class="st">"Senin"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> hari <span class="op">==</span> <span class="st">"Sabtu"</span> <span class="kw">or</span> <span class="st">"Minggu"</span>:</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Libur"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Program ini mencetak <code>Libur</code> pada hari Senin. Python membacanya sebagai <code>(hari == "Sabtu") or "Minggu"</code>, yaitu <code>False or "Minggu"</code>. Teks yang tidak kosong dianggap benar di dalam <code>if</code> (<em>truthy</em>), sehingga kondisinya selalu lolos. Tulis perbandingan di <strong>kedua</strong> sisi:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> hari <span class="op">==</span> <span class="st">"Sabtu"</span> <span class="kw">or</span> hari <span class="op">==</span> <span class="st">"Minggu"</span>:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Libur"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="rantai-ifelifelse-urutan-menentukan-hasil" class="level3">
+<h3 class="anchored" data-anchor-id="rantai-ifelifelse-urutan-menentukan-hasil">Rantai if/elif/else: urutan menentukan hasil</h3>
+<p>Program nilai huruf berikut terlihat wajar:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>nilai <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Nilai: "</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> nilai <span class="op">&gt;=</span> <span class="dv">60</span>:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    huruf <span class="op">=</span> <span class="st">"C"</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> nilai <span class="op">&gt;=</span> <span class="dv">70</span>:</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    huruf <span class="op">=</span> <span class="st">"B"</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> nilai <span class="op">&gt;=</span> <span class="dv">80</span>:</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    huruf <span class="op">=</span> <span class="st">"A"</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    huruf <span class="op">=</span> <span class="st">"E"</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nilai, huruf)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 50%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><code>nilai</code></th>
+<th>Baris 2: <code>nilai &gt;= 60</code></th>
+<th><code>huruf</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>95</td>
+<td><code>True</code></td>
+<td><code>C</code></td>
+</tr>
+<tr class="even">
+<td>75</td>
+<td><code>True</code></td>
+<td><code>C</code></td>
+</tr>
+<tr class="odd">
+<td>60</td>
+<td><code>True</code></td>
+<td><code>C</code></td>
+</tr>
+<tr class="even">
+<td>40</td>
+<td><code>False</code> → <code>else</code></td>
+<td><code>E</code></td>
+</tr>
+</tbody>
+</table>
+<p>Setiap nilai yang ≥ 70 pasti juga ≥ 60, sehingga baris 2 selalu menang lebih dulu. Baris 4–7 tidak pernah bisa dijalankan; inilah <strong>kode mati</strong>. Perbaikannya: tulis kondisi yang <strong>paling ketat di atas</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>nilai <span class="op">=</span> <span class="dv">75</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> nilai <span class="op">&gt;=</span> <span class="dv">80</span>:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    huruf <span class="op">=</span> <span class="st">"A"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> nilai <span class="op">&gt;=</span> <span class="dv">70</span>:</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    huruf <span class="op">=</span> <span class="st">"B"</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> nilai <span class="op">&gt;=</span> <span class="dv">60</span>:</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    huruf <span class="op">=</span> <span class="st">"C"</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    huruf <span class="op">=</span> <span class="st">"E"</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nilai, huruf)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Telusuri versi yang sudah diperbaiki. Perhatikan baris mana yang <strong>tidak pernah disorot</strong>.</p>
+<div class="stackviz" data-trace="trace-w03-chain" data-title="Telusuri: rantai if/elif/else"></div>
+<script type="application/json" id="trace-w03-chain">{"code":["nilai = 75","if nilai >= 80:","    huruf = \"A\"","elif nilai >= 70:","    huruf = \"B\"","elif nilai >= 60:","    huruf = \"C\"","else:","    huruf = \"E\"","print(nilai, huruf)"],"steps":[{"line":null,"frames":[{"name":"__main__","vars":[]}],"out":"","note":"Program belum berjalan. Tebak dulu: baris mana saja yang akan dijalankan? Lalu tekan **Lanjut**."},{"line":1,"frames":[{"name":"__main__","vars":[["nilai","75"]]}],"out":"","note":"Baris 1: `nilai` diikat ke `75`."},{"line":2,"frames":[{"name":"__main__","vars":[["nilai","75"]]}],"out":"","note":"Baris 2: `75 >= 80` bernilai `False`, jadi blok baris 3 dilewati dan Python memeriksa `elif` berikutnya."},{"line":4,"frames":[{"name":"__main__","vars":[["nilai","75"]]}],"out":"","note":"Baris 4: `75 >= 70` bernilai `True`. Inilah kondisi `True` **pertama**, jadi cabang ini yang dijalankan."},{"line":5,"frames":[{"name":"__main__","vars":[["nilai","75"],["huruf","'B'"]]}],"out":"","note":"Baris 5: `huruf` diikat ke `'B'`. Sisa rantai (baris 6–9) **dilompati** tanpa diperiksa sama sekali."},{"line":10,"frames":[{"name":"__main__","vars":[["nilai","75"],["huruf","'B'"]]}],"out":"75 B\n","note":"Baris 10 berada di luar rantai, jadi selalu dijalankan: tercetak `75 B`. Perhatikan bahwa baris 3, 6–7, dan 9 tidak pernah disorot."}]}</script>
+<script src="../assets/stackviz.js"></script>
+</section>
+<section id="dua-if-terpisah-dua-keputusan" class="level3">
+<h3 class="anchored" data-anchor-id="dua-if-terpisah-dua-keputusan">Dua if terpisah, dua keputusan</h3>
+<p><code>elif</code> adalah bagian dari keputusan yang sama. <code>if</code> baru memulai keputusan <strong>baru</strong> yang selalu diperiksa:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">10</span> <span class="kw">and</span> x <span class="op">&lt;</span> <span class="dv">20</span>:</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"P"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Q"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">or</span> x <span class="op">&gt;</span> <span class="dv">12</span>:</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"R"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"S"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Keputusan pertama (baris 2–5): <code>True and True</code> → cetak <code>P</code>, <code>elif</code> dilewati. Keputusan kedua (baris 6–9) tetap diperiksa: <code>False or True</code> → cetak <code>R</code>. Keluarannya <code>P</code> lalu <code>R</code>.</p>
+</section>
+<section id="membaca-pesan-galat-if" class="level3">
+<h3 class="anchored" data-anchor-id="membaca-pesan-galat-if">Membaca pesan galat if</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 34%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kesalahan</th>
+<th>Kode</th>
+<th>Pesan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Salah operator</td>
+<td><code>if nilai = 75:</code></td>
+<td><code>SyntaxError: invalid syntax. Maybe you meant '==' ...?</code></td>
+</tr>
+<tr class="even">
+<td>Lupa titik dua</td>
+<td><code>if nilai &gt;= 60</code></td>
+<td><code>SyntaxError: expected ':'</code></td>
+</tr>
+<tr class="odd">
+<td>Indentasi tidak rata</td>
+<td>baris kedua blok menjorok 6 spasi, bukan 4</td>
+<td><code>IndentationError: unexpected indent</code></td>
+</tr>
+</tbody>
+</table>
+<p>Di setiap pesan, perhatikan dua hal: <strong>nomor baris</strong> yang ditunjuk dan <strong>jenis</strong> galatnya.</p>
+</section>
+</section>
+<section id="lesson-b-kondisi-bersarang-dan-guard" class="level2">
+<h2 class="anchored" data-anchor-id="lesson-b-kondisi-bersarang-dan-guard">Lesson B · Kondisi Bersarang dan Guard</h2>
+<section id="seleksi-bersarang" class="level3">
+<h3 class="anchored" data-anchor-id="seleksi-bersarang">Seleksi bersarang</h3>
+<p>Sebuah <code>if</code> boleh berada di dalam blok <code>if</code> lain. <code>if</code> bagian dalam hanya diperiksa ketika kondisi luarnya <code>True</code> (Downey, 2024, Bab 5).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>saldo <span class="op">=</span> <span class="dv">30000</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>harga <span class="op">=</span> <span class="dv">45000</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> saldo <span class="op">&gt;=</span> harga:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Bayar"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> saldo <span class="op">-</span> harga <span class="op">&lt;</span> <span class="dv">10000</span>:</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Saldo menipis"</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Saldo kurang"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Baris 3 bernilai <code>False</code>, jadi baris 4–6 dilompati <strong>seluruhnya</strong>, termasuk <code>if</code> di baris 5. Keluarannya hanya <code>Saldo kurang</code>. Dengan <code>saldo = 50000</code>, kedua kondisi <code>True</code> dan keluarannya <code>Bayar</code> lalu <code>Saldo menipis</code>.</p>
+<p>Setiap <code>else</code> berpasangan dengan <code>if</code> yang <strong>sejajar lurus</strong> di atasnya. Indentasi, bukan jarak baris, yang menentukan pasangannya.</p>
+</section>
+<section id="masalah-masukan-yang-tidak-diperiksa" class="level3">
+<h3 class="anchored" data-anchor-id="masalah-masukan-yang-tidak-diperiksa">Masalah: masukan yang tidak diperiksa</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>umur <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Umur: "</span>))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> umur <span class="op">&gt;=</span> <span class="dv">17</span>:</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Boleh membuat KTP"</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Belum cukup umur"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 36%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Masukan</th>
+<th>Keluaran</th>
+<th>Masalahnya</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>20</code></td>
+<td><code>Boleh membuat KTP</code></td>
+<td>Benar</td>
+</tr>
+<tr class="even">
+<td><code>-3</code></td>
+<td><code>Belum cukup umur</code></td>
+<td>Umur negatif mustahil, tetapi tetap diproses</td>
+</tr>
+<tr class="odd">
+<td><code>150</code></td>
+<td><code>Boleh membuat KTP</code></td>
+<td>Umur tidak masuk akal, tetapi diterima</td>
+</tr>
+<tr class="even">
+<td><code>dua</code></td>
+<td><code>ValueError</code>, program berhenti</td>
+<td><code>int()</code> gagal sebelum <code>if</code> sempat memeriksa apa pun</td>
+</tr>
+</tbody>
+</table>
+<p>Ada dua jenis masalah: teks yang <strong>bukan angka</strong> (<code>dua</code>) dan angka <strong>di luar batas wajar</strong> (<code>-3</code>, <code>150</code>). Keduanya harus ditolak sebelum data dipakai.</p>
+</section>
+<section id="memeriksa-teks-dengan-.isdigit" class="level3">
+<h3 class="anchored" data-anchor-id="memeriksa-teks-dengan-.isdigit">Memeriksa teks dengan .isdigit()</h3>
+<p><code>teks.isdigit()</code> menghasilkan <code>True</code> jika <strong>semua</strong> karakter teks adalah angka 0–9 dan teksnya tidak kosong (PSF, t.t.-c). Karena hasilnya Boolean, ia bisa langsung menjadi kondisi <code>if</code>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Teks</th>
+<th><code>.isdigit()</code></th>
+<th>Alasan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>"20"</code></td>
+<td><code>True</code></td>
+<td>Semua angka</td>
+</tr>
+<tr class="even">
+<td><code>"007"</code></td>
+<td><code>True</code></td>
+<td>Nol di depan boleh</td>
+</tr>
+<tr class="odd">
+<td><code>"-3"</code></td>
+<td><code>False</code></td>
+<td>Ada tanda minus</td>
+</tr>
+<tr class="even">
+<td><code>"2.5"</code></td>
+<td><code>False</code></td>
+<td>Ada titik</td>
+</tr>
+<tr class="odd">
+<td><code>"dua"</code></td>
+<td><code>False</code></td>
+<td>Huruf</td>
+</tr>
+<tr class="even">
+<td><code>"1 2"</code></td>
+<td><code>False</code></td>
+<td>Ada spasi</td>
+</tr>
+<tr class="odd">
+<td><code>""</code></td>
+<td><code>False</code></td>
+<td>Teks kosong</td>
+</tr>
+</tbody>
+</table>
+<p><code>if not umur_teks.isdigit():</code> dibaca “jika teksnya bukan angka bulat”.</p>
+</section>
+<section id="guard" class="level3">
+<h3 class="anchored" data-anchor-id="guard">Guard</h3>
+<p><strong>Guard</strong> adalah pemeriksaan di awal yang menolak data tidak sah, sehingga perhitungan utama hanya menerima data yang sah:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>umur_teks <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Umur: "</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> umur_teks.isdigit():</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Masukan harus angka bulat"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    umur <span class="op">=</span> <span class="bu">int</span>(umur_teks)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> umur <span class="op">&gt;</span> <span class="dv">120</span>:</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Umur tidak masuk akal"</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> umur <span class="op">&gt;=</span> <span class="dv">17</span>:</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Boleh membuat KTP"</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Belum cukup umur"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Masukan</th>
+<th>Keluaran</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>20</code></td>
+<td><code>Boleh membuat KTP</code></td>
+</tr>
+<tr class="even">
+<td><code>15</code></td>
+<td><code>Belum cukup umur</code></td>
+</tr>
+<tr class="odd">
+<td><code>-3</code></td>
+<td><code>Masukan harus angka bulat</code></td>
+</tr>
+<tr class="even">
+<td><code>dua</code></td>
+<td><code>Masukan harus angka bulat</code></td>
+</tr>
+<tr class="odd">
+<td><code>150</code></td>
+<td><code>Umur tidak masuk akal</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>int()</code> di baris 5 hanya dijalankan untuk teks yang sudah pasti berisi angka, sehingga <code>ValueError</code> tidak mungkin muncul. Tanda minus pun ditolak oleh <code>.isdigit()</code>, jadi umur negatif tertangkap di guard pertama. Telusuri masukan <code>"150"</code> dan perhatikan di pemeriksaan mana ia berhenti.</p>
+<div class="stackviz" data-trace="trace-w03-guard" data-title="Telusuri: guard sebelum int()"></div>
+<script type="application/json" id="trace-w03-guard">{"code":["umur_teks = \"150\"","if not umur_teks.isdigit():","    print(\"Masukan harus angka bulat\")","else:","    umur = int(umur_teks)","    if umur > 120:","        print(\"Umur tidak masuk akal\")","    elif umur >= 17:","        print(\"Boleh membuat KTP\")","    else:","        print(\"Belum cukup umur\")"],"steps":[{"line":null,"frames":[{"name":"__main__","vars":[]}],"out":"","note":"Program belum berjalan. Masukan `\"150\"` berupa teks, seperti hasil `input()`. Tebak dulu: di pemeriksaan mana masukan ini berhenti? Lalu tekan **Lanjut**."},{"line":1,"frames":[{"name":"__main__","vars":[["umur_teks","'150'"]]}],"out":"","note":"Baris 1: `umur_teks` menunjuk teks `'150'`, bukan angka."},{"line":2,"frames":[{"name":"__main__","vars":[["umur_teks","'150'"]]}],"out":"","note":"Baris 2: **guard** pertama. `'150'.isdigit()` bernilai `True`, jadi `not True` bernilai `False`: teks ini aman diubah. Python lompat ke `else`."},{"line":5,"frames":[{"name":"__main__","vars":[["umur_teks","'150'"],["umur","150"]]}],"out":"","note":"Baris 5: baru sekarang `int()` dipanggil. Ia tidak mungkin gagal, karena guard sudah memastikan semua karakternya angka."},{"line":6,"frames":[{"name":"__main__","vars":[["umur_teks","'150'"],["umur","150"]]}],"out":"","note":"Baris 6: guard kedua. `150 > 120` bernilai `True`: angkanya sah, tetapi tidak masuk akal sebagai umur."},{"line":7,"frames":[{"name":"__main__","vars":[["umur_teks","'150'"],["umur","150"]]}],"out":"Umur tidak masuk akal\n","note":"Baris 7 mencetak `Umur tidak masuk akal`. Pemeriksaan umur di baris 8–11 tidak pernah dijalankan: data ditolak **sebelum** diproses."}]}</script>
+</section>
+<section id="elif-berantai-atau-if-bersarang" class="level3">
+<h3 class="anchored" data-anchor-id="elif-berantai-atau-if-bersarang">elif berantai atau if bersarang?</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><code>elif</code> berantai</th>
+<th><code>if</code> bersarang</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Satu keputusan, diperiksa berurutan; kondisi <code>True</code> pertama menang. Paling sering dipakai untuk satu variabel yang dibagi menjadi rentang.</td>
+<td>Pertanyaan kedua hanya masuk akal jika pertanyaan pertama sudah terjawab.</td>
+</tr>
+</tbody>
+</table>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># elif berantai: satu variabel, rentang tidak tumpang tindih</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> nilai <span class="op">&gt;=</span> <span class="dv">80</span>:</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    huruf <span class="op">=</span> <span class="st">"A"</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> nilai <span class="op">&gt;=</span> <span class="dv">70</span>:</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    huruf <span class="op">=</span> <span class="st">"B"</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    huruf <span class="op">=</span> <span class="st">"C"</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># if bersarang: PIN baru perlu diperiksa jika username dikenal</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> username <span class="op">==</span> <span class="st">"admin"</span>:</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> pin <span class="op">==</span> <span class="st">"1234"</span>:</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Masuk"</span>)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"PIN salah"</span>)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"User tidak dikenal"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Rantai <code>elif</code> boleh juga memeriksa <strong>variabel yang berbeda</strong> jika urutannya disengaja, misalnya “tolak umur mustahil dulu, baru pilih kategori”:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> umur <span class="op">&gt;</span> <span class="dv">100</span>:</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Umur tidak masuk akal"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> kelas <span class="op">==</span> <span class="st">"VIP"</span>:</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Kelas tidak dikenal"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>if</code> bersarang yang bagian dalamnya <strong>tidak punya <code>else</code></strong> bisa diratakan dengan <code>and</code>, dan hasilnya tetap sama:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> punya_tiket:                       <span class="co"># bersarang</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> umur <span class="op">&gt;=</span> <span class="dv">13</span>:</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Boleh masuk"</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> punya_tiket <span class="kw">and</span> umur <span class="op">&gt;=</span> <span class="dv">13</span>:        <span class="co"># rata</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Boleh masuk"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Jangan meratakan jika <code>if</code> bagian dalam punya <code>else</code> sendiri, seperti <code>"PIN salah"</code> di contoh login: kalau digabung dengan <code>and</code>, pesan itu hilang. Lebih dari tiga tingkat indentasi biasanya tanda bahwa kode perlu disederhanakan dengan <code>and</code> atau guard.</p>
+</section>
+<section id="enam-langkah-program-bersyarat" class="level3">
+<h3 class="anchored" data-anchor-id="enam-langkah-program-bersyarat">Enam langkah program bersyarat</h3>
+<p>Program bersyarat yang panjang hampir selalu tersusun dari enam langkah yang sama, dalam urutan yang sama. Tulis keenam label ini sebagai <strong>komentar</strong> sebelum menulis kodenya:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 40%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Langkah</th>
+<th>Tugasnya</th>
+<th>Pola kodenya</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 · BACA</td>
+<td>Baca semua masukan sebagai teks</td>
+<td><code>umur_teks = input()</code></td>
+</tr>
+<tr class="even">
+<td>2 · GUARD</td>
+<td>Tolak teks yang bukan angka bulat</td>
+<td><code>if not umur_teks.isdigit():</code></td>
+</tr>
+<tr class="odd">
+<td>3 · UBAH</td>
+<td>Ubah ke <code>int</code>, hanya di dalam <code>else</code></td>
+<td><code>umur = int(umur_teks)</code></td>
+</tr>
+<tr class="even">
+<td>4 · TOLAK</td>
+<td>Saring angka yang mustahil</td>
+<td><code>if umur &gt; 100:</code></td>
+</tr>
+<tr class="odd">
+<td>5 · PILIH KATEGORI</td>
+<td>Satu cabang per kategori, plus kategori tak dikenal</td>
+<td><code>elif kelas == "VIP":</code></td>
+</tr>
+<tr class="even">
+<td>6 · CEK SYARAT</td>
+<td>Di dalam kategori, dengan pesan penolakan sendiri</td>
+<td><code>if umur &gt;= 18: ... else: ...</code></td>
+</tr>
+</tbody>
+</table>
+<p>Setiap langkah ditulis di dalam <code>else</code> langkah sebelumnya, sehingga setiap masukan berhenti tepat di satu langkah:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># BACA</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>umur_teks <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>kelas <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># GUARD</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> umur_teks.isdigit():</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Umur harus angka bulat"</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># UBAH</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    umur <span class="op">=</span> <span class="bu">int</span>(umur_teks)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># TOLAK</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> umur <span class="op">&gt;</span> <span class="dv">100</span>:</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Umur tidak masuk akal"</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># PILIH KATEGORI</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> kelas <span class="op">==</span> <span class="st">"VIP"</span>:</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># CEK SYARAT</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> umur <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Tiket VIP dibeli"</span>)</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"VIP minimal 18 tahun"</span>)</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Kelas tidak dikenal"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 26%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Masukan (umur, kelas)</th>
+<th>Berhenti di</th>
+<th>Keluaran</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>dua</code>, <code>VIP</code></td>
+<td>GUARD</td>
+<td><code>Umur harus angka bulat</code></td>
+</tr>
+<tr class="even">
+<td><code>150</code>, <code>VIP</code></td>
+<td>TOLAK</td>
+<td><code>Umur tidak masuk akal</code></td>
+</tr>
+<tr class="odd">
+<td><code>25</code>, <code>Festival</code></td>
+<td>PILIH KATEGORI</td>
+<td><code>Kelas tidak dikenal</code></td>
+</tr>
+<tr class="even">
+<td><code>16</code>, <code>VIP</code></td>
+<td>CEK SYARAT</td>
+<td><code>VIP minimal 18 tahun</code></td>
+</tr>
+<tr class="odd">
+<td><code>20</code>, <code>VIP</code></td>
+<td>CEK SYARAT</td>
+<td><code>Tiket VIP dibeli</code></td>
+</tr>
+</tbody>
+</table>
+<p>Jika <code>elif kelas == "VIP":</code> ditulis sebagai <code>if</code> baru, masukan <code>150</code>, <code>VIP</code> akan mencetak <strong>dua</strong> pesan. Langkah-langkah ini sama dengan skema <a href="../skema.html#B1">Penjaga</a> dan <a href="../skema.html#B3">Klasifikasi bertingkat</a> di Katalog Skema.</p>
+</section>
+<section id="contoh-terpandu-syarat-donor-darah" class="level3">
+<h3 class="anchored" data-anchor-id="contoh-terpandu-syarat-donor-darah">Contoh terpandu: syarat donor darah</h3>
+<p><strong>Soal.</strong> Pengguna memasukkan umur dan berat badan (kg). Masukan harus angka bulat; jika bukan, tolak dengan pesan. Umur harus 17–65 tahun dan berat minimal 45 kg. Jika tidak boleh donor, sebutkan alasannya. Jika umur dan berat sama-sama tidak memenuhi, sebutkan alasan umur.</p>
+<p><strong>Tahap 1 · Memahami masalah.</strong> Yang diminta: keputusan boleh atau tidak, beserta alasannya. Masukan dari <code>input()</code> berupa teks, jadi harus diperiksa sebelum <code>int()</code>.</p>
+<p><strong>Tahap 2 · Input, proses, output.</strong></p>
+<pre><code>BACA umur_teks, berat_teks
+JIKA salah satu bukan angka
+    TAMPILKAN "Masukan harus angka bulat"
+SELAIN ITU
+    umur, berat ← int(...)
+    JIKA umur &lt; 17 ATAU umur &gt; 65
+        TAMPILKAN "Tidak boleh: umur"
+    SELAIN ITU JIKA berat &lt; 45
+        TAMPILKAN "Tidak boleh: berat badan"
+    SELAIN ITU
+        TAMPILKAN "Boleh donor"</code></pre>
+<p><strong>Tahap 3 · Kode.</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>umur_teks <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Umur: "</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>berat_teks <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Berat: "</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> (umur_teks.isdigit() <span class="kw">and</span> berat_teks.isdigit()):</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Masukan harus angka bulat"</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    umur <span class="op">=</span> <span class="bu">int</span>(umur_teks)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    berat <span class="op">=</span> <span class="bu">int</span>(berat_teks)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> umur <span class="op">&lt;</span> <span class="dv">17</span> <span class="kw">or</span> umur <span class="op">&gt;</span> <span class="dv">65</span>:</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Tidak boleh: umur"</span>)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> berat <span class="op">&lt;</span> <span class="dv">45</span>:</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Tidak boleh: berat badan"</span>)</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Boleh donor"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Tahap 4–5 · Telusuri dan uji setiap cabang.</strong> Satu kasus uji untuk setiap cabang, <strong>termasuk</strong> masukan yang tidak sah:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 42%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Umur, berat</th>
+<th>Keluaran</th>
+<th>Cabang</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>30</code>, <code>50</code></td>
+<td><code>Boleh donor</code></td>
+<td>Semua syarat lolos</td>
+</tr>
+<tr class="even">
+<td><code>16</code>, <code>50</code></td>
+<td><code>Tidak boleh: umur</code></td>
+<td>Umur terlalu muda</td>
+</tr>
+<tr class="odd">
+<td><code>30</code>, <code>40</code></td>
+<td><code>Tidak boleh: berat badan</code></td>
+<td>Berat kurang</td>
+</tr>
+<tr class="even">
+<td><code>tiga</code>, <code>50</code></td>
+<td><code>Masukan harus angka bulat</code></td>
+<td>Guard: huruf</td>
+</tr>
+<tr class="odd">
+<td><code>-5</code>, <code>50</code></td>
+<td><code>Masukan harus angka bulat</code></td>
+<td>Guard: tanda minus</td>
+</tr>
+</tbody>
+</table>
+<p>Kasus uji yang baik tidak hanya mencoba jalur yang lancar. Tanpa guard, masukan <code>tiga</code> membuat <code>int()</code> gagal.</p>
+</section>
+</section>
+<section id="kesalahan-umum" class="level2">
+<h2 class="anchored" data-anchor-id="kesalahan-umum">Kesalahan Umum</h2>
+<div class="table-responsive">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 36%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Gejala</th>
+<th>Penyebab</th>
+<th>Perbaikan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>SyntaxError</code> di baris <code>if</code></td>
+<td><code>=</code> dipakai untuk membandingkan, atau titik dua lupa</td>
+<td><code>if nilai == 75:</code></td>
+</tr>
+<tr class="even">
+<td><code>IndentationError</code></td>
+<td>Indentasi blok tidak rata</td>
+<td>Pakai 4 spasi untuk setiap tingkat</td>
+</tr>
+<tr class="odd">
+<td>Baris di bawah <code>if</code> selalu jalan</td>
+<td>Baris itu tidak menjorok</td>
+<td>Menjorokkan baris yang termasuk cabang</td>
+</tr>
+<tr class="even">
+<td>Cabang tertentu tidak pernah dijalankan</td>
+<td>Kondisi yang lebih longgar diletakkan di atas</td>
+<td>Urutkan dari kondisi paling ketat</td>
+</tr>
+<tr class="odd">
+<td><code>or</code> selalu <code>True</code></td>
+<td><code>hari == "Sabtu" or "Minggu"</code></td>
+<td>Bandingkan di kedua sisi</td>
+</tr>
+<tr class="even">
+<td>Dua pesan tercetak padahal hanya satu yang diharapkan</td>
+<td><code>if</code> baru dipakai, padahal seharusnya <code>elif</code></td>
+<td>Pakai <code>elif</code> untuk bagian dari keputusan yang sama</td>
+</tr>
+<tr class="odd">
+<td><code>ValueError</code> saat masukan berupa huruf</td>
+<td><code>int()</code> dipanggil sebelum masukan diperiksa</td>
+<td>Guard dengan <code>.isdigit()</code> dulu, <code>int()</code> di dalam <code>else</code></td>
+</tr>
+<tr class="even">
+<td>Umur negatif atau 150 diterima</td>
+<td>Tidak ada pemeriksaan batas wajar</td>
+<td>Tambahkan langkah TOLAK</td>
+</tr>
+<tr class="odd">
+<td>Hasil salah tepat di batas, misalnya nilai 60</td>
+<td><code>&gt;</code> tertukar dengan <code>&gt;=</code></td>
+<td>Uji nilai batas secara eksplisit</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 <section id="tebak-dulu" class="level2">
 <h2 class="anchored" data-anchor-id="tebak-dulu">Tebak Dulu</h2>
 <p>Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, <strong>baru</strong> buka jawabannya.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">95</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> n <span class="op">&gt;=</span> <span class="dv">60</span>:</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Lulus"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> n <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Istimewa"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">95</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> n <span class="op">&gt;=</span> <span class="dv">60</span>:</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Lulus"</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> n <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Istimewa"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -661,18 +1552,114 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Hanya <code>Lulus</code> yang tercetak. Kondisi pertama sudah <code>True</code>, sehingga cabang <code>elif</code> tidak pernah diperiksa. Kondisi yang lebih spesifik harus diletakkan lebih dulu.</p>
 </div>
 </div>
 </div>
+<p>Mana yang sesuai dengan flowchart “jika nilai ≥ 60 cetak Lulus; jika tidak, jika nilai ≥ 40 cetak Remedial; jika tidak, cetak Gagal; lalu selalu cetak Selesai”?</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Versi A</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> nilai <span class="op">&gt;=</span> <span class="dv">60</span>:</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Lulus"</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> nilai <span class="op">&gt;=</span> <span class="dv">40</span>:</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Remedial"</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Gagal"</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Selesai"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Versi B</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> nilai <span class="op">&gt;=</span> <span class="dv">60</span>:</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Lulus"</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> nilai <span class="op">&gt;=</span> <span class="dv">40</span>:</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Remedial"</span>)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Gagal"</span>)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Selesai"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lihat jawaban
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Tidak keduanya.</strong> A memakai dua <code>if</code> terpisah, sehingga nilai 70 mencetak <code>Lulus</code> <strong>dan</strong> <code>Remedial</code>. B benar memakai <code>elif</code>, tetapi <code>print("Selesai")</code> menjorok sehingga hanya jalan di cabang <code>else</code>. Versi yang benar adalah B dengan <code>print("Selesai")</code> rata kiri.</p>
+</div>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>stok <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>dipesan <span class="op">=</span> <span class="dv">8</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> stok <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> dipesan <span class="op">&lt;=</span> stok:</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Kirim"</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Kirim sebagian"</span>)</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Stok habis"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lihat jawaban
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>Kirim sebagian</code>. Baris 3: <code>5 &gt; 0</code> → <code>True</code>, masuk cabang luar. Baris 4: <code>8 &lt;= 5</code> → <code>False</code>, ke <code>else</code> di baris 6. <code>else</code> di baris 8 berpasangan dengan <code>if</code> di baris 3, jadi dilewati.</p>
+</div>
+</div>
+</div>
+<p>Dengan <code>x = 7</code>, apa hasil <code>x &gt; 9 or x &gt; 5 and x % 2 == 0</code>?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lihat jawaban
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>False</code>. <code>and</code> dihitung sebelum <code>or</code>: <code>x &gt; 5 and x % 2 == 0</code> → <code>True and False</code> → <code>False</code>. Lalu <code>x &gt; 9 or False</code> → <code>False or False</code> → <code>False</code>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="latihan-mandiri" class="level2">
+<h2 class="anchored" data-anchor-id="latihan-mandiri">Latihan Mandiri</h2>
+<ol type="1">
+<li><strong>(U3.1)</strong> Dengan <code>a = 4</code>, <code>b = 10</code>, dan <code>aktif = False</code>, tentukan nilai: <code>a &lt; b and not aktif</code>, <code>a &gt; b or aktif</code>, <code>not (a == 4 or b == 4)</code>, <code>0 &lt; a &lt;= 4</code>, dan <code>b % a == 2 and a % 2 == 0</code>.</li>
+<li><strong>(U3.2)</strong> Untuk program nilai huruf yang urutannya salah di Lesson A, sebutkan baris mana saja yang tidak pernah dijalankan untuk masukan apa pun, lalu jelaskan dengan satu kalimat.</li>
+<li><strong>(U3.3)</strong> Tulis program ongkos kirim: berat ≤ 1 kg → Rp10.000; 1 &lt; berat ≤ 5 kg → Rp25.000; berat &gt; 5 kg → Rp25.000 + Rp4.000 per kg kelebihan. Uji dengan berat 0.5, 1, 5, dan 7.5. Berapa ongkos untuk 7.5 kg?</li>
+<li><strong>(U3.4)</strong> Program membaca nilai ujian dan persentase kehadiran. Tolak masukan yang bukan angka bulat atau di luar 0–100. Jika nilai ≥ 60 dan kehadiran ≥ 75, cetak <code>Lulus</code>; jika tidak, sebutkan alasannya. Siapkan lima kasus uji: satu lulus, dua tidak lulus dengan alasan berbeda, dan dua masukan tidak sah.</li>
+<li><strong>(U3.5)</strong> Kelas memasak menerima umur dan kelas (<code>dasar</code> atau <code>lanjut</code>). Kelas dasar minimal 8 tahun, kelas lanjut minimal 15 tahun, dan kelas lain ditolak. Tulis enam label langkah sebagai komentar dulu, lalu kodenya. Jelaskan mengapa kamu memakai <code>elif</code> di satu tempat dan <code>if</code> bersarang di tempat lain.</li>
+</ol>
 </section>
 <section id="bacaan" class="level2">
 <h2 class="anchored" data-anchor-id="bacaan">Bacaan</h2>
 <ul>
-<li>Think Python Ch. 5 - Conditionals and Recursion</li>
+<li>Think Python Ch. 5 - Conditionals and Recursion (bagian rekursi dibahas di minggu lain)</li>
+<li>Tutorial resmi Python §4.1 - if Statements</li>
 </ul>
+</section>
+<section id="referensi" class="level2">
+<h2 class="anchored" data-anchor-id="referensi">Referensi</h2>
+<p>Downey, A. B. (2024). <em>Think Python: How to think like a computer scientist</em> (3rd ed.). O’Reilly Media. <a href="https://allendowney.github.io/ThinkPython/" class="uri">https://allendowney.github.io/ThinkPython/</a></p>
+<ul>
+<li>Bab 5, <em>Conditionals and Recursion</em>: <a href="https://allendowney.github.io/ThinkPython/chap05.html" class="uri">https://allendowney.github.io/ThinkPython/chap05.html</a></li>
+</ul>
+<p>Python Software Foundation. (t.t.-a). Compound statements: The if statement. Dalam <em>The Python language reference</em>. Diakses 11 Oktober 2026, dari <a href="https://docs.python.org/3/reference/compound_stmts.html#the-if-statement" class="uri">https://docs.python.org/3/reference/compound_stmts.html#the-if-statement</a></p>
+<p>Python Software Foundation. (t.t.-b). Expressions: Operator precedence. Dalam <em>The Python language reference</em>. Diakses 11 Oktober 2026, dari <a href="https://docs.python.org/3/reference/expressions.html#operator-precedence" class="uri">https://docs.python.org/3/reference/expressions.html#operator-precedence</a></p>
+<p>Python Software Foundation. (t.t.-c). Built-in types: str.isdigit. Dalam <em>The Python standard library</em>. Diakses 11 Oktober 2026, dari <a href="https://docs.python.org/3/library/stdtypes.html#str.isdigit" class="uri">https://docs.python.org/3/library/stdtypes.html#str.isdigit</a></p>
 
 
 </section>
