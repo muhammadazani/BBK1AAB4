@@ -8,3 +8,6 @@
 **/*.quarto_ipynb
 .DS_Store
 __pycache__/
+
+# Claude Code local settings and worktrees
+.claude/

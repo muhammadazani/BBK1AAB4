@@ -32,21 +32,425 @@ minggu: 5
 `print` hanya menampilkan nilai ke layar, sedangkan `return` **mengirim nilai kembali ke pemanggil** sehingga bisa dipakai di dalam ekspresi. Fungsi tanpa `return` mengembalikan `None`. Satu fungsi boleh punya beberapa jalur `return`; baris sesudah `return` tidak pernah dijalankan. Bangun fungsi secara bertahap: lengkapi satu fungsi, uji, baru lanjut.
 
 ```python
-def ongkir(berat):
-    if berat <= 1:
-        return 10000
-    return 10000 + (berat - 1) * 5000
+def dapat_gratis_ongkir(belanja):
+    return belanja >= 100000          # fungsi boolean
 
-def gratis_ongkir(belanja):
-    return belanja >= 100000      # fungsi boolean
+def ongkir(berat, belanja):
+    if dapat_gratis_ongkir(belanja):
+        return 0                      # jalur 1
+    return berat * 10000              # jalur 2
 
 belanja = 80000
-if gratis_ongkir(belanja):
-    total = belanja
-else:
-    total = belanja + ongkir(3)  # komposisi: hasil fungsi dipakai di ekspresi
-print(total)                     # 100000
+total = belanja + ongkir(2, belanja)  # hasil fungsi dipakai di dalam ekspresi
+print(total)                          # 100000
 ```
+
+## Lesson A · return dan print
+
+### Masalahnya: fungsi yang hanya mencetak
+
+Minggu lalu fungsimu **melakukan** sesuatu: mencetak kartu, garis, atau struk. Minggu ini fungsimu **menghasilkan** sesuatu. Bayangkan fungsi ongkos kirim untuk toko online kampus, Rp10.000 per kg:
+
+```python
+def ongkir_cetak(berat):
+    print(berat * 10000)
+
+harga = 50000
+total = harga + ongkir_cetak(2)
+```
+
+```
+20000
+Traceback (most recent call last):
+  ...
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+```
+
+Angka `20000` tampil dengan benar, tetapi program tetap berhenti. Penyebabnya: `ongkir_cetak` hanya **mencetak** hasilnya, tidak **mengembalikannya**. Bagi pemanggil, `ongkir_cetak(2)` bernilai `None`, dan `50000 + None` tidak bisa dihitung.
+
+### return mengirim nilai ke pemanggil
+
+Tonton dulu video berikut tentang karakteristik `return`, lalu baca penjelasannya di bawah.
+
+{{< video https://www.youtube.com/watch?v=P1OxLjxZS1g title="Fungsi dengan return di Python (Bagian 1/2) - Karakteristik return" >}}
+
+Pernyataan `return` mengakhiri fungsi dan mengirim sebuah nilai kembali ke tempat fungsi itu dipanggil (Downey, 2024, Bab 6; Python Software Foundation [PSF], t.t.-a, §7.6). Fungsi seperti ini disebut **fungsi ber-return** (*fruitful function*).
+
+```python
+def ongkir(berat):
+    return berat * 10000
+
+harga = 50000
+total = harga + ongkir(2)
+print(total)          # 70000
+```
+
+Cara membacanya: saat Python mengevaluasi `harga + ongkir(2)`, ia menjalankan `ongkir(2)` lebih dulu, lalu **mengganti pemanggilan itu dengan nilai kembaliannya**. Ekspresinya menjadi `50000 + 20000`. Karena pemanggilan fungsi ber-return adalah sebuah **ekspresi**, hasilnya boleh dipakai di mana pun nilai boleh dipakai: disimpan ke variabel, dijumlahkan, dibandingkan, atau menjadi argumen fungsi lain.
+
+```python
+b = ongkir(3)                  # disimpan: 30000
+print(ongkir(1) + ongkir(2))   # dijumlahkan: 30000
+print(ongkir(2) > 15000)       # dibandingkan: True
+print(round(ongkir(2) / 3))    # argumen fungsi lain: 6667
+```
+
+Telusuri dua versi fungsi ongkir berikut. Perhatikan ke mana angka `20000` pergi pada masing-masing versi: ke **layar**, atau ke **variabel pemanggil**.
+
+```{=html}
+<div class="stackviz" data-trace="trace-w05-return" data-title="Telusuri: print vs return"></div>
+<script type="application/json" id="trace-w05-return">{"code":["def ongkir_cetak(berat):","    print(berat * 10000)","","def ongkir(berat):","    return berat * 10000","","a = ongkir_cetak(2)","b = ongkir(2)","print(a, b)"],"steps":[{"line":null,"frames":[{"name":"__main__","vars":[]}],"out":"","note":"Program belum berjalan. Tebak dulu: apa isi `a` dan `b`, dan apa yang dicetak baris 9? Lalu tekan **Lanjut**."},{"line":1,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"]]}],"out":"","note":"Baris 1: `def` hanya membuat fungsi `ongkir_cetak`; badannya belum dijalankan."},{"line":4,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"]]}],"out":"","note":"Baris 4: hal yang sama untuk `ongkir`. Python melompat ke baris 7."},{"line":7,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"]]},{"name":"ongkir_cetak","vars":[["berat","2"]]}],"out":"","note":"Baris 7 memanggil `ongkir_cetak(2)`. Frame baru dibuat dengan `berat ← 2`. Ruas kiri `a = ...` **menunggu** sampai panggilan ini selesai."},{"line":2,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"]]},{"name":"ongkir_cetak","vars":[["berat","2"]],"ret":"None"}],"out":"20000\n","note":"Baris 2: `print` **menampilkan** `20000` ke layar. Tidak ada `return`, jadi fungsi selesai dan mengembalikan **`None`**."},{"line":7,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"],["a","None"]]}],"out":"20000\n","note":"Kembali ke baris 7: pemanggilan `ongkir_cetak(2)` digantikan nilai kembaliannya, `None`. Jadi `a` berisi `None`, bukan `20000`. Angka yang tadi tampil sudah hilang."},{"line":8,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"],["a","None"]]},{"name":"ongkir","vars":[["berat","2"]]}],"out":"20000\n","note":"Baris 8 memanggil `ongkir(2)`. Frame baru dibuat dengan `berat ← 2`."},{"line":5,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"],["a","None"]]},{"name":"ongkir","vars":[["berat","2"]],"ret":"20000"}],"out":"20000\n","note":"Baris 5: `return` **mengirim** `20000` ke pemanggil dan langsung mengakhiri fungsi. Tidak ada yang tercetak."},{"line":8,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"],["a","None"],["b","20000"]]}],"out":"20000\n","note":"Kembali ke baris 8: pemanggilan `ongkir(2)` digantikan `20000`, sehingga `b` berisi `20000`. Frame `ongkir` sudah dibuang, tetapi nilainya selamat."},{"line":9,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"],["a","None"],["b","20000"]]}],"out":"20000\nNone 20000\n","note":"Baris 9 mencetak `None 20000`. Hanya nilai yang dikirim dengan `return` yang bisa disimpan dan dipakai lagi."}]}</script>
+<script src="../assets/stackviz.js"></script>
+```
+
+::: {.table-responsive}
+| | `print(nilai)` | `return nilai` |
+|---|---|---|
+| Ke mana nilainya? | Ke layar, untuk dibaca manusia | Ke pemanggil, untuk dipakai program |
+| Nilai pemanggilan fungsi | `None` | `nilai` |
+| Bisa dipakai di ekspresi? | Tidak | Ya |
+| Fungsi berhenti? | Tidak, lanjut ke baris berikutnya | Ya, saat itu juga |
+
+: {tbl-colwidths="[28,36,36]"}
+:::
+
+`print` di dalam fungsi disebut **efek samping** (*side effect*): sesuatu yang dilakukan fungsi selain mengembalikan nilai. Efek samping tidak salah, tetapi angka yang **tampil** di layar tidak **tersimpan** di mana pun.
+
+### Fungsi tanpa return mengembalikan None
+
+Setiap fungsi Python mengembalikan sebuah nilai. Jika eksekusi mencapai akhir badan fungsi tanpa bertemu `return`, fungsi mengembalikan nilai khusus `None` (PSF, t.t.-b, §4.8). Itulah asal `None` pada fungsi void di Minggu 4.
+
+```python
+hasil = ongkir_cetak(2)    # mencetak 20000
+print(hasil)               # None
+```
+
+Perhatikan: `20000` tetap muncul di layar karena `print` di dalam fungsi dijalankan, tetapi `hasil` berisi `None`. Galatnya baru muncul **belakangan**, saat `None` dipakai dalam perhitungan. Jadi jika melihat `TypeError ... 'NoneType'`, cari fungsi yang lupa `return`.
+
+Aturan praktis: **kalau hasil fungsi akan dipakai lagi, kembalikan dengan `return`.** Biarkan pemanggil yang memutuskan kapan mencetak.
+
+### return langsung mengakhiri fungsi
+
+Begitu `return` dijalankan, fungsi berhenti. Baris sesudahnya tidak pernah dijalankan dan disebut **kode mati** (*dead code*) (Downey, 2024, Bab 6):
+
+```python
+def ongkir(berat):
+    return berat * 10000
+    print("ongkir dihitung")    # kode mati: tidak pernah tercetak
+
+print(ongkir(3))                # 30000
+```
+
+### Beberapa jalur return
+
+Video bagian kedua membahas fungsi dengan lebih dari satu `return`.
+
+{{< video https://www.youtube.com/watch?v=gfgiDE6Y7iw title="Fungsi dengan return di Python (Bagian 2/2) - Fungsi dengan lebih dari 1 return" >}}
+
+Fungsi boleh punya beberapa `return`, misalnya satu di tiap cabang `if`. Yang dijalankan hanya `return` **pertama yang dicapai**. Aturan baru toko: belanja Rp100.000 atau lebih, gratis ongkir.
+
+```python
+def ongkir(berat, belanja):
+    if belanja >= 100000:
+        return 0
+    else:
+        return berat * 10000
+
+print(ongkir(2, 150000))    # 0
+print(ongkir(2, 80000))     # 20000
+```
+
+Pada `ongkir(2, 150000)`, syarat di baris 2 benar, `return 0` dijalankan, dan fungsi selesai. Baris 5 tidak pernah dibaca. Jalan yang dilalui satu pemanggilan sampai bertemu `return` disebut **jalur return**.
+
+Karena `return` sudah mengakhiri fungsi, `else` boleh dihilangkan. Kedua versi berikut sama:
+
+```python
+def ongkir(berat, belanja):
+    if belanja >= 100000:
+        return 0
+    return berat * 10000         # hanya tercapai jika syarat di atas salah
+```
+
+### Setiap jalur harus berakhir di return
+
+Jika ada jalur yang tidak bertemu `return`, pemanggilan lewat jalur itu menghasilkan `None` (Downey, 2024, Bab 6). Perhatikan fungsi berikut:
+
+```python
+def ongkir_salah(berat, belanja):
+    if belanja > 100000:
+        return 0
+    if belanja < 100000:
+        return berat * 10000
+
+print(ongkir_salah(2, 150000))    # 0
+print(ongkir_salah(2, 80000))     # 20000
+print(ongkir_salah(2, 100000))    # None
+```
+
+Belanja **tepat** 100000 lolos dari kedua `if`: tidak lebih dari, tidak kurang dari. Eksekusi sampai di akhir fungsi tanpa `return`, sehingga hasilnya `None`. Dua uji pertama benar, jadi *bug* ini mudah terlewat; ia baru ketahuan saat seseorang menulis `50000 + ongkir_salah(2, 100000)`.
+
+Perbaikannya: pastikan jalur terakhir selalu tercapai, dengan `else` atau `return` tanpa syarat di akhir fungsi.
+
+```python
+def ongkir(berat, belanja):
+    if belanja > 100000:
+        return 0
+    else:
+        return berat * 10000
+```
+
+::: {.callout-note title="Cara mencari jalur yang bocor"}
+Untuk setiap `if` tanpa `else`, tanyakan: "nilai apa yang membuat syarat ini salah, dan ke mana eksekusi pergi setelahnya?" Uji nilai di **perbatasan** syarat (di sini tepat 100000), karena di situlah jalur paling sering bocor.
+:::
+
+### Fungsi boolean
+
+Fungsi boleh mengembalikan `True` atau `False`. Fungsi seperti ini disebut **fungsi boolean**, dan namanya biasanya berbentuk pertanyaan ya/tidak, misalnya `dapat_gratis_ongkir` atau `is_genap` (Downey, 2024, Bab 6). Fungsi boolean memberi **nama** pada syarat yang panjang, sehingga `if` menjadi mudah dibaca.
+
+```python
+def dapat_gratis_ongkir(belanja):
+    return belanja >= 100000
+
+def ongkir(berat, belanja):
+    if dapat_gratis_ongkir(belanja):
+        return 0
+    return berat * 10000
+
+print(dapat_gratis_ongkir(150000))    # True
+print(ongkir(2, 80000))               # 20000
+```
+
+Ekspresi perbandingan sudah bernilai `True` atau `False`, jadi bisa langsung dikembalikan dan langsung dipakai di `if`:
+
+| Benar, tetapi tidak perlu | Cukup |
+|---|---|
+| `if belanja >= 100000:`<br>`    return True`<br>`else:`<br>`    return False` | `return belanja >= 100000` |
+| `if dapat_gratis_ongkir(belanja) == True:` | `if dapat_gratis_ongkir(belanja):` |
+
+: {tbl-colwidths="[55,45]"}
+
+### Mengubah fungsi ber-print menjadi ber-return
+
+Saat menemukan fungsi yang mencetak hasil hitungannya, ubah dengan tiga langkah:
+
+1. **Nama menyatakan hasil.** `diskon`, bukan `cetak_diskon`.
+2. **`print` diganti `return`.** Periksa bahwa setiap jalur berakhir di `return`.
+3. **Pemanggil yang mencetak dan menghitung.** `print` pindah ke luar fungsi.
+
+```python
+# Sebelum
+def cetak_diskon(harga):
+    if harga >= 50000:
+        print(harga // 10)
+    else:
+        print(0)
+
+# Sesudah
+def diskon(harga):
+    if harga >= 50000:
+        return harga // 10
+    return 0
+
+harga = 80000
+print("Bayar:", harga - diskon(harga))    # Bayar: 72000
+```
+
+## Lesson B · Memecahkan Masalah dengan Fungsi, Langkah demi Langkah
+
+Fungsi ber-return membuat kita bisa memecah satu masalah menjadi beberapa fungsi kecil, menguji tiap fungsi sendiri-sendiri, lalu merakitnya. Lesson ini memakai satu **resep lima langkah** pada soal laundry dari Minggu 3.
+
+### Soal laundry
+
+| Layanan | Tarif |
+|---|---|
+| reguler | Rp6.000 per kg |
+| kilat | Rp9.000 per kg |
+| express | Rp15.000 per kg |
+
+: {tbl-colwidths="[40,60]"}
+
+Potongan Rp5.000 jika berat **lebih dari** 4 kg, kecuali layanan express. Program membaca layanan dan berat, lalu mencetak total yang harus dibayar.
+
+### Resep lima langkah
+
+| Langkah | Yang dilakukan |
+|---|---|
+| 1 · Pahami | Hitung satu contoh dengan tangan; hasilnya menjadi uji |
+| 2 · Pecah | Satu sub-tugas = satu fungsi ber-return |
+| 3 · Rancang | Header, docstring, `return 0`, dan satu uji |
+| 4 · Isi dan uji | Lengkapi satu fungsi, jalankan ujinya sampai `True`, baru lanjut |
+| 5 · Rakit | Bagian utama: `input()` → panggil fungsi → `print()` |
+
+: {tbl-colwidths="[24,76]"}
+
+### Langkah 1 · Pahami: hitung dengan tangan
+
+Sebelum menulis kode, selesaikan **satu contoh** dengan tangan. Rina mencuci 5 kg dengan layanan reguler:
+
+```
+tarif reguler          → 6000 per kg
+6000 × 5               → 30000
+5 > 4 dan bukan express → potongan 5000
+30000 − 5000           → 25000
+```
+
+Hitungan tangan memberi dua hal sekaligus: **jawaban yang benar** (`25000`, yang nanti menjadi uji) dan **langkah-langkah kecil** yang akan menjadi fungsi. Jika kamu belum bisa menghitungnya dengan tangan, kamu belum siap menulis programnya.
+
+### Langkah 2 · Pecah: satu sub-tugas, satu fungsi
+
+Ubah setiap langkah hitungan tangan menjadi satu fungsi. **Satu fungsi menjawab satu pertanyaan, dan jawabannya satu nilai.** Parameternya adalah apa yang perlu diketahui untuk menjawab pertanyaan itu.
+
+::: {.table-responsive}
+| Hitungan tangan | Sub-tugas | Perlu tahu apa? | Hasil | Fungsi |
+|---|---|---|---|---|
+| tarif reguler → 6000 | cari tarif | layanan | tarif per kg | `tarif_layanan(layanan)` |
+| 5 > 4, bukan express → 5000 | cek potongan | berat, layanan | potongan | `potongan(berat, layanan)` |
+| 6000 × 5 − 5000 → 25000 | hitung total | layanan, berat | total bayar | `total_bayar(layanan, berat)` |
+
+: {tbl-colwidths="[24,16,18,16,26]"}
+:::
+
+Dua catatan:
+
+- `potongan` butuh `layanan` juga, karena aturan potongannya bergantung pada layanan (express tidak dapat potongan).
+- `6000 × 5` tidak dijadikan fungsi sendiri. Ia hanya satu operasi, dan sudah cukup jelas di dalam `total_bayar`.
+
+`input()` dan `print()` **bukan** tugas fungsi-fungsi ini. Fungsi menerima data lewat parameter dan mengirim hasil lewat `return`; membaca dan mencetak adalah tugas **bagian utama** (langkah 5).
+
+### Langkah 3 · Rancang: kerangka fungsi dan uji
+
+Tulis setiap fungsi sebagai **kerangka** (*stub*): header, docstring, dan `return 0`. Kerangka ini sudah bisa dipanggil dan diuji walaupun isinya belum ada. Tambahkan satu **uji**: baris yang membandingkan hasil fungsi dengan jawaban hitungan tangan.
+
+```python
+def tarif_layanan(layanan):
+    """Kembalikan tarif per kg untuk layanan: reguler, kilat, atau express."""
+    return 0
+
+print(tarif_layanan("kilat") == 9000)    # False
+```
+
+`False` di sini berarti fungsinya **belum selesai**, bukan rusak. Tujuan langkah 4 adalah mengubah `False` itu menjadi `True`.
+
+### Langkah 4 · Isi dan uji, satu per satu
+
+Downey (2024, Bab 6) menyebut cara ini **pengembangan bertahap** (*incremental development*): tambahkan dan uji sedikit kode setiap kali, sehingga saat ada galat, kamu tahu persis di mana mencarinya. Lengkapi **satu** fungsi, jalankan ujinya sampai `True`, baru pindah ke fungsi berikutnya.
+
+**Fungsi 1 · `tarif_layanan`**
+
+```python
+def tarif_layanan(layanan):
+    """Kembalikan tarif per kg untuk layanan: reguler, kilat, atau express."""
+    if layanan == "reguler":
+        return 6000
+    elif layanan == "kilat":
+        return 9000
+    else:
+        return 15000
+
+print(tarif_layanan("kilat") == 9000)    # True
+```
+
+**Fungsi 2 · `potongan`.** Uji juga **nilai batas** (*boundary value*): nilai tepat di perbatasan aturan. Aturannya "lebih dari 4 kg", jadi 4 kg **tidak** mendapat potongan.
+
+```python
+def potongan(berat, layanan):
+    """Kembalikan potongan: 5000 jika berat lebih dari 4 kg dan bukan express."""
+    if berat > 4 and layanan != "express":
+        return 5000
+    else:
+        return 0
+
+print(potongan(5, "reguler") == 5000)    # True
+print(potongan(4, "reguler") == 0)       # True, nilai batas
+print(potongan(5, "express") == 0)       # True
+```
+
+Seandainya baris 3 keliru ditulis `berat >= 4`, uji nilai batas langsung menjadi `False`. Tanpa uji itu, kesalahannya baru ketahuan saat pelanggan protes.
+
+**Fungsi 3 · `total_bayar`** cukup memanggil dua fungsi yang ujinya sudah `True`:
+
+```python
+def total_bayar(layanan, berat):
+    """Kembalikan total bayar laundry setelah potongan."""
+    biaya = tarif_layanan(layanan) * berat
+    return biaya - potongan(berat, layanan)
+
+print(total_bayar("reguler", 5) == 25000)    # True
+print(total_bayar("express", 5) == 75000)    # True
+```
+
+Jika `total_bayar` salah padahal dua fungsi lainnya sudah lulus uji, kesalahannya pasti ada di **dua baris** `total_bayar` itu sendiri. Inilah keuntungan menguji satu per satu.
+
+### Komposisi fungsi
+
+`total_bayar` memakai hasil `tarif_layanan` dan `potongan` di dalam ekspresinya. Memakai hasil satu fungsi di dalam fungsi lain disebut **komposisi** (*composition*) (Downey, 2024, Bab 6). Komposisi hanya mungkin karena kedua fungsi itu **mengembalikan** nilai; jika salah satunya hanya mencetak, `total_bayar` akan menerima `None`.
+
+Telusuri program lengkapnya. Perhatikan bahwa saat `tarif_layanan` berjalan, ada **tiga** frame di stack, dan `total_bayar` menunggu jawabannya sebelum bisa mengalikan.
+
+```{=html}
+<div class="stackviz" data-trace="trace-w05-laundry" data-title="Telusuri: komposisi fungsi laundry"></div>
+<script type="application/json" id="trace-w05-laundry">{"code":["def tarif_layanan(layanan):","    if layanan == \"reguler\":","        return 6000","    elif layanan == \"kilat\":","        return 9000","    else:","        return 15000","","def potongan(berat, layanan):","    if berat > 4 and layanan != \"express\":","        return 5000","    else:","        return 0","","def total_bayar(layanan, berat):","    biaya = tarif_layanan(layanan) * berat","    return biaya - potongan(berat, layanan)","","print(total_bayar(\"reguler\", 5))"],"steps":[{"line":null,"frames":[{"name":"__main__","vars":[]}],"out":"","note":"Program belum berjalan. Tebak dulu: saat `tarif_layanan` sedang berjalan, berapa frame yang ada? Lalu tekan **Lanjut**."},{"line":1,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"]]}],"out":"","note":"Baris 1: `def` membuat fungsi `tarif_layanan`."},{"line":9,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"]]}],"out":"","note":"Baris 9: `def` membuat fungsi `potongan`."},{"line":15,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]}],"out":"","note":"Baris 15: `def` membuat fungsi `total_bayar`. Ketiga fungsi siap dipakai; Python melompat ke bagian utama di baris 19."},{"line":19,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"]]}],"out":"","note":"Baris 19: sebelum `print` bisa berjalan, Python harus menghitung `total_bayar(\"reguler\", 5)`. Frame baru dibuat: `layanan ← 'reguler'`, `berat ← 5`."},{"line":16,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"]]},{"name":"tarif_layanan","vars":[["layanan","'reguler'"]]}],"out":"","note":"Baris 16 memanggil `tarif_layanan(layanan)`. Frame **ketiga** dibuat. `total_bayar` menunggu jawabannya sebelum bisa mengalikan dengan `berat`."},{"line":2,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"]]},{"name":"tarif_layanan","vars":[["layanan","'reguler'"]]}],"out":"","note":"Baris 2: `layanan == \"reguler\"` bernilai `True`, jadi jalur pertama yang diambil."},{"line":3,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"]]},{"name":"tarif_layanan","vars":[["layanan","'reguler'"]],"ret":"6000"}],"out":"","note":"Baris 3: `return 6000` mengirim tarif ke `total_bayar` dan mengakhiri fungsi. Cabang `elif` dan `else` tidak pernah dibaca."},{"line":16,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"],["biaya","30000"]]}],"out":"","note":"Kembali ke baris 16: pemanggilan digantikan `6000`, lalu `6000 * 5` menjadi `biaya = 30000`. Frame `tarif_layanan` sudah dibuang."},{"line":17,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"],["biaya","30000"]]},{"name":"potongan","vars":[["berat","5"],["layanan","'reguler'"]]}],"out":"","note":"Baris 17 memanggil `potongan(berat, layanan)`. Urutan argumen mengikuti header: `berat ← 5`, `layanan ← 'reguler'`."},{"line":10,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"],["biaya","30000"]]},{"name":"potongan","vars":[["berat","5"],["layanan","'reguler'"]]}],"out":"","note":"Baris 10: `5 > 4` dan `'reguler' != 'express'`, jadi kedua syarat `True`."},{"line":11,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"],["biaya","30000"]]},{"name":"potongan","vars":[["berat","5"],["layanan","'reguler'"]],"ret":"5000"}],"out":"","note":"Baris 11: `return 5000` mengirim potongan ke `total_bayar`."},{"line":17,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"],["biaya","30000"]],"ret":"25000"}],"out":"","note":"Kembali ke baris 17: `30000 - 5000` dihitung, lalu `return` mengirim **`25000`** ke `__main__`. Inilah **komposisi**: hasil dua fungsi dipakai di dalam fungsi ketiga."},{"line":19,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]}],"out":"25000\n","note":"Baris 19: `print` mencetak `25000`, sama dengan hitungan tangan. Semua frame fungsi sudah dibuang; hanya nilainya yang sampai ke `__main__`."}]}</script>
+```
+
+### Langkah 5 · Rakit: bagian utama
+
+**Bagian utama** adalah bagian program di luar semua fungsi. Tugasnya tiga, dan hanya tiga:
+
+1. **Baca** masukan. `input()` selalu menghasilkan teks; berat dipakai untuk mengali, jadi ubah dulu dengan `int()`.
+2. **Panggil** fungsi. Cukup satu pemanggilan: `total_bayar` sudah memanggil dua fungsi lainnya. Urutan argumen mengikuti header.
+3. **Cetak** hasilnya. `print()` hanya di sini.
+
+Program lengkapnya:
+
+```python
+def tarif_layanan(layanan):
+    """Kembalikan tarif per kg untuk layanan: reguler, kilat, atau express."""
+    if layanan == "reguler":
+        return 6000
+    elif layanan == "kilat":
+        return 9000
+    else:
+        return 15000
+
+def potongan(berat, layanan):
+    """Kembalikan potongan: 5000 jika berat lebih dari 4 kg dan bukan express."""
+    if berat > 4 and layanan != "express":
+        return 5000
+    else:
+        return 0
+
+def total_bayar(layanan, berat):
+    """Kembalikan total bayar laundry setelah potongan."""
+    biaya = tarif_layanan(layanan) * berat
+    return biaya - potongan(berat, layanan)
+
+# Bagian utama
+layanan = input()
+berat = int(input())
+print("Total bayar:", total_bayar(layanan, berat))
+```
+
+```
+reguler
+5
+Total bayar: 25000
+```
+
+Tidak ada baris baru di sini: semua fungsi sudah ditulis dan diuji di langkah 3–4. Jika toko kelak menambah layanan "satuan", cukup ubah `tarif_layanan` (dan `potongan` jika aturan potongannya berbeda); `total_bayar` dan bagian utama tidak perlu disentuh.
+
+## Kesalahan Umum
+
+| Gejala | Penyebab | Perbaikan |
+|---|---|---|
+| `TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'` | Fungsi yang dipakai di ekspresi hanya `print`, tidak `return` | Ganti `print(...)` di dalam fungsi dengan `return ...` |
+| Angka tampil di layar, tetapi variabel berisi `None` | Mengira nilai yang dicetak tersimpan di variabel pemanggil | Kembalikan nilainya dengan `return`; cetak di pemanggil |
+| Fungsi kadang mengembalikan `None` | Ada jalur (sering nilai batas) yang tidak bertemu `return` | Akhiri fungsi dengan `else` atau `return` tanpa syarat |
+| Baris di bawah `return` tidak pernah berjalan | `return` sudah mengakhiri fungsi (kode mati) | Pindahkan baris itu ke atas `return`, atau hapus |
+| Hasil selalu dari cabang pertama saja | `return` diletakkan di luar `if`, atau sebelum cabang diperiksa | Letakkan `return` di dalam cabang yang tepat |
+| Hasil salah tepat di perbatasan aturan | `>` tertukar dengan `>=` (atau `<` dengan `<=`) | Tambahkan uji nilai batas sebelum melanjutkan |
+| `TypeError: unsupported operand type(s) for -: 'str' and 'int'` | Hasil `input()` tidak diubah dengan `int()`, sehingga `6000 * "5"` menjadi teks panjang |  `berat = int(input())` |
+| Fungsi tidak bisa diuji tanpa mengetik masukan | `input()` diletakkan di dalam fungsi | Terima data lewat parameter; `input()` hanya di bagian utama |
+
+: {tbl-colwidths="[34,36,30]"}
 
 ## Tebak Dulu
 
@@ -64,7 +468,68 @@ print(hasil)
 Tercetak `8` lalu `None`. `dobel` hanya mencetak dan tidak mengembalikan apa pun, sehingga `hasil` bernilai `None`.
 :::
 
+Ikuti jalur yang dilalui `diskon(80000)`:
+
+```python
+def diskon(harga):
+    if harga >= 50000:
+        print(harga // 10)
+    else:
+        return 0
+
+x = diskon(80000)
+print(x)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+```
+8000
+None
+```
+`80000 >= 50000` benar, sehingga jalur `if` diambil. Jalur ini **mencetak** `8000` tetapi tidak punya `return`, jadi fungsi mengembalikan `None` dan `x` berisi `None`. Hanya jalur `else` yang mengembalikan nilai.
+:::
+
+Dengan `kuadrat(x)` yang mengembalikan `x * x` dan `cetak_kuadrat(x)` yang mencetak `x * x`:
+
+```python
+x = kuadrat(4)
+print(x, cetak_kuadrat(2))
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+```
+4
+16 None
+```
+Sebelum `print` di luar bisa mencetak, semua argumennya dievaluasi lebih dulu. Mengevaluasi `cetak_kuadrat(2)` menjalankan `print` di dalamnya, sehingga `4` tampil **duluan**. Nilai pemanggilan itu `None`, jadi baris kedua `16 None`.
+:::
+
+Terakhir, memakai fungsi laundry pada Lesson B: berapa nilai `total_bayar("kilat", 4)`?
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+`36000`. `tarif_layanan("kilat")` → `9000`, sehingga `biaya = 9000 * 4 = 36000`. `potongan(4, "kilat")` → `0`, karena `4 > 4` salah (nilai batas). Hasilnya `36000 - 0 = 36000`.
+:::
+
+## Latihan Mandiri
+
+1. **(U5.1)** Tanpa menjalankan, tentukan nilai tiap ekspresi berikut, dengan `ongkir` dan `ongkir_salah` dari Lesson A: `ongkir(1, 99999) + 1`, `ongkir(3, 100000) * 2`, `ongkir_salah(1, 100000)`. Ekspresi mana yang akan menghasilkan galat jika ditambah `+ 1`?
+2. **(U5.2)** Tulis fungsi `nilai_huruf(skor)` yang mengembalikan `"A"` untuk skor ≥ 80, `"B"` untuk ≥ 70, `"C"` untuk ≥ 60, dan `"D"` selain itu. Lalu tulis fungsi boolean `lulus(skor)` yang memakai `nilai_huruf` dan mengembalikan `True` jika hurufnya bukan `"D"`. Uji `skor` 80, 79, 60, dan 59.
+3. **(U5.3)** Toko menambah biaya **asuransi** sebesar 1% dari belanja (pakai `belanja // 100`). Tulis kerangka `asuransi(belanja)` dengan `return 0` dan uji `asuransi(150000) == 1500`. Jalankan (hasilnya `False`), lalu lengkapi sampai `True`.
+4. **(U5.4)** Tulis `total_kirim(berat, belanja)` yang mengembalikan hasil `ongkir` ditambah hasil `asuransi`. Hitung dulu dengan tangan, lalu uji: `total_kirim(2, 80000)` → `20800`, `total_kirim(2, 150000)` → `1500`, `total_kirim(3, 100000)` → `1000`.
+5. **(U5.5)** Kereta wisata menjual tiket Rp25.000 untuk anak (usia di bawah 12 tahun) dan Rp40.000 untuk dewasa. Rombongan 10 orang atau lebih mendapat potongan Rp50.000. Semua anggota satu pesanan berusia sama. Ikuti resep lima langkah: hitung satu contoh dengan tangan, tentukan fungsi-fungsinya, tulis kerangka dan ujinya, isi satu per satu, lalu rakit bagian utama yang membaca usia dan jumlah orang. Pastikan uji nilai batasmu mencakup usia tepat 12 dan jumlah tepat 10.
+
 ## Bacaan
 
 - Think Python Ch. 6 - Return values
 - Pendukung: Zelle Ch. 6.5 - Functions That Return Values; Gaddis Ch. 5.8 - Writing Your Own Value-Returning Functions
+- Referensi resmi Python §7.6 - The return statement
+
+## Referensi
+
+Downey, A. B. (2024). *Think Python: How to think like a computer scientist* (3rd ed.). O'Reilly Media. <https://allendowney.github.io/ThinkPython/>
+
+- Bab 6, *Return Values* (subbab *Return values and conditionals*, *Incremental development*, *Boolean functions*): <https://allendowney.github.io/ThinkPython/chap06.html>
+
+Python Software Foundation. (t.t.-a). Simple statements: The return statement. Dalam *The Python language reference*. Diakses 11 Oktober 2026, dari <https://docs.python.org/3/reference/simple_stmts.html#the-return-statement>
+
+Python Software Foundation. (t.t.-b). More control flow tools: Defining functions. Dalam *The Python tutorial*. Diakses 11 Oktober 2026, dari <https://docs.python.org/3/tutorial/controlflow.html#defining-functions>
