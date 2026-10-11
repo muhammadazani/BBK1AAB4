@@ -39,21 +39,21 @@
     "href": "silabus.html",
     "title": "Silabus",
     "section": "",
-    "text": "Algoritma & Pemrograman adalah mata kuliah dasar di Program Studi S1 Sistem Informasi. Mahasiswa belajar merumuskan penyelesaian masalah sebagai algoritma dan mengimplementasikannya dalam bahasa Python: variabel dan ekspresi, pernyataan kondisional, fungsi, perulangan, string, koleksi data (list, tuple, dictionary, set), serta pengolahan file teks dan CSV. Tiga pertemuan digunakan untuk studio mini proyek terbimbing yang menggabungkan seluruh materi.\nMata kuliah ini menjadi fondasi untuk mata kuliah pemrograman dan analitik data di semester berikutnya."
+    "text": "Algoritma & Pemrograman adalah mata kuliah dasar di Program Studi S1 Sistem Informasi. Mahasiswa belajar merumuskan penyelesaian masalah sebagai algoritma dan mengimplementasikannya dalam bahasa Python: variabel dan ekspresi, pernyataan kondisional, fungsi (void dan ber-return), perulangan, string, koleksi data (list, tuple, dictionary, set), serta pengolahan file teks dan CSV. Tiga pertemuan digunakan untuk studio mini proyek terbimbing yang menggabungkan seluruh materi.\nMata kuliah ini menjadi fondasi untuk mata kuliah pemrograman dan analitik data di semester berikutnya."
   },
   {
     "objectID": "silabus.html#deskripsi-mata-kuliah",
     "href": "silabus.html#deskripsi-mata-kuliah",
     "title": "Silabus",
     "section": "",
-    "text": "Algoritma & Pemrograman adalah mata kuliah dasar di Program Studi S1 Sistem Informasi. Mahasiswa belajar merumuskan penyelesaian masalah sebagai algoritma dan mengimplementasikannya dalam bahasa Python: variabel dan ekspresi, pernyataan kondisional, fungsi, perulangan, string, koleksi data (list, tuple, dictionary, set), serta pengolahan file teks dan CSV. Tiga pertemuan digunakan untuk studio mini proyek terbimbing yang menggabungkan seluruh materi.\nMata kuliah ini menjadi fondasi untuk mata kuliah pemrograman dan analitik data di semester berikutnya."
+    "text": "Algoritma & Pemrograman adalah mata kuliah dasar di Program Studi S1 Sistem Informasi. Mahasiswa belajar merumuskan penyelesaian masalah sebagai algoritma dan mengimplementasikannya dalam bahasa Python: variabel dan ekspresi, pernyataan kondisional, fungsi (void dan ber-return), perulangan, string, koleksi data (list, tuple, dictionary, set), serta pengolahan file teks dan CSV. Tiga pertemuan digunakan untuk studio mini proyek terbimbing yang menggabungkan seluruh materi.\nMata kuliah ini menjadi fondasi untuk mata kuliah pemrograman dan analitik data di semester berikutnya."
   },
   {
     "objectID": "silabus.html#capaian-pembelajaran-sub-cpmk",
     "href": "silabus.html#capaian-pembelajaran-sub-cpmk",
     "title": "Silabus",
     "section": "Capaian Pembelajaran (Sub-CPMK)",
-    "text": "Capaian Pembelajaran (Sub-CPMK)\nSetiap minggu memiliki satu tujuan pembelajaran yang setara dengan satu Sub-CPMK pada RPS. Setelah menyelesaikan mata kuliah ini, mahasiswa mampu:\n\n\n\n\n\n\n\nMinggu\nSub-CPMK\n\n\n\n\n1\nMenjelaskan program sebagai bahasa formal, merepresentasikan algoritma sederhana (pseudocode/flowchart), dan menelusurinya langkah demi langkah.\n\n\n2\nMelacak keadaan (state) variabel selama program berjalan, dan menulis program yang membaca masukan, mengonversi tipenya, lalu menghitung dan menampilkan hasil.\n\n\n3\nMengevaluasi ekspresi logika dan menulis program yang memilih jalur eksekusi berdasarkan kondisi, termasuk penjagaan (guard) untuk memvalidasi masukan.\n\n\n4\nMemecah sebuah tugas menjadi fungsi-fungsi void berparameter, menelusuri pemanggilannya, dan menjelaskan lingkup (scope) variabel.\n\n\n5\nMenelusuri dan menulis perulangan while, termasuk pola pencacah, akumulator, dan sentinel, serta menuliskan rencananya dalam pseudocode.\n\n\n6\nMemilih dan menulis perulangan for untuk pola akumulator, pencacah bersyarat, dan nilai ekstrem, serta menggabungkan validasi data di dalam perulangan.\n\n\n7\nMenggabungkan variabel, kondisional, fungsi, dan perulangan menjadi solusi utuh untuk masalah kecil.\n\n\n9\nMembedakan return dari print dan membangun program dari fungsi-fungsi yang mengembalikan nilai.\n\n\n10\nMemproses teks: mengakses bagian string, menelusurinya dengan perulangan, dan memakai metode string.\n\n\n11\nMenyimpan dan memproses kumpulan data terurut dengan list dan tuple, serta menjelaskan akibat dari sifat mutable.\n\n\n12\nMemakai dictionary dan set untuk data berpasangan dan data unik, serta memilih struktur data yang sesuai dengan alasan.\n\n\n13\nMembaca dan menulis file teks dan CSV, menangani galat file, serta merangkai pipeline sederhana dari file ke hasil olahan.\n\n\n14\nMenyelesaikan masalah menengah yang menggabungkan fungsi, string, dan file, serta menjelaskan programnya sendiri.\n\n\n15\nMenyelesaikan masalah terintegrasi yang mencakup seluruh materi.\n\n\n\n\n\n\n\n\n\nCatatan\n\n\n\nSetiap Sub-CPMK diturunkan menjadi 3–5 skill berkode (misalnya U2.1) yang dinilai secara mastery. Minggu 8 (UTS) dan 16 (UAS) tidak memuat skill baru. Lihat Penilaian."
+    "text": "Capaian Pembelajaran (Sub-CPMK)\nSetiap minggu memiliki satu tujuan pembelajaran yang setara dengan satu Sub-CPMK pada RPS. Setelah menyelesaikan mata kuliah ini, mahasiswa mampu:\n\n\n\n\n\n\n\nMinggu\nSub-CPMK\n\n\n\n\n1\nMenjelaskan program sebagai bahasa formal, merepresentasikan algoritma sederhana (pseudocode/flowchart), dan menelusurinya langkah demi langkah.\n\n\n2\nMelacak keadaan (state) variabel selama program berjalan, dan menulis program yang membaca masukan, mengonversi tipenya, lalu menghitung dan menampilkan hasil.\n\n\n3\nMengevaluasi ekspresi logika dan menulis program yang memilih jalur eksekusi berdasarkan kondisi, termasuk penjagaan (guard) untuk memvalidasi masukan.\n\n\n4\nMemecah sebuah tugas menjadi fungsi-fungsi void berparameter, menelusuri pemanggilannya, dan menjelaskan lingkup (scope) variabel.\n\n\n5\nMembedakan return dari print dan membangun program dari fungsi-fungsi yang mengembalikan nilai.\n\n\n6\nMenelusuri dan menulis perulangan for dan while, termasuk pola pencacah, akumulator, dan sentinel, menggabungkan guard di dalam perulangan, serta memilih bentuk perulangan yang sesuai beserta alasannya.\n\n\n7\nMenggabungkan variabel, kondisional, fungsi, dan perulangan menjadi solusi utuh untuk masalah kecil.\n\n\n9\nMenulis fungsi ber-return yang memuat pola nilai ekstrem dan pencarian, menelusuri dan menulis perulangan bersarang sederhana, serta mengubah perulangan while menjadi for dan sebaliknya.\n\n\n10\nMemproses teks: mengakses bagian string, menelusurinya dengan perulangan, dan memakai metode string.\n\n\n11\nMenyimpan dan memproses kumpulan data terurut dengan list dan tuple, serta menjelaskan akibat dari sifat mutable.\n\n\n12\nMemakai dictionary dan set untuk data berpasangan dan data unik, serta memilih struktur data yang sesuai dengan alasan.\n\n\n13\nMembaca dan menulis file teks dan CSV, menangani galat file, serta merangkai pipeline sederhana dari file ke hasil olahan.\n\n\n14\nMenyelesaikan masalah menengah yang menggabungkan fungsi, string, dan file, serta menjelaskan programnya sendiri.\n\n\n15\nMenyelesaikan masalah terintegrasi yang mencakup seluruh materi.\n\n\n\n\n\n\n\n\n\nCatatan\n\n\n\nSetiap Sub-CPMK diturunkan menjadi 3–5 skill berkode (misalnya U2.1) yang dinilai secara mastery. Minggu 8 (UTS) dan 16 (UAS) tidak memuat skill baru. Lihat Penilaian."
   },
   {
     "objectID": "silabus.html#cakupan-materi",
@@ -160,73 +160,133 @@
   {
     "objectID": "materi/w05.html",
     "href": "materi/w05.html",
-    "title": "Minggu 5 · Perulangan I: while",
+    "title": "Minggu 5 · Fungsi II: Fungsi Ber-return",
     "section": "",
-    "text": "Minggu 5Lesson A: Menelusuri while loopLesson B: Pola pencacah, akumulator, dan sentinel",
+    "text": "Minggu 5Lesson A: return dan printLesson B: Memecahkan masalah dengan fungsi, langkah demi langkah",
     "crumbs": [
       "Materi",
       "Paruh Pertama",
-      "Minggu 5 · Perulangan I: while"
+      "Minggu 5 · Fungsi II: Fungsi Ber-return"
     ]
   },
   {
     "objectID": "materi/w05.html#skill-yang-dinilai",
     "href": "materi/w05.html#skill-yang-dinilai",
-    "title": "Minggu 5 · Perulangan I: while",
+    "title": "Minggu 5 · Fungsi II: Fungsi Ber-return",
     "section": "Skill yang Dinilai",
-    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU5.1\nTrace (T)\nMembuat trace table while loop: nilai tiap iterasi dan alasan perulangan berhenti\n\n\nU5.2\nTrace (T)\nMendiagnosis infinite loop dan kesalahan off-by-one\n\n\nU5.3\nWrite (W)\nMenulis pola pencacah (counter) dan pola akumulator dengan while\n\n\nU5.4\nWrite (W)\nMenulis perulangan bersentinel yang berhenti pada nilai penanda\n\n\nU5.5\nTransfer (X)\nMenuliskan rencana perulangan dalam pseudocode sebelum menulis kode",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU5.1\nTrace (T)\nMembedakan return dan print; memprediksi nilai pemanggilan fungsi yang dipakai di dalam ekspresi, termasuk None\n\n\nU5.2\nWrite (W)\nMenulis fungsi ber-return dengan lebih dari satu jalur return, termasuk fungsi boolean\n\n\nU5.3\nWrite (W)\nMembangun fungsi secara bertahap (incremental development) dan mengujinya di tiap tahap\n\n\nU5.4\nTransfer (X)\nMenyusun komposisi fungsi: memakai hasil satu fungsi di dalam fungsi lain\n\n\nU5.5\nTransfer (X)\nMemecah masalah menjadi beberapa fungsi ber-return dan merakitnya menjadi satu program",
     "crumbs": [
       "Materi",
       "Paruh Pertama",
-      "Minggu 5 · Perulangan I: while"
+      "Minggu 5 · Fungsi II: Fungsi Ber-return"
     ]
   },
   {
     "objectID": "materi/w05.html#lesson",
     "href": "materi/w05.html#lesson",
-    "title": "Minggu 5 · Perulangan I: while",
+    "title": "Minggu 5 · Fungsi II: Fungsi Ber-return",
     "section": "Lesson",
-    "text": "Lesson\n\n\n\n\n\n\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nMenelusuri while loop\nU5.1, U5.2\nW05-A\n\n\nB\nPola pencacah, akumulator, dan sentinel\nU5.3, U5.4, U5.5\nW05-B",
+    "text": "Lesson\n\n\n\n\n\n\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nreturn dan print\nU5.1, U5.2\nW05-A\n\n\nB\nMemecahkan masalah dengan fungsi, langkah demi langkah\nU5.3, U5.4, U5.5\nW05-B",
     "crumbs": [
       "Materi",
       "Paruh Pertama",
-      "Minggu 5 · Perulangan I: while"
+      "Minggu 5 · Fungsi II: Fungsi Ber-return"
     ]
   },
   {
     "objectID": "materi/w05.html#konsep-kunci",
     "href": "materi/w05.html#konsep-kunci",
-    "title": "Minggu 5 · Perulangan I: while",
+    "title": "Minggu 5 · Fungsi II: Fungsi Ber-return",
     "section": "Konsep Kunci",
-    "text": "Konsep Kunci\nSetiap perulangan punya tiga bagian: inisialisasi, kondisi, dan pemutakhiran. while memeriksa kondisi sebelum setiap putaran. Jika tidak ada yang mengubah variabel di dalam kondisi, loop tidak akan pernah berhenti.\ntotal = 0                           # akumulator\nangka = int(input(\"Angka (0 = selesai): \"))\nwhile angka != 0:                   # sentinel\n    total = total + angka\n    angka = int(input(\"Angka (0 = selesai): \"))\nprint(\"Jumlah:\", total)",
+    "text": "Konsep Kunci\nprint hanya menampilkan nilai ke layar, sedangkan return mengirim nilai kembali ke pemanggil sehingga bisa dipakai di dalam ekspresi. Fungsi tanpa return mengembalikan None. Satu fungsi boleh punya beberapa jalur return; baris sesudah return tidak pernah dijalankan. Bangun fungsi secara bertahap: lengkapi satu fungsi, uji, baru lanjut.\ndef dapat_gratis_ongkir(belanja):\n    return belanja &gt;= 100000          # fungsi boolean\n\ndef ongkir(berat, belanja):\n    if dapat_gratis_ongkir(belanja):\n        return 0                      # jalur 1\n    return berat * 10000              # jalur 2\n\nbelanja = 80000\ntotal = belanja + ongkir(2, belanja)  # hasil fungsi dipakai di dalam ekspresi\nprint(total)                          # 100000",
     "crumbs": [
       "Materi",
       "Paruh Pertama",
-      "Minggu 5 · Perulangan I: while"
+      "Minggu 5 · Fungsi II: Fungsi Ber-return"
+    ]
+  },
+  {
+    "objectID": "materi/w05.html#lesson-a-return-dan-print",
+    "href": "materi/w05.html#lesson-a-return-dan-print",
+    "title": "Minggu 5 · Fungsi II: Fungsi Ber-return",
+    "section": "Lesson A · return dan print",
+    "text": "Lesson A · return dan print\n\nMasalahnya: fungsi yang hanya mencetak\nMinggu lalu fungsimu melakukan sesuatu: mencetak kartu, garis, atau struk. Minggu ini fungsimu menghasilkan sesuatu. Bayangkan fungsi ongkos kirim untuk toko online kampus, Rp10.000 per kg:\ndef ongkir_cetak(berat):\n    print(berat * 10000)\n\nharga = 50000\ntotal = harga + ongkir_cetak(2)\n20000\nTraceback (most recent call last):\n  ...\nTypeError: unsupported operand type(s) for +: 'int' and 'NoneType'\nAngka 20000 tampil dengan benar, tetapi program tetap berhenti. Penyebabnya: ongkir_cetak hanya mencetak hasilnya, tidak mengembalikannya. Bagi pemanggil, ongkir_cetak(2) bernilai None, dan 50000 + None tidak bisa dihitung.\n\n\nreturn mengirim nilai ke pemanggil\nTonton dulu video berikut tentang karakteristik return, lalu baca penjelasannya di bawah.\n\nPernyataan return mengakhiri fungsi dan mengirim sebuah nilai kembali ke tempat fungsi itu dipanggil (Downey, 2024, Bab 6; Python Software Foundation [PSF], t.t.-a, §7.6). Fungsi seperti ini disebut fungsi ber-return (fruitful function).\ndef ongkir(berat):\n    return berat * 10000\n\nharga = 50000\ntotal = harga + ongkir(2)\nprint(total)          # 70000\nCara membacanya: saat Python mengevaluasi harga + ongkir(2), ia menjalankan ongkir(2) lebih dulu, lalu mengganti pemanggilan itu dengan nilai kembaliannya. Ekspresinya menjadi 50000 + 20000. Karena pemanggilan fungsi ber-return adalah sebuah ekspresi, hasilnya boleh dipakai di mana pun nilai boleh dipakai: disimpan ke variabel, dijumlahkan, dibandingkan, atau menjadi argumen fungsi lain.\nb = ongkir(3)                  # disimpan: 30000\nprint(ongkir(1) + ongkir(2))   # dijumlahkan: 30000\nprint(ongkir(2) &gt; 15000)       # dibandingkan: True\nprint(round(ongkir(2) / 3))    # argumen fungsi lain: 6667\nTelusuri dua versi fungsi ongkir berikut. Perhatikan ke mana angka 20000 pergi pada masing-masing versi: ke layar, atau ke variabel pemanggil.\n\n\n\n\n\n\n\n\n\n\n\n\n\nprint(nilai)\nreturn nilai\n\n\n\n\nKe mana nilainya?\nKe layar, untuk dibaca manusia\nKe pemanggil, untuk dipakai program\n\n\nNilai pemanggilan fungsi\nNone\nnilai\n\n\nBisa dipakai di ekspresi?\nTidak\nYa\n\n\nFungsi berhenti?\nTidak, lanjut ke baris berikutnya\nYa, saat itu juga\n\n\n\n\nprint di dalam fungsi disebut efek samping (side effect): sesuatu yang dilakukan fungsi selain mengembalikan nilai. Efek samping tidak salah, tetapi angka yang tampil di layar tidak tersimpan di mana pun.\n\n\nFungsi tanpa return mengembalikan None\nSetiap fungsi Python mengembalikan sebuah nilai. Jika eksekusi mencapai akhir badan fungsi tanpa bertemu return, fungsi mengembalikan nilai khusus None (PSF, t.t.-b, §4.8). Itulah asal None pada fungsi void di Minggu 4.\nhasil = ongkir_cetak(2)    # mencetak 20000\nprint(hasil)               # None\nPerhatikan: 20000 tetap muncul di layar karena print di dalam fungsi dijalankan, tetapi hasil berisi None. Galatnya baru muncul belakangan, saat None dipakai dalam perhitungan. Jadi jika melihat TypeError ... 'NoneType', cari fungsi yang lupa return.\nAturan praktis: kalau hasil fungsi akan dipakai lagi, kembalikan dengan return. Biarkan pemanggil yang memutuskan kapan mencetak.\n\n\nreturn langsung mengakhiri fungsi\nBegitu return dijalankan, fungsi berhenti. Baris sesudahnya tidak pernah dijalankan dan disebut kode mati (dead code) (Downey, 2024, Bab 6):\ndef ongkir(berat):\n    return berat * 10000\n    print(\"ongkir dihitung\")    # kode mati: tidak pernah tercetak\n\nprint(ongkir(3))                # 30000\n\n\nBeberapa jalur return\nVideo bagian kedua membahas fungsi dengan lebih dari satu return.\n\nFungsi boleh punya beberapa return, misalnya satu di tiap cabang if. Yang dijalankan hanya return pertama yang dicapai. Aturan baru toko: belanja Rp100.000 atau lebih, gratis ongkir.\ndef ongkir(berat, belanja):\n    if belanja &gt;= 100000:\n        return 0\n    else:\n        return berat * 10000\n\nprint(ongkir(2, 150000))    # 0\nprint(ongkir(2, 80000))     # 20000\nPada ongkir(2, 150000), syarat di baris 2 benar, return 0 dijalankan, dan fungsi selesai. Baris 5 tidak pernah dibaca. Jalan yang dilalui satu pemanggilan sampai bertemu return disebut jalur return.\nKarena return sudah mengakhiri fungsi, else boleh dihilangkan. Kedua versi berikut sama:\ndef ongkir(berat, belanja):\n    if belanja &gt;= 100000:\n        return 0\n    return berat * 10000         # hanya tercapai jika syarat di atas salah\n\n\nSetiap jalur harus berakhir di return\nJika ada jalur yang tidak bertemu return, pemanggilan lewat jalur itu menghasilkan None (Downey, 2024, Bab 6). Perhatikan fungsi berikut:\ndef ongkir_salah(berat, belanja):\n    if belanja &gt; 100000:\n        return 0\n    if belanja &lt; 100000:\n        return berat * 10000\n\nprint(ongkir_salah(2, 150000))    # 0\nprint(ongkir_salah(2, 80000))     # 20000\nprint(ongkir_salah(2, 100000))    # None\nBelanja tepat 100000 lolos dari kedua if: tidak lebih dari, tidak kurang dari. Eksekusi sampai di akhir fungsi tanpa return, sehingga hasilnya None. Dua uji pertama benar, jadi bug ini mudah terlewat; ia baru ketahuan saat seseorang menulis 50000 + ongkir_salah(2, 100000).\nPerbaikannya: pastikan jalur terakhir selalu tercapai, dengan else atau return tanpa syarat di akhir fungsi.\ndef ongkir(berat, belanja):\n    if belanja &gt; 100000:\n        return 0\n    else:\n        return berat * 10000\n\n\n\n\n\n\nCatatanCara mencari jalur yang bocor\n\n\n\nUntuk setiap if tanpa else, tanyakan: “nilai apa yang membuat syarat ini salah, dan ke mana eksekusi pergi setelahnya?” Uji nilai di perbatasan syarat (di sini tepat 100000), karena di situlah jalur paling sering bocor.\n\n\n\n\nFungsi boolean\nFungsi boleh mengembalikan True atau False. Fungsi seperti ini disebut fungsi boolean, dan namanya biasanya berbentuk pertanyaan ya/tidak, misalnya dapat_gratis_ongkir atau is_genap (Downey, 2024, Bab 6). Fungsi boolean memberi nama pada syarat yang panjang, sehingga if menjadi mudah dibaca.\ndef dapat_gratis_ongkir(belanja):\n    return belanja &gt;= 100000\n\ndef ongkir(berat, belanja):\n    if dapat_gratis_ongkir(belanja):\n        return 0\n    return berat * 10000\n\nprint(dapat_gratis_ongkir(150000))    # True\nprint(ongkir(2, 80000))               # 20000\nEkspresi perbandingan sudah bernilai True atau False, jadi bisa langsung dikembalikan dan langsung dipakai di if:\n\n\n\n\n\n\n\nBenar, tetapi tidak perlu\nCukup\n\n\n\n\nif belanja &gt;= 100000:return Trueelse:return False\nreturn belanja &gt;= 100000\n\n\nif dapat_gratis_ongkir(belanja) == True:\nif dapat_gratis_ongkir(belanja):\n\n\n\n\n\nMengubah fungsi ber-print menjadi ber-return\nSaat menemukan fungsi yang mencetak hasil hitungannya, ubah dengan tiga langkah:\n\nNama menyatakan hasil. diskon, bukan cetak_diskon.\nprint diganti return. Periksa bahwa setiap jalur berakhir di return.\nPemanggil yang mencetak dan menghitung. print pindah ke luar fungsi.\n\n# Sebelum\ndef cetak_diskon(harga):\n    if harga &gt;= 50000:\n        print(harga // 10)\n    else:\n        print(0)\n\n# Sesudah\ndef diskon(harga):\n    if harga &gt;= 50000:\n        return harga // 10\n    return 0\n\nharga = 80000\nprint(\"Bayar:\", harga - diskon(harga))    # Bayar: 72000",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 5 · Fungsi II: Fungsi Ber-return"
+    ]
+  },
+  {
+    "objectID": "materi/w05.html#lesson-b-memecahkan-masalah-dengan-fungsi-langkah-demi-langkah",
+    "href": "materi/w05.html#lesson-b-memecahkan-masalah-dengan-fungsi-langkah-demi-langkah",
+    "title": "Minggu 5 · Fungsi II: Fungsi Ber-return",
+    "section": "Lesson B · Memecahkan Masalah dengan Fungsi, Langkah demi Langkah",
+    "text": "Lesson B · Memecahkan Masalah dengan Fungsi, Langkah demi Langkah\nFungsi ber-return membuat kita bisa memecah satu masalah menjadi beberapa fungsi kecil, menguji tiap fungsi sendiri-sendiri, lalu merakitnya. Lesson ini memakai satu resep lima langkah pada soal laundry dari Minggu 3.\n\nSoal laundry\n\n\n\n\n\n\n\nLayanan\nTarif\n\n\n\n\nreguler\nRp6.000 per kg\n\n\nkilat\nRp9.000 per kg\n\n\nexpress\nRp15.000 per kg\n\n\n\nPotongan Rp5.000 jika berat lebih dari 4 kg, kecuali layanan express. Program membaca layanan dan berat, lalu mencetak total yang harus dibayar.\n\n\nResep lima langkah\n\n\n\n\n\n\n\nLangkah\nYang dilakukan\n\n\n\n\n1 · Pahami\nHitung satu contoh dengan tangan; hasilnya menjadi uji\n\n\n2 · Pecah\nSatu sub-tugas = satu fungsi ber-return\n\n\n3 · Rancang\nHeader, docstring, return 0, dan satu uji\n\n\n4 · Isi dan uji\nLengkapi satu fungsi, jalankan ujinya sampai True, baru lanjut\n\n\n5 · Rakit\nBagian utama: input() → panggil fungsi → print()\n\n\n\n\n\nLangkah 1 · Pahami: hitung dengan tangan\nSebelum menulis kode, selesaikan satu contoh dengan tangan. Rina mencuci 5 kg dengan layanan reguler:\ntarif reguler          → 6000 per kg\n6000 × 5               → 30000\n5 &gt; 4 dan bukan express → potongan 5000\n30000 − 5000           → 25000\nHitungan tangan memberi dua hal sekaligus: jawaban yang benar (25000, yang nanti menjadi uji) dan langkah-langkah kecil yang akan menjadi fungsi. Jika kamu belum bisa menghitungnya dengan tangan, kamu belum siap menulis programnya.\n\n\nLangkah 2 · Pecah: satu sub-tugas, satu fungsi\nUbah setiap langkah hitungan tangan menjadi satu fungsi. Satu fungsi menjawab satu pertanyaan, dan jawabannya satu nilai. Parameternya adalah apa yang perlu diketahui untuk menjawab pertanyaan itu.\n\n\n\n\n\n\n\n\n\n\n\nHitungan tangan\nSub-tugas\nPerlu tahu apa?\nHasil\nFungsi\n\n\n\n\ntarif reguler → 6000\ncari tarif\nlayanan\ntarif per kg\ntarif_layanan(layanan)\n\n\n5 &gt; 4, bukan express → 5000\ncek potongan\nberat, layanan\npotongan\npotongan(berat, layanan)\n\n\n6000 × 5 − 5000 → 25000\nhitung total\nlayanan, berat\ntotal bayar\ntotal_bayar(layanan, berat)\n\n\n\n\nDua catatan:\n\npotongan butuh layanan juga, karena aturan potongannya bergantung pada layanan (express tidak dapat potongan).\n6000 × 5 tidak dijadikan fungsi sendiri. Ia hanya satu operasi, dan sudah cukup jelas di dalam total_bayar.\n\ninput() dan print() bukan tugas fungsi-fungsi ini. Fungsi menerima data lewat parameter dan mengirim hasil lewat return; membaca dan mencetak adalah tugas bagian utama (langkah 5).\n\n\nLangkah 3 · Rancang: kerangka fungsi dan uji\nTulis setiap fungsi sebagai kerangka (stub): header, docstring, dan return 0. Kerangka ini sudah bisa dipanggil dan diuji walaupun isinya belum ada. Tambahkan satu uji: baris yang membandingkan hasil fungsi dengan jawaban hitungan tangan.\ndef tarif_layanan(layanan):\n    \"\"\"Kembalikan tarif per kg untuk layanan: reguler, kilat, atau express.\"\"\"\n    return 0\n\nprint(tarif_layanan(\"kilat\") == 9000)    # False\nFalse di sini berarti fungsinya belum selesai, bukan rusak. Tujuan langkah 4 adalah mengubah False itu menjadi True.\n\n\nLangkah 4 · Isi dan uji, satu per satu\nDowney (2024, Bab 6) menyebut cara ini pengembangan bertahap (incremental development): tambahkan dan uji sedikit kode setiap kali, sehingga saat ada galat, kamu tahu persis di mana mencarinya. Lengkapi satu fungsi, jalankan ujinya sampai True, baru pindah ke fungsi berikutnya.\nFungsi 1 · tarif_layanan\ndef tarif_layanan(layanan):\n    \"\"\"Kembalikan tarif per kg untuk layanan: reguler, kilat, atau express.\"\"\"\n    if layanan == \"reguler\":\n        return 6000\n    elif layanan == \"kilat\":\n        return 9000\n    else:\n        return 15000\n\nprint(tarif_layanan(\"kilat\") == 9000)    # True\nFungsi 2 · potongan. Uji juga nilai batas (boundary value): nilai tepat di perbatasan aturan. Aturannya “lebih dari 4 kg”, jadi 4 kg tidak mendapat potongan.\ndef potongan(berat, layanan):\n    \"\"\"Kembalikan potongan: 5000 jika berat lebih dari 4 kg dan bukan express.\"\"\"\n    if berat &gt; 4 and layanan != \"express\":\n        return 5000\n    else:\n        return 0\n\nprint(potongan(5, \"reguler\") == 5000)    # True\nprint(potongan(4, \"reguler\") == 0)       # True, nilai batas\nprint(potongan(5, \"express\") == 0)       # True\nSeandainya baris 3 keliru ditulis berat &gt;= 4, uji nilai batas langsung menjadi False. Tanpa uji itu, kesalahannya baru ketahuan saat pelanggan protes.\nFungsi 3 · total_bayar cukup memanggil dua fungsi yang ujinya sudah True:\ndef total_bayar(layanan, berat):\n    \"\"\"Kembalikan total bayar laundry setelah potongan.\"\"\"\n    biaya = tarif_layanan(layanan) * berat\n    return biaya - potongan(berat, layanan)\n\nprint(total_bayar(\"reguler\", 5) == 25000)    # True\nprint(total_bayar(\"express\", 5) == 75000)    # True\nJika total_bayar salah padahal dua fungsi lainnya sudah lulus uji, kesalahannya pasti ada di dua baris total_bayar itu sendiri. Inilah keuntungan menguji satu per satu.\n\n\nKomposisi fungsi\ntotal_bayar memakai hasil tarif_layanan dan potongan di dalam ekspresinya. Memakai hasil satu fungsi di dalam fungsi lain disebut komposisi (composition) (Downey, 2024, Bab 6). Komposisi hanya mungkin karena kedua fungsi itu mengembalikan nilai; jika salah satunya hanya mencetak, total_bayar akan menerima None.\nTelusuri program lengkapnya. Perhatikan bahwa saat tarif_layanan berjalan, ada tiga frame di stack, dan total_bayar menunggu jawabannya sebelum bisa mengalikan.\n\n\n\n\nLangkah 5 · Rakit: bagian utama\nBagian utama adalah bagian program di luar semua fungsi. Tugasnya tiga, dan hanya tiga:\n\nBaca masukan. input() selalu menghasilkan teks; berat dipakai untuk mengali, jadi ubah dulu dengan int().\nPanggil fungsi. Cukup satu pemanggilan: total_bayar sudah memanggil dua fungsi lainnya. Urutan argumen mengikuti header.\nCetak hasilnya. print() hanya di sini.\n\nProgram lengkapnya:\ndef tarif_layanan(layanan):\n    \"\"\"Kembalikan tarif per kg untuk layanan: reguler, kilat, atau express.\"\"\"\n    if layanan == \"reguler\":\n        return 6000\n    elif layanan == \"kilat\":\n        return 9000\n    else:\n        return 15000\n\ndef potongan(berat, layanan):\n    \"\"\"Kembalikan potongan: 5000 jika berat lebih dari 4 kg dan bukan express.\"\"\"\n    if berat &gt; 4 and layanan != \"express\":\n        return 5000\n    else:\n        return 0\n\ndef total_bayar(layanan, berat):\n    \"\"\"Kembalikan total bayar laundry setelah potongan.\"\"\"\n    biaya = tarif_layanan(layanan) * berat\n    return biaya - potongan(berat, layanan)\n\n# Bagian utama\nlayanan = input()\nberat = int(input())\nprint(\"Total bayar:\", total_bayar(layanan, berat))\nreguler\n5\nTotal bayar: 25000\nTidak ada baris baru di sini: semua fungsi sudah ditulis dan diuji di langkah 3–4. Jika toko kelak menambah layanan “satuan”, cukup ubah tarif_layanan (dan potongan jika aturan potongannya berbeda); total_bayar dan bagian utama tidak perlu disentuh.",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 5 · Fungsi II: Fungsi Ber-return"
+    ]
+  },
+  {
+    "objectID": "materi/w05.html#kesalahan-umum",
+    "href": "materi/w05.html#kesalahan-umum",
+    "title": "Minggu 5 · Fungsi II: Fungsi Ber-return",
+    "section": "Kesalahan Umum",
+    "text": "Kesalahan Umum\n\n\n\n\n\n\n\n\nGejala\nPenyebab\nPerbaikan\n\n\n\n\nTypeError: unsupported operand type(s) for +: 'int' and 'NoneType'\nFungsi yang dipakai di ekspresi hanya print, tidak return\nGanti print(...) di dalam fungsi dengan return ...\n\n\nAngka tampil di layar, tetapi variabel berisi None\nMengira nilai yang dicetak tersimpan di variabel pemanggil\nKembalikan nilainya dengan return; cetak di pemanggil\n\n\nFungsi kadang mengembalikan None\nAda jalur (sering nilai batas) yang tidak bertemu return\nAkhiri fungsi dengan else atau return tanpa syarat\n\n\nBaris di bawah return tidak pernah berjalan\nreturn sudah mengakhiri fungsi (kode mati)\nPindahkan baris itu ke atas return, atau hapus\n\n\nHasil selalu dari cabang pertama saja\nreturn diletakkan di luar if, atau sebelum cabang diperiksa\nLetakkan return di dalam cabang yang tepat\n\n\nHasil salah tepat di perbatasan aturan\n&gt; tertukar dengan &gt;= (atau &lt; dengan &lt;=)\nTambahkan uji nilai batas sebelum melanjutkan\n\n\nTypeError: unsupported operand type(s) for -: 'str' and 'int'\nHasil input() tidak diubah dengan int(), sehingga 6000 * \"5\" menjadi teks panjang\nberat = int(input())\n\n\nFungsi tidak bisa diuji tanpa mengetik masukan\ninput() diletakkan di dalam fungsi\nTerima data lewat parameter; input() hanya di bagian utama",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 5 · Fungsi II: Fungsi Ber-return"
     ]
   },
   {
     "objectID": "materi/w05.html#tebak-dulu",
     "href": "materi/w05.html#tebak-dulu",
-    "title": "Minggu 5 · Perulangan I: while",
+    "title": "Minggu 5 · Fungsi II: Fungsi Ber-return",
     "section": "Tebak Dulu",
-    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\ni = 10\nwhile i &lt; 5:\n    print(i)\n    i += 1\nprint(\"selesai\")\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nHanya selesai yang tercetak. Kondisi 10 &lt; 5 sudah False sejak awal, sehingga badan loop tidak dijalankan sama sekali.",
+    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\ndef dobel(x):\n    print(x * 2)\n\nhasil = dobel(4)\nprint(hasil)\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nTercetak 8 lalu None. dobel hanya mencetak dan tidak mengembalikan apa pun, sehingga hasil bernilai None.\n\n\n\nIkuti jalur yang dilalui diskon(80000):\ndef diskon(harga):\n    if harga &gt;= 50000:\n        print(harga // 10)\n    else:\n        return 0\n\nx = diskon(80000)\nprint(x)\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\n8000\nNone\n80000 &gt;= 50000 benar, sehingga jalur if diambil. Jalur ini mencetak 8000 tetapi tidak punya return, jadi fungsi mengembalikan None dan x berisi None. Hanya jalur else yang mengembalikan nilai.\n\n\n\nDengan kuadrat(x) yang mengembalikan x * x dan cetak_kuadrat(x) yang mencetak x * x:\nx = kuadrat(4)\nprint(x, cetak_kuadrat(2))\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\n4\n16 None\nSebelum print di luar bisa mencetak, semua argumennya dievaluasi lebih dulu. Mengevaluasi cetak_kuadrat(2) menjalankan print di dalamnya, sehingga 4 tampil duluan. Nilai pemanggilan itu None, jadi baris kedua 16 None.\n\n\n\nTerakhir, memakai fungsi laundry pada Lesson B: berapa nilai total_bayar(\"kilat\", 4)?\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\n36000. tarif_layanan(\"kilat\") → 9000, sehingga biaya = 9000 * 4 = 36000. potongan(4, \"kilat\") → 0, karena 4 &gt; 4 salah (nilai batas). Hasilnya 36000 - 0 = 36000.",
     "crumbs": [
       "Materi",
       "Paruh Pertama",
-      "Minggu 5 · Perulangan I: while"
+      "Minggu 5 · Fungsi II: Fungsi Ber-return"
+    ]
+  },
+  {
+    "objectID": "materi/w05.html#latihan-mandiri",
+    "href": "materi/w05.html#latihan-mandiri",
+    "title": "Minggu 5 · Fungsi II: Fungsi Ber-return",
+    "section": "Latihan Mandiri",
+    "text": "Latihan Mandiri\n\n(U5.1) Tanpa menjalankan, tentukan nilai tiap ekspresi berikut, dengan ongkir dan ongkir_salah dari Lesson A: ongkir(1, 99999) + 1, ongkir(3, 100000) * 2, ongkir_salah(1, 100000). Ekspresi mana yang akan menghasilkan galat jika ditambah + 1?\n(U5.2) Tulis fungsi nilai_huruf(skor) yang mengembalikan \"A\" untuk skor ≥ 80, \"B\" untuk ≥ 70, \"C\" untuk ≥ 60, dan \"D\" selain itu. Lalu tulis fungsi boolean lulus(skor) yang memakai nilai_huruf dan mengembalikan True jika hurufnya bukan \"D\". Uji skor 80, 79, 60, dan 59.\n(U5.3) Toko menambah biaya asuransi sebesar 1% dari belanja (pakai belanja // 100). Tulis kerangka asuransi(belanja) dengan return 0 dan uji asuransi(150000) == 1500. Jalankan (hasilnya False), lalu lengkapi sampai True.\n(U5.4) Tulis total_kirim(berat, belanja) yang mengembalikan hasil ongkir ditambah hasil asuransi. Hitung dulu dengan tangan, lalu uji: total_kirim(2, 80000) → 20800, total_kirim(2, 150000) → 1500, total_kirim(3, 100000) → 1000.\n(U5.5) Kereta wisata menjual tiket Rp25.000 untuk anak (usia di bawah 12 tahun) dan Rp40.000 untuk dewasa. Rombongan 10 orang atau lebih mendapat potongan Rp50.000. Semua anggota satu pesanan berusia sama. Ikuti resep lima langkah: hitung satu contoh dengan tangan, tentukan fungsi-fungsinya, tulis kerangka dan ujinya, isi satu per satu, lalu rakit bagian utama yang membaca usia dan jumlah orang. Pastikan uji nilai batasmu mencakup usia tepat 12 dan jumlah tepat 10.",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 5 · Fungsi II: Fungsi Ber-return"
     ]
   },
   {
     "objectID": "materi/w05.html#bacaan",
     "href": "materi/w05.html#bacaan",
-    "title": "Minggu 5 · Perulangan I: while",
+    "title": "Minggu 5 · Fungsi II: Fungsi Ber-return",
     "section": "Bacaan",
-    "text": "Bacaan\n\nThink Python Ch. 7 - Iteration and Search",
+    "text": "Bacaan\n\nThink Python Ch. 6 - Return values\nPendukung: Zelle Ch. 6.5 - Functions That Return Values; Gaddis Ch. 5.8 - Writing Your Own Value-Returning Functions\nReferensi resmi Python §7.6 - The return statement",
     "crumbs": [
       "Materi",
       "Paruh Pertama",
-      "Minggu 5 · Perulangan I: while"
+      "Minggu 5 · Fungsi II: Fungsi Ber-return"
+    ]
+  },
+  {
+    "objectID": "materi/w05.html#referensi",
+    "href": "materi/w05.html#referensi",
+    "title": "Minggu 5 · Fungsi II: Fungsi Ber-return",
+    "section": "Referensi",
+    "text": "Referensi\nDowney, A. B. (2024). Think Python: How to think like a computer scientist (3rd ed.). O’Reilly Media. https://allendowney.github.io/ThinkPython/\n\nBab 6, Return Values (subbab Return values and conditionals, Incremental development, Boolean functions): https://allendowney.github.io/ThinkPython/chap06.html\n\nPython Software Foundation. (t.t.-a). Simple statements: The return statement. Dalam The Python language reference. Diakses 11 Oktober 2026, dari https://docs.python.org/3/reference/simple_stmts.html#the-return-statement\nPython Software Foundation. (t.t.-b). More control flow tools: Defining functions. Dalam The Python tutorial. Diakses 11 Oktober 2026, dari https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
+    "crumbs": [
+      "Materi",
+      "Paruh Pertama",
+      "Minggu 5 · Fungsi II: Fungsi Ber-return"
     ]
   },
   {
@@ -390,7 +450,7 @@
     "href": "materi/w07.html#skill-yang-dinilai",
     "title": "Minggu 7 · Tutorial & Praktikum 1 · Gladi UTS",
     "section": "Skill yang Dinilai",
-    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU7.1\nTransfer (X)\nMendekomposisi masalah kecil menjadi fungsi-fungsi dengan antarmuka yang jelas\n\n\nU7.2\nTransfer (X)\nMemilih dan menggabungkan pola yang tepat (counter, akumulator, guard, best-so-far)\n\n\nU7.3\nTransfer (X)\nMenguji dan menelusuri program sendiri untuk menemukan bug secara sistematis\n\n\nU7.4\nTransfer (X)\nMenyelesaikan soal bergaya UTS dalam batas waktu, tanpa bantuan dan tanpa AI",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU7.1\nTransfer (X)\nMendekomposisi masalah kecil menjadi fungsi-fungsi dengan antarmuka yang jelas\n\n\nU7.2\nTransfer (X)\nMemilih dan menggabungkan pola yang tepat (pencacah, akumulator, sentinel, guard)\n\n\nU7.3\nTransfer (X)\nMenguji dan menelusuri program sendiri untuk menemukan bug secara sistematis\n\n\nU7.4\nTransfer (X)\nMenyelesaikan soal bergaya UTS dalam batas waktu, tanpa bantuan dan tanpa AI",
     "crumbs": [
       "Materi",
       "Paruh Pertama",
@@ -1065,73 +1125,73 @@
   {
     "objectID": "materi/w06.html",
     "href": "materi/w06.html",
-    "title": "Minggu 6 · Perulangan II: for",
+    "title": "Minggu 6 · Perulangan: for dan while",
     "section": "",
-    "text": "Minggu 6Lesson A: for, range, dan pola dasarLesson B: Menggabungkan pola: guard + akumulasi + bersarang",
+    "text": "Minggu 6Lesson A: for, range, pencacah, dan akumulatorLesson B: while, sentinel, dan guard di dalam perulangan",
     "crumbs": [
       "Materi",
       "Paruh Pertama",
-      "Minggu 6 · Perulangan II: for"
+      "Minggu 6 · Perulangan: for dan while"
     ]
   },
   {
     "objectID": "materi/w06.html#skill-yang-dinilai",
     "href": "materi/w06.html#skill-yang-dinilai",
-    "title": "Minggu 6 · Perulangan II: for",
+    "title": "Minggu 6 · Perulangan: for dan while",
     "section": "Skill yang Dinilai",
-    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU6.1\nTrace (T)\nMenelusuri for dengan range() dan menyatakan jumlah iterasinya\n\n\nU6.2\nWrite (W)\nMenulis pola akumulator, pencacah bersyarat, dan nilai ekstrem (best-so-far) dengan for\n\n\nU6.3\nWrite (W)\nMenggabungkan guard (validasi data) di dalam perulangan akumulasi\n\n\nU6.4\nTransfer (X)\nMengubah while menjadi for dan sebaliknya, serta memilih yang sesuai beserta alasannya\n\n\nU6.5\nTransfer (X)\nMenyusun dan menelusuri perulangan bersarang sederhana",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU6.1\nTrace (T)\nMembuat trace table untuk for dengan range() dan untuk while: nilai tiap iterasi, jumlah iterasi, dan alasan perulangan berhenti\n\n\nU6.2\nTrace (T)\nMendiagnosis infinite loop dan kesalahan off-by-one\n\n\nU6.3\nWrite (W)\nMenulis pola pencacah dan akumulator dengan for, dibungkus dalam fungsi ber-return\n\n\nU6.4\nWrite (W)\nMenulis perulangan while bersentinel yang menggabungkan guard dengan akumulasi\n\n\nU6.5\nTransfer (X)\nMemilih for atau while untuk sebuah masalah beserta alasannya, dan menuliskan rencananya dalam pseudocode",
     "crumbs": [
       "Materi",
       "Paruh Pertama",
-      "Minggu 6 · Perulangan II: for"
+      "Minggu 6 · Perulangan: for dan while"
     ]
   },
   {
     "objectID": "materi/w06.html#lesson",
     "href": "materi/w06.html#lesson",
-    "title": "Minggu 6 · Perulangan II: for",
+    "title": "Minggu 6 · Perulangan: for dan while",
     "section": "Lesson",
-    "text": "Lesson\n\n\n\n\n\n\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nfor, range, dan pola dasar\nU6.1, U6.2\nW06-A\n\n\nB\nMenggabungkan pola: guard + akumulasi + bersarang\nU6.3, U6.4, U6.5\nW06-B",
+    "text": "Lesson\n\n\n\n\n\n\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nfor, range, pencacah, dan akumulator\nU6.1, U6.3\nW06-A\n\n\nB\nwhile, sentinel, dan guard di dalam perulangan\nU6.2, U6.4, U6.5\nW06-B",
     "crumbs": [
       "Materi",
       "Paruh Pertama",
-      "Minggu 6 · Perulangan II: for"
+      "Minggu 6 · Perulangan: for dan while"
     ]
   },
   {
     "objectID": "materi/w06.html#konsep-kunci",
     "href": "materi/w06.html#konsep-kunci",
-    "title": "Minggu 6 · Perulangan II: for",
+    "title": "Minggu 6 · Perulangan: for dan while",
     "section": "Konsep Kunci",
-    "text": "Konsep Kunci\nrange(a, b) menghasilkan bilangan dari a sampai sebelum b. Titik paling rawan minggu ini adalah menggabungkan guard dengan akumulator di dalam satu perulangan: data yang tidak sah harus dilewati sebelum ikut dihitung.\ntotal = 0\nbanyak = 0\nfor n in [80, -1, 95, 70]:\n    if 0 &lt;= n &lt;= 100:        # guard\n        total += n           # akumulator\n        banyak += 1          # pencacah\nprint(total / banyak)",
+    "text": "Konsep Kunci\nSetiap perulangan punya tiga bagian: inisialisasi, kondisi, dan pemutakhiran. Pakai for jika banyaknya putaran sudah diketahui (range(a, b) berhenti sebelum b), dan while jika perulangan berhenti karena suatu kondisi, misalnya nilai sentinel. Data yang tidak sah dilewati dengan guard sebelum ikut dihitung, dan perulangannya dibungkus dalam fungsi ber-return.\ndef rata_rata(daftar):\n    total = 0                    # akumulator\n    banyak = 0                   # pencacah\n    for n in daftar:\n        if 0 &lt;= n &lt;= 100:        # guard\n            total += n\n            banyak += 1\n    return total / banyak\n\nprint(rata_rata([80, -1, 95, 70]))   # 81.66...\n\ntotal = 0\nangka = int(input(\"Angka (0 = selesai): \"))\nwhile angka != 0:                    # sentinel\n    total += angka\n    angka = int(input(\"Angka (0 = selesai): \"))\nprint(\"Jumlah:\", total)",
     "crumbs": [
       "Materi",
       "Paruh Pertama",
-      "Minggu 6 · Perulangan II: for"
+      "Minggu 6 · Perulangan: for dan while"
     ]
   },
   {
     "objectID": "materi/w06.html#tebak-dulu",
     "href": "materi/w06.html#tebak-dulu",
-    "title": "Minggu 6 · Perulangan II: for",
+    "title": "Minggu 6 · Perulangan: for dan while",
     "section": "Tebak Dulu",
-    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\nfor i in range(2, 10, 3):\n    print(i)\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nTercetak 2, 5, 8. Dimulai dari 2, bertambah 3, dan berhenti sebelum mencapai 10.",
+    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\ni = 10\nwhile i &lt; 5:\n    print(i)\n    i += 1\nfor j in range(2, 10, 3):\n    print(j)\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nTercetak 2, 5, 8. Kondisi 10 &lt; 5 sudah False sejak awal, sehingga badan while tidak dijalankan sama sekali. range(2, 10, 3) dimulai dari 2, bertambah 3, dan berhenti sebelum mencapai 10.",
     "crumbs": [
       "Materi",
       "Paruh Pertama",
-      "Minggu 6 · Perulangan II: for"
+      "Minggu 6 · Perulangan: for dan while"
     ]
   },
   {
     "objectID": "materi/w06.html#bacaan",
     "href": "materi/w06.html#bacaan",
-    "title": "Minggu 6 · Perulangan II: for",
+    "title": "Minggu 6 · Perulangan: for dan while",
     "section": "Bacaan",
     "text": "Bacaan\n\nThink Python Ch. 7 - Iteration and Search",
     "crumbs": [
       "Materi",
       "Paruh Pertama",
-      "Minggu 6 · Perulangan II: for"
+      "Minggu 6 · Perulangan: for dan while"
     ]
   },
   {
@@ -1187,7 +1247,7 @@
     "href": "materi/w04.html#lesson-a-memanggil-dan-mendefinisikan-fungsi",
     "title": "Minggu 4 · Fungsi I: Fungsi Void",
     "section": "Lesson A · Memanggil dan Mendefinisikan Fungsi",
-    "text": "Lesson A · Memanggil dan Mendefinisikan Fungsi\n\nMemanggil fungsi yang sudah ada\nSejak minggu pertama kamu sudah memakai fungsi: print, input, len, int, round. Menulis nama fungsi diikuti tanda kurung disebut pemanggilan fungsi (function call). Nilai di dalam kurung adalah argumen (Downey, 2024, Bab 3).\nlen(\"Telkom\")          # argumen: \"Telkom\", menghasilkan 6\nround(3.14159, 2)      # dua argumen, menghasilkan 3.14\nprint(\"Halo\", \"SI\")    # dua argumen, mencetak: Halo SI\nArgumen boleh berupa ekspresi apa pun. Python mengevaluasi argumen lebih dulu, baru memanggil fungsinya. Pada print(len(\"abc\") * 2), Python menghitung len(\"abc\") → 3, lalu 3 * 2 → 6, baru kemudian print(6) dijalankan.\n\n\nMendefinisikan fungsi baru\nDefinisi fungsi membuat fungsi baru dengan nama yang kita pilih (Downey, 2024, Bab 3; Python Software Foundation [PSF], t.t.-c, §4.8):\ndef sapa():\n    print(\"Selamat pagi!\")\n    print(\"Selamat belajar Alpro.\")\nBagian-bagiannya:\n\nHeader: baris pertama. Dimulai kata kunci def, lalu nama fungsi, tanda kurung, dan diakhiri titik dua :.\nBadan (body): baris-baris di bawah header yang menjorok (biasanya 4 spasi). Badan berakhir di baris pertama yang tidak lagi menjorok.\nNama fungsi mengikuti aturan nama variabel: huruf, angka, garis bawah, tidak diawali angka, dan bukan kata kunci. Gunakan kata kerja yang menjelaskan apa yang dilakukan fungsi, misalnya cetak_struk, bukan f1.\n\nMenjalankan definisi tidak menjalankan badannya. Definisi hanya membuat objek fungsi dan mengikatnya ke nama sapa. Badan baru dijalankan saat fungsi dipanggil:\nsapa()\nsapa()\nSelamat pagi!\nSelamat belajar Alpro.\nSelamat pagi!\nSelamat belajar Alpro.\nKarena definisi harus dijalankan lebih dulu, fungsi harus didefinisikan sebelum dipanggil. Jika urutannya terbalik, Python melaporkan NameError: name 'sapa' is not defined.\n\n\nParameter dan argumen\nFungsi menjadi jauh lebih berguna jika bisa menerima data. Nama di dalam kurung pada header disebut parameter; nilai yang diberikan saat pemanggilan disebut argumen (PSF, t.t.-a, entri parameter dan argument).\ndef cetak_dua_kali(pesan):     # pesan adalah parameter\n    print(pesan)\n    print(pesan)\n\ncetak_dua_kali(\"Halo\")         # \"Halo\" adalah argumen\ncetak_dua_kali(17 * 3)         # argumen boleh ekspresi: 51\nkata = \"Python\"\ncetak_dua_kali(kata)           # argumen boleh variabel\nSaat dipanggil, nilai argumen diikatkan ke parameter, seakan-akan Python menjalankan pesan = \"Halo\" di awal badan fungsi. Nama variabel argumen (kata) tidak perlu sama dengan nama parameter (pesan); yang dipindahkan adalah nilainya.\nJika ada beberapa parameter, argumen dipasangkan berdasarkan urutan (positional):\ndef cetak_nilai(nama, nilai):\n    print(nama, \"mendapat nilai\", nilai)\n\ncetak_nilai(\"Rina\", 85)    # nama = \"Rina\", nilai = 85\ncetak_nilai(85, \"Rina\")    # tertukar: 85 mendapat nilai Rina\nPython juga mendukung argumen kata kunci (keyword argument), yang memasangkan nilai berdasarkan nama parameter sehingga urutannya bebas (PSF, t.t.-c, §4.9.2):\ncetak_nilai(nilai=85, nama=\"Rina\")   # Rina mendapat nilai 85\nJumlah argumen harus sesuai dengan jumlah parameter. cetak_nilai(\"Rina\") menghasilkan TypeError: cetak_nilai() missing 1 required positional argument: 'nilai'.\n\n\nAlur eksekusi\nProgram dijalankan dari baris pertama ke bawah, satu pernyataan setiap kali. Pemanggilan fungsi adalah jalan memutar: alur melompat ke badan fungsi, menjalankan seluruh isinya, lalu kembali ke tepat setelah titik pemanggilan. Fungsi boleh memanggil fungsi lain, sehingga saat membaca program, ikuti alur eksekusi, bukan urutan baris di file.\ndef langkah_b():\n    print(\"B1\")\n\ndef langkah_a():\n    print(\"A1\")\n    langkah_b()\n    print(\"A2\")\n\nprint(\"mulai\")\nlangkah_a()\nprint(\"selesai\")\nmulai\nA1\nB1\nA2\nselesai\n\n\nStack diagram\nUntuk menelusuri pemanggilan, gambarlah stack diagram. Setiap pemanggilan fungsi mendapat satu frame: kotak berisi parameter dan variabel lokal fungsi itu. Variabel di luar semua fungsi berada di frame __main__. Frame ditumpuk sesuai urutan pemanggilan, dan dibuang saat fungsi selesai (Downey, 2024, Bab 3).\ndef gabung_dua_kali(bagian1, bagian2):\n    gabungan = bagian1 + bagian2\n    cetak_dua_kali(gabungan)\n\nbaris1 = \"Algo \"\nbaris2 = \"ritma\"\ngabung_dua_kali(baris1, baris2)\nSaat print di dalam cetak_dua_kali sedang berjalan, stack-nya:\n┌─ __main__ ───────────────────────┐\n│  baris1   → 'Algo '              │\n│  baris2   → 'ritma'              │\n└──────────────────────────────────┘\n┌─ gabung_dua_kali ────────────────┐\n│  bagian1  → 'Algo '              │\n│  bagian2  → 'ritma'              │\n│  gabungan → 'Algo ritma'         │\n└──────────────────────────────────┘\n┌─ cetak_dua_kali ─────────────────┐\n│  pesan    → 'Algo ritma'         │\n└──────────────────────────────────┘\nPerhatikan bahwa nilai 'Algo ritma' muncul dengan nama berbeda di dua frame.\nTelusuri program lengkapnya langkah demi langkah di bawah ini. Tekan Lanjut atau gunakan tombol panah ← → di keyboard, lalu amati kapan frame dibuat dan kapan dibuang.\n\n\n\n\n\nMembaca traceback\nJika terjadi galat di dalam fungsi, Python mencetak traceback: daftar fungsi yang sedang berjalan saat galat terjadi, urutannya sama dengan stack diagram (Downey, 2024, Bab 3). Misalkan cetak_dua_kali keliru memakai variabel gabungan milik fungsi lain:\n\n\nmain.py\n\ndef cetak_dua_kali(pesan):\n    print(gabungan)        # salah: gabungan bukan milik fungsi ini\n    print(pesan)\n\ndef gabung_dua_kali(bagian1, bagian2):\n    gabungan = bagian1 + bagian2\n    cetak_dua_kali(gabungan)\n\nbaris1 = \"Algo \"\nbaris2 = \"ritma\"\ngabung_dua_kali(baris1, baris2)\n\nTraceback (most recent call last):\n  File \"main.py\", line 11, in &lt;module&gt;\n    gabung_dua_kali(baris1, baris2)\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"main.py\", line 7, in gabung_dua_kali\n    cetak_dua_kali(gabungan)\n    ~~~~~~~~~~~~~~^^^^^^^^^^\n  File \"main.py\", line 2, in cetak_dua_kali\n    print(gabungan)\n          ^^^^^^^^\nNameError: name 'gabungan' is not defined\nCara membacanya:\n\nMulai dari baris terakhir: jenis galat (NameError) dan pesannya.\nNaik satu tingkat: baris kode tempat galat terjadi (print(gabungan) di dalam cetak_dua_kali).\nTerus naik untuk melihat siapa memanggil siapa: &lt;module&gt; (yaitu __main__) → gabung_dua_kali → cetak_dua_kali.\n\nGalat ini terjadi karena gabungan adalah variabel lokal gabung_dua_kali; ia tidak terlihat dari frame cetak_dua_kali. Topik ini dibahas lebih dalam di Lesson B.\n\n\nFungsi void\nFungsi seperti cetak_dua_kali melakukan sesuatu (mencetak), tetapi tidak menghasilkan nilai untuk dipakai kembali. Fungsi seperti ini disebut fungsi void. Sebenarnya Python tetap mengembalikan sebuah nilai, yaitu nilai khusus None (Downey, 2024, Bab 6; PSF, t.t.-c, §4.8):\nhasil = cetak_dua_kali(\"Bing\")\nprint(hasil)\nBing\nBing\nNone\nJadi jangan menyimpan hasil fungsi void ke variabel dan berharap mendapat teks yang dicetaknya. Fungsi yang mengembalikan nilai dengan return adalah topik Minggu 6.",
+    "text": "Lesson A · Memanggil dan Mendefinisikan Fungsi\n\nMemanggil fungsi yang sudah ada\nSejak minggu pertama kamu sudah memakai fungsi: print, input, len, int, round. Menulis nama fungsi diikuti tanda kurung disebut pemanggilan fungsi (function call). Nilai di dalam kurung adalah argumen (Downey, 2024, Bab 3).\nlen(\"Telkom\")          # argumen: \"Telkom\", menghasilkan 6\nround(3.14159, 2)      # dua argumen, menghasilkan 3.14\nprint(\"Halo\", \"SI\")    # dua argumen, mencetak: Halo SI\nArgumen boleh berupa ekspresi apa pun. Python mengevaluasi argumen lebih dulu, baru memanggil fungsinya. Pada print(len(\"abc\") * 2), Python menghitung len(\"abc\") → 3, lalu 3 * 2 → 6, baru kemudian print(6) dijalankan.\n\n\nMendefinisikan fungsi baru\nDefinisi fungsi membuat fungsi baru dengan nama yang kita pilih (Downey, 2024, Bab 3; Python Software Foundation [PSF], t.t.-c, §4.8):\ndef sapa():\n    print(\"Selamat pagi!\")\n    print(\"Selamat belajar Alpro.\")\nBagian-bagiannya:\n\nHeader: baris pertama. Dimulai kata kunci def, lalu nama fungsi, tanda kurung, dan diakhiri titik dua :.\nBadan (body): baris-baris di bawah header yang menjorok (biasanya 4 spasi). Badan berakhir di baris pertama yang tidak lagi menjorok.\nNama fungsi mengikuti aturan nama variabel: huruf, angka, garis bawah, tidak diawali angka, dan bukan kata kunci. Gunakan kata kerja yang menjelaskan apa yang dilakukan fungsi, misalnya cetak_struk, bukan f1.\n\nMenjalankan definisi tidak menjalankan badannya. Definisi hanya membuat objek fungsi dan mengikatnya ke nama sapa. Badan baru dijalankan saat fungsi dipanggil:\nsapa()\nsapa()\nSelamat pagi!\nSelamat belajar Alpro.\nSelamat pagi!\nSelamat belajar Alpro.\nKarena definisi harus dijalankan lebih dulu, fungsi harus didefinisikan sebelum dipanggil. Jika urutannya terbalik, Python melaporkan NameError: name 'sapa' is not defined.\n\n\nParameter dan argumen\nFungsi menjadi jauh lebih berguna jika bisa menerima data. Nama di dalam kurung pada header disebut parameter; nilai yang diberikan saat pemanggilan disebut argumen (PSF, t.t.-a, entri parameter dan argument).\ndef cetak_dua_kali(pesan):     # pesan adalah parameter\n    print(pesan)\n    print(pesan)\n\ncetak_dua_kali(\"Halo\")         # \"Halo\" adalah argumen\ncetak_dua_kali(17 * 3)         # argumen boleh ekspresi: 51\nkata = \"Python\"\ncetak_dua_kali(kata)           # argumen boleh variabel\nSaat dipanggil, nilai argumen diikatkan ke parameter, seakan-akan Python menjalankan pesan = \"Halo\" di awal badan fungsi. Nama variabel argumen (kata) tidak perlu sama dengan nama parameter (pesan); yang dipindahkan adalah nilainya.\nJika ada beberapa parameter, argumen dipasangkan berdasarkan urutan (positional):\ndef cetak_nilai(nama, nilai):\n    print(nama, \"mendapat nilai\", nilai)\n\ncetak_nilai(\"Rina\", 85)    # nama = \"Rina\", nilai = 85\ncetak_nilai(85, \"Rina\")    # tertukar: 85 mendapat nilai Rina\nPython juga mendukung argumen kata kunci (keyword argument), yang memasangkan nilai berdasarkan nama parameter sehingga urutannya bebas (PSF, t.t.-c, §4.9.2):\ncetak_nilai(nilai=85, nama=\"Rina\")   # Rina mendapat nilai 85\nJumlah argumen harus sesuai dengan jumlah parameter. cetak_nilai(\"Rina\") menghasilkan TypeError: cetak_nilai() missing 1 required positional argument: 'nilai'.\n\n\nAlur eksekusi\nProgram dijalankan dari baris pertama ke bawah, satu pernyataan setiap kali. Pemanggilan fungsi adalah jalan memutar: alur melompat ke badan fungsi, menjalankan seluruh isinya, lalu kembali ke tepat setelah titik pemanggilan. Fungsi boleh memanggil fungsi lain, sehingga saat membaca program, ikuti alur eksekusi, bukan urutan baris di file.\ndef langkah_b():\n    print(\"B1\")\n\ndef langkah_a():\n    print(\"A1\")\n    langkah_b()\n    print(\"A2\")\n\nprint(\"mulai\")\nlangkah_a()\nprint(\"selesai\")\nmulai\nA1\nB1\nA2\nselesai\n\n\nStack diagram\nUntuk menelusuri pemanggilan, gambarlah stack diagram. Setiap pemanggilan fungsi mendapat satu frame: kotak berisi parameter dan variabel lokal fungsi itu. Variabel di luar semua fungsi berada di frame __main__. Frame ditumpuk sesuai urutan pemanggilan, dan dibuang saat fungsi selesai (Downey, 2024, Bab 3).\ndef gabung_dua_kali(bagian1, bagian2):\n    gabungan = bagian1 + bagian2\n    cetak_dua_kali(gabungan)\n\nbaris1 = \"Algo \"\nbaris2 = \"ritma\"\ngabung_dua_kali(baris1, baris2)\nSaat print di dalam cetak_dua_kali sedang berjalan, stack-nya:\n┌─ __main__ ───────────────────────┐\n│  baris1   → 'Algo '              │\n│  baris2   → 'ritma'              │\n└──────────────────────────────────┘\n┌─ gabung_dua_kali ────────────────┐\n│  bagian1  → 'Algo '              │\n│  bagian2  → 'ritma'              │\n│  gabungan → 'Algo ritma'         │\n└──────────────────────────────────┘\n┌─ cetak_dua_kali ─────────────────┐\n│  pesan    → 'Algo ritma'         │\n└──────────────────────────────────┘\nPerhatikan bahwa nilai 'Algo ritma' muncul dengan nama berbeda di dua frame.\nTelusuri program lengkapnya langkah demi langkah di bawah ini. Tekan Lanjut atau gunakan tombol panah ← → di keyboard, lalu amati kapan frame dibuat dan kapan dibuang.\n\n\n\n\n\nMembaca traceback\nJika terjadi galat di dalam fungsi, Python mencetak traceback: daftar fungsi yang sedang berjalan saat galat terjadi, urutannya sama dengan stack diagram (Downey, 2024, Bab 3). Misalkan cetak_dua_kali keliru memakai variabel gabungan milik fungsi lain:\n\n\nmain.py\n\ndef cetak_dua_kali(pesan):\n    print(gabungan)        # salah: gabungan bukan milik fungsi ini\n    print(pesan)\n\ndef gabung_dua_kali(bagian1, bagian2):\n    gabungan = bagian1 + bagian2\n    cetak_dua_kali(gabungan)\n\nbaris1 = \"Algo \"\nbaris2 = \"ritma\"\ngabung_dua_kali(baris1, baris2)\n\nTraceback (most recent call last):\n  File \"main.py\", line 11, in &lt;module&gt;\n    gabung_dua_kali(baris1, baris2)\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"main.py\", line 7, in gabung_dua_kali\n    cetak_dua_kali(gabungan)\n    ~~~~~~~~~~~~~~^^^^^^^^^^\n  File \"main.py\", line 2, in cetak_dua_kali\n    print(gabungan)\n          ^^^^^^^^\nNameError: name 'gabungan' is not defined\nCara membacanya:\n\nMulai dari baris terakhir: jenis galat (NameError) dan pesannya.\nNaik satu tingkat: baris kode tempat galat terjadi (print(gabungan) di dalam cetak_dua_kali).\nTerus naik untuk melihat siapa memanggil siapa: &lt;module&gt; (yaitu __main__) → gabung_dua_kali → cetak_dua_kali.\n\nGalat ini terjadi karena gabungan adalah variabel lokal gabung_dua_kali; ia tidak terlihat dari frame cetak_dua_kali. Topik ini dibahas lebih dalam di Lesson B.\n\n\nFungsi void\nFungsi seperti cetak_dua_kali melakukan sesuatu (mencetak), tetapi tidak menghasilkan nilai untuk dipakai kembali. Fungsi seperti ini disebut fungsi void. Sebenarnya Python tetap mengembalikan sebuah nilai, yaitu nilai khusus None (Downey, 2024, Bab 6; PSF, t.t.-c, §4.8):\nhasil = cetak_dua_kali(\"Bing\")\nprint(hasil)\nBing\nBing\nNone\nJadi jangan menyimpan hasil fungsi void ke variabel dan berharap mendapat teks yang dicetaknya. Fungsi yang mengembalikan nilai dengan return adalah topik Minggu 5.",
     "crumbs": [
       "Materi",
       "Paruh Pertama",
@@ -1211,7 +1271,7 @@
     "href": "materi/w04.html#kesalahan-umum",
     "title": "Minggu 4 · Fungsi I: Fungsi Void",
     "section": "Kesalahan Umum",
-    "text": "Kesalahan Umum\n\n\n\n\n\n\n\n\nGejala\nPenyebab\nPerbaikan\n\n\n\n\nProgram berjalan tetapi tidak ada keluaran dari fungsi\nFungsi hanya didefinisikan, tidak pernah dipanggil\nTambahkan pemanggilan nama_fungsi(...)\n\n\nNameError saat memanggil fungsi\nPemanggilan ditulis sebelum def\nLetakkan semua definisi di atas, pemanggilan di bawah\n\n\nIndentationError atau badan fungsi “terpotong”\nIndentasi tidak konsisten\nGunakan 4 spasi untuk seluruh badan\n\n\nTypeError: ... missing 1 required positional argument\nJumlah argumen kurang dari jumlah parameter\nCocokkan jumlah dan urutan argumen dengan header\n\n\nFungsi selalu memakai nilai yang sama\nMemanggil input() atau menulis nilai tetap di dalam fungsi, padahal seharusnya parameter\nJadikan nilai itu parameter; minta input() di luar fungsi\n\n\nNameError saat memakai variabel dari fungsi lain\nVariabel lokal tidak terlihat di luar fungsinya\nKirim nilainya sebagai argumen\n\n\nVariabel hasil pemanggilan berisi None\nMenyimpan hasil fungsi void\nFungsi void hanya untuk aksi; nilai kembali dibahas di Minggu 6",
+    "text": "Kesalahan Umum\n\n\n\n\n\n\n\n\nGejala\nPenyebab\nPerbaikan\n\n\n\n\nProgram berjalan tetapi tidak ada keluaran dari fungsi\nFungsi hanya didefinisikan, tidak pernah dipanggil\nTambahkan pemanggilan nama_fungsi(...)\n\n\nNameError saat memanggil fungsi\nPemanggilan ditulis sebelum def\nLetakkan semua definisi di atas, pemanggilan di bawah\n\n\nIndentationError atau badan fungsi “terpotong”\nIndentasi tidak konsisten\nGunakan 4 spasi untuk seluruh badan\n\n\nTypeError: ... missing 1 required positional argument\nJumlah argumen kurang dari jumlah parameter\nCocokkan jumlah dan urutan argumen dengan header\n\n\nFungsi selalu memakai nilai yang sama\nMemanggil input() atau menulis nilai tetap di dalam fungsi, padahal seharusnya parameter\nJadikan nilai itu parameter; minta input() di luar fungsi\n\n\nNameError saat memakai variabel dari fungsi lain\nVariabel lokal tidak terlihat di luar fungsinya\nKirim nilainya sebagai argumen\n\n\nVariabel hasil pemanggilan berisi None\nMenyimpan hasil fungsi void\nFungsi void hanya untuk aksi; nilai kembali dibahas di Minggu 5",
     "crumbs": [
       "Materi",
       "Paruh Pertama",
@@ -1343,7 +1403,7 @@
     "href": "materi/index.html",
     "title": "Materi",
     "section": "",
-    "text": "Halaman ini adalah pendamping Moodle. Gunakan untuk membaca ulang konsep dan berlatih memprediksi keluaran program. Aktivitas kelas, pengumpulan, dan cek mastery tetap dilakukan di Moodle.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\nMinggu\n\n\n\nTopik\n\n\n\nRingkasan\n\n\n\nKategori\n\n\n\n\n\n\n\n\n1\n\n\nMinggu 1 · Pengenalan Alpro & Berpikir Komputasional\n\n\nMahasiswa mampu menjelaskan program sebagai bahasa formal, merepresentasikan algoritma sederhana (pseudocode/flowchart), dan menelusurinya langkah demi langkah.\n\n\nDasar\n\n\n\n\n\n\n2\n\n\nMinggu 2 · Variabel, Tipe Data, Operator & Ekspresi\n\n\nMahasiswa mampu melacak keadaan (state) variabel selama program berjalan, dan menulis program yang membaca masukan, mengonversi tipenya, lalu menghitung dan menampilkan hasil.\n\n\nDasar\n\n\n\n\n\n\n3\n\n\nMinggu 3 · Pernyataan Kondisional\n\n\nMahasiswa mampu mengevaluasi ekspresi logika dan menulis program yang memilih jalur eksekusi berdasarkan kondisi, termasuk penjagaan (guard) untuk memvalidasi masukan.\n\n\nKontrol Alur\n\n\n\n\n\n\n4\n\n\nMinggu 4 · Fungsi I: Fungsi Void\n\n\nMahasiswa mampu memecah sebuah tugas menjadi fungsi-fungsi void berparameter, menelusuri pemanggilannya, dan menjelaskan lingkup (scope) variabel.\n\n\nFungsi\n\n\n\n\n\n\n5\n\n\nMinggu 5 · Perulangan I: while\n\n\nMahasiswa mampu menelusuri dan menulis perulangan while, termasuk pola pencacah, akumulator, dan sentinel, serta menuliskan rencananya dalam pseudocode sebelum menulis kode.\n\n\nKontrol Alur\n\n\n\n\n\n\n6\n\n\nMinggu 6 · Perulangan II: for\n\n\nMahasiswa mampu memilih dan menulis perulangan for untuk pola akumulator, pencacah bersyarat, dan nilai ekstrem, serta menggabungkan validasi data di dalam perulangan.\n\n\nKontrol Alur\n\n\n\n\n\n\n7\n\n\nMinggu 7 · Tutorial & Praktikum 1 · Gladi UTS\n\n\nMahasiswa mampu menggabungkan variabel, kondisional, fungsi, dan perulangan menjadi solusi utuh untuk masalah kecil, serta mengerjakannya dalam kondisi seperti UTS.\n\n\nPraktikum, Remedial\n\n\n\n\n\n\n8\n\n\nMinggu 8 · UTS\n\n\nPemeriksaan mastery kumulatif untuk seluruh skill minggu 1-7.\n\n\nUjian\n\n\n\n\n\n\n9\n\n\nMinggu 9 · Fungsi II: Fungsi Ber-return\n\n\nMahasiswa mampu membedakan return dari print dan membangun program dari fungsi-fungsi yang mengembalikan nilai.\n\n\nFungsi\n\n\n\n\n\n\n10\n\n\nMinggu 10 · String\n\n\nMahasiswa mampu memproses teks: mengakses bagian string, menelusurinya dengan perulangan, dan memakai metode string untuk menyelesaikan tugas kecil.\n\n\nTeks & Koleksi Data\n\n\n\n\n\n\n11\n\n\nMinggu 11 · Koleksi Data I: List & Tuple\n\n\nMahasiswa mampu menyimpan dan memproses kumpulan data terurut dengan list dan tuple, serta menjelaskan akibat dari sifat mutable.\n\n\nTeks & Koleksi Data\n\n\n\n\n\n\n12\n\n\nMinggu 12 · Koleksi Data II: Dictionary & Set\n\n\nMahasiswa mampu memakai dictionary dan set untuk data berpasangan dan data unik, serta memilih struktur data yang sesuai dengan alasan.\n\n\nTeks & Koleksi Data\n\n\n\n\n\n\n13\n\n\nMinggu 13 · Data Files\n\n\nMahasiswa mampu membaca dan menulis file teks dan CSV, menangani galat file, serta merangkai pipeline sederhana dari file ke hasil olahan.\n\n\nTeks & Koleksi Data\n\n\n\n\n\n\n14\n\n\nMinggu 14 · Tutorial & Praktikum 2\n\n\nMahasiswa mampu menyelesaikan masalah menengah yang menggabungkan fungsi void dan ber-return, string, dan file, serta menjelaskan programnya sendiri.\n\n\nPraktikum, Remedial\n\n\n\n\n\n\n15\n\n\nMinggu 15 · Tutorial & Praktikum 3 · Gladi UAS\n\n\nMahasiswa mampu menyelesaikan masalah terintegrasi yang mencakup seluruh materi, dalam kondisi yang sama dengan UAS.\n\n\nPraktikum, Remedial\n\n\n\n\n\n\n16\n\n\nMinggu 16 · UAS\n\n\nPemeriksaan mastery kumulatif untuk seluruh skill inti mata kuliah.\n\n\nUjian\n\n\n\n\n\n\nTidak ada yang cocok\n Kembali ke atas",
+    "text": "Halaman ini adalah pendamping Moodle. Gunakan untuk membaca ulang konsep dan berlatih memprediksi keluaran program. Aktivitas kelas, pengumpulan, dan cek mastery tetap dilakukan di Moodle.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\nMinggu\n\n\n\nTopik\n\n\n\nRingkasan\n\n\n\nKategori\n\n\n\n\n\n\n\n\n1\n\n\nMinggu 1 · Pengenalan Alpro & Berpikir Komputasional\n\n\nMahasiswa mampu menjelaskan program sebagai bahasa formal, merepresentasikan algoritma sederhana (pseudocode/flowchart), dan menelusurinya langkah demi langkah.\n\n\nDasar\n\n\n\n\n\n\n2\n\n\nMinggu 2 · Variabel, Tipe Data, Operator & Ekspresi\n\n\nMahasiswa mampu melacak keadaan (state) variabel selama program berjalan, dan menulis program yang membaca masukan, mengonversi tipenya, lalu menghitung dan menampilkan hasil.\n\n\nDasar\n\n\n\n\n\n\n3\n\n\nMinggu 3 · Pernyataan Kondisional\n\n\nMahasiswa mampu mengevaluasi ekspresi logika dan menulis program yang memilih jalur eksekusi berdasarkan kondisi, termasuk penjagaan (guard) untuk memvalidasi masukan.\n\n\nKontrol Alur\n\n\n\n\n\n\n4\n\n\nMinggu 4 · Fungsi I: Fungsi Void\n\n\nMahasiswa mampu memecah sebuah tugas menjadi fungsi-fungsi void berparameter, menelusuri pemanggilannya, dan menjelaskan lingkup (scope) variabel.\n\n\nFungsi\n\n\n\n\n\n\n5\n\n\nMinggu 5 · Fungsi II: Fungsi Ber-return\n\n\nMahasiswa mampu membedakan return dari print dan membangun program dari fungsi-fungsi yang mengembalikan nilai.\n\n\nFungsi\n\n\n\n\n\n\n6\n\n\nMinggu 6 · Perulangan: for dan while\n\n\nMahasiswa mampu menelusuri dan menulis perulangan for dan while, termasuk pola pencacah, akumulator, dan sentinel, menggabungkan guard di dalam perulangan, serta memilih bentuk perulangan yang sesuai beserta alasannya.\n\n\nKontrol Alur\n\n\n\n\n\n\n7\n\n\nMinggu 7 · Tutorial & Praktikum 1 · Gladi UTS\n\n\nMahasiswa mampu menggabungkan variabel, kondisional, fungsi, dan perulangan menjadi solusi utuh untuk masalah kecil, serta mengerjakannya dalam kondisi seperti UTS.\n\n\nPraktikum, Remedial\n\n\n\n\n\n\n8\n\n\nMinggu 8 · UTS\n\n\nPemeriksaan mastery kumulatif untuk seluruh skill minggu 1-7.\n\n\nUjian\n\n\n\n\n\n\n9\n\n\nMinggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian & Bersarang\n\n\nMahasiswa mampu menulis fungsi ber-return yang memuat pola nilai ekstrem dan pencarian, menelusuri dan menulis perulangan bersarang sederhana, serta mengubah perulangan while menjadi for dan sebaliknya.\n\n\nKontrol Alur\n\n\n\n\n\n\n10\n\n\nMinggu 10 · String\n\n\nMahasiswa mampu memproses teks: mengakses bagian string, menelusurinya dengan perulangan, dan memakai metode string untuk menyelesaikan tugas kecil.\n\n\nTeks & Koleksi Data\n\n\n\n\n\n\n11\n\n\nMinggu 11 · Koleksi Data I: List & Tuple\n\n\nMahasiswa mampu menyimpan dan memproses kumpulan data terurut dengan list dan tuple, serta menjelaskan akibat dari sifat mutable.\n\n\nTeks & Koleksi Data\n\n\n\n\n\n\n12\n\n\nMinggu 12 · Koleksi Data II: Dictionary & Set\n\n\nMahasiswa mampu memakai dictionary dan set untuk data berpasangan dan data unik, serta memilih struktur data yang sesuai dengan alasan.\n\n\nTeks & Koleksi Data\n\n\n\n\n\n\n13\n\n\nMinggu 13 · Data Files\n\n\nMahasiswa mampu membaca dan menulis file teks dan CSV, menangani galat file, serta merangkai pipeline sederhana dari file ke hasil olahan.\n\n\nTeks & Koleksi Data\n\n\n\n\n\n\n14\n\n\nMinggu 14 · Tutorial & Praktikum 2\n\n\nMahasiswa mampu menyelesaikan masalah menengah yang menggabungkan fungsi void dan ber-return, string, dan file, serta menjelaskan programnya sendiri.\n\n\nPraktikum, Remedial\n\n\n\n\n\n\n15\n\n\nMinggu 15 · Tutorial & Praktikum 3 · Gladi UAS\n\n\nMahasiswa mampu menyelesaikan masalah terintegrasi yang mencakup seluruh materi, dalam kondisi yang sama dengan UAS.\n\n\nPraktikum, Remedial\n\n\n\n\n\n\n16\n\n\nMinggu 16 · UAS\n\n\nPemeriksaan mastery kumulatif untuk seluruh skill inti mata kuliah.\n\n\nUjian\n\n\n\n\n\n\nTidak ada yang cocok\n Kembali ke atas",
     "crumbs": [
       "Materi"
     ]
@@ -1351,73 +1411,73 @@
   {
     "objectID": "materi/w09.html",
     "href": "materi/w09.html",
-    "title": "Minggu 9 · Fungsi II: Fungsi Ber-return",
+    "title": "Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian & Bersarang",
     "section": "",
-    "text": "Minggu 9Lesson A: return dan printLesson B: Pengembangan bertahap dan komposisi fungsi",
+    "text": "Minggu 9Lesson A: Nilai ekstrem dan pencarianLesson B: Perulangan bersarang dan konversi while/for",
     "crumbs": [
       "Materi",
       "Paruh Kedua",
-      "Minggu 9 · Fungsi II: Fungsi Ber-return"
+      "Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian & Bersarang"
     ]
   },
   {
     "objectID": "materi/w09.html#skill-yang-dinilai",
     "href": "materi/w09.html#skill-yang-dinilai",
-    "title": "Minggu 9 · Fungsi II: Fungsi Ber-return",
+    "title": "Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian & Bersarang",
     "section": "Skill yang Dinilai",
-    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU9.1\nTrace (T)\nMembedakan return dan print; memprediksi nilai pemanggilan fungsi yang dipakai di dalam ekspresi\n\n\nU9.2\nWrite (W)\nMenulis fungsi ber-return dengan lebih dari satu jalur return\n\n\nU9.3\nWrite (W)\nMembangun fungsi secara bertahap (incremental development) dan mengujinya di tiap tahap\n\n\nU9.4\nTransfer (X)\nMenyusun komposisi fungsi: memakai hasil satu fungsi di dalam fungsi lain\n\n\nU9.5\nTransfer (X)\nMengubah program panjang menjadi kumpulan fungsi ber-return",
+    "text": "Skill yang Dinilai\n\n\n\n\n\n\n\n\nKode\nJenis\nSkill\n\n\n\n\nU9.1\nTrace (T)\nMenelusuri pola nilai ekstrem (best-so-far) dan pola pencarian dengan return di dalam perulangan: nilai tiap iterasi dan kapan fungsi berhenti\n\n\nU9.2\nWrite (W)\nMenulis fungsi ber-return dengan pola nilai ekstrem dan pola pencarian\n\n\nU9.3\nTrace (T)\nMenelusuri perulangan bersarang dan menyatakan jumlah total iterasinya\n\n\nU9.4\nWrite (W)\nMenulis perulangan bersarang sederhana sesuai spesifikasi\n\n\nU9.5\nTransfer (X)\nMengubah while menjadi for dan sebaliknya, serta memilih yang sesuai beserta alasannya",
     "crumbs": [
       "Materi",
       "Paruh Kedua",
-      "Minggu 9 · Fungsi II: Fungsi Ber-return"
+      "Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian & Bersarang"
     ]
   },
   {
     "objectID": "materi/w09.html#lesson",
     "href": "materi/w09.html#lesson",
-    "title": "Minggu 9 · Fungsi II: Fungsi Ber-return",
+    "title": "Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian & Bersarang",
     "section": "Lesson",
-    "text": "Lesson\n\n\n\n\n\n\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nreturn dan print\nU9.1, U9.2\nW09-A\n\n\nB\nPengembangan bertahap dan komposisi fungsi\nU9.3, U9.4, U9.5\nW09-B",
+    "text": "Lesson\n\n\n\n\n\n\n\n\n\nLesson\nJudul\nFokus skill\nMoodle\n\n\n\n\nA\nNilai ekstrem dan pencarian\nU9.1, U9.2\nW09-A\n\n\nB\nPerulangan bersarang dan konversi while/for\nU9.3, U9.4, U9.5\nW09-B",
     "crumbs": [
       "Materi",
       "Paruh Kedua",
-      "Minggu 9 · Fungsi II: Fungsi Ber-return"
+      "Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian & Bersarang"
     ]
   },
   {
     "objectID": "materi/w09.html#konsep-kunci",
     "href": "materi/w09.html#konsep-kunci",
-    "title": "Minggu 9 · Fungsi II: Fungsi Ber-return",
+    "title": "Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian & Bersarang",
     "section": "Konsep Kunci",
-    "text": "Konsep Kunci\nprint menampilkan nilai ke layar, sedangkan return mengirim nilai kembali ke pemanggil agar bisa dipakai di dalam ekspresi. Fungsi tanpa return mengembalikan None. Bangun fungsi secara bertahap: tulis sedikit, uji, lalu lanjutkan.\ndef luas(p, l):\n    return p * l\n\ndef keterangan(p, l):\n    if luas(p, l) &gt; 100:\n        return \"besar\"\n    return \"kecil\"\n\nprint(luas(4, 5) * 2)      # 40\nprint(keterangan(20, 6))   # besar",
+    "text": "Konsep Kunci\nPola nilai ekstrem (best-so-far) menyimpan kandidat terbaik sejauh ini dan menggantinya setiap kali menemukan yang lebih baik. Pola pencarian memakai return di dalam perulangan: fungsi langsung berhenti begitu yang dicari ketemu, dan return sesudah perulangan menangani kasus tidak ketemu. Pada perulangan bersarang, perulangan dalam berjalan penuh untuk setiap putaran perulangan luar.\ndef terbesar(daftar):\n    juara = daftar[0]            # best-so-far\n    for n in daftar:\n        if n &gt; juara:\n            juara = n\n    return juara\n\ndef ada_gagal(nilai):\n    for n in nilai:\n        if n &lt; 50:\n            return True          # ketemu: fungsi langsung berhenti\n    return False                 # sudah diperiksa semua\n\nprint(terbesar([70, 92, 85]))    # 92\nprint(ada_gagal([70, 45, 85]))   # True",
     "crumbs": [
       "Materi",
       "Paruh Kedua",
-      "Minggu 9 · Fungsi II: Fungsi Ber-return"
+      "Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian & Bersarang"
     ]
   },
   {
     "objectID": "materi/w09.html#tebak-dulu",
     "href": "materi/w09.html#tebak-dulu",
-    "title": "Minggu 9 · Fungsi II: Fungsi Ber-return",
+    "title": "Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian & Bersarang",
     "section": "Tebak Dulu",
-    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\ndef dobel(x):\n    print(x * 2)\n\nhasil = dobel(4)\nprint(hasil)\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nTercetak 8 lalu None. dobel hanya mencetak dan tidak mengembalikan apa pun, sehingga hasil bernilai None.",
+    "text": "Tebak Dulu\nTanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, baru buka jawabannya.\nfor i in range(3):\n    for j in range(2):\n        print(i, j)\n\n\n\n\n\n\nTipLihat jawaban\n\n\n\n\n\nTercetak 6 baris: 0 0, 0 1, 1 0, 1 1, 2 0, 2 1. Perulangan dalam berjalan 2 kali untuk setiap putaran perulangan luar, sehingga totalnya 3 × 2 = 6 iterasi.",
     "crumbs": [
       "Materi",
       "Paruh Kedua",
-      "Minggu 9 · Fungsi II: Fungsi Ber-return"
+      "Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian & Bersarang"
     ]
   },
   {
     "objectID": "materi/w09.html#bacaan",
     "href": "materi/w09.html#bacaan",
-    "title": "Minggu 9 · Fungsi II: Fungsi Ber-return",
+    "title": "Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian & Bersarang",
     "section": "Bacaan",
-    "text": "Bacaan\n\nThink Python Ch. 6 - Return values",
+    "text": "Bacaan\n\nThink Python Ch. 7 - Iteration and Search",
     "crumbs": [
       "Materi",
       "Paruh Kedua",
-      "Minggu 9 · Fungsi II: Fungsi Ber-return"
+      "Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian & Bersarang"
     ]
   },
   {

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Mahasiswa mampu memilih dan menulis perulangan for untuk pola akumulator, pencacah bersyarat, dan nilai ekstrem, serta menggabungkan validasi data di dalam perulangan.">
+<meta name="description" content="Mahasiswa mampu menelusuri dan menulis perulangan for dan while, termasuk pola pencacah, akumulator, dan sentinel, menggabungkan guard di dalam perulangan, serta memilih bentuk perulangan yang sesuai beserta alasannya.">
 
-<title>Minggu 6 · Perulangan II: for – BBK1AAB4 (Alpro SI Tel-U)</title>
+<title>Minggu 6 · Perulangan: for dan while – BBK1AAB4 (Alpro SI Tel-U)</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -361,7 +361,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materi/w01.html">Paruh Pertama</a></li><li class="breadcrumb-item"><a href="../materi/w06.html">Minggu 6 · Perulangan II: for</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materi/w01.html">Paruh Pertama</a></li><li class="breadcrumb-item"><a href="../materi/w06.html">Minggu 6 · Perulangan: for dan while</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -415,13 +415,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../materi/w05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Minggu 5 · Perulangan I: while</span></a>
+ <span class="menu-text">Minggu 5 · Fungsi II: Fungsi Ber-return</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../materi/w06.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Minggu 6 · Perulangan II: for</span></a>
+ <span class="menu-text">Minggu 6 · Perulangan: for dan while</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -450,7 +450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../materi/w09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Minggu 9 · Fungsi II: Fungsi Ber-return</span></a>
+ <span class="menu-text">Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian &amp; Bersarang</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -519,9 +519,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materi/w01.html">Paruh Pertama</a></li><li class="breadcrumb-item"><a href="../materi/w06.html">Minggu 6 · Perulangan II: for</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materi/w01.html">Paruh Pertama</a></li><li class="breadcrumb-item"><a href="../materi/w06.html">Minggu 6 · Perulangan: for dan while</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Minggu 6 · Perulangan II: for</h1>
+<h1 class="title">Minggu 6 · Perulangan: for dan while</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Kontrol Alur</div>
   </div>
@@ -529,7 +529,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Mahasiswa mampu memilih dan menulis perulangan for untuk pola akumulator, pencacah bersyarat, dan nilai ekstrem, serta menggabungkan validasi data di dalam perulangan.
+    Mahasiswa mampu menelusuri dan menulis perulangan for dan while, termasuk pola pencacah, akumulator, dan sentinel, menggabungkan guard di dalam perulangan, serta memilih bentuk perulangan yang sesuai beserta alasannya.
   </div>
 </div>
 
@@ -547,7 +547,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="week-meta">
-<p><span>Minggu 6</span><span>Lesson A: for, range, dan pola dasar</span><span>Lesson B: Menggabungkan pola: guard + akumulasi + bersarang</span></p>
+<p><span>Minggu 6</span><span>Lesson A: for, range, pencacah, dan akumulator</span><span>Lesson B: while, sentinel, dan guard di dalam perulangan</span></p>
 </div>
 <section id="skill-yang-dinilai" class="level2">
 <h2 class="anchored" data-anchor-id="skill-yang-dinilai">Skill yang Dinilai</h2>
@@ -568,27 +568,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td><code>U6.1</code></td>
 <td>Trace (T)</td>
-<td>Menelusuri for dengan range() dan menyatakan jumlah iterasinya</td>
+<td>Membuat trace table untuk for dengan range() dan untuk while: nilai tiap iterasi, jumlah iterasi, dan alasan perulangan berhenti</td>
 </tr>
 <tr class="even">
 <td><code>U6.2</code></td>
-<td>Write (W)</td>
-<td>Menulis pola akumulator, pencacah bersyarat, dan nilai ekstrem (best-so-far) dengan for</td>
+<td>Trace (T)</td>
+<td>Mendiagnosis infinite loop dan kesalahan off-by-one</td>
 </tr>
 <tr class="odd">
 <td><code>U6.3</code></td>
 <td>Write (W)</td>
-<td>Menggabungkan guard (validasi data) di dalam perulangan akumulasi</td>
+<td>Menulis pola pencacah dan akumulator dengan for, dibungkus dalam fungsi ber-return</td>
 </tr>
 <tr class="even">
 <td><code>U6.4</code></td>
-<td>Transfer (X)</td>
-<td>Mengubah while menjadi for dan sebaliknya, serta memilih yang sesuai beserta alasannya</td>
+<td>Write (W)</td>
+<td>Menulis perulangan while bersentinel yang menggabungkan guard dengan akumulasi</td>
 </tr>
 <tr class="odd">
 <td><code>U6.5</code></td>
 <td>Transfer (X)</td>
-<td>Menyusun dan menelusuri perulangan bersarang sederhana</td>
+<td>Memilih for atau while untuk sebuah masalah beserta alasannya, dan menuliskan rencananya dalam pseudocode</td>
 </tr>
 </tbody>
 </table>
@@ -613,14 +613,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td>A</td>
-<td>for, range, dan pola dasar</td>
-<td>U6.1, U6.2</td>
+<td>for, range, pencacah, dan akumulator</td>
+<td>U6.1, U6.3</td>
 <td><code>W06-A</code></td>
 </tr>
 <tr class="even">
 <td>B</td>
-<td>Menggabungkan pola: guard + akumulasi + bersarang</td>
-<td>U6.3, U6.4, U6.5</td>
+<td>while, sentinel, dan guard di dalam perulangan</td>
+<td>U6.2, U6.4, U6.5</td>
 <td><code>W06-B</code></td>
 </tr>
 </tbody>
@@ -628,20 +628,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="konsep-kunci" class="level2">
 <h2 class="anchored" data-anchor-id="konsep-kunci">Konsep Kunci</h2>
-<p><code>range(a, b)</code> menghasilkan bilangan dari <code>a</code> sampai <strong>sebelum</strong> <code>b</code>. Titik paling rawan minggu ini adalah menggabungkan <strong>guard</strong> dengan <strong>akumulator</strong> di dalam satu perulangan: data yang tidak sah harus dilewati sebelum ikut dihitung.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>banyak <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> [<span class="dv">80</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">95</span>, <span class="dv">70</span>]:</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="dv">0</span> <span class="op">&lt;=</span> n <span class="op">&lt;=</span> <span class="dv">100</span>:        <span class="co"># guard</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        total <span class="op">+=</span> n           <span class="co"># akumulator</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        banyak <span class="op">+=</span> <span class="dv">1</span>          <span class="co"># pencacah</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total <span class="op">/</span> banyak)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Setiap perulangan punya tiga bagian: <strong>inisialisasi</strong>, <strong>kondisi</strong>, dan <strong>pemutakhiran</strong>. Pakai <code>for</code> jika banyaknya putaran sudah diketahui (<code>range(a, b)</code> berhenti <strong>sebelum</strong> <code>b</code>), dan <code>while</code> jika perulangan berhenti karena suatu kondisi, misalnya nilai sentinel. Data yang tidak sah dilewati dengan <strong>guard</strong> sebelum ikut dihitung, dan perulangannya dibungkus dalam fungsi ber-return.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rata_rata(daftar):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">0</span>                    <span class="co"># akumulator</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    banyak <span class="op">=</span> <span class="dv">0</span>                   <span class="co"># pencacah</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> daftar:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="dv">0</span> <span class="op">&lt;=</span> n <span class="op">&lt;=</span> <span class="dv">100</span>:        <span class="co"># guard</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            total <span class="op">+=</span> n</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            banyak <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total <span class="op">/</span> banyak</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rata_rata([<span class="dv">80</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">95</span>, <span class="dv">70</span>]))   <span class="co"># 81.66...</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>angka <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Angka (0 = selesai): "</span>))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> angka <span class="op">!=</span> <span class="dv">0</span>:                    <span class="co"># sentinel</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> angka</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    angka <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Angka (0 = selesai): "</span>))</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jumlah:"</span>, total)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="tebak-dulu" class="level2">
 <h2 class="anchored" data-anchor-id="tebak-dulu">Tebak Dulu</h2>
 <p>Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, <strong>baru</strong> buka jawabannya.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">3</span>):</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">5</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">3</span>):</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(j)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -654,7 +668,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Tercetak <code>2</code>, <code>5</code>, <code>8</code>. Dimulai dari 2, bertambah 3, dan berhenti sebelum mencapai 10.</p>
+<p>Tercetak <code>2</code>, <code>5</code>, <code>8</code>. Kondisi <code>10 &lt; 5</code> sudah <code>False</code> sejak awal, sehingga badan <code>while</code> tidak dijalankan sama sekali. <code>range(2, 10, 3)</code> dimulai dari 2, bertambah 3, dan berhenti sebelum mencapai 10.</p>
 </div>
 </div>
 </div>
@@ -1084,8 +1098,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../materi/w05.html" class="pagination-link" aria-label="Minggu 5 · Perulangan I: while">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Minggu 5 · Perulangan I: while</span>
+      <a href="../materi/w05.html" class="pagination-link" aria-label="Minggu 5 · Fungsi II: Fungsi Ber-return">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Minggu 5 · Fungsi II: Fungsi Ber-return</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

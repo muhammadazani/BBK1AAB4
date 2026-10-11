@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Mahasiswa mampu membedakan return dari print dan membangun program dari fungsi-fungsi yang mengembalikan nilai.">
+<meta name="description" content="Mahasiswa mampu menulis fungsi ber-return yang memuat pola nilai ekstrem dan pencarian, menelusuri dan menulis perulangan bersarang sederhana, serta mengubah perulangan while menjadi for dan sebaliknya.">
 
-<title>Minggu 9 · Fungsi II: Fungsi Ber-return – BBK1AAB4 (Alpro SI Tel-U)</title>
+<title>Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian &amp; Bersarang – BBK1AAB4 (Alpro SI Tel-U)</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -361,7 +361,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materi/w09.html">Paruh Kedua</a></li><li class="breadcrumb-item"><a href="../materi/w09.html">Minggu 9 · Fungsi II: Fungsi Ber-return</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materi/w09.html">Paruh Kedua</a></li><li class="breadcrumb-item"><a href="../materi/w09.html">Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian &amp; Bersarang</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -415,13 +415,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../materi/w05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Minggu 5 · Perulangan I: while</span></a>
+ <span class="menu-text">Minggu 5 · Fungsi II: Fungsi Ber-return</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../materi/w06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Minggu 6 · Perulangan II: for</span></a>
+ <span class="menu-text">Minggu 6 · Perulangan: for dan while</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -450,7 +450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../materi/w09.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Minggu 9 · Fungsi II: Fungsi Ber-return</span></a>
+ <span class="menu-text">Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian &amp; Bersarang</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -519,17 +519,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materi/w09.html">Paruh Kedua</a></li><li class="breadcrumb-item"><a href="../materi/w09.html">Minggu 9 · Fungsi II: Fungsi Ber-return</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materi/w09.html">Paruh Kedua</a></li><li class="breadcrumb-item"><a href="../materi/w09.html">Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian &amp; Bersarang</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Minggu 9 · Fungsi II: Fungsi Ber-return</h1>
+<h1 class="title">Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian &amp; Bersarang</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Fungsi</div>
+    <div class="quarto-category">Kontrol Alur</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Mahasiswa mampu membedakan return dari print dan membangun program dari fungsi-fungsi yang mengembalikan nilai.
+    Mahasiswa mampu menulis fungsi ber-return yang memuat pola nilai ekstrem dan pencarian, menelusuri dan menulis perulangan bersarang sederhana, serta mengubah perulangan while menjadi for dan sebaliknya.
   </div>
 </div>
 
@@ -547,7 +547,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="week-meta">
-<p><span>Minggu 9</span><span>Lesson A: return dan print</span><span>Lesson B: Pengembangan bertahap dan komposisi fungsi</span></p>
+<p><span>Minggu 9</span><span>Lesson A: Nilai ekstrem dan pencarian</span><span>Lesson B: Perulangan bersarang dan konversi while/for</span></p>
 </div>
 <section id="skill-yang-dinilai" class="level2">
 <h2 class="anchored" data-anchor-id="skill-yang-dinilai">Skill yang Dinilai</h2>
@@ -568,27 +568,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td><code>U9.1</code></td>
 <td>Trace (T)</td>
-<td>Membedakan return dan print; memprediksi nilai pemanggilan fungsi yang dipakai di dalam ekspresi</td>
+<td>Menelusuri pola nilai ekstrem (best-so-far) dan pola pencarian dengan return di dalam perulangan: nilai tiap iterasi dan kapan fungsi berhenti</td>
 </tr>
 <tr class="even">
 <td><code>U9.2</code></td>
 <td>Write (W)</td>
-<td>Menulis fungsi ber-return dengan lebih dari satu jalur return</td>
+<td>Menulis fungsi ber-return dengan pola nilai ekstrem dan pola pencarian</td>
 </tr>
 <tr class="odd">
 <td><code>U9.3</code></td>
-<td>Write (W)</td>
-<td>Membangun fungsi secara bertahap (incremental development) dan mengujinya di tiap tahap</td>
+<td>Trace (T)</td>
+<td>Menelusuri perulangan bersarang dan menyatakan jumlah total iterasinya</td>
 </tr>
 <tr class="even">
 <td><code>U9.4</code></td>
-<td>Transfer (X)</td>
-<td>Menyusun komposisi fungsi: memakai hasil satu fungsi di dalam fungsi lain</td>
+<td>Write (W)</td>
+<td>Menulis perulangan bersarang sederhana sesuai spesifikasi</td>
 </tr>
 <tr class="odd">
 <td><code>U9.5</code></td>
 <td>Transfer (X)</td>
-<td>Mengubah program panjang menjadi kumpulan fungsi ber-return</td>
+<td>Mengubah while menjadi for dan sebaliknya, serta memilih yang sesuai beserta alasannya</td>
 </tr>
 </tbody>
 </table>
@@ -613,13 +613,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td>A</td>
-<td>return dan print</td>
+<td>Nilai ekstrem dan pencarian</td>
 <td>U9.1, U9.2</td>
 <td><code>W09-A</code></td>
 </tr>
 <tr class="even">
 <td>B</td>
-<td>Pengembangan bertahap dan komposisi fungsi</td>
+<td>Perulangan bersarang dan konversi while/for</td>
 <td>U9.3, U9.4, U9.5</td>
 <td><code>W09-B</code></td>
 </tr>
@@ -628,26 +628,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="konsep-kunci" class="level2">
 <h2 class="anchored" data-anchor-id="konsep-kunci">Konsep Kunci</h2>
-<p><code>print</code> menampilkan nilai ke layar, sedangkan <code>return</code> <strong>mengirim nilai kembali ke pemanggil</strong> agar bisa dipakai di dalam ekspresi. Fungsi tanpa <code>return</code> mengembalikan <code>None</code>. Bangun fungsi secara bertahap: tulis sedikit, uji, lalu lanjutkan.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> luas(p, l):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> p <span class="op">*</span> l</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> keterangan(p, l):</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> luas(p, l) <span class="op">&gt;</span> <span class="dv">100</span>:</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"besar"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"kecil"</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(luas(<span class="dv">4</span>, <span class="dv">5</span>) <span class="op">*</span> <span class="dv">2</span>)      <span class="co"># 40</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(keterangan(<span class="dv">20</span>, <span class="dv">6</span>))   <span class="co"># besar</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Pola <strong>nilai ekstrem</strong> (<em>best-so-far</em>) menyimpan kandidat terbaik sejauh ini dan menggantinya setiap kali menemukan yang lebih baik. Pola <strong>pencarian</strong> memakai <code>return</code> di dalam perulangan: fungsi langsung berhenti begitu yang dicari ketemu, dan <code>return</code> sesudah perulangan menangani kasus <em>tidak ketemu</em>. Pada perulangan <strong>bersarang</strong>, perulangan dalam berjalan penuh untuk setiap putaran perulangan luar.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> terbesar(daftar):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    juara <span class="op">=</span> daftar[<span class="dv">0</span>]            <span class="co"># best-so-far</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> daftar:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> n <span class="op">&gt;</span> juara:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            juara <span class="op">=</span> n</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> juara</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ada_gagal(nilai):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> nilai:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> n <span class="op">&lt;</span> <span class="dv">50</span>:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">True</span>          <span class="co"># ketemu: fungsi langsung berhenti</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">False</span>                 <span class="co"># sudah diperiksa semua</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(terbesar([<span class="dv">70</span>, <span class="dv">92</span>, <span class="dv">85</span>]))    <span class="co"># 92</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ada_gagal([<span class="dv">70</span>, <span class="dv">45</span>, <span class="dv">85</span>]))   <span class="co"># True</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="tebak-dulu" class="level2">
 <h2 class="anchored" data-anchor-id="tebak-dulu">Tebak Dulu</h2>
 <p>Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, <strong>baru</strong> buka jawabannya.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dobel(x):</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x <span class="op">*</span> <span class="dv">2</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>hasil <span class="op">=</span> dobel(<span class="dv">4</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hasil)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i, j)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -660,7 +663,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Tercetak <code>8</code> lalu <code>None</code>. <code>dobel</code> hanya mencetak dan tidak mengembalikan apa pun, sehingga <code>hasil</code> bernilai <code>None</code>.</p>
+<p>Tercetak 6 baris: <code>0 0</code>, <code>0 1</code>, <code>1 0</code>, <code>1 1</code>, <code>2 0</code>, <code>2 1</code>. Perulangan dalam berjalan 2 kali untuk setiap putaran perulangan luar, sehingga totalnya 3 × 2 = 6 iterasi.</p>
 </div>
 </div>
 </div>
@@ -668,7 +671,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="bacaan" class="level2">
 <h2 class="anchored" data-anchor-id="bacaan">Bacaan</h2>
 <ul>
-<li>Think Python Ch. 6 - Return values</li>
+<li>Think Python Ch. 7 - Iteration and Search</li>
 </ul>
 
 

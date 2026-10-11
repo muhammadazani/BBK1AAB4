@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Mahasiswa mampu menelusuri dan menulis perulangan while, termasuk pola pencacah, akumulator, dan sentinel, serta menuliskan rencananya dalam pseudocode sebelum menulis kode.">
+<meta name="description" content="Mahasiswa mampu membedakan return dari print dan membangun program dari fungsi-fungsi yang mengembalikan nilai.">
 
-<title>Minggu 5 · Perulangan I: while – BBK1AAB4 (Alpro SI Tel-U)</title>
+<title>Minggu 5 · Fungsi II: Fungsi Ber-return – BBK1AAB4 (Alpro SI Tel-U)</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -361,7 +361,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materi/w01.html">Paruh Pertama</a></li><li class="breadcrumb-item"><a href="../materi/w05.html">Minggu 5 · Perulangan I: while</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materi/w01.html">Paruh Pertama</a></li><li class="breadcrumb-item"><a href="../materi/w05.html">Minggu 5 · Fungsi II: Fungsi Ber-return</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -415,13 +415,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../materi/w05.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Minggu 5 · Perulangan I: while</span></a>
+ <span class="menu-text">Minggu 5 · Fungsi II: Fungsi Ber-return</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../materi/w06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Minggu 6 · Perulangan II: for</span></a>
+ <span class="menu-text">Minggu 6 · Perulangan: for dan while</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -450,7 +450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../materi/w09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Minggu 9 · Fungsi II: Fungsi Ber-return</span></a>
+ <span class="menu-text">Minggu 9 · Perulangan Lanjutan: Nilai Ekstrem, Pencarian &amp; Bersarang</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -510,8 +510,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#skill-yang-dinilai" id="toc-skill-yang-dinilai" class="nav-link active" data-scroll-target="#skill-yang-dinilai">Skill yang Dinilai</a></li>
   <li><a href="#lesson" id="toc-lesson" class="nav-link" data-scroll-target="#lesson">Lesson</a></li>
   <li><a href="#konsep-kunci" id="toc-konsep-kunci" class="nav-link" data-scroll-target="#konsep-kunci">Konsep Kunci</a></li>
+  <li><a href="#lesson-a-return-dan-print" id="toc-lesson-a-return-dan-print" class="nav-link" data-scroll-target="#lesson-a-return-dan-print">Lesson A · return dan print</a>
+  <ul class="collapse">
+  <li><a href="#masalahnya-fungsi-yang-hanya-mencetak" id="toc-masalahnya-fungsi-yang-hanya-mencetak" class="nav-link" data-scroll-target="#masalahnya-fungsi-yang-hanya-mencetak">Masalahnya: fungsi yang hanya mencetak</a></li>
+  <li><a href="#return-mengirim-nilai-ke-pemanggil" id="toc-return-mengirim-nilai-ke-pemanggil" class="nav-link" data-scroll-target="#return-mengirim-nilai-ke-pemanggil">return mengirim nilai ke pemanggil</a></li>
+  <li><a href="#fungsi-tanpa-return-mengembalikan-none" id="toc-fungsi-tanpa-return-mengembalikan-none" class="nav-link" data-scroll-target="#fungsi-tanpa-return-mengembalikan-none">Fungsi tanpa return mengembalikan None</a></li>
+  <li><a href="#return-langsung-mengakhiri-fungsi" id="toc-return-langsung-mengakhiri-fungsi" class="nav-link" data-scroll-target="#return-langsung-mengakhiri-fungsi">return langsung mengakhiri fungsi</a></li>
+  <li><a href="#beberapa-jalur-return" id="toc-beberapa-jalur-return" class="nav-link" data-scroll-target="#beberapa-jalur-return">Beberapa jalur return</a></li>
+  <li><a href="#setiap-jalur-harus-berakhir-di-return" id="toc-setiap-jalur-harus-berakhir-di-return" class="nav-link" data-scroll-target="#setiap-jalur-harus-berakhir-di-return">Setiap jalur harus berakhir di return</a></li>
+  <li><a href="#fungsi-boolean" id="toc-fungsi-boolean" class="nav-link" data-scroll-target="#fungsi-boolean">Fungsi boolean</a></li>
+  <li><a href="#mengubah-fungsi-ber-print-menjadi-ber-return" id="toc-mengubah-fungsi-ber-print-menjadi-ber-return" class="nav-link" data-scroll-target="#mengubah-fungsi-ber-print-menjadi-ber-return">Mengubah fungsi ber-print menjadi ber-return</a></li>
+  </ul></li>
+  <li><a href="#lesson-b-memecahkan-masalah-dengan-fungsi-langkah-demi-langkah" id="toc-lesson-b-memecahkan-masalah-dengan-fungsi-langkah-demi-langkah" class="nav-link" data-scroll-target="#lesson-b-memecahkan-masalah-dengan-fungsi-langkah-demi-langkah">Lesson B · Memecahkan Masalah dengan Fungsi, Langkah demi Langkah</a>
+  <ul class="collapse">
+  <li><a href="#soal-laundry" id="toc-soal-laundry" class="nav-link" data-scroll-target="#soal-laundry">Soal laundry</a></li>
+  <li><a href="#resep-lima-langkah" id="toc-resep-lima-langkah" class="nav-link" data-scroll-target="#resep-lima-langkah">Resep lima langkah</a></li>
+  <li><a href="#langkah-1-pahami-hitung-dengan-tangan" id="toc-langkah-1-pahami-hitung-dengan-tangan" class="nav-link" data-scroll-target="#langkah-1-pahami-hitung-dengan-tangan">Langkah 1 · Pahami: hitung dengan tangan</a></li>
+  <li><a href="#langkah-2-pecah-satu-sub-tugas-satu-fungsi" id="toc-langkah-2-pecah-satu-sub-tugas-satu-fungsi" class="nav-link" data-scroll-target="#langkah-2-pecah-satu-sub-tugas-satu-fungsi">Langkah 2 · Pecah: satu sub-tugas, satu fungsi</a></li>
+  <li><a href="#langkah-3-rancang-kerangka-fungsi-dan-uji" id="toc-langkah-3-rancang-kerangka-fungsi-dan-uji" class="nav-link" data-scroll-target="#langkah-3-rancang-kerangka-fungsi-dan-uji">Langkah 3 · Rancang: kerangka fungsi dan uji</a></li>
+  <li><a href="#langkah-4-isi-dan-uji-satu-per-satu" id="toc-langkah-4-isi-dan-uji-satu-per-satu" class="nav-link" data-scroll-target="#langkah-4-isi-dan-uji-satu-per-satu">Langkah 4 · Isi dan uji, satu per satu</a></li>
+  <li><a href="#komposisi-fungsi" id="toc-komposisi-fungsi" class="nav-link" data-scroll-target="#komposisi-fungsi">Komposisi fungsi</a></li>
+  <li><a href="#langkah-5-rakit-bagian-utama" id="toc-langkah-5-rakit-bagian-utama" class="nav-link" data-scroll-target="#langkah-5-rakit-bagian-utama">Langkah 5 · Rakit: bagian utama</a></li>
+  </ul></li>
+  <li><a href="#kesalahan-umum" id="toc-kesalahan-umum" class="nav-link" data-scroll-target="#kesalahan-umum">Kesalahan Umum</a></li>
   <li><a href="#tebak-dulu" id="toc-tebak-dulu" class="nav-link" data-scroll-target="#tebak-dulu">Tebak Dulu</a></li>
+  <li><a href="#latihan-mandiri" id="toc-latihan-mandiri" class="nav-link" data-scroll-target="#latihan-mandiri">Latihan Mandiri</a></li>
   <li><a href="#bacaan" id="toc-bacaan" class="nav-link" data-scroll-target="#bacaan">Bacaan</a></li>
+  <li><a href="#referensi" id="toc-referensi" class="nav-link" data-scroll-target="#referensi">Referensi</a></li>
   </ul>
 </nav>
     </div>
@@ -519,17 +544,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materi/w01.html">Paruh Pertama</a></li><li class="breadcrumb-item"><a href="../materi/w05.html">Minggu 5 · Perulangan I: while</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materi/w01.html">Paruh Pertama</a></li><li class="breadcrumb-item"><a href="../materi/w05.html">Minggu 5 · Fungsi II: Fungsi Ber-return</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Minggu 5 · Perulangan I: while</h1>
+<h1 class="title">Minggu 5 · Fungsi II: Fungsi Ber-return</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Kontrol Alur</div>
+    <div class="quarto-category">Fungsi</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Mahasiswa mampu menelusuri dan menulis perulangan while, termasuk pola pencacah, akumulator, dan sentinel, serta menuliskan rencananya dalam pseudocode sebelum menulis kode.
+    Mahasiswa mampu membedakan return dari print dan membangun program dari fungsi-fungsi yang mengembalikan nilai.
   </div>
 </div>
 
@@ -547,7 +572,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="week-meta">
-<p><span>Minggu 5</span><span>Lesson A: Menelusuri while loop</span><span>Lesson B: Pola pencacah, akumulator, dan sentinel</span></p>
+<p><span>Minggu 5</span><span>Lesson A: return dan print</span><span>Lesson B: Memecahkan masalah dengan fungsi, langkah demi langkah</span></p>
 </div>
 <section id="skill-yang-dinilai" class="level2">
 <h2 class="anchored" data-anchor-id="skill-yang-dinilai">Skill yang Dinilai</h2>
@@ -568,27 +593,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td><code>U5.1</code></td>
 <td>Trace (T)</td>
-<td>Membuat trace table while loop: nilai tiap iterasi dan alasan perulangan berhenti</td>
+<td>Membedakan return dan print; memprediksi nilai pemanggilan fungsi yang dipakai di dalam ekspresi, termasuk None</td>
 </tr>
 <tr class="even">
 <td><code>U5.2</code></td>
-<td>Trace (T)</td>
-<td>Mendiagnosis infinite loop dan kesalahan off-by-one</td>
+<td>Write (W)</td>
+<td>Menulis fungsi ber-return dengan lebih dari satu jalur return, termasuk fungsi boolean</td>
 </tr>
 <tr class="odd">
 <td><code>U5.3</code></td>
 <td>Write (W)</td>
-<td>Menulis pola pencacah (counter) dan pola akumulator dengan while</td>
+<td>Membangun fungsi secara bertahap (incremental development) dan mengujinya di tiap tahap</td>
 </tr>
 <tr class="even">
 <td><code>U5.4</code></td>
-<td>Write (W)</td>
-<td>Menulis perulangan bersentinel yang berhenti pada nilai penanda</td>
+<td>Transfer (X)</td>
+<td>Menyusun komposisi fungsi: memakai hasil satu fungsi di dalam fungsi lain</td>
 </tr>
 <tr class="odd">
 <td><code>U5.5</code></td>
 <td>Transfer (X)</td>
-<td>Menuliskan rencana perulangan dalam pseudocode sebelum menulis kode</td>
+<td>Memecah masalah menjadi beberapa fungsi ber-return dan merakitnya menjadi satu program</td>
 </tr>
 </tbody>
 </table>
@@ -613,13 +638,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td>A</td>
-<td>Menelusuri while loop</td>
+<td>return dan print</td>
 <td>U5.1, U5.2</td>
 <td><code>W05-A</code></td>
 </tr>
 <tr class="even">
 <td>B</td>
-<td>Pola pencacah, akumulator, dan sentinel</td>
+<td>Memecahkan masalah dengan fungsi, langkah demi langkah</td>
 <td>U5.3, U5.4, U5.5</td>
 <td><code>W05-B</code></td>
 </tr>
@@ -628,24 +653,521 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="konsep-kunci" class="level2">
 <h2 class="anchored" data-anchor-id="konsep-kunci">Konsep Kunci</h2>
-<p>Setiap perulangan punya tiga bagian: <strong>inisialisasi</strong>, <strong>kondisi</strong>, dan <strong>pemutakhiran</strong>. <code>while</code> memeriksa kondisi sebelum setiap putaran. Jika tidak ada yang mengubah variabel di dalam kondisi, loop tidak akan pernah berhenti.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span>                           <span class="co"># akumulator</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>angka <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Angka (0 = selesai): "</span>))</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> angka <span class="op">!=</span> <span class="dv">0</span>:                   <span class="co"># sentinel</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> total <span class="op">+</span> angka</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    angka <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Angka (0 = selesai): "</span>))</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jumlah:"</span>, total)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>print</code> hanya menampilkan nilai ke layar, sedangkan <code>return</code> <strong>mengirim nilai kembali ke pemanggil</strong> sehingga bisa dipakai di dalam ekspresi. Fungsi tanpa <code>return</code> mengembalikan <code>None</code>. Satu fungsi boleh punya beberapa jalur <code>return</code>; baris sesudah <code>return</code> tidak pernah dijalankan. Bangun fungsi secara bertahap: lengkapi satu fungsi, uji, baru lanjut.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dapat_gratis_ongkir(belanja):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> belanja <span class="op">&gt;=</span> <span class="dv">100000</span>          <span class="co"># fungsi boolean</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ongkir(berat, belanja):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> dapat_gratis_ongkir(belanja):</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span>                      <span class="co"># jalur 1</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> berat <span class="op">*</span> <span class="dv">10000</span>              <span class="co"># jalur 2</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>belanja <span class="op">=</span> <span class="dv">80000</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> belanja <span class="op">+</span> ongkir(<span class="dv">2</span>, belanja)  <span class="co"># hasil fungsi dipakai di dalam ekspresi</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total)                          <span class="co"># 100000</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="lesson-a-return-dan-print" class="level2">
+<h2 class="anchored" data-anchor-id="lesson-a-return-dan-print">Lesson A · return dan print</h2>
+<section id="masalahnya-fungsi-yang-hanya-mencetak" class="level3">
+<h3 class="anchored" data-anchor-id="masalahnya-fungsi-yang-hanya-mencetak">Masalahnya: fungsi yang hanya mencetak</h3>
+<p>Minggu lalu fungsimu <strong>melakukan</strong> sesuatu: mencetak kartu, garis, atau struk. Minggu ini fungsimu <strong>menghasilkan</strong> sesuatu. Bayangkan fungsi ongkos kirim untuk toko online kampus, Rp10.000 per kg:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ongkir_cetak(berat):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(berat <span class="op">*</span> <span class="dv">10000</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>harga <span class="op">=</span> <span class="dv">50000</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> harga <span class="op">+</span> ongkir_cetak(<span class="dv">2</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>20000
+Traceback (most recent call last):
+  ...
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'</code></pre>
+<p>Angka <code>20000</code> tampil dengan benar, tetapi program tetap berhenti. Penyebabnya: <code>ongkir_cetak</code> hanya <strong>mencetak</strong> hasilnya, tidak <strong>mengembalikannya</strong>. Bagi pemanggil, <code>ongkir_cetak(2)</code> bernilai <code>None</code>, dan <code>50000 + None</code> tidak bisa dihitung.</p>
+</section>
+<section id="return-mengirim-nilai-ke-pemanggil" class="level3">
+<h3 class="anchored" data-anchor-id="return-mengirim-nilai-ke-pemanggil">return mengirim nilai ke pemanggil</h3>
+<p>Tonton dulu video berikut tentang karakteristik <code>return</code>, lalu baca penjelasannya di bawah.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/P1OxLjxZS1g" title="Fungsi dengan return di Python (Bagian 1/2) - Karakteristik return" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Pernyataan <code>return</code> mengakhiri fungsi dan mengirim sebuah nilai kembali ke tempat fungsi itu dipanggil (Downey, 2024, Bab 6; Python Software Foundation [PSF], t.t.-a, §7.6). Fungsi seperti ini disebut <strong>fungsi ber-return</strong> (<em>fruitful function</em>).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ongkir(berat):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> berat <span class="op">*</span> <span class="dv">10000</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>harga <span class="op">=</span> <span class="dv">50000</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> harga <span class="op">+</span> ongkir(<span class="dv">2</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total)          <span class="co"># 70000</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Cara membacanya: saat Python mengevaluasi <code>harga + ongkir(2)</code>, ia menjalankan <code>ongkir(2)</code> lebih dulu, lalu <strong>mengganti pemanggilan itu dengan nilai kembaliannya</strong>. Ekspresinya menjadi <code>50000 + 20000</code>. Karena pemanggilan fungsi ber-return adalah sebuah <strong>ekspresi</strong>, hasilnya boleh dipakai di mana pun nilai boleh dipakai: disimpan ke variabel, dijumlahkan, dibandingkan, atau menjadi argumen fungsi lain.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> ongkir(<span class="dv">3</span>)                  <span class="co"># disimpan: 30000</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ongkir(<span class="dv">1</span>) <span class="op">+</span> ongkir(<span class="dv">2</span>))   <span class="co"># dijumlahkan: 30000</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ongkir(<span class="dv">2</span>) <span class="op">&gt;</span> <span class="dv">15000</span>)       <span class="co"># dibandingkan: True</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">round</span>(ongkir(<span class="dv">2</span>) <span class="op">/</span> <span class="dv">3</span>))    <span class="co"># argumen fungsi lain: 6667</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Telusuri dua versi fungsi ongkir berikut. Perhatikan ke mana angka <code>20000</code> pergi pada masing-masing versi: ke <strong>layar</strong>, atau ke <strong>variabel pemanggil</strong>.</p>
+<div class="stackviz" data-trace="trace-w05-return" data-title="Telusuri: print vs return"></div>
+<script type="application/json" id="trace-w05-return">{"code":["def ongkir_cetak(berat):","    print(berat * 10000)","","def ongkir(berat):","    return berat * 10000","","a = ongkir_cetak(2)","b = ongkir(2)","print(a, b)"],"steps":[{"line":null,"frames":[{"name":"__main__","vars":[]}],"out":"","note":"Program belum berjalan. Tebak dulu: apa isi `a` dan `b`, dan apa yang dicetak baris 9? Lalu tekan **Lanjut**."},{"line":1,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"]]}],"out":"","note":"Baris 1: `def` hanya membuat fungsi `ongkir_cetak`; badannya belum dijalankan."},{"line":4,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"]]}],"out":"","note":"Baris 4: hal yang sama untuk `ongkir`. Python melompat ke baris 7."},{"line":7,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"]]},{"name":"ongkir_cetak","vars":[["berat","2"]]}],"out":"","note":"Baris 7 memanggil `ongkir_cetak(2)`. Frame baru dibuat dengan `berat ← 2`. Ruas kiri `a = ...` **menunggu** sampai panggilan ini selesai."},{"line":2,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"]]},{"name":"ongkir_cetak","vars":[["berat","2"]],"ret":"None"}],"out":"20000\n","note":"Baris 2: `print` **menampilkan** `20000` ke layar. Tidak ada `return`, jadi fungsi selesai dan mengembalikan **`None`**."},{"line":7,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"],["a","None"]]}],"out":"20000\n","note":"Kembali ke baris 7: pemanggilan `ongkir_cetak(2)` digantikan nilai kembaliannya, `None`. Jadi `a` berisi `None`, bukan `20000`. Angka yang tadi tampil sudah hilang."},{"line":8,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"],["a","None"]]},{"name":"ongkir","vars":[["berat","2"]]}],"out":"20000\n","note":"Baris 8 memanggil `ongkir(2)`. Frame baru dibuat dengan `berat ← 2`."},{"line":5,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"],["a","None"]]},{"name":"ongkir","vars":[["berat","2"]],"ret":"20000"}],"out":"20000\n","note":"Baris 5: `return` **mengirim** `20000` ke pemanggil dan langsung mengakhiri fungsi. Tidak ada yang tercetak."},{"line":8,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"],["a","None"],["b","20000"]]}],"out":"20000\n","note":"Kembali ke baris 8: pemanggilan `ongkir(2)` digantikan `20000`, sehingga `b` berisi `20000`. Frame `ongkir` sudah dibuang, tetapi nilainya selamat."},{"line":9,"frames":[{"name":"__main__","vars":[["ongkir_cetak","<fungsi>"],["ongkir","<fungsi>"],["a","None"],["b","20000"]]}],"out":"20000\nNone 20000\n","note":"Baris 9 mencetak `None 20000`. Hanya nilai yang dikirim dengan `return` yang bisa disimpan dan dipakai lagi."}]}</script>
+<script src="../assets/stackviz.js"></script>
+<div class="table-responsive">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 36%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><code>print(nilai)</code></th>
+<th><code>return nilai</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ke mana nilainya?</td>
+<td>Ke layar, untuk dibaca manusia</td>
+<td>Ke pemanggil, untuk dipakai program</td>
+</tr>
+<tr class="even">
+<td>Nilai pemanggilan fungsi</td>
+<td><code>None</code></td>
+<td><code>nilai</code></td>
+</tr>
+<tr class="odd">
+<td>Bisa dipakai di ekspresi?</td>
+<td>Tidak</td>
+<td>Ya</td>
+</tr>
+<tr class="even">
+<td>Fungsi berhenti?</td>
+<td>Tidak, lanjut ke baris berikutnya</td>
+<td>Ya, saat itu juga</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code>print</code> di dalam fungsi disebut <strong>efek samping</strong> (<em>side effect</em>): sesuatu yang dilakukan fungsi selain mengembalikan nilai. Efek samping tidak salah, tetapi angka yang <strong>tampil</strong> di layar tidak <strong>tersimpan</strong> di mana pun.</p>
+</section>
+<section id="fungsi-tanpa-return-mengembalikan-none" class="level3">
+<h3 class="anchored" data-anchor-id="fungsi-tanpa-return-mengembalikan-none">Fungsi tanpa return mengembalikan None</h3>
+<p>Setiap fungsi Python mengembalikan sebuah nilai. Jika eksekusi mencapai akhir badan fungsi tanpa bertemu <code>return</code>, fungsi mengembalikan nilai khusus <code>None</code> (PSF, t.t.-b, §4.8). Itulah asal <code>None</code> pada fungsi void di Minggu 4.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>hasil <span class="op">=</span> ongkir_cetak(<span class="dv">2</span>)    <span class="co"># mencetak 20000</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hasil)               <span class="co"># None</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Perhatikan: <code>20000</code> tetap muncul di layar karena <code>print</code> di dalam fungsi dijalankan, tetapi <code>hasil</code> berisi <code>None</code>. Galatnya baru muncul <strong>belakangan</strong>, saat <code>None</code> dipakai dalam perhitungan. Jadi jika melihat <code>TypeError ... 'NoneType'</code>, cari fungsi yang lupa <code>return</code>.</p>
+<p>Aturan praktis: <strong>kalau hasil fungsi akan dipakai lagi, kembalikan dengan <code>return</code>.</strong> Biarkan pemanggil yang memutuskan kapan mencetak.</p>
+</section>
+<section id="return-langsung-mengakhiri-fungsi" class="level3">
+<h3 class="anchored" data-anchor-id="return-langsung-mengakhiri-fungsi">return langsung mengakhiri fungsi</h3>
+<p>Begitu <code>return</code> dijalankan, fungsi berhenti. Baris sesudahnya tidak pernah dijalankan dan disebut <strong>kode mati</strong> (<em>dead code</em>) (Downey, 2024, Bab 6):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ongkir(berat):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> berat <span class="op">*</span> <span class="dv">10000</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"ongkir dihitung"</span>)    <span class="co"># kode mati: tidak pernah tercetak</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ongkir(<span class="dv">3</span>))                <span class="co"># 30000</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="beberapa-jalur-return" class="level3">
+<h3 class="anchored" data-anchor-id="beberapa-jalur-return">Beberapa jalur return</h3>
+<p>Video bagian kedua membahas fungsi dengan lebih dari satu <code>return</code>.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/gfgiDE6Y7iw" title="Fungsi dengan return di Python (Bagian 2/2) - Fungsi dengan lebih dari 1 return" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Fungsi boleh punya beberapa <code>return</code>, misalnya satu di tiap cabang <code>if</code>. Yang dijalankan hanya <code>return</code> <strong>pertama yang dicapai</strong>. Aturan baru toko: belanja Rp100.000 atau lebih, gratis ongkir.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ongkir(berat, belanja):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> belanja <span class="op">&gt;=</span> <span class="dv">100000</span>:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> berat <span class="op">*</span> <span class="dv">10000</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ongkir(<span class="dv">2</span>, <span class="dv">150000</span>))    <span class="co"># 0</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ongkir(<span class="dv">2</span>, <span class="dv">80000</span>))     <span class="co"># 20000</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Pada <code>ongkir(2, 150000)</code>, syarat di baris 2 benar, <code>return 0</code> dijalankan, dan fungsi selesai. Baris 5 tidak pernah dibaca. Jalan yang dilalui satu pemanggilan sampai bertemu <code>return</code> disebut <strong>jalur return</strong>.</p>
+<p>Karena <code>return</code> sudah mengakhiri fungsi, <code>else</code> boleh dihilangkan. Kedua versi berikut sama:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ongkir(berat, belanja):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> belanja <span class="op">&gt;=</span> <span class="dv">100000</span>:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> berat <span class="op">*</span> <span class="dv">10000</span>         <span class="co"># hanya tercapai jika syarat di atas salah</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="setiap-jalur-harus-berakhir-di-return" class="level3">
+<h3 class="anchored" data-anchor-id="setiap-jalur-harus-berakhir-di-return">Setiap jalur harus berakhir di return</h3>
+<p>Jika ada jalur yang tidak bertemu <code>return</code>, pemanggilan lewat jalur itu menghasilkan <code>None</code> (Downey, 2024, Bab 6). Perhatikan fungsi berikut:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ongkir_salah(berat, belanja):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> belanja <span class="op">&gt;</span> <span class="dv">100000</span>:</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> belanja <span class="op">&lt;</span> <span class="dv">100000</span>:</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> berat <span class="op">*</span> <span class="dv">10000</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ongkir_salah(<span class="dv">2</span>, <span class="dv">150000</span>))    <span class="co"># 0</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ongkir_salah(<span class="dv">2</span>, <span class="dv">80000</span>))     <span class="co"># 20000</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ongkir_salah(<span class="dv">2</span>, <span class="dv">100000</span>))    <span class="co"># None</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Belanja <strong>tepat</strong> 100000 lolos dari kedua <code>if</code>: tidak lebih dari, tidak kurang dari. Eksekusi sampai di akhir fungsi tanpa <code>return</code>, sehingga hasilnya <code>None</code>. Dua uji pertama benar, jadi <em>bug</em> ini mudah terlewat; ia baru ketahuan saat seseorang menulis <code>50000 + ongkir_salah(2, 100000)</code>.</p>
+<p>Perbaikannya: pastikan jalur terakhir selalu tercapai, dengan <code>else</code> atau <code>return</code> tanpa syarat di akhir fungsi.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ongkir(berat, belanja):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> belanja <span class="op">&gt;</span> <span class="dv">100000</span>:</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> berat <span class="op">*</span> <span class="dv">10000</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled" title="Cara mencari jalur yang bocor">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Catatan</span>Cara mencari jalur yang bocor
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Untuk setiap <code>if</code> tanpa <code>else</code>, tanyakan: “nilai apa yang membuat syarat ini salah, dan ke mana eksekusi pergi setelahnya?” Uji nilai di <strong>perbatasan</strong> syarat (di sini tepat 100000), karena di situlah jalur paling sering bocor.</p>
+</div>
+</div>
+</section>
+<section id="fungsi-boolean" class="level3">
+<h3 class="anchored" data-anchor-id="fungsi-boolean">Fungsi boolean</h3>
+<p>Fungsi boleh mengembalikan <code>True</code> atau <code>False</code>. Fungsi seperti ini disebut <strong>fungsi boolean</strong>, dan namanya biasanya berbentuk pertanyaan ya/tidak, misalnya <code>dapat_gratis_ongkir</code> atau <code>is_genap</code> (Downey, 2024, Bab 6). Fungsi boolean memberi <strong>nama</strong> pada syarat yang panjang, sehingga <code>if</code> menjadi mudah dibaca.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dapat_gratis_ongkir(belanja):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> belanja <span class="op">&gt;=</span> <span class="dv">100000</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ongkir(berat, belanja):</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> dapat_gratis_ongkir(belanja):</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> berat <span class="op">*</span> <span class="dv">10000</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dapat_gratis_ongkir(<span class="dv">150000</span>))    <span class="co"># True</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ongkir(<span class="dv">2</span>, <span class="dv">80000</span>))               <span class="co"># 20000</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Ekspresi perbandingan sudah bernilai <code>True</code> atau <code>False</code>, jadi bisa langsung dikembalikan dan langsung dipakai di <code>if</code>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 55%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Benar, tetapi tidak perlu</th>
+<th>Cukup</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>if belanja &gt;= 100000:</code><br><code>return True</code><br><code>else:</code><br><code>return False</code></td>
+<td><code>return belanja &gt;= 100000</code></td>
+</tr>
+<tr class="even">
+<td><code>if dapat_gratis_ongkir(belanja) == True:</code></td>
+<td><code>if dapat_gratis_ongkir(belanja):</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mengubah-fungsi-ber-print-menjadi-ber-return" class="level3">
+<h3 class="anchored" data-anchor-id="mengubah-fungsi-ber-print-menjadi-ber-return">Mengubah fungsi ber-print menjadi ber-return</h3>
+<p>Saat menemukan fungsi yang mencetak hasil hitungannya, ubah dengan tiga langkah:</p>
+<ol type="1">
+<li><strong>Nama menyatakan hasil.</strong> <code>diskon</code>, bukan <code>cetak_diskon</code>.</li>
+<li><strong><code>print</code> diganti <code>return</code>.</strong> Periksa bahwa setiap jalur berakhir di <code>return</code>.</li>
+<li><strong>Pemanggil yang mencetak dan menghitung.</strong> <code>print</code> pindah ke luar fungsi.</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sebelum</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cetak_diskon(harga):</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> harga <span class="op">&gt;=</span> <span class="dv">50000</span>:</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(harga <span class="op">//</span> <span class="dv">10</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="dv">0</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Sesudah</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> diskon(harga):</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> harga <span class="op">&gt;=</span> <span class="dv">50000</span>:</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> harga <span class="op">//</span> <span class="dv">10</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>harga <span class="op">=</span> <span class="dv">80000</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Bayar:"</span>, harga <span class="op">-</span> diskon(harga))    <span class="co"># Bayar: 72000</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="lesson-b-memecahkan-masalah-dengan-fungsi-langkah-demi-langkah" class="level2">
+<h2 class="anchored" data-anchor-id="lesson-b-memecahkan-masalah-dengan-fungsi-langkah-demi-langkah">Lesson B · Memecahkan Masalah dengan Fungsi, Langkah demi Langkah</h2>
+<p>Fungsi ber-return membuat kita bisa memecah satu masalah menjadi beberapa fungsi kecil, menguji tiap fungsi sendiri-sendiri, lalu merakitnya. Lesson ini memakai satu <strong>resep lima langkah</strong> pada soal laundry dari Minggu 3.</p>
+<section id="soal-laundry" class="level3">
+<h3 class="anchored" data-anchor-id="soal-laundry">Soal laundry</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layanan</th>
+<th>Tarif</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>reguler</td>
+<td>Rp6.000 per kg</td>
+</tr>
+<tr class="even">
+<td>kilat</td>
+<td>Rp9.000 per kg</td>
+</tr>
+<tr class="odd">
+<td>express</td>
+<td>Rp15.000 per kg</td>
+</tr>
+</tbody>
+</table>
+<p>Potongan Rp5.000 jika berat <strong>lebih dari</strong> 4 kg, kecuali layanan express. Program membaca layanan dan berat, lalu mencetak total yang harus dibayar.</p>
+</section>
+<section id="resep-lima-langkah" class="level3">
+<h3 class="anchored" data-anchor-id="resep-lima-langkah">Resep lima langkah</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Langkah</th>
+<th>Yang dilakukan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 · Pahami</td>
+<td>Hitung satu contoh dengan tangan; hasilnya menjadi uji</td>
+</tr>
+<tr class="even">
+<td>2 · Pecah</td>
+<td>Satu sub-tugas = satu fungsi ber-return</td>
+</tr>
+<tr class="odd">
+<td>3 · Rancang</td>
+<td>Header, docstring, <code>return 0</code>, dan satu uji</td>
+</tr>
+<tr class="even">
+<td>4 · Isi dan uji</td>
+<td>Lengkapi satu fungsi, jalankan ujinya sampai <code>True</code>, baru lanjut</td>
+</tr>
+<tr class="odd">
+<td>5 · Rakit</td>
+<td>Bagian utama: <code>input()</code> → panggil fungsi → <code>print()</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="langkah-1-pahami-hitung-dengan-tangan" class="level3">
+<h3 class="anchored" data-anchor-id="langkah-1-pahami-hitung-dengan-tangan">Langkah 1 · Pahami: hitung dengan tangan</h3>
+<p>Sebelum menulis kode, selesaikan <strong>satu contoh</strong> dengan tangan. Rina mencuci 5 kg dengan layanan reguler:</p>
+<pre><code>tarif reguler          → 6000 per kg
+6000 × 5               → 30000
+5 &gt; 4 dan bukan express → potongan 5000
+30000 − 5000           → 25000</code></pre>
+<p>Hitungan tangan memberi dua hal sekaligus: <strong>jawaban yang benar</strong> (<code>25000</code>, yang nanti menjadi uji) dan <strong>langkah-langkah kecil</strong> yang akan menjadi fungsi. Jika kamu belum bisa menghitungnya dengan tangan, kamu belum siap menulis programnya.</p>
+</section>
+<section id="langkah-2-pecah-satu-sub-tugas-satu-fungsi" class="level3">
+<h3 class="anchored" data-anchor-id="langkah-2-pecah-satu-sub-tugas-satu-fungsi">Langkah 2 · Pecah: satu sub-tugas, satu fungsi</h3>
+<p>Ubah setiap langkah hitungan tangan menjadi satu fungsi. <strong>Satu fungsi menjawab satu pertanyaan, dan jawabannya satu nilai.</strong> Parameternya adalah apa yang perlu diketahui untuk menjawab pertanyaan itu.</p>
+<div class="table-responsive">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 16%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Hitungan tangan</th>
+<th>Sub-tugas</th>
+<th>Perlu tahu apa?</th>
+<th>Hasil</th>
+<th>Fungsi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tarif reguler → 6000</td>
+<td>cari tarif</td>
+<td>layanan</td>
+<td>tarif per kg</td>
+<td><code>tarif_layanan(layanan)</code></td>
+</tr>
+<tr class="even">
+<td>5 &gt; 4, bukan express → 5000</td>
+<td>cek potongan</td>
+<td>berat, layanan</td>
+<td>potongan</td>
+<td><code>potongan(berat, layanan)</code></td>
+</tr>
+<tr class="odd">
+<td>6000 × 5 − 5000 → 25000</td>
+<td>hitung total</td>
+<td>layanan, berat</td>
+<td>total bayar</td>
+<td><code>total_bayar(layanan, berat)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Dua catatan:</p>
+<ul>
+<li><code>potongan</code> butuh <code>layanan</code> juga, karena aturan potongannya bergantung pada layanan (express tidak dapat potongan).</li>
+<li><code>6000 × 5</code> tidak dijadikan fungsi sendiri. Ia hanya satu operasi, dan sudah cukup jelas di dalam <code>total_bayar</code>.</li>
+</ul>
+<p><code>input()</code> dan <code>print()</code> <strong>bukan</strong> tugas fungsi-fungsi ini. Fungsi menerima data lewat parameter dan mengirim hasil lewat <code>return</code>; membaca dan mencetak adalah tugas <strong>bagian utama</strong> (langkah 5).</p>
+</section>
+<section id="langkah-3-rancang-kerangka-fungsi-dan-uji" class="level3">
+<h3 class="anchored" data-anchor-id="langkah-3-rancang-kerangka-fungsi-dan-uji">Langkah 3 · Rancang: kerangka fungsi dan uji</h3>
+<p>Tulis setiap fungsi sebagai <strong>kerangka</strong> (<em>stub</em>): header, docstring, dan <code>return 0</code>. Kerangka ini sudah bisa dipanggil dan diuji walaupun isinya belum ada. Tambahkan satu <strong>uji</strong>: baris yang membandingkan hasil fungsi dengan jawaban hitungan tangan.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tarif_layanan(layanan):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Kembalikan tarif per kg untuk layanan: reguler, kilat, atau express."""</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tarif_layanan(<span class="st">"kilat"</span>) <span class="op">==</span> <span class="dv">9000</span>)    <span class="co"># False</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>False</code> di sini berarti fungsinya <strong>belum selesai</strong>, bukan rusak. Tujuan langkah 4 adalah mengubah <code>False</code> itu menjadi <code>True</code>.</p>
+</section>
+<section id="langkah-4-isi-dan-uji-satu-per-satu" class="level3">
+<h3 class="anchored" data-anchor-id="langkah-4-isi-dan-uji-satu-per-satu">Langkah 4 · Isi dan uji, satu per satu</h3>
+<p>Downey (2024, Bab 6) menyebut cara ini <strong>pengembangan bertahap</strong> (<em>incremental development</em>): tambahkan dan uji sedikit kode setiap kali, sehingga saat ada galat, kamu tahu persis di mana mencarinya. Lengkapi <strong>satu</strong> fungsi, jalankan ujinya sampai <code>True</code>, baru pindah ke fungsi berikutnya.</p>
+<p><strong>Fungsi 1 · <code>tarif_layanan</code></strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tarif_layanan(layanan):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Kembalikan tarif per kg untuk layanan: reguler, kilat, atau express."""</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> layanan <span class="op">==</span> <span class="st">"reguler"</span>:</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">6000</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> layanan <span class="op">==</span> <span class="st">"kilat"</span>:</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">9000</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">15000</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tarif_layanan(<span class="st">"kilat"</span>) <span class="op">==</span> <span class="dv">9000</span>)    <span class="co"># True</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Fungsi 2 · <code>potongan</code>.</strong> Uji juga <strong>nilai batas</strong> (<em>boundary value</em>): nilai tepat di perbatasan aturan. Aturannya “lebih dari 4 kg”, jadi 4 kg <strong>tidak</strong> mendapat potongan.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> potongan(berat, layanan):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Kembalikan potongan: 5000 jika berat lebih dari 4 kg dan bukan express."""</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> berat <span class="op">&gt;</span> <span class="dv">4</span> <span class="kw">and</span> layanan <span class="op">!=</span> <span class="st">"express"</span>:</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">5000</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(potongan(<span class="dv">5</span>, <span class="st">"reguler"</span>) <span class="op">==</span> <span class="dv">5000</span>)    <span class="co"># True</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(potongan(<span class="dv">4</span>, <span class="st">"reguler"</span>) <span class="op">==</span> <span class="dv">0</span>)       <span class="co"># True, nilai batas</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(potongan(<span class="dv">5</span>, <span class="st">"express"</span>) <span class="op">==</span> <span class="dv">0</span>)       <span class="co"># True</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Seandainya baris 3 keliru ditulis <code>berat &gt;= 4</code>, uji nilai batas langsung menjadi <code>False</code>. Tanpa uji itu, kesalahannya baru ketahuan saat pelanggan protes.</p>
+<p><strong>Fungsi 3 · <code>total_bayar</code></strong> cukup memanggil dua fungsi yang ujinya sudah <code>True</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> total_bayar(layanan, berat):</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Kembalikan total bayar laundry setelah potongan."""</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    biaya <span class="op">=</span> tarif_layanan(layanan) <span class="op">*</span> berat</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> biaya <span class="op">-</span> potongan(berat, layanan)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total_bayar(<span class="st">"reguler"</span>, <span class="dv">5</span>) <span class="op">==</span> <span class="dv">25000</span>)    <span class="co"># True</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total_bayar(<span class="st">"express"</span>, <span class="dv">5</span>) <span class="op">==</span> <span class="dv">75000</span>)    <span class="co"># True</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Jika <code>total_bayar</code> salah padahal dua fungsi lainnya sudah lulus uji, kesalahannya pasti ada di <strong>dua baris</strong> <code>total_bayar</code> itu sendiri. Inilah keuntungan menguji satu per satu.</p>
+</section>
+<section id="komposisi-fungsi" class="level3">
+<h3 class="anchored" data-anchor-id="komposisi-fungsi">Komposisi fungsi</h3>
+<p><code>total_bayar</code> memakai hasil <code>tarif_layanan</code> dan <code>potongan</code> di dalam ekspresinya. Memakai hasil satu fungsi di dalam fungsi lain disebut <strong>komposisi</strong> (<em>composition</em>) (Downey, 2024, Bab 6). Komposisi hanya mungkin karena kedua fungsi itu <strong>mengembalikan</strong> nilai; jika salah satunya hanya mencetak, <code>total_bayar</code> akan menerima <code>None</code>.</p>
+<p>Telusuri program lengkapnya. Perhatikan bahwa saat <code>tarif_layanan</code> berjalan, ada <strong>tiga</strong> frame di stack, dan <code>total_bayar</code> menunggu jawabannya sebelum bisa mengalikan.</p>
+<div class="stackviz" data-trace="trace-w05-laundry" data-title="Telusuri: komposisi fungsi laundry"></div>
+<script type="application/json" id="trace-w05-laundry">{"code":["def tarif_layanan(layanan):","    if layanan == \"reguler\":","        return 6000","    elif layanan == \"kilat\":","        return 9000","    else:","        return 15000","","def potongan(berat, layanan):","    if berat > 4 and layanan != \"express\":","        return 5000","    else:","        return 0","","def total_bayar(layanan, berat):","    biaya = tarif_layanan(layanan) * berat","    return biaya - potongan(berat, layanan)","","print(total_bayar(\"reguler\", 5))"],"steps":[{"line":null,"frames":[{"name":"__main__","vars":[]}],"out":"","note":"Program belum berjalan. Tebak dulu: saat `tarif_layanan` sedang berjalan, berapa frame yang ada? Lalu tekan **Lanjut**."},{"line":1,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"]]}],"out":"","note":"Baris 1: `def` membuat fungsi `tarif_layanan`."},{"line":9,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"]]}],"out":"","note":"Baris 9: `def` membuat fungsi `potongan`."},{"line":15,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]}],"out":"","note":"Baris 15: `def` membuat fungsi `total_bayar`. Ketiga fungsi siap dipakai; Python melompat ke bagian utama di baris 19."},{"line":19,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"]]}],"out":"","note":"Baris 19: sebelum `print` bisa berjalan, Python harus menghitung `total_bayar(\"reguler\", 5)`. Frame baru dibuat: `layanan ← 'reguler'`, `berat ← 5`."},{"line":16,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"]]},{"name":"tarif_layanan","vars":[["layanan","'reguler'"]]}],"out":"","note":"Baris 16 memanggil `tarif_layanan(layanan)`. Frame **ketiga** dibuat. `total_bayar` menunggu jawabannya sebelum bisa mengalikan dengan `berat`."},{"line":2,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"]]},{"name":"tarif_layanan","vars":[["layanan","'reguler'"]]}],"out":"","note":"Baris 2: `layanan == \"reguler\"` bernilai `True`, jadi jalur pertama yang diambil."},{"line":3,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"]]},{"name":"tarif_layanan","vars":[["layanan","'reguler'"]],"ret":"6000"}],"out":"","note":"Baris 3: `return 6000` mengirim tarif ke `total_bayar` dan mengakhiri fungsi. Cabang `elif` dan `else` tidak pernah dibaca."},{"line":16,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"],["biaya","30000"]]}],"out":"","note":"Kembali ke baris 16: pemanggilan digantikan `6000`, lalu `6000 * 5` menjadi `biaya = 30000`. Frame `tarif_layanan` sudah dibuang."},{"line":17,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"],["biaya","30000"]]},{"name":"potongan","vars":[["berat","5"],["layanan","'reguler'"]]}],"out":"","note":"Baris 17 memanggil `potongan(berat, layanan)`. Urutan argumen mengikuti header: `berat ← 5`, `layanan ← 'reguler'`."},{"line":10,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"],["biaya","30000"]]},{"name":"potongan","vars":[["berat","5"],["layanan","'reguler'"]]}],"out":"","note":"Baris 10: `5 > 4` dan `'reguler' != 'express'`, jadi kedua syarat `True`."},{"line":11,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"],["biaya","30000"]]},{"name":"potongan","vars":[["berat","5"],["layanan","'reguler'"]],"ret":"5000"}],"out":"","note":"Baris 11: `return 5000` mengirim potongan ke `total_bayar`."},{"line":17,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]},{"name":"total_bayar","vars":[["layanan","'reguler'"],["berat","5"],["biaya","30000"]],"ret":"25000"}],"out":"","note":"Kembali ke baris 17: `30000 - 5000` dihitung, lalu `return` mengirim **`25000`** ke `__main__`. Inilah **komposisi**: hasil dua fungsi dipakai di dalam fungsi ketiga."},{"line":19,"frames":[{"name":"__main__","vars":[["tarif_layanan","<fungsi>"],["potongan","<fungsi>"],["total_bayar","<fungsi>"]]}],"out":"25000\n","note":"Baris 19: `print` mencetak `25000`, sama dengan hitungan tangan. Semua frame fungsi sudah dibuang; hanya nilainya yang sampai ke `__main__`."}]}</script>
+</section>
+<section id="langkah-5-rakit-bagian-utama" class="level3">
+<h3 class="anchored" data-anchor-id="langkah-5-rakit-bagian-utama">Langkah 5 · Rakit: bagian utama</h3>
+<p><strong>Bagian utama</strong> adalah bagian program di luar semua fungsi. Tugasnya tiga, dan hanya tiga:</p>
+<ol type="1">
+<li><strong>Baca</strong> masukan. <code>input()</code> selalu menghasilkan teks; berat dipakai untuk mengali, jadi ubah dulu dengan <code>int()</code>.</li>
+<li><strong>Panggil</strong> fungsi. Cukup satu pemanggilan: <code>total_bayar</code> sudah memanggil dua fungsi lainnya. Urutan argumen mengikuti header.</li>
+<li><strong>Cetak</strong> hasilnya. <code>print()</code> hanya di sini.</li>
+</ol>
+<p>Program lengkapnya:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tarif_layanan(layanan):</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Kembalikan tarif per kg untuk layanan: reguler, kilat, atau express."""</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> layanan <span class="op">==</span> <span class="st">"reguler"</span>:</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">6000</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> layanan <span class="op">==</span> <span class="st">"kilat"</span>:</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">9000</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">15000</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> potongan(berat, layanan):</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Kembalikan potongan: 5000 jika berat lebih dari 4 kg dan bukan express."""</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> berat <span class="op">&gt;</span> <span class="dv">4</span> <span class="kw">and</span> layanan <span class="op">!=</span> <span class="st">"express"</span>:</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">5000</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> total_bayar(layanan, berat):</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Kembalikan total bayar laundry setelah potongan."""</span></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>    biaya <span class="op">=</span> tarif_layanan(layanan) <span class="op">*</span> berat</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> biaya <span class="op">-</span> potongan(berat, layanan)</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Bagian utama</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>layanan <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>berat <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>())</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Total bayar:"</span>, total_bayar(layanan, berat))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>reguler
+5
+Total bayar: 25000</code></pre>
+<p>Tidak ada baris baru di sini: semua fungsi sudah ditulis dan diuji di langkah 3–4. Jika toko kelak menambah layanan “satuan”, cukup ubah <code>tarif_layanan</code> (dan <code>potongan</code> jika aturan potongannya berbeda); <code>total_bayar</code> dan bagian utama tidak perlu disentuh.</p>
+</section>
+</section>
+<section id="kesalahan-umum" class="level2">
+<h2 class="anchored" data-anchor-id="kesalahan-umum">Kesalahan Umum</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 36%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Gejala</th>
+<th>Penyebab</th>
+<th>Perbaikan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'</code></td>
+<td>Fungsi yang dipakai di ekspresi hanya <code>print</code>, tidak <code>return</code></td>
+<td>Ganti <code>print(...)</code> di dalam fungsi dengan <code>return ...</code></td>
+</tr>
+<tr class="even">
+<td>Angka tampil di layar, tetapi variabel berisi <code>None</code></td>
+<td>Mengira nilai yang dicetak tersimpan di variabel pemanggil</td>
+<td>Kembalikan nilainya dengan <code>return</code>; cetak di pemanggil</td>
+</tr>
+<tr class="odd">
+<td>Fungsi kadang mengembalikan <code>None</code></td>
+<td>Ada jalur (sering nilai batas) yang tidak bertemu <code>return</code></td>
+<td>Akhiri fungsi dengan <code>else</code> atau <code>return</code> tanpa syarat</td>
+</tr>
+<tr class="even">
+<td>Baris di bawah <code>return</code> tidak pernah berjalan</td>
+<td><code>return</code> sudah mengakhiri fungsi (kode mati)</td>
+<td>Pindahkan baris itu ke atas <code>return</code>, atau hapus</td>
+</tr>
+<tr class="odd">
+<td>Hasil selalu dari cabang pertama saja</td>
+<td><code>return</code> diletakkan di luar <code>if</code>, atau sebelum cabang diperiksa</td>
+<td>Letakkan <code>return</code> di dalam cabang yang tepat</td>
+</tr>
+<tr class="even">
+<td>Hasil salah tepat di perbatasan aturan</td>
+<td><code>&gt;</code> tertukar dengan <code>&gt;=</code> (atau <code>&lt;</code> dengan <code>&lt;=</code>)</td>
+<td>Tambahkan uji nilai batas sebelum melanjutkan</td>
+</tr>
+<tr class="odd">
+<td><code>TypeError: unsupported operand type(s) for -: 'str' and 'int'</code></td>
+<td>Hasil <code>input()</code> tidak diubah dengan <code>int()</code>, sehingga <code>6000 * "5"</code> menjadi teks panjang</td>
+<td><code>berat = int(input())</code></td>
+</tr>
+<tr class="even">
+<td>Fungsi tidak bisa diuji tanpa mengetik masukan</td>
+<td><code>input()</code> diletakkan di dalam fungsi</td>
+<td>Terima data lewat parameter; <code>input()</code> hanya di bagian utama</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="tebak-dulu" class="level2">
 <h2 class="anchored" data-anchor-id="tebak-dulu">Tebak Dulu</h2>
 <p>Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, <strong>baru</strong> buka jawabannya.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">5</span>:</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"selesai"</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dobel(x):</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>hasil <span class="op">=</span> dobel(<span class="dv">4</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hasil)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -654,18 +1176,104 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Hanya <code>selesai</code> yang tercetak. Kondisi <code>10 &lt; 5</code> sudah <code>False</code> sejak awal, sehingga badan loop tidak dijalankan sama sekali.</p>
+<p>Tercetak <code>8</code> lalu <code>None</code>. <code>dobel</code> hanya mencetak dan tidak mengembalikan apa pun, sehingga <code>hasil</code> bernilai <code>None</code>.</p>
+</div>
+</div>
+</div>
+<p>Ikuti jalur yang dilalui <code>diskon(80000)</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> diskon(harga):</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> harga <span class="op">&gt;=</span> <span class="dv">50000</span>:</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(harga <span class="op">//</span> <span class="dv">10</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> diskon(<span class="dv">80000</span>)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lihat jawaban
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<pre><code>8000
+None</code></pre>
+<p><code>80000 &gt;= 50000</code> benar, sehingga jalur <code>if</code> diambil. Jalur ini <strong>mencetak</strong> <code>8000</code> tetapi tidak punya <code>return</code>, jadi fungsi mengembalikan <code>None</code> dan <code>x</code> berisi <code>None</code>. Hanya jalur <code>else</code> yang mengembalikan nilai.</p>
+</div>
+</div>
+</div>
+<p>Dengan <code>kuadrat(x)</code> yang mengembalikan <code>x * x</code> dan <code>cetak_kuadrat(x)</code> yang mencetak <code>x * x</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> kuadrat(<span class="dv">4</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x, cetak_kuadrat(<span class="dv">2</span>))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lihat jawaban
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<pre><code>4
+16 None</code></pre>
+<p>Sebelum <code>print</code> di luar bisa mencetak, semua argumennya dievaluasi lebih dulu. Mengevaluasi <code>cetak_kuadrat(2)</code> menjalankan <code>print</code> di dalamnya, sehingga <code>4</code> tampil <strong>duluan</strong>. Nilai pemanggilan itu <code>None</code>, jadi baris kedua <code>16 None</code>.</p>
+</div>
+</div>
+</div>
+<p>Terakhir, memakai fungsi laundry pada Lesson B: berapa nilai <code>total_bayar("kilat", 4)</code>?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lihat jawaban
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>36000</code>. <code>tarif_layanan("kilat")</code> → <code>9000</code>, sehingga <code>biaya = 9000 * 4 = 36000</code>. <code>potongan(4, "kilat")</code> → <code>0</code>, karena <code>4 &gt; 4</code> salah (nilai batas). Hasilnya <code>36000 - 0 = 36000</code>.</p>
 </div>
 </div>
 </div>
 </section>
+<section id="latihan-mandiri" class="level2">
+<h2 class="anchored" data-anchor-id="latihan-mandiri">Latihan Mandiri</h2>
+<ol type="1">
+<li><strong>(U5.1)</strong> Tanpa menjalankan, tentukan nilai tiap ekspresi berikut, dengan <code>ongkir</code> dan <code>ongkir_salah</code> dari Lesson A: <code>ongkir(1, 99999) + 1</code>, <code>ongkir(3, 100000) * 2</code>, <code>ongkir_salah(1, 100000)</code>. Ekspresi mana yang akan menghasilkan galat jika ditambah <code>+ 1</code>?</li>
+<li><strong>(U5.2)</strong> Tulis fungsi <code>nilai_huruf(skor)</code> yang mengembalikan <code>"A"</code> untuk skor ≥ 80, <code>"B"</code> untuk ≥ 70, <code>"C"</code> untuk ≥ 60, dan <code>"D"</code> selain itu. Lalu tulis fungsi boolean <code>lulus(skor)</code> yang memakai <code>nilai_huruf</code> dan mengembalikan <code>True</code> jika hurufnya bukan <code>"D"</code>. Uji <code>skor</code> 80, 79, 60, dan 59.</li>
+<li><strong>(U5.3)</strong> Toko menambah biaya <strong>asuransi</strong> sebesar 1% dari belanja (pakai <code>belanja // 100</code>). Tulis kerangka <code>asuransi(belanja)</code> dengan <code>return 0</code> dan uji <code>asuransi(150000) == 1500</code>. Jalankan (hasilnya <code>False</code>), lalu lengkapi sampai <code>True</code>.</li>
+<li><strong>(U5.4)</strong> Tulis <code>total_kirim(berat, belanja)</code> yang mengembalikan hasil <code>ongkir</code> ditambah hasil <code>asuransi</code>. Hitung dulu dengan tangan, lalu uji: <code>total_kirim(2, 80000)</code> → <code>20800</code>, <code>total_kirim(2, 150000)</code> → <code>1500</code>, <code>total_kirim(3, 100000)</code> → <code>1000</code>.</li>
+<li><strong>(U5.5)</strong> Kereta wisata menjual tiket Rp25.000 untuk anak (usia di bawah 12 tahun) dan Rp40.000 untuk dewasa. Rombongan 10 orang atau lebih mendapat potongan Rp50.000. Semua anggota satu pesanan berusia sama. Ikuti resep lima langkah: hitung satu contoh dengan tangan, tentukan fungsi-fungsinya, tulis kerangka dan ujinya, isi satu per satu, lalu rakit bagian utama yang membaca usia dan jumlah orang. Pastikan uji nilai batasmu mencakup usia tepat 12 dan jumlah tepat 10.</li>
+</ol>
+</section>
 <section id="bacaan" class="level2">
 <h2 class="anchored" data-anchor-id="bacaan">Bacaan</h2>
 <ul>
-<li>Think Python Ch. 7 - Iteration and Search</li>
+<li>Think Python Ch. 6 - Return values</li>
+<li>Pendukung: Zelle Ch. 6.5 - Functions That Return Values; Gaddis Ch. 5.8 - Writing Your Own Value-Returning Functions</li>
+<li>Referensi resmi Python §7.6 - The return statement</li>
 </ul>
+</section>
+<section id="referensi" class="level2">
+<h2 class="anchored" data-anchor-id="referensi">Referensi</h2>
+<p>Downey, A. B. (2024). <em>Think Python: How to think like a computer scientist</em> (3rd ed.). O’Reilly Media. <a href="https://allendowney.github.io/ThinkPython/" class="uri">https://allendowney.github.io/ThinkPython/</a></p>
+<ul>
+<li>Bab 6, <em>Return Values</em> (subbab <em>Return values and conditionals</em>, <em>Incremental development</em>, <em>Boolean functions</em>): <a href="https://allendowney.github.io/ThinkPython/chap06.html" class="uri">https://allendowney.github.io/ThinkPython/chap06.html</a></li>
+</ul>
+<p>Python Software Foundation. (t.t.-a). Simple statements: The return statement. Dalam <em>The Python language reference</em>. Diakses 11 Oktober 2026, dari <a href="https://docs.python.org/3/reference/simple_stmts.html#the-return-statement" class="uri">https://docs.python.org/3/reference/simple_stmts.html#the-return-statement</a></p>
+<p>Python Software Foundation. (t.t.-b). More control flow tools: Defining functions. Dalam <em>The Python tutorial</em>. Diakses 11 Oktober 2026, dari <a href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions" class="uri">https://docs.python.org/3/tutorial/controlflow.html#defining-functions</a></p>
 
 
 </section>
@@ -1091,8 +1699,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../materi/w06.html" class="pagination-link" aria-label="Minggu 6 · Perulangan II: for">
-        <span class="nav-page-text">Minggu 6 · Perulangan II: for</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../materi/w06.html" class="pagination-link" aria-label="Minggu 6 · Perulangan: for dan while">
+        <span class="nav-page-text">Minggu 6 · Perulangan: for dan while</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
