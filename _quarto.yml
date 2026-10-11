@@ -30,6 +30,8 @@ website:
             text: Tools, Buku & Glosarium
           - href: strategi.qmd
             text: Strategi Belajar
+          - href: skema.qmd
+            text: Katalog Skema Pemrograman
       - href: about.qmd
         text: Tim Pengajar
     right:

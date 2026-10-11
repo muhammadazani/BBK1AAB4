@@ -1,0 +1,1677 @@
+---
+title: "Katalog Skema Pemrograman"
+subtitle: "Pola solusi yang dipakai ulang untuk memecahkan soal pemrograman"
+---
+
+Saat membaca soal baru, programmer berpengalaman jarang mulai dari nol. Mereka mengenali **tujuan** soal ("hitung berapa yang lulus"), mengingat **pola solusi** yang cocok ("penghitung mulai 0, kunjungi setiap item, tambah 1 jika memenuhi"), lalu menyesuaikannya. Pola solusi seperti ini disebut **skema** (Soloway & Ehrlich, 1984). Halaman ini mengumpulkan 39 skema yang kamu butuhkan di mata kuliah ini, masing-masing dalam satu kartu.
+
+Skema bukan kode untuk disalin. Skema adalah **rencana**: urutan langkah yang kamu tulis sebagai komentar, lalu kamu isi dengan kode yang sesuai soalmu.
+
+## Cara Memakai Katalog
+
+::: {.schema-steps}
+::: {.schema-step}
+[1]{.n}
+
+**Baca soalnya, cari tujuannya.** Garis bawahi kata-kata yang menyatakan hasil: *berapa banyak*, *total*, *terbesar*, *adakah*, *semua*. Tiap kartu punya bagian **Ciri soal** berisi kata-kata seperti ini.
+:::
+::: {.schema-step}
+[2]{.n}
+
+**Pilih skemanya.** Jawab pertanyaan di tabel [Skema mana yang dibutuhkan?](#pemilih). Jawabanmu menunjuk ke satu kode kartu, misalnya `D1`.
+:::
+::: {.schema-step}
+[3]{.n}
+
+**Buka kartunya dan tulis langkahnya sebagai komentar.** Salin daftar **Langkah** ke editor sebagai komentar `#`, sebelum menulis satu baris kode pun.
+:::
+::: {.schema-step}
+[4]{.n}
+
+**Isi tiap langkah dengan kode.** Lihat **Kerangka kode** bila perlu, lalu ganti nama-nama umum (`koleksi`, `kondisi`) dengan data dan syarat soalmu.
+:::
+::: {.schema-step}
+[5]{.n}
+
+**Uji, lalu gabungkan.** Uji dengan contoh yang kamu hitung tangan, termasuk nilai batas. Soal tugas biasanya butuh **beberapa** skema; lihat [Menggabungkan skema](#menggabungkan-skema).
+:::
+:::
+
+### Contoh: soal laundry Minggu 5
+
+> Tarif reguler Rp6.000/kg, kilat Rp9.000/kg, express Rp15.000/kg. Potongan Rp5.000 jika berat **lebih dari** 4 kg, kecuali express. Hitung total bayar.
+
+| Bagian soal | Pertanyaan pemilih | Skema |
+|---|---|---|
+| Tarif bergantung pada jenis layanan | Hasil bergantung pada beberapa pilihan? | [B3 · Klasifikasi bertingkat](#B3) |
+| Potongan bergantung pada berat **dan** layanan | Dua faktor yang saling lepas? | [B4 · Keputusan bersarang](#B4), digabung dengan `and` |
+| Total = tarif × berat − potongan | Ada rumus, tanpa perulangan? | [A1 · Baca–Proses–Hasilkan](#A1) |
+
+: {tbl-colwidths="[38,34,28]"}
+
+Tiap skema menjadi satu fungsi, dan langkah-langkah kartunya menjadi komentar:
+
+```python
+def tarif_layanan(layanan):
+    # B3: urutkan kategori, tepat satu cabang berjalan, else untuk sisanya
+    if layanan == "reguler":
+        return 6000
+    elif layanan == "kilat":
+        return 9000
+    else:
+        return 15000
+
+def potongan(berat, layanan):
+    # B4: dua faktor digabung dengan and; uji nilai batas 4 kg
+    if berat > 4 and layanan != "express":
+        return 5000
+    else:
+        return 0
+
+def total_bayar(layanan, berat):
+    # A1: siapkan data, hitung dengan rumus, kembalikan hasilnya
+    biaya = tarif_layanan(layanan) * berat
+    return biaya - potongan(berat, layanan)
+
+print(total_bayar("reguler", 5))    # 25000
+```
+
+::: {.callout-tip title="Tiga kebiasaan saat memakai kartu"}
+- **Perhatikan "Sering tertukar dengan".** Kesalahan paling umum adalah memakai skema yang mirip tetapi salah, misalnya *menghitung* (D1) padahal soal meminta *total* (D2).
+- **Tanyakan: bisakah perulangannya berhenti lebih awal?** Mencari (D6), *adakah* (D7), dan *semuakah* (D8) boleh berhenti di item penentu pertama. Menghitung, menjumlah, nilai ekstrem, menyaring, dan mengubah harus mengunjungi **setiap** item.
+- **Sesuaikan dengan minggumu.** Setiap kartu menyebut minggu kapan skema itu dipelajari. Pakai filter di bawah untuk menampilkan skema yang sudah bisa kamu pakai.
+:::
+
+## Skema mana yang dibutuhkan? {#pemilih}
+
+Jawab pertanyaan ini **sebelum** menulis kode. Jawabanmu menunjuk ke sebuah skema.
+
+::: {.table-responsive}
+| Pertanyaan tentang soal | Jika jawabannya… | Skema |
+|---|---|---|
+| Ada rumus dan tidak ada pengulangan? | Ya | [A1](#A1) |
+| Ada masukan yang membuat perhitungan mustahil? | Ya | [B1](#B1), penjaga lebih dulu |
+| Hasil bergantung pada satu kondisi? Beberapa rentang? Dua faktor? | Satu / rentang / dua faktor | [B2](#B2) / [B3](#B3) / [B4](#B4) |
+| Banyaknya pengulangan sudah diketahui sebelum perulangan? | Ya | [C1](#C1) |
+| | Tidak, berhenti pada masukan khusus | [C2](#C2) |
+| | Tidak, berhenti saat target tercapai | [C4](#C4) |
+| Apa hasil dari menelusuri data? | Banyaknya item | [D1](#D1) |
+| | Total atau hasil kali | [D2](#D2) |
+| | Rata-rata | [D3](#D3) |
+| | Nilai terbesar atau terkecil | [D4](#D4) |
+| | *Item mana* yang terbesar | [D5](#D5) |
+| | Item pertama yang cocok, atau posisinya | [D6](#D6) ([F2](#F2) jika data terurut) |
+| | True/False: adakah …? | [D7](#D7) |
+| | True/False: semuakah …? | [D8](#D8) |
+| | List baru berisi sebagian item | [D9](#D9) |
+| | List baru dengan setiap item diubah | [D10](#D10) |
+| | String baru | [D11](#D11) |
+| | Hitungan per kategori / per nilai berbeda | [D14](#D14) / [D15](#D15) |
+| Setiap item butuh item sebelumnya? | Ya | [D12](#D12); untuk rangkaian terpanjang, [D13](#D13) |
+| "Item"-nya adalah digit sebuah bilangan? | Ya | [D16](#D16) |
+| Keluarannya dua dimensi, atau setiap pasangan penting? | Baris-kolom / pasangan / tabel | [E1](#E1) / [E2](#E2) / [E3](#E3) |
+| Tidak ada rumus, tetapi calon jawaban bisa diperiksa? | Ya | [G2](#G2) |
+| Uji ya/tidak yang sama dibutuhkan di beberapa tempat? | Ya | [G1](#G1) |
+
+: {tbl-colwidths="[44,30,26]"}
+:::
+
+## Kartu Skema
+
+```{=html}
+<div class="schema-filter" role="group" aria-label="Saring kartu skema">
+  <label>Tampilkan skema sampai
+    <select id="schema-week">
+      <option value="99">semua minggu</option>
+      <option value="2">Minggu 2</option>
+      <option value="3">Minggu 3</option>
+      <option value="5">Minggu 5</option>
+      <option value="6">Minggu 6</option>
+      <option value="9">Minggu 9</option>
+      <option value="10">Minggu 10</option>
+      <option value="11">Minggu 11</option>
+      <option value="12">Minggu 12</option>
+    </select>
+  </label>
+  <label><input type="checkbox" id="schema-core"> hanya skema inti ★</label>
+  <span id="schema-count" aria-live="polite"></span>
+</div>
+```
+
+Skema bertanda **★ inti** paling sering muncul di soal dan wajib kamu kuasai. Kode di kerangka memakai nama umum seperti `koleksi`, `kondisi`, dan `proses`; ganti dengan nama yang sesuai soalmu.
+
+:::: {.schema-group}
+### A · Urutan (Sequence)
+
+Perhitungan lurus: tanpa keputusan, tanpa perulangan.
+
+::: {.schema-grid}
+
+::: {#A1 .schema-card data-week="2" data-core="1"}
+::: schema-head
+[A1]{.schema-id} [★ inti]{.schema-core}
+:::
+[Baca–Proses–Hasilkan]{.schema-name} [Input–process–output]{.schema-en}
+
+Menghitung hasil dari nilai yang diketahui dengan rumus atau urutan langkah yang tetap.
+
+[Ciri soal]{.schema-label}
+
+[hitung … dari …]{.schema-cue} [konversi …]{.schema-cue} [berapa (total/luas/biaya) jika …]{.schema-cue} [ada rumus]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Kenali masukan dan keluarannya
+2. Ubah data ke satuan yang dibutuhkan rumus
+3. Hitung hasilnya dengan rumus
+4. Kembalikan hasilnya
+
+[Minggu 2 · sebagai fungsi mulai Minggu 5]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+def nama_fungsi(masukan_1, masukan_2):
+    # 1. Siapkan data (ubah satuan jika perlu)
+    # 2. Hitung dengan rumus
+    hasil = ...
+    # 3. Kembalikan hasilnya
+    return hasil
+```
+
+</details>
+:::
+
+::: {#A2 .schema-card data-week="2" data-core="0"}
+::: schema-head
+[A2]{.schema-id}
+:::
+[Tukar nilai]{.schema-name} [Swap]{.schema-en}
+
+Menukar nilai dua variabel tanpa kehilangan salah satunya.
+
+[Ciri soal]{.schema-label}
+
+[tukar]{.schema-cue} [urutkan dua nilai]{.schema-cue} [agar a ≤ b]{.schema-cue} [langkah di dalam pengurutan]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Simpan satu nilai di variabel sementara
+2. Timpa variabel itu dengan nilai yang lain
+3. Pindahkan nilai yang disimpan ke variabel kedua
+
+[Minggu 2]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+sementara = a
+a = b
+b = sementara
+```
+
+</details>
+:::
+
+::: {#A3 .schema-card data-week="2" data-core="0"}
+::: schema-head
+[A3]{.schema-id}
+:::
+[Pecah dengan div dan mod]{.schema-name} [Unit decomposition with div and mod]{.schema-en}
+
+Memecah satu besaran menjadi satuan besar dan kecil (jam/menit/detik, lembar uang, puluhan dan satuan).
+
+[Ciri soal]{.schema-label}
+
+[ubah … menjadi jam, menit, detik]{.schema-cue} [pecah nominal menjadi lembar uang]{.schema-cue} [berapa … yang muat]{.schema-cue} [sisa]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Ambil jumlah satuan terbesar dengan `//`
+2. Simpan sisanya dengan `%`
+3. Ulangi untuk satuan berikutnya yang lebih kecil
+4. Kembalikan semua bagiannya
+
+[Sering tertukar dengan]{.schema-label} [D16 · Kupas digit](#D16)
+
+[Minggu 2]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+besar = total // satuan_besar
+sisa = total % satuan_besar
+kecil = sisa // satuan_kecil
+sisa = sisa % satuan_kecil
+```
+
+</details>
+:::
+
+:::
+::::
+
+:::: {.schema-group}
+### B · Seleksi (Selection)
+
+Memilih tindakan berdasarkan kondisi.
+
+::: {.schema-grid}
+
+::: {#B1 .schema-card data-week="3" data-core="1"}
+::: schema-head
+[B1]{.schema-id} [★ inti]{.schema-core}
+:::
+[Penjaga]{.schema-name} [Guard]{.schema-en}
+
+Menangani kasus yang tidak valid atau khusus lebih dulu lalu keluar, sehingga perhitungan utama hanya menerima data yang valid.
+
+[Ciri soal]{.schema-label}
+
+[jika data tidak valid …]{.schema-cue} [ada pembagian (mungkin dengan nol)]{.schema-cue} [nilai negatif tidak boleh]{.schema-cue} [kembalikan None / −1 / pesan]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Daftar kasus yang membuat perhitungan utama mustahil atau tidak bermakna
+2. Periksa kasus itu lebih dulu dan langsung `return`
+3. Tulis perhitungan utama untuk kasus yang valid
+
+[Sering tertukar dengan]{.schema-label} [B2 · Pilih salah satu](#B2)
+
+[Minggu 3 · di dalam fungsi mulai Minggu 5]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+def nama_fungsi(data):
+    # 1. Penjaga: tangani kasus tidak valid lebih dulu
+    if kondisi_tidak_valid:
+        return nilai_khusus
+    # 2. Kasus normal
+    ...
+    return hasil
+```
+
+</details>
+:::
+
+::: {#B2 .schema-card data-week="3" data-core="1"}
+::: schema-head
+[B2]{.schema-id} [★ inti]{.schema-core}
+:::
+[Pilih salah satu]{.schema-name} [Two-way decision]{.schema-en}
+
+Memilih tepat satu dari dua tindakan atau dua rumus.
+
+[Ciri soal]{.schema-label}
+
+[jika … maka …, selain itu …]{.schema-cue} [lulus / tidak lulus]{.schema-cue} [tarif berubah setelah ambang tertentu]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Temukan kondisi yang memisahkan dua kasus, termasuk nilai batasnya
+2. Tulis tindakan untuk kasus benar
+3. Tulis tindakan untuk kasus salah
+
+[Sering tertukar dengan]{.schema-label} [B3 · Klasifikasi bertingkat](#B3)
+
+[Minggu 3]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+if kondisi:
+    hasil = rumus_1
+else:
+    hasil = rumus_2
+```
+
+</details>
+:::
+
+::: {#B3 .schema-card data-week="3" data-core="1"}
+::: schema-head
+[B3]{.schema-id} [★ inti]{.schema-core}
+:::
+[Klasifikasi bertingkat]{.schema-name} [Multi-way classification]{.schema-en}
+
+Memasukkan satu nilai ke salah satu dari beberapa kategori yang berurutan (rentang).
+
+[Ciri soal]{.schema-label}
+
+[kategori]{.schema-cue} [nilai huruf]{.schema-cue} [golongan / kelas]{.schema-cue} [tarif bertingkat]{.schema-cue} [tabel rentang]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Tulis rentangnya sebagai tabel; periksa celah dan tumpang tindih
+2. Urutkan kondisi dari satu ujung (tertinggi atau terendah)
+3. Pakai `if`–`elif`–`else` agar tepat satu cabang yang berjalan
+4. Pakai `else` untuk kategori terakhir
+
+[Sering tertukar dengan]{.schema-label} [B4 · Keputusan bersarang](#B4) · [B5 · Tabel rujukan](#B5)
+
+[Minggu 3]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+if nilai >= batas_1:
+    kategori = "K1"
+elif nilai >= batas_2:
+    kategori = "K2"
+else:
+    kategori = "K3"
+```
+
+</details>
+:::
+
+::: {#B4 .schema-card data-week="3" data-core="0"}
+::: schema-head
+[B4]{.schema-id}
+:::
+[Keputusan bersarang]{.schema-name} [Nested decision (two factors)]{.schema-en}
+
+Mengambil keputusan saat hasilnya bergantung pada dua kondisi atau lebih yang saling lepas.
+
+[Ciri soal]{.schema-label}
+
+[bergantung pada … dan …]{.schema-cue} [jika member dan …]{.schema-cue} [tabel dua dimensi]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Buat tabel semua kombinasi kondisi
+2. Putuskan: bersarang (faktor luar, lalu dalam) atau digabung dengan `and`/`or`
+3. Periksa bahwa setiap kombinasi punya tepat satu hasil
+
+[Sering tertukar dengan]{.schema-label} [B3 · Klasifikasi bertingkat](#B3)
+
+[Minggu 3]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+if faktor_1:
+    if faktor_2:
+        hasil = ...
+    else:
+        hasil = ...
+else:
+    ...
+```
+
+</details>
+:::
+
+::: {#B5 .schema-card data-week="12" data-core="0"}
+::: schema-head
+[B5]{.schema-id}
+:::
+[Tabel rujukan]{.schema-name} [Lookup table]{.schema-en}
+
+Memetakan nilai-nilai diskret ke hasilnya dengan dictionary, bukan rantai `if`–`elif` yang panjang.
+
+[Ciri soal]{.schema-label}
+
+[kode → nama]{.schema-cue} [nomor hari atau bulan]{.schema-cue} [harga per jenis]{.schema-cue} [banyak kasus yang membandingkan kesamaan]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Tulis pemetaannya sebagai data (dictionary)
+2. Cari kuncinya
+3. Tangani kunci yang tidak ada dengan nilai bawaan
+
+[Sering tertukar dengan]{.schema-label} [B3 · Klasifikasi bertingkat](#B3)
+
+[Minggu 12 (dictionary)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+TABEL = {kunci_1: nilai_1, kunci_2: nilai_2}
+hasil = TABEL.get(kunci, nilai_bawaan)
+```
+
+</details>
+:::
+
+:::
+::::
+
+:::: {.schema-group}
+### C · Kendali perulangan
+
+Mengatur kapan perulangan berjalan dan kapan berhenti.
+
+::: {.schema-grid}
+
+::: {#C1 .schema-card data-week="6" data-core="1"}
+::: schema-head
+[C1]{.schema-id} [★ inti]{.schema-core}
+:::
+[Ulangi n kali]{.schema-name} [Counted repetition]{.schema-en}
+
+Mengulang suatu pembaruan sebanyak jumlah yang sudah diketahui sebelum perulangan dimulai.
+
+[Ciri soal]{.schema-label}
+
+[selama n tahun/bulan/kali]{.schema-cue} [untuk setiap bilangan dari 1 sampai n]{.schema-cue} [jumlah pengulangan diberikan]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Siapkan keadaan yang berubah
+2. Ulangi pembaruan tepat n kali dengan `range`
+3. Kembalikan keadaan akhirnya
+
+[Sering tertukar dengan]{.schema-label} [C4 · Ulangi sampai tercapai](#C4)
+
+[Minggu 6]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+keadaan = nilai_awal
+for i in range(n):
+    keadaan = perbarui(keadaan)
+```
+
+</details>
+:::
+
+::: {#C2 .schema-card data-week="6" data-core="1"}
+::: schema-head
+[C2]{.schema-id} [★ inti]{.schema-core}
+:::
+[Baca sampai tanda berhenti]{.schema-name} [Sentinel-controlled loop]{.schema-en}
+
+Memproses masukan satu per satu sampai muncul nilai penanda berhenti.
+
+[Ciri soal]{.schema-label}
+
+[masukkan 0 / −1 untuk selesai]{.schema-cue} [sampai pengguna mengetik …]{.schema-cue} [banyaknya masukan tidak diketahui]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Baca nilai pertama sebelum perulangan
+2. Selama nilai itu bukan penanda: proses
+3. Baca nilai berikutnya di akhir badan perulangan
+4. Setelah perulangan, laporkan hasilnya
+
+[Sering tertukar dengan]{.schema-label} [C3 · Minta ulang sampai benar](#C3) · [C4 · Ulangi sampai tercapai](#C4)
+
+[Minggu 6]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+nilai = baca()
+while nilai != PENANDA:
+    proses(nilai)
+    nilai = baca()
+```
+
+</details>
+:::
+
+::: {#C3 .schema-card data-week="6" data-core="0"}
+::: schema-head
+[C3]{.schema-id}
+:::
+[Minta ulang sampai benar]{.schema-name} [Input validation loop]{.schema-en}
+
+Terus meminta masukan sampai masukannya valid.
+
+[Ciri soal]{.schema-label}
+
+[jika masukan salah, minta lagi]{.schema-cue} [harus antara … dan …]{.schema-cue} [ulangi sampai valid]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Baca satu nilai
+2. Selama tidak valid: tampilkan pesan dan baca lagi
+3. Kembalikan nilai yang valid
+
+[Sering tertukar dengan]{.schema-label} [B1 · Penjaga](#B1) · [C2 · Baca sampai tanda berhenti](#C2)
+
+[Minggu 6]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+nilai = baca()
+while tidak_valid(nilai):
+    tampilkan_pesan()
+    nilai = baca()
+```
+
+</details>
+:::
+
+::: {#C4 .schema-card data-week="6" data-core="0"}
+::: schema-head
+[C4]{.schema-id}
+:::
+[Ulangi sampai tercapai]{.schema-name} [Loop until a condition is reached]{.schema-en}
+
+Mengulang pembaruan sampai keadaan target tercapai, sambil menghitung langkahnya bila perlu.
+
+[Ciri soal]{.schema-label}
+
+[berapa tahun sampai …]{.schema-cue} [sampai melebihi …]{.schema-cue} [jumlah pengulangan adalah jawabannya]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Penjaga: pastikan target bisa tercapai (tidak berulang selamanya)
+2. Siapkan keadaan dan penghitung langkah
+3. Selama target belum tercapai: perbarui dan hitung
+4. Kembalikan penghitungnya
+
+[Sering tertukar dengan]{.schema-label} [C1 · Ulangi n kali](#C1)
+
+[Minggu 6]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+langkah = 0
+while belum_tercapai(keadaan):
+    keadaan = perbarui(keadaan)
+    langkah = langkah + 1
+```
+
+</details>
+:::
+
+::: {#C5 .schema-card data-week="9" data-core="0"}
+::: schema-head
+[C5]{.schema-id}
+:::
+[Perulangan menu]{.schema-name} [Menu loop]{.schema-en}
+
+Menampilkan pilihan berulang kali dan menjalankan pilihan pengguna sampai ia memilih keluar.
+
+[Ciri soal]{.schema-label}
+
+[tampilkan menu]{.schema-cue} [pilih 1–4]{.schema-cue} [program berjalan sampai pengguna memilih keluar]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Siapkan keadaan program
+2. Ulangi: tampilkan menu dan baca pilihan
+3. Jalankan pilihan dengan `if`–`elif` (satu cabang per opsi, plus pilihan tak dikenal)
+4. Berhenti saat opsi keluar dipilih
+
+[Sering tertukar dengan]{.schema-label} [C2 · Baca sampai tanda berhenti](#C2)
+
+[Minggu 9 (atau praktikum Minggu 7)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+pilihan = ""
+while pilihan != PILIHAN_KELUAR:
+    tampilkan_menu()
+    pilihan = input()
+    if pilihan == "1": ...
+    elif pilihan == "2": ...
+```
+
+</details>
+:::
+
+:::
+::::
+
+:::: {.schema-group}
+### D · Satu kali telusur data
+
+Mengunjungi setiap item satu kali untuk menghasilkan satu jawaban.
+
+::: {.schema-grid}
+
+::: {#D1 .schema-card data-week="6" data-core="1"}
+::: schema-head
+[D1]{.schema-id} [★ inti]{.schema-core}
+:::
+[Menghitung]{.schema-name} [Counting]{.schema-en}
+
+Menghitung berapa banyak item yang memenuhi suatu kondisi.
+
+[Ciri soal]{.schema-label}
+
+[berapa banyak …]{.schema-cue} [jumlah mahasiswa yang …]{.schema-cue} [jawabannya bilangan bulat cacah]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Siapkan penghitung bernilai 0
+2. Kunjungi setiap item
+3. Uji kondisinya
+4. Tambah 1 jika kondisinya benar
+5. Kembalikan penghitung setelah perulangan
+
+[Sering tertukar dengan]{.schema-label} [D2 · Akumulasi](#D2) · [D6 · Cari yang pertama](#D6) · [D7 · Adakah?](#D7)
+
+[Minggu 6 · lagi pada string (10) dan list (11)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+banyak = 0
+for item in koleksi:
+    if kondisi(item):
+        banyak = banyak + 1
+return banyak
+```
+
+</details>
+:::
+
+::: {#D2 .schema-card data-week="6" data-core="1"}
+::: schema-head
+[D2]{.schema-id} [★ inti]{.schema-core}
+:::
+[Akumulasi]{.schema-name} [Accumulation (sum or product)]{.schema-en}
+
+Menggabungkan semua nilai menjadi satu hasil: total, hasil kali, atau gabungan.
+
+[Ciri soal]{.schema-label}
+
+[total]{.schema-cue} [jumlah semua …]{.schema-cue} [hasil kali …]{.schema-cue} [faktorial]{.schema-cue} [jawabannya menggabungkan nilai-nilainya]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Siapkan akumulator dengan nilai identitas (0 untuk jumlah, 1 untuk hasil kali)
+2. Kunjungi setiap item
+3. Gabungkan item ke akumulator
+4. Kembalikan akumulatornya
+
+[Sering tertukar dengan]{.schema-label} [D1 · Menghitung](#D1)
+
+[Minggu 6]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+hasil = IDENTITAS   # 0 untuk +, 1 untuk ×
+for item in koleksi:
+    hasil = hasil OPERASI item
+return hasil
+```
+
+</details>
+:::
+
+::: {#D3 .schema-card data-week="6" data-core="1"}
+::: schema-head
+[D3]{.schema-id} [★ inti]{.schema-core}
+:::
+[Rata-rata]{.schema-name} [Average]{.schema-en}
+
+Menghitung rata-rata nilai yang memenuhi kondisi, dengan aman.
+
+[Ciri soal]{.schema-label}
+
+[rata-rata]{.schema-cue} [rata-rata … yang …]{.schema-cue} [mean]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Siapkan jumlah dan penghitung
+2. Kunjungi setiap item; untuk item yang memenuhi, tambahkan ke jumlah dan penghitung
+3. Jaga agar tidak membagi dengan nol
+4. Kembalikan jumlah / penghitung
+
+[Minggu 6]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+total = 0
+banyak = 0
+for item in koleksi:
+    if kondisi(item):
+        total = total + item
+        banyak = banyak + 1
+if banyak == 0:
+    return 0
+return total / banyak
+```
+
+</details>
+:::
+
+::: {#D4 .schema-card data-week="9" data-core="1"}
+::: schema-head
+[D4]{.schema-id} [★ inti]{.schema-core}
+:::
+[Nilai terbesar / terkecil]{.schema-name} [Extreme value]{.schema-en}
+
+Menemukan nilai terbesar atau terkecil.
+
+[Ciri soal]{.schema-label}
+
+[terbesar]{.schema-cue} [tertinggi]{.schema-cue} [termurah]{.schema-cue} [maksimum / minimum]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Penjaga: koleksi kosong tidak punya nilai ekstrem
+2. Mulai dengan item pertama sebagai yang terbaik
+3. Kunjungi item lainnya; ganti yang terbaik jika ada item yang mengalahkannya
+4. Kembalikan yang terbaik
+
+[Sering tertukar dengan]{.schema-label} [D5 · Posisi terbesar](#D5) · [D12 · Bandingkan dengan sebelumnya](#D12)
+
+[Minggu 9 · lagi pada list (11)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+terbaik = koleksi[0]
+for item in koleksi:
+    if item > terbaik:
+        terbaik = item
+return terbaik
+```
+
+</details>
+:::
+
+::: {#D5 .schema-card data-week="11" data-core="0"}
+::: schema-head
+[D5]{.schema-id}
+:::
+[Posisi terbesar]{.schema-name} [Position of the extreme]{.schema-en}
+
+Menemukan di mana nilai terbesar atau terkecil berada, atau milik item yang mana.
+
+[Ciri soal]{.schema-label}
+
+[siapa yang paling …]{.schema-cue} [di posisi ke berapa]{.schema-cue} [nama produk termurah]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Jaga dari koleksi kosong
+2. Simpan posisi item terbaik sejauh ini (mulai dari 0)
+3. Kunjungi posisi 1..n−1 dan bandingkan dengan item di posisi terbaik
+4. Kembalikan posisinya atau item terkait
+
+[Sering tertukar dengan]{.schema-label} [D4 · Nilai terbesar / terkecil](#D4) · [D6 · Cari yang pertama](#D6)
+
+[Minggu 11 (butuh list)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+pos_terbaik = 0
+for i in range(1, len(data)):
+    if data[i] > data[pos_terbaik]:
+        pos_terbaik = i
+```
+
+</details>
+:::
+
+::: {#D6 .schema-card data-week="9" data-core="1"}
+::: schema-head
+[D6]{.schema-id} [★ inti]{.schema-core}
+:::
+[Cari yang pertama]{.schema-name} [Linear search]{.schema-en}
+
+Menemukan item pertama (atau posisinya) yang cocok, dan berhenti begitu ketemu.
+
+[Ciri soal]{.schema-label}
+
+[cari]{.schema-cue} [di mana …]{.schema-cue} [posisi pertama …]{.schema-cue} [item pertama yang …]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Kunjungi item secara berurutan
+2. Begitu ada yang cocok, langsung kembalikan item (atau posisinya)
+3. Setelah perulangan, kembalikan nilai 'tidak ditemukan'
+
+[Sering tertukar dengan]{.schema-label} [D1 · Menghitung](#D1) · [D7 · Adakah?](#D7)
+
+[Minggu 9 · string (10) · list (11)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+for i in range(len(data)):
+    if cocok(data[i]):
+        return i
+return -1
+```
+
+</details>
+:::
+
+::: {#D7 .schema-card data-week="9" data-core="1"}
+::: schema-head
+[D7]{.schema-id} [★ inti]{.schema-core}
+:::
+[Adakah?]{.schema-name} [Existence check (any)]{.schema-en}
+
+Menjawab apakah setidaknya satu item memenuhi kondisi.
+
+[Ciri soal]{.schema-label}
+
+[adakah …]{.schema-cue} [apakah memuat …]{.schema-cue} [setidaknya satu]{.schema-cue} [jawabannya True/False]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Kunjungi item
+2. Kembalikan `True` pada item pertama yang memenuhi kondisi
+3. Setelah perulangan, kembalikan `False`
+
+[Sering tertukar dengan]{.schema-label} [D8 · Semuakah?](#D8) · [D1 · Menghitung](#D1)
+
+[Minggu 9 · lagi di Minggu 10–11]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+for item in koleksi:
+    if kondisi(item):
+        return True
+return False
+```
+
+</details>
+:::
+
+::: {#D8 .schema-card data-week="9" data-core="1"}
+::: schema-head
+[D8]{.schema-id} [★ inti]{.schema-core}
+:::
+[Semuakah?]{.schema-name} [Universal check (all)]{.schema-en}
+
+Menjawab apakah semua item memenuhi kondisi.
+
+[Ciri soal]{.schema-label}
+
+[apakah semua …]{.schema-cue} [setiap …]{.schema-cue} [tidak ada satu pun …]{.schema-cue} [jawabannya True/False]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Kunjungi item
+2. Kembalikan `False` pada contoh penyangkal pertama
+3. Setelah perulangan, kembalikan `True`
+
+[Sering tertukar dengan]{.schema-label} [D7 · Adakah?](#D7)
+
+[Minggu 9 · lagi di Minggu 10–11]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+for item in koleksi:
+    if not kondisi(item):
+        return False
+return True
+```
+
+</details>
+:::
+
+::: {#D9 .schema-card data-week="11" data-core="1"}
+::: schema-head
+[D9]{.schema-id} [★ inti]{.schema-core}
+:::
+[Saring]{.schema-name} [Filter]{.schema-en}
+
+Membuat koleksi baru berisi item-item yang memenuhi kondisi.
+
+[Ciri soal]{.schema-label}
+
+[ambil semua … yang …]{.schema-cue} [daftar … yang …]{.schema-cue} [tampilkan hanya …]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Mulai dengan list hasil yang kosong
+2. Kunjungi setiap item
+3. Tambahkan item ke hasil jika kondisinya benar
+4. Kembalikan list hasil
+
+[Sering tertukar dengan]{.schema-label} [D10 · Ubah setiap elemen](#D10) · [D1 · Menghitung](#D1)
+
+[Minggu 11 (butuh list)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+hasil = []
+for item in koleksi:
+    if kondisi(item):
+        hasil.append(item)
+return hasil
+```
+
+</details>
+:::
+
+::: {#D10 .schema-card data-week="11" data-core="0"}
+::: schema-head
+[D10]{.schema-id}
+:::
+[Ubah setiap elemen]{.schema-name} [Map (transform each item)]{.schema-en}
+
+Membuat koleksi baru yang setiap itemnya diubah dengan cara yang sama.
+
+[Ciri soal]{.schema-label}
+
+[ubah setiap …]{.schema-cue} [konversi semua …]{.schema-cue} [list baru berisi …]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Mulai dengan list hasil yang kosong
+2. Kunjungi setiap item
+3. Ubah item itu dan tambahkan hasilnya
+4. Kembalikan list hasil
+
+[Sering tertukar dengan]{.schema-label} [D9 · Saring](#D9)
+
+[Minggu 11 (butuh list)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+hasil = []
+for item in koleksi:
+    hasil.append(ubah(item))
+return hasil
+```
+
+</details>
+:::
+
+::: {#D11 .schema-card data-week="10" data-core="0"}
+::: schema-head
+[D11]{.schema-id}
+:::
+[Bangun teks]{.schema-name} [String building]{.schema-en}
+
+Membangun string baru sepotong demi sepotong.
+
+[Ciri soal]{.schema-label}
+
+[balik kata]{.schema-cue} [inisial / singkatan]{.schema-cue} [sembunyikan sebagian huruf]{.schema-cue} [gabungkan …]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Mulai dengan string kosong
+2. Kunjungi setiap karakter (atau potongan)
+3. Tambahkan potongan di depan atau di belakang
+4. Kembalikan string-nya
+
+[Sering tertukar dengan]{.schema-label} [D10 · Ubah setiap elemen](#D10)
+
+[Minggu 10 (string)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+hasil = ""
+for huruf in teks:
+    hasil = hasil + ubah(huruf)    # atau: ubah(huruf) + hasil
+```
+
+</details>
+:::
+
+::: {#D12 .schema-card data-week="9" data-core="0"}
+::: schema-head
+[D12]{.schema-id}
+:::
+[Bandingkan dengan sebelumnya]{.schema-name} [Compare with the previous item]{.schema-en}
+
+Memakai setiap item bersama item sebelumnya.
+
+[Ciri soal]{.schema-label}
+
+[naik / turun dari … sebelumnya]{.schema-cue} [berturut-turut]{.schema-cue} [selisih antara … yang berurutan]{.schema-cue} [apakah sudah terurut?]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Mulai dari item kedua (posisi 1)
+2. Bandingkan item i dengan item i−1
+3. Lakukan tindakan sesuai perbandingannya
+4. Kembalikan hasilnya
+
+[Sering tertukar dengan]{.schema-label} [D4 · Nilai terbesar / terkecil](#D4)
+
+[Minggu 9 (variabel 'sebelumnya') · list (11)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+for i in range(1, len(data)):
+    if data[i] > data[i - 1]:
+        ...
+```
+
+</details>
+:::
+
+::: {#D13 .schema-card data-week="9" data-core="0"}
+::: schema-head
+[D13]{.schema-id}
+:::
+[Rangkaian terpanjang]{.schema-name} [Longest run (streak)]{.schema-en}
+
+Menemukan panjang rangkaian terpanjang dari item berurutan yang memenuhi kondisi.
+
+[Ciri soal]{.schema-label}
+
+[berturut-turut]{.schema-cue} [beruntun]{.schema-cue} [rangkaian terpanjang]{.schema-cue} [streak]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Simpan panjang rangkaian saat ini dan terpanjang, keduanya 0
+2. Untuk setiap item: jika memenuhi, perpanjang rangkaian saat ini dan perbarui yang terpanjang
+3. Jika tidak, kembalikan rangkaian saat ini ke 0
+4. Kembalikan yang terpanjang
+
+[Sering tertukar dengan]{.schema-label} [D1 · Menghitung](#D1)
+
+[Minggu 9]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+sekarang = 0
+terpanjang = 0
+for item in koleksi:
+    if kondisi(item):
+        sekarang = sekarang + 1
+        terpanjang = max(terpanjang, sekarang)
+    else:
+        sekarang = 0
+```
+
+</details>
+:::
+
+::: {#D14 .schema-card data-week="9" data-core="0"}
+::: schema-head
+[D14]{.schema-id}
+:::
+[Hitung per kategori]{.schema-name} [Count per category]{.schema-en}
+
+Menghitung beberapa kategori sekaligus dalam satu kali telusur.
+
+[Ciri soal]{.schema-label}
+
+[berapa yang … dan berapa yang …]{.schema-cue} [ringkasan per kategori]{.schema-cue} [sebaran]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Satu penghitung per kategori, semuanya 0
+2. Kunjungi setiap item
+3. Klasifikasikan (B3) dan tambah tepat satu penghitung
+4. Kembalikan semua penghitung
+
+[Sering tertukar dengan]{.schema-label} [D15 · Hitung kemunculan](#D15)
+
+[Minggu 9 (cetak hasilnya; kembalikan tuple mulai Minggu 11)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+k1 = k2 = k3 = 0
+for item in koleksi:
+    if ...:   k1 = k1 + 1
+    elif ...: k2 = k2 + 1
+    else:     k3 = k3 + 1
+```
+
+</details>
+:::
+
+::: {#D15 .schema-card data-week="12" data-core="0"}
+::: schema-head
+[D15]{.schema-id}
+:::
+[Hitung kemunculan]{.schema-name} [Frequency count]{.schema-en}
+
+Menghitung berapa kali setiap nilai yang berbeda muncul, dengan dictionary.
+
+[Ciri soal]{.schema-label}
+
+[berapa kali setiap … muncul]{.schema-cue} [frekuensi]{.schema-cue} [… yang paling sering (modus)]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Mulai dengan dictionary kosong
+2. Untuk setiap item: jika baru, set hitungannya 0
+3. Tambah 1 pada hitungannya
+4. Kembalikan dictionary-nya (atau pakai D4 untuk mencari yang paling sering)
+
+[Sering tertukar dengan]{.schema-label} [D14 · Hitung per kategori](#D14)
+
+[Minggu 12 (dictionary)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+frekuensi = {}
+for item in koleksi:
+    if item not in frekuensi:
+        frekuensi[item] = 0
+    frekuensi[item] = frekuensi[item] + 1
+```
+
+</details>
+:::
+
+::: {#D16 .schema-card data-week="6" data-core="0"}
+::: schema-head
+[D16]{.schema-id}
+:::
+[Kupas digit]{.schema-name} [Digit loop]{.schema-en}
+
+Memproses digit-digit sebuah bilangan bulat satu per satu.
+
+[Ciri soal]{.schema-label}
+
+[jumlah digit]{.schema-cue} [banyaknya digit]{.schema-cue} [balik bilangan]{.schema-cue} [digit ganjil/genap]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Tangani tandanya (pakai nilai mutlak)
+2. Selama bilangan lebih dari 0: ambil digit terakhir dengan `% 10`
+3. Proses digit itu
+4. Buang digit itu dengan `// 10`
+
+[Sering tertukar dengan]{.schema-label} [A3 · Pecah dengan div dan mod](#A3)
+
+[Minggu 6 · lagi di Minggu 9]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+n = abs(n)
+while n > 0:
+    digit = n % 10
+    proses(digit)
+    n = n // 10
+```
+
+</details>
+:::
+
+:::
+::::
+
+:::: {.schema-group}
+### E · Perulangan bersarang
+
+Perulangan di dalam perulangan: baris dan kolom, pasangan, tabel.
+
+::: {.schema-grid}
+
+::: {#E1 .schema-card data-week="9" data-core="0"}
+::: schema-head
+[E1]{.schema-id}
+:::
+[Pola baris-kolom]{.schema-name} [Rows and columns]{.schema-en}
+
+Menghasilkan pola atau tabel dua dimensi yang perulangan dalamnya bergantung pada baris.
+
+[Ciri soal]{.schema-label}
+
+[pola bintang]{.schema-cue} [segitiga]{.schema-cue} [tabel perkalian]{.schema-cue} [baris ke-i berisi …]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Perulangan luar untuk baris
+2. Tentukan berapa kolom yang dimiliki baris i
+3. Perulangan dalam membangun baris itu
+4. Akhiri baris (pindah baris) lalu lanjut
+
+[Sering tertukar dengan]{.schema-label} [E2 · Bandingkan setiap pasangan](#E2)
+
+[Minggu 9]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+for baris in range(1, n + 1):
+    for kolom in range(banyak_kolom(baris)):
+        ...
+    # akhir baris
+```
+
+</details>
+:::
+
+::: {#E2 .schema-card data-week="11" data-core="0"}
+::: schema-head
+[E2]{.schema-id}
+:::
+[Bandingkan setiap pasangan]{.schema-name} [Every pair]{.schema-en}
+
+Memeriksa setiap pasangan item tepat satu kali.
+
+[Ciri soal]{.schema-label}
+
+[pasangan]{.schema-cue} [adakah dua item yang …]{.schema-cue} [duplikat]{.schema-cue} [setiap dua …]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Perulangan luar untuk posisi i
+2. Perulangan dalam untuk posisi j mulai dari i + 1
+3. Uji pasangan (data[i], data[j])
+4. Hitung, kumpulkan, atau berhenti
+
+[Sering tertukar dengan]{.schema-label} [E1 · Pola baris-kolom](#E1)
+
+[Minggu 11 (pasangan item list)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+for i in range(len(data)):
+    for j in range(i + 1, len(data)):
+        uji(data[i], data[j])
+```
+
+</details>
+:::
+
+::: {#E3 .schema-card data-week="11" data-core="0"}
+::: schema-head
+[E3]{.schema-id}
+:::
+[Telusuri tabel 2D]{.schema-name} [Grid traversal]{.schema-en}
+
+Memproses list di dalam list (tabel) baris demi baris.
+
+[Ciri soal]{.schema-label}
+
+[matriks]{.schema-cue} [tabel nilai per mahasiswa per tugas]{.schema-cue} [total tiap baris/kolom]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Perulangan luar untuk baris
+2. Perulangan dalam untuk item di baris itu
+3. Terapkan skema satu kali telusur (D1, D2, D4) di dalam baris
+4. Kumpulkan hasil per baris
+
+[Sering tertukar dengan]{.schema-label} [E1 · Pola baris-kolom](#E1)
+
+[Minggu 11 (list di dalam list)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+hasil = []
+for baris in tabel:
+    nilai_baris = ...
+    for x in baris:
+        ...
+    hasil.append(nilai_baris)
+```
+
+</details>
+:::
+
+:::
+::::
+
+:::: {.schema-group}
+### F · Algoritma koleksi
+
+Teknik khusus untuk list dan string.
+
+::: {.schema-grid}
+
+::: {#F1 .schema-card data-week="10" data-core="0"}
+::: schema-head
+[F1]{.schema-id}
+:::
+[Dua penunjuk]{.schema-name} [Two pointers]{.schema-en}
+
+Berjalan ke tengah dari kedua ujung urutan sekaligus.
+
+[Ciri soal]{.schema-label}
+
+[palindrom]{.schema-cue} [balik di tempat]{.schema-cue} [pasangan dari kedua ujung]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Pasang satu indeks di awal dan satu di akhir
+2. Selama belum bertemu: bandingkan atau tukar kedua item
+3. Geser kedua indeks ke tengah
+4. Kembalikan hasilnya
+
+[Sering tertukar dengan]{.schema-label} [D11 · Bangun teks](#D11)
+
+[Minggu 10 (string) · membalik list (11)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+kiri = 0
+kanan = len(data) - 1
+while kiri < kanan:
+    ...
+    kiri = kiri + 1
+    kanan = kanan - 1
+```
+
+</details>
+:::
+
+::: {#F2 .schema-card data-week="11" data-core="0"}
+::: schema-head
+[F2]{.schema-id}
+:::
+[Bagi dua]{.schema-name} [Binary search]{.schema-en}
+
+Menemukan nilai di list terurut dengan membagi dua rentang pencarian di setiap langkah.
+
+[Ciri soal]{.schema-label}
+
+[datanya sudah terurut]{.schema-cue} [cari dengan cepat]{.schema-cue} [tebak angka]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Set `bawah` dan `atas` ke ujung-ujung rentang
+2. Selama bawah ≤ atas: lihat item di tengah
+3. Ketemu: kembalikan; terlalu kecil: naikkan bawah; terlalu besar: turunkan atas
+4. Tidak ketemu: kembalikan −1
+
+[Sering tertukar dengan]{.schema-label} [D6 · Cari yang pertama](#D6)
+
+[Minggu 11]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+bawah, atas = 0, len(data) - 1
+while bawah <= atas:
+    tengah = (bawah + atas) // 2
+    ...
+```
+
+</details>
+:::
+
+::: {#F3 .schema-card data-week="11" data-core="0"}
+::: schema-head
+[F3]{.schema-id}
+:::
+[Urutkan dengan memilih terkecil]{.schema-name} [Selection sort]{.schema-en}
+
+Mengurutkan list dengan berulang kali memindahkan item terkecil yang tersisa ke depan.
+
+[Ciri soal]{.schema-label}
+
+[urutkan]{.schema-cue} [dari terkecil ke terbesar]{.schema-cue} [peringkat]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Untuk setiap posisi i dari depan
+2. Cari posisi item terkecil dari i sampai akhir (D5)
+3. Tukar item itu ke posisi i (A2)
+4. Kembalikan list yang sudah terurut
+
+[Minggu 11]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+for i in range(len(data)):
+    pos_min = posisi_terkecil(data, mulai=i)
+    tukar(data, i, pos_min)
+```
+
+</details>
+:::
+
+::: {#F4 .schema-card data-week="11" data-core="0"}
+::: schema-head
+[F4]{.schema-id}
+:::
+[Simpan yang sudah dilihat]{.schema-name} [Remember what was seen]{.schema-en}
+
+Menyimpan item yang sudah pernah dilihat, untuk melewati atau mendeteksi pengulangan.
+
+[Ciri soal]{.schema-label}
+
+[hapus duplikat]{.schema-cue} [unik]{.schema-cue} [sudah pernah muncul?]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Mulai dengan koleksi 'sudah dilihat' yang kosong (dan hasil)
+2. Untuk setiap item: periksa apakah sudah pernah dilihat
+3. Jika belum, catat (dan tambahkan ke hasil)
+4. Kembalikan hasilnya
+
+[Sering tertukar dengan]{.schema-label} [D9 · Saring](#D9)
+
+[Minggu 11 (list) · Minggu 12 (set)]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+sudah_dilihat = []
+for item in koleksi:
+    if item not in sudah_dilihat:
+        sudah_dilihat.append(item)
+```
+
+</details>
+:::
+
+:::
+::::
+
+:::: {.schema-group}
+### G · Fungsi dan dekomposisi
+
+Membungkus dan menyusun skema dengan fungsi.
+
+::: {.schema-grid}
+
+::: {#G1 .schema-card data-week="5" data-core="0"}
+::: schema-head
+[G1]{.schema-id}
+:::
+[Fungsi penguji]{.schema-name} [Predicate function]{.schema-en}
+
+Membungkus uji ya/tidak dalam fungsi yang mengembalikan `True`/`False`, lalu memakainya di dalam skema lain.
+
+[Ciri soal]{.schema-label}
+
+[apakah … (prima / tahun kabisat / valid)]{.schema-cue} [hitung atau kumpulkan bilangan prima]{.schema-cue} [uji yang sama dibutuhkan di beberapa tempat]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Rancang header dan uji untuk fungsinya
+2. Isi fungsinya (sering berupa penjaga ditambah D8)
+3. Uji fungsinya sendirian
+4. Pakai sebagai kondisi di D1, D9, atau D7
+
+[Minggu 5 tanpa perulangan · Minggu 9 dengan perulangan]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+def memenuhi(x):
+    ...
+    return True  # atau False
+
+banyak = 0
+for x in koleksi:
+    if memenuhi(x):
+        banyak = banyak + 1
+```
+
+</details>
+:::
+
+::: {#G2 .schema-card data-week="9" data-core="0"}
+::: schema-head
+[G2]{.schema-id}
+:::
+[Coba semua kemungkinan]{.schema-name} [Generate and test]{.schema-en}
+
+Menelusuri calon jawaban secara berurutan dan mengembalikan calon pertama (atau semua calon) yang lolos uji.
+
+[Ciri soal]{.schema-label}
+
+[cari bilangan yang …]{.schema-cue} [FPB / KPK]{.schema-cue} [kombinasi yang memenuhi …]{.schema-cue} [tidak ada rumusnya]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Tentukan rentang calon dan urutan mencobanya
+2. Uji setiap calon
+3. Berhenti di keberhasilan pertama (atau kumpulkan semua)
+4. Tangani kasus ketika tidak ada yang lolos
+
+[Sering tertukar dengan]{.schema-label} [D6 · Cari yang pertama](#D6)
+
+[Minggu 9]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+for calon in semua_kemungkinan:
+    if lolos_uji(calon):
+        return calon
+return tidak_ditemukan
+```
+
+</details>
+:::
+
+::: {#G3 .schema-card data-week="5" data-core="0"}
+::: schema-head
+[G3]{.schema-id}
+:::
+[Rekursi]{.schema-name} [Recursion]{.schema-en}
+
+Menyelesaikan masalah dengan menyelesaikan versi yang lebih kecil dari masalah yang sama.
+
+[Ciri soal]{.schema-label}
+
+[didefinisikan dengan dirinya sendiri]{.schema-cue} [faktorial, pangkat, struktur bersarang]{.schema-cue}
+
+[Langkah]{.schema-label}
+
+1. Tulis kasus dasar (masalah terkecil, langsung dijawab)
+2. Tulis kasus rekursif: perkecil masalahnya dan panggil fungsinya
+3. Gabungkan jawaban kecil itu menjadi jawaban utuh
+4. Periksa bahwa setiap pemanggilan bergerak menuju kasus dasar
+
+[Sering tertukar dengan]{.schema-label} [D2 · Akumulasi](#D2)
+
+[Opsional, pengayaan setelah Minggu 5]{.schema-week}
+
+<details><summary>Kerangka kode</summary>
+
+```python
+def f(n):
+    if kasus_dasar(n):
+        return jawaban_langsung
+    return gabung(n, f(lebih_kecil(n)))
+```
+
+</details>
+:::
+
+:::
+::::
+
+
+```{=html}
+<script>
+(function () {
+  var week = document.getElementById("schema-week");
+  var core = document.getElementById("schema-core");
+  var count = document.getElementById("schema-count");
+  function apply() {
+    var max = parseInt(week.value, 10), shown = 0;
+    document.querySelectorAll(".schema-card").forEach(function (c) {
+      var ok = parseInt(c.dataset.week, 10) <= max && (!core.checked || c.dataset.core === "1");
+      c.hidden = !ok;
+      if (ok) shown++;
+    });
+    document.querySelectorAll(".schema-group").forEach(function (g) {
+      g.hidden = !g.querySelector(".schema-card:not([hidden])");
+    });
+    count.textContent = shown + " dari 39 skema";
+  }
+  week.addEventListener("change", apply);
+  core.addEventListener("change", apply);
+  apply();
+})();
+</script>
+```
+
+## Menggabungkan Skema
+
+Kebanyakan soal tugas membutuhkan beberapa skema sekaligus. Ada tiga cara menggabungkannya:
+
+| Cara | Artinya | Contoh |
+|---|---|---|
+| **Berurutan** | Satu skema selesai, lalu skema berikutnya dimulai | Cari rata-rata (D3), lalu hitung nilai di atas rata-rata (D1): dua kali telusur |
+| **Bersarang** | Satu skema berjalan di dalam setiap langkah skema lain | Uji bilangan prima (G1) di dalam penghitungan (D1) |
+| **Digabung** | Dua skema berbagi satu perulangan | Menghitung dan menjumlah dalam satu telusur untuk rata-rata (D3); penjaga (B1) di dalam perulangan |
+
+: {tbl-colwidths="[16,40,44]"}
+
+**Contoh** (memakai list, yang dipelajari di Minggu 11). Tulis `rata_rata_lulus(daftar_nilai)` yang mengembalikan rata-rata nilai yang lulus (≥ 60), mengabaikan nilai tidak valid (di bawah 0 atau di atas 100). Kembalikan 0 jika tidak ada yang lulus.
+
+```python
+def rata_rata_lulus(daftar_nilai):
+    total = 0                          # D2: akumulator
+    banyak = 0                         # D1: penghitung
+    for nilai in daftar_nilai:
+        if 0 <= nilai <= 100:          # B1: penjaga data tidak valid
+            if nilai >= 60:            # D1/D2: kondisi
+                total = total + nilai
+                banyak = banyak + 1
+    if banyak == 0:                    # B1: penjaga pembagian
+        return 0
+    return total / banyak              # D3: rata-rata
+```
+
+| Uji | Hasil |
+|---|---|
+| `rata_rata_lulus([70, 80, 150, -5, 50])` | `75.0` |
+| `rata_rata_lulus([10, 20])` | `0` |
+| `rata_rata_lulus([])` | `0` |
+
+Beri label setiap bagian dengan skema asalnya, seperti komentar di atas. Label ini membantumu (dan pemeriksa kodemu) melihat rencana di balik kode.
+
+## Peran Variabel
+
+Hampir semua variabel di program pemula memainkan salah satu dari beberapa **peran** berikut (Sajaniemi, 2002). Menyebut perannya membantu menjelaskan kode ("`terbaik` adalah nilai terbaik sejauh ini") dan mengenali skemanya.
+
+| Peran | Tugasnya | Contoh |
+|---|---|---|
+| Nilai tetap | Diberi nilai sekali, tidak pernah berubah | `batas_lulus = 60` |
+| Pelangkah | Melewati urutan nilai yang dapat ditebak | `for i in range(n)`; `n` yang mengecil di D16 |
+| Penjelajah | Bergerak melewati posisi-posisi struktur data | `i` pada `data[i]`; `kiri`/`kanan` di F1 |
+| Pemegang terbaru | Menyimpan nilai terakhir yang dibaca | `harga = int(input())` di C2 |
+| Pemegang terbaik | Menyimpan nilai (atau posisi) terbaik sejauh ini | `terbaik` di D4 |
+| Pengumpul | Mengumpulkan pengaruh nilai-nilai yang dilihat | `total`, `banyak` |
+| Pengikut | Menyimpan nilai sebelumnya dari variabel lain | `data[i - 1]` di D12 |
+| Bendera satu arah | Boolean yang berubah sekali dan tidak kembali | `ketemu = True` |
+| Sementara | Menyimpan nilai untuk waktu yang sangat singkat | `sementara` di A2 |
+| Wadah | Struktur data yang menyimpan atau menata item | list hasil di D9, dictionary di D15 |
+
+: {tbl-colwidths="[22,44,34]"}
+
+## Referensi
+
+Muller, O., Ginat, D., & Haberman, B. (2007). Pattern-oriented instruction and its influence on problem decomposition and solution construction. *Proceedings of ITiCSE 2007*, 151–155. <https://doi.org/10.1145/1269900.1268830>
+
+Sajaniemi, J. (2002). An empirical analysis of roles of variables in novice-level procedural programs. *Proceedings of IEEE Symposia on Human Centric Computing Languages and Environments*, 37–39. <https://doi.org/10.1109/HCC.2002.1046340>
+
+Soloway, E. (1986). Learning to program = learning to construct mechanisms and explanations. *Communications of the ACM, 29*(9), 850–858. <https://doi.org/10.1145/6592.6594>
+
+Soloway, E., & Ehrlich, K. (1984). Empirical studies of programming knowledge. *IEEE Transactions on Software Engineering, SE-10*(5), 595–609. <https://doi.org/10.1109/TSE.1984.5010283>
+
+Spohrer, J. C., & Soloway, E. (1986). Novice mistakes: Are the folk wisdoms correct? *Communications of the ACM, 29*(7), 624–632. <https://doi.org/10.1145/6138.6145>
