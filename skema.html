@@ -1,0 +1,2391 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id" xml:lang="id"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Katalog Skema Pemrograman – BBK1AAB4 (Alpro SI Tel-U)</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0bcc0934d8aec0a40fcd25431ef9296d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-6d117d63df15dab5168e8266a7b39548.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0bcc0934d8aec0a40fcd25431ef9296d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-d5b1b73726bcfd5d78e14baebf168773.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0aab3d2a6ae5ac087d96e3ea91d7ea02.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-d5b1b73726bcfd5d78e14baebf168773.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Tidak ada hasil",
+    "search-matching-documents-text": "dokumen cocok",
+    "search-copy-link-title": "Salin tautan untuk mencari",
+    "search-hide-matches-text": "Sembunyikan kecocokan lainnya",
+    "search-more-match-text": "kecocokan lainnya di dokumen ini",
+    "search-more-matches-text": "kecocokan lainnya di dokumen ini",
+    "search-clear-button-title": "Hapus",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Batal",
+    "search-submit-button-title": "Kirim",
+    "search-label": "Mencari"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">BBK1AAB4 (Alpro SI Tel-U)</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Mencari"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alihkan navigasi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Beranda</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./silabus.html"> 
+<span class="menu-text">Silabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./jadwal.html"> 
+<span class="menu-text">Jadwal</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./materi/index.html"> 
+<span class="menu-text">Materi</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./penilaian.html"> 
+<span class="menu-text">Penilaian</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sumber-belajar" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Sumber Belajar</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-sumber-belajar">    
+        <li>
+    <a class="dropdown-item" href="./sumber.html">
+ <span class="dropdown-text">Tools, Buku &amp; Glosarium</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./strategi.html">
+ <span class="dropdown-text">Strategi Belajar</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./skema.html">
+ <span class="dropdown-text">Katalog Skema Pemrograman</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">Tim Pengajar</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://lms.telkomuniversity.ac.id"> <i class="bi bi-mortarboard-fill" role="img" aria-label="LMS Telkom University">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alihkan mode gelap"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Di halaman ini</h2>
+   
+  <ul>
+  <li><a href="#cara-memakai-katalog" id="toc-cara-memakai-katalog" class="nav-link active" data-scroll-target="#cara-memakai-katalog">Cara Memakai Katalog</a>
+  <ul class="collapse">
+  <li><a href="#contoh-soal-laundry-minggu-5" id="toc-contoh-soal-laundry-minggu-5" class="nav-link" data-scroll-target="#contoh-soal-laundry-minggu-5">Contoh: soal laundry Minggu 5</a></li>
+  </ul></li>
+  <li><a href="#pemilih" id="toc-pemilih" class="nav-link" data-scroll-target="#pemilih">Skema mana yang dibutuhkan?</a></li>
+  <li><a href="#kartu-skema" id="toc-kartu-skema" class="nav-link" data-scroll-target="#kartu-skema">Kartu Skema</a>
+  <ul class="collapse">
+  <li><a href="#a-urutan-sequence" id="toc-a-urutan-sequence" class="nav-link" data-scroll-target="#a-urutan-sequence">A · Urutan (Sequence)</a></li>
+  <li><a href="#b-seleksi-selection" id="toc-b-seleksi-selection" class="nav-link" data-scroll-target="#b-seleksi-selection">B · Seleksi (Selection)</a></li>
+  <li><a href="#c-kendali-perulangan" id="toc-c-kendali-perulangan" class="nav-link" data-scroll-target="#c-kendali-perulangan">C · Kendali perulangan</a></li>
+  <li><a href="#d-satu-kali-telusur-data" id="toc-d-satu-kali-telusur-data" class="nav-link" data-scroll-target="#d-satu-kali-telusur-data">D · Satu kali telusur data</a></li>
+  <li><a href="#e-perulangan-bersarang" id="toc-e-perulangan-bersarang" class="nav-link" data-scroll-target="#e-perulangan-bersarang">E · Perulangan bersarang</a></li>
+  <li><a href="#f-algoritma-koleksi" id="toc-f-algoritma-koleksi" class="nav-link" data-scroll-target="#f-algoritma-koleksi">F · Algoritma koleksi</a></li>
+  <li><a href="#g-fungsi-dan-dekomposisi" id="toc-g-fungsi-dan-dekomposisi" class="nav-link" data-scroll-target="#g-fungsi-dan-dekomposisi">G · Fungsi dan dekomposisi</a></li>
+  </ul></li>
+  <li><a href="#menggabungkan-skema" id="toc-menggabungkan-skema" class="nav-link" data-scroll-target="#menggabungkan-skema">Menggabungkan Skema</a></li>
+  <li><a href="#peran-variabel" id="toc-peran-variabel" class="nav-link" data-scroll-target="#peran-variabel">Peran Variabel</a></li>
+  <li><a href="#referensi" id="toc-referensi" class="nav-link" data-scroll-target="#referensi">Referensi</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Katalog Skema Pemrograman</h1>
+<p class="subtitle lead">Pola solusi yang dipakai ulang untuk memecahkan soal pemrograman</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Saat membaca soal baru, programmer berpengalaman jarang mulai dari nol. Mereka mengenali <strong>tujuan</strong> soal (“hitung berapa yang lulus”), mengingat <strong>pola solusi</strong> yang cocok (“penghitung mulai 0, kunjungi setiap item, tambah 1 jika memenuhi”), lalu menyesuaikannya. Pola solusi seperti ini disebut <strong>skema</strong> (Soloway &amp; Ehrlich, 1984). Halaman ini mengumpulkan 39 skema yang kamu butuhkan di mata kuliah ini, masing-masing dalam satu kartu.</p>
+<p>Skema bukan kode untuk disalin. Skema adalah <strong>rencana</strong>: urutan langkah yang kamu tulis sebagai komentar, lalu kamu isi dengan kode yang sesuai soalmu.</p>
+<section id="cara-memakai-katalog" class="level2">
+<h2 class="anchored" data-anchor-id="cara-memakai-katalog">Cara Memakai Katalog</h2>
+<div class="schema-steps">
+<div class="schema-step">
+<p><span class="n">1</span></p>
+<p><strong>Baca soalnya, cari tujuannya.</strong> Garis bawahi kata-kata yang menyatakan hasil: <em>berapa banyak</em>, <em>total</em>, <em>terbesar</em>, <em>adakah</em>, <em>semua</em>. Tiap kartu punya bagian <strong>Ciri soal</strong> berisi kata-kata seperti ini.</p>
+</div>
+<div class="schema-step">
+<p><span class="n">2</span></p>
+<p><strong>Pilih skemanya.</strong> Jawab pertanyaan di tabel <a href="#pemilih">Skema mana yang dibutuhkan?</a>. Jawabanmu menunjuk ke satu kode kartu, misalnya <code>D1</code>.</p>
+</div>
+<div class="schema-step">
+<p><span class="n">3</span></p>
+<p><strong>Buka kartunya dan tulis langkahnya sebagai komentar.</strong> Salin daftar <strong>Langkah</strong> ke editor sebagai komentar <code>#</code>, sebelum menulis satu baris kode pun.</p>
+</div>
+<div class="schema-step">
+<p><span class="n">4</span></p>
+<p><strong>Isi tiap langkah dengan kode.</strong> Lihat <strong>Kerangka kode</strong> bila perlu, lalu ganti nama-nama umum (<code>koleksi</code>, <code>kondisi</code>) dengan data dan syarat soalmu.</p>
+</div>
+<div class="schema-step">
+<p><span class="n">5</span></p>
+<p><strong>Uji, lalu gabungkan.</strong> Uji dengan contoh yang kamu hitung tangan, termasuk nilai batas. Soal tugas biasanya butuh <strong>beberapa</strong> skema; lihat <a href="#menggabungkan-skema">Menggabungkan skema</a>.</p>
+</div>
+</div>
+<section id="contoh-soal-laundry-minggu-5" class="level3">
+<h3 class="anchored" data-anchor-id="contoh-soal-laundry-minggu-5">Contoh: soal laundry Minggu 5</h3>
+<blockquote class="blockquote">
+<p>Tarif reguler Rp6.000/kg, kilat Rp9.000/kg, express Rp15.000/kg. Potongan Rp5.000 jika berat <strong>lebih dari</strong> 4 kg, kecuali express. Hitung total bayar.</p>
+</blockquote>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 34%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bagian soal</th>
+<th>Pertanyaan pemilih</th>
+<th>Skema</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tarif bergantung pada jenis layanan</td>
+<td>Hasil bergantung pada beberapa pilihan?</td>
+<td><a href="#B3">B3 · Klasifikasi bertingkat</a></td>
+</tr>
+<tr class="even">
+<td>Potongan bergantung pada berat <strong>dan</strong> layanan</td>
+<td>Dua faktor yang saling lepas?</td>
+<td><a href="#B4">B4 · Keputusan bersarang</a>, digabung dengan <code>and</code></td>
+</tr>
+<tr class="odd">
+<td>Total = tarif × berat − potongan</td>
+<td>Ada rumus, tanpa perulangan?</td>
+<td><a href="#A1">A1 · Baca–Proses–Hasilkan</a></td>
+</tr>
+</tbody>
+</table>
+<p>Tiap skema menjadi satu fungsi, dan langkah-langkah kartunya menjadi komentar:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tarif_layanan(layanan):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># B3: urutkan kategori, tepat satu cabang berjalan, else untuk sisanya</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> layanan <span class="op">==</span> <span class="st">"reguler"</span>:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">6000</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> layanan <span class="op">==</span> <span class="st">"kilat"</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">9000</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">15000</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> potongan(berat, layanan):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># B4: dua faktor digabung dengan and; uji nilai batas 4 kg</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> berat <span class="op">&gt;</span> <span class="dv">4</span> <span class="kw">and</span> layanan <span class="op">!=</span> <span class="st">"express"</span>:</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">5000</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> total_bayar(layanan, berat):</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># A1: siapkan data, hitung dengan rumus, kembalikan hasilnya</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    biaya <span class="op">=</span> tarif_layanan(layanan) <span class="op">*</span> berat</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> biaya <span class="op">-</span> potongan(berat, layanan)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total_bayar(<span class="st">"reguler"</span>, <span class="dv">5</span>))    <span class="co"># 25000</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Tiga kebiasaan saat memakai kartu">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tiga kebiasaan saat memakai kartu
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Perhatikan “Sering tertukar dengan”.</strong> Kesalahan paling umum adalah memakai skema yang mirip tetapi salah, misalnya <em>menghitung</em> (D1) padahal soal meminta <em>total</em> (D2).</li>
+<li><strong>Tanyakan: bisakah perulangannya berhenti lebih awal?</strong> Mencari (D6), <em>adakah</em> (D7), dan <em>semuakah</em> (D8) boleh berhenti di item penentu pertama. Menghitung, menjumlah, nilai ekstrem, menyaring, dan mengubah harus mengunjungi <strong>setiap</strong> item.</li>
+<li><strong>Sesuaikan dengan minggumu.</strong> Setiap kartu menyebut minggu kapan skema itu dipelajari. Pakai filter di bawah untuk menampilkan skema yang sudah bisa kamu pakai.</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="pemilih" class="level2">
+<h2 class="anchored" data-anchor-id="pemilih">Skema mana yang dibutuhkan?</h2>
+<p>Jawab pertanyaan ini <strong>sebelum</strong> menulis kode. Jawabanmu menunjuk ke sebuah skema.</p>
+<div class="table-responsive">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 30%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pertanyaan tentang soal</th>
+<th>Jika jawabannya…</th>
+<th>Skema</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ada rumus dan tidak ada pengulangan?</td>
+<td>Ya</td>
+<td><a href="#A1">A1</a></td>
+</tr>
+<tr class="even">
+<td>Ada masukan yang membuat perhitungan mustahil?</td>
+<td>Ya</td>
+<td><a href="#B1">B1</a>, penjaga lebih dulu</td>
+</tr>
+<tr class="odd">
+<td>Hasil bergantung pada satu kondisi? Beberapa rentang? Dua faktor?</td>
+<td>Satu / rentang / dua faktor</td>
+<td><a href="#B2">B2</a> / <a href="#B3">B3</a> / <a href="#B4">B4</a></td>
+</tr>
+<tr class="even">
+<td>Banyaknya pengulangan sudah diketahui sebelum perulangan?</td>
+<td>Ya</td>
+<td><a href="#C1">C1</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Tidak, berhenti pada masukan khusus</td>
+<td><a href="#C2">C2</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Tidak, berhenti saat target tercapai</td>
+<td><a href="#C4">C4</a></td>
+</tr>
+<tr class="odd">
+<td>Apa hasil dari menelusuri data?</td>
+<td>Banyaknya item</td>
+<td><a href="#D1">D1</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Total atau hasil kali</td>
+<td><a href="#D2">D2</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Rata-rata</td>
+<td><a href="#D3">D3</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Nilai terbesar atau terkecil</td>
+<td><a href="#D4">D4</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><em>Item mana</em> yang terbesar</td>
+<td><a href="#D5">D5</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Item pertama yang cocok, atau posisinya</td>
+<td><a href="#D6">D6</a> (<a href="#F2">F2</a> jika data terurut)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>True/False: adakah …?</td>
+<td><a href="#D7">D7</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>True/False: semuakah …?</td>
+<td><a href="#D8">D8</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>List baru berisi sebagian item</td>
+<td><a href="#D9">D9</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>List baru dengan setiap item diubah</td>
+<td><a href="#D10">D10</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>String baru</td>
+<td><a href="#D11">D11</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Hitungan per kategori / per nilai berbeda</td>
+<td><a href="#D14">D14</a> / <a href="#D15">D15</a></td>
+</tr>
+<tr class="odd">
+<td>Setiap item butuh item sebelumnya?</td>
+<td>Ya</td>
+<td><a href="#D12">D12</a>; untuk rangkaian terpanjang, <a href="#D13">D13</a></td>
+</tr>
+<tr class="even">
+<td>“Item”-nya adalah digit sebuah bilangan?</td>
+<td>Ya</td>
+<td><a href="#D16">D16</a></td>
+</tr>
+<tr class="odd">
+<td>Keluarannya dua dimensi, atau setiap pasangan penting?</td>
+<td>Baris-kolom / pasangan / tabel</td>
+<td><a href="#E1">E1</a> / <a href="#E2">E2</a> / <a href="#E3">E3</a></td>
+</tr>
+<tr class="even">
+<td>Tidak ada rumus, tetapi calon jawaban bisa diperiksa?</td>
+<td>Ya</td>
+<td><a href="#G2">G2</a></td>
+</tr>
+<tr class="odd">
+<td>Uji ya/tidak yang sama dibutuhkan di beberapa tempat?</td>
+<td>Ya</td>
+<td><a href="#G1">G1</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="kartu-skema" class="level2">
+<h2 class="anchored" data-anchor-id="kartu-skema">Kartu Skema</h2>
+<div class="schema-filter" role="group" aria-label="Saring kartu skema">
+  <label>Tampilkan skema sampai
+    <select id="schema-week">
+      <option value="99">semua minggu</option>
+      <option value="2">Minggu 2</option>
+      <option value="3">Minggu 3</option>
+      <option value="5">Minggu 5</option>
+      <option value="6">Minggu 6</option>
+      <option value="9">Minggu 9</option>
+      <option value="10">Minggu 10</option>
+      <option value="11">Minggu 11</option>
+      <option value="12">Minggu 12</option>
+    </select>
+  </label>
+  <label><input type="checkbox" id="schema-core"> hanya skema inti ★</label>
+  <span id="schema-count" aria-live="polite"></span>
+</div>
+<p>Skema bertanda <strong>★ inti</strong> paling sering muncul di soal dan wajib kamu kuasai. Kode di kerangka memakai nama umum seperti <code>koleksi</code>, <code>kondisi</code>, dan <code>proses</code>; ganti dengan nama yang sesuai soalmu.</p>
+<section id="a-urutan-sequence" class="level3 schema-group">
+<h3 class="anchored" data-anchor-id="a-urutan-sequence">A · Urutan (Sequence)</h3>
+<p>Perhitungan lurus: tanpa keputusan, tanpa perulangan.</p>
+<div class="schema-grid">
+<div id="A1" class="schema-card" data-week="2" data-core="1">
+<div class="schema-head">
+<p><span class="schema-id">A1</span> <span class="schema-core">★ inti</span></p>
+</div>
+<p><span class="schema-name">Baca–Proses–Hasilkan</span> <span class="schema-en">Input–process–output</span></p>
+<p>Menghitung hasil dari nilai yang diketahui dengan rumus atau urutan langkah yang tetap.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">hitung … dari …</span> <span class="schema-cue">konversi …</span> <span class="schema-cue">berapa (total/luas/biaya) jika …</span> <span class="schema-cue">ada rumus</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Kenali masukan dan keluarannya</li>
+<li>Ubah data ke satuan yang dibutuhkan rumus</li>
+<li>Hitung hasilnya dengan rumus</li>
+<li>Kembalikan hasilnya</li>
+</ol>
+<p><span class="schema-week">Minggu 2 · sebagai fungsi mulai Minggu 5</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> nama_fungsi(masukan_1, masukan_2):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Siapkan data (ubah satuan jika perlu)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Hitung dengan rumus</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    hasil <span class="op">=</span> ...</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Kembalikan hasilnya</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> hasil</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="A2" class="schema-card" data-week="2" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">A2</span></p>
+</div>
+<p><span class="schema-name">Tukar nilai</span> <span class="schema-en">Swap</span></p>
+<p>Menukar nilai dua variabel tanpa kehilangan salah satunya.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">tukar</span> <span class="schema-cue">urutkan dua nilai</span> <span class="schema-cue">agar a ≤ b</span> <span class="schema-cue">langkah di dalam pengurutan</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Simpan satu nilai di variabel sementara</li>
+<li>Timpa variabel itu dengan nilai yang lain</li>
+<li>Pindahkan nilai yang disimpan ke variabel kedua</li>
+</ol>
+<p><span class="schema-week">Minggu 2</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sementara <span class="op">=</span> a</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> b</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> sementara</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="A3" class="schema-card" data-week="2" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">A3</span></p>
+</div>
+<p><span class="schema-name">Pecah dengan div dan mod</span> <span class="schema-en">Unit decomposition with div and mod</span></p>
+<p>Memecah satu besaran menjadi satuan besar dan kecil (jam/menit/detik, lembar uang, puluhan dan satuan).</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">ubah … menjadi jam, menit, detik</span> <span class="schema-cue">pecah nominal menjadi lembar uang</span> <span class="schema-cue">berapa … yang muat</span> <span class="schema-cue">sisa</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Ambil jumlah satuan terbesar dengan <code>//</code></li>
+<li>Simpan sisanya dengan <code>%</code></li>
+<li>Ulangi untuk satuan berikutnya yang lebih kecil</li>
+<li>Kembalikan semua bagiannya</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D16">D16 · Kupas digit</a></p>
+<p><span class="schema-week">Minggu 2</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>besar <span class="op">=</span> total <span class="op">//</span> satuan_besar</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sisa <span class="op">=</span> total <span class="op">%</span> satuan_besar</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>kecil <span class="op">=</span> sisa <span class="op">//</span> satuan_kecil</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>sisa <span class="op">=</span> sisa <span class="op">%</span> satuan_kecil</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</div>
+</section>
+<section id="b-seleksi-selection" class="level3 schema-group">
+<h3 class="anchored" data-anchor-id="b-seleksi-selection">B · Seleksi (Selection)</h3>
+<p>Memilih tindakan berdasarkan kondisi.</p>
+<div class="schema-grid">
+<div id="B1" class="schema-card" data-week="3" data-core="1">
+<div class="schema-head">
+<p><span class="schema-id">B1</span> <span class="schema-core">★ inti</span></p>
+</div>
+<p><span class="schema-name">Penjaga</span> <span class="schema-en">Guard</span></p>
+<p>Menangani kasus yang tidak valid atau khusus lebih dulu lalu keluar, sehingga perhitungan utama hanya menerima data yang valid.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">jika data tidak valid …</span> <span class="schema-cue">ada pembagian (mungkin dengan nol)</span> <span class="schema-cue">nilai negatif tidak boleh</span> <span class="schema-cue">kembalikan None / −1 / pesan</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Daftar kasus yang membuat perhitungan utama mustahil atau tidak bermakna</li>
+<li>Periksa kasus itu lebih dulu dan langsung <code>return</code></li>
+<li>Tulis perhitungan utama untuk kasus yang valid</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#B2">B2 · Pilih salah satu</a></p>
+<p><span class="schema-week">Minggu 3 · di dalam fungsi mulai Minggu 5</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> nama_fungsi(data):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Penjaga: tangani kasus tidak valid lebih dulu</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> kondisi_tidak_valid:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> nilai_khusus</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Kasus normal</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> hasil</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="B2" class="schema-card" data-week="3" data-core="1">
+<div class="schema-head">
+<p><span class="schema-id">B2</span> <span class="schema-core">★ inti</span></p>
+</div>
+<p><span class="schema-name">Pilih salah satu</span> <span class="schema-en">Two-way decision</span></p>
+<p>Memilih tepat satu dari dua tindakan atau dua rumus.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">jika … maka …, selain itu …</span> <span class="schema-cue">lulus / tidak lulus</span> <span class="schema-cue">tarif berubah setelah ambang tertentu</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Temukan kondisi yang memisahkan dua kasus, termasuk nilai batasnya</li>
+<li>Tulis tindakan untuk kasus benar</li>
+<li>Tulis tindakan untuk kasus salah</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#B3">B3 · Klasifikasi bertingkat</a></p>
+<p><span class="schema-week">Minggu 3</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> kondisi:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    hasil <span class="op">=</span> rumus_1</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    hasil <span class="op">=</span> rumus_2</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="B3" class="schema-card" data-week="3" data-core="1">
+<div class="schema-head">
+<p><span class="schema-id">B3</span> <span class="schema-core">★ inti</span></p>
+</div>
+<p><span class="schema-name">Klasifikasi bertingkat</span> <span class="schema-en">Multi-way classification</span></p>
+<p>Memasukkan satu nilai ke salah satu dari beberapa kategori yang berurutan (rentang).</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">kategori</span> <span class="schema-cue">nilai huruf</span> <span class="schema-cue">golongan / kelas</span> <span class="schema-cue">tarif bertingkat</span> <span class="schema-cue">tabel rentang</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Tulis rentangnya sebagai tabel; periksa celah dan tumpang tindih</li>
+<li>Urutkan kondisi dari satu ujung (tertinggi atau terendah)</li>
+<li>Pakai <code>if</code>–<code>elif</code>–<code>else</code> agar tepat satu cabang yang berjalan</li>
+<li>Pakai <code>else</code> untuk kategori terakhir</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#B4">B4 · Keputusan bersarang</a> · <a href="#B5">B5 · Tabel rujukan</a></p>
+<p><span class="schema-week">Minggu 3</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> nilai <span class="op">&gt;=</span> batas_1:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    kategori <span class="op">=</span> <span class="st">"K1"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> nilai <span class="op">&gt;=</span> batas_2:</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    kategori <span class="op">=</span> <span class="st">"K2"</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    kategori <span class="op">=</span> <span class="st">"K3"</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="B4" class="schema-card" data-week="3" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">B4</span></p>
+</div>
+<p><span class="schema-name">Keputusan bersarang</span> <span class="schema-en">Nested decision (two factors)</span></p>
+<p>Mengambil keputusan saat hasilnya bergantung pada dua kondisi atau lebih yang saling lepas.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">bergantung pada … dan …</span> <span class="schema-cue">jika member dan …</span> <span class="schema-cue">tabel dua dimensi</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Buat tabel semua kombinasi kondisi</li>
+<li>Putuskan: bersarang (faktor luar, lalu dalam) atau digabung dengan <code>and</code>/<code>or</code></li>
+<li>Periksa bahwa setiap kombinasi punya tepat satu hasil</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#B3">B3 · Klasifikasi bertingkat</a></p>
+<p><span class="schema-week">Minggu 3</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> faktor_1:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> faktor_2:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        hasil <span class="op">=</span> ...</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        hasil <span class="op">=</span> ...</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="B5" class="schema-card" data-week="12" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">B5</span></p>
+</div>
+<p><span class="schema-name">Tabel rujukan</span> <span class="schema-en">Lookup table</span></p>
+<p>Memetakan nilai-nilai diskret ke hasilnya dengan dictionary, bukan rantai <code>if</code>–<code>elif</code> yang panjang.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">kode → nama</span> <span class="schema-cue">nomor hari atau bulan</span> <span class="schema-cue">harga per jenis</span> <span class="schema-cue">banyak kasus yang membandingkan kesamaan</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Tulis pemetaannya sebagai data (dictionary)</li>
+<li>Cari kuncinya</li>
+<li>Tangani kunci yang tidak ada dengan nilai bawaan</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#B3">B3 · Klasifikasi bertingkat</a></p>
+<p><span class="schema-week">Minggu 12 (dictionary)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>TABEL <span class="op">=</span> {kunci_1: nilai_1, kunci_2: nilai_2}</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>hasil <span class="op">=</span> TABEL.get(kunci, nilai_bawaan)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</div>
+</section>
+<section id="c-kendali-perulangan" class="level3 schema-group">
+<h3 class="anchored" data-anchor-id="c-kendali-perulangan">C · Kendali perulangan</h3>
+<p>Mengatur kapan perulangan berjalan dan kapan berhenti.</p>
+<div class="schema-grid">
+<div id="C1" class="schema-card" data-week="6" data-core="1">
+<div class="schema-head">
+<p><span class="schema-id">C1</span> <span class="schema-core">★ inti</span></p>
+</div>
+<p><span class="schema-name">Ulangi n kali</span> <span class="schema-en">Counted repetition</span></p>
+<p>Mengulang suatu pembaruan sebanyak jumlah yang sudah diketahui sebelum perulangan dimulai.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">selama n tahun/bulan/kali</span> <span class="schema-cue">untuk setiap bilangan dari 1 sampai n</span> <span class="schema-cue">jumlah pengulangan diberikan</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Siapkan keadaan yang berubah</li>
+<li>Ulangi pembaruan tepat n kali dengan <code>range</code></li>
+<li>Kembalikan keadaan akhirnya</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#C4">C4 · Ulangi sampai tercapai</a></p>
+<p><span class="schema-week">Minggu 6</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>keadaan <span class="op">=</span> nilai_awal</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    keadaan <span class="op">=</span> perbarui(keadaan)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="C2" class="schema-card" data-week="6" data-core="1">
+<div class="schema-head">
+<p><span class="schema-id">C2</span> <span class="schema-core">★ inti</span></p>
+</div>
+<p><span class="schema-name">Baca sampai tanda berhenti</span> <span class="schema-en">Sentinel-controlled loop</span></p>
+<p>Memproses masukan satu per satu sampai muncul nilai penanda berhenti.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">masukkan 0 / −1 untuk selesai</span> <span class="schema-cue">sampai pengguna mengetik …</span> <span class="schema-cue">banyaknya masukan tidak diketahui</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Baca nilai pertama sebelum perulangan</li>
+<li>Selama nilai itu bukan penanda: proses</li>
+<li>Baca nilai berikutnya di akhir badan perulangan</li>
+<li>Setelah perulangan, laporkan hasilnya</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#C3">C3 · Minta ulang sampai benar</a> · <a href="#C4">C4 · Ulangi sampai tercapai</a></p>
+<p><span class="schema-week">Minggu 6</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>nilai <span class="op">=</span> baca()</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> nilai <span class="op">!=</span> PENANDA:</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    proses(nilai)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    nilai <span class="op">=</span> baca()</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="C3" class="schema-card" data-week="6" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">C3</span></p>
+</div>
+<p><span class="schema-name">Minta ulang sampai benar</span> <span class="schema-en">Input validation loop</span></p>
+<p>Terus meminta masukan sampai masukannya valid.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">jika masukan salah, minta lagi</span> <span class="schema-cue">harus antara … dan …</span> <span class="schema-cue">ulangi sampai valid</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Baca satu nilai</li>
+<li>Selama tidak valid: tampilkan pesan dan baca lagi</li>
+<li>Kembalikan nilai yang valid</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#B1">B1 · Penjaga</a> · <a href="#C2">C2 · Baca sampai tanda berhenti</a></p>
+<p><span class="schema-week">Minggu 6</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>nilai <span class="op">=</span> baca()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> tidak_valid(nilai):</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    tampilkan_pesan()</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    nilai <span class="op">=</span> baca()</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="C4" class="schema-card" data-week="6" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">C4</span></p>
+</div>
+<p><span class="schema-name">Ulangi sampai tercapai</span> <span class="schema-en">Loop until a condition is reached</span></p>
+<p>Mengulang pembaruan sampai keadaan target tercapai, sambil menghitung langkahnya bila perlu.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">berapa tahun sampai …</span> <span class="schema-cue">sampai melebihi …</span> <span class="schema-cue">jumlah pengulangan adalah jawabannya</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Penjaga: pastikan target bisa tercapai (tidak berulang selamanya)</li>
+<li>Siapkan keadaan dan penghitung langkah</li>
+<li>Selama target belum tercapai: perbarui dan hitung</li>
+<li>Kembalikan penghitungnya</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#C1">C1 · Ulangi n kali</a></p>
+<p><span class="schema-week">Minggu 6</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>langkah <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> belum_tercapai(keadaan):</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    keadaan <span class="op">=</span> perbarui(keadaan)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    langkah <span class="op">=</span> langkah <span class="op">+</span> <span class="dv">1</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="C5" class="schema-card" data-week="9" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">C5</span></p>
+</div>
+<p><span class="schema-name">Perulangan menu</span> <span class="schema-en">Menu loop</span></p>
+<p>Menampilkan pilihan berulang kali dan menjalankan pilihan pengguna sampai ia memilih keluar.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">tampilkan menu</span> <span class="schema-cue">pilih 1–4</span> <span class="schema-cue">program berjalan sampai pengguna memilih keluar</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Siapkan keadaan program</li>
+<li>Ulangi: tampilkan menu dan baca pilihan</li>
+<li>Jalankan pilihan dengan <code>if</code>–<code>elif</code> (satu cabang per opsi, plus pilihan tak dikenal)</li>
+<li>Berhenti saat opsi keluar dipilih</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#C2">C2 · Baca sampai tanda berhenti</a></p>
+<p><span class="schema-week">Minggu 9 (atau praktikum Minggu 7)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>pilihan <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> pilihan <span class="op">!=</span> PILIHAN_KELUAR:</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    tampilkan_menu()</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    pilihan <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> pilihan <span class="op">==</span> <span class="st">"1"</span>: ...</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> pilihan <span class="op">==</span> <span class="st">"2"</span>: ...</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</div>
+</section>
+<section id="d-satu-kali-telusur-data" class="level3 schema-group">
+<h3 class="anchored" data-anchor-id="d-satu-kali-telusur-data">D · Satu kali telusur data</h3>
+<p>Mengunjungi setiap item satu kali untuk menghasilkan satu jawaban.</p>
+<div class="schema-grid">
+<div id="D1" class="schema-card" data-week="6" data-core="1">
+<div class="schema-head">
+<p><span class="schema-id">D1</span> <span class="schema-core">★ inti</span></p>
+</div>
+<p><span class="schema-name">Menghitung</span> <span class="schema-en">Counting</span></p>
+<p>Menghitung berapa banyak item yang memenuhi suatu kondisi.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">berapa banyak …</span> <span class="schema-cue">jumlah mahasiswa yang …</span> <span class="schema-cue">jawabannya bilangan bulat cacah</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Siapkan penghitung bernilai 0</li>
+<li>Kunjungi setiap item</li>
+<li>Uji kondisinya</li>
+<li>Tambah 1 jika kondisinya benar</li>
+<li>Kembalikan penghitung setelah perulangan</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D2">D2 · Akumulasi</a> · <a href="#D6">D6 · Cari yang pertama</a> · <a href="#D7">D7 · Adakah?</a></p>
+<p><span class="schema-week">Minggu 6 · lagi pada string (10) dan list (11)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>banyak <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> koleksi:</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> kondisi(item):</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        banyak <span class="op">=</span> banyak <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> banyak</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="D2" class="schema-card" data-week="6" data-core="1">
+<div class="schema-head">
+<p><span class="schema-id">D2</span> <span class="schema-core">★ inti</span></p>
+</div>
+<p><span class="schema-name">Akumulasi</span> <span class="schema-en">Accumulation (sum or product)</span></p>
+<p>Menggabungkan semua nilai menjadi satu hasil: total, hasil kali, atau gabungan.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">total</span> <span class="schema-cue">jumlah semua …</span> <span class="schema-cue">hasil kali …</span> <span class="schema-cue">faktorial</span> <span class="schema-cue">jawabannya menggabungkan nilai-nilainya</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Siapkan akumulator dengan nilai identitas (0 untuk jumlah, 1 untuk hasil kali)</li>
+<li>Kunjungi setiap item</li>
+<li>Gabungkan item ke akumulator</li>
+<li>Kembalikan akumulatornya</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D1">D1 · Menghitung</a></p>
+<p><span class="schema-week">Minggu 6</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>hasil <span class="op">=</span> IDENTITAS   <span class="co"># 0 untuk +, 1 untuk ×</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> koleksi:</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    hasil <span class="op">=</span> hasil OPERASI item</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> hasil</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="D3" class="schema-card" data-week="6" data-core="1">
+<div class="schema-head">
+<p><span class="schema-id">D3</span> <span class="schema-core">★ inti</span></p>
+</div>
+<p><span class="schema-name">Rata-rata</span> <span class="schema-en">Average</span></p>
+<p>Menghitung rata-rata nilai yang memenuhi kondisi, dengan aman.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">rata-rata</span> <span class="schema-cue">rata-rata … yang …</span> <span class="schema-cue">mean</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Siapkan jumlah dan penghitung</li>
+<li>Kunjungi setiap item; untuk item yang memenuhi, tambahkan ke jumlah dan penghitung</li>
+<li>Jaga agar tidak membagi dengan nol</li>
+<li>Kembalikan jumlah / penghitung</li>
+</ol>
+<p><span class="schema-week">Minggu 6</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>banyak <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> koleksi:</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> kondisi(item):</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> total <span class="op">+</span> item</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>        banyak <span class="op">=</span> banyak <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> banyak <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> total <span class="op">/</span> banyak</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="D4" class="schema-card" data-week="9" data-core="1">
+<div class="schema-head">
+<p><span class="schema-id">D4</span> <span class="schema-core">★ inti</span></p>
+</div>
+<p><span class="schema-name">Nilai terbesar / terkecil</span> <span class="schema-en">Extreme value</span></p>
+<p>Menemukan nilai terbesar atau terkecil.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">terbesar</span> <span class="schema-cue">tertinggi</span> <span class="schema-cue">termurah</span> <span class="schema-cue">maksimum / minimum</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Penjaga: koleksi kosong tidak punya nilai ekstrem</li>
+<li>Mulai dengan item pertama sebagai yang terbaik</li>
+<li>Kunjungi item lainnya; ganti yang terbaik jika ada item yang mengalahkannya</li>
+<li>Kembalikan yang terbaik</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D5">D5 · Posisi terbesar</a> · <a href="#D12">D12 · Bandingkan dengan sebelumnya</a></p>
+<p><span class="schema-week">Minggu 9 · lagi pada list (11)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>terbaik <span class="op">=</span> koleksi[<span class="dv">0</span>]</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> koleksi:</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> item <span class="op">&gt;</span> terbaik:</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        terbaik <span class="op">=</span> item</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> terbaik</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="D5" class="schema-card" data-week="11" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">D5</span></p>
+</div>
+<p><span class="schema-name">Posisi terbesar</span> <span class="schema-en">Position of the extreme</span></p>
+<p>Menemukan di mana nilai terbesar atau terkecil berada, atau milik item yang mana.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">siapa yang paling …</span> <span class="schema-cue">di posisi ke berapa</span> <span class="schema-cue">nama produk termurah</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Jaga dari koleksi kosong</li>
+<li>Simpan posisi item terbaik sejauh ini (mulai dari 0)</li>
+<li>Kunjungi posisi 1..n−1 dan bandingkan dengan item di posisi terbaik</li>
+<li>Kembalikan posisinya atau item terkait</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D4">D4 · Nilai terbesar / terkecil</a> · <a href="#D6">D6 · Cari yang pertama</a></p>
+<p><span class="schema-week">Minggu 11 (butuh list)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>pos_terbaik <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(data)):</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> data[i] <span class="op">&gt;</span> data[pos_terbaik]:</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        pos_terbaik <span class="op">=</span> i</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="D6" class="schema-card" data-week="9" data-core="1">
+<div class="schema-head">
+<p><span class="schema-id">D6</span> <span class="schema-core">★ inti</span></p>
+</div>
+<p><span class="schema-name">Cari yang pertama</span> <span class="schema-en">Linear search</span></p>
+<p>Menemukan item pertama (atau posisinya) yang cocok, dan berhenti begitu ketemu.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">cari</span> <span class="schema-cue">di mana …</span> <span class="schema-cue">posisi pertama …</span> <span class="schema-cue">item pertama yang …</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Kunjungi item secara berurutan</li>
+<li>Begitu ada yang cocok, langsung kembalikan item (atau posisinya)</li>
+<li>Setelah perulangan, kembalikan nilai ‘tidak ditemukan’</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D1">D1 · Menghitung</a> · <a href="#D7">D7 · Adakah?</a></p>
+<p><span class="schema-week">Minggu 9 · string (10) · list (11)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(data)):</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> cocok(data[i]):</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> i</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="D7" class="schema-card" data-week="9" data-core="1">
+<div class="schema-head">
+<p><span class="schema-id">D7</span> <span class="schema-core">★ inti</span></p>
+</div>
+<p><span class="schema-name">Adakah?</span> <span class="schema-en">Existence check (any)</span></p>
+<p>Menjawab apakah setidaknya satu item memenuhi kondisi.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">adakah …</span> <span class="schema-cue">apakah memuat …</span> <span class="schema-cue">setidaknya satu</span> <span class="schema-cue">jawabannya True/False</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Kunjungi item</li>
+<li>Kembalikan <code>True</code> pada item pertama yang memenuhi kondisi</li>
+<li>Setelah perulangan, kembalikan <code>False</code></li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D8">D8 · Semuakah?</a> · <a href="#D1">D1 · Menghitung</a></p>
+<p><span class="schema-week">Minggu 9 · lagi di Minggu 10–11</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> koleksi:</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> kondisi(item):</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="va">False</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="D8" class="schema-card" data-week="9" data-core="1">
+<div class="schema-head">
+<p><span class="schema-id">D8</span> <span class="schema-core">★ inti</span></p>
+</div>
+<p><span class="schema-name">Semuakah?</span> <span class="schema-en">Universal check (all)</span></p>
+<p>Menjawab apakah semua item memenuhi kondisi.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">apakah semua …</span> <span class="schema-cue">setiap …</span> <span class="schema-cue">tidak ada satu pun …</span> <span class="schema-cue">jawabannya True/False</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Kunjungi item</li>
+<li>Kembalikan <code>False</code> pada contoh penyangkal pertama</li>
+<li>Setelah perulangan, kembalikan <code>True</code></li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D7">D7 · Adakah?</a></p>
+<p><span class="schema-week">Minggu 9 · lagi di Minggu 10–11</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> koleksi:</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> kondisi(item):</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="va">True</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="D9" class="schema-card" data-week="11" data-core="1">
+<div class="schema-head">
+<p><span class="schema-id">D9</span> <span class="schema-core">★ inti</span></p>
+</div>
+<p><span class="schema-name">Saring</span> <span class="schema-en">Filter</span></p>
+<p>Membuat koleksi baru berisi item-item yang memenuhi kondisi.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">ambil semua … yang …</span> <span class="schema-cue">daftar … yang …</span> <span class="schema-cue">tampilkan hanya …</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Mulai dengan list hasil yang kosong</li>
+<li>Kunjungi setiap item</li>
+<li>Tambahkan item ke hasil jika kondisinya benar</li>
+<li>Kembalikan list hasil</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D10">D10 · Ubah setiap elemen</a> · <a href="#D1">D1 · Menghitung</a></p>
+<p><span class="schema-week">Minggu 11 (butuh list)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>hasil <span class="op">=</span> []</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> koleksi:</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> kondisi(item):</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        hasil.append(item)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> hasil</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="D10" class="schema-card" data-week="11" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">D10</span></p>
+</div>
+<p><span class="schema-name">Ubah setiap elemen</span> <span class="schema-en">Map (transform each item)</span></p>
+<p>Membuat koleksi baru yang setiap itemnya diubah dengan cara yang sama.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">ubah setiap …</span> <span class="schema-cue">konversi semua …</span> <span class="schema-cue">list baru berisi …</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Mulai dengan list hasil yang kosong</li>
+<li>Kunjungi setiap item</li>
+<li>Ubah item itu dan tambahkan hasilnya</li>
+<li>Kembalikan list hasil</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D9">D9 · Saring</a></p>
+<p><span class="schema-week">Minggu 11 (butuh list)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>hasil <span class="op">=</span> []</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> koleksi:</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    hasil.append(ubah(item))</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> hasil</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="D11" class="schema-card" data-week="10" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">D11</span></p>
+</div>
+<p><span class="schema-name">Bangun teks</span> <span class="schema-en">String building</span></p>
+<p>Membangun string baru sepotong demi sepotong.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">balik kata</span> <span class="schema-cue">inisial / singkatan</span> <span class="schema-cue">sembunyikan sebagian huruf</span> <span class="schema-cue">gabungkan …</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Mulai dengan string kosong</li>
+<li>Kunjungi setiap karakter (atau potongan)</li>
+<li>Tambahkan potongan di depan atau di belakang</li>
+<li>Kembalikan string-nya</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D10">D10 · Ubah setiap elemen</a></p>
+<p><span class="schema-week">Minggu 10 (string)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>hasil <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> huruf <span class="kw">in</span> teks:</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    hasil <span class="op">=</span> hasil <span class="op">+</span> ubah(huruf)    <span class="co"># atau: ubah(huruf) + hasil</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="D12" class="schema-card" data-week="9" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">D12</span></p>
+</div>
+<p><span class="schema-name">Bandingkan dengan sebelumnya</span> <span class="schema-en">Compare with the previous item</span></p>
+<p>Memakai setiap item bersama item sebelumnya.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">naik / turun dari … sebelumnya</span> <span class="schema-cue">berturut-turut</span> <span class="schema-cue">selisih antara … yang berurutan</span> <span class="schema-cue">apakah sudah terurut?</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Mulai dari item kedua (posisi 1)</li>
+<li>Bandingkan item i dengan item i−1</li>
+<li>Lakukan tindakan sesuai perbandingannya</li>
+<li>Kembalikan hasilnya</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D4">D4 · Nilai terbesar / terkecil</a></p>
+<p><span class="schema-week">Minggu 9 (variabel ‘sebelumnya’) · list (11)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(data)):</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> data[i] <span class="op">&gt;</span> data[i <span class="op">-</span> <span class="dv">1</span>]:</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>        ...</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="D13" class="schema-card" data-week="9" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">D13</span></p>
+</div>
+<p><span class="schema-name">Rangkaian terpanjang</span> <span class="schema-en">Longest run (streak)</span></p>
+<p>Menemukan panjang rangkaian terpanjang dari item berurutan yang memenuhi kondisi.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">berturut-turut</span> <span class="schema-cue">beruntun</span> <span class="schema-cue">rangkaian terpanjang</span> <span class="schema-cue">streak</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Simpan panjang rangkaian saat ini dan terpanjang, keduanya 0</li>
+<li>Untuk setiap item: jika memenuhi, perpanjang rangkaian saat ini dan perbarui yang terpanjang</li>
+<li>Jika tidak, kembalikan rangkaian saat ini ke 0</li>
+<li>Kembalikan yang terpanjang</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D1">D1 · Menghitung</a></p>
+<p><span class="schema-week">Minggu 9</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>sekarang <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>terpanjang <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> koleksi:</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> kondisi(item):</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        sekarang <span class="op">=</span> sekarang <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>        terpanjang <span class="op">=</span> <span class="bu">max</span>(terpanjang, sekarang)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>        sekarang <span class="op">=</span> <span class="dv">0</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="D14" class="schema-card" data-week="9" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">D14</span></p>
+</div>
+<p><span class="schema-name">Hitung per kategori</span> <span class="schema-en">Count per category</span></p>
+<p>Menghitung beberapa kategori sekaligus dalam satu kali telusur.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">berapa yang … dan berapa yang …</span> <span class="schema-cue">ringkasan per kategori</span> <span class="schema-cue">sebaran</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Satu penghitung per kategori, semuanya 0</li>
+<li>Kunjungi setiap item</li>
+<li>Klasifikasikan (B3) dan tambah tepat satu penghitung</li>
+<li>Kembalikan semua penghitung</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D15">D15 · Hitung kemunculan</a></p>
+<p><span class="schema-week">Minggu 9 (cetak hasilnya; kembalikan tuple mulai Minggu 11)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>k1 <span class="op">=</span> k2 <span class="op">=</span> k3 <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> koleksi:</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ...:   k1 <span class="op">=</span> k1 <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> ...: k2 <span class="op">=</span> k2 <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:     k3 <span class="op">=</span> k3 <span class="op">+</span> <span class="dv">1</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="D15" class="schema-card" data-week="12" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">D15</span></p>
+</div>
+<p><span class="schema-name">Hitung kemunculan</span> <span class="schema-en">Frequency count</span></p>
+<p>Menghitung berapa kali setiap nilai yang berbeda muncul, dengan dictionary.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">berapa kali setiap … muncul</span> <span class="schema-cue">frekuensi</span> <span class="schema-cue">… yang paling sering (modus)</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Mulai dengan dictionary kosong</li>
+<li>Untuk setiap item: jika baru, set hitungannya 0</li>
+<li>Tambah 1 pada hitungannya</li>
+<li>Kembalikan dictionary-nya (atau pakai D4 untuk mencari yang paling sering)</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D14">D14 · Hitung per kategori</a></p>
+<p><span class="schema-week">Minggu 12 (dictionary)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>frekuensi <span class="op">=</span> {}</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> koleksi:</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> item <span class="kw">not</span> <span class="kw">in</span> frekuensi:</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>        frekuensi[item] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    frekuensi[item] <span class="op">=</span> frekuensi[item] <span class="op">+</span> <span class="dv">1</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="D16" class="schema-card" data-week="6" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">D16</span></p>
+</div>
+<p><span class="schema-name">Kupas digit</span> <span class="schema-en">Digit loop</span></p>
+<p>Memproses digit-digit sebuah bilangan bulat satu per satu.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">jumlah digit</span> <span class="schema-cue">banyaknya digit</span> <span class="schema-cue">balik bilangan</span> <span class="schema-cue">digit ganjil/genap</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Tangani tandanya (pakai nilai mutlak)</li>
+<li>Selama bilangan lebih dari 0: ambil digit terakhir dengan <code>% 10</code></li>
+<li>Proses digit itu</li>
+<li>Buang digit itu dengan <code>// 10</code></li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#A3">A3 · Pecah dengan div dan mod</a></p>
+<p><span class="schema-week">Minggu 6 · lagi di Minggu 9</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">abs</span>(n)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    digit <span class="op">=</span> n <span class="op">%</span> <span class="dv">10</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    proses(digit)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> n <span class="op">//</span> <span class="dv">10</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</div>
+</section>
+<section id="e-perulangan-bersarang" class="level3 schema-group">
+<h3 class="anchored" data-anchor-id="e-perulangan-bersarang">E · Perulangan bersarang</h3>
+<p>Perulangan di dalam perulangan: baris dan kolom, pasangan, tabel.</p>
+<div class="schema-grid">
+<div id="E1" class="schema-card" data-week="9" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">E1</span></p>
+</div>
+<p><span class="schema-name">Pola baris-kolom</span> <span class="schema-en">Rows and columns</span></p>
+<p>Menghasilkan pola atau tabel dua dimensi yang perulangan dalamnya bergantung pada baris.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">pola bintang</span> <span class="schema-cue">segitiga</span> <span class="schema-cue">tabel perkalian</span> <span class="schema-cue">baris ke-i berisi …</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Perulangan luar untuk baris</li>
+<li>Tentukan berapa kolom yang dimiliki baris i</li>
+<li>Perulangan dalam membangun baris itu</li>
+<li>Akhiri baris (pindah baris) lalu lanjut</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#E2">E2 · Bandingkan setiap pasangan</a></p>
+<p><span class="schema-week">Minggu 9</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> baris <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> kolom <span class="kw">in</span> <span class="bu">range</span>(banyak_kolom(baris)):</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>        ...</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># akhir baris</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="E2" class="schema-card" data-week="11" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">E2</span></p>
+</div>
+<p><span class="schema-name">Bandingkan setiap pasangan</span> <span class="schema-en">Every pair</span></p>
+<p>Memeriksa setiap pasangan item tepat satu kali.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">pasangan</span> <span class="schema-cue">adakah dua item yang …</span> <span class="schema-cue">duplikat</span> <span class="schema-cue">setiap dua …</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Perulangan luar untuk posisi i</li>
+<li>Perulangan dalam untuk posisi j mulai dari i + 1</li>
+<li>Uji pasangan (data[i], data[j])</li>
+<li>Hitung, kumpulkan, atau berhenti</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#E1">E1 · Pola baris-kolom</a></p>
+<p><span class="schema-week">Minggu 11 (pasangan item list)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(data)):</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(i <span class="op">+</span> <span class="dv">1</span>, <span class="bu">len</span>(data)):</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>        uji(data[i], data[j])</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="E3" class="schema-card" data-week="11" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">E3</span></p>
+</div>
+<p><span class="schema-name">Telusuri tabel 2D</span> <span class="schema-en">Grid traversal</span></p>
+<p>Memproses list di dalam list (tabel) baris demi baris.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">matriks</span> <span class="schema-cue">tabel nilai per mahasiswa per tugas</span> <span class="schema-cue">total tiap baris/kolom</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Perulangan luar untuk baris</li>
+<li>Perulangan dalam untuk item di baris itu</li>
+<li>Terapkan skema satu kali telusur (D1, D2, D4) di dalam baris</li>
+<li>Kumpulkan hasil per baris</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#E1">E1 · Pola baris-kolom</a></p>
+<p><span class="schema-week">Minggu 11 (list di dalam list)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>hasil <span class="op">=</span> []</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> baris <span class="kw">in</span> tabel:</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    nilai_baris <span class="op">=</span> ...</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x <span class="kw">in</span> baris:</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>        ...</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    hasil.append(nilai_baris)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</div>
+</section>
+<section id="f-algoritma-koleksi" class="level3 schema-group">
+<h3 class="anchored" data-anchor-id="f-algoritma-koleksi">F · Algoritma koleksi</h3>
+<p>Teknik khusus untuk list dan string.</p>
+<div class="schema-grid">
+<div id="F1" class="schema-card" data-week="10" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">F1</span></p>
+</div>
+<p><span class="schema-name">Dua penunjuk</span> <span class="schema-en">Two pointers</span></p>
+<p>Berjalan ke tengah dari kedua ujung urutan sekaligus.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">palindrom</span> <span class="schema-cue">balik di tempat</span> <span class="schema-cue">pasangan dari kedua ujung</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Pasang satu indeks di awal dan satu di akhir</li>
+<li>Selama belum bertemu: bandingkan atau tukar kedua item</li>
+<li>Geser kedua indeks ke tengah</li>
+<li>Kembalikan hasilnya</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D11">D11 · Bangun teks</a></p>
+<p><span class="schema-week">Minggu 10 (string) · membalik list (11)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>kiri <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>kanan <span class="op">=</span> <span class="bu">len</span>(data) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> kiri <span class="op">&lt;</span> kanan:</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    kiri <span class="op">=</span> kiri <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    kanan <span class="op">=</span> kanan <span class="op">-</span> <span class="dv">1</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="F2" class="schema-card" data-week="11" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">F2</span></p>
+</div>
+<p><span class="schema-name">Bagi dua</span> <span class="schema-en">Binary search</span></p>
+<p>Menemukan nilai di list terurut dengan membagi dua rentang pencarian di setiap langkah.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">datanya sudah terurut</span> <span class="schema-cue">cari dengan cepat</span> <span class="schema-cue">tebak angka</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Set <code>bawah</code> dan <code>atas</code> ke ujung-ujung rentang</li>
+<li>Selama bawah ≤ atas: lihat item di tengah</li>
+<li>Ketemu: kembalikan; terlalu kecil: naikkan bawah; terlalu besar: turunkan atas</li>
+<li>Tidak ketemu: kembalikan −1</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D6">D6 · Cari yang pertama</a></p>
+<p><span class="schema-week">Minggu 11</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>bawah, atas <span class="op">=</span> <span class="dv">0</span>, <span class="bu">len</span>(data) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> bawah <span class="op">&lt;=</span> atas:</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    tengah <span class="op">=</span> (bawah <span class="op">+</span> atas) <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="F3" class="schema-card" data-week="11" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">F3</span></p>
+</div>
+<p><span class="schema-name">Urutkan dengan memilih terkecil</span> <span class="schema-en">Selection sort</span></p>
+<p>Mengurutkan list dengan berulang kali memindahkan item terkecil yang tersisa ke depan.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">urutkan</span> <span class="schema-cue">dari terkecil ke terbesar</span> <span class="schema-cue">peringkat</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Untuk setiap posisi i dari depan</li>
+<li>Cari posisi item terkecil dari i sampai akhir (D5)</li>
+<li>Tukar item itu ke posisi i (A2)</li>
+<li>Kembalikan list yang sudah terurut</li>
+</ol>
+<p><span class="schema-week">Minggu 11</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(data)):</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    pos_min <span class="op">=</span> posisi_terkecil(data, mulai<span class="op">=</span>i)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    tukar(data, i, pos_min)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="F4" class="schema-card" data-week="11" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">F4</span></p>
+</div>
+<p><span class="schema-name">Simpan yang sudah dilihat</span> <span class="schema-en">Remember what was seen</span></p>
+<p>Menyimpan item yang sudah pernah dilihat, untuk melewati atau mendeteksi pengulangan.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">hapus duplikat</span> <span class="schema-cue">unik</span> <span class="schema-cue">sudah pernah muncul?</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Mulai dengan koleksi ‘sudah dilihat’ yang kosong (dan hasil)</li>
+<li>Untuk setiap item: periksa apakah sudah pernah dilihat</li>
+<li>Jika belum, catat (dan tambahkan ke hasil)</li>
+<li>Kembalikan hasilnya</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D9">D9 · Saring</a></p>
+<p><span class="schema-week">Minggu 11 (list) · Minggu 12 (set)</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>sudah_dilihat <span class="op">=</span> []</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> koleksi:</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> item <span class="kw">not</span> <span class="kw">in</span> sudah_dilihat:</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>        sudah_dilihat.append(item)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</div>
+</section>
+<section id="g-fungsi-dan-dekomposisi" class="level3 schema-group">
+<h3 class="anchored" data-anchor-id="g-fungsi-dan-dekomposisi">G · Fungsi dan dekomposisi</h3>
+<p>Membungkus dan menyusun skema dengan fungsi.</p>
+<div class="schema-grid">
+<div id="G1" class="schema-card" data-week="5" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">G1</span></p>
+</div>
+<p><span class="schema-name">Fungsi penguji</span> <span class="schema-en">Predicate function</span></p>
+<p>Membungkus uji ya/tidak dalam fungsi yang mengembalikan <code>True</code>/<code>False</code>, lalu memakainya di dalam skema lain.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">apakah … (prima / tahun kabisat / valid)</span> <span class="schema-cue">hitung atau kumpulkan bilangan prima</span> <span class="schema-cue">uji yang sama dibutuhkan di beberapa tempat</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Rancang header dan uji untuk fungsinya</li>
+<li>Isi fungsinya (sering berupa penjaga ditambah D8)</li>
+<li>Uji fungsinya sendirian</li>
+<li>Pakai sebagai kondisi di D1, D9, atau D7</li>
+</ol>
+<p><span class="schema-week">Minggu 5 tanpa perulangan · Minggu 9 dengan perulangan</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> memenuhi(x):</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span>  <span class="co"># atau False</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>banyak <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> koleksi:</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> memenuhi(x):</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>        banyak <span class="op">=</span> banyak <span class="op">+</span> <span class="dv">1</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="G2" class="schema-card" data-week="9" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">G2</span></p>
+</div>
+<p><span class="schema-name">Coba semua kemungkinan</span> <span class="schema-en">Generate and test</span></p>
+<p>Menelusuri calon jawaban secara berurutan dan mengembalikan calon pertama (atau semua calon) yang lolos uji.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">cari bilangan yang …</span> <span class="schema-cue">FPB / KPK</span> <span class="schema-cue">kombinasi yang memenuhi …</span> <span class="schema-cue">tidak ada rumusnya</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Tentukan rentang calon dan urutan mencobanya</li>
+<li>Uji setiap calon</li>
+<li>Berhenti di keberhasilan pertama (atau kumpulkan semua)</li>
+<li>Tangani kasus ketika tidak ada yang lolos</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D6">D6 · Cari yang pertama</a></p>
+<p><span class="schema-week">Minggu 9</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> calon <span class="kw">in</span> semua_kemungkinan:</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> lolos_uji(calon):</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> calon</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> tidak_ditemukan</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="G3" class="schema-card" data-week="5" data-core="0">
+<div class="schema-head">
+<p><span class="schema-id">G3</span></p>
+</div>
+<p><span class="schema-name">Rekursi</span> <span class="schema-en">Recursion</span></p>
+<p>Menyelesaikan masalah dengan menyelesaikan versi yang lebih kecil dari masalah yang sama.</p>
+<p><span class="schema-label">Ciri soal</span></p>
+<p><span class="schema-cue">didefinisikan dengan dirinya sendiri</span> <span class="schema-cue">faktorial, pangkat, struktur bersarang</span></p>
+<p><span class="schema-label">Langkah</span></p>
+<ol type="1">
+<li>Tulis kasus dasar (masalah terkecil, langsung dijawab)</li>
+<li>Tulis kasus rekursif: perkecil masalahnya dan panggil fungsinya</li>
+<li>Gabungkan jawaban kecil itu menjadi jawaban utuh</li>
+<li>Periksa bahwa setiap pemanggilan bergerak menuju kasus dasar</li>
+</ol>
+<p><span class="schema-label">Sering tertukar dengan</span> <a href="#D2">D2 · Akumulasi</a></p>
+<p><span class="schema-week">Opsional, pengayaan setelah Minggu 5</span></p>
+<details>
+<summary>
+Kerangka kode
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(n):</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> kasus_dasar(n):</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> jawaban_langsung</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> gabung(n, f(lebih_kecil(n)))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</div>
+</section>
+<script>
+(function () {
+  var week = document.getElementById("schema-week");
+  var core = document.getElementById("schema-core");
+  var count = document.getElementById("schema-count");
+  function apply() {
+    var max = parseInt(week.value, 10), shown = 0;
+    document.querySelectorAll(".schema-card").forEach(function (c) {
+      var ok = parseInt(c.dataset.week, 10) <= max && (!core.checked || c.dataset.core === "1");
+      c.hidden = !ok;
+      if (ok) shown++;
+    });
+    document.querySelectorAll(".schema-group").forEach(function (g) {
+      g.hidden = !g.querySelector(".schema-card:not([hidden])");
+    });
+    count.textContent = shown + " dari 39 skema";
+  }
+  week.addEventListener("change", apply);
+  core.addEventListener("change", apply);
+  apply();
+})();
+</script>
+</section>
+<section id="menggabungkan-skema" class="level2">
+<h2 class="anchored" data-anchor-id="menggabungkan-skema">Menggabungkan Skema</h2>
+<p>Kebanyakan soal tugas membutuhkan beberapa skema sekaligus. Ada tiga cara menggabungkannya:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 40%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cara</th>
+<th>Artinya</th>
+<th>Contoh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Berurutan</strong></td>
+<td>Satu skema selesai, lalu skema berikutnya dimulai</td>
+<td>Cari rata-rata (D3), lalu hitung nilai di atas rata-rata (D1): dua kali telusur</td>
+</tr>
+<tr class="even">
+<td><strong>Bersarang</strong></td>
+<td>Satu skema berjalan di dalam setiap langkah skema lain</td>
+<td>Uji bilangan prima (G1) di dalam penghitungan (D1)</td>
+</tr>
+<tr class="odd">
+<td><strong>Digabung</strong></td>
+<td>Dua skema berbagi satu perulangan</td>
+<td>Menghitung dan menjumlah dalam satu telusur untuk rata-rata (D3); penjaga (B1) di dalam perulangan</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contoh</strong> (memakai list, yang dipelajari di Minggu 11). Tulis <code>rata_rata_lulus(daftar_nilai)</code> yang mengembalikan rata-rata nilai yang lulus (≥ 60), mengabaikan nilai tidak valid (di bawah 0 atau di atas 100). Kembalikan 0 jika tidak ada yang lulus.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rata_rata_lulus(daftar_nilai):</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">0</span>                          <span class="co"># D2: akumulator</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    banyak <span class="op">=</span> <span class="dv">0</span>                         <span class="co"># D1: penghitung</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> nilai <span class="kw">in</span> daftar_nilai:</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="dv">0</span> <span class="op">&lt;=</span> nilai <span class="op">&lt;=</span> <span class="dv">100</span>:          <span class="co"># B1: penjaga data tidak valid</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> nilai <span class="op">&gt;=</span> <span class="dv">60</span>:            <span class="co"># D1/D2: kondisi</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>                total <span class="op">=</span> total <span class="op">+</span> nilai</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>                banyak <span class="op">=</span> banyak <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> banyak <span class="op">==</span> <span class="dv">0</span>:                    <span class="co"># B1: penjaga pembagian</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total <span class="op">/</span> banyak              <span class="co"># D3: rata-rata</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Uji</th>
+<th>Hasil</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>rata_rata_lulus([70, 80, 150, -5, 50])</code></td>
+<td><code>75.0</code></td>
+</tr>
+<tr class="even">
+<td><code>rata_rata_lulus([10, 20])</code></td>
+<td><code>0</code></td>
+</tr>
+<tr class="odd">
+<td><code>rata_rata_lulus([])</code></td>
+<td><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<p>Beri label setiap bagian dengan skema asalnya, seperti komentar di atas. Label ini membantumu (dan pemeriksa kodemu) melihat rencana di balik kode.</p>
+</section>
+<section id="peran-variabel" class="level2">
+<h2 class="anchored" data-anchor-id="peran-variabel">Peran Variabel</h2>
+<p>Hampir semua variabel di program pemula memainkan salah satu dari beberapa <strong>peran</strong> berikut (Sajaniemi, 2002). Menyebut perannya membantu menjelaskan kode (“<code>terbaik</code> adalah nilai terbaik sejauh ini”) dan mengenali skemanya.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 44%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Peran</th>
+<th>Tugasnya</th>
+<th>Contoh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nilai tetap</td>
+<td>Diberi nilai sekali, tidak pernah berubah</td>
+<td><code>batas_lulus = 60</code></td>
+</tr>
+<tr class="even">
+<td>Pelangkah</td>
+<td>Melewati urutan nilai yang dapat ditebak</td>
+<td><code>for i in range(n)</code>; <code>n</code> yang mengecil di D16</td>
+</tr>
+<tr class="odd">
+<td>Penjelajah</td>
+<td>Bergerak melewati posisi-posisi struktur data</td>
+<td><code>i</code> pada <code>data[i]</code>; <code>kiri</code>/<code>kanan</code> di F1</td>
+</tr>
+<tr class="even">
+<td>Pemegang terbaru</td>
+<td>Menyimpan nilai terakhir yang dibaca</td>
+<td><code>harga = int(input())</code> di C2</td>
+</tr>
+<tr class="odd">
+<td>Pemegang terbaik</td>
+<td>Menyimpan nilai (atau posisi) terbaik sejauh ini</td>
+<td><code>terbaik</code> di D4</td>
+</tr>
+<tr class="even">
+<td>Pengumpul</td>
+<td>Mengumpulkan pengaruh nilai-nilai yang dilihat</td>
+<td><code>total</code>, <code>banyak</code></td>
+</tr>
+<tr class="odd">
+<td>Pengikut</td>
+<td>Menyimpan nilai sebelumnya dari variabel lain</td>
+<td><code>data[i - 1]</code> di D12</td>
+</tr>
+<tr class="even">
+<td>Bendera satu arah</td>
+<td>Boolean yang berubah sekali dan tidak kembali</td>
+<td><code>ketemu = True</code></td>
+</tr>
+<tr class="odd">
+<td>Sementara</td>
+<td>Menyimpan nilai untuk waktu yang sangat singkat</td>
+<td><code>sementara</code> di A2</td>
+</tr>
+<tr class="even">
+<td>Wadah</td>
+<td>Struktur data yang menyimpan atau menata item</td>
+<td>list hasil di D9, dictionary di D15</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="referensi" class="level2">
+<h2 class="anchored" data-anchor-id="referensi">Referensi</h2>
+<p>Muller, O., Ginat, D., &amp; Haberman, B. (2007). Pattern-oriented instruction and its influence on problem decomposition and solution construction. <em>Proceedings of ITiCSE 2007</em>, 151–155. <a href="https://doi.org/10.1145/1269900.1268830" class="uri">https://doi.org/10.1145/1269900.1268830</a></p>
+<p>Sajaniemi, J. (2002). An empirical analysis of roles of variables in novice-level procedural programs. <em>Proceedings of IEEE Symposia on Human Centric Computing Languages and Environments</em>, 37–39. <a href="https://doi.org/10.1109/HCC.2002.1046340" class="uri">https://doi.org/10.1109/HCC.2002.1046340</a></p>
+<p>Soloway, E. (1986). Learning to program = learning to construct mechanisms and explanations. <em>Communications of the ACM, 29</em>(9), 850–858. <a href="https://doi.org/10.1145/6592.6594" class="uri">https://doi.org/10.1145/6592.6594</a></p>
+<p>Soloway, E., &amp; Ehrlich, K. (1984). Empirical studies of programming knowledge. <em>IEEE Transactions on Software Engineering, SE-10</em>(5), 595–609. <a href="https://doi.org/10.1109/TSE.1984.5010283" class="uri">https://doi.org/10.1109/TSE.1984.5010283</a></p>
+<p>Spohrer, J. C., &amp; Soloway, E. (1986). Novice mistakes: Are the folk wisdoms correct? <em>Communications of the ACM, 29</em>(7), 624–632. <a href="https://doi.org/10.1145/6138.6145" class="uri">https://doi.org/10.1145/6138.6145</a></p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Kembali ke atas</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Disalin!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Disalin!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/muhammadazani\.github\.io\/BBK1AAB4\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Algoritma &amp; Pemrograman · S1 Sistem Informasi · Telkom University</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Dibuat dengan <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
