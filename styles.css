@@ -145,7 +145,7 @@ td code, th code { overflow-wrap: anywhere; }
 .sv-vname { min-width: 4.5rem; }
 .sv-arrow { color: var(--bs-secondary-color); }
 .sv-val.sv-fn { color: var(--bs-secondary-color); font-style: italic; }
-.sv-var.sv-changed { animation: sv-flash 1.4s ease-out; }
+.sv-var.sv-changed, .sv-tt-table td.sv-changed { animation: sv-flash 1.4s ease-out; }
 .sv-var.sv-ret .sv-vname { font-style: italic; }
 .sv-note {
   margin: .8rem 0 .6rem; padding: .55rem .8rem; min-height: 3rem; font-size: .95rem;
@@ -155,10 +155,26 @@ td code, th code { overflow-wrap: anywhere; }
 .sv-ctrl { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
 .sv-ctrl .sv-slider { flex: 1 1 8rem; min-width: 6rem; margin-left: .3rem; }
 .sv-foot { margin-top: .5rem; font-size: .85rem; color: var(--bs-secondary-color); }
+.sv-var.sv-pending .sv-val { font-weight: 700; }
+.sv-hint { color: var(--bs-secondary-color); font-style: italic; font-family: var(--bs-body-font-family); font-size: .78rem; }
+.sv-tt { margin-top: .4rem; }
+.sv-tt-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: var(--bs-secondary-color); margin-bottom: .15rem; }
+.sv-tt-scroll { overflow-x: auto; }
+.stackviz table.sv-tt-table { border-collapse: collapse; width: 100%; margin: 0; font-size: .8rem; background: var(--bs-body-bg); }
+.sv-tt-table th, .sv-tt-table td { border: 1px solid var(--sv-border); padding: .1rem .4rem; text-align: center; white-space: nowrap; }
+.sv-tt-table th { font-weight: 600; background: var(--sv-surface); }
+.sv-tt-table .sv-tt-round { color: var(--bs-secondary-color); font-style: italic; }
+.sv-tt-table tr.sv-tt-init td { color: var(--bs-secondary-color); }
+.sv-tt-table tr.sv-tt-now { outline: 2px solid var(--bs-primary); outline-offset: -2px; }
+.sv-tt-table td.sv-tt-blank { background: repeating-linear-gradient(135deg, transparent 0 4px, var(--sv-surface) 4px 8px); }
+.sv-tt-table td.sv-tt-carry { color: var(--bs-secondary-color); font-style: italic; }
+.sv-tt-table td.sv-tt-cur { font-weight: 700; background: rgba(var(--bs-primary-rgb), .14); }
+.sv-tt-table tr.sv-tt-stop td { color: var(--bs-danger); }
+.sv-tt-foot { margin-top: .25rem; font-family: var(--bs-body-font-family); font-size: .8rem; color: var(--bs-secondary-color); }
 @keyframes sv-enter { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 @keyframes sv-flash { from { background: rgba(var(--bs-warning-rgb), .55); } to { background: transparent; } }
 @media (prefers-reduced-motion: reduce) {
-  .sv-frame.sv-enter, .sv-var.sv-changed { animation: none; }
+  .sv-frame.sv-enter, .sv-var.sv-changed, td.sv-changed { animation: none; }
   .sv-var.sv-changed { background: rgba(var(--bs-warning-rgb), .3); }
 }
 

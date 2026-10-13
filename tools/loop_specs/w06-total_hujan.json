@@ -1,0 +1,1 @@
+{"frame":"total_hujan","header":4,"kind":"while","cols":[{"var":"hujan","at":"header"},{"expr":"hujan != -1","at":"header"},{"expr":"hujan != -9","at":5},{"var":"total"}]}
