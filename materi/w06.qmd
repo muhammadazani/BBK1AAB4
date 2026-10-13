@@ -29,27 +29,606 @@ minggu: 6
 
 ## Konsep Kunci
 
-Setiap perulangan punya tiga bagian: **inisialisasi**, **kondisi**, dan **pemutakhiran**. Pakai `for` jika banyaknya putaran sudah diketahui (`range(a, b)` berhenti **sebelum** `b`), dan `while` jika perulangan berhenti karena suatu kondisi, misalnya nilai sentinel. Data yang tidak sah dilewati dengan **guard** sebelum ikut dihitung, dan perulangannya dibungkus dalam fungsi ber-return.
+Setiap perulangan punya tiga bagian: **inisialisasi**, **kondisi**, dan **pemutakhiran**. Pakai `for` jika banyaknya putaran sudah diketahui sebelum loop dimulai (`range(awal, batas)` berhenti **sebelum** `batas`), dan `while` jika perulangan berhenti karena nilai yang datang saat loop berjalan, misalnya nilai **sentinel**. Hasil dikumpulkan dalam **penampung**: pencacah (`banyak = banyak + 1`) atau akumulator (`total = total + nilai`), yang diberi nilai awal **sebelum** loop dan dikembalikan **setelah** loop. Data yang tidak sah dilewati dengan **guard** di dalam loop, tepat sebelum akumulasi.
 
 ```python
-def rata_rata(daftar):
-    total = 0                    # akumulator
-    banyak = 0                   # pencacah
-    for n in daftar:
-        if 0 <= n <= 100:        # guard
-            total += n
-            banyak += 1
+def total_tabungan(minggu):
+    total = 0                            # penampung, sebelum loop
+    for k in range(1, minggu + 1):       # banyak putaran diketahui → for
+        total = total + k * 10000        # akumulator
+    return total                         # setelah loop
+
+def total_hujan():
+    total = 0
+    hujan = int(input())                 # baca nilai pertama
+    while hujan != -1:                   # -1 = sentinel → while
+        if hujan != -9:                  # guard: -9 dilewati
+            total = total + hujan
+        hujan = int(input())             # pemutakhiran, di luar if
+    return total
+
+print(total_tabungan(52))                # 13780000
+```
+
+## Lesson A · for, range, Pencacah, dan Akumulator
+
+### Masalahnya: tantangan menabung 52 minggu
+
+Minggu ke-1 kamu menyetor Rp10.000, minggu ke-2 Rp20.000, minggu ke-3 Rp30.000, dan seterusnya: minggu ke-k menyetor k × Rp10.000. Berapa total tabunganmu setelah 52 minggu?
+
+| Minggu | 1 | 2 | 3 | 4 | 5 | … | 52 |
+|---|---|---|---|---|---|---|---|
+| Setoran | 10.000 | 20.000 | 30.000 | 40.000 | 50.000 | … | ? |
+
+Lima minggu pertama masih bisa dijumlahkan dengan tangan (hasilnya 150.000). Untuk 52 minggu, kita harus menulis 52 penjumlahan yang **hampir sama**. Pekerjaan berulang seperti ini adalah tugas **perulangan** (*loop*):
+
+```python
+total = 0
+for k in range(1, 53):
+    total = total + k * 10000
+print(total)          # 13780000
+```
+
+Tiga baris, 52 penjumlahan, hasilnya tiga belas juta lebih. Tebakan kebanyakan orang meleset jauh. Pertanyaan untuk lesson ini: **bagaimana komputer tahu kapan berhenti?**
+
+### for mengambil nilai satu per satu
+
+```python
+for n in range(5):
+    print(n)
+```
+
+```
+0
+1
+2
+3
+4
+```
+
+Pernyataan `for` mengulang **badan loop** (baris yang menjorok di bawahnya) satu kali untuk setiap nilai dalam sebuah barisan. Di setiap **putaran** (*iteration*), **variabel perulangan** (*loop variable*), di sini `n`, menerima nilai berikutnya dari barisan itu. Saat barisannya habis, loop selesai dan Python melanjutkan ke baris sesudah badan loop (PSF, t.t.-a, §8.3; PSF, t.t.-b).
+
+Seperti `if` dan `def`, baris `for` diakhiri titik dua, dan badan loop ditandai dengan indentasi. Baris yang tidak menjorok **bukan** bagian dari loop dan hanya dijalankan sekali, setelah loop selesai.
+
+### range(awal, batas, langkah)
+
+`range` adalah fungsi yang **mengembalikan** barisan bilangan bulat, persis seperti fungsi ber-return di Minggu 5 (PSF, t.t.-c). Aturannya:
+
+- `awal` **ikut** dalam barisan. Jika tidak ditulis, `awal` bernilai 0.
+- `batas` **tidak ikut**. Bayangkan `batas` sebagai **pagar**: barisan berhenti **sebelum** pagar.
+- `langkah` adalah besar pertambahan tiap kali. Jika tidak ditulis, `langkah` bernilai +1. Untuk menghitung mundur, `langkah` harus negatif.
+
+::: {.table-responsive}
+| Pemanggilan | Barisan | Banyak putaran |
+|---|---|---|
+| `range(5)` | `0 1 2 3 4` | 5 |
+| `range(2, 6)` | `2 3 4 5` | 4 |
+| `range(1, 10, 3)` | `1 4 7` | 3 |
+| `range(10, 0, -3)` | `10 7 4 1` | 4 |
+| `range(6, 2)` | *(kosong)* | 0 |
+
+: {tbl-colwidths="[34,40,26]"}
+:::
+
+Dua hal yang sering mengejutkan:
+
+- **Angka batas hilang.** `range(5)` berhenti di 4, bukan 5. Karena itu, minggu 1 sampai 52 ditulis `range(1, 53)`, atau secara umum `range(1, minggu + 1)`.
+- **`range(6, 2)` kosong.** Langkah bawaannya +1, sehingga barisan bergerak **naik** dari 6, padahal 6 sudah melewati pagar 2. Barisan kosong berarti badan loop dijalankan **nol** kali. Ini bukan galat; program berjalan terus tanpa mencetak apa-apa.
+
+Jadi jawaban pertanyaan tadi: **komputer tidak memutuskan kapan berhenti; barisan dari `range` yang memutuskan.** `for` mengambil satu bilangan per putaran, dan berhenti saat barisan habis.
+
+::: {.callout-note title="for hanya bisa berjalan di atas barisan"}
+```python
+for minggu in 52:
+    print(minggu)
+```
+
+```
+TypeError: 'int' object is not iterable
+```
+
+*Iterable* artinya "sesuatu yang nilainya bisa diambil satu per satu". Bilangan `52` bukan barisan; `range(52)` adalah barisan. Jika melihat galat ini, periksa apakah kamu lupa menulis `range(...)`.
+:::
+
+### Menelusuri loop dengan trace table
+
+Program dengan loop sulit ditelusuri di kepala karena baris yang sama dijalankan berkali-kali dengan nilai yang berbeda. Alatnya adalah **trace table**: **satu baris per putaran**, **satu kolom per variabel yang berubah**. Baris pertama, *(awal)*, mencatat nilai sebelum loop dimulai.
+
+```python
+def total_tabungan(minggu):
+    total = 0
+    for k in range(1, minggu + 1):
+        setoran = k * 10000
+        total = total + setoran
+    return total
+
+print(total_tabungan(3))     # 60000
+```
+
+| `k` | `setoran` | `total` |
+|---|---|---|
+| *(awal)* | – | 0 |
+| 1 | 10000 | 10000 |
+| 2 | 20000 | 30000 |
+| 3 | 30000 | 60000 |
+
+: {tbl-colwidths="[30,35,35]"}
+
+Cara mengisinya: kiri ke kanan, atas ke bawah. Nilai `total` yang baru dihitung dari `total` di **baris atasnya**. Setelah baris terakhir, hitung barisnya: **3 baris putaran berarti 3 putaran**. Perhatikan juga bahwa setelah loop selesai, `k` tetap menyimpan nilai terakhirnya, yaitu `3` (bukan `4`, karena 4 adalah pagar).
+
+Telusuri program yang sama langkah demi langkah. Perhatikan baris 3 dijalankan sekali lagi di akhir: `for` mencoba mengambil bilangan berikutnya, menemukan barisan sudah habis, lalu melompat ke `return`.
+
+```{=html}
+<div class="stackviz" data-trace="trace-w06-for" data-title="Telusuri: akumulator dengan for"></div>
+<script type="application/json" id="trace-w06-for">{"code":["def total_tabungan(minggu):","    total = 0","    for k in range(1, minggu + 1):","        setoran = k * 10000","        total = total + setoran","    return total","","print(total_tabungan(3))"],"steps":[{"line":null,"frames":[{"name":"__main__","vars":[]}],"out":"","note":"Program belum berjalan. Tebak dulu: berapa kali baris 5 dijalankan, dan berapa nilai `k` setelah loop selesai? Lalu tekan **Lanjut**."},{"line":1,"frames":[{"name":"__main__","vars":[["total_tabungan","<fungsi>"]]}],"out":"","note":"Baris 1: `def` membuat fungsi `total_tabungan`; badannya belum dijalankan. Python melompat ke baris 8."},{"line":8,"frames":[{"name":"__main__","vars":[["total_tabungan","<fungsi>"]]},{"name":"total_tabungan","vars":[["minggu","3"]]}],"out":"","note":"Baris 8 memanggil `total_tabungan(3)`. Frame baru dibuat dengan `minggu ← 3`."},{"line":2,"frames":[{"name":"__main__","vars":[["total_tabungan","<fungsi>"]]},{"name":"total_tabungan","vars":[["minggu","3"],["total","0"]]}],"out":"","note":"Baris 2 · ① **siapkan penampung**: `total = 0`, **sebelum** loop."},{"line":3,"frames":[{"name":"__main__","vars":[["total_tabungan","<fungsi>"]]},{"name":"total_tabungan","vars":[["minggu","3"],["total","0"],["k","1"]]}],"out":"","note":"Baris 3 · ② `range(1, 4)` menghasilkan barisan `1 2 3`. Putaran 1: `for` mengambil bilangan pertama, `k ← 1`."},{"line":4,"frames":[{"name":"__main__","vars":[["total_tabungan","<fungsi>"]]},{"name":"total_tabungan","vars":[["minggu","3"],["total","0"],["k","1"],["setoran","10000"]]}],"out":"","note":"Baris 4: setoran minggu ini `1 * 10000 = 10000`."},{"line":5,"frames":[{"name":"__main__","vars":[["total_tabungan","<fungsi>"]]},{"name":"total_tabungan","vars":[["minggu","3"],["total","10000"],["k","1"],["setoran","10000"]]}],"out":"","note":"Baris 5 · ③ **perbarui penampung**: `total = 0 + 10000 = 10000`. Badan loop selesai; kembali ke baris 3."},{"line":3,"frames":[{"name":"__main__","vars":[["total_tabungan","<fungsi>"]]},{"name":"total_tabungan","vars":[["minggu","3"],["total","10000"],["k","2"],["setoran","10000"]]}],"out":"","note":"Baris 3: putaran 2, `k ← 2`. `setoran` masih berisi nilai putaran lalu sampai baris 4 menimpanya."},{"line":4,"frames":[{"name":"__main__","vars":[["total_tabungan","<fungsi>"]]},{"name":"total_tabungan","vars":[["minggu","3"],["total","10000"],["k","2"],["setoran","20000"]]}],"out":"","note":"Baris 4: `setoran = 2 * 10000 = 20000`."},{"line":5,"frames":[{"name":"__main__","vars":[["total_tabungan","<fungsi>"]]},{"name":"total_tabungan","vars":[["minggu","3"],["total","30000"],["k","2"],["setoran","20000"]]}],"out":"","note":"Baris 5: `total = 10000 + 20000 = 30000`. Nilai **lama** `total` dipakai untuk menghitung nilai barunya."},{"line":3,"frames":[{"name":"__main__","vars":[["total_tabungan","<fungsi>"]]},{"name":"total_tabungan","vars":[["minggu","3"],["total","30000"],["k","3"],["setoran","20000"]]}],"out":"","note":"Baris 3: putaran 3, `k ← 3`, bilangan terakhir dalam barisan."},{"line":4,"frames":[{"name":"__main__","vars":[["total_tabungan","<fungsi>"]]},{"name":"total_tabungan","vars":[["minggu","3"],["total","30000"],["k","3"],["setoran","30000"]]}],"out":"","note":"Baris 4: `setoran = 3 * 10000 = 30000`."},{"line":5,"frames":[{"name":"__main__","vars":[["total_tabungan","<fungsi>"]]},{"name":"total_tabungan","vars":[["minggu","3"],["total","60000"],["k","3"],["setoran","30000"]]}],"out":"","note":"Baris 5: `total = 30000 + 30000 = 60000`."},{"line":3,"frames":[{"name":"__main__","vars":[["total_tabungan","<fungsi>"]]},{"name":"total_tabungan","vars":[["minggu","3"],["total","60000"],["k","3"],["setoran","30000"]]}],"out":"","note":"Baris 3: `for` mencoba mengambil bilangan berikutnya, tetapi barisan sudah habis (4 adalah pagar, tidak ikut). Loop selesai. `k` tetap bernilai `3`."},{"line":6,"frames":[{"name":"__main__","vars":[["total_tabungan","<fungsi>"]]},{"name":"total_tabungan","vars":[["minggu","3"],["total","60000"],["k","3"],["setoran","30000"]],"ret":"60000"}],"out":"","note":"Baris 6 · ④ **kembalikan setelah loop**: `return` sejajar dengan `for`, jadi baru dijalankan setelah ketiga putaran. Fungsi mengembalikan `60000`."},{"line":8,"frames":[{"name":"__main__","vars":[["total_tabungan","<fungsi>"]]}],"out":"60000\n","note":"Kembali ke baris 8: `print` mencetak `60000`. Baris 4–5 dijalankan **tiga** kali, sama dengan banyak baris putaran di trace table."}]}</script>
+<script src="../assets/stackviz.js"></script>
+```
+
+### Pencacah dan akumulator
+
+Variabel `total` di atas adalah **penampung** (*holder*): variabel yang mengumpulkan hasil dari putaran ke putaran. Ada dua penampung yang paling sering dipakai, dan keduanya perlu dihafal sebagai pola (Zelle, 2017, Bab 8.1; Downey, 2024, Bab 7):
+
+::: {.table-responsive}
+| Pola | Bentuk | Artinya | Contoh pertanyaan |
+|---|---|---|---|
+| **Akumulator** (*accumulator*) | `total = total + nilai` | menambahkan sesuatu di setiap putaran (jumlah berjalan) | "Berapa total setoran?" |
+| **Pencacah** (*counter*) | `banyak = banyak + 1` | bertambah 1 setiap kali sesuatu terjadi, biasanya di dalam `if` | "Ada berapa minggu yang …?" |
+
+: {tbl-colwidths="[20,24,32,24]"}
+:::
+
+Baca `total = total + nilai` dari kanan: "ambil `total` yang lama, tambahkan `nilai`, simpan kembali ke `total`." Baris ini bukan persamaan matematika; ia **memperbarui** variabel (Downey, 2024, Bab 7).
+
+Keduanya mengikuti **empat langkah** yang sama. Empat label ini adalah *pseudocode* kita: tulis labelnya dulu sebagai komentar, baru isi kodenya di bawah tiap label.
+
+| Langkah | Letak | Contoh |
+|---|---|---|
+| ① Siapkan penampung | **sebelum** loop | `total = 0` |
+| ② Ulangi dengan range | baris `for` | `for k in range(1, minggu + 1):` |
+| ③ Perbarui penampung | **di dalam** loop | `total = total + setoran` |
+| ④ Kembalikan setelah loop | **sejajar** dengan `for` | `return total` |
+
+: {tbl-colwidths="[30,24,46]"}
+
+Pencacah biasanya hidup di dalam `if`, karena ia hanya bertambah saat syaratnya terpenuhi:
+
+```python
+banyak = 0
+for n in range(1, 10, 2):
+    if n > 4:
+        banyak = banyak + 1
+print(n, banyak)     # 9 3
+```
+
+| `n` | `n > 4` | `banyak` |
+|---|---|---|
+| *(awal)* | – | 0 |
+| 1 | `False` | 0 |
+| 3 | `False` | 0 |
+| 5 | `True` | 1 |
+| 7 | `True` | 2 |
+| 9 | `True` | 3 |
+
+: {tbl-colwidths="[30,35,35]"}
+
+`n` berhenti di 9 karena 9 adalah bilangan terakhir `range(1, 10, 2)`, dan pencacah hanya bertambah pada tiga putaran yang syaratnya `True`.
+
+### Satu baris di tempat yang salah
+
+Letak setiap baris dalam pola ini menentukan hasilnya. Empat kesalahan berikut semuanya pada fungsi `total_tabungan(52)`, yang seharusnya menghasilkan `13780000`. Perhatikan: **tiga dari empat kesalahan tidak memberi pesan galat**. Programnya berjalan, tetapi angkanya salah.
+
+::: {.table-responsive}
+| | Kode yang salah | Hasil | Sebabnya |
+|---|---|---|---|
+| A | `for k in range(1, minggu):` | `13260000` | Pagar 52 tidak ikut; minggu ke-52 tidak pernah dijumlahkan |
+| B | `total = 0` ditulis **di dalam** `for` | `520000` | Penampung di-nol-kan ulang setiap putaran; hanya minggu terakhir yang tersisa |
+| C | `return total` menjorok **di dalam** `for` | `10000` | `return` mengakhiri fungsi di putaran pertama |
+| D | `total = 0` tidak ditulis sama sekali | `UnboundLocalError` | `total` belum punya nilai saat pertama kali ditambah |
+
+: {tbl-colwidths="[5,33,17,45]"}
+:::
+
+```python
+def total_tabungan_c(minggu):
+    total = 0
+    for k in range(1, minggu + 1):
+        total = total + k * 10000
+        return total                  # menjorok satu tingkat terlalu dalam
+
+print(total_tabungan_c(52))           # 10000
+```
+
+Kesalahan D memberi pesan `UnboundLocalError: cannot access local variable 'total' where it is not associated with a value`. Ini galat yang sama dengan Minggu 4: variabel lokal harus diberi nilai sebelum dipakai. Langkah ① ada untuk mencegahnya.
+
+Satu kesalahan lagi yang sering muncul adalah kebiasaan lama: menulis `print(total)` di akhir fungsi, bukan `return total`. Angkanya tampil, tetapi pemanggil menerima `None` (Minggu 5).
+
+### Contoh terpandu: total_tabungan
+
+Kita tulis ulang `total_tabungan` dengan resep lima langkah dari Minggu 5. Empat label loop adalah isi langkah **Rancang** untuk masalah yang berulang.
+
+**1 · Pahami.** Hitung 3 minggu dengan tangan: 10.000, lalu 30.000, lalu 60.000 (trace table di atas). Apa yang dilakukan **setiap** minggu? Dua hal: hitung setoran minggu ini (k × 10.000), lalu tambahkan ke total. Dua hal yang berulang itulah badan loop. Masukannya banyak minggu; keluarannya satu angka, jadi fungsi **mengembalikan** total, bukan mencetaknya.
+
+**2–3 · Pecah dan rancang.** Satu fungsi cukup. Tulis kerangka, satu uji dari hitungan tangan, dan empat label sebagai komentar:
+
+```python
+def total_tabungan(minggu):
+    """Kembalikan total tabungan setelah sejumlah minggu."""
+    # ① SIAPKAN PENAMPUNG
+    # ② ULANGI DENGAN RANGE
+    # ③ PERBARUI PENAMPUNG
+    # ④ KEMBALIKAN SETELAH LOOP
+    return 0
+
+print(total_tabungan(3) == 60000)    # False: belum selesai, bukan rusak
+```
+
+**4 · Isi dan uji.** Isi satu label setiap kali.
+
+```python
+def total_tabungan(minggu):
+    """Kembalikan total tabungan setelah sejumlah minggu."""
+    # ① SIAPKAN PENAMPUNG
+    total = 0
+    # ② ULANGI DENGAN RANGE
+    for k in range(1, minggu + 1):
+        # ③ PERBARUI PENAMPUNG
+        setoran = k * 10000
+        total = total + setoran
+    # ④ KEMBALIKAN SETELAH LOOP
+    return total
+
+print(total_tabungan(3) == 60000)       # True
+print(total_tabungan(52) == 13780000)   # True
+print(total_tabungan(0) == 0)           # True
+```
+
+- ① `total = 0`, karena menambah ke nol tidak mengubah apa pun.
+- ② Minggu 1 sampai `minggu`. Pagar tidak ikut, jadi `minggu + 1`.
+- ③ Dua baris yang berulang, keduanya menjorok di bawah `for`.
+- ④ `return` **sejajar** dengan `for`, bukan di dalamnya.
+
+Uji ketiga adalah **kasus tepi** (*edge case*): untuk 0 minggu, `range(1, 1)` kosong, loop berjalan nol kali, dan fungsi mengembalikan nilai awal `0`. Kasus tepi seperti ini tempat *bug* paling sering bersembunyi.
+
+**5 · Rakit.** Bagian utama: baca, panggil, cetak.
+
+```python
+minggu = int(input())
+print("Total tabungan:", total_tabungan(minggu))
+```
+
+```
+52
+Total tabungan: 13780000
+```
+
+### Pencacah dan akumulator bersama: rata-rata
+
+Rata-rata membutuhkan **dua** penampung: akumulator untuk jumlah dan pencacah untuk banyaknya data. Fungsi berikut menghitung rata-rata bilangan ganjil dari 1 sampai `n`:
+
+```python
+def rata_ganjil(n):
+    """Kembalikan rata-rata bilangan ganjil dari 1 sampai n; 0 jika tidak ada."""
+    # ① SIAPKAN PENAMPUNG (dua)
+    total = 0
+    banyak = 0
+    # ② ULANGI DENGAN RANGE
+    for k in range(1, n + 1):
+        # ③ PERBARUI PENAMPUNG, hanya untuk bilangan ganjil
+        if k % 2 == 1:
+            total = total + k
+            banyak = banyak + 1
+    # ④ KEMBALIKAN SETELAH LOOP
+    if banyak == 0:
+        return 0
     return total / banyak
 
-print(rata_rata([80, -1, 95, 70]))   # 81.66...
-
-total = 0
-angka = int(input("Angka (0 = selesai): "))
-while angka != 0:                    # sentinel
-    total += angka
-    angka = int(input("Angka (0 = selesai): "))
-print("Jumlah:", total)
+print(rata_ganjil(7))    # 4.0   (1 + 3 + 5 + 7) / 4
+print(rata_ganjil(0))    # 0
 ```
+
+Dua hal yang perlu diperhatikan:
+
+- **Pembagian dilakukan sekali, setelah loop.** Rata-rata baru bisa dihitung setelah semua data terkumpul.
+- **Jaga pembagian dengan nol.** Untuk `n = 0`, tidak ada bilangan ganjil, sehingga `banyak` tetap 0 dan `total / banyak` akan menghentikan program dengan `ZeroDivisionError`. Guard `if banyak == 0` mencegahnya, sama seperti guard di Minggu 3.
+
+## Lesson B · while, Sentinel, dan Guard di dalam Perulangan
+
+### Masalahnya: program yang tidak mau berhenti
+
+Program berikut mencetak `Hari 1` terus-menerus sampai dihentikan paksa dengan **Ctrl+C** (di Colab: tombol stop pada sel).
+
+```python
+hari = 1
+while hari <= 7:
+    print("Hari", hari)
+```
+
+```
+Hari 1
+Hari 1
+Hari 1
+...
+```
+
+`while` berarti "**selama** syarat ini `True`, jalankan badan loop sekali lagi". `hari` dimulai dari 1, dan **tidak ada baris** di badan loop yang mengubahnya, sehingga `1 <= 7` bernilai `True` selamanya. Inilah **infinite loop**. Perbaikannya satu baris di akhir badan loop:
+
+```python
+hari = 1
+while hari <= 7:
+    print("Hari", hari)
+    hari = hari + 1           # pemutakhiran
+```
+
+### Cara kerja while
+
+Pernyataan `while` memeriksa kondisinya **sebelum setiap putaran** (PSF, t.t.-a, §8.2). Jika `True`, badan loop dijalankan, lalu kondisi diperiksa lagi. Jika `False`, loop selesai. Karena pemeriksaan dilakukan di depan, `while` disebut *pre-test loop*: jika kondisinya sudah `False` pada pemeriksaan pertama, badan loop dijalankan **nol** kali (Zelle, 2017, Bab 8.2).
+
+```python
+saldo = 0
+while saldo > 0:              # 0 > 0 → False sejak awal
+    saldo = saldo - 1
+print("selesai")              # langsung tercetak; badan loop tidak pernah berjalan
+```
+
+Untuk menelusuri `while`, tambahkan satu kolom ke trace table: **nilai kondisi** di setiap pemeriksaan. Loop berhenti di baris yang kondisinya `False`.
+
+```python
+n = 1
+putaran = 0
+while n < 10:
+    n = n + 4
+    putaran = putaran + 1
+print(n, putaran)             # 13 3
+```
+
+| `n` sebelum diperiksa | `n < 10` | `n` sesudah putaran | `putaran` |
+|---|---|---|---|
+| 1 | `True` | 5 | 1 |
+| 5 | `True` | 9 | 2 |
+| 9 | `True` | 13 | 3 |
+| 13 | `False` | *berhenti* | 3 |
+
+: {tbl-colwidths="[28,18,28,26]"}
+
+Perhatikan bahwa `n` akhirnya bernilai 13, **melewati** batas 10. Kondisi hanya diperiksa di awal putaran, jadi nilai di dalam putaran terakhir boleh melampauinya.
+
+### Tiga bagian setiap loop, tiga cara rusak
+
+Setiap loop punya tiga bagian (Zelle, 2017, Bab 8.2). Pada `for`, ketiganya disembunyikan di dalam `range`; pada `while`, ketiganya harus kamu tulis sendiri:
+
+```python
+hari = 0                 # INISIALISASI: nilai awal, sebelum loop
+while hari < 7:          # KONDISI: diperiksa sebelum tiap putaran
+    hari = hari + 1      # PEMUTAKHIRAN: mengubah variabel yang diperiksa kondisi
+```
+
+Setiap bagian bisa rusak, dan setiap kerusakan punya **gejala** yang khas. Mengenali gejalanya membantu menunjuk bagian mana yang harus diperbaiki.
+
+::: {.table-responsive}
+| Bagian yang rusak | Contoh | Gejala |
+|---|---|---|
+| Pemutakhiran hilang | program `Hari 1` di atas | **infinite loop**: kondisi selalu `True` |
+| Kondisi meleset satu, atau nilai awal salah | `hari = 0` dengan `while hari <= 7:` | **off-by-one**: 8 putaran untuk 7 hari |
+| Kondisi terbalik | `while hujan == -1:` padahal maksudnya `!=` | loop **tidak pernah berjalan** |
+
+: {tbl-colwidths="[30,36,34]"}
+:::
+
+**Off-by-one** (*kelebihan atau kekurangan satu putaran*) terjadi saat nilai awal dan kondisi tidak cocok. Untuk 7 hari, ada dua pasangan yang benar:
+
+| Nilai awal | Kondisi | Nilai `hari` di tiap putaran | Banyak putaran |
+|---|---|---|---|
+| `hari = 0` | `hari < 7` | 1, 2, …, 7 | 7 ✓ |
+| `hari = 1` | `hari <= 7` | 1, 2, …, 7 | 7 ✓ |
+| `hari = 0` | `hari <= 7` | 1, 2, …, 8 | 8 ✗ |
+| `hari = 1` | `hari < 7` | 1, 2, …, 6 | 6 ✗ |
+
+: {tbl-colwidths="[18,18,40,24]"}
+
+::: {.callout-note title="Tips: tulis dulu kapan loop berhenti"}
+Sering kali lebih mudah menyatakan kapan loop **berhenti**, lalu membaliknya menjadi kondisi untuk **lanjut** (Zelle, 2017, Bab 8.4). "Berhenti saat `hujan == -1`" menjadi `while hujan != -1:`. "Berhenti saat `hari > 7`" menjadi `while hari <= 7:`.
+:::
+
+### Sentinel: berhenti pada nilai penanda
+
+Stasiun cuaca kampus mencatat curah hujan harian (mm). Datanya dimasukkan satu nilai per baris, dan kita **tidak tahu** berapa hari datanya. Akhir data ditandai dengan nilai khusus `-1`. Nilai yang menandai akhir data seperti ini disebut **sentinel**: ia bukan data, hanya tanda berhenti (Zelle, 2017, Bab 8.3).
+
+`for` tidak bisa dipakai di sini: tidak ada angka yang bisa diberikan ke `range`, karena banyaknya data baru diketahui saat `-1` datang. Polanya dalam *pseudocode*:
+
+```
+baca nilai pertama                    ← inisialisasi (priming read)
+selama nilai bukan sentinel:          ← kondisi
+    proses nilai
+    baca nilai berikutnya             ← pemutakhiran
+```
+
+Dalam Python, dengan masukan `5, 8, -1`:
+
+```python
+total = 0
+x = int(input())
+while x != -1:
+    total = total + x
+    x = int(input())
+print(total)          # 13
+```
+
+| `x` | `x != -1` | `total` |
+|---|---|---|
+| *(awal)* | – | 0 |
+| 5 | `True` | 5 |
+| 8 | `True` | 13 |
+| -1 | `False` | *berhenti* |
+
+: {tbl-colwidths="[30,35,35]"}
+
+Perhatikan tiga hal:
+
+- **`input()` ditulis dua kali, dengan sengaja.** Pembacaan sebelum loop (*priming read*, **baca nilai pertama**) memberi kondisi sesuatu untuk diperiksa pada pemeriksaan pertama. Pembacaan di **akhir** badan loop adalah pemutakhirannya.
+- **Sentinel diperiksa, tetapi tidak pernah diproses.** `-1` membuat kondisi `False` sebelum sempat dijumlahkan.
+- **Jika nilai pertama sudah sentinel**, loop berjalan nol kali dan total tetap 0. Ini benar, bukan *bug*.
+
+Apa jadinya jika baca nilai pertama dihilangkan dan `input()` dipindah ke **awal** badan loop?
+
+```python
+total = 0
+x = 0                     # tanpa baca nilai pertama
+while x != -1:
+    x = int(input())      # dibaca di awal badan loop
+    total = total + x
+print(total)              # 12, bukan 13: -1 ikut dijumlahkan
+```
+
+`-1` dibaca **di dalam** putaran, lalu langsung dijumlahkan sebelum kondisi sempat memeriksanya. Hasilnya kurang satu.
+
+### Guard di dalam loop
+
+Sensor hujan kadang rusak dan mengirim `-9`. Nilai ini **tidak sah** dan harus dilewati. Nilai `0` (tidak hujan) tetap data sah. Tanpa pemeriksaan, data `12, -9, 30, 0, -1` menghasilkan total `33`, padahal data yang sah berjumlah `12 + 30 + 0 = 42`: total berkurang 9 karena `-9` ikut dijumlahkan.
+
+**Guard** dari Minggu 3 menyelesaikan masalah ini. Karena guard harus memeriksa **setiap** nilai, ia diletakkan **di dalam** loop, tepat sebelum akumulasi:
+
+```python
+while hujan != -1:
+    if hujan != -9:              # guard: hanya data sah yang lewat
+        total = total + hujan
+    hujan = int(input())         # pemutakhiran: sejajar dengan if, BUKAN di dalamnya
+```
+
+Letak baris pemutakhiran sangat penting. Jika baris itu ikut menjorok ke dalam `if`:
+
+```python
+while hujan != -1:
+    if hujan != -9:
+        total = total + hujan
+        hujan = int(input())     # SALAH: hanya dijalankan jika data sah
+```
+
+Begitu `-9` datang, `if` bernilai `False`, `hujan` tidak pernah dibaca ulang, dan kondisi `-9 != -1` bernilai `True` selamanya: **infinite loop**. Guard hanya menentukan data mana yang **dihitung**; pemutakhiran adalah milik **loop**, bukan milik `if`.
+
+### Contoh terpandu: total_hujan
+
+Masalah lengkapnya: baca curah hujan harian sampai `-1`, lewati `-9`, dan kembalikan jumlah data yang sah. Lesson A punya empat label; di sini ada **lima**, karena tiga bagian loop kini ditulis sendiri dan guard punya tempatnya:
+
+| Label | Isinya |
+|---|---|
+| ① Inisialisasi | penampung **dan** baca nilai pertama |
+| ② Kondisi | `while` nilai bukan sentinel |
+| ③ Guard + akumulasi | `if` data sah, perbarui penampung |
+| ④ Pemutakhiran | baca nilai berikutnya, sejajar dengan `if` |
+| ⑤ Kembalikan | `return`, sejajar dengan `while` |
+
+: {tbl-colwidths="[30,70]"}
+
+**Pahami.** Telusuri `12, -9, 30, 0, -1` dengan tangan: 12 sah → 12; -9 rusak, lewati → 12; 30 → 42; 0 sah → 42; -1 berhenti, jangan dijumlahkan. Jawabannya 42. Untuk **setiap** nilai: lihat, putuskan apakah dihitung, mungkin tambahkan, lalu ambil nilai berikutnya.
+
+**Rancang.** Fungsi ini tidak punya parameter karena membaca datanya sendiri, dan mengembalikan total. Uji dari hitungan tangan, ditambah dua kasus tepi:
+
+| Masukan | Harapan | Yang diuji |
+|---|---|---|
+| `12, -9, 30, 0, -1` | `42` | data biasa |
+| `-1` | `0` | tidak ada data: loop berjalan nol kali |
+| `40, -9, -9, -1` | `40` | data rusak berturut-turut |
+
+: {tbl-colwidths="[40,20,40]"}
+
+**Isi.** Satu label setiap kali:
+
+```python
+def total_hujan():
+    """Baca curah hujan sampai -1, kembalikan jumlah data yang sah."""
+    # ① INISIALISASI
+    total = 0
+    hujan = int(input())
+    # ② KONDISI
+    while hujan != -1:
+        # ③ GUARD + AKUMULASI
+        if hujan != -9:
+            total = total + hujan
+        # ④ PEMUTAKHIRAN
+        hujan = int(input())
+    # ⑤ KEMBALIKAN
+    return total
+
+print("Total curah hujan:", total_hujan())
+```
+
+```
+12
+-9
+30
+0
+-1
+Total curah hujan: 42
+```
+
+Telusuri fungsi ini dengan masukan `12, -9, 30, 0, -1`. Perhatikan putaran saat `hujan` bernilai `-9`: baris 6 dilewati, tetapi baris 7 tetap dijalankan.
+
+```{=html}
+<div class="stackviz" data-trace="trace-w06-while" data-title="Telusuri: sentinel dan guard"></div>
+<script type="application/json" id="trace-w06-while">{"code":["def total_hujan():","    total = 0","    hujan = int(input())","    while hujan != -1:","        if hujan != -9:","            total = total + hujan","        hujan = int(input())","    return total","","print(\"Total curah hujan:\", total_hujan())"],"steps":[{"line":null,"frames":[{"name":"__main__","vars":[]}],"out":"","note":"Program belum berjalan. Masukannya `12, -9, 30, 0, -1`, satu nilai per baris. Tebak dulu: berapa kali baris 6 dijalankan? Lalu tekan **Lanjut**."},{"line":1,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]}],"out":"","note":"Baris 1: `def` membuat fungsi `total_hujan`. Python melompat ke baris 10."},{"line":10,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[]}],"out":"","note":"Baris 10 memanggil `total_hujan()`. Frame baru dibuat tanpa parameter: fungsi ini membaca datanya sendiri."},{"line":2,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","0"]]}],"out":"","note":"Baris 2 · ① **inisialisasi** penampung: `total = 0`."},{"line":3,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","0"],["hujan","12"]]}],"out":"","note":"Baris 3 · ① **baca nilai pertama**: `input()` membaca `12`. Tanpa baris ini, kondisi di baris 4 tidak punya nilai untuk diperiksa."},{"line":4,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","0"],["hujan","12"]]}],"out":"","note":"Baris 4 · ② **kondisi** diperiksa **sebelum** putaran: `12 != -1` → `True`, masuk badan loop."},{"line":5,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","0"],["hujan","12"]]}],"out":"","note":"Baris 5 · ③ **guard**: `12 != -9` → `True`, data sah."},{"line":6,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","12"],["hujan","12"]]}],"out":"","note":"Baris 6: `total = 0 + 12 = 12`."},{"line":7,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","12"],["hujan","-9"]]}],"out":"","note":"Baris 7 · ④ **pemutakhiran**: `input()` membaca `-9`. Baris ini sejajar dengan `if`, jadi selalu dijalankan."},{"line":4,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","12"],["hujan","-9"]]}],"out":"","note":"Baris 4: `-9 != -1` → `True`, putaran berikutnya."},{"line":5,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","12"],["hujan","-9"]]}],"out":"","note":"Baris 5: guard `-9 != -9` → `False`. Baris 6 dilewati; `total` tetap `12`."},{"line":7,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","12"],["hujan","30"]]}],"out":"","note":"Baris 7: pemutakhiran tetap dijalankan walaupun guard `False`: `input()` membaca `30`. Seandainya baris ini berada di dalam `if`, `hujan` akan tetap `-9` selamanya."},{"line":4,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","12"],["hujan","30"]]}],"out":"","note":"Baris 4: `30 != -1` → `True`."},{"line":5,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","12"],["hujan","30"]]}],"out":"","note":"Baris 5: `30 != -9` → `True`."},{"line":6,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","42"],["hujan","30"]]}],"out":"","note":"Baris 6: `total = 12 + 30 = 42`."},{"line":7,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","42"],["hujan","0"]]}],"out":"","note":"Baris 7: `input()` membaca `0`."},{"line":4,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","42"],["hujan","0"]]}],"out":"","note":"Baris 4: `0 != -1` → `True`."},{"line":5,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","42"],["hujan","0"]]}],"out":"","note":"Baris 5: `0 != -9` → `True`. Nol mm adalah data sah."},{"line":6,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","42"],["hujan","0"]]}],"out":"","note":"Baris 6: `total = 42 + 0 = 42`."},{"line":7,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","42"],["hujan","-1"]]}],"out":"","note":"Baris 7: `input()` membaca `-1`, sang sentinel."},{"line":4,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","42"],["hujan","-1"]]}],"out":"","note":"Baris 4: `-1 != -1` → `False`. Loop berhenti. Sentinel **diperiksa**, tetapi tidak pernah **dijumlahkan**."},{"line":8,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]},{"name":"total_hujan","vars":[["total","42"],["hujan","-1"]],"ret":"42"}],"out":"","note":"Baris 8 · ⑤ **kembalikan**: `return` sejajar dengan `while`, mengirim `42` ke pemanggil."},{"line":10,"frames":[{"name":"__main__","vars":[["total_hujan","<fungsi>"]]}],"out":"Total curah hujan: 42\n","note":"Kembali ke baris 10: `print` mencetak `Total curah hujan: 42`. Baris 6 dijalankan **tiga** kali: untuk 12, 30, dan 0."}]}</script>
+```
+
+::: {.callout-note title="Saat diuji di Moodle"}
+- **Jangan beri teks pada `input()`.** Kasus uji memasukkan data lewat *stdin* lalu membandingkan keluaranmu persis; teks seperti `input("Curah hujan: ")` ikut tercetak dan membuat uji gagal.
+- **Uji gagal karena *timeout*** berarti loop tidak berhenti. Itu gejala yang kamu cari: periksa pemutakhirannya.
+- **`EOFError: EOF when reading a line`** berarti program meminta data lagi padahal data sudah habis: kondisi tidak pernah melihat sentinel, atau data ujimu lupa diakhiri `-1`.
+:::
+
+### for atau while?
+
+Pertanyaan penentunya: **apakah banyak putaran sudah diketahui sebelum loop dimulai?**
+
+- **Ya** → `for` dengan `range`. Perulangan seperti ini disebut perulangan **tentu** (*definite loop*).
+- **Tidak**, loop berhenti karena nilai yang datang saat loop berjalan → `while`. Perulangan seperti ini disebut perulangan **tak tentu** (*indefinite loop*) (Zelle, 2017, Bab 8.2).
+
+::: {.table-responsive}
+| Situasi | Pilihan | Alasan |
+|---|---|---|
+| Menjumlahkan iuran 30 mahasiswa di satu kelas | `for` | Banyak putaran diketahui: `range(30)` |
+| Membaca harga barang sampai kasir mengetik 0 | `while` | Berhenti pada sentinel 0 yang datang saat loop berjalan |
+| Menghitung mundur dari 10 sampai 1 | `for` | Banyaknya diketahui: `range(10, 0, -1)` |
+
+: {tbl-colwidths="[42,14,44]"}
+:::
+
+Situasi ketiga sering dijawab `while` dengan alasan "karena menghitung mundur". Arah hitungan bukan alasan; `range` dengan langkah negatif sudah bisa menghitung mundur. Alasan "`while` lebih kuat" juga bukan alasan. Alasan yang sah selalu kembali ke pertanyaan penentu di atas.
+
+### Rencana dalam pseudocode
+
+Untuk soal yang belum pernah kamu lihat, tulis **rencana** dulu: pilih `for` atau `while`, lalu susun label langkahnya sebagai kalimat biasa, satu baris per label. Contoh, untuk "hitung berapa hari hujan lebat (lebih dari 50 mm) sampai data -1, lewati -9":
+
+```
+pilihan: while, karena banyak hari tidak diketahui; berhenti pada -1
+
+① banyak = 0; baca nilai pertama
+② selama nilai bukan -1:
+③     jika nilai bukan -9 dan nilai > 50: banyak bertambah 1
+④     baca nilai berikutnya
+⑤ kembalikan banyak
+```
+
+Rencana ini bisa diperiksa **sebelum** satu baris kode pun ditulis: apakah sentinel tidak ikut dihitung? Apakah pemutakhiran di luar syarat? Jika rencananya benar, kodenya tinggal menerjemahkan setiap baris.
+
+## Kesalahan Umum
+
+::: {.table-responsive}
+| Gejala | Penyebab | Perbaikan |
+|---|---|---|
+| Kurang satu putaran; bilangan terakhir tidak ikut | Mengira batas `range` ikut | `range(1, n + 1)` untuk 1 sampai n |
+| `range(6, 2)` tidak mencetak apa pun | Langkah bawaan +1, barisan kosong | Hitung mundur dengan langkah negatif: `range(6, 2, -1)` |
+| `TypeError: 'int' object is not iterable` | `for x in 52:` | `for x in range(52):` |
+| Hasil hanya dari putaran terakhir | `total = 0` di dalam loop | Pindahkan ke sebelum loop |
+| Fungsi selesai di putaran pertama | `return` menjorok di dalam loop | `return` sejajar dengan `for`/`while` |
+| `UnboundLocalError` | Penampung tidak diberi nilai awal | Tulis `total = 0` sebelum loop |
+| `ZeroDivisionError` saat menghitung rata-rata | Pencacah tetap 0 karena tidak ada data | Guard `if banyak == 0:` sebelum membagi |
+| Program tidak berhenti (infinite loop) | Pemutakhiran hilang, atau terjebak di dalam `if` | Baris pemutakhiran di akhir badan loop, sejajar dengan `if` |
+| Satu putaran terlalu banyak atau terlalu sedikit | Nilai awal dan kondisi tidak cocok (`<=` vs `<`) | Telusuri putaran pertama dan terakhir dengan trace table |
+| Loop tidak pernah berjalan | Kondisi terbalik (`==` padahal `!=`) | Tulis kondisi berhenti, lalu balik |
+| Sentinel ikut dijumlahkan | Tidak ada baca nilai pertama; `input()` di awal badan loop | Baca sebelum loop, dan baca lagi di akhir badan loop |
+| `EOFError` | Data habis sebelum sentinel datang | Pastikan kondisi memeriksa sentinel dan data diakhiri sentinel |
+
+: {tbl-colwidths="[30,36,34]"}
+:::
 
 ## Tebak Dulu
 
@@ -68,6 +647,103 @@ for j in range(2, 10, 3):
 Tercetak `2`, `5`, `8`. Kondisi `10 < 5` sudah `False` sejak awal, sehingga badan `while` tidak dijalankan sama sekali. `range(2, 10, 3)` dimulai dari 2, bertambah 3, dan berhenti sebelum mencapai 10.
 :::
 
+Berapa nilai `k` dan `s` yang dicetak?
+
+```python
+s = 0
+for k in range(3, 12, 4):
+    s = s + k
+print(k, s)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+`11 21`. Barisannya `3 7 11` (15 sudah melewati pagar 12). `s` menjadi 3, lalu 10, lalu 21. Setelah loop, `k` menyimpan nilai terakhirnya, `11`.
+:::
+
+Program berikut seharusnya menjumlahkan **semua** bilangan 1 sampai 5. Berapa yang dicetak, dan di mana kesalahannya?
+
+```python
+total = 0
+for k in range(1, 5):
+    total = total + k
+print(total)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+`10`, bukan `15`. `range(1, 5)` berhenti sebelum pagar 5, sehingga 5 tidak pernah dijumlahkan. Perbaikannya: `range(1, 6)`. Ini kesalahan **off-by-one** yang tidak memberi pesan galat.
+:::
+
+Dengan masukan `4, 7, -2, 5, 0` (satu per baris), apa yang terjadi?
+
+```python
+total = 0
+x = int(input())
+while x != 0:
+    if x > 0:
+        total = total + x
+        x = int(input())
+print(total)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+Program **tidak pernah berhenti**. 4 dan 7 dijumlahkan dan dibaca ulang dengan normal. Saat `x = -2`, syarat `x > 0` bernilai `False`, sehingga `input()` di dalam `if` tidak dijalankan. `x` tetap `-2`, kondisi `-2 != 0` tetap `True`, dan loop berputar selamanya. Perbaikannya: geser `x = int(input())` satu tingkat ke kiri, sejajar dengan `if`.
+:::
+
+## Latihan Mandiri
+
+1. **(U6.1)** Buat trace table (kolom `i` dan `banyak`) untuk program berikut, lalu tentukan keluarannya. Setelah itu, jelaskan apa yang berubah jika baris 2 diganti `range(5, 0)`.
+
+    ```python
+    banyak = 0
+    for i in range(5, 0, -2):
+        banyak = banyak + 1
+    print(i, banyak)
+    ```
+
+2. **(U6.2)** Setiap program di bawah dimaksudkan mencetak `Hari 1` sampai `Hari 7`. Untuk masing-masing, sebutkan bagian yang rusak (inisialisasi, kondisi, atau pemutakhiran), gejalanya, dan baris perbaikannya.
+
+    ```python
+    # (a)
+    hari = 1
+    while hari < 7:
+        print("Hari", hari)
+        hari = hari + 1
+
+    # (b)
+    hari = 1
+    while hari == 7:
+        print("Hari", hari)
+        hari = hari + 1
+
+    # (c)
+    hari = 1
+    while hari <= 7:
+        print("Hari", hari)
+    hari = hari + 1
+    ```
+
+3. **(U6.3)** Tulis fungsi `jumlah_kelipatan_lima(n)` yang mengembalikan jumlah semua kelipatan 5 dari 1 sampai `n` (keduanya ikut), lengkap dengan docstring dan empat label sebagai komentar. Hitung dulu dengan tangan, lalu uji: `jumlah_kelipatan_lima(20) == 50`, `jumlah_kelipatan_lima(4) == 0`, dan `jumlah_kelipatan_lima(5) == 5`.
+4. **(U6.4)** Kantin mencatat penjualan harian: satu jumlah porsi per baris, diakhiri `-1`. Nilai negatif lain (misalnya `-5`) adalah salah ketik dan harus dilewati. Tulis fungsi `rata_porsi()` yang mengembalikan rata-rata porsi dari data yang sah, atau `0` jika tidak ada data sah. Gunakan lima label sebagai komentar, dan uji dengan `10, -5, 20, 0, -1` (rata-rata `10.0`), `-1` (hasil `0`), dan `-5, -1` (hasil `0`).
+5. **(U6.5)** Untuk setiap situasi, pilih `for` atau `while`, beri alasan dalam satu kalimat, lalu tulis rencananya dalam *pseudocode* berlabel: (a) menghitung total denda keterlambatan buku selama `n` hari, Rp1.000 per hari untuk 7 hari pertama dan Rp2.000 per hari sesudahnya; (b) membaca nilai ujian sampai dosen mengetik `-1`, lalu mengembalikan berapa nilai yang lulus (≥ 60), dengan nilai di atas 100 dilewati.
+
 ## Bacaan
 
 - Think Python Ch. 7 - Iteration and Search
+- Pendukung: Zelle Ch. 8.1–8.4 - Loop Structures (for, while, sentinel loops); Zingaro Ch. 3 - Repeating Code: Definite Loops
+- Referensi resmi Python §8.2 - The while statement, §8.3 - The for statement
+
+## Referensi
+
+Downey, A. B. (2024). *Think Python: How to think like a computer scientist* (3rd ed.). O'Reilly Media. <https://allendowney.github.io/ThinkPython/>
+
+- Bab 7, *Iteration and Search* (subbab *Updating variables*, *Looping and counting*): <https://allendowney.github.io/ThinkPython/chap07.html>
+
+Python Software Foundation. (t.t.-a). Compound statements: The while statement; The for statement. Dalam *The Python language reference*. Diakses 13 Oktober 2026, dari <https://docs.python.org/3/reference/compound_stmts.html#the-while-statement>
+
+Python Software Foundation. (t.t.-b). More control flow tools: for statements. Dalam *The Python tutorial*. Diakses 13 Oktober 2026, dari <https://docs.python.org/3/tutorial/controlflow.html#for-statements>
+
+Python Software Foundation. (t.t.-c). Built-in types: Ranges. Dalam *The Python standard library*. Diakses 13 Oktober 2026, dari <https://docs.python.org/3/library/stdtypes.html#ranges>
+
+Zelle, J. M. (2017). *Python programming: An introduction to computer science* (3rd ed.). Franklin, Beedle & Associates.
+
+Zingaro, D. (2021). *Learn to code by solving problems: A Python programming primer*. No Starch Press.
