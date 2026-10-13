@@ -8,6 +8,11 @@
  * line = baris yang baru dijalankan (null sebelum program mulai).
  * ret  = nilai kembali; frame dengan ret ditampilkan sebagai "selesai".
  * note boleh memuat `kode` dan **tebal**.
+ *
+ * Opsional per frame (dibuat oleh tools/loop_table.py):
+ *   table   = { cols: [..], rows: [{ label, cls, cells: [..] }], cur: [baris, kolom] | null, foot }
+ *             sel berisi teks, null (belum diisi), atau { v, carry: true } (nilai tetap, disalin).
+ *   pending = nama variabel yang nilainya sudah berubah tetapi belum tercatat di tabel.
  */
 (function () {
   "use strict";
@@ -126,6 +131,36 @@
       return undefined;
     }
 
+    function traceTable(tb, forward) {
+      var wrap = el("div", "sv-tt");
+      wrap.appendChild(el("div", "sv-tt-label", "Trace table"));
+      var scroll = el("div", "sv-tt-scroll");
+      var table = el("table", "sv-tt-table");
+      var thead = el("tr");
+      thead.appendChild(el("th", "sv-tt-round", "putaran"));
+      tb.cols.forEach(function (c) { thead.appendChild(el("th", null, esc(c))); });
+      table.appendChild(thead);
+      var last = tb.rows.length - 1;
+      tb.rows.forEach(function (r, ri) {
+        var tr = el("tr", (r.cls ? "sv-tt-" + r.cls : "") +
+          (ri === last && !tb.foot ? " sv-tt-now" : ""));
+        tr.appendChild(el("td", "sv-tt-round", esc(r.label)));
+        r.cells.forEach(function (c, ci) {
+          var isCur = tb.cur && tb.cur[0] === ri && tb.cur[1] === ci;
+          var cls = c === null ? "sv-tt-blank" : (typeof c === "object" ? "sv-tt-carry" : "");
+          if (isCur) cls += " sv-tt-cur" + (forward ? " sv-changed" : "");
+          var td = el("td", cls, c === null ? "" : esc(typeof c === "object" ? c.v : c));
+          if (c && typeof c === "object") td.title = "tetap: tidak berubah pada putaran ini";
+          tr.appendChild(td);
+        });
+        table.appendChild(tr);
+      });
+      scroll.appendChild(table);
+      wrap.appendChild(scroll);
+      if (tb.foot) wrap.appendChild(el("div", "sv-tt-foot", esc(tb.foot)));
+      return wrap;
+    }
+
     function render(prevIdx) {
       var s = steps[i], prev = prevIdx != null ? steps[prevIdx] : null;
       var forward = prevIdx != null && prevIdx === i - 1;
@@ -147,18 +182,21 @@
         var title = fi === 0 ? "__main__ (global)" : f.name;
         if (f.ret != null) title += " · selesai";
         box.appendChild(el("div", "sv-fname", esc(title)));
-        if (!f.vars.length && f.ret == null) {
+        if (!f.vars.length && f.ret == null && !f.table) {
           box.appendChild(el("div", "sv-novar", "(belum ada variabel)"));
         }
         f.vars.forEach(function (v) {
           var changed = forward && valueOf(prev, fi, v[0]) !== v[1];
           var isFn = v[1] === "<fungsi>";
-          var row = el("div", "sv-var" + (changed ? " sv-changed" : ""));
+          var isPending = (f.pending || []).indexOf(v[0]) >= 0;
+          var row = el("div", "sv-var" + (changed ? " sv-changed" : "") + (isPending ? " sv-pending" : ""));
           row.appendChild(el("span", "sv-vname", esc(v[0])));
           row.appendChild(el("span", "sv-arrow", "&rarr;"));
           row.appendChild(el("span", "sv-val" + (isFn ? " sv-fn" : ""), isFn ? "fungsi" : esc(v[1])));
+          if (isPending) row.appendChild(el("span", "sv-hint", "baru dibaca, belum diperiksa"));
           box.appendChild(row);
         });
+        if (f.table) box.appendChild(traceTable(f.table, forward));
         if (f.ret != null) {
           var r = el("div", "sv-var sv-ret");
           r.appendChild(el("span", "sv-vname", "nilai kembali"));
