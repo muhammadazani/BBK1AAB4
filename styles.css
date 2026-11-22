@@ -243,3 +243,17 @@ td code, th code { overflow-wrap: anywhere; }
 .schema-card details summary { cursor: pointer; font-weight: 600; color: var(--bs-primary); }
 .schema-card details pre, .schema-card div.sourceCode { margin: .5rem 0 0; font-size: .82rem; }
 .quarto-dark .schema-week { color: #56B4E9; }
+
+/* ---------- Animasi kotak-panah Minggu 11 (assets/w11/*.js) ---------- */
+.kp-anim {
+  margin: 1rem 0 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--bs-body-color) 20%, var(--bs-body-bg));
+  border-radius: 12px;
+  overflow: hidden;
+}
+.kp-anim .kp-title { font-size: 1.15rem; margin: 0 0 4px; }
+/* the widget's own breakpoint looks at the viewport; the content column can be much narrower */
+.kp-anim { container-type: inline-size; }
+@container (max-width: 680px) {
+  .kp-anim .kp-grid { grid-template-columns: minmax(0, 1fr) !important; }
+}
