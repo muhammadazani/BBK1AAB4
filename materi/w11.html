@@ -514,8 +514,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#skill-yang-dinilai" id="toc-skill-yang-dinilai" class="nav-link active" data-scroll-target="#skill-yang-dinilai">Skill yang Dinilai</a></li>
   <li><a href="#lesson" id="toc-lesson" class="nav-link" data-scroll-target="#lesson">Lesson</a></li>
   <li><a href="#konsep-kunci" id="toc-konsep-kunci" class="nav-link" data-scroll-target="#konsep-kunci">Konsep Kunci</a></li>
+  <li><a href="#lesson-a-list-membangun-menelusuri-dan-aliasing" id="toc-lesson-a-list-membangun-menelusuri-dan-aliasing" class="nav-link" data-scroll-target="#lesson-a-list-membangun-menelusuri-dan-aliasing">Lesson A · List: Membangun, Menelusuri, dan Aliasing</a>
+  <ul class="collapse">
+  <li><a href="#dari-satu-nilai-ke-banyak-nilai" id="toc-dari-satu-nilai-ke-banyak-nilai" class="nav-link" data-scroll-target="#dari-satu-nilai-ke-banyak-nilai">Dari satu nilai ke banyak nilai</a></li>
+  <li><a href="#list-dan-indeksnya" id="toc-list-dan-indeksnya" class="nav-link" data-scroll-target="#list-dan-indeksnya">List dan indeksnya</a></li>
+  <li><a href="#membaca-list-seperti-string" id="toc-membaca-list-seperti-string" class="nav-link" data-scroll-target="#membaca-list-seperti-string">Membaca list seperti string</a></li>
+  <li><a href="#kotak-dan-panah" id="toc-kotak-dan-panah" class="nav-link" data-scroll-target="#kotak-dan-panah">Kotak dan panah</a></li>
+  <li><a href="#ubah-kotaknya-atau-pindahkan-panahnya" id="toc-ubah-kotaknya-atau-pindahkan-panahnya" class="nav-link" data-scroll-target="#ubah-kotaknya-atau-pindahkan-panahnya">Ubah kotaknya atau pindahkan panahnya</a></li>
+  <li><a href="#membangun-list-baru" id="toc-membangun-list-baru" class="nav-link" data-scroll-target="#membangun-list-baru">Membangun list baru</a></li>
+  </ul></li>
+  <li><a href="#lesson-b-tuple-unpacking-dan-list-dua-dimensi" id="toc-lesson-b-tuple-unpacking-dan-list-dua-dimensi" class="nav-link" data-scroll-target="#lesson-b-tuple-unpacking-dan-list-dua-dimensi">Lesson B · Tuple, Unpacking, dan List Dua Dimensi</a>
+  <ul class="collapse">
+  <li><a href="#satu-return-dua-nilai" id="toc-satu-return-dua-nilai" class="nav-link" data-scroll-target="#satu-return-dua-nilai">Satu return, dua nilai</a></li>
+  <li><a href="#koma-yang-membuat-tuple" id="toc-koma-yang-membuat-tuple" class="nav-link" data-scroll-target="#koma-yang-membuat-tuple">Koma yang membuat tuple</a></li>
+  <li><a href="#satu-return-satu-tuple" id="toc-satu-return-satu-tuple" class="nav-link" data-scroll-target="#satu-return-satu-tuple">Satu return, satu tuple</a></li>
+  <li><a href="#membongkar-menurut-posisi" id="toc-membongkar-menurut-posisi" class="nav-link" data-scroll-target="#membongkar-menurut-posisi">Membongkar menurut posisi</a></li>
+  <li><a href="#tabel-adalah-list-berisi-baris" id="toc-tabel-adalah-list-berisi-baris" class="nav-link" data-scroll-target="#tabel-adalah-list-berisi-baris">Tabel adalah list berisi baris</a></li>
+  <li><a href="#memproses-tabel-per-baris" id="toc-memproses-tabel-per-baris" class="nav-link" data-scroll-target="#memproses-tabel-per-baris">Memproses tabel per baris</a></li>
+  <li><a href="#list-atau-tuple" id="toc-list-atau-tuple" class="nav-link" data-scroll-target="#list-atau-tuple">List atau tuple?</a></li>
+  </ul></li>
+  <li><a href="#kesalahan-umum" id="toc-kesalahan-umum" class="nav-link" data-scroll-target="#kesalahan-umum">Kesalahan Umum</a></li>
   <li><a href="#tebak-dulu" id="toc-tebak-dulu" class="nav-link" data-scroll-target="#tebak-dulu">Tebak Dulu</a></li>
+  <li><a href="#latihan-mandiri" id="toc-latihan-mandiri" class="nav-link" data-scroll-target="#latihan-mandiri">Latihan Mandiri</a></li>
   <li><a href="#bacaan" id="toc-bacaan" class="nav-link" data-scroll-target="#bacaan">Bacaan</a></li>
+  <li><a href="#referensi" id="toc-referensi" class="nav-link" data-scroll-target="#referensi">Referensi</a></li>
   </ul>
 </nav>
     </div>
@@ -572,27 +594,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td><code>U11.1</code></td>
 <td>Trace (T)</td>
-<td>Memprediksi keluaran saat satu list diakses lewat dua nama (aliasing); menggambar diagram referensi</td>
+<td>Menebak keluaran kode ketika satu list dipakai lewat dua nama (aliasing), termasuk list yang dikirim ke fungsi, dan menggambar diagram kotak-panahnya</td>
 </tr>
 <tr class="even">
 <td><code>U11.2</code></td>
 <td>Write (W)</td>
-<td>Menelusuri dan membangun list dengan pola map/filter/reduce yang ditulis manual</td>
+<td>Menulis fungsi yang membaca list dan membuat list atau nilai baru darinya: menyaring (filter), mengubah setiap elemen (map), atau meringkas menjadi satu nilai (reduce), tanpa mengubah list aslinya</td>
 </tr>
 <tr class="odd">
 <td><code>U11.3</code></td>
 <td>Write (W)</td>
-<td>Mengembalikan beberapa nilai dengan tuple dan membongkarnya (unpacking)</td>
+<td>Membuat fungsi yang mengembalikan beberapa nilai sekaligus dengan tuple, lalu membongkarnya ke beberapa nama (unpacking)</td>
 </tr>
 <tr class="even">
 <td><code>U11.4</code></td>
 <td>Write (W)</td>
-<td>Menyimpan dan memproses data tabular sederhana dengan list dua dimensi</td>
+<td>Menyimpan dan mengolah tabel sederhana (baris dan kolom) dengan list dua dimensi</td>
 </tr>
 <tr class="odd">
 <td><code>U11.5</code></td>
 <td>Transfer (X)</td>
-<td>Menjelaskan perbedaan mutable (list) dan immutable (tuple/string) serta memilih yang tepat</td>
+<td>Menjelaskan beda list (isinya bisa diubah) dengan tuple dan string (isinya tidak bisa diubah), lalu memilih yang tepat untuk suatu masalah beserta alasannya</td>
 </tr>
 </tbody>
 </table>
@@ -629,32 +651,289 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+<div class="callout callout-style-default callout-note callout-titled" title="Minggu ini memakai flipped classroom">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Catatan</span>Minggu ini memakai flipped classroom
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Materi di halaman ini sama dengan isi dua modul belajar mandiri di Moodle (<code>W11-A · Modul mandiri</code> dan <code>W11-B · Modul mandiri</code>). Kerjakan modulnya <strong>sebelum</strong> kelas, sekitar 50 menit per modul. Di kelas ada entry ticket singkat, pembahasan bagian yang paling banyak salah, lalu Worksheet 11.1 atau 11.2 dan Evaluate. Siapkan kertas: setiap ada kode list, gambar dulu satu <strong>kotak</strong> untuk setiap list dan satu <strong>panah</strong> untuk setiap nama.</p>
+</div>
+</div>
 </section>
 <section id="konsep-kunci" class="level2">
 <h2 class="anchored" data-anchor-id="konsep-kunci">Konsep Kunci</h2>
-<p><code>b = a</code> <strong>tidak menyalin</strong> list. Kedua nama menunjuk ke objek list yang sama, sehingga perubahan lewat <code>b</code> juga terlihat lewat <code>a</code>. Tuple mirip list, tetapi immutable, dan sering dipakai untuk mengembalikan beberapa nilai sekaligus.</p>
+<p>List adalah <strong>kotak</strong> berisi nilai-nilai yang berurutan, dan sebuah nama adalah <strong>panah</strong> ke kotak itu. <code>b = a</code> <strong>tidak menyalin</strong> list: ia menambah panah kedua ke kotak yang sama, sehingga perubahan lewat <code>b</code> juga terlihat lewat <code>a</code>. <code>a[:]</code> membuat kotak baru. Untuk mengolah list tanpa merusak aslinya, <strong>bangun list baru</strong>: saring, ubah setiap elemen, atau ringkas. Tuple mirip list, tetapi <strong>immutable</strong>, dan sering dipakai untuk mengembalikan beberapa nilai sekaligus. Tabel disimpan sebagai <strong>list berisi baris</strong>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a          <span class="co"># alias: menunjuk list yang sama</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> a[:]       <span class="co"># salinan: list baru</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a          <span class="co"># alias: panah kedua ke kotak yang sama</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> a[:]       <span class="co"># salinan: kotak baru</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>b.append(<span class="dv">4</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, c)    <span class="co"># [1, 2, 3, 4] [1, 2, 3]</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ringkas(data):</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(data), <span class="bu">len</span>(data)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(data), <span class="bu">len</span>(data)   <span class="co"># satu tuple berisi dua nilai</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>total, n <span class="op">=</span> ringkas([<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>])   <span class="co"># unpacking</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>total, n <span class="op">=</span> ringkas([<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>])     <span class="co"># unpacking: total ← 12, n ← 3</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="tebak-dulu" class="level2">
-<h2 class="anchored" data-anchor-id="tebak-dulu">Tebak Dulu</h2>
-<p>Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, <strong>baru</strong> buka jawabannya.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tambah(lst):</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    lst.append(<span class="dv">0</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">5</span>]</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>tambah(data)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="lesson-a-list-membangun-menelusuri-dan-aliasing" class="level2">
+<h2 class="anchored" data-anchor-id="lesson-a-list-membangun-menelusuri-dan-aliasing">Lesson A · List: Membangun, Menelusuri, dan Aliasing</h2>
+<section id="dari-satu-nilai-ke-banyak-nilai" class="level3">
+<h3 class="anchored" data-anchor-id="dari-satu-nilai-ke-banyak-nilai">Dari satu nilai ke banyak nilai</h3>
+<p>Sampai minggu lalu, satu variabel menyimpan satu nilai: <code>nilai = 85</code>, <code>nama = "Rina"</code>. Kalau ada 40 mahasiswa, apakah kita butuh 40 variabel <code>nilai1</code>, <code>nilai2</code>, …, <code>nilai40</code>? Tidak. Untuk itu ada <strong>struktur data</strong>: cara menyimpan banyak nilai di bawah satu nama, sehingga semuanya bisa diproses dengan satu perulangan.</p>
+<p>Python menyediakan empat struktur data bawaan. Bedanya ada pada tiga hal: apakah urutannya dijaga (bisa diakses dengan indeks), apakah isinya bisa diubah setelah dibuat, dan apakah nilai yang sama boleh muncul dua kali.</p>
+<div class="table-responsive">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 20%">
+<col style="width: 18%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Struktur</th>
+<th>Contoh</th>
+<th>Berurutan (indeks)</th>
+<th>Bisa diubah</th>
+<th>Nilai kembar</th>
+<th>Dipelajari</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>List</td>
+<td><code>[85, 70, 85]</code></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>Lesson A</td>
+</tr>
+<tr class="even">
+<td>Tuple</td>
+<td><code>(85, 70, 85)</code></td>
+<td>✓</td>
+<td>✗</td>
+<td>✓</td>
+<td>Lesson B</td>
+</tr>
+<tr class="odd">
+<td>Set</td>
+<td><code>{85, 70}</code></td>
+<td>✗</td>
+<td>✓</td>
+<td>✗</td>
+<td>Minggu 12</td>
+</tr>
+<tr class="even">
+<td>Dictionary</td>
+<td><code>{"Rina": 85}</code></td>
+<td>lewat kunci</td>
+<td>✓</td>
+<td>kunci tidak boleh kembar</td>
+<td>Minggu 12</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Perhatikan tanda kurungnya: <code>[ ]</code> list, <code>( )</code> tuple, <code>{ }</code> set, dan <code>{kunci: nilai}</code> dictionary. Minggu ini kita fokus pada list dan tuple.</p>
+</section>
+<section id="list-dan-indeksnya" class="level3">
+<h3 class="anchored" data-anchor-id="list-dan-indeksnya">List dan indeksnya</h3>
+<p><strong>List</strong> adalah kumpulan nilai yang berurutan dan bisa diubah, ditulis di antara <code>[ ]</code> dan dipisah koma. Setiap nilai disebut <strong>elemen</strong>, dan setiap elemen punya nomor posisi, yaitu <strong>indeks</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>kota <span class="op">=</span> [<span class="st">"Bandung"</span>, <span class="st">"Medan"</span>, <span class="st">"Solo"</span>, <span class="st">"Bogor"</span>]</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="table-responsive">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Elemen</th>
+<th style="text-align: center;"><code>"Bandung"</code></th>
+<th style="text-align: center;"><code>"Medan"</code></th>
+<th style="text-align: center;"><code>"Solo"</code></th>
+<th style="text-align: center;"><code>"Bogor"</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Indeks dari depan</td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>2</code></td>
+<td style="text-align: center;"><code>3</code></td>
+</tr>
+<tr class="even">
+<td>Indeks dari belakang</td>
+<td style="text-align: center;"><code>-4</code></td>
+<td style="text-align: center;"><code>-3</code></td>
+<td style="text-align: center;"><code>-2</code></td>
+<td style="text-align: center;"><code>-1</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Elemen boleh kembar, boleh berbeda tipe, dan list boleh kosong: <code>["Rina", 20, 3.75, True]</code>, <code>[]</code>. List adalah struktur data yang paling sering dipakai, karena datanya bisa ditambah, diganti, dan disaring.</p>
+</section>
+<section id="membaca-list-seperti-string" class="level3">
+<h3 class="anchored" data-anchor-id="membaca-list-seperti-string">Membaca list seperti string</h3>
+<p>Semua cara membaca string di Minggu 10 berlaku untuk list. Bedanya, satu indeks memberi satu <strong>elemen</strong>, bukan satu huruf:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 25%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ekspresi</th>
+<th>Hasil</th>
+<th>Artinya</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>kota[0]</code></td>
+<td><code>"Bandung"</code></td>
+<td>elemen pertama</td>
+</tr>
+<tr class="even">
+<td><code>kota[2]</code></td>
+<td><code>"Solo"</code></td>
+<td>elemen ketiga</td>
+</tr>
+<tr class="odd">
+<td><code>kota[-1]</code></td>
+<td><code>"Bogor"</code></td>
+<td>elemen terakhir</td>
+</tr>
+<tr class="even">
+<td><code>kota[-2]</code></td>
+<td><code>"Solo"</code></td>
+<td>kedua dari belakang</td>
+</tr>
+<tr class="odd">
+<td><code>len(kota)</code></td>
+<td><code>4</code></td>
+<td>banyaknya elemen</td>
+</tr>
+<tr class="even">
+<td><code>"Medan" in kota</code></td>
+<td><code>True</code></td>
+<td>ada di list</td>
+</tr>
+<tr class="odd">
+<td><code>"Jakarta" in kota</code></td>
+<td><code>False</code></td>
+<td>tidak ada</td>
+</tr>
+<tr class="even">
+<td><code>kota[4]</code></td>
+<td><code>IndexError</code></td>
+<td>melewati ujung</td>
+</tr>
+</tbody>
+</table>
+<p>Ada 4 elemen, jadi indeksnya 0 sampai 3. Indeks terakhir selalu <code>len(kota) - 1</code>, dan <code>kota[4]</code> sudah melewati ujung. Bedanya dengan string: isi list <strong>bisa diubah</strong>. Itu bahan subbab berikutnya.</p>
+</section>
+<section id="kotak-dan-panah" class="level3">
+<h3 class="anchored" data-anchor-id="kotak-dan-panah">Kotak dan panah</h3>
+<p>Ini nilai praktikum tiga mahasiswa. Sebelum mengubah apa pun, kita buat cadangan dulu, lalu nilai pertama diperbaiki menjadi 100:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>skor <span class="op">=</span> [<span class="dv">60</span>, <span class="dv">75</span>, <span class="dv">80</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cadangan <span class="op">=</span> skor</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>skor[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cadangan)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>[100, 75, 80]</code></pre>
+<p>Cadangannya ikut berubah. Kenapa? Untuk menjawabnya, kita perlu cara baru melihat list: sebagai <strong>kotak</strong>, dan nama sebagai <strong>panah</strong>.</p>
+<ul>
+<li><strong>Kotak: list bisa diubah.</strong> Bayangkan kotak loker dengan slot bernomor 0, 1, 2. Itulah list <code>[60, 75, 80]</code>. Nama <code>skor</code> adalah panah ke kotak itu. <code>skor[1] = 90</code> mengganti isi satu slot, dan <code>skor.append(85)</code> menambah satu slot di ujung kotak yang <strong>sama</strong>.</li>
+<li><strong>Jebakan: menyimpan hasil <code>append</code>.</strong> Di Minggu 10, metode string seperti <code>upper()</code> membuat string baru, jadi hasilnya harus disimpan: <code>nama = nama.upper()</code>. Metode list seperti <code>append</code> kebalikannya: ia langsung mengubah kotaknya dan mengembalikan <code>None</code> (“tidak ada apa-apa”). Akibatnya <code>skor = skor.append(85)</code> menyimpan <code>None</code> ke <code>skor</code>, dan kotaknya kehilangan panah.</li>
+<li><strong>Panah kedua: alias.</strong> <code>asisten = skor</code> tidak membuat kotak baru. Tanda sama dengan menambah panah kedua ke kotak yang sama, sehingga <code>asisten.append(70)</code> terlihat lewat <code>skor</code>. Program pembuka pun jelas: <code>cadangan = skor</code> juga hanya panah kedua.</li>
+<li><strong>Kotak kedua: salinan.</strong> Untuk cadangan yang benar, kita butuh kotak kedua: <code>cadangan = skor[:]</code>. Slice dari awal sampai akhir selalu membuat kotak <strong>baru</strong> dengan isi yang sama.</li>
+</ul>
+<p>Jalankan kelima adegan di bawah dengan tombol <strong>Berikutnya</strong>. Di adegan yang kotak catatannya merah muda, berhenti dan tebak dulu sebelum melanjutkan.</p>
+<div id="kpb2-id" class="kp-anim"></div>
+<script src="../assets/w11/l1-b2.js"></script>
+<div class="callout callout-style-default callout-important callout-titled" title="Ingat">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Penting</span>Ingat
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>List bisa diubah: kita mengganti isi slot, atau menambah slot dengan <code>append</code>.</li>
+<li><code>append</code> mengubah kotaknya dan mengembalikan <code>None</code>. Tulis di barisnya sendiri, jangan disimpan ke variabel.</li>
+<li>Tanda <code>=</code> tidak menyalin list. Ia menambah panah ke kotak yang sama.</li>
+<li>Slice <code>[:]</code> membuat kotak baru. Perubahan di satu kotak tidak terlihat di kotak lain.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="ubah-kotaknya-atau-pindahkan-panahnya" class="level3">
+<h3 class="anchored" data-anchor-id="ubah-kotaknya-atau-pindahkan-panahnya">Ubah kotaknya atau pindahkan panahnya</h3>
+<p>Ini fungsi untuk mengosongkan daftar kursi yang sudah dipesan:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> kosongkan(x):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> []</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>kursi <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">5</span>]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>kosongkan(kursi)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kursi)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>[3, 5]</code></pre>
+<p>Tidak ada yang kosong. Padahal di subbab sebelumnya, <code>append</code> lewat nama lain bisa mengubah list. Lalu kenapa yang ini tidak? Ada dua jenis baris yang tampak mirip, tetapi akibatnya sangat berbeda:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 30%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Jenis</th>
+<th>Contoh</th>
+<th>Akibat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Mengubah kotak</strong></td>
+<td><code>x[0] = 7</code>, <code>x.append(7)</code></td>
+<td>terlihat lewat <strong>semua</strong> nama yang menunjuk kotak itu</td>
+</tr>
+<tr class="even">
+<td><strong>Memindahkan panah</strong></td>
+<td><code>x = [7]</code>, <code>x = []</code></td>
+<td>hanya nama <code>x</code> yang berubah arah; kotak lama tidak disentuh</td>
+</tr>
+</tbody>
+</table>
+<p>Di luar fungsi: <code>baru = kursi</code> membuat dua panah ke kotak yang sama, lalu <code>baru = [0]</code> membuat kotak baru berisi 0 dan memindahkan panah <code>baru</code> ke sana. Kotak milik <code>kursi</code> tetap <code>[3, 5]</code>.</p>
+<p>Di dalam fungsi berlaku aturan yang sama. Saat kita memanggil <code>kosongkan(kursi)</code>, parameter <code>x</code> adalah <strong>satu panah lagi</strong> ke kotak milik <code>kursi</code>. <code>x = []</code> memindahkan panah <code>x</code> ke kotak kosong yang baru, dan setelah fungsi selesai panah <code>x</code> hilang. Bandingkan dengan fungsi yang <strong>mengubah</strong> kotaknya:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tambah(x):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    x.append(<span class="dv">0</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>kursi <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">5</span>]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>tambah(kursi)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kursi)      <span class="co"># [3, 5, 0]</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>x.append(0)</code> menambah slot di kotak milik <code>kursi</code>, jadi perubahannya tetap ada setelah fungsi selesai.</p>
+<div id="kpb3-id" class="kp-anim"></div>
+<script src="../assets/w11/l1-b3.js"></script>
+<p><strong>Coba dulu.</strong> Gambar di kertasmu, baru buka jawabannya. Apa yang dicetak?</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> nolkan(x):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    x[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> [<span class="dv">9</span>, <span class="dv">9</span>]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>kursi <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">5</span>]</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>nolkan(kursi)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kursi)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -663,18 +942,812 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Hasilnya <code>[5, 0]</code>. Parameter <code>lst</code> menunjuk list yang sama dengan <code>data</code>, sehingga <code>append</code> di dalam fungsi mengubah list aslinya.</p>
+<p><code>[0, 5]</code>. Banyak yang menjawab <code>[9, 9]</code>, karena kelihatannya baris terakhir yang menang. Tapi urutannya penting. <code>x[0] = 0</code> <strong>mengubah</strong> slot 0 di kotak milik <code>kursi</code>, jadi terlihat di luar. <code>x = [9, 9]</code> hanya <strong>memindahkan</strong> panah <code>x</code> ke kotak baru, yang hilang begitu fungsi selesai.</p>
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled" title="Ingat">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Penting</span>Ingat
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Parameter adalah panah ke kotak milik pemanggil. Mengubah kotaknya terlihat di luar fungsi; memindahkan panahnya tidak.</p>
+</div>
+</div>
+<p><strong>Tantangan.</strong> Kalau <code>kosongkan</code> harus benar-benar memberi daftar kosong ke pemanggil, apa yang harus diubah? Petunjuk: pikirkan <code>return</code>. Jawabannya dibahas di kelas.</p>
+</section>
+<section id="membangun-list-baru" class="level3">
+<h3 class="anchored" data-anchor-id="membangun-list-baru">Membangun list baru</h3>
+<p>Fungsi yang mengubah kotak milik pemanggil meninggalkan bekas di luar fungsi. Sering kali itu tidak kita inginkan: list asli harus tetap utuh. Caranya, jangan ubah kotak lama. <strong>Bangun kotak baru</strong>, isi, lalu kembalikan. Polanya selalu empat langkah:</p>
+<p>① <strong>Siapkan list kosong</strong> · ② <strong>Ulangi setiap elemen</strong> · ③ <strong>Periksa atau ubah, lalu <code>append</code></strong> · ④ <strong>Kembalikan setelah loop</strong></p>
+<section id="saring-filter" class="level4">
+<h4 class="anchored" data-anchor-id="saring-filter">Saring (filter)</h4>
+<p>Dari nilai satu kelas, kita ingin list baru berisi nilai yang lulus (60 ke atas):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lulus(nilai):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    hasil <span class="op">=</span> []               <span class="co"># ① siapkan list kosong</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> nilai:          <span class="co"># ② ulangi setiap elemen</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> n <span class="op">&gt;=</span> <span class="dv">60</span>:          <span class="co"># ③ periksa...</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>            hasil.append(n)  <span class="co">#    ...lalu append</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> hasil             <span class="co"># ④ setelah loop</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>nilai_kelas <span class="op">=</span> [<span class="dv">72</span>, <span class="dv">45</span>, <span class="dv">88</span>, <span class="dv">60</span>]</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>lulus_kelas <span class="op">=</span> lulus(nilai_kelas)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lulus_kelas)           <span class="co"># [72, 88, 60]</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><code>n</code></th>
+<th><code>n &gt;= 60</code>?</th>
+<th><code>hasil</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>72</code></td>
+<td>ya</td>
+<td><code>[72]</code></td>
+</tr>
+<tr class="even">
+<td><code>45</code></td>
+<td>tidak</td>
+<td><code>[72]</code></td>
+</tr>
+<tr class="odd">
+<td><code>88</code></td>
+<td>ya</td>
+<td><code>[72, 88]</code></td>
+</tr>
+<tr class="even">
+<td><code>60</code></td>
+<td>ya</td>
+<td><code>[72, 88, 60]</code></td>
+</tr>
+</tbody>
+</table>
+<p>Perhatikan putaran terakhir: <code>60 &gt;= 60</code> benar, jadi 60 ikut masuk. Setelah fungsi selesai ada <strong>dua</strong> kotak, dan kotak milik <code>nilai_kelas</code> tidak berubah.</p>
+</section>
+<section id="ubah-setiap-map" class="level4">
+<h4 class="anchored" data-anchor-id="ubah-setiap-map">Ubah setiap (map)</h4>
+<p>Setiap mahasiswa dapat bonus 5. Kali ini setiap elemen diubah dulu, lalu di-<code>append</code>. Tidak ada <code>if</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tambah_bonus(nilai):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    hasil <span class="op">=</span> []</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> nilai:</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        hasil.append(n <span class="op">+</span> <span class="dv">5</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> hasil</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tambah_bonus([<span class="dv">72</span>, <span class="dv">45</span>, <span class="dv">88</span>, <span class="dv">60</span>]))   <span class="co"># [77, 50, 93, 65]</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="ringkas-reduce" class="level4">
+<h4 class="anchored" data-anchor-id="ringkas-reduce">Ringkas (reduce)</h4>
+<p>Kadang hasilnya bukan list, tetapi satu angka, misalnya jumlah semua nilai. Penampungnya angka, <code>total = 0</code>, seperti di Minggu 6. Kita tulis sendiri, tanpa <code>sum()</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> total_nilai(nilai):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> nilai:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> total <span class="op">+</span> n</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total_nilai([<span class="dv">72</span>, <span class="dv">45</span>, <span class="dv">88</span>, <span class="dv">60</span>]))    <span class="co"># 265</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><code>n</code></th>
+<th>–</th>
+<th><code>72</code></th>
+<th><code>45</code></th>
+<th><code>88</code></th>
+<th><code>60</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>total</code></td>
+<td><code>0</code></td>
+<td><code>72</code></td>
+<td><code>117</code></td>
+<td><code>205</code></td>
+<td><code>265</code></td>
+</tr>
+</tbody>
+</table>
+<p>Telusuri ketiga pola, ditambah satu jebakan, di animasi berikut. Perhatikan bahwa kotak milik <code>nilai_kelas</code> tidak pernah berubah.</p>
+<div id="kpb4-id" class="kp-anim"></div>
+<script src="../assets/w11/l1-b4.js"></script>
+<div class="callout callout-style-default callout-warning callout-titled" title="Jebakan: return di dalam loop">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Peringatan</span>Jebakan: return di dalam loop
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Jika <code>return hasil</code> bergeser satu indentasi ke dalam <code>for</code>, <code>lulus([72, 45, 88, 60])</code> mengembalikan <code>[72]</code>. Di putaran pertama, 72 lolos dan di-<code>append</code>, lalu <code>return</code> langsung menghentikan fungsi; 45, 88, dan 60 tidak pernah diperiksa. Tulis <code>return</code> <strong>setelah</strong> loop, sejajar dengan <code>for</code>. Jebakan lain: <code>append</code> ditulis di luar <code>if</code>, sehingga setiap elemen ikut masuk dan tidak ada yang tersaring.</p>
+</div>
+</div>
+</section>
+<section id="pola-mana-yang-dipakai" class="level4">
+<h4 class="anchored" data-anchor-id="pola-mana-yang-dipakai">Pola mana yang dipakai?</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 26%">
+<col style="width: 30%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pola</th>
+<th>Tujuan</th>
+<th>Ciri kode</th>
+<th>Hasil</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Saring</td>
+<td>ambil sebagian elemen</td>
+<td><code>append</code> di dalam <code>if</code></td>
+<td>list baru, bisa lebih pendek</td>
+</tr>
+<tr class="even">
+<td>Ubah setiap</td>
+<td>ubah semua elemen</td>
+<td><code>append</code> di setiap putaran</td>
+<td>list baru, sama panjang</td>
+</tr>
+<tr class="odd">
+<td>Ringkas</td>
+<td>jadikan satu nilai</td>
+<td>penampung angka</td>
+<td>satu angka</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="lesson-b-tuple-unpacking-dan-list-dua-dimensi" class="level2">
+<h2 class="anchored" data-anchor-id="lesson-b-tuple-unpacking-dan-list-dua-dimensi">Lesson B · Tuple, Unpacking, dan List Dua Dimensi</h2>
+<section id="satu-return-dua-nilai" class="level3">
+<h3 class="anchored" data-anchor-id="satu-return-dua-nilai">Satu return, dua nilai</h3>
+<p>Panitia konser butuh dua jawaban dari satu fungsi: berapa tiket yang laku, dan berapa yang tersisa. Fungsinya ditulis dengan dua <code>return</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hitung_tiket(terjual, kapasitas):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> terjual</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> kapasitas <span class="op">-</span> terjual</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>hasil <span class="op">=</span> hitung_tiket(<span class="dv">120</span>, <span class="dv">150</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hasil)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>120</code></pre>
+<p>Sisa tiketnya hilang. <code>return</code> yang pertama langsung mengakhiri fungsi, jadi baris kedua tidak pernah dijalankan. Untuk mengembalikan dua nilai sekaligus, kita butuh <strong>tuple</strong>.</p>
+</section>
+<section id="koma-yang-membuat-tuple" class="level3">
+<h3 class="anchored" data-anchor-id="koma-yang-membuat-tuple">Koma yang membuat tuple</h3>
+<p>Tuple mirip list: kotak berisi beberapa nilai yang berurutan. Bedanya, tuple <strong>tidak bisa diubah</strong>, sama seperti string. Yang sering mengecoh: yang membuat tuple adalah <strong>koma</strong>, bukan kurung.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> (<span class="st">"Padang"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> (<span class="st">"Padang"</span>,)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">30</span>, <span class="dv">31</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Nama</th>
+<th>Tipe</th>
+<th>Artinya</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>a</code></td>
+<td><code>str</code></td>
+<td>kurung saja: hanya string</td>
+</tr>
+<tr class="even">
+<td><code>b</code></td>
+<td><code>tuple</code></td>
+<td>ada koma: tuple satu elemen</td>
+</tr>
+<tr class="odd">
+<td><code>c</code></td>
+<td><code>tuple</code></td>
+<td>koma tanpa kurung pun tuple</td>
+</tr>
+</tbody>
+</table>
+<p>Tuple dibaca seperti list, tetapi tidak bisa diubah: <code>c[0]</code> bernilai <code>30</code>, <code>len(c)</code> bernilai <code>2</code>, <code>31 in c</code> bernilai <code>True</code>, sedangkan <code>c[0] = 5</code> menghasilkan <code>TypeError</code> dan <code>c.append(32)</code> menghasilkan <code>AttributeError</code>. Memberi nilai baru ke seluruh nama, misalnya <code>c = (0, 0)</code>, tetap boleh: itu memindahkan panah, bukan mengubah tuple.</p>
+</section>
+<section id="satu-return-satu-tuple" class="level3">
+<h3 class="anchored" data-anchor-id="satu-return-satu-tuple">Satu return, satu tuple</h3>
+<p>Kembali ke fungsi tiket. Dua <code>return</code> diganti satu baris dengan koma:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hitung_tiket(terjual, kapasitas):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> terjual, kapasitas <span class="op">-</span> terjual</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hitung_tiket(<span class="dv">120</span>, <span class="dv">150</span>))   <span class="co"># (120, 30)</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Fungsi tetap mengembalikan <strong>satu</strong> nilai. Kalau nilai itu tuple, rasanya seperti mengembalikan banyak.</p>
+</section>
+<section id="membongkar-menurut-posisi" class="level3">
+<h3 class="anchored" data-anchor-id="membongkar-menurut-posisi">Membongkar menurut posisi</h3>
+<p>Biasanya tuplenya tidak disimpan utuh, tetapi <strong>dibongkar</strong> (<em>unpacking</em>): satu nama untuk setiap nilai.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>laku, sisa <span class="op">=</span> hitung_tiket(<span class="dv">120</span>, <span class="dv">150</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(laku, sisa)               <span class="co"># 120 30</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Python tidak membaca arti nama. Ia memasangkan <strong>menurut posisi</strong>: nilai pertama ke nama pertama. Kalau banyak nama tidak sama dengan banyak nilai, misalnya tiga nama untuk dua nilai, hasilnya <code>ValueError</code>. Unpacking juga dipakai untuk menukar dua nilai tanpa variabel bantu: <code>x, y = y, x</code>.</p>
+<div id="kpl2b1-id" class="kp-anim"></div>
+<script src="../assets/w11/l2-b1.js"></script>
+<p><strong>Tebak dulu.</strong> Bagaimana kalau namanya ditulis terbalik: <code>sisa, laku = hitung_tiket(120, 150)</code>? Apa isi <code>sisa</code>?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lihat jawaban
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>120</code>. Banyak yang menjawab 30, karena namanya <code>sisa</code>. Tapi nilai pertama tuple, <code>120</code>, dipasangkan ke nama pertama, yaitu <code>sisa</code>. Posisi yang menentukan, bukan nama.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Ingat">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Penting</span>Ingat
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Koma yang membuat tuple. Kurung hanya membantu kita membacanya.</li>
+<li><code>return a, b</code> mengembalikan satu tuple.</li>
+<li>Unpacking memasangkan nama menurut posisi, dan banyaknya harus sama.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="tabel-adalah-list-berisi-baris" class="level3">
+<h3 class="anchored" data-anchor-id="tabel-adalah-list-berisi-baris">Tabel adalah list berisi baris</h3>
+<p>Ini denah kursi bioskop kecil: dua baris, tiga kursi per baris, semuanya kosong (<code>0</code>). Lalu satu penonton memesan baris pertama, kursi tengah:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>kursi <span class="op">=</span> [[<span class="dv">0</span>] <span class="op">*</span> <span class="dv">3</span>] <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>kursi[<span class="dv">0</span>][<span class="dv">1</span>] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kursi)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>[[0, 1, 0], [0, 1, 0]]</code></pre>
+<p>Kenapa baris kedua ikut terisi? Kita jawab di akhir subbab. Sekarang kita pahami dulu bentuk tabel.</p>
+<section id="baris-dulu-lalu-kolom" class="level4">
+<h4 class="anchored" data-anchor-id="baris-dulu-lalu-kolom">Baris dulu, lalu kolom</h4>
+<p>Bayangkan lemari besar yang setiap lacinya berisi satu kotak kecil. Lemari adalah list luar; setiap kotak kecil adalah satu baris. Misalnya nilai dua tugas tiga mahasiswa:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>tugas <span class="op">=</span> [[<span class="dv">70</span>, <span class="dv">80</span>], [<span class="dv">90</span>, <span class="dv">60</span>], [<span class="dv">85</span>, <span class="dv">95</span>]]</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 25%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ekspresi</th>
+<th>Hasil</th>
+<th>Artinya</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>tugas[1]</code></td>
+<td><code>[90, 60]</code></td>
+<td>baris kedua</td>
+</tr>
+<tr class="even">
+<td><code>tugas[1][0]</code></td>
+<td><code>90</code></td>
+<td>baris 1, kolom 0</td>
+</tr>
+<tr class="odd">
+<td><code>tugas[2][1]</code></td>
+<td><code>95</code></td>
+<td>baris 2, kolom 1</td>
+</tr>
+<tr class="even">
+<td><code>len(tugas)</code></td>
+<td><code>3</code></td>
+<td>banyak baris</td>
+</tr>
+<tr class="odd">
+<td><code>len(tugas[0])</code></td>
+<td><code>2</code></td>
+<td>banyak kolom</td>
+</tr>
+</tbody>
+</table>
+<p><code>tabel[i]</code> adalah baris, <code>tabel[i][j]</code> satu sel: <strong>baris dulu, lalu kolom</strong>. Satu <strong>kolom</strong> adalah indeks yang sama di setiap baris, misalnya semua nilai tugas kedua (kolom 1):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>kolom <span class="op">=</span> []</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> baris <span class="kw">in</span> tugas:</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    kolom.append(baris[<span class="dv">1</span>])</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kolom)                    <span class="co"># [80, 60, 95]</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="penampung-di-setiap-baris" class="level4">
+<h4 class="anchored" data-anchor-id="penampung-di-setiap-baris">Penampung di setiap baris</h4>
+<p>Sekarang kita ingin total nilai setiap mahasiswa: satu hasil per baris. Kita pakai dua loop, loop luar untuk baris dan loop dalam untuk sel. Pertanyaannya: di mana <code>total = 0</code> ditulis? Perhatikan versi ini:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>hasil <span class="op">=</span> []</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span>                       <span class="co"># sekali, sebelum loop luar</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> baris <span class="kw">in</span> tugas:</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> nilai <span class="kw">in</span> baris:</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> total <span class="op">+</span> nilai</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    hasil.append(total)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hasil)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Banyak yang menebak <code>[150, 150, 180]</code>. Tapi <code>total</code> tidak pernah kembali ke 0, jadi hitungannya terus bertambah:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><code>baris</code></th>
+<th><code>total</code></th>
+<th><code>hasil</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>[70, 80]</code></td>
+<td><code>150</code></td>
+<td><code>[150]</code></td>
+</tr>
+<tr class="even">
+<td><code>[90, 60]</code></td>
+<td><code>300</code></td>
+<td><code>[150, 300]</code></td>
+</tr>
+<tr class="odd">
+<td><code>[85, 95]</code></td>
+<td><code>480</code></td>
+<td><code>[150, 300, 480]</code></td>
+</tr>
+</tbody>
+</table>
+<p>Supaya benar, <code>total = 0</code> ditulis <strong>di dalam loop baris, sebelum loop sel</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>hasil <span class="op">=</span> []</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> baris <span class="kw">in</span> tugas:</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">0</span>                   <span class="co"># di-reset setiap baris</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> nilai <span class="kw">in</span> baris:</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> total <span class="op">+</span> nilai</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    hasil.append(total)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hasil)                    <span class="co"># [150, 150, 180]</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="kembali-ke-denah-kursi" class="level4">
+<h4 class="anchored" data-anchor-id="kembali-ke-denah-kursi">Kembali ke denah kursi</h4>
+<p><code>[[0] * 3] * 2</code> tidak membuat dua baris. Ia membuat <strong>satu</strong> baris, lalu menyalin <strong>panahnya</strong> dua kali. Kedua slot luar menunjuk kotak baris yang sama, jadi mengisi satu kursi terlihat di dua baris. Untuk tabel baru, buat setiap baris di dalam loop, sehingga setiap <code>append</code> membuat kotak baris sendiri:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>kursi <span class="op">=</span> []</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    kursi.append([<span class="dv">0</span>] <span class="op">*</span> <span class="dv">3</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>kursi[<span class="dv">0</span>][<span class="dv">1</span>] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kursi)                    <span class="co"># [[0, 1, 0], [0, 0, 0]]</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="kpl2b2-id" class="kp-anim"></div>
+<script src="../assets/w11/l2-b2.js"></script>
+<div class="callout callout-style-default callout-important callout-titled" title="Ingat">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Penting</span>Ingat
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>tabel[i]</code> adalah baris, <code>tabel[i][j]</code> satu sel: baris dulu, lalu kolom.</li>
+<li>Satu kolom = indeks yang sama di setiap baris.</li>
+<li>Untuk satu hasil per baris, penampung di-reset di setiap baris.</li>
+<li><code>[[0] * n] * m</code> membuat satu baris dengan banyak panah. Buat setiap baris baru di dalam loop.</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="memproses-tabel-per-baris" class="level3">
+<h3 class="anchored" data-anchor-id="memproses-tabel-per-baris">Memproses tabel per baris</h3>
+<p>Hampir semua fungsi yang memproses tabel mengikuti empat langkah yang sama:</p>
+<p>① <strong>Siapkan penampung</strong> · ② <strong>Ulangi setiap baris</strong> · ③ <strong>Bongkar baris, hitung</strong> · ④ <strong>Kembalikan (list atau tuple)</strong></p>
+<p>Contohnya catatan porsi kantin. Setiap baris punya bentuk tetap: <code>[menu, pagi, sore]</code>.</p>
+<section id="satu-hasil-per-baris" class="level4">
+<h4 class="anchored" data-anchor-id="satu-hasil-per-baris">Satu hasil per baris</h4>
+<p>Kita ingin total porsi setiap menu, sebagai pasangan <code>(menu, total)</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> porsi_per_menu(kantin):</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    hasil <span class="op">=</span> []                             <span class="co"># ①</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> menu, pagi, sore <span class="kw">in</span> kantin:        <span class="co"># ② ③ bongkar</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>        hasil.append((menu, pagi <span class="op">+</span> sore))  <span class="co"># ③ hitung</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> hasil                           <span class="co"># ④</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>kantin <span class="op">=</span> [[<span class="st">"soto"</span>, <span class="dv">3</span>, <span class="dv">5</span>], [<span class="st">"bakso"</span>, <span class="dv">4</span>, <span class="dv">0</span>], [<span class="st">"nasi"</span>, <span class="dv">6</span>, <span class="dv">2</span>]]</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(porsi_per_menu(kantin))   <span class="co"># [('soto', 8), ('bakso', 4), ('nasi', 8)]</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Jika setiap baris punya bentuk tetap, bongkar langsung di <code>for</code>: <code>for menu, pagi, sore in kantin</code>. Perhatikan kurung ganda di <code>append((…))</code>: kurung luar milik <code>append</code>, kurung dalam membuat tuple. Tanpa kurung dalam, <code>append</code> menerima dua argumen dan terjadi <code>TypeError</code>.</p>
+</section>
+<section id="beberapa-hasil-sekaligus" class="level4">
+<h4 class="anchored" data-anchor-id="beberapa-hasil-sekaligus">Beberapa hasil sekaligus</h4>
+<p>Kadang kita butuh dua angka: total porsi pagi dan total porsi sore. Siapkan dua penampung, lalu kembalikan keduanya sebagai tuple:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> total_pagi_sore(kantin):</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    total_pagi <span class="op">=</span> <span class="dv">0</span>                         <span class="co"># ①</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    total_sore <span class="op">=</span> <span class="dv">0</span>                         <span class="co"># ①</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> menu, pagi, sore <span class="kw">in</span> kantin:        <span class="co"># ② ③</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>        total_pagi <span class="op">=</span> total_pagi <span class="op">+</span> pagi</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>        total_sore <span class="op">=</span> total_sore <span class="op">+</span> sore</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total_pagi, total_sore          <span class="co"># ④ tuple</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>pagi, sore <span class="op">=</span> total_pagi_sore(kantin)</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pagi, sore)               <span class="co"># 13 7</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Di pemanggil, tuplenya langsung dibongkar menurut posisi.</p>
+</section>
+<section id="baris-yang-panjangnya-berbeda" class="level4">
+<h4 class="anchored" data-anchor-id="baris-yang-panjangnya-berbeda">Baris yang panjangnya berbeda</h4>
+<p>Kalau baris tidak punya bentuk tetap, kita tidak bisa membongkarnya. Pakai loop kedua untuk sel, dan perhatikan letak penampungnya:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> total_per_baris(tabel):</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    hasil <span class="op">=</span> []                  <span class="co"># ①</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> baris <span class="kw">in</span> tabel:         <span class="co"># ②</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> <span class="dv">0</span>               <span class="co"># reset di setiap baris</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> x <span class="kw">in</span> baris:</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>            total <span class="op">=</span> total <span class="op">+</span> x</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        hasil.append(total)     <span class="co"># sesudah loop sel</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> hasil                <span class="co"># ④</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total_per_baris([[<span class="dv">3</span>, <span class="dv">5</span>], [<span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">2</span>], [<span class="dv">6</span>]]))   <span class="co"># [8, 6, 6]</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="kpl2b3-id" class="kp-anim"></div>
+<script src="../assets/w11/l2-b3.js"></script>
+</section>
+</section>
+<section id="list-atau-tuple" class="level3">
+<h3 class="anchored" data-anchor-id="list-atau-tuple">List atau tuple?</h3>
+<p>Keduanya menyimpan beberapa nilai berurutan dan dibaca dengan cara yang sama. Bedanya ada pada kegunaannya:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 38%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>List <code>[ ]</code></th>
+<th>Tuple <code>( )</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bisa berubah?</td>
+<td>✓ <code>append</code>, ganti isi</td>
+<td>✗</td>
+</tr>
+<tr class="even">
+<td>Biasanya berisi</td>
+<td>banyak nilai sejenis</td>
+<td>kelompok tetap yang dibongkar</td>
+</tr>
+<tr class="odd">
+<td>Dipakai untuk</td>
+<td>data yang bertambah atau berubah</td>
+<td>rekaman tetap dan beberapa hasil fungsi</td>
+</tr>
+</tbody>
+</table>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>antrian <span class="op">=</span> [<span class="st">"Ani"</span>, <span class="st">"Budi"</span>]</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>antrian.append(<span class="st">"Citra"</span>)         <span class="co"># antrian bertambah: list</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(antrian)                  <span class="co"># ['Ani', 'Budi', 'Citra']</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>tanggal <span class="op">=</span> (<span class="dv">17</span>, <span class="dv">8</span>, <span class="dv">1945</span>)         <span class="co"># satu kesatuan yang tetap: tuple</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>hari, bulan, tahun <span class="op">=</span> tanggal</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hari, bulan, tahun)       <span class="co"># 17 8 1945</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Keduanya sering dipakai bersama. <code>[('soto', 8), ('bakso', 4), ('nasi', 8)]</code> adalah <strong>list berisi tuple</strong>: list karena menunya bisa bertambah, tuple karena setiap pasangan <code>(menu, total)</code> adalah satu rekaman tetap.</p>
+<div id="kpl2b4-id" class="kp-anim"></div>
+<script src="../assets/w11/l2-b4.js"></script>
+<p><strong>Coba sendiri.</strong> Untuk setiap data ini, list atau tuple? (a) nilai kuis yang terus ditambah setiap minggu, (b) koordinat sebuah kota (lintang, bujur), (c) daftar belanja yang bisa ditambah dan dicoret.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lihat jawaban
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>list, karena bertambah; (b) tuple, karena lintang dan bujur adalah satu rekaman tetap; (c) list, karena berubah.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Ingat">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Penting</span>Ingat
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pakai list jika datanya akan bertambah atau berubah. Pakai tuple jika nilainya satu kesatuan yang tetap, atau saat fungsi mengembalikan beberapa hasil. Alasan “pakai tuple karena kurungnya bulat” atau “tuple lebih cepat” bukan alasan yang dinilai.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="kesalahan-umum" class="level2">
+<h2 class="anchored" data-anchor-id="kesalahan-umum">Kesalahan Umum</h2>
+<div class="table-responsive">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 34%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Gejala</th>
+<th>Penyebab</th>
+<th>Perbaikan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>rak[1]</code> ditebak elemen pertama</td>
+<td>Menghitung indeks dari 1</td>
+<td>Elemen pertama berindeks 0</td>
+</tr>
+<tr class="even">
+<td><code>IndexError</code> saat mengambil elemen terakhir</td>
+<td><code>lst[len(lst)]</code></td>
+<td>Indeks terakhir <code>len(lst) - 1</code>, atau <code>lst[-1]</code></td>
+</tr>
+<tr class="odd">
+<td>List berubah menjadi <code>None</code></td>
+<td><code>t = t.append(5)</code></td>
+<td><code>append</code> mengubah kotaknya; tulis <code>t.append(5)</code> di barisnya sendiri</td>
+</tr>
+<tr class="even">
+<td>Cadangan ikut berubah</td>
+<td><code>cadangan = skor</code> hanya menambah panah</td>
+<td>Salin dengan <code>cadangan = skor[:]</code></td>
+</tr>
+<tr class="odd">
+<td>Mengira <code>[:]</code> juga berbagi kotak</td>
+<td>Koreksi berlebihan setelah belajar alias</td>
+<td>Slice selalu membuat kotak baru</td>
+</tr>
+<tr class="even">
+<td>Fungsi “tidak bisa” mengosongkan list pemanggil</td>
+<td><code>x = []</code> hanya memindahkan panah parameter</td>
+<td>Kembalikan list baru dengan <code>return</code>, atau ubah kotaknya</td>
+</tr>
+<tr class="odd">
+<td>List asli ikut berubah setelah memanggil fungsi</td>
+<td>Fungsi mengubah kotak milik pemanggil</td>
+<td>Bangun list baru: <code>hasil = []</code>, <code>append</code>, <code>return hasil</code></td>
+</tr>
+<tr class="even">
+<td>Tidak ada yang tersaring</td>
+<td><code>append</code> ditulis di luar <code>if</code></td>
+<td><code>append</code> di dalam <code>if</code></td>
+</tr>
+<tr class="odd">
+<td>Fungsi hanya memeriksa elemen pertama</td>
+<td><code>return</code> di dalam loop</td>
+<td><code>return</code> sejajar dengan <code>for</code></td>
+</tr>
+<tr class="even">
+<td>Nilai batas hilang atau ikut</td>
+<td><code>&gt;</code> tertukar dengan <code>&gt;=</code></td>
+<td>Baca soal: “60 ke atas” berarti <code>&gt;= 60</code></td>
+</tr>
+<tr class="odd">
+<td><code>("Bandung")</code> dianggap tuple</td>
+<td>Kurung tidak membuat tuple</td>
+<td>Tulis koma: <code>("Bandung",)</code></td>
+</tr>
+<tr class="even">
+<td>Nilai kedua tidak pernah dikembalikan</td>
+<td>Dua baris <code>return</code></td>
+<td>Satu baris: <code>return a, b</code></td>
+</tr>
+<tr class="odd">
+<td><code>TypeError: 'tuple' object does not support item assignment</code></td>
+<td>Mengubah isi tuple</td>
+<td>Buat tuple baru, atau pakai list jika data memang berubah</td>
+</tr>
+<tr class="even">
+<td>Nama berisi nilai yang “salah”</td>
+<td>Mengira unpacking membaca arti nama</td>
+<td>Pasangan ditentukan posisi: nama pertama ← nilai pertama</td>
+</tr>
+<tr class="odd">
+<td><code>ValueError: too many values to unpack</code></td>
+<td>Banyak nama ≠ banyak nilai</td>
+<td>Samakan banyaknya, misalnya tiga nama untuk baris <code>[menu, pagi, sore]</code></td>
+</tr>
+<tr class="even">
+<td>Sel yang diambil salah</td>
+<td>Menulis kolom dulu: <code>t[j][i]</code></td>
+<td>Baris dulu, lalu kolom: <code>t[i][j]</code></td>
+</tr>
+<tr class="odd">
+<td>Total per baris terus bertambah</td>
+<td><code>total = 0</code> sebelum loop luar</td>
+<td>Reset <code>total = 0</code> di dalam loop baris</td>
+</tr>
+<tr class="even">
+<td>Mengisi satu sel, semua baris ikut berubah</td>
+<td><code>[[0] * n] * m</code></td>
+<td>Buat setiap baris di dalam loop: <code>append([0] * n)</code></td>
+</tr>
+<tr class="odd">
+<td><code>TypeError</code> pada <code>hasil.append(menu, total)</code></td>
+<td><code>append</code> hanya menerima satu argumen</td>
+<td>Kurung ganda: <code>hasil.append((menu, total))</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="tebak-dulu" class="level2">
+<h2 class="anchored" data-anchor-id="tebak-dulu">Tebak Dulu</h2>
+<p>Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu dan gambar kotak-panahnya, <strong>baru</strong> buka jawabannya.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tambah(lst):</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    lst.append(<span class="dv">0</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">5</span>]</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>tambah(data)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lihat jawaban
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Hasilnya <code>[5, 0]</code>. Parameter <code>lst</code> adalah panah ke kotak yang sama dengan <code>data</code>, sehingga <code>append</code> di dalam fungsi mengubah list aslinya.</p>
+</div>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">7</span>]</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> p</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> p[:]</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>q[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>r[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p, r)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lihat jawaban
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>[1, 7] [4, 2]</code>. Ada dua kotak. <code>p</code> dan <code>q</code> menunjuk kotak pertama, jadi <code>q[0] = 1</code> terlihat lewat <code>p</code>. <code>r</code> menunjuk kotak salinan, jadi <code>r[1] = 2</code> hanya mengubah salinannya.</p>
+</div>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ganti(daftar):</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    daftar.append(<span class="dv">9</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    daftar <span class="op">=</span> [<span class="dv">0</span>]</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    daftar.append(<span class="dv">1</span>)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>angka <span class="op">=</span> [<span class="dv">3</span>]</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>ganti(angka)</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(angka)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lihat jawaban
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>[3, 9]</code>. Baris pertama mengubah kotak milik <code>angka</code>. <code>daftar = [0]</code> memindahkan panah parameter ke kotak baru, sehingga <code>append(1)</code> mengubah kotak baru itu, bukan milik <code>angka</code>.</p>
+</div>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> min_maks(data):</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> data[<span class="dv">0</span>], data[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>bawah, atas <span class="op">=</span> min_maks([<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">9</span>])</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> (bawah)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> (atas,)</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x).<span class="va">__name__</span>, <span class="bu">type</span>(y).<span class="va">__name__</span>, atas)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lihat jawaban
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>int tuple 9</code>. <code>min_maks</code> mengembalikan tuple <code>(2, 9)</code>, yang dibongkar menjadi <code>bawah ← 2</code> dan <code>atas ← 9</code>. <code>(bawah)</code> hanya angka dalam kurung, sedangkan <code>(atas,)</code> punya koma, jadi tuple satu elemen.</p>
+</div>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>papan <span class="op">=</span> [[<span class="dv">0</span>] <span class="op">*</span> <span class="dv">2</span>] <span class="op">*</span> <span class="dv">3</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>papan[<span class="dv">2</span>][<span class="dv">1</span>] <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(papan)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lihat jawaban">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lihat jawaban
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>[[0, 7], [0, 7], [0, 7]]</code>. <code>[[0] * 2] * 3</code> membuat satu kotak baris dengan tiga panah. Mengubah sel lewat salah satu panah terlihat di ketiganya.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="latihan-mandiri" class="level2">
+<h2 class="anchored" data-anchor-id="latihan-mandiri">Latihan Mandiri</h2>
+<ol type="1">
+<li><p><strong>(U11.1)</strong> Gambar diagram kotak-panah untuk program berikut setelah setiap baris, lalu tentukan keluarannya. Berapa kotak list yang ada di akhir program?</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>menu <span class="op">=</span> [<span class="st">"nasi"</span>, <span class="st">"mie"</span>]</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>favorit <span class="op">=</span> menu</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>cadangan <span class="op">=</span> menu[:]</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>favorit.append(<span class="st">"soto"</span>)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>cadangan[<span class="dv">0</span>] <span class="op">=</span> <span class="st">"bubur"</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(menu, cadangan)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>(U11.1)</strong> Fungsi <code>reset_stok(stok)</code> seharusnya mengubah semua stok menjadi 0 di list milik pemanggil. Versi berikut tidak berhasil. Jelaskan dengan diagram kotak-panah mengapa, lalu perbaiki dengan <code>for i in range(len(stok))</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reset_stok(stok):</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    stok <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> <span class="bu">len</span>(stok)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>(U11.2)</strong> Tulis fungsi <code>harga_murah(harga, batas)</code> yang mengembalikan list baru berisi harga yang <strong>kurang dari</strong> <code>batas</code>, tanpa mengubah list aslinya. Uji: <code>([12000, 8000, 15000, 5000], 10000)</code> → <code>[8000, 5000]</code>; <code>([10000], 10000)</code> → <code>[]</code>. Tunjukkan bahwa list asli tetap sama setelah dipanggil.</p></li>
+<li><p><strong>(U11.2)</strong> Tulis fungsi <code>ke_menit(durasi_jam)</code> yang mengubah setiap durasi dalam jam menjadi menit (map). Uji: <code>[1, 2.5, 0]</code> → <code>[60, 150.0, 0]</code>. Apa hasilnya jika <code>append</code> kamu tulis di dalam <code>if x &gt; 0:</code>?</p></li>
+<li><p><strong>(U11.2)</strong> Tulis fungsi <code>jumlah_genap(angka)</code> yang mengembalikan banyaknya bilangan genap di list, tanpa <code>len()</code> pada list hasil saringan dan tanpa <code>sum()</code>. Uji: <code>[4, 7, 10, 3]</code> → <code>2</code>; <code>[]</code> → <code>0</code>. Pola mana yang kamu pakai, dan mengapa?</p></li>
+<li><p><strong>(U11.3)</strong> Tulis fungsi <code>bagi_waktu(menit)</code> yang mengembalikan tuple <code>(jam, sisa_menit)</code>. Uji: <code>135</code> → <code>(2, 15)</code>, <code>45</code> → <code>(0, 45)</code>. Lalu tulis pemanggil yang membongkar hasilnya dan mencetak <code>2 jam 15 menit</code>.</p></li>
+<li><p><strong>(U11.3)</strong> Tulis fungsi <code>terendah_tertinggi(suhu)</code> yang mengembalikan <code>(terendah, tertinggi)</code> dari list yang tidak kosong, dengan pola nilai terbaik sementara yang dimulai dari <code>suhu[0]</code> (tanpa <code>min</code> dan <code>max</code>). Uji: <code>[24, 31, 19, 27]</code> → <code>(19, 31)</code>; <code>[20]</code> → <code>(20, 20)</code>. Mengapa titik awal <code>0</code> salah untuk suhu <code>[-3, -1, -7]</code>?</p></li>
+<li><p><strong>(U11.4)</strong> <code>hadir = [["Ani", 1, 1, 0], ["Budi", 0, 1, 1], ["Cici", 1, 1, 1]]</code> mencatat kehadiran tiga pertemuan. Tulis fungsi <code>rekap_hadir(hadir)</code> yang mengembalikan list berisi tuple <code>(nama, jumlah_hadir)</code>. Hasil yang benar: <code>[('Ani', 2), ('Budi', 2), ('Cici', 3)]</code>.</p></li>
+<li><p><strong>(U11.4)</strong> Dengan tabel <code>hadir</code> yang sama, tulis fungsi <code>hadir_per_pertemuan(hadir)</code> yang mengembalikan banyaknya mahasiswa yang hadir di setiap pertemuan (per kolom): <code>[2, 3, 2]</code>. Petunjuk: loop luar atas nomor kolom <code>range(1, len(hadir[0]))</code>.</p></li>
+<li><p><strong>(U11.5)</strong> Untuk setiap data berikut, pilih list atau tuple dan tulis alasannya dalam satu kalimat: (a) jam buka dan jam tutup perpustakaan, (b) daftar anggota klub yang bisa masuk dan keluar, (c) hasil fungsi yang memberi rata-rata dan simpangan sekaligus, (d) warna RGB sebuah logo.</p></li>
+</ol>
 </section>
 <section id="bacaan" class="level2">
 <h2 class="anchored" data-anchor-id="bacaan">Bacaan</h2>
 <ul>
 <li>Think Python Ch. 9 - Lists</li>
 <li>Think Python Ch. 11 - Tuples</li>
+</ul>
+</section>
+<section id="referensi" class="level2">
+<h2 class="anchored" data-anchor-id="referensi">Referensi</h2>
+<p>Downey, A. B. (2024). <em>Think Python: How to think like a computer scientist</em> (3rd ed.). O’Reilly Media. <a href="https://allendowney.github.io/ThinkPython/" class="uri">https://allendowney.github.io/ThinkPython/</a></p>
+<ul>
+<li>Bab 9, <em>Lists</em>: <a href="https://allendowney.github.io/ThinkPython/chap09.html" class="uri">https://allendowney.github.io/ThinkPython/chap09.html</a></li>
+<li>Bab 11, <em>Tuples</em>: <a href="https://allendowney.github.io/ThinkPython/chap11.html" class="uri">https://allendowney.github.io/ThinkPython/chap11.html</a></li>
 </ul>
 
 
