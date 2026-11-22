@@ -12,11 +12,11 @@ minggu: 11
 
 | Kode | Jenis | Skill |
 |---|---|---|
-| `U11.1` | Trace (T) | Memprediksi keluaran saat satu list diakses lewat dua nama (aliasing); menggambar diagram referensi |
-| `U11.2` | Write (W) | Menelusuri dan membangun list dengan pola map/filter/reduce yang ditulis manual |
-| `U11.3` | Write (W) | Mengembalikan beberapa nilai dengan tuple dan membongkarnya (unpacking) |
-| `U11.4` | Write (W) | Menyimpan dan memproses data tabular sederhana dengan list dua dimensi |
-| `U11.5` | Transfer (X) | Menjelaskan perbedaan mutable (list) dan immutable (tuple/string) serta memilih yang tepat |
+| `U11.1` | Trace (T) | Menebak keluaran kode ketika satu list dipakai lewat dua nama (aliasing), termasuk list yang dikirim ke fungsi, dan menggambar diagram kotak-panahnya |
+| `U11.2` | Write (W) | Menulis fungsi yang membaca list dan membuat list atau nilai baru darinya: menyaring (filter), mengubah setiap elemen (map), atau meringkas menjadi satu nilai (reduce), tanpa mengubah list aslinya |
+| `U11.3` | Write (W) | Membuat fungsi yang mengembalikan beberapa nilai sekaligus dengan tuple, lalu membongkarnya ke beberapa nama (unpacking) |
+| `U11.4` | Write (W) | Menyimpan dan mengolah tabel sederhana (baris dan kolom) dengan list dua dimensi |
+| `U11.5` | Transfer (X) | Menjelaskan beda list (isinya bisa diubah) dengan tuple dan string (isinya tidak bisa diubah), lalu memilih yang tepat untuk suatu masalah beserta alasannya |
 
 : {tbl-colwidths="[12,16,72]"}
 
@@ -27,26 +27,592 @@ minggu: 11
 | A | List: membangun, menelusuri, dan aliasing | U11.1, U11.2 | `W11-A` |
 | B | Tuple, unpacking, dan list dua dimensi | U11.3, U11.4, U11.5 | `W11-B` |
 
+::: {.callout-note title="Minggu ini memakai flipped classroom"}
+Materi di halaman ini sama dengan isi dua modul belajar mandiri di Moodle (`W11-A · Modul mandiri` dan `W11-B · Modul mandiri`). Kerjakan modulnya **sebelum** kelas, sekitar 50 menit per modul. Di kelas ada entry ticket singkat, pembahasan bagian yang paling banyak salah, lalu Worksheet 11.1 atau 11.2 dan Evaluate. Siapkan kertas: setiap ada kode list, gambar dulu satu **kotak** untuk setiap list dan satu **panah** untuk setiap nama.
+:::
+
 ## Konsep Kunci
 
-`b = a` **tidak menyalin** list. Kedua nama menunjuk ke objek list yang sama, sehingga perubahan lewat `b` juga terlihat lewat `a`. Tuple mirip list, tetapi immutable, dan sering dipakai untuk mengembalikan beberapa nilai sekaligus.
+List adalah **kotak** berisi nilai-nilai yang berurutan, dan sebuah nama adalah **panah** ke kotak itu. `b = a` **tidak menyalin** list: ia menambah panah kedua ke kotak yang sama, sehingga perubahan lewat `b` juga terlihat lewat `a`. `a[:]` membuat kotak baru. Untuk mengolah list tanpa merusak aslinya, **bangun list baru**: saring, ubah setiap elemen, atau ringkas. Tuple mirip list, tetapi **immutable**, dan sering dipakai untuk mengembalikan beberapa nilai sekaligus. Tabel disimpan sebagai **list berisi baris**.
 
 ```python
 a = [1, 2, 3]
-b = a          # alias: menunjuk list yang sama
-c = a[:]       # salinan: list baru
+b = a          # alias: panah kedua ke kotak yang sama
+c = a[:]       # salinan: kotak baru
 b.append(4)
 print(a, c)    # [1, 2, 3, 4] [1, 2, 3]
 
 def ringkas(data):
-    return sum(data), len(data)
+    return sum(data), len(data)   # satu tuple berisi dua nilai
 
-total, n = ringkas([2, 4, 6])   # unpacking
+total, n = ringkas([2, 4, 6])     # unpacking: total ← 12, n ← 3
 ```
+
+## Lesson A · List: Membangun, Menelusuri, dan Aliasing
+
+### Dari satu nilai ke banyak nilai
+
+Sampai minggu lalu, satu variabel menyimpan satu nilai: `nilai = 85`, `nama = "Rina"`. Kalau ada 40 mahasiswa, apakah kita butuh 40 variabel `nilai1`, `nilai2`, …, `nilai40`? Tidak. Untuk itu ada **struktur data**: cara menyimpan banyak nilai di bawah satu nama, sehingga semuanya bisa diproses dengan satu perulangan.
+
+Python menyediakan empat struktur data bawaan. Bedanya ada pada tiga hal: apakah urutannya dijaga (bisa diakses dengan indeks), apakah isinya bisa diubah setelah dibuat, dan apakah nilai yang sama boleh muncul dua kali.
+
+::: {.table-responsive}
+| Struktur | Contoh | Berurutan (indeks) | Bisa diubah | Nilai kembar | Dipelajari |
+|---|---|---|---|---|---|
+| List | `[85, 70, 85]` | ✓ | ✓ | ✓ | Lesson A |
+| Tuple | `(85, 70, 85)` | ✓ | ✗ | ✓ | Lesson B |
+| Set | `{85, 70}` | ✗ | ✓ | ✗ | Minggu 12 |
+| Dictionary | `{"Rina": 85}` | lewat kunci | ✓ | kunci tidak boleh kembar | Minggu 12 |
+
+: {tbl-colwidths="[16,20,18,14,16,16]"}
+:::
+
+Perhatikan tanda kurungnya: `[ ]` list, `( )` tuple, `{ }` set, dan `{kunci: nilai}` dictionary. Minggu ini kita fokus pada list dan tuple.
+
+### List dan indeksnya
+
+**List** adalah kumpulan nilai yang berurutan dan bisa diubah, ditulis di antara `[ ]` dan dipisah koma. Setiap nilai disebut **elemen**, dan setiap elemen punya nomor posisi, yaitu **indeks**:
+
+```python
+kota = ["Bandung", "Medan", "Solo", "Bogor"]
+```
+
+::: {.table-responsive}
+| Elemen | `"Bandung"` | `"Medan"` | `"Solo"` | `"Bogor"` |
+|---|:-:|:-:|:-:|:-:|
+| Indeks dari depan | `0` | `1` | `2` | `3` |
+| Indeks dari belakang | `-4` | `-3` | `-2` | `-1` |
+:::
+
+Elemen boleh kembar, boleh berbeda tipe, dan list boleh kosong: `["Rina", 20, 3.75, True]`, `[]`. List adalah struktur data yang paling sering dipakai, karena datanya bisa ditambah, diganti, dan disaring.
+
+### Membaca list seperti string
+
+Semua cara membaca string di Minggu 10 berlaku untuk list. Bedanya, satu indeks memberi satu **elemen**, bukan satu huruf:
+
+| Ekspresi | Hasil | Artinya |
+|---|---|---|
+| `kota[0]` | `"Bandung"` | elemen pertama |
+| `kota[2]` | `"Solo"` | elemen ketiga |
+| `kota[-1]` | `"Bogor"` | elemen terakhir |
+| `kota[-2]` | `"Solo"` | kedua dari belakang |
+| `len(kota)` | `4` | banyaknya elemen |
+| `"Medan" in kota` | `True` | ada di list |
+| `"Jakarta" in kota` | `False` | tidak ada |
+| `kota[4]` | `IndexError` | melewati ujung |
+
+: {tbl-colwidths="[30,25,45]"}
+
+Ada 4 elemen, jadi indeksnya 0 sampai 3. Indeks terakhir selalu `len(kota) - 1`, dan `kota[4]` sudah melewati ujung. Bedanya dengan string: isi list **bisa diubah**. Itu bahan subbab berikutnya.
+
+### Kotak dan panah
+
+Ini nilai praktikum tiga mahasiswa. Sebelum mengubah apa pun, kita buat cadangan dulu, lalu nilai pertama diperbaiki menjadi 100:
+
+```python
+skor = [60, 75, 80]
+cadangan = skor
+skor[0] = 100
+print(cadangan)
+```
+
+```
+[100, 75, 80]
+```
+
+Cadangannya ikut berubah. Kenapa? Untuk menjawabnya, kita perlu cara baru melihat list: sebagai **kotak**, dan nama sebagai **panah**.
+
+- **Kotak: list bisa diubah.** Bayangkan kotak loker dengan slot bernomor 0, 1, 2. Itulah list `[60, 75, 80]`. Nama `skor` adalah panah ke kotak itu. `skor[1] = 90` mengganti isi satu slot, dan `skor.append(85)` menambah satu slot di ujung kotak yang **sama**.
+- **Jebakan: menyimpan hasil `append`.** Di Minggu 10, metode string seperti `upper()` membuat string baru, jadi hasilnya harus disimpan: `nama = nama.upper()`. Metode list seperti `append` kebalikannya: ia langsung mengubah kotaknya dan mengembalikan `None` ("tidak ada apa-apa"). Akibatnya `skor = skor.append(85)` menyimpan `None` ke `skor`, dan kotaknya kehilangan panah.
+- **Panah kedua: alias.** `asisten = skor` tidak membuat kotak baru. Tanda sama dengan menambah panah kedua ke kotak yang sama, sehingga `asisten.append(70)` terlihat lewat `skor`. Program pembuka pun jelas: `cadangan = skor` juga hanya panah kedua.
+- **Kotak kedua: salinan.** Untuk cadangan yang benar, kita butuh kotak kedua: `cadangan = skor[:]`. Slice dari awal sampai akhir selalu membuat kotak **baru** dengan isi yang sama.
+
+Jalankan kelima adegan di bawah dengan tombol **Berikutnya**. Di adegan yang kotak catatannya merah muda, berhenti dan tebak dulu sebelum melanjutkan.
+
+```{=html}
+<div id="kpb2-id" class="kp-anim"></div>
+<script src="../assets/w11/l1-b2.js"></script>
+```
+
+::: {.callout-important title="Ingat"}
+- List bisa diubah: kita mengganti isi slot, atau menambah slot dengan `append`.
+- `append` mengubah kotaknya dan mengembalikan `None`. Tulis di barisnya sendiri, jangan disimpan ke variabel.
+- Tanda `=` tidak menyalin list. Ia menambah panah ke kotak yang sama.
+- Slice `[:]` membuat kotak baru. Perubahan di satu kotak tidak terlihat di kotak lain.
+:::
+
+### Ubah kotaknya atau pindahkan panahnya
+
+Ini fungsi untuk mengosongkan daftar kursi yang sudah dipesan:
+
+```python
+def kosongkan(x):
+    x = []
+
+kursi = [3, 5]
+kosongkan(kursi)
+print(kursi)
+```
+
+```
+[3, 5]
+```
+
+Tidak ada yang kosong. Padahal di subbab sebelumnya, `append` lewat nama lain bisa mengubah list. Lalu kenapa yang ini tidak? Ada dua jenis baris yang tampak mirip, tetapi akibatnya sangat berbeda:
+
+| Jenis | Contoh | Akibat |
+|---|---|---|
+| **Mengubah kotak** | `x[0] = 7`, `x.append(7)` | terlihat lewat **semua** nama yang menunjuk kotak itu |
+| **Memindahkan panah** | `x = [7]`, `x = []` | hanya nama `x` yang berubah arah; kotak lama tidak disentuh |
+
+: {tbl-colwidths="[24,30,46]"}
+
+Di luar fungsi: `baru = kursi` membuat dua panah ke kotak yang sama, lalu `baru = [0]` membuat kotak baru berisi 0 dan memindahkan panah `baru` ke sana. Kotak milik `kursi` tetap `[3, 5]`.
+
+Di dalam fungsi berlaku aturan yang sama. Saat kita memanggil `kosongkan(kursi)`, parameter `x` adalah **satu panah lagi** ke kotak milik `kursi`. `x = []` memindahkan panah `x` ke kotak kosong yang baru, dan setelah fungsi selesai panah `x` hilang. Bandingkan dengan fungsi yang **mengubah** kotaknya:
+
+```python
+def tambah(x):
+    x.append(0)
+
+kursi = [3, 5]
+tambah(kursi)
+print(kursi)      # [3, 5, 0]
+```
+
+`x.append(0)` menambah slot di kotak milik `kursi`, jadi perubahannya tetap ada setelah fungsi selesai.
+
+```{=html}
+<div id="kpb3-id" class="kp-anim"></div>
+<script src="../assets/w11/l1-b3.js"></script>
+```
+
+**Coba dulu.** Gambar di kertasmu, baru buka jawabannya. Apa yang dicetak?
+
+```python
+def nolkan(x):
+    x[0] = 0
+    x = [9, 9]
+
+kursi = [3, 5]
+nolkan(kursi)
+print(kursi)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+`[0, 5]`. Banyak yang menjawab `[9, 9]`, karena kelihatannya baris terakhir yang menang. Tapi urutannya penting. `x[0] = 0` **mengubah** slot 0 di kotak milik `kursi`, jadi terlihat di luar. `x = [9, 9]` hanya **memindahkan** panah `x` ke kotak baru, yang hilang begitu fungsi selesai.
+:::
+
+::: {.callout-important title="Ingat"}
+Parameter adalah panah ke kotak milik pemanggil. Mengubah kotaknya terlihat di luar fungsi; memindahkan panahnya tidak.
+:::
+
+**Tantangan.** Kalau `kosongkan` harus benar-benar memberi daftar kosong ke pemanggil, apa yang harus diubah? Petunjuk: pikirkan `return`. Jawabannya dibahas di kelas.
+
+### Membangun list baru
+
+Fungsi yang mengubah kotak milik pemanggil meninggalkan bekas di luar fungsi. Sering kali itu tidak kita inginkan: list asli harus tetap utuh. Caranya, jangan ubah kotak lama. **Bangun kotak baru**, isi, lalu kembalikan. Polanya selalu empat langkah:
+
+① **Siapkan list kosong** · ② **Ulangi setiap elemen** · ③ **Periksa atau ubah, lalu `append`** · ④ **Kembalikan setelah loop**
+
+#### Saring (filter)
+
+Dari nilai satu kelas, kita ingin list baru berisi nilai yang lulus (60 ke atas):
+
+```python
+def lulus(nilai):
+    hasil = []               # ① siapkan list kosong
+    for n in nilai:          # ② ulangi setiap elemen
+        if n >= 60:          # ③ periksa...
+            hasil.append(n)  #    ...lalu append
+    return hasil             # ④ setelah loop
+
+nilai_kelas = [72, 45, 88, 60]
+lulus_kelas = lulus(nilai_kelas)
+print(lulus_kelas)           # [72, 88, 60]
+```
+
+| `n` | `n >= 60`? | `hasil` |
+|---|---|---|
+| `72` | ya | `[72]` |
+| `45` | tidak | `[72]` |
+| `88` | ya | `[72, 88]` |
+| `60` | ya | `[72, 88, 60]` |
+
+Perhatikan putaran terakhir: `60 >= 60` benar, jadi 60 ikut masuk. Setelah fungsi selesai ada **dua** kotak, dan kotak milik `nilai_kelas` tidak berubah.
+
+#### Ubah setiap (map)
+
+Setiap mahasiswa dapat bonus 5. Kali ini setiap elemen diubah dulu, lalu di-`append`. Tidak ada `if`:
+
+```python
+def tambah_bonus(nilai):
+    hasil = []
+    for n in nilai:
+        hasil.append(n + 5)
+    return hasil
+
+print(tambah_bonus([72, 45, 88, 60]))   # [77, 50, 93, 65]
+```
+
+#### Ringkas (reduce)
+
+Kadang hasilnya bukan list, tetapi satu angka, misalnya jumlah semua nilai. Penampungnya angka, `total = 0`, seperti di Minggu 6. Kita tulis sendiri, tanpa `sum()`:
+
+```python
+def total_nilai(nilai):
+    total = 0
+    for n in nilai:
+        total = total + n
+    return total
+
+print(total_nilai([72, 45, 88, 60]))    # 265
+```
+
+| `n` | – | `72` | `45` | `88` | `60` |
+|---|---|---|---|---|---|
+| `total` | `0` | `72` | `117` | `205` | `265` |
+
+Telusuri ketiga pola, ditambah satu jebakan, di animasi berikut. Perhatikan bahwa kotak milik `nilai_kelas` tidak pernah berubah.
+
+```{=html}
+<div id="kpb4-id" class="kp-anim"></div>
+<script src="../assets/w11/l1-b4.js"></script>
+```
+
+::: {.callout-warning title="Jebakan: return di dalam loop"}
+Jika `return hasil` bergeser satu indentasi ke dalam `for`, `lulus([72, 45, 88, 60])` mengembalikan `[72]`. Di putaran pertama, 72 lolos dan di-`append`, lalu `return` langsung menghentikan fungsi; 45, 88, dan 60 tidak pernah diperiksa. Tulis `return` **setelah** loop, sejajar dengan `for`. Jebakan lain: `append` ditulis di luar `if`, sehingga setiap elemen ikut masuk dan tidak ada yang tersaring.
+:::
+
+#### Pola mana yang dipakai?
+
+| Pola | Tujuan | Ciri kode | Hasil |
+|---|---|---|---|
+| Saring | ambil sebagian elemen | `append` di dalam `if` | list baru, bisa lebih pendek |
+| Ubah setiap | ubah semua elemen | `append` di setiap putaran | list baru, sama panjang |
+| Ringkas | jadikan satu nilai | penampung angka | satu angka |
+
+: {tbl-colwidths="[16,26,30,28]"}
+
+## Lesson B · Tuple, Unpacking, dan List Dua Dimensi
+
+### Satu return, dua nilai
+
+Panitia konser butuh dua jawaban dari satu fungsi: berapa tiket yang laku, dan berapa yang tersisa. Fungsinya ditulis dengan dua `return`:
+
+```python
+def hitung_tiket(terjual, kapasitas):
+    return terjual
+    return kapasitas - terjual
+
+hasil = hitung_tiket(120, 150)
+print(hasil)
+```
+
+```
+120
+```
+
+Sisa tiketnya hilang. `return` yang pertama langsung mengakhiri fungsi, jadi baris kedua tidak pernah dijalankan. Untuk mengembalikan dua nilai sekaligus, kita butuh **tuple**.
+
+### Koma yang membuat tuple
+
+Tuple mirip list: kotak berisi beberapa nilai yang berurutan. Bedanya, tuple **tidak bisa diubah**, sama seperti string. Yang sering mengecoh: yang membuat tuple adalah **koma**, bukan kurung.
+
+```python
+a = ("Padang")
+b = ("Padang",)
+c = 30, 31
+```
+
+| Nama | Tipe | Artinya |
+|---|---|---|
+| `a` | `str` | kurung saja: hanya string |
+| `b` | `tuple` | ada koma: tuple satu elemen |
+| `c` | `tuple` | koma tanpa kurung pun tuple |
+
+: {tbl-colwidths="[15,20,65]"}
+
+Tuple dibaca seperti list, tetapi tidak bisa diubah: `c[0]` bernilai `30`, `len(c)` bernilai `2`, `31 in c` bernilai `True`, sedangkan `c[0] = 5` menghasilkan `TypeError` dan `c.append(32)` menghasilkan `AttributeError`. Memberi nilai baru ke seluruh nama, misalnya `c = (0, 0)`, tetap boleh: itu memindahkan panah, bukan mengubah tuple.
+
+### Satu return, satu tuple
+
+Kembali ke fungsi tiket. Dua `return` diganti satu baris dengan koma:
+
+```python
+def hitung_tiket(terjual, kapasitas):
+    return terjual, kapasitas - terjual
+
+print(hitung_tiket(120, 150))   # (120, 30)
+```
+
+Fungsi tetap mengembalikan **satu** nilai. Kalau nilai itu tuple, rasanya seperti mengembalikan banyak.
+
+### Membongkar menurut posisi
+
+Biasanya tuplenya tidak disimpan utuh, tetapi **dibongkar** (*unpacking*): satu nama untuk setiap nilai.
+
+```python
+laku, sisa = hitung_tiket(120, 150)
+print(laku, sisa)               # 120 30
+```
+
+Python tidak membaca arti nama. Ia memasangkan **menurut posisi**: nilai pertama ke nama pertama. Kalau banyak nama tidak sama dengan banyak nilai, misalnya tiga nama untuk dua nilai, hasilnya `ValueError`. Unpacking juga dipakai untuk menukar dua nilai tanpa variabel bantu: `x, y = y, x`.
+
+```{=html}
+<div id="kpl2b1-id" class="kp-anim"></div>
+<script src="../assets/w11/l2-b1.js"></script>
+```
+
+**Tebak dulu.** Bagaimana kalau namanya ditulis terbalik: `sisa, laku = hitung_tiket(120, 150)`? Apa isi `sisa`?
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+`120`. Banyak yang menjawab 30, karena namanya `sisa`. Tapi nilai pertama tuple, `120`, dipasangkan ke nama pertama, yaitu `sisa`. Posisi yang menentukan, bukan nama.
+:::
+
+::: {.callout-important title="Ingat"}
+- Koma yang membuat tuple. Kurung hanya membantu kita membacanya.
+- `return a, b` mengembalikan satu tuple.
+- Unpacking memasangkan nama menurut posisi, dan banyaknya harus sama.
+:::
+
+### Tabel adalah list berisi baris
+
+Ini denah kursi bioskop kecil: dua baris, tiga kursi per baris, semuanya kosong (`0`). Lalu satu penonton memesan baris pertama, kursi tengah:
+
+```python
+kursi = [[0] * 3] * 2
+kursi[0][1] = 1
+print(kursi)
+```
+
+```
+[[0, 1, 0], [0, 1, 0]]
+```
+
+Kenapa baris kedua ikut terisi? Kita jawab di akhir subbab. Sekarang kita pahami dulu bentuk tabel.
+
+#### Baris dulu, lalu kolom
+
+Bayangkan lemari besar yang setiap lacinya berisi satu kotak kecil. Lemari adalah list luar; setiap kotak kecil adalah satu baris. Misalnya nilai dua tugas tiga mahasiswa:
+
+```python
+tugas = [[70, 80], [90, 60], [85, 95]]
+```
+
+| Ekspresi | Hasil | Artinya |
+|---|---|---|
+| `tugas[1]` | `[90, 60]` | baris kedua |
+| `tugas[1][0]` | `90` | baris 1, kolom 0 |
+| `tugas[2][1]` | `95` | baris 2, kolom 1 |
+| `len(tugas)` | `3` | banyak baris |
+| `len(tugas[0])` | `2` | banyak kolom |
+
+: {tbl-colwidths="[30,25,45]"}
+
+`tabel[i]` adalah baris, `tabel[i][j]` satu sel: **baris dulu, lalu kolom**. Satu **kolom** adalah indeks yang sama di setiap baris, misalnya semua nilai tugas kedua (kolom 1):
+
+```python
+kolom = []
+for baris in tugas:
+    kolom.append(baris[1])
+print(kolom)                    # [80, 60, 95]
+```
+
+#### Penampung di setiap baris
+
+Sekarang kita ingin total nilai setiap mahasiswa: satu hasil per baris. Kita pakai dua loop, loop luar untuk baris dan loop dalam untuk sel. Pertanyaannya: di mana `total = 0` ditulis? Perhatikan versi ini:
+
+```python
+hasil = []
+total = 0                       # sekali, sebelum loop luar
+for baris in tugas:
+    for nilai in baris:
+        total = total + nilai
+    hasil.append(total)
+print(hasil)
+```
+
+Banyak yang menebak `[150, 150, 180]`. Tapi `total` tidak pernah kembali ke 0, jadi hitungannya terus bertambah:
+
+| `baris` | `total` | `hasil` |
+|---|---|---|
+| `[70, 80]` | `150` | `[150]` |
+| `[90, 60]` | `300` | `[150, 300]` |
+| `[85, 95]` | `480` | `[150, 300, 480]` |
+
+Supaya benar, `total = 0` ditulis **di dalam loop baris, sebelum loop sel**:
+
+```python
+hasil = []
+for baris in tugas:
+    total = 0                   # di-reset setiap baris
+    for nilai in baris:
+        total = total + nilai
+    hasil.append(total)
+print(hasil)                    # [150, 150, 180]
+```
+
+#### Kembali ke denah kursi
+
+`[[0] * 3] * 2` tidak membuat dua baris. Ia membuat **satu** baris, lalu menyalin **panahnya** dua kali. Kedua slot luar menunjuk kotak baris yang sama, jadi mengisi satu kursi terlihat di dua baris. Untuk tabel baru, buat setiap baris di dalam loop, sehingga setiap `append` membuat kotak baris sendiri:
+
+```python
+kursi = []
+for i in range(2):
+    kursi.append([0] * 3)
+kursi[0][1] = 1
+print(kursi)                    # [[0, 1, 0], [0, 0, 0]]
+```
+
+```{=html}
+<div id="kpl2b2-id" class="kp-anim"></div>
+<script src="../assets/w11/l2-b2.js"></script>
+```
+
+::: {.callout-important title="Ingat"}
+- `tabel[i]` adalah baris, `tabel[i][j]` satu sel: baris dulu, lalu kolom.
+- Satu kolom = indeks yang sama di setiap baris.
+- Untuk satu hasil per baris, penampung di-reset di setiap baris.
+- `[[0] * n] * m` membuat satu baris dengan banyak panah. Buat setiap baris baru di dalam loop.
+:::
+
+### Memproses tabel per baris
+
+Hampir semua fungsi yang memproses tabel mengikuti empat langkah yang sama:
+
+① **Siapkan penampung** · ② **Ulangi setiap baris** · ③ **Bongkar baris, hitung** · ④ **Kembalikan (list atau tuple)**
+
+Contohnya catatan porsi kantin. Setiap baris punya bentuk tetap: `[menu, pagi, sore]`.
+
+#### Satu hasil per baris
+
+Kita ingin total porsi setiap menu, sebagai pasangan `(menu, total)`:
+
+```python
+def porsi_per_menu(kantin):
+    hasil = []                             # ①
+    for menu, pagi, sore in kantin:        # ② ③ bongkar
+        hasil.append((menu, pagi + sore))  # ③ hitung
+    return hasil                           # ④
+
+kantin = [["soto", 3, 5], ["bakso", 4, 0], ["nasi", 6, 2]]
+print(porsi_per_menu(kantin))   # [('soto', 8), ('bakso', 4), ('nasi', 8)]
+```
+
+Jika setiap baris punya bentuk tetap, bongkar langsung di `for`: `for menu, pagi, sore in kantin`. Perhatikan kurung ganda di `append((…))`: kurung luar milik `append`, kurung dalam membuat tuple. Tanpa kurung dalam, `append` menerima dua argumen dan terjadi `TypeError`.
+
+#### Beberapa hasil sekaligus
+
+Kadang kita butuh dua angka: total porsi pagi dan total porsi sore. Siapkan dua penampung, lalu kembalikan keduanya sebagai tuple:
+
+```python
+def total_pagi_sore(kantin):
+    total_pagi = 0                         # ①
+    total_sore = 0                         # ①
+    for menu, pagi, sore in kantin:        # ② ③
+        total_pagi = total_pagi + pagi
+        total_sore = total_sore + sore
+    return total_pagi, total_sore          # ④ tuple
+
+pagi, sore = total_pagi_sore(kantin)
+print(pagi, sore)               # 13 7
+```
+
+Di pemanggil, tuplenya langsung dibongkar menurut posisi.
+
+#### Baris yang panjangnya berbeda
+
+Kalau baris tidak punya bentuk tetap, kita tidak bisa membongkarnya. Pakai loop kedua untuk sel, dan perhatikan letak penampungnya:
+
+```python
+def total_per_baris(tabel):
+    hasil = []                  # ①
+    for baris in tabel:         # ②
+        total = 0               # reset di setiap baris
+        for x in baris:
+            total = total + x
+        hasil.append(total)     # sesudah loop sel
+    return hasil                # ④
+
+print(total_per_baris([[3, 5], [4, 0, 2], [6]]))   # [8, 6, 6]
+```
+
+```{=html}
+<div id="kpl2b3-id" class="kp-anim"></div>
+<script src="../assets/w11/l2-b3.js"></script>
+```
+
+### List atau tuple?
+
+Keduanya menyimpan beberapa nilai berurutan dan dibaca dengan cara yang sama. Bedanya ada pada kegunaannya:
+
+| | List `[ ]` | Tuple `( )` |
+|---|---|---|
+| Bisa berubah? | ✓ `append`, ganti isi | ✗ |
+| Biasanya berisi | banyak nilai sejenis | kelompok tetap yang dibongkar |
+| Dipakai untuk | data yang bertambah atau berubah | rekaman tetap dan beberapa hasil fungsi |
+
+: {tbl-colwidths="[24,38,38]"}
+
+```python
+antrian = ["Ani", "Budi"]
+antrian.append("Citra")         # antrian bertambah: list
+print(antrian)                  # ['Ani', 'Budi', 'Citra']
+
+tanggal = (17, 8, 1945)         # satu kesatuan yang tetap: tuple
+hari, bulan, tahun = tanggal
+print(hari, bulan, tahun)       # 17 8 1945
+```
+
+Keduanya sering dipakai bersama. `[('soto', 8), ('bakso', 4), ('nasi', 8)]` adalah **list berisi tuple**: list karena menunya bisa bertambah, tuple karena setiap pasangan `(menu, total)` adalah satu rekaman tetap.
+
+```{=html}
+<div id="kpl2b4-id" class="kp-anim"></div>
+<script src="../assets/w11/l2-b4.js"></script>
+```
+
+**Coba sendiri.** Untuk setiap data ini, list atau tuple? (a) nilai kuis yang terus ditambah setiap minggu, (b) koordinat sebuah kota (lintang, bujur), (c) daftar belanja yang bisa ditambah dan dicoret.
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+(a) list, karena bertambah; (b) tuple, karena lintang dan bujur adalah satu rekaman tetap; (c) list, karena berubah.
+:::
+
+::: {.callout-important title="Ingat"}
+Pakai list jika datanya akan bertambah atau berubah. Pakai tuple jika nilainya satu kesatuan yang tetap, atau saat fungsi mengembalikan beberapa hasil. Alasan "pakai tuple karena kurungnya bulat" atau "tuple lebih cepat" bukan alasan yang dinilai.
+:::
+
+## Kesalahan Umum
+
+::: {.table-responsive}
+| Gejala | Penyebab | Perbaikan |
+|---|---|---|
+| `rak[1]` ditebak elemen pertama | Menghitung indeks dari 1 | Elemen pertama berindeks 0 |
+| `IndexError` saat mengambil elemen terakhir | `lst[len(lst)]` | Indeks terakhir `len(lst) - 1`, atau `lst[-1]` |
+| List berubah menjadi `None` | `t = t.append(5)` | `append` mengubah kotaknya; tulis `t.append(5)` di barisnya sendiri |
+| Cadangan ikut berubah | `cadangan = skor` hanya menambah panah | Salin dengan `cadangan = skor[:]` |
+| Mengira `[:]` juga berbagi kotak | Koreksi berlebihan setelah belajar alias | Slice selalu membuat kotak baru |
+| Fungsi "tidak bisa" mengosongkan list pemanggil | `x = []` hanya memindahkan panah parameter | Kembalikan list baru dengan `return`, atau ubah kotaknya |
+| List asli ikut berubah setelah memanggil fungsi | Fungsi mengubah kotak milik pemanggil | Bangun list baru: `hasil = []`, `append`, `return hasil` |
+| Tidak ada yang tersaring | `append` ditulis di luar `if` | `append` di dalam `if` |
+| Fungsi hanya memeriksa elemen pertama | `return` di dalam loop | `return` sejajar dengan `for` |
+| Nilai batas hilang atau ikut | `>` tertukar dengan `>=` | Baca soal: "60 ke atas" berarti `>= 60` |
+| `("Bandung")` dianggap tuple | Kurung tidak membuat tuple | Tulis koma: `("Bandung",)` |
+| Nilai kedua tidak pernah dikembalikan | Dua baris `return` | Satu baris: `return a, b` |
+| `TypeError: 'tuple' object does not support item assignment` | Mengubah isi tuple | Buat tuple baru, atau pakai list jika data memang berubah |
+| Nama berisi nilai yang "salah" | Mengira unpacking membaca arti nama | Pasangan ditentukan posisi: nama pertama ← nilai pertama |
+| `ValueError: too many values to unpack` | Banyak nama ≠ banyak nilai | Samakan banyaknya, misalnya tiga nama untuk baris `[menu, pagi, sore]` |
+| Sel yang diambil salah | Menulis kolom dulu: `t[j][i]` | Baris dulu, lalu kolom: `t[i][j]` |
+| Total per baris terus bertambah | `total = 0` sebelum loop luar | Reset `total = 0` di dalam loop baris |
+| Mengisi satu sel, semua baris ikut berubah | `[[0] * n] * m` | Buat setiap baris di dalam loop: `append([0] * n)` |
+| `TypeError` pada `hasil.append(menu, total)` | `append` hanya menerima satu argumen | Kurung ganda: `hasil.append((menu, total))` |
+
+: {tbl-colwidths="[32,34,34]"}
+:::
 
 ## Tebak Dulu
 
-Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu, **baru** buka jawabannya.
+Tanpa menjalankannya, apa keluaran program berikut? Tulis tebakanmu dan gambar kotak-panahnya, **baru** buka jawabannya.
 
 ```python
 def tambah(lst):
@@ -58,10 +624,98 @@ print(data)
 ```
 
 ::: {.callout-tip collapse="true" title="Lihat jawaban"}
-Hasilnya `[5, 0]`. Parameter `lst` menunjuk list yang sama dengan `data`, sehingga `append` di dalam fungsi mengubah list aslinya.
+Hasilnya `[5, 0]`. Parameter `lst` adalah panah ke kotak yang sama dengan `data`, sehingga `append` di dalam fungsi mengubah list aslinya.
 :::
+
+```python
+p = [4, 7]
+q = p
+r = p[:]
+q[0] = 1
+r[1] = 2
+print(p, r)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+`[1, 7] [4, 2]`. Ada dua kotak. `p` dan `q` menunjuk kotak pertama, jadi `q[0] = 1` terlihat lewat `p`. `r` menunjuk kotak salinan, jadi `r[1] = 2` hanya mengubah salinannya.
+:::
+
+```python
+def ganti(daftar):
+    daftar.append(9)
+    daftar = [0]
+    daftar.append(1)
+
+angka = [3]
+ganti(angka)
+print(angka)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+`[3, 9]`. Baris pertama mengubah kotak milik `angka`. `daftar = [0]` memindahkan panah parameter ke kotak baru, sehingga `append(1)` mengubah kotak baru itu, bukan milik `angka`.
+:::
+
+```python
+def min_maks(data):
+    return data[0], data[-1]
+
+bawah, atas = min_maks([2, 5, 9])
+x = (bawah)
+y = (atas,)
+print(type(x).__name__, type(y).__name__, atas)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+`int tuple 9`. `min_maks` mengembalikan tuple `(2, 9)`, yang dibongkar menjadi `bawah ← 2` dan `atas ← 9`. `(bawah)` hanya angka dalam kurung, sedangkan `(atas,)` punya koma, jadi tuple satu elemen.
+:::
+
+```python
+papan = [[0] * 2] * 3
+papan[2][1] = 7
+print(papan)
+```
+
+::: {.callout-tip collapse="true" title="Lihat jawaban"}
+`[[0, 7], [0, 7], [0, 7]]`. `[[0] * 2] * 3` membuat satu kotak baris dengan tiga panah. Mengubah sel lewat salah satu panah terlihat di ketiganya.
+:::
+
+## Latihan Mandiri
+
+1. **(U11.1)** Gambar diagram kotak-panah untuk program berikut setelah setiap baris, lalu tentukan keluarannya. Berapa kotak list yang ada di akhir program?
+
+    ```python
+    menu = ["nasi", "mie"]
+    favorit = menu
+    cadangan = menu[:]
+    favorit.append("soto")
+    cadangan[0] = "bubur"
+    print(menu, cadangan)
+    ```
+
+2. **(U11.1)** Fungsi `reset_stok(stok)` seharusnya mengubah semua stok menjadi 0 di list milik pemanggil. Versi berikut tidak berhasil. Jelaskan dengan diagram kotak-panah mengapa, lalu perbaiki dengan `for i in range(len(stok))`.
+
+    ```python
+    def reset_stok(stok):
+        stok = [0] * len(stok)
+    ```
+
+3. **(U11.2)** Tulis fungsi `harga_murah(harga, batas)` yang mengembalikan list baru berisi harga yang **kurang dari** `batas`, tanpa mengubah list aslinya. Uji: `([12000, 8000, 15000, 5000], 10000)` → `[8000, 5000]`; `([10000], 10000)` → `[]`. Tunjukkan bahwa list asli tetap sama setelah dipanggil.
+4. **(U11.2)** Tulis fungsi `ke_menit(durasi_jam)` yang mengubah setiap durasi dalam jam menjadi menit (map). Uji: `[1, 2.5, 0]` → `[60, 150.0, 0]`. Apa hasilnya jika `append` kamu tulis di dalam `if x > 0:`?
+5. **(U11.2)** Tulis fungsi `jumlah_genap(angka)` yang mengembalikan banyaknya bilangan genap di list, tanpa `len()` pada list hasil saringan dan tanpa `sum()`. Uji: `[4, 7, 10, 3]` → `2`; `[]` → `0`. Pola mana yang kamu pakai, dan mengapa?
+6. **(U11.3)** Tulis fungsi `bagi_waktu(menit)` yang mengembalikan tuple `(jam, sisa_menit)`. Uji: `135` → `(2, 15)`, `45` → `(0, 45)`. Lalu tulis pemanggil yang membongkar hasilnya dan mencetak `2 jam 15 menit`.
+7. **(U11.3)** Tulis fungsi `terendah_tertinggi(suhu)` yang mengembalikan `(terendah, tertinggi)` dari list yang tidak kosong, dengan pola nilai terbaik sementara yang dimulai dari `suhu[0]` (tanpa `min` dan `max`). Uji: `[24, 31, 19, 27]` → `(19, 31)`; `[20]` → `(20, 20)`. Mengapa titik awal `0` salah untuk suhu `[-3, -1, -7]`?
+8. **(U11.4)** `hadir = [["Ani", 1, 1, 0], ["Budi", 0, 1, 1], ["Cici", 1, 1, 1]]` mencatat kehadiran tiga pertemuan. Tulis fungsi `rekap_hadir(hadir)` yang mengembalikan list berisi tuple `(nama, jumlah_hadir)`. Hasil yang benar: `[('Ani', 2), ('Budi', 2), ('Cici', 3)]`.
+9. **(U11.4)** Dengan tabel `hadir` yang sama, tulis fungsi `hadir_per_pertemuan(hadir)` yang mengembalikan banyaknya mahasiswa yang hadir di setiap pertemuan (per kolom): `[2, 3, 2]`. Petunjuk: loop luar atas nomor kolom `range(1, len(hadir[0]))`.
+10. **(U11.5)** Untuk setiap data berikut, pilih list atau tuple dan tulis alasannya dalam satu kalimat: (a) jam buka dan jam tutup perpustakaan, (b) daftar anggota klub yang bisa masuk dan keluar, (c) hasil fungsi yang memberi rata-rata dan simpangan sekaligus, (d) warna RGB sebuah logo.
 
 ## Bacaan
 
 - Think Python Ch. 9 - Lists
 - Think Python Ch. 11 - Tuples
+
+## Referensi
+
+Downey, A. B. (2024). *Think Python: How to think like a computer scientist* (3rd ed.). O'Reilly Media. <https://allendowney.github.io/ThinkPython/>
+
+- Bab 9, *Lists*: <https://allendowney.github.io/ThinkPython/chap09.html>
+- Bab 11, *Tuples*: <https://allendowney.github.io/ThinkPython/chap11.html>
